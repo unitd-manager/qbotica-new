@@ -1,0 +1,610 @@
+0000.001 (0) Opened log file at time: Fri, 30 Jan 2026 07:08:35 +0000 on http://backend.qbdev.localhost
+0000.005 (0) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.25.9 WP: 6.9 PHP: 7.4.33 (apache2handler, Windows NT DESKTOP-PQFACMQ 10.0 build 26100 (Windows 10) AMD64) MySQL: 8.0.43 (max packet size=67108864) WPLANG: en_US Server: Apache/2.4.65 (Win64) PHP/7.4.33 mod_fcgid/2.3.10-dev safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 17.4M | 2M) multisite: N openssl: OpenSSL 1.1.1s  1 Nov 2022 mcrypt: N LANG:  WP Proxy: disabled ZipArchive::addFile: Y
+0000.008 (0) Free space on disk containing Updraft's temporary directory: 6865.3 MB
+0000.016 (0) Tasks: Backup files: 1 (schedule: daily) Backup DB:  (schedule: daily)
+0000.018 (0) Processed schedules. Combining jobs from identical schedules. Tasks now: Backup files: 1 Backup DB: 1
+0000.027 (0) Requesting semaphore lock (fd) (apparently via scheduler: last_scheduled_action_called_at=1769675771, seconds_ago=81144)
+0000.033 (0) Set semaphore last lock (fd) time to 2026-01-30 07:08:35
+0000.035 (0) Semaphore lock (fd) complete
+0000.044 (0) Backup run: resumption=0, nonce=30d14d4af23d, file_nonce=30d14d4af23d begun at=1769756915 (0s ago), job type=backup
+0000.048 (0) Scheduling a resumption (1) after 300 seconds (1769757215) in case this run gets aborted
+0000.096 (0) Checking if we have a zip executable available
+0000.100 (0) Creation of backups of directories: beginning
+0000.109 (0) Beginning creation of dump of plugins (split every: 400 MB)
+0007.307 (0) Total entities for the zip file: 1508 directories, 8580 files (0 skipped as non-modified), 143.2 MB
+0007.328 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (0 MB, 1 (1) files added so far); re-opening (prior size: 0 KB)
+0007.512 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 100 files added (on-disk size: 288.7 KB)
+0007.611 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 200 files added (on-disk size: 288.7 KB)
+0007.715 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 300 files added (on-disk size: 288.7 KB)
+0007.788 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 400 files added (on-disk size: 288.7 KB)
+0007.874 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 500 files added (on-disk size: 288.7 KB)
+0007.946 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 600 files added (on-disk size: 288.7 KB)
+0008.032 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 700 files added (on-disk size: 288.7 KB)
+0008.108 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 800 files added (on-disk size: 288.7 KB)
+0008.188 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 900 files added (on-disk size: 288.7 KB)
+0008.276 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 1000 files added (on-disk size: 288.7 KB)
+0008.281 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 1000 files added on this batch (10.3 MB, 8580 files batched, 1001 (1002) added so far); re-opening (prior size: 288.7 KB)
+0014.414 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 1100 files added (on-disk size: 3058.3 KB)
+0014.554 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 1200 files added (on-disk size: 3058.3 KB)
+0014.712 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 1300 files added (on-disk size: 3058.3 KB)
+0014.849 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 1400 files added (on-disk size: 3058.3 KB)
+0014.994 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 1500 files added (on-disk size: 3058.3 KB)
+0015.149 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 1600 files added (on-disk size: 3058.3 KB)
+0015.253 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 1700 files added (on-disk size: 3058.3 KB)
+0015.359 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 1800 files added (on-disk size: 3058.3 KB)
+0015.481 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 1900 files added (on-disk size: 3058.3 KB)
+0015.634 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 2000 files added (on-disk size: 3058.3 KB)
+0015.640 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 1000 files added on this batch (5.3 MB, 8580 files batched, 1001 (2003) added so far); re-opening (prior size: 3058.3 KB)
+0019.605 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 2100 files added (on-disk size: 4740.9 KB)
+0019.754 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 2200 files added (on-disk size: 4740.9 KB)
+0019.905 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 2300 files added (on-disk size: 4740.9 KB)
+0020.039 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 2400 files added (on-disk size: 4740.9 KB)
+0020.157 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 2500 files added (on-disk size: 4740.9 KB)
+0020.282 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 2600 files added (on-disk size: 4740.9 KB)
+0020.373 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 25 MB added on this batch (25.2 MB, 8580 files batched, 656 (2659) added so far); re-opening (prior size: 4740.9 KB)
+0032.148 (0) A useful amount of data was added after this amount of zip processing: 13.4 s (normalised: 13.3 s, rate: 1925.1 KB/s)
+0032.349 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 2700 files added (on-disk size: 11694.2 KB)
+0032.669 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 2800 files added (on-disk size: 11694.2 KB)
+0032.871 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 2900 files added (on-disk size: 11694.2 KB)
+0033.009 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 3000 files added (on-disk size: 11694.2 KB)
+0033.142 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 25 MB added on this batch (25 MB, 8580 files batched, 426 (3085) added so far); re-opening (prior size: 11694.2 KB)
+0046.760 (0) A useful amount of data was added after this amount of zip processing: 15 s (normalised: 15 s, rate: 1706.4 KB/s)
+0046.840 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 3100 files added (on-disk size: 21447.2 KB)
+0046.982 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 3200 files added (on-disk size: 21447.2 KB)
+0047.110 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 3300 files added (on-disk size: 21447.2 KB)
+0047.268 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 3400 files added (on-disk size: 21447.2 KB)
+0047.452 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 3500 files added (on-disk size: 21447.2 KB)
+0047.632 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 3600 files added (on-disk size: 21447.2 KB)
+0047.912 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 3700 files added (on-disk size: 21447.2 KB)
+0048.087 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 3800 files added (on-disk size: 21447.2 KB)
+0048.264 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 3900 files added (on-disk size: 21447.2 KB)
+0048.444 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 4000 files added (on-disk size: 21447.2 KB)
+0048.837 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 1000 files added on this batch (14.8 MB, 8580 files batched, 1001 (4086) added so far); re-opening (prior size: 21447.2 KB)
+0055.950 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 4100 files added (on-disk size: 25683.3 KB)
+0056.077 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 4200 files added (on-disk size: 25683.3 KB)
+0056.178 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 4300 files added (on-disk size: 25683.3 KB)
+0056.281 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 4400 files added (on-disk size: 25683.3 KB)
+0056.422 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 4500 files added (on-disk size: 25683.3 KB)
+0056.534 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 4600 files added (on-disk size: 25683.3 KB)
+0056.608 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 4700 files added (on-disk size: 25683.3 KB)
+0056.698 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 4800 files added (on-disk size: 25683.3 KB)
+0056.829 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 4900 files added (on-disk size: 25683.3 KB)
+0056.957 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 5000 files added (on-disk size: 25683.3 KB)
+0057.040 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 1000 files added on this batch (24.8 MB, 8580 files batched, 1001 (5087) added so far); re-opening (prior size: 25683.3 KB)
+0065.201 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 5100 files added (on-disk size: 32809.1 KB)
+0065.295 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 5200 files added (on-disk size: 32809.1 KB)
+0065.395 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 5300 files added (on-disk size: 32809.1 KB)
+0065.495 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 5400 files added (on-disk size: 32809.1 KB)
+0065.611 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 5500 files added (on-disk size: 32809.1 KB)
+0065.743 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 5600 files added (on-disk size: 32809.1 KB)
+0065.879 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 5700 files added (on-disk size: 32809.1 KB)
+0066.019 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 5800 files added (on-disk size: 32809.1 KB)
+0066.164 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 5900 files added (on-disk size: 32809.1 KB)
+0066.328 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 6000 files added (on-disk size: 32809.1 KB)
+0066.463 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 1000 files added on this batch (5.7 MB, 8580 files batched, 1001 (6088) added so far); re-opening (prior size: 32809.1 KB)
+0071.818 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 6100 files added (on-disk size: 34620.8 KB)
+0071.941 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 6200 files added (on-disk size: 34620.8 KB)
+0072.078 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 6300 files added (on-disk size: 34620.8 KB)
+0072.239 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 6400 files added (on-disk size: 34620.8 KB)
+0072.391 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 6500 files added (on-disk size: 34620.8 KB)
+0072.525 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 6600 files added (on-disk size: 34620.8 KB)
+0072.706 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 6700 files added (on-disk size: 34620.8 KB)
+0072.837 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 6800 files added (on-disk size: 34620.8 KB)
+0072.935 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 6900 files added (on-disk size: 34620.8 KB)
+0073.052 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 7000 files added (on-disk size: 34620.8 KB)
+0073.126 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 1000 files added on this batch (14 MB, 8580 files batched, 1001 (7089) added so far); re-opening (prior size: 34620.8 KB)
+0082.017 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 7100 files added (on-disk size: 39302.5 KB)
+0082.088 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 7200 files added (on-disk size: 39302.5 KB)
+0082.177 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 7300 files added (on-disk size: 39302.5 KB)
+0082.269 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 7400 files added (on-disk size: 39302.5 KB)
+0082.349 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 7500 files added (on-disk size: 39302.5 KB)
+0082.428 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 7600 files added (on-disk size: 39302.5 KB)
+0082.503 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 7700 files added (on-disk size: 39302.5 KB)
+0082.581 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 7800 files added (on-disk size: 39302.5 KB)
+0082.666 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 7900 files added (on-disk size: 39302.5 KB)
+0082.750 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 8000 files added (on-disk size: 39302.5 KB)
+0082.826 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 1000 files added on this batch (14.9 MB, 8580 files batched, 1001 (8090) added so far); re-opening (prior size: 39302.5 KB)
+0088.556 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 8100 files added (on-disk size: 42792.1 KB)
+0088.683 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 8200 files added (on-disk size: 42792.1 KB)
+0088.814 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 8300 files added (on-disk size: 42792.1 KB)
+0088.983 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 8400 files added (on-disk size: 42792.1 KB)
+0089.136 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.tmp: 8500 files added (on-disk size: 42792.1 KB)
+0091.629 (0) Creating zip file manifest (backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.list-temp.tmp)
+0091.756 (0) Successfully created zip file manifest (size: 801256)
+0092.445 (0) Created plugins zip (0) - 43711.1 KB in 92.3 s (473.4 KB/s) (sha1: f8abae874564ebed5a30e1bf58e4726e07c2ccdd, sha256: 82c505053013903a3d571f4ddd0d812b741102cff3ccfdddccdbca8f9441f80c)
+0092.462 (0) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+0092.465 (0) Beginning dispatch of backup to remote (googledrive) (instance identifier s-3299624ddf87412de2af2a6a0989f26b)
+0096.297 (0) Google Drive: quota usage: used=13139.5 MB, total=15360 MB, available=2220.5 MB
+0096.301 (0) Google Drive: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip: Attempting to upload to Google Drive (into folder id: 1q8sqf8HqCoI3IVHeZK-Mla6SEq_KVDXO)
+0098.074 (0) Googledrive chunked upload: 2.3 % uploaded (1048576 - increasing chunk size to 2048 KB - memory usage: 20.1 / 4)
+0099.042 (0) Googledrive chunked upload: 7 % uploaded (3145728 - increasing chunk size to 4096 KB - memory usage: 20.1 / 4)
+0100.962 (0) Googledrive chunked upload: 16.4 % uploaded (7340032 - increasing chunk size to 8192 KB - memory usage: 20.1 / 4)
+0103.698 (0) Googledrive chunked upload: 35.1 % uploaded (15728640)
+0106.475 (0) Googledrive chunked upload: 53.9 % uploaded (24117248)
+0109.352 (0) Googledrive chunked upload: 72.6 % uploaded (32505856)
+0111.957 (0) Googledrive chunked upload: 91.4 % uploaded (40894464)
+0114.568 (0) Googledrive chunked upload: 100 % uploaded (40894464)
+0114.574 (0) Google Drive: OK: Archive backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip uploaded in 18.27 seconds
+0114.576 (0) Recording as successfully uploaded: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip
+0114.585 (0) Deleting local file: backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip: OK
+0114.597 (0) Beginning creation of dump of themes (split every: 400 MB)
+0114.805 (0) Total entities for the zip file: 38 directories, 344 files (0 skipped as non-modified), 12.3 MB
+0114.947 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-themes.zip.tmp: 100 files added (on-disk size: 0 KB)
+0115.077 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-themes.zip.tmp: 200 files added (on-disk size: 0 KB)
+0115.222 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-themes.zip.tmp: 300 files added (on-disk size: 0 KB)
+0118.101 (0) Creating zip file manifest (backup_2026-01-30-0708_Qbotica_30d14d4af23d-themes.zip.list-temp.tmp)
+0118.107 (0) Successfully created zip file manifest (size: 24669)
+0118.270 (0) Created themes zip (0) - 10931 KB in 3.7 s (2981.6 KB/s) (sha1: e41d6431bc209795e894c47bd726dd936484e7b4, sha256: a9248d715ef6dfcb1235e67f7173f84f130418f3e90b47f21b4cec52abd73468)
+0118.280 (0) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+0118.283 (0) Beginning dispatch of backup to remote (googledrive) (instance identifier s-3299624ddf87412de2af2a6a0989f26b)
+0118.835 (0) Google Drive: quota usage: used=13182.2 MB, total=15360 MB, available=2177.8 MB
+0118.837 (0) Google Drive: backup_2026-01-30-0708_Qbotica_30d14d4af23d-themes.zip: Attempting to upload to Google Drive (into folder id: 1q8sqf8HqCoI3IVHeZK-Mla6SEq_KVDXO)
+0120.355 (0) Googledrive chunked upload: 9.4 % uploaded (1048576 - increasing chunk size to 2048 KB - memory usage: 18.5 / 4)
+0121.318 (0) Googledrive chunked upload: 28.1 % uploaded (3145728 - increasing chunk size to 4096 KB - memory usage: 18.5 / 4)
+0122.802 (0) Googledrive chunked upload: 65.6 % uploaded (7340032 - increasing chunk size to 8192 KB - memory usage: 18.5 / 4)
+0125.302 (0) Googledrive chunked upload: 100 % uploaded (7340032)
+0125.308 (0) Google Drive: OK: Archive backup_2026-01-30-0708_Qbotica_30d14d4af23d-themes.zip uploaded in 6.47 seconds
+0125.310 (0) Recording as successfully uploaded: backup_2026-01-30-0708_Qbotica_30d14d4af23d-themes.zip
+0125.316 (0) Deleting local file: backup_2026-01-30-0708_Qbotica_30d14d4af23d-themes.zip: OK
+0125.324 (0) Exclusion option setting (uploads): backup*,*backups,backwpup*,wp-clone,snapshots,wp-staging
+0125.326 (0) Looking for candidates to backup in: C:\wamp64\www\qbdev\backend/wp-content/uploads
+0125.329 (0) finding files: 2023: adding to list (1)
+0125.331 (0) finding files: 2024: adding to list (2)
+0125.332 (0) finding files: 2025: adding to list (3)
+0125.334 (0) finding files: 2026: adding to list (4)
+0125.335 (0) finding files: maxmegamenu: adding to list (5)
+0125.337 (0) finding files: rank-math: adding to list (6)
+0125.338 (0) finding files: wp-migrate-db: adding to list (7)
+0125.340 (0) finding files: wpallexport: adding to list (8)
+0125.342 (0) Beginning creation of dump of uploads (split every: 400 MB)
+0129.126 (0) Total entities for the zip file: 31 directories, 4043 files (0 skipped as non-modified), 146.8 MB
+0129.136 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (0 MB, 1 (1) files added so far); re-opening (prior size: 0 KB)
+0129.268 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 100 files added (on-disk size: 9 KB)
+0129.372 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 200 files added (on-disk size: 9 KB)
+0129.489 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 300 files added (on-disk size: 9 KB)
+0129.623 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 400 files added (on-disk size: 9 KB)
+0129.735 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 500 files added (on-disk size: 9 KB)
+0129.877 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 600 files added (on-disk size: 9 KB)
+0130.017 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 700 files added (on-disk size: 9 KB)
+0130.167 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 800 files added (on-disk size: 9 KB)
+0130.230 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 25 MB added on this batch (25 MB, 4043 files batched, 839 (840) added so far); re-opening (prior size: 9 KB)
+0144.537 (0) A useful amount of data was added after this amount of zip processing: 15.8 s (normalised: 15.8 s, rate: 1621.1 KB/s)
+0144.646 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 900 files added (on-disk size: 25647.7 KB)
+0144.773 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 1000 files added (on-disk size: 25647.7 KB)
+0144.902 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 1100 files added (on-disk size: 25647.7 KB)
+0145.007 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 1200 files added (on-disk size: 25647.7 KB)
+0145.107 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 1300 files added (on-disk size: 25647.7 KB)
+0145.229 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 1400 files added (on-disk size: 25647.7 KB)
+0145.357 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 1500 files added (on-disk size: 25647.7 KB)
+0145.451 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 1600 files added (on-disk size: 25647.7 KB)
+0145.563 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 1700 files added (on-disk size: 25647.7 KB)
+0145.705 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 1800 files added (on-disk size: 25647.7 KB)
+0145.763 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 1000 files added on this batch (23.7 MB, 4043 files batched, 1001 (1841) added so far); re-opening (prior size: 25647.7 KB)
+0160.899 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 1900 files added (on-disk size: 49259.4 KB)
+0160.990 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 2000 files added (on-disk size: 49259.4 KB)
+0161.103 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 2100 files added (on-disk size: 49259.4 KB)
+0161.216 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 2200 files added (on-disk size: 49259.4 KB)
+0161.346 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 2300 files added (on-disk size: 49259.4 KB)
+0161.467 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 2400 files added (on-disk size: 49259.4 KB)
+0161.544 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 2500 files added (on-disk size: 49259.4 KB)
+0161.627 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 2600 files added (on-disk size: 49259.4 KB)
+0161.702 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 25 MB added on this batch (25 MB, 4043 files batched, 825 (2666) added so far); re-opening (prior size: 49259.4 KB)
+0175.654 (0) A useful amount of data was added after this amount of zip processing: 14.9 s (normalised: 14.9 s, rate: 1715.6 KB/s)
+0175.730 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 2700 files added (on-disk size: 74162.7 KB)
+0175.839 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 2800 files added (on-disk size: 74162.7 KB)
+0175.970 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 2900 files added (on-disk size: 74162.7 KB)
+0176.131 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 3000 files added (on-disk size: 74162.7 KB)
+0176.258 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 3100 files added (on-disk size: 74162.7 KB)
+0176.421 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 3200 files added (on-disk size: 74162.7 KB)
+0176.582 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 3300 files added (on-disk size: 74162.7 KB)
+0176.735 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 3400 files added (on-disk size: 74162.7 KB)
+0176.863 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 25 MB added on this batch (25 MB, 4043 files batched, 817 (3483) added so far); re-opening (prior size: 74162.7 KB)
+0190.522 (0) A useful amount of data was added after this amount of zip processing: 15.8 s (normalised: 15.8 s, rate: 1621.5 KB/s)
+0190.589 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 3500 files added (on-disk size: 99872.2 KB)
+0190.713 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 3600 files added (on-disk size: 99872.2 KB)
+0190.821 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 3700 files added (on-disk size: 99872.2 KB)
+0190.923 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 3800 files added (on-disk size: 99872.2 KB)
+0191.019 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 25 MB added on this batch (44.8 MB, 4043 files batched, 408 (3891) added so far); re-opening (prior size: 99872.2 KB)
+0202.797 (0) A useful amount of data was added after this amount of zip processing: 13.1 s (normalised: 7.3 s, rate: 3507.3 KB/s)
+0202.866 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 3900 files added (on-disk size: 123730.8 KB)
+0202.991 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.tmp: 4000 files added (on-disk size: 123730.8 KB)
+0205.632 (0) Creating zip file manifest (backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.list-temp.tmp)
+0205.675 (0) Successfully created zip file manifest (size: 304662)
+0207.778 (0) Created uploads zip (0) - 127039.3 KB in 82.4 s (1541.2 KB/s) (sha1: d33b9ea289a34d34425fb4bd611b0c150297a3ee, sha256: 4acc036e8c28be013587e7bd275642260211dfec0acd56a5e90d21d9c3ac7caa)
+0207.795 (0) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+0207.798 (0) Beginning dispatch of backup to remote (googledrive) (instance identifier s-3299624ddf87412de2af2a6a0989f26b)
+0208.723 (0) Google Drive: quota usage: used=13192.9 MB, total=15360 MB, available=2167.1 MB
+0208.726 (0) Google Drive: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip: Attempting to upload to Google Drive (into folder id: 1q8sqf8HqCoI3IVHeZK-Mla6SEq_KVDXO)
+0211.844 (0) Googledrive chunked upload: 0.8 % uploaded (1048576)
+0212.611 (0) Googledrive chunked upload: 1.6 % uploaded (2097152 - increasing chunk size to 2048 KB - memory usage: 19 / 4)
+0213.793 (0) Googledrive chunked upload: 3.2 % uploaded (4194304 - increasing chunk size to 4096 KB - memory usage: 19 / 4)
+0215.523 (0) Googledrive chunked upload: 6.4 % uploaded (8388608 - increasing chunk size to 8192 KB - memory usage: 19 / 4)
+0218.235 (0) Googledrive chunked upload: 12.9 % uploaded (16777216)
+0221.052 (0) Googledrive chunked upload: 19.3 % uploaded (25165824)
+0223.840 (0) Googledrive chunked upload: 25.8 % uploaded (33554432)
+0226.577 (0) Googledrive chunked upload: 32.2 % uploaded (41943040)
+0229.206 (0) Googledrive chunked upload: 38.7 % uploaded (50331648)
+0232.010 (0) Googledrive chunked upload: 45.1 % uploaded (58720256)
+0234.586 (0) Googledrive chunked upload: 51.6 % uploaded (67108864)
+0237.468 (0) Googledrive chunked upload: 58 % uploaded (75497472)
+0240.102 (0) Googledrive chunked upload: 64.5 % uploaded (83886080)
+0242.787 (0) Googledrive chunked upload: 70.9 % uploaded (92274688)
+0246.001 (0) Googledrive chunked upload: 77.4 % uploaded (100663296)
+0248.624 (0) Googledrive chunked upload: 83.8 % uploaded (109051904)
+0251.289 (0) Googledrive chunked upload: 90.3 % uploaded (117440512)
+0253.883 (0) Googledrive chunked upload: 96.7 % uploaded (125829120)
+0256.315 (0) The scheduled resumption is within 45 seconds - will reschedule
+0256.320 (0) Rescheduling resumption 1: moving to 345 seconds from now (1769757516)
+0256.325 (0) To decrease the likelihood of overlaps, increasing resumption interval to: 300 + 45 = 345
+0256.327 (0) Googledrive chunked upload: 100 % uploaded (125829120)
+0256.333 (0) Google Drive: OK: Archive backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip uploaded in 47.61 seconds
+0256.336 (0) Recording as successfully uploaded: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip
+0256.357 (0) Deleting local file: backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip: OK
+0256.367 (0) Beginning creation of dump of mu-plugins (split every: 400 MB)
+0256.376 (0) Total entities for the zip file: 1 directories, 2 files (0 skipped as non-modified), 0.1 MB
+0256.405 (0) Creating zip file manifest (backup_2026-01-30-0708_Qbotica_30d14d4af23d-mu-plugins.zip.list-temp.tmp)
+0256.409 (0) Successfully created zip file manifest (size: 143)
+0256.421 (0) Created mu-plugins zip (0) - 11.2 KB in 0 s (238.9 KB/s) (sha1: 0b9277b07c7dfb77aadf1ec58220b31a3adb44e1, sha256: 901829de33b3f3f9c475cf7148a4b21103c703df120cf3ada4032acdc3353d8c)
+0256.430 (0) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+0256.432 (0) Beginning dispatch of backup to remote (googledrive) (instance identifier s-3299624ddf87412de2af2a6a0989f26b)
+0256.939 (0) Google Drive: quota usage: used=13246.6 MB, total=15360 MB, available=2113.4 MB
+0256.942 (0) Google Drive: backup_2026-01-30-0708_Qbotica_30d14d4af23d-mu-plugins.zip: Attempting to upload to Google Drive (into folder id: 1q8sqf8HqCoI3IVHeZK-Mla6SEq_KVDXO)
+0262.873 (0) Googledrive chunked upload: 100 % uploaded
+0262.880 (0) Google Drive: OK: Archive backup_2026-01-30-0708_Qbotica_30d14d4af23d-mu-plugins.zip uploaded in 5.94 seconds
+0262.883 (0) Recording as successfully uploaded: backup_2026-01-30-0708_Qbotica_30d14d4af23d-mu-plugins.zip
+0262.887 (0) Deleting local file: backup_2026-01-30-0708_Qbotica_30d14d4af23d-mu-plugins.zip: OK
+0262.897 (0) Beginning backup of other directories found in the content directory (index: 0)
+0262.899 (0) Exclusion option setting (others): upgrade,cache,updraft,backup*,*backups,mysql.sql,debug.log
+0262.901 (0) Looking for candidates to backup in: C:\wamp64\www\qbdev\backend/wp-content
+0262.903 (0) finding files: ewww: adding to list (1)
+0262.905 (0) finding files: index.php: adding to list (2)
+0262.907 (0) finding files: litespeed: adding to list (3)
+0262.908 (0) finding files: mu-plugins: skipping: this is the mu-plugins directory
+0262.910 (0) finding files: plugins: skipping: this is the plugins directory
+0262.912 (0) finding files: themes: skipping: this is the themes directory
+0262.914 (0) finding files: updraft: skipping: this is the updraft directory
+0262.916 (0) finding files: upgrade: skipping: excluded by options
+0262.917 (0) finding files: uploads: skipping: this is the uploads directory
+0262.919 (0) finding files: wpvividbackups: skipping: excluded by options (glob)
+0262.921 (0) finding files: wpvivid_staging: adding to list (4)
+0262.923 (0) finding files: wpvivid_uploads: adding to list (5)
+0262.965 (0) Total entities for the zip file: 7 directories, 115 files (0 skipped as non-modified), 6.9 MB
+0263.044 (0) Zip: backup_2026-01-30-0708_Qbotica_30d14d4af23d-others.zip.tmp: 100 files added (on-disk size: 0 KB)
+0265.234 (0) Creating zip file manifest (backup_2026-01-30-0708_Qbotica_30d14d4af23d-others.zip.list-temp.tmp)
+0265.240 (0) Successfully created zip file manifest (size: 5006)
+0265.312 (0) Created others zip (0) - 3411.5 KB in 2.4 s (1432.6 KB/s) (sha1: 4b5d7181e17600c83dadea631c8944390b99ba5c, sha256: b3b71772e407c649d399d0384646fdcdf00cf5fd88e80ff3000e841b678a0383)
+0265.323 (0) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+0265.326 (0) Beginning dispatch of backup to remote (googledrive) (instance identifier s-3299624ddf87412de2af2a6a0989f26b)
+0265.999 (0) Google Drive: quota usage: used=13370.7 MB, total=15360 MB, available=1989.3 MB
+0266.002 (0) Google Drive: backup_2026-01-30-0708_Qbotica_30d14d4af23d-others.zip: Attempting to upload to Google Drive (into folder id: 1q8sqf8HqCoI3IVHeZK-Mla6SEq_KVDXO)
+0267.607 (0) Googledrive chunked upload: 30 % uploaded (1048576 - increasing chunk size to 2048 KB - memory usage: 18.5 / 4)
+0268.601 (0) Googledrive chunked upload: 90 % uploaded (3145728 - increasing chunk size to 4096 KB - memory usage: 18.5 / 4)
+0270.321 (0) Googledrive chunked upload: 100 % uploaded (3145728)
+0270.326 (0) Google Drive: OK: Archive backup_2026-01-30-0708_Qbotica_30d14d4af23d-others.zip uploaded in 4.32 seconds
+0270.328 (0) Recording as successfully uploaded: backup_2026-01-30-0708_Qbotica_30d14d4af23d-others.zip
+0270.333 (0) Deleting local file: backup_2026-01-30-0708_Qbotica_30d14d4af23d-others.zip: OK
+0270.344 (0) Saving backup status to database (elements: 10)
+0270.351 (0) Beginning creation of database dump (WordPress DB)
+0270.354 (0) Couldn't get the sql_mode value (N;); will not attempt any adjustment
+0270.386 (0) Table qbo_options: Total expected rows (via COUNT): 661
+0270.508 (0) Table qbo_options: Rows added in this batch (next record: 106453): 657 (uncompressed bytes in this segment=1342074) in 0.13 seconds
+0270.524 (0) Table qbo_options: finishing file(s) (2, 270.5 KB)
+0270.537 (0) Table qbo_users: Total expected rows (via COUNT): 2
+0270.539 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0270.545 (0) Table qbo_users: Rows added in this batch (next record: 3): 2 (uncompressed bytes in this segment=1607) in 0.01 seconds
+0270.561 (0) Table qbo_users: finishing file(s) (2, 0.7 KB)
+0270.575 (0) Table qbo_usermeta: Total expected rows (via COUNT): 109
+0270.576 (0) Table is relatively small; fetch_rows will thus be: 200 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0270.584 (0) Table qbo_usermeta: Rows added in this batch (next record: 149): 109 (uncompressed bytes in this segment=12649) in 0.02 seconds
+0270.600 (0) Table qbo_usermeta: finishing file(s) (2, 3.6 KB)
+0270.615 (0) Table qbo_actionscheduler_actions: Total expected rows (via COUNT): 38
+0270.617 (0) Table is relatively small; fetch_rows will thus be: 50 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0270.625 (0) Table qbo_actionscheduler_actions: Rows added in this batch (next record: 1203): 38 (uncompressed bytes in this segment=21418) in 0.02 seconds
+0270.640 (0) Table qbo_actionscheduler_actions: finishing file(s) (2, 2.4 KB)
+0270.650 (0) Table qbo_actionscheduler_claims: Total expected rows (via COUNT): 0
+0270.655 (0) Table qbo_actionscheduler_claims: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=629) in 0.01 seconds
+0270.666 (0) Table qbo_actionscheduler_claims: finishing file(s) (2, 0.4 KB)
+0270.690 (0) Table qbo_actionscheduler_groups: Total expected rows (via COUNT): 3
+0270.692 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0270.697 (0) Table qbo_actionscheduler_groups: Rows added in this batch (next record: 3): 3 (uncompressed bytes in this segment=736) in 0.02 seconds
+0270.708 (0) Table qbo_actionscheduler_groups: finishing file(s) (2, 0.4 KB)
+0270.731 (0) Table qbo_actionscheduler_logs: Total expected rows (via COUNT): 113
+0270.733 (0) Table is relatively small; fetch_rows will thus be: 200 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0270.745 (0) Table qbo_actionscheduler_logs: Rows added in this batch (next record: 631): 113 (uncompressed bytes in this segment=11586) in 0.03 seconds
+0270.757 (0) Table qbo_actionscheduler_logs: finishing file(s) (2, 1.8 KB)
+0270.782 (0) Table qbo_commentmeta: Total expected rows (via COUNT): 0
+0270.786 (0) Table qbo_commentmeta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=701) in 0.02 seconds
+0270.798 (0) Table qbo_commentmeta: finishing file(s) (2, 0.4 KB)
+0270.808 (0) Table qbo_comments: Total expected rows (via COUNT): 4
+0270.810 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0270.816 (0) Table qbo_comments: Rows added in this batch (next record: 5): 4 (uncompressed bytes in this segment=2810) in 0.01 seconds
+0270.826 (0) Table qbo_comments: finishing file(s) (2, 0.8 KB)
+0270.851 (0) Table qbo_links: Total expected rows (via COUNT): 0
+0270.856 (0) Table qbo_links: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1304) in 0.02 seconds
+0270.868 (0) Table qbo_links: finishing file(s) (2, 0.5 KB)
+0273.392 (0) Table qbo_postmeta: Total expected rows (approximate): 1581066
+0273.396 (0) [Warning] Table qbo_postmeta has very many rows (1581066) - we hope your web hosting company gives you enough resources to dump out that table in the backup. If not, you will need to either remove data from this table, or contact your hosting company to request more resources.
+0289.197 (0) Table qbo_postmeta: Rows added in this batch (next record: 398417): 384000 (uncompressed bytes in this segment=40017595) in 18.32 seconds
+0289.836 (0) Table qbo_postmeta: Total expected rows (via COUNT): 1582013
+0289.840 (0) [Warning] Table qbo_postmeta has very many rows (1582013) - we hope your web hosting company gives you enough resources to dump out that table in the backup. If not, you will need to either remove data from this table, or contact your hosting company to request more resources.
+0301.545 (0) Table qbo_postmeta: Rows added in this batch (next record: 793968): 384000 (uncompressed bytes in this segment=41632510) in 12.33 seconds
+0301.936 (0) Table qbo_postmeta: Total expected rows (via COUNT): 1582013
+0301.939 (0) [Warning] Table qbo_postmeta has very many rows (1582013) - we hope your web hosting company gives you enough resources to dump out that table in the backup. If not, you will need to either remove data from this table, or contact your hosting company to request more resources.
+0315.494 (0) Table qbo_postmeta: Rows added in this batch (next record: 1179146): 384000 (uncompressed bytes in this segment=37345082) in 13.93 seconds
+0315.518 (0) The time we have been running (315.5) is approaching the resumption interval (345) - increasing resumption interval to 346
+0316.130 (0) Table qbo_postmeta: Total expected rows (via COUNT): 1582013
+0316.135 (0) [Warning] Table qbo_postmeta has very many rows (1582013) - we hope your web hosting company gives you enough resources to dump out that table in the backup. If not, you will need to either remove data from this table, or contact your hosting company to request more resources.
+0331.924 (0) Table qbo_postmeta: Rows added in this batch (next record: 1567479): 384000 (uncompressed bytes in this segment=38412429) in 16.40 seconds
+0331.971 (0) The time we have been running (332) is approaching the resumption interval (346) - increasing resumption interval to 362
+0332.895 (0) Table qbo_postmeta: Total expected rows (via COUNT): 1582013
+0332.901 (0) [Warning] Table qbo_postmeta has very many rows (1582013) - we hope your web hosting company gives you enough resources to dump out that table in the backup. If not, you will need to either remove data from this table, or contact your hosting company to request more resources.
+0337.201 (0) Table qbo_postmeta: Rows added in this batch (next record: 1614084): 46013 (uncompressed bytes in this segment=3966928) in 5.21 seconds
+0337.267 (0) The time we have been running (337.2) is approaching the resumption interval (362) - increasing resumption interval to 368
+0337.336 (0) Table qbo_postmeta: finishing file(s) (6, 21677.3 KB)
+0337.632 (0) Table qbo_posts: Total expected rows (approximate): 6401
+0341.880 (0) Table qbo_posts: Rows added in this batch (next record: 8016): 6898 (uncompressed bytes in this segment=16459149) in 4.51 seconds
+0341.911 (0) The time we have been running (341.9) is approaching the resumption interval (368) - increasing resumption interval to 372
+0341.936 (0) Table qbo_posts: finishing file(s) (2, 2575 KB)
+0341.960 (0) Table qbo_term_relationships: Total expected rows (approximate): 272
+0341.982 (0) Table qbo_term_relationships: Rows added in this batch (next record: 100000): 272 (uncompressed bytes in this segment=4781) in 0.03 seconds
+0342.021 (0) The time we have been running (342) is approaching the resumption interval (372) - increasing resumption interval to 373
+0342.034 (0) Table qbo_term_relationships: finishing file(s) (2, 1.1 KB)
+0342.063 (0) Table qbo_term_taxonomy: Total expected rows (via COUNT): 19
+0342.067 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0342.080 (0) Table qbo_term_taxonomy: Rows added in this batch (next record: 19): 19 (uncompressed bytes in this segment=1504) in 0.03 seconds
+0342.112 (0) Table qbo_term_taxonomy: finishing file(s) (2, 0.6 KB)
+0342.141 (0) Table qbo_termmeta: Total expected rows (via COUNT): 0
+0342.151 (0) Table qbo_termmeta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=656) in 0.02 seconds
+0342.182 (0) Table qbo_termmeta: finishing file(s) (2, 0.4 KB)
+0342.203 (0) Table qbo_terms: Total expected rows (via COUNT): 19
+0342.209 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0342.222 (0) Table qbo_terms: Rows added in this batch (next record: 19): 19 (uncompressed bytes in this segment=1453) in 0.02 seconds
+0342.244 (0) Table qbo_terms: finishing file(s) (2, 0.7 KB)
+0342.289 (0) Table qbo_ewwwio_images: Total expected rows (via COUNT): 417
+0342.295 (0) Table is relatively small; fetch_rows will thus be: 500 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0342.427 (0) Table qbo_ewwwio_images: Rows added in this batch (next record: 424): 417 (uncompressed bytes in this segment=89293) in 0.17 seconds
+0342.468 (0) Table qbo_ewwwio_images: finishing file(s) (2, 13.1 KB)
+0342.517 (0) Table qbo_ewwwio_queue: Total expected rows (via COUNT): 0
+0342.529 (0) Table qbo_ewwwio_queue: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=822) in 0.04 seconds
+0342.555 (0) Table qbo_ewwwio_queue: finishing file(s) (2, 0.4 KB)
+0342.601 (0) Table qbo_litespeed_url: Total expected rows (via COUNT): 0
+0342.608 (0) Table qbo_litespeed_url: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=641) in 0.03 seconds
+0342.633 (0) Table qbo_litespeed_url: finishing file(s) (2, 0.4 KB)
+0342.681 (0) Table qbo_litespeed_url_file: Total expected rows (via COUNT): 0
+0342.685 (0) Table qbo_litespeed_url_file: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1096) in 0.03 seconds
+0342.719 (0) Table qbo_litespeed_url_file: finishing file(s) (2, 0.5 KB)
+0342.762 (0) Table qbo_pmxe_exports: Total expected rows (via COUNT): 2
+0342.766 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0342.797 (0) Table qbo_pmxe_exports: Rows added in this batch (next record: 2): 2 (uncompressed bytes in this segment=130287) in 0.05 seconds
+0342.841 (0) Table qbo_pmxe_exports: finishing file(s) (2, 34 KB)
+0342.898 (0) Table qbo_pmxe_google_cats: Total expected rows (approximate): 5365
+0343.413 (0) Table qbo_pmxe_google_cats: Rows added in this batch (next record: 505832): 5371 (uncompressed bytes in this segment=327578) in 0.55 seconds
+0343.435 (0) The time we have been running (343.4) is approaching the resumption interval (373) - increasing resumption interval to 374
+0343.462 (0) Table qbo_pmxe_google_cats: finishing file(s) (2, 75.3 KB)
+0343.513 (0) Table qbo_pmxe_posts: Total expected rows (via COUNT): 330
+0343.517 (0) Table is relatively small; fetch_rows will thus be: 500 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0343.544 (0) Table qbo_pmxe_posts: Rows added in this batch (next record: 330): 330 (uncompressed bytes in this segment=7078) in 0.06 seconds
+0343.574 (0) Table qbo_pmxe_posts: finishing file(s) (2, 2 KB)
+0343.623 (0) Table qbo_pmxe_templates: Total expected rows (via COUNT): 0
+0343.636 (0) Table qbo_pmxe_templates: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=567) in 0.04 seconds
+0343.686 (0) Table qbo_pmxe_templates: finishing file(s) (2, 0.3 KB)
+0343.739 (0) Table qbo_rank_math_404_logs: Total expected rows (via COUNT): 0
+0343.746 (0) Table qbo_rank_math_404_logs: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=828) in 0.03 seconds
+0343.788 (0) Table qbo_rank_math_404_logs: finishing file(s) (2, 0.4 KB)
+0343.818 (0) Table qbo_rank_math_internal_links: Total expected rows (approximate): 1146
+0343.957 (0) Table qbo_rank_math_internal_links: Rows added in this batch (next record: 6096): 1146 (uncompressed bytes in this segment=98995) in 0.14 seconds
+0344.054 (0) The time we have been running (344) is approaching the resumption interval (374) - increasing resumption interval to 375
+0344.067 (0) Table qbo_rank_math_internal_links: finishing file(s) (2, 15.4 KB)
+0344.090 (0) Table qbo_rank_math_internal_meta: Total expected rows (via COUNT): 469
+0344.096 (0) Table is relatively small; fetch_rows will thus be: 500 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0344.118 (0) Table qbo_rank_math_internal_meta: Rows added in this batch (next record: 8013): 469 (uncompressed bytes in this segment=9152) in 0.03 seconds
+0344.150 (0) Table qbo_rank_math_internal_meta: finishing file(s) (2, 2.1 KB)
+0344.195 (0) Table qbo_redirection_404: Total expected rows (via COUNT): 0
+0344.205 (0) Table qbo_redirection_404: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1075) in 0.04 seconds
+0344.247 (0) Table qbo_redirection_404: finishing file(s) (2, 0.4 KB)
+0344.293 (0) Table qbo_redirection_groups: Total expected rows (via COUNT): 4
+0344.299 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0344.312 (0) Table qbo_redirection_groups: Rows added in this batch (next record: 4): 4 (uncompressed bytes in this segment=1049) in 0.04 seconds
+0344.347 (0) Table qbo_redirection_groups: finishing file(s) (2, 0.5 KB)
+0344.371 (0) Table qbo_redirection_items: Total expected rows (via COUNT): 411
+0344.376 (0) Table is relatively small; fetch_rows will thus be: 500 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0344.477 (0) Table qbo_redirection_items: Rows added in this batch (next record: 414): 411 (uncompressed bytes in this segment=111629) in 0.11 seconds
+0344.517 (0) Table qbo_redirection_items: finishing file(s) (2, 12.6 KB)
+0344.562 (0) Table qbo_redirection_logs: Total expected rows (via COUNT): 0
+0344.576 (0) Table qbo_redirection_logs: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1232) in 0.04 seconds
+0344.596 (0) Table qbo_redirection_logs: finishing file(s) (2, 0.5 KB)
+0344.623 (0) Table qbo_wpvivid_options: Total expected rows (via COUNT): 0
+0344.630 (0) Table qbo_wpvivid_options: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=558) in 0.02 seconds
+0344.655 (0) Table qbo_wpvivid_options: finishing file(s) (2, 0.3 KB)
+0344.809 (0) Table qbo_wsal_metadata: Total expected rows (approximate): 43689
+0347.581 (0) Table qbo_wsal_metadata: Rows added in this batch (next record: 49638): 49638 (uncompressed bytes in this segment=2987758) in 2.91 seconds
+0347.611 (0) The time we have been running (347.6) is approaching the resumption interval (375) - increasing resumption interval to 378
+0347.638 (0) Table qbo_wsal_metadata: finishing file(s) (2, 433.4 KB)
+0347.664 (0) Table qbo_wsal_occurrences: Total expected rows (approximate): 11620
+0349.947 (0) Table qbo_wsal_occurrences: Rows added in this batch (next record: 11817): 11817 (uncompressed bytes in this segment=3155047) in 2.29 seconds
+0349.968 (0) The time we have been running (350) is approaching the resumption interval (378) - increasing resumption interval to 380
+0349.986 (0) Table qbo_wsal_occurrences: finishing file(s) (2, 134.5 KB)
+0350.036 (0) Table qbo_yoast_indexable: Total expected rows (via COUNT): 36
+0350.041 (0) Table is relatively small; fetch_rows will thus be: 50 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0350.070 (0) Table qbo_yoast_indexable: Rows added in this batch (next record: 41): 36 (uncompressed bytes in this segment=22637) in 0.07 seconds
+0350.092 (0) The time we have been running (350.1) is approaching the resumption interval (380) - increasing resumption interval to 381
+0350.112 (0) Table qbo_yoast_indexable: finishing file(s) (2, 4.4 KB)
+0350.132 (0) Table qbo_yoast_indexable_hierarchy: Total expected rows (approximate): 33
+0350.157 (0) Table qbo_yoast_indexable_hierarchy: Rows added in this batch (next record: 1000): 33 (uncompressed bytes in this segment=1315) in 0.03 seconds
+0350.178 (0) Table qbo_yoast_indexable_hierarchy: finishing file(s) (2, 0.5 KB)
+0350.212 (0) Table qbo_yoast_migrations: Total expected rows (via COUNT): 24
+0350.217 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0350.230 (0) Table qbo_yoast_migrations: Rows added in this batch (next record: 24): 24 (uncompressed bytes in this segment=1270) in 0.04 seconds
+0350.251 (0) Table qbo_yoast_migrations: finishing file(s) (2, 0.6 KB)
+0350.288 (0) Table qbo_yoast_primary_term: Total expected rows (via COUNT): 4
+0350.292 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0350.298 (0) Table qbo_yoast_primary_term: Rows added in this batch (next record: 4): 4 (uncompressed bytes in this segment=1209) in 0.03 seconds
+0350.319 (0) Table qbo_yoast_primary_term: finishing file(s) (2, 0.6 KB)
+0350.361 (0) Table qbo_yoast_seo_links: Total expected rows (via COUNT): 26
+0350.365 (0) Table is relatively small; fetch_rows will thus be: 50 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0350.379 (0) Table qbo_yoast_seo_links: Rows added in this batch (next record: 33): 26 (uncompressed bytes in this segment=3474) in 0.04 seconds
+0350.400 (0) Table qbo_yoast_seo_links: finishing file(s) (2, 0.6 KB)
+0350.411 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_options.table.tmpr106454.gz (1/39/fopen): adding to final database dump
+0350.441 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_options.table.gz (2/39/fopen): adding to final database dump
+0350.447 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_users.table.tmpr4.gz (3/39/fopen): adding to final database dump
+0350.454 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_users.table.gz (4/39/fopen): adding to final database dump
+0350.458 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_usermeta.table.tmpr150.gz (5/39/fopen): adding to final database dump
+0350.463 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_usermeta.table.gz (6/39/fopen): adding to final database dump
+0350.469 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_actionscheduler_actions.table.tmpr1204.gz (7/39/fopen): adding to final database dump
+0350.474 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_actionscheduler_actions.table.gz (8/39/fopen): adding to final database dump
+0350.479 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_actionscheduler_claims.table.tmpr0.gz (9/39/fopen): adding to final database dump
+0350.483 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_actionscheduler_claims.table.gz (10/39/fopen): adding to final database dump
+0350.489 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_actionscheduler_groups.table.tmpr4.gz (11/39/fopen): adding to final database dump
+0350.494 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_actionscheduler_groups.table.gz (12/39/fopen): adding to final database dump
+0350.498 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_actionscheduler_logs.table.tmpr632.gz (13/39/fopen): adding to final database dump
+0350.504 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_actionscheduler_logs.table.gz (14/39/fopen): adding to final database dump
+0350.508 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_commentmeta.table.tmpr0.gz (15/39/fopen): adding to final database dump
+0350.513 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_commentmeta.table.gz (16/39/fopen): adding to final database dump
+0350.517 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_comments.table.tmpr6.gz (17/39/fopen): adding to final database dump
+0350.524 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_comments.table.gz (18/39/fopen): adding to final database dump
+0350.529 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_links.table.tmpr0.gz (19/39/fopen): adding to final database dump
+0350.534 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_links.table.gz (20/39/fopen): adding to final database dump
+0350.539 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_postmeta.table.tmpr398417.gz (21/39/fopen): adding to final database dump
+0350.927 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_postmeta.table.tmpr793968.gz (22/39/fopen): adding to final database dump
+0351.340 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_postmeta.table.tmpr1179146.gz (23/39/fopen): adding to final database dump
+0351.724 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_postmeta.table.tmpr1567479.gz (24/39/fopen): adding to final database dump
+0352.124 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_postmeta.table.tmpr1614085.gz (25/39/fopen): adding to final database dump
+0352.161 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_postmeta.table.gz (26/39/fopen): adding to final database dump
+0352.166 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_posts.table.tmpr8017.gz (27/39/fopen): adding to final database dump
+0352.405 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_posts.table.gz (28/39/fopen): adding to final database dump
+0352.412 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_term_relationships.table.tmpr100001.gz (29/39/fopen): adding to final database dump
+0352.416 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_term_relationships.table.gz (30/39/fopen): adding to final database dump
+0352.422 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_term_taxonomy.table.tmpr20.gz (31/39/fopen): adding to final database dump
+0352.426 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_term_taxonomy.table.gz (32/39/fopen): adding to final database dump
+0352.432 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_termmeta.table.tmpr0.gz (33/39/fopen): adding to final database dump
+0352.438 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_termmeta.table.gz (34/39/fopen): adding to final database dump
+0352.442 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_terms.table.tmpr20.gz (35/39/fopen): adding to final database dump
+0352.447 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_terms.table.gz (36/39/fopen): adding to final database dump
+0352.451 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_ewwwio_images.table.tmpr425.gz (37/39/fopen): adding to final database dump
+0352.457 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_ewwwio_images.table.gz (38/39/fopen): adding to final database dump
+0352.461 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_ewwwio_queue.table.tmpr0.gz (39/39/fopen): adding to final database dump
+0352.466 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_ewwwio_queue.table.gz (40/39/fopen): adding to final database dump
+0352.471 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_litespeed_url.table.tmpr0.gz (41/39/fopen): adding to final database dump
+0352.477 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_litespeed_url.table.gz (42/39/fopen): adding to final database dump
+0352.482 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_litespeed_url_file.table.tmpr0.gz (43/39/fopen): adding to final database dump
+0352.488 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_litespeed_url_file.table.gz (44/39/fopen): adding to final database dump
+0352.493 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_pmxe_exports.table.tmpr3.gz (45/39/fopen): adding to final database dump
+0352.502 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_pmxe_exports.table.gz (46/39/fopen): adding to final database dump
+0352.507 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_pmxe_google_cats.table.tmpr505833.gz (47/39/fopen): adding to final database dump
+0352.516 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_pmxe_google_cats.table.gz (48/39/fopen): adding to final database dump
+0352.523 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_pmxe_posts.table.tmpr331.gz (49/39/fopen): adding to final database dump
+0352.528 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_pmxe_posts.table.gz (50/39/fopen): adding to final database dump
+0352.533 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_pmxe_templates.table.tmpr0.gz (51/39/fopen): adding to final database dump
+0352.538 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_pmxe_templates.table.gz (52/39/fopen): adding to final database dump
+0352.543 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_rank_math_404_logs.table.tmpr0.gz (53/39/fopen): adding to final database dump
+0352.548 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_rank_math_404_logs.table.gz (54/39/fopen): adding to final database dump
+0352.553 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_rank_math_internal_links.table.tmpr6097.gz (55/39/fopen): adding to final database dump
+0352.559 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_rank_math_internal_links.table.gz (56/39/fopen): adding to final database dump
+0352.564 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_rank_math_internal_meta.table.tmpr8014.gz (57/39/fopen): adding to final database dump
+0352.568 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_rank_math_internal_meta.table.gz (58/39/fopen): adding to final database dump
+0352.575 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_redirection_404.table.tmpr0.gz (59/39/fopen): adding to final database dump
+0352.580 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_redirection_404.table.gz (60/39/fopen): adding to final database dump
+0352.585 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_redirection_groups.table.tmpr5.gz (61/39/fopen): adding to final database dump
+0352.590 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_redirection_groups.table.gz (62/39/fopen): adding to final database dump
+0352.594 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_redirection_items.table.tmpr415.gz (63/39/fopen): adding to final database dump
+0352.598 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_redirection_items.table.gz (64/39/fopen): adding to final database dump
+0352.603 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_redirection_logs.table.tmpr0.gz (65/39/fopen): adding to final database dump
+0352.607 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_redirection_logs.table.gz (66/39/fopen): adding to final database dump
+0352.611 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_wpvivid_options.table.tmpr0.gz (67/39/fopen): adding to final database dump
+0352.617 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_wpvivid_options.table.gz (68/39/fopen): adding to final database dump
+0352.622 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_wsal_metadata.table.tmpr49639.gz (69/39/fopen): adding to final database dump
+0352.660 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_wsal_metadata.table.gz (70/39/fopen): adding to final database dump
+0352.664 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_wsal_occurrences.table.tmpr11818.gz (71/39/fopen): adding to final database dump
+0352.680 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_wsal_occurrences.table.gz (72/39/fopen): adding to final database dump
+0352.685 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_yoast_indexable.table.tmpr42.gz (73/39/fopen): adding to final database dump
+0352.690 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_yoast_indexable.table.gz (74/39/fopen): adding to final database dump
+0352.695 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_yoast_indexable_hierarchy.table.tmpr1001.gz (75/39/fopen): adding to final database dump
+0352.702 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_yoast_indexable_hierarchy.table.gz (76/39/fopen): adding to final database dump
+0352.707 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_yoast_migrations.table.tmpr25.gz (77/39/fopen): adding to final database dump
+0352.711 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_yoast_migrations.table.gz (78/39/fopen): adding to final database dump
+0352.715 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_yoast_primary_term.table.tmpr5.gz (79/39/fopen): adding to final database dump
+0352.721 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_yoast_primary_term.table.gz (80/39/fopen): adding to final database dump
+0352.727 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_yoast_seo_links.table.tmpr34.gz (81/39/fopen): adding to final database dump
+0352.731 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db-table-qbo_yoast_seo_links.table.gz (82/39/fopen): adding to final database dump
+0352.762 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db.gz: finished writing out complete database file (25269.2 KB)
+0353.415 (0) Total database tables backed up: 39 (backup_2026-01-30-0708_Qbotica_30d14d4af23d-db.gz, size: 25875817, sha1: 8a23dcfb16d470ca12e68ab0516c141de2e2ee69, sha256: 3024d9108ba36b0749a0285368ba2c42253cbd75ba9c02bea24919719d3a0359)
+0353.445 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip: plugins: This file has already been successfully uploaded
+0353.448 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-themes.zip: themes: This file has already been successfully uploaded
+0353.453 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip: uploads: This file has already been successfully uploaded
+0353.458 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-mu-plugins.zip: mu-plugins: This file has already been successfully uploaded
+0353.463 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-others.zip: others: This file has already been successfully uploaded
+0353.467 (0) backup_2026-01-30-0708_Qbotica_30d14d4af23d-db.gz: db: This file has not yet been successfully uploaded: will queue
+0353.473 (0) Saving backup history. Total backup size: 205.4 MB
+0353.486 (0) Requesting upload of the files that have not yet been successfully uploaded (1)
+0353.500 (0) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+0353.506 (0) Beginning dispatch of backup to remote (googledrive) (instance identifier s-3299624ddf87412de2af2a6a0989f26b)
+0354.163 (0) Google Drive: quota usage: used=13320.3 MB, total=15360 MB, available=2039.7 MB
+0354.169 (0) Google Drive: backup_2026-01-30-0708_Qbotica_30d14d4af23d-db.gz: Attempting to upload to Google Drive (into folder id: 1q8sqf8HqCoI3IVHeZK-Mla6SEq_KVDXO)
+0355.947 (0) The time we have been running (355.9) is approaching the resumption interval (381) - increasing resumption interval to 386
+0355.957 (0) Googledrive chunked upload: 4.1 % uploaded (1048576 - increasing chunk size to 2048 KB - memory usage: 19 / 52)
+0356.980 (0) The time we have been running (357) is approaching the resumption interval (386) - increasing resumption interval to 387
+0356.995 (0) Googledrive chunked upload: 12.2 % uploaded (3145728 - increasing chunk size to 4096 KB - memory usage: 19 / 52)
+0358.564 (0) The time we have been running (358.5) is approaching the resumption interval (387) - increasing resumption interval to 389
+0358.575 (0) Googledrive chunked upload: 28.4 % uploaded (7340032 - increasing chunk size to 8192 KB - memory usage: 19 / 52)
+0361.296 (0) The time we have been running (361.3) is approaching the resumption interval (389) - increasing resumption interval to 392
+0361.305 (0) Googledrive chunked upload: 60.8 % uploaded (15728640)
+0363.941 (0) The time we have been running (363.9) is approaching the resumption interval (392) - increasing resumption interval to 394
+0363.949 (0) Googledrive chunked upload: 93.2 % uploaded (24117248)
+0366.010 (0) The time we have been running (366) is approaching the resumption interval (394) - increasing resumption interval to 396
+0366.020 (0) Googledrive chunked upload: 100 % uploaded (24117248)
+0366.036 (0) Google Drive: OK: Archive backup_2026-01-30-0708_Qbotica_30d14d4af23d-db.gz uploaded in 11.86 seconds
+0366.041 (0) Recording as successfully uploaded: backup_2026-01-30-0708_Qbotica_30d14d4af23d-db.gz
+0366.058 (0) Deleting local file: backup_2026-01-30-0708_Qbotica_30d14d4af23d-db.gz: OK
+0366.074 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=1, retain_db=1
+0366.082 (0) Number of backup sets in history: 3; groups (db): 1
+0366.087 (0) Examining (for databases) backup set with group_id=0, nonce=30d14d4af23d, datestamp=1769756915 (Jan 30 2026 07:08:35)
+0366.092 (0) This backup set is the backup set just made, so will not be deleted.
+0366.093 (0) Examining (for databases) backup set with group_id=0, nonce=04849a01b838, datestamp=1769675771 (Jan 29 2026 08:36:11)
+0366.093 (0) 1769675771: db: this set includes a database (backup_2026-01-29-0836_Qbotica_04849a01b838-db.gz); db count is now 1
+0366.093 (0) 1769675771: db: over retain limit (1); will delete this database
+0369.535 (0) Google Drive: backup_2026-01-29-0836_Qbotica_04849a01b838-db.gz: Deletion successful
+0369.559 (0) The time we have been running (369.5) is approaching the resumption interval (396) - increasing resumption interval to 400
+0369.568 (0) This backup set remains non-empty (f=1/d=0); will retain in history
+0369.572 (0) Examining (for databases) backup set with group_id=0, nonce=c349b27edce4, datestamp=1761209444 (Oct 23 2025 08:50:44)
+0369.572 (0) This backup set (1761209444) was an 'Always Keep' backup, so it will not be pruned. Skipping.
+0369.572 (0) Number of backup sets in history: 3; groups (files): 1
+0369.576 (0) Examining (for files) backup set with nonce=30d14d4af23d, datestamp=1769756915 (Jan 30 2026 07:08:35)
+0369.576 (0) This backup set is the backup set just made, so will not be deleted.
+0369.580 (0) This backup set is the backup set just made, so will not be deleted.
+0369.581 (0) This backup set is the backup set just made, so will not be deleted.
+0369.581 (0) This backup set is the backup set just made, so will not be deleted.
+0369.581 (0) This backup set is the backup set just made, so will not be deleted.
+0369.581 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0369.585 (0) Examining (for files) backup set with nonce=04849a01b838, datestamp=1769675771 (Jan 29 2026 08:36:11)
+0369.585 (0) plugins: over retain limit (1); will delete this file entity
+0369.585 (0) themes: over retain limit (1); will delete this file entity
+0369.585 (0) uploads: over retain limit (1); will delete this file entity
+0369.585 (0) mu-plugins: over retain limit (1); will delete this file entity
+0369.585 (0) others: over retain limit (1); will delete this file entity
+0372.571 (0) Google Drive: backup_2026-01-29-0836_Qbotica_04849a01b838-others.zip: Deletion successful
+0373.439 (0) Google Drive: backup_2026-01-29-0836_Qbotica_04849a01b838-mu-plugins.zip: Deletion successful
+0374.119 (0) Google Drive: backup_2026-01-29-0836_Qbotica_04849a01b838-uploads.zip: Deletion successful
+0375.121 (0) Google Drive: backup_2026-01-29-0836_Qbotica_04849a01b838-themes.zip: Deletion successful
+0376.128 (0) Google Drive: backup_2026-01-29-0836_Qbotica_04849a01b838-plugins.zip: Deletion successful
+0376.155 (0) The time we have been running (376.1) is approaching the resumption interval (400) - increasing resumption interval to 407
+0376.164 (0) This backup set is now empty; will remove from history
+0376.168 (0) Deleting log file (log.04849a01b838.txt)
+0376.174 (0) Examining (for files) backup set with nonce=c349b27edce4, datestamp=1761209444 (Oct 23 2025 08:50:44)
+0376.181 (0) This backup set (1761209444) was an 'Always Keep' backup, so it will not be pruned. Skipping.
+0376.181 (0) This backup set (1761209444) was an 'Always Keep' backup, so it will not be pruned. Skipping.
+0376.181 (0) This backup set (1761209444) was an 'Always Keep' backup, so it will not be pruned. Skipping.
+0376.181 (0) This backup set (1761209444) was an 'Always Keep' backup, so it will not be pruned. Skipping.
+0376.181 (0) This backup set (1761209444) was an 'Always Keep' backup, so it will not be pruned. Skipping.
+0376.181 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0376.185 (0) Retain: saving new backup history (sets now: 2) and finishing retain operation
+0376.200 (0) Resume backup (30d14d4af23d, 0): finish run
+0376.212 (0) Decremented the semaphore (fd) by 1
+0376.220 (0) Semaphore (fd) unlocked
+0376.224 (0) There were no errors in the uploads, so the 'resume' event (1) is being unscheduled
+0376.237 (0) Deleting zip manifest (backup_2026-01-30-0708_Qbotica_30d14d4af23d-plugins.zip.list.tmp)
+0376.243 (0) Deleting zip manifest (backup_2026-01-30-0708_Qbotica_30d14d4af23d-themes.zip.list.tmp)
+0376.251 (0) Deleting zip manifest (backup_2026-01-30-0708_Qbotica_30d14d4af23d-uploads.zip.list.tmp)
+0376.256 (0) Deleting zip manifest (backup_2026-01-30-0708_Qbotica_30d14d4af23d-mu-plugins.zip.list.tmp)
+0376.264 (0) Deleting zip manifest (backup_2026-01-30-0708_Qbotica_30d14d4af23d-others.zip.list.tmp)
+0376.271 (0) No email will/can be sent - the user has not configured an email address.
+0376.274 (0) The backup succeeded and is now complete

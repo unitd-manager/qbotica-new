@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="//backend.qbdev.localhost/main-sitemap.xsl"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<sitemap>
+		<loc>http://backend.qbdev.localhost/post-sitemap.xml</loc>
+		<lastmod>2026-01-28T06:48:28+00:00</lastmod>
+	</sitemap>
+	<sitemap>
+		<loc>http://backend.qbdev.localhost/page-sitemap1.xml</loc>
+		<lastmod>2026-02-10T14:35:14+00:00</lastmod>
+	</sitemap>
+	<sitemap>
+		<loc>http://backend.qbdev.localhost/page-sitemap2.xml</loc>
+		<lastmod>2026-02-10T13:48:47+00:00</lastmod>
+	</sitemap>
+</sitemapindex>

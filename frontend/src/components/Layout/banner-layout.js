@@ -63,10 +63,19 @@ export default function HomeBanner({ data }) {
                   {description && (
                     <DivTag dangerouslySetInnerHTML={{ __html: description }} />
                   )}
-                  {button?.url && (
-                    <Link href={data.button.url} className="btn primary-btn" target={button.target || "_self"}>
-                      {button.title} <ArrowRight className="right-arrow-icon" />
-                    </Link>
+                  {(button?.url || secondary_button?.url) && (
+                    <DivTag className="button-group">
+                      {button?.url && (
+                        <Link href={data.button.url} className="btn primary-btn" target={button.target || "_self"}>
+                          {button.title} <ArrowRight className="right-arrow-icon" />
+                        </Link>
+                      )}
+                      {secondary_button?.url && (
+                        <Link href={secondary_button.url} className="btn primary-btn ms-3" target={secondary_button.target || "_self"} rel={secondary_button.target === "_blank" ? "noopener noreferrer" : undefined}>
+                          {secondary_button.title} <ArrowRight className="right-arrow-icon" />
+                        </Link>
+                      )}
+                    </DivTag>
                   )}
                 </DivTag>
               </DivTag>

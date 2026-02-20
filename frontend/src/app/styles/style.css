@@ -577,7 +577,7 @@ header.navbar .container {
 
 /* Primary Button */
 .primary-btn {
-background-color: #000000;
+  background-color: var(--primary-bg-color);
   color: var(--secondary-color);
   padding: 8px 16px;
   font-family: var(--font-inter);
@@ -611,8 +611,7 @@ background-color: #000000;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(90deg, #000000 1.37%, #000000 97.29%);
-
+  background: linear-gradient(90deg, #FF7705 1.37%, #994703 97.29%);
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
   -webkit-transform-origin: 0 50%;
