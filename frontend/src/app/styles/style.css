@@ -5700,97 +5700,505 @@ footer h5 {
   background-color: #D9D9D9;
 }
 
+/* ============================================
+   SOLUTION HERO BANNER WITH CTA - PREMIUM EMBOSSED DESIGN
+   ============================================ */
+
 .solution-hero-banner-with-cta {
   position: relative;
+  background: #FFFFFF;
+  overflow: hidden;
+  margin: 0;
+}
+
+/* Animated background with gradient mesh effect */
+.solution-hero-banner-with-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #FFFFFF 0%, #F8F8F8 50%, #F0F0F0 100%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Main wrapper with premium embossed effect */
+.solution-hero-banner-with-cta.embossed-design {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F5F5F5 100%);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.03),
+    0 20px 60px rgba(255, 119, 5, 0.12),
+    0 0 1px rgba(0, 0, 0, 0.08);
+  position: relative;
+  border-top: 1px solid rgba(255, 119, 5, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 .solution-hero-banner-with-cta .container {
-  padding: 0px;
+  padding: 80px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-.solution-hero-banner-with-cta .container .row-group {
-  padding: 40px 0px;
-  border-top: 1px dashed #BDBDBD;
-  border-bottom: 1px dashed #BDBDBD;
+.solution-hero-banner-with-cta .sub-section {
+  padding: 0;
 }
 
-.solution-hero-banner-with-cta .hero-overlay {
-  position: absolute;
-  bottom: 40px;
-  left: 60px;
+/* Content Wrapper - side-by-side layout */
+.solution-hero-banner-with-cta .cta-content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
 }
 
-.solution-hero-banner-with-cta .category-badge {
-  color: var(--head-block-color);
-  text-align: center;
-  font-family: var(--font-inter);
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 21px;
-  border-radius: 68.103px;
-  border: 1.362px solid var(--primary-bg-color);
-  padding: 5px 16px;
-}
-
-.solution-hero-banner-with-cta .hero-title {
-  padding-top: 13px;
-}
-
-.solution-hero-banner-with-cta .text-content {
-  margin-top: 24px;
-  margin-left: 60px;
-}
-
-.solution-hero-banner-with-cta .text-content p a {
-  color: var(--primary-color);
-  font-style: normal;
-  -webkit-text-decoration-line: underline;
-  text-decoration-line: underline;
-  -webkit-text-decoration-style: solid;
-  text-decoration-style: solid;
-  -webkit-text-decoration-skip-ink: none;
-  text-decoration-skip-ink: none;
-  text-decoration-thickness: auto;
-  text-underline-offset: auto;
-}
-
-.solution-hero-banner-with-cta .hero-description {
-  padding-bottom: 25px;
-}
-
-.solution-hero-banner-with-cta .hero-subtext {
-  color: #333;
-  text-align: justify;
-  font-family: var(--font-inter);
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 24.84px;
-}
-
-.solution-hero-banner-with-cta .button-group {
+/* LEFT SECTION - Text & Buttons */
+.solution-hero-banner-with-cta .cta-left-section {
   display: flex;
-  gap: 25px;
+  flex-direction: column;
+  gap: 32px;
 }
 
+/* Header section with badge and title */
+.solution-hero-banner-with-cta .cta-header {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
 
-.solution-hero-banner-with-cta .image-wrapper {
+/* Embossed Badge */
+.solution-hero-banner-with-cta .embossed-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 10px 24px;
+  background: linear-gradient(135deg, var(--accent-color, #FF7705) 0%, #E85D00 100%);
+  color: #FFFFFF;
+  border-radius: 50px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 8px 24px rgba(255, 119, 5, 0.3),
+    inset -1px -1px 3px rgba(0, 0, 0, 0.15),
+    inset 1px 1px 3px rgba(255, 255, 255, 0.4);
   position: relative;
   overflow: hidden;
-  border-radius: 4px;
+  transition: all 0.3s ease;
 }
 
-.solution-hero-banner-with-cta .image-wrapper img {
+.solution-hero-banner-with-cta .embossed-badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
   width: 100%;
-  height: auto;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: transform;
-
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transition: left 0.6s ease;
+  z-index: 1;
 }
 
-.solution-hero-banner-with-cta .image-wrapper:hover img {
-  transform: scale(1.05);
+.solution-hero-banner-with-cta .embossed-badge:hover::before {
+  left: 100%;
+}
+
+.solution-hero-banner-with-cta .embossed-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 12px 32px rgba(255, 119, 5, 0.4),
+    inset -1px -1px 3px rgba(0, 0, 0, 0.15),
+    inset 1px 1px 3px rgba(255, 255, 255, 0.5);
+}
+
+/* Main Title - Premium Typography */
+.solution-hero-banner-with-cta .cta-main-title {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #0A0A0A;
+  margin: 0;
+  letter-spacing: -0.8px;
+  font-family: var(--font-inter);
+}
+
+/* Description Section */
+.solution-hero-banner-with-cta .cta-description-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.solution-hero-banner-with-cta .cta-description {
+  font-size: 16px;
+  line-height: 1.65;
+  color: #555555;
+  margin: 0;
+  font-weight: 400;
+}
+
+.solution-hero-banner-with-cta .cta-description p {
+  margin: 0;
+  padding: 0;
+}
+
+.solution-hero-banner-with-cta .cta-subtext {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #777777;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Embossed Button Group - Premium Layout */
+.solution-hero-banner-with-cta .embossed-button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+/* Button Wrapper */
+.solution-hero-banner-with-cta .button-wrapper {
+  display: block;
+  width: 100%;
+}
+
+.solution-hero-banner-with-cta .button-wrapper.primary .btn-embossed {
+  background: linear-gradient(135deg, var(--accent-color, #FF7705) 0%, #F37E00 50%, #E85D00 100%);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.solution-hero-banner-with-cta .button-wrapper.primary .btn-embossed:hover {
+  background: linear-gradient(135deg, #FF8A1A 0%, #FF8A1A 50%, #E85D00 100%);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.solution-hero-banner-with-cta .button-wrapper.secondary .btn-embossed {
+  background: linear-gradient(135deg, #F5F5F5 0%, #EEEEEE 100%);
+  color: var(--accent-color, #FF7705);
+  border: 1.5px solid rgba(255, 119, 5, 0.2);
+}
+
+.solution-hero-banner-with-cta .button-wrapper.secondary .btn-embossed:hover {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F0F0F0 100%);
+  border-color: var(--accent-color, #FF7705);
+  color: #E85D00;
+}
+
+.solution-hero-banner-with-cta .button-wrapper.outline .btn-embossed {
+  background: transparent;
+  border: 2px solid var(--accent-color, #FF7705);
+  color: var(--accent-color, #FF7705);
+}
+
+.solution-hero-banner-with-cta .button-wrapper.outline .btn-embossed:hover {
+  background: var(--accent-color, #FF7705);
+  color: #FFFFFF;
+}
+
+/* Premium Embossed Button Styles */
+.solution-hero-banner-with-cta .btn-embossed {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 18px 32px;
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: 0.2px;
+  
+  box-shadow: 
+    0 8px 24px rgba(255, 119, 5, 0.25),
+    inset -2px -2px 5px rgba(0, 0, 0, 0.12),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.35),
+    0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* Shine effect on button */
+.solution-hero-banner-with-cta .btn-embossed::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transition: left 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.solution-hero-banner-with-cta .btn-embossed:hover::before {
+  left: 100%;
+}
+
+/* Hover state */
+.solution-hero-banner-with-cta .btn-embossed:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 18px 40px rgba(255, 119, 5, 0.4),
+    inset -2px -2px 6px rgba(0, 0, 0, 0.12),
+    inset 2px 2px 6px rgba(255, 255, 255, 0.4),
+    0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Active state */
+.solution-hero-banner-with-cta .btn-embossed:active {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 16px rgba(255, 119, 5, 0.25),
+    inset -1.5px -1.5px 4px rgba(0, 0, 0, 0.12),
+    inset 1.5px 1.5px 4px rgba(255, 255, 255, 0.3),
+    0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Button text styling */
+.solution-hero-banner-with-cta .btn-text {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  text-align: left;
+}
+
+/* Arrow icon animation */
+.solution-hero-banner-with-cta .right-arrow-icon {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  z-index: 2;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-left: 12px;
+  flex-shrink: 0;
+}
+
+.solution-hero-banner-with-cta .btn-embossed:hover .right-arrow-icon {
+  transform: translateX(6px);
+  opacity: 1;
+}
+
+/* RIGHT SECTION - Image */
+.solution-hero-banner-with-cta .cta-right-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Premium Embossed Image */
+.solution-hero-banner-with-cta .embossed-image {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, #FAFAFA 0%, #F2F2F2 100%);
+  
+  /* Premium embossed effect */
+  box-shadow: 
+    0 28px 56px rgba(0, 0, 0, 0.12),
+    inset -3px -3px 10px rgba(0, 0, 0, 0.06),
+    inset 3px 3px 10px rgba(255, 255, 255, 0.9),
+    0 0 1px rgba(255, 119, 5, 0.15);
+  
+  border: 1px solid rgba(255, 119, 5, 0.12);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover effect on image */
+.solution-hero-banner-with-cta .embossed-image:hover {
+  box-shadow: 
+    0 40px 80px rgba(255, 119, 5, 0.2),
+    inset -3px -3px 10px rgba(0, 0, 0, 0.08),
+    inset 3px 3px 10px rgba(255, 255, 255, 0.95),
+    0 0 2px rgba(255, 119, 5, 0.25);
+  transform: translateY(-8px);
+  border-color: rgba(255, 119, 5, 0.2);
+}
+
+/* Image overlay gradient */
+.solution-hero-banner-with-cta .image-overlay-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 119, 5, 0.08) 0%, transparent 50%, rgba(0, 0, 0, 0.04) 100%);
+  pointer-events: none;
+  z-index: 2;
+  border-radius: 16px;
+  transition: all 0.5s ease;
+}
+
+.solution-hero-banner-with-cta .embossed-image:hover .image-overlay-effect {
+  background: linear-gradient(135deg, rgba(255, 119, 5, 0.12) 0%, transparent 50%, rgba(0, 0, 0, 0.06) 100%);
+}
+
+/* Image itself */
+.solution-hero-banner-with-cta .cta-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.solution-hero-banner-with-cta .embossed-image:hover .cta-image {
+  transform: scale(1.1);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 1200px) {
+  .solution-hero-banner-with-cta .container {
+    padding: 70px 35px;
+  }
+
+  .solution-hero-banner-with-cta .cta-content-wrapper {
+    gap: 60px;
+  }
+
+  .solution-hero-banner-with-cta .cta-main-title {
+    font-size: 44px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .solution-hero-banner-with-cta .cta-content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .solution-hero-banner-with-cta .container {
+    padding: 60px 30px;
+  }
+
+  .solution-hero-banner-with-cta .cta-main-title {
+    font-size: 38px;
+  }
+
+  .solution-hero-banner-with-cta .embossed-image {
+    aspect-ratio: 16 / 10;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .solution-hero-banner-with-cta .container {
+    padding: 50px 24px;
+  }
+
+  .solution-hero-banner-with-cta .cta-left-section {
+    gap: 28px;
+  }
+
+  .solution-hero-banner-with-cta .cta-main-title {
+    font-size: 32px;
+    line-height: 1.25;
+  }
+
+  .solution-hero-banner-with-cta .cta-description {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .solution-hero-banner-with-cta .cta-subtext {
+    font-size: 14px;
+  }
+
+  .solution-hero-banner-with-cta .btn-embossed {
+    padding: 16px 24px;
+    font-size: 14px;
+  }
+
+  .solution-hero-banner-with-cta .embossed-button-group {
+    gap: 14px;
+  }
+
+  .solution-hero-banner-with-cta .embossed-image {
+    aspect-ratio: 16 / 12;
+  }
+
+  .solution-hero-banner-with-cta .btn-embossed:hover {
+    transform: translateY(-3px);
+  }
+}
+
+@media (max-width: 480px) {
+  .solution-hero-banner-with-cta .container {
+    padding: 40px 16px;
+  }
+
+  .solution-hero-banner-with-cta .cta-content-wrapper {
+    gap: 32px;
+  }
+
+  .solution-hero-banner-with-cta .cta-header {
+    gap: 14px;
+  }
+
+  .solution-hero-banner-with-cta .cta-main-title {
+    font-size: 26px;
+    line-height: 1.2;
+    letter-spacing: -0.3px;
+  }
+
+  .solution-hero-banner-with-cta .embossed-badge {
+    font-size: 10px;
+    padding: 8px 18px;
+  }
+
+  .solution-hero-banner-with-cta .cta-description {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .solution-hero-banner-with-cta .cta-subtext {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .solution-hero-banner-with-cta .btn-embossed {
+    padding: 14px 18px;
+    font-size: 13px;
+  }
+
+  .solution-hero-banner-with-cta .right-arrow-icon {
+    width: 18px;
+    height: 18px;
+    margin-left: 8px;
+  }
+
+  .solution-hero-banner-with-cta .embossed-button-group {
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .solution-hero-banner-with-cta .embossed-image {
+    aspect-ratio: 1;
+    max-width: 100%;
+  }
+
+  .solution-hero-banner-with-cta .btn-embossed:hover {
+    transform: translateY(-2px);
+  }
 }
 
 

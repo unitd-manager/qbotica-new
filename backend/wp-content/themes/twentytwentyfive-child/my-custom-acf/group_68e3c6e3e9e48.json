@@ -351,6 +351,13 @@
                                     {
                                         "field": "field_685e6e11ac798",
                                         "operator": "==",
+                                        "value": "home"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "field": "field_685e6e11ac798",
+                                        "operator": "==",
                                         "value": "platform"
                                     }
                                 ],

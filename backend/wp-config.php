@@ -182,7 +182,7 @@ $table_prefix = 'qbo_';
 
  */
 
-define( 'WP_DEBUG', false );
+define( 'WP_DEBUG', true );
 
 define( 'WP_POST_REVISIONS', 3 ); // Keep only last 3 revisions
 
