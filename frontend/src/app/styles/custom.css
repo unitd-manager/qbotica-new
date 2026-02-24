@@ -120,6 +120,7 @@
 .benefites-list-itmes {
     position: relative;
     padding: 40px 26px;
+   background-color: #FFF4E6;
 }
 
 .benefites-list-itmes:last-child {
@@ -136,11 +137,11 @@
 
 .benefites-list-itmes .img-div img {
     width: auto !important;
-
+ filter: brightness(0) saturate(100%) invert(48%) sepia(96%) saturate(500%) hue-rotate(360deg);
 }
 
 .benefites-list-itmes h3 {
-    color: var(--secondary-color);
+     color: #000000;
     font-family: var(--font-inter);
     font-size: 24px;
     font-weight: 600;
@@ -151,7 +152,7 @@
 }
 
 .benefites-list-itmes p {
-    color: var(--secondary-color);
+    color: #000000;
     font-family: var(--font-inter);
     font-size: 16px;
     font-weight: 400;

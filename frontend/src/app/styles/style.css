@@ -577,7 +577,7 @@ header.navbar .container {
 
 /* Primary Button */
 .primary-btn {
-  background-color: var(--primary-bg-color);
+background-color: #000000;
   color: var(--secondary-color);
   padding: 8px 16px;
   font-family: var(--font-inter);
