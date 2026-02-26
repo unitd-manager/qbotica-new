@@ -1,0 +1,13 @@
+0000.001 (0) Opened log file at time: Thu, 26 Feb 2026 08:42:01 +0000 on http://backend.qbdev.localhost
+0000.004 (0) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.25.9 WP: 6.9 PHP: 7.4.33 (apache2handler, Windows NT DESKTOP-PQFACMQ 10.0 build 26100 (Windows 10) AMD64) MySQL: 8.0.43 (max packet size=67108864) WPLANG: en_US Server: Apache/2.4.65 (Win64) PHP/7.4.33 mod_fcgid/2.3.10-dev safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 18M | 6M) multisite: N openssl: OpenSSL 1.1.1s  1 Nov 2022 mcrypt: N LANG:  WP Proxy: disabled ZipArchive::addFile: Y
+0000.006 (0) Free space on disk containing Updraft's temporary directory: 13002.6 MB
+0000.013 (0) Tasks: Backup files: 1 (schedule: daily) Backup DB:  (schedule: daily)
+0000.015 (0) Processed schedules. Combining jobs from identical schedules. Tasks now: Backup files: 1 Backup DB: 1
+0000.024 (0) Requesting semaphore lock (fd) (apparently via scheduler: last_scheduled_action_called_at=1771927094, seconds_ago=168227)
+0000.029 (0) Set semaphore last lock (fd) time to 2026-02-26 08:42:01
+0000.032 (0) Semaphore lock (fd) complete
+0000.041 (0) Backup run: resumption=0, nonce=73d4e381a2e5, file_nonce=73d4e381a2e5 begun at=1772095321 (0s ago), job type=backup
+0000.045 (0) Scheduling a resumption (1) after 551 seconds (1772095872) in case this run gets aborted
+0000.050 (0) Checking if we have a zip executable available
+0000.054 (0) Creation of backups of directories: beginning
+0000.061 (0) Beginning creation of dump of plugins (split every: 400 MB)
