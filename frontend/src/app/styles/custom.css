@@ -2917,3 +2917,6 @@
 .about-grid-layout .grid-row .card-col.even-col::after {
     display: none;
 }
+.document-process-sec .primary-btn {
+    color: #ffffff !important;
+}
