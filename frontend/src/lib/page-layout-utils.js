@@ -78,7 +78,10 @@ export const componentMap = {
     'spacing': lazy(() => import('@/components/Common/Spacing').catch(() => ({ default: () => <div>Failed to load spacing</div> }))),
     'common_heading_section': lazy(() => import('@/components/Layout/common-heading-section').catch(() => ({ default: () => <div>Failed to load heading section</div> }))),
 'common_cta_section': lazy(() => import('@/components/Layout/common-cta').catch(() => ({ default: () => <div>Component failed to load</div> }))),
-
+'use_case_new': lazy(() =>
+  import('@/components/Layout/use-case-new')
+    .catch(() => ({ default: () => <div>Failed to load</div> }))
+),
 };
 
 export const DynamicComponent = memo(({ layout, data, hasCustomPadding = false }) => {
