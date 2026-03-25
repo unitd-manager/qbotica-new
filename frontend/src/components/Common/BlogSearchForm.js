@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 import { DivTag } from './HTMLTags';
 
 export default function BlogSearchForm() {
@@ -8,6 +8,7 @@ export default function BlogSearchForm() {
     const defaultSearch = searchParams?.get('search') || '';
     const [search, setSearch] = useState(defaultSearch);
     const router = useRouter();
+    const pathname = usePathname();
 
     useEffect(() => {
         setSearch(defaultSearch);
@@ -23,14 +24,20 @@ export default function BlogSearchForm() {
                 .trim();
             
             if (cleanedSearch) {
-                router.push(`/blog?search=${encodeURIComponent(cleanedSearch)}`);
+                // Preserve category path if user is currently inside a category route
+                const isCategoryPath = pathname?.startsWith('/blog/category/');
+                const basePath = isCategoryPath ? pathname : '/blog';
+                router.push(`${basePath}?search=${encodeURIComponent(cleanedSearch)}`);
             }
         }
     };
 
     const handleClear = () => {
         setSearch('');
-        router.push('/blog');
+        // If user is viewing a category, keep them on that category page when clearing
+        const isCategoryPath = pathname?.startsWith('/blog/category/');
+        const target = isCategoryPath ? pathname : '/blog';
+        router.push(target);
     };
 
     return (

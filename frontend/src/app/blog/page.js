@@ -127,6 +127,19 @@ export default async function BlogPage({ searchParams }) {
 
     let postsForListing = paginatedPosts || [];
 
+    // If searching, additionally filter results by title match to reduce unrelated results
+    if (searchQuery?.trim()) {
+      try {
+        const cleanedSearch = searchQuery.trim().replace(/[:"']/g, ' ').replace(/\s+/g, ' ').trim().toLowerCase();
+        postsForListing = postsForListing.filter(post => {
+          const title = (post?.title?.rendered || '').toLowerCase();
+          return cleanedSearch.split(' ').every(term => term && title.includes(term));
+        });
+      } catch (err) {
+        console.error('Error filtering posts by title:', err);
+      }
+    }
+
     // Only exclude latest post when NOT searching
     if (!searchQuery && latest_post) {
       const latestPostIndex = postsForListing.findIndex(post => post.id === latest_post.id);

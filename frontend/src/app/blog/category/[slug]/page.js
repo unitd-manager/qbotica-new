@@ -123,6 +123,20 @@ export default async function CategoryPage({ params, searchParams }) {
       page: 1
     });
 
+    // If searching, additionally filter results by title match to reduce unrelated results
+    let filteredPosts = paginatedPosts || [];
+    if (searchQuery?.trim()) {
+      try {
+        const cleanedSearch = searchQuery.trim().replace(/[:"']/g, ' ').replace(/\s+/g, ' ').trim().toLowerCase();
+        filteredPosts = filteredPosts.filter(post => {
+          const title = (post?.title?.rendered || '').toLowerCase();
+          return cleanedSearch.split(' ').every(term => term && title.includes(term));
+        });
+      } catch (err) {
+        console.error('Error filtering category posts by title:', err);
+      }
+    }
+
     // Get total count for pagination calculation
     const totalCount = await getCategoryPostCount(category.id, searchQuery);
     const totalPages = Math.ceil(totalCount / perPage);
