@@ -2929,3 +2929,7 @@
 .about-grid-layout .primary-btn {
     color: #ffffff !important;
 }
+.form-with-contact-section .comment-form-col button {
+  background-color: #000 !important;
+  color: #fff !important;
+}
