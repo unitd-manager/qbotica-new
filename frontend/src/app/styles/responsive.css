@@ -1716,10 +1716,37 @@
     height: 21.46vw;
   }
 
+    .case_study-grid-section .icon-div {
+    max-width: 27.08vw;
+    height: 19vw;
+    border-radius: 0.56vw 0.56vw 0 0;
+    overflow: hidden;
+  }
+
+  .case_study-grid-section .icon-box {
+    border-radius: 0.7vw;
+    overflow: hidden;
+    box-shadow: 0 0.28vw 1.39vw rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .case_study-grid-section .icon-box:hover {
+    box-shadow: 0 0.84vw 2.22vw rgba(0, 0, 0, 0.15);
+    transform: translateY(-0.56vw);
+  }
+
   .newsroom-page .use-cases-grid-section .icon-div {
     position: relative;
     max-width: 390px;
     height: 18.06vw;
+  }
+
+    .case_study-grid-section .icon-box .desc {
+    padding-top: 0.84vw;
+    padding-bottom: 0;
+    line-height: 1.81vw;
+    font-size: 0.97vw;
+    color: #555555;
   }
 
   .use-cases-grid-section .icon-box h5 {
@@ -4682,6 +4709,12 @@
   /****/
   .usecase-banner-section .container {
     min-height: 200px;
+  }
+
+
+   .case_study-grid-section .icon-box-col .secondary-btn {
+    margin-top: 1.25vw;
+    font-size: 0.97vw;
   }
 
   .use-cases-grid-section .icon-box {

@@ -51,8 +51,6 @@ export const componentMap = {
     'classic_post_slider': lazy(() => import('@/components/Layout/classic-post-slider').catch(() => ({ default: () => <div>Failed to load common post slider</div> }))),
     'resource_grid_layout': lazy(() => import('@/components/Layout/resource-grid-layout').catch(() => ({ default: () => <div>Failed to load common post slider</div> }))),
     'use_cases_grid': lazy(() => import('@/components/Layout/use-cases-grid').catch(() => ({ default: () => <div>Failed to load common post slider</div> }))),
-        'case_study_grid': lazy(() => import('@/components/Layout/case-study-grid').catch(() => ({ default: () => <div>Failed to load common post slider</div> }))),
-
     'automation_cta_block': lazy(() => import('@/components/Layout/automation-cta-block').catch(() => ({ default: () => <div>Failed to load common post slider</div> }))),
     'package_card_section': lazy(() => import('@/components/Layout/package-card-section').catch(() => ({ default: () => <div>Failed to load common post slider</div> }))),
     'solutions_key_benefits': lazy(() => import('@/components/Layout/solutions-key-benefits').catch(() => ({ default: () => <div>Failed to load common post slider</div> }))),
