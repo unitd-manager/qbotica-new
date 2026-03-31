@@ -152,6 +152,31 @@ export const fetchPageBySlug = async (slug) => {
   }
 }
 
+export const fetchPostBySlugAndType = async (slug, postType = 'pages') => {
+  try {
+    const res = await fetch(`${WP_API_URL}/wp/v2/${postType}?slug=${slug}&status=publish`, {
+      next: { 
+        revalidate: 180,
+        tags: [`${postType}-${slug}`]
+      },
+      headers: {
+        'Accept': 'application/json',
+        'Accept-Encoding': 'gzip'
+      }
+    });
+    
+    if (!res.ok) {
+      throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+    }
+    
+    const data = await res.json();
+    return data[0];
+  } catch (error) {
+    console.error(`Error fetching ${postType} by slug:`, error.message);
+    return null;
+  }
+}
+
 export const fetchPageBySlugWithPassword = async (slug, password = null) => {
   try {
     let url = `${WP_API_URL}/wp/v2/pages?slug=${slug}&status=publish`;

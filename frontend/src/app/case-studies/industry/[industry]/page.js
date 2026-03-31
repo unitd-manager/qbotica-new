@@ -2,6 +2,7 @@ import { fetchPageBySlug } from '@/lib/wordpress';
 import { DivTag, H2Tag, H1Tag, PTag } from '@/components/Common/HTMLTags';
 import Link from 'next/link';
 import CaseStudyCard from '@/components/CaseStudyCard';
+import CaseStudiesBanner from '@/components/Layout/case-studies-banner';
 
 export async function generateMetadata({ params }) {
   const resolvedParams = await params;
@@ -57,6 +58,12 @@ export default async function IndustryPage({ params }) {
     const pageData = await fetchPageBySlug('case-studies');
     const caseStudies = getCaseStudiesByIndustrySlug(pageData, industrySlug);
 
+    // Get banner section data
+    const pageSections = pageData?.acf?.page_sections;
+    const bannerSection = pageSections && Array.isArray(pageSections)
+      ? pageSections.find(section => section.acf_fc_layout === 'banner_section')
+      : null;
+
     if (!caseStudies || caseStudies.length === 0) {
       return (
         <DivTag style={{ padding: '60px 20px', textAlign: 'center' }}>
@@ -79,7 +86,11 @@ export default async function IndustryPage({ params }) {
       : industrySlug.replace(/-/g, ' ');
 
     return (
-      <DivTag style={{ backgroundColor: '#fff' }}>
+      <>
+        {/* Banner Section - Dynamic from WordPress */}
+        <CaseStudiesBanner data={bannerSection} />
+
+        <DivTag style={{ backgroundColor: '#fff' }}>
         {/* Back Link */}
         <DivTag style={{ padding: '20px 0', borderBottom: '1px solid #e0e0e0' }}>
           <DivTag style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
@@ -126,7 +137,7 @@ export default async function IndustryPage({ params }) {
                 margin: '0 auto',
               }}
             >
-              Explore how we've helped businesses in the {displayName} industry achieve their goals.
+              Explore how we&apos;ve helped businesses in the {displayName} industry achieve their goals.
             </PTag>
           </DivTag>
         </DivTag>
@@ -146,6 +157,7 @@ export default async function IndustryPage({ params }) {
           </DivTag>
         </DivTag>
       </DivTag>
+      </>
     );
   } catch (error) {
     console.error('Error loading industry case studies:', error);

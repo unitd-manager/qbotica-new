@@ -66,7 +66,7 @@ const getCategoryPostCount = async (categoryId, searchQuery = '') => {
       params.append('search', searchQuery.trim());
     }
 
-    const response = await fetch(`${process.env.WP_API_URL}/wp/v2/posts?${params}`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_WP_API_URL}/wp/v2/posts?${params}`, {
       next: { revalidate: 600 }
     });
 
