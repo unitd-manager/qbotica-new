@@ -81,6 +81,12 @@ function getRedirects() {
 export async function middleware(request) {
     const pathname = request.nextUrl.pathname;
 
+    // Handle sitemap XML files first
+    if (pathname.endsWith('.xml') && pathname.includes('sitemap')) {
+        // Let sitemap routes pass through (they have route handlers in app directory)
+        return NextResponse.next();
+    }
+
     // Skip middleware for static assets and API routes for performance
     if (pathname.startsWith('/_next') || pathname.startsWith('/api') || pathname.includes('.')) {
         return NextResponse.next();
