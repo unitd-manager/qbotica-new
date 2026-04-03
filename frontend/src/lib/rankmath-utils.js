@@ -290,7 +290,7 @@ export async function generateCategoryMetadatas(slug, parent = '', customFallbac
  const rankMathData = await fetchRankMathMetadata(slug, parent);
 
     const fallback = {
-      title: `Page - ${slug}`,
+      title: slug,
       description: `Learn more about ${slug}`,
       url: `${process.env.NEXT_PUBLIC_SITE_URL}/${slug}`,
       siteName: 'Your Site Name',

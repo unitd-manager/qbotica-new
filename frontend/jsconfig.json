@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",         // 👈 Required
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]      // 👈 This maps @ to /src
-    }
+      "@/*": ["src/*"]
+    },
+    "ignoreDeprecations": "6.0"
   }
 }
