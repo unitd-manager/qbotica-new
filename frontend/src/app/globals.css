@@ -57,3 +57,10 @@ a {
   display: block;
 }
 
+.password-input::-ms-reveal {
+  display: none !important;
+}
+
+.password-input::-ms-clear {
+  display: none !important;
+}
