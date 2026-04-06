@@ -10678,7 +10678,186 @@ h2.package-card-main-title {
   font-style: normal;
   font-weight: 600;
   line-height: 40px;
-  letter-spacing: -0.48px;
+  letter-spacing: -1.92px;
+}
+
+/* Qubi Page Specific Styles */
+.qubiNext15 .sectionHeader {
+  text-align: center !important;
+  max-width: 768px;
+  margin: 0 auto 64px !important;
+}
+
+.qubiNext15 .sectionEyebrow {
+  display: block !important;
+  color: #ff6600 !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+  margin-bottom: 16px !important;
+  text-align: center !important;
+  padding: 0 !important;
+}
+
+.qubiNext15 .sectionHeader .sectionTitle,
+.qubiNext15 .ctaInner .ctaTitle {
+  margin-top: 0 !important;
+  font-size: 30px !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.025em !important;
+  font-weight: 700 !important;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif !important;
+  color: #171717 !important;
+  text-align: center !important;
+  padding: 0 !important;
+}
+
+.qubiNext15 .sectionHeader .sectionDescription {
+  margin-top: 24px !important;
+  max-width: 640px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  font-size: 18px !important;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif !important;
+  text-align: center !important;
+  padding: 0 !important;
+}
+
+.qubiNext15 .gradientText {
+  background-image: linear-gradient(135deg, #ff6600, #ff9933) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+
+.qubiNext15 .qubiButton {
+  min-height: 48px !important;
+  padding: 14px 28px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  border-radius: 12px !important;
+  border: 2px solid transparent !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  font-family: "Inter", sans-serif !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  cursor: pointer !important;
+  transition: all 200ms ease !important;
+  text-decoration: none !important;
+}
+
+.qubiNext15 .qubiButton:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(255, 102, 0, 0.25) !important;
+}
+
+.qubiNext15 .qubiButton:active {
+  transform: translateY(0) !important;
+}
+
+.qubiNext15 .qubiButtonPrimary {
+  background: #ff6600 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3) !important;
+}
+
+.qubiNext15 .qubiButtonPrimary:hover {
+  background: #ff7f1a !important;
+  box-shadow: 0 8px 24px rgba(255, 102, 0, 0.4) !important;
+}
+
+.qubiNext15 .qubiButtonOutline {
+  background: #ffffff !important;
+  border-color: #ff6600 !important;
+  color: #ff6600 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+
+.qubiNext15 .qubiButtonOutline:hover {
+  background: #fff5f0 !important;
+  border-color: #ff7f1a !important;
+  color: #ff7f1a !important;
+}
+
+.qubiNext15 .outcomeTitle,
+.qubiNext15 .analyticsTitle,
+.qubiNext15 .cardTitle {
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.5px !important;
+  color: #1a1a1a !important;
+}
+
+.qubiNext15 .outcomeTitle,
+.qubiNext15 .analyticsTitle {
+  font-size: 20px !important;
+  line-height: 1.4 !important;
+  margin-bottom: 8px !important;
+}
+
+.qubiNext15 .outcomeDescription,
+.qubiNext15 .analyticsDescription,
+.qubiNext15 .cardDescription {
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 16px !important;
+  line-height: 1.8 !important;
+  color: #666666 !important;
+  letter-spacing: -0.2px !important;
+}
+
+@media (max-width: 639px) {
+  .qubiNext15 .pageContainer {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+
+  .qubiNext15 .navInner {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+
+  .qubiNext15 .mobilePanelInner {
+    padding: 16px 24px 16px 24px !important;
+  }
+}
+
+@media (min-width: 640px) {
+  .qubiNext15 .pageContainer {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .qubiNext15 .navInner {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  
+  .qubiNext15 .sectionHeader .sectionTitle,
+  .qubiNext15 .ctaInner .ctaTitle {
+    font-size: 36px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .qubiNext15 .pageContainer {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+
+  .qubiNext15 .navInner {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+  
+  .qubiNext15 .sectionHeader .sectionTitle,
+  .qubiNext15 .ctaInner .ctaTitle {
+    font-size: 48px !important;
+  }
 }
 
 .career-opening-section .accordion-item.active .accordion-header {

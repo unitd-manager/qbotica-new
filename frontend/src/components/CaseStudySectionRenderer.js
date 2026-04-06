@@ -1,15 +1,32 @@
 'use client';
 
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import { DivTag, H1Tag, H2Tag, H3Tag, PTag } from './Common/HTMLTags';
 
+// Helper hook for responsive values
+function useResponsive() {
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+  
+  return { isMobile };
+}
+
 function CaseStudyHeroSection({ section }) {
+  const { isMobile } = useResponsive();
+  
   return (
     <DivTag
       style={{
         backgroundColor: '#FFA500',
-        padding: '100px 40px',
-        minHeight: '700px',
+        padding: isMobile ? '40px 20px' : '100px 40px',
+        minHeight: isMobile ? 'auto' : '700px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -21,10 +38,10 @@ function CaseStudyHeroSection({ section }) {
           margin: '0 auto',
           width: '100%',
           display: 'grid',
-          gridTemplateColumns: '1.2fr 1fr',
-          gap: '80px',
+          gridTemplateColumns: isMobile ? '1fr' : '1.2fr 1fr',
+          gap: isMobile ? '40px' : '80px',
           alignItems: 'center',
-          paddingRight: '60px',
+          paddingRight: isMobile ? '0' : '60px',
         }}
       >
         {/* Left Content Section */}
@@ -51,7 +68,7 @@ function CaseStudyHeroSection({ section }) {
           {section.title && (
             <H1Tag
               style={{
-                fontSize: '56px',
+                fontSize: isMobile ? '28px' : '56px',
                 fontWeight: 'bold',
                 marginBottom: '24px',
                 color: '#fff',
@@ -66,7 +83,7 @@ function CaseStudyHeroSection({ section }) {
           {section.subtitle && (
             <PTag
               style={{
-                fontSize: '18px',
+                fontSize: isMobile ? '14px' : '18px',
                 color: '#fff',
                 marginBottom: '40px',
                 lineHeight: '1.6',
@@ -81,9 +98,10 @@ function CaseStudyHeroSection({ section }) {
           <DivTag
             style={{
               display: 'flex',
-              gap: '40px',
+              gap: isMobile ? '20px' : '40px',
               flexWrap: 'wrap',
               marginTop: '40px',
+              flexDirection: isMobile ? 'column' : 'row',
             }}
           >
             {section.client_name && (
@@ -138,7 +156,8 @@ function CaseStudyHeroSection({ section }) {
               justifyContent: 'flex-end',
               alignItems: 'center',
               perspective: '1200px',
-              height: '500px',
+              height: isMobile ? '300px' : '500px',
+              marginTop: isMobile ? '20px' : '0',
             }}
           >
             <DivTag
@@ -177,7 +196,7 @@ function CaseStudyHeroSection({ section }) {
 
 // Stats Section Component
 function StatsSection({ section }) {
-  // Log to debug field names
+  const { isMobile } = useResponsive();
   console.log('Stats Section Data:', section);
   
   const statsItems = section.stats_items || section.stats || [];
@@ -186,7 +205,7 @@ function StatsSection({ section }) {
     <DivTag
       style={{
         backgroundColor: '#f9f9f9',
-        padding: '80px 40px',
+        padding: isMobile ? '40px 20px' : '80px 40px',
       }}
     >
       <DivTag
@@ -198,8 +217,8 @@ function StatsSection({ section }) {
         <DivTag
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-            gap: '60px',
+            gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit, minmax(250px, 1fr))',
+            gap: isMobile ? '30px' : '60px',
             textAlign: 'center',
           }}
         >
@@ -208,7 +227,7 @@ function StatsSection({ section }) {
               <DivTag key={index}>
                 <H2Tag
                   style={{
-                    fontSize: '48px',
+                    fontSize: isMobile ? '32px' : '48px',
                     fontWeight: 'bold',
                     color: '#FFA500',
                     marginBottom: '16px',
@@ -238,6 +257,7 @@ function StatsSection({ section }) {
 
 // Challenge Section Component
 function ChallengeSection({ section }) {
+  const { isMobile } = useResponsive();
   console.log('Challenge Section Data:', section);
   
   const challenges = section.challenges || [];
@@ -246,7 +266,7 @@ function ChallengeSection({ section }) {
     <DivTag
       style={{
         backgroundColor: '#FFF8E7',
-        padding: '80px 40px',
+        padding: isMobile ? '40px 20px' : '80px 40px',
       }}
     >
       <DivTag
@@ -260,7 +280,7 @@ function ChallengeSection({ section }) {
           <DivTag style={{ marginBottom: '50px' }}>
             <H2Tag
               style={{
-                fontSize: '32px',
+                fontSize: isMobile ? '24px' : '32px',
                 fontWeight: 'bold',
                 color: '#000',
                 marginBottom: '20px',
@@ -287,7 +307,7 @@ function ChallengeSection({ section }) {
         <DivTag
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit, minmax(300px, 1fr))',
             gap: '30px',
           }}
         >
@@ -339,6 +359,7 @@ function ChallengeSection({ section }) {
 
 // Approach Section Component
 function ApproachSection({ section }) {
+  const { isMobile } = useResponsive();
   console.log('Approach Section Data:', section);
   
   const points = section.points || [];
@@ -347,7 +368,7 @@ function ApproachSection({ section }) {
     <DivTag
       style={{
         backgroundColor: '#fff',
-        padding: '80px 40px',
+        padding: isMobile ? '40px 20px' : '80px 40px',
       }}
     >
       <DivTag
@@ -361,7 +382,7 @@ function ApproachSection({ section }) {
           <DivTag style={{ marginBottom: '50px' }}>
             <H2Tag
               style={{
-                fontSize: '32px',
+                fontSize: isMobile ? '24px' : '32px',
                 fontWeight: 'bold',
                 color: '#000',
                 marginBottom: '20px',
@@ -388,7 +409,7 @@ function ApproachSection({ section }) {
         <DivTag
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit, minmax(300px, 1fr))',
             gap: '30px',
           }}
         >
@@ -440,6 +461,7 @@ function ApproachSection({ section }) {
 
 // Results Section Component
 function ResultsSection({ section }) {
+  const { isMobile } = useResponsive();
   console.log('Results Section Data:', section);
   
   const resultsItems = section.results_items || section.result_list || [];
@@ -448,7 +470,7 @@ function ResultsSection({ section }) {
     <DivTag
       style={{
         backgroundColor: '#FFF8E7',
-        padding: '80px 40px',
+        padding: isMobile ? '40px 20px' : '80px 40px',
       }}
     >
       <DivTag
@@ -462,7 +484,7 @@ function ResultsSection({ section }) {
           <DivTag style={{ marginBottom: '50px' }}>
             <H2Tag
               style={{
-                fontSize: '32px',
+                fontSize: isMobile ? '24px' : '32px',
                 fontWeight: 'bold',
                 color: '#000',
                 marginBottom: '20px',
@@ -489,7 +511,7 @@ function ResultsSection({ section }) {
         <DivTag
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit, minmax(300px, 1fr))',
             gap: '30px',
           }}
         >
@@ -541,13 +563,14 @@ function ResultsSection({ section }) {
 
 // Testimonial Section Component
 function TestimonialSection({ section }) {
+  const { isMobile } = useResponsive();
   console.log('Testimonial Section Data:', section);
   
   return (
     <DivTag
       style={{
         backgroundColor: '#fff',
-        padding: '80px 40px',
+        padding: isMobile ? '40px 20px' : '80px 40px',
       }}
     >
       <DivTag
@@ -561,7 +584,7 @@ function TestimonialSection({ section }) {
         {section.quote && (
         <PTag
   style={{
-    fontSize: '24px',
+    fontSize: isMobile ? '18px' : '24px',
     fontStyle: 'italic',
     color: '#333',
     lineHeight: '1.8',
@@ -606,6 +629,7 @@ function TestimonialSection({ section }) {
 
 // Technologies Section Component
 function TechnologiesSection({ section }) {
+  const { isMobile } = useResponsive();
   console.log('Technologies Section Data:', section);
   
   const techList = section.tech_list || [];
@@ -614,7 +638,7 @@ function TechnologiesSection({ section }) {
     <DivTag
       style={{
         backgroundColor: '#f9f9f9',
-        padding: '80px 40px',
+        padding: isMobile ? '40px 20px' : '80px 40px',
       }}
     >
       <DivTag
@@ -625,7 +649,7 @@ function TechnologiesSection({ section }) {
       >
         <H2Tag
           style={{
-            fontSize: '32px',
+            fontSize: isMobile ? '24px' : '32px',
             fontWeight: 'bold',
             color: '#000',
             marginBottom: '50px',
@@ -639,7 +663,7 @@ function TechnologiesSection({ section }) {
           style={{
             display: 'flex',
             flexWrap: 'wrap',
-            gap: '30px',
+            gap: isMobile ? '15px' : '30px',
             justifyContent: 'center',
             alignItems: 'center',
           }}
@@ -679,6 +703,7 @@ function TechnologiesSection({ section }) {
 
 // Related Case Studies Section Component
 function RelatedCaseStudySection({ section }) {
+  const { isMobile } = useResponsive();
   console.log('Related Case Study Section Data:', section);
   
   // Use case_item from the repeater field
@@ -688,7 +713,7 @@ function RelatedCaseStudySection({ section }) {
     <DivTag
       style={{
         backgroundColor: '#fff',
-        padding: '80px 40px',
+        padding: isMobile ? '40px 20px' : '80px 40px',
       }}
     >
       <DivTag
@@ -700,7 +725,7 @@ function RelatedCaseStudySection({ section }) {
         {section.title && (
           <H2Tag
             style={{
-              fontSize: '32px',
+              fontSize: isMobile ? '24px' : '32px',
               fontWeight: 'bold',
               color: '#000',
               marginBottom: '50px',
@@ -714,8 +739,8 @@ function RelatedCaseStudySection({ section }) {
         <DivTag
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: '30px',
+            gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)',
+            gap: isMobile ? '20px' : '30px',
           }}
         >
           {caseStudies && caseStudies.length > 0 ? (
@@ -771,13 +796,14 @@ function RelatedCaseStudySection({ section }) {
 
 // CTA Section Component
 function CTASection({ section }) {
+  const { isMobile } = useResponsive();
   console.log('CTA Section Data:', section);
   
   return (
     <DivTag
       style={{
         backgroundColor: '#FFA500',
-        padding: '80px 40px',
+        padding: isMobile ? '40px 20px' : '80px 40px',
       }}
     >
       <DivTag
@@ -790,7 +816,7 @@ function CTASection({ section }) {
         {section.title && (
           <H2Tag
             style={{
-              fontSize: '42px',
+              fontSize: isMobile ? '28px' : '42px',
               fontWeight: 'bold',
               color: '#fff',
               marginBottom: '20px',
@@ -804,7 +830,7 @@ function CTASection({ section }) {
         {section.subtitle && (
           <PTag
             style={{
-              fontSize: '18px',
+              fontSize: isMobile ? '14px' : '18px',
               color: '#fff',
               marginBottom: '40px',
               lineHeight: '1.6',
@@ -822,11 +848,11 @@ function CTASection({ section }) {
               display: 'inline-block',
               backgroundColor: '#fff',
               color: '#FFA500',
-              padding: '14px 40px',
+              padding: isMobile ? '12px 32px' : '14px 40px',
               borderRadius: '6px',
               textDecoration: 'none',
               fontWeight: '600',
-              fontSize: '16px',
+              fontSize: isMobile ? '14px' : '16px',
               transition: 'transform 0.3s ease',
             }}
           >

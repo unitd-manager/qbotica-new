@@ -1,20 +1,49 @@
+"use client";
+
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import qubiLogo from "@/assets/qubi-logo.png";
-import heroIllustration from "@/assets/hero-illustration.jpg";
 import {
-  Menu, X, ArrowRight, Play, MessageSquare,
-  AlertTriangle, Unlink, Eye, Scaling, HandMetal,
-  Paintbrush, Layers, Plug, Users, BarChart3, ShieldCheck,
-  Search, PenTool, Rocket, LineChart,
-  Headphones, Calculator, Monitor, FileText, UserCog, GitBranch,
-  UserCheck, Bot,
-  Building2, Database, Globe, Brain, Wrench,
-  Activity, Gauge, Lock,
-  Zap, DollarSign, TrendingUp, Shield,
+  Activity,
+  AlertTriangle,
+  ArrowRight,
+  BarChart3,
+  Bot,
+  Brain,
+  Building2,
+  Calculator,
+  Database,
+  DollarSign,
+  Eye,
+  FileText,
+  Gauge,
+  GitBranch,
+  Globe,
+  HandMetal,
+  Headphones,
+  Layers,
+  LineChart,
+  Lock,
+  Menu,
+  MessageSquare,
+  Monitor,
+  Paintbrush,
+  PenTool,
+  Play,
+  Plug,
+  Rocket,
+  Scaling,
+  Search,
+  Shield,
+  ShieldCheck,
+  TrendingUp,
+  Unlink,
+  UserCheck,
+  UserCog,
+  Users,
+  Wrench,
+  X,
+  Zap,
 } from "lucide-react";
 
-/* ───────────── Navbar ───────────── */
 const navLinks = [
   { label: "Platform", href: "#capabilities" },
   { label: "Capabilities", href: "#how-it-works" },
@@ -23,79 +52,6 @@ const navLinks = [
   { label: "Contact", href: "#final-cta" },
 ];
 
-const Navbar = () => {
-  const [mobileOpen, setMobileOpen] = useState(false);
-  return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-xl border-b border-border">
-      <div className="container mx-auto flex items-center justify-between h-16 px-4 lg:px-8">
-        <a href="#" className="flex items-center gap-2">
-          <img src={qubiLogo} alt="qubi" className="h-8" />
-        </a>
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a key={link.label} href={link.href} className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-              {link.label}
-            </a>
-          ))}
-        </div>
-        <div className="hidden md:block">
-          <Button variant="hero" size="lg">Book a Demo</Button>
-        </div>
-        <button className="md:hidden p-2 text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
-      {mobileOpen && (
-        <div className="md:hidden bg-background border-b border-border px-4 pb-4">
-          {navLinks.map((link) => (
-            <a key={link.label} href={link.href} className="block py-3 text-sm font-medium text-muted-foreground hover:text-primary transition-colors" onClick={() => setMobileOpen(false)}>
-              {link.label}
-            </a>
-          ))}
-          <Button variant="hero" size="lg" className="w-full mt-2">Book a Demo</Button>
-        </div>
-      )}
-    </nav>
-  );
-};
-
-/* ───────────── Hero ───────────── */
-const HeroSection = () => (
-  <section className="relative min-h-screen flex items-center pt-16 overflow-hidden bg-background">
-    <div className="absolute inset-0 bg-gradient-glow pointer-events-none" />
-    <div className="container mx-auto px-4 lg:px-8 py-20 lg:py-32">
-      <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        <div className="max-w-2xl">
-          <div className="animate-fade-up">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6 border border-primary/20">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              Agentic Automation Platform
-            </span>
-          </div>
-          <h1 className="animate-fade-up-delay-1 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-foreground">
-            Orchestrate AI Agents, Bots, Systems & People with{" "}
-            <span className="text-gradient">qubi</span>
-          </h1>
-          <p className="animate-fade-up-delay-2 mt-6 text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-xl">
-            A unified platform for designing, deploying, and managing intelligent workflows powered by AI agents, automation, human input, and enterprise integrations.
-          </p>
-          <div className="animate-fade-up-delay-3 flex flex-wrap gap-4 mt-10">
-            <Button variant="hero" size="lg" className="gap-2 px-8 h-12">Book a Demo <ArrowRight size={18} /></Button>
-            <Button variant="hero-outline" size="lg" className="gap-2 px-8 h-12"><Play size={16} /> See the Platform</Button>
-          </div>
-        </div>
-        <div className="animate-fade-up-delay-2 relative">
-          <div className="relative rounded-2xl overflow-hidden shadow-card-hover">
-            <img src={heroIllustration} alt="qubi platform orchestration diagram" className="w-full h-auto rounded-2xl" />
-            <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-primary/20" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-);
-
-/* ───────────── Problem ───────────── */
 const problems = [
   { icon: Unlink, label: "Disconnected systems" },
   { icon: HandMetal, label: "Manual handoffs" },
@@ -104,32 +60,6 @@ const problems = [
   { icon: Scaling, label: "Difficulty scaling automation" },
 ];
 
-const ProblemSection = () => (
-  <section className="py-24 lg:py-32 bg-background" id="problem">
-    <div className="container mx-auto px-4 lg:px-8">
-      <div className="max-w-3xl mx-auto text-center mb-16">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
-          Enterprise work is too fragmented to automate with bots alone
-        </h2>
-        <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto">
-          Most enterprises struggle with siloed tools, manual processes, and limited scalability — making true end-to-end automation impossible.
-        </p>
-      </div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
-        {problems.map((item) => (
-          <div key={item.label} className="group flex flex-col items-center gap-4 p-6 rounded-2xl bg-surface-elevated border border-border hover:border-primary/30 hover:shadow-card-hover transition-all duration-300">
-            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
-              <item.icon size={24} />
-            </div>
-            <p className="text-sm font-medium text-center text-foreground">{item.label}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
-
-/* ───────────── Capabilities ───────────── */
 const capabilities = [
   { icon: Paintbrush, title: "Design", description: "Build automations and AI-powered workflows with low-code tools." },
   { icon: Layers, title: "Orchestrate", description: "Coordinate bots, agents, systems, and workloads from one control layer." },
@@ -139,32 +69,6 @@ const capabilities = [
   { icon: ShieldCheck, title: "Support & Govern", description: "Manage access, support issues, and enterprise reliability at scale." },
 ];
 
-const CapabilitiesSection = () => (
-  <section className="py-24 lg:py-32 bg-background" id="capabilities">
-    <div className="container mx-auto px-4 lg:px-8">
-      <div className="max-w-3xl mx-auto text-center mb-16">
-        <span className="text-primary text-sm font-semibold uppercase tracking-widest">What qubi is</span>
-        <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
-          One platform. Modular capabilities.{" "}
-          <span className="text-gradient">Enterprise control.</span>
-        </h2>
-      </div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {capabilities.map((cap) => (
-          <div key={cap.title} className="group relative p-8 rounded-2xl bg-background border border-border hover:border-primary/40 hover:shadow-card-hover transition-all duration-300">
-            <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
-              <cap.icon size={28} />
-            </div>
-            <h3 className="text-xl font-semibold text-foreground mb-3">{cap.title}</h3>
-            <p className="text-muted-foreground leading-relaxed">{cap.description}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
-
-/* ───────────── Outcomes ───────────── */
 const outcomes = [
   { icon: Zap, title: "Faster cycle times", description: "Accelerate end-to-end process completion" },
   { icon: DollarSign, title: "Lower operating cost", description: "Reduce manual effort and rework" },
@@ -174,33 +78,6 @@ const outcomes = [
   { icon: Lock, title: "Stronger governance", description: "Centralized access and compliance control" },
 ];
 
-const OutcomesSection = () => (
-  <section className="py-24 lg:py-32 bg-background" id="outcomes">
-    <div className="container mx-auto px-4 lg:px-8">
-      <div className="max-w-3xl mx-auto text-center mb-16">
-        <span className="text-primary text-sm font-semibold uppercase tracking-widest">Platform outcomes</span>
-        <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
-          Built for measurable operational impact
-        </h2>
-      </div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {outcomes.map((item) => (
-          <div key={item.title} className="group flex items-start gap-5 p-6 rounded-2xl hover:bg-surface-elevated transition-all duration-300">
-            <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
-              <item.icon size={24} />
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-foreground mb-1">{item.title}</h3>
-              <p className="text-muted-foreground text-sm">{item.description}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
-
-/* ───────────── How It Works ───────────── */
 const steps = [
   { icon: Search, step: "01", title: "Identify", description: "Discover high-value automation opportunities across your organization." },
   { icon: PenTool, step: "02", title: "Design", description: "Build workflows and agent experiences with low-code tools and AI assistance." },
@@ -208,37 +85,6 @@ const steps = [
   { icon: LineChart, step: "04", title: "Optimize", description: "Monitor, measure, and continuously scale for maximum operational impact." },
 ];
 
-const HowItWorksSection = () => (
-  <section className="py-24 lg:py-32 bg-surface-elevated" id="how-it-works">
-    <div className="container mx-auto px-4 lg:px-8">
-      <div className="max-w-3xl mx-auto text-center mb-16">
-        <span className="text-primary text-sm font-semibold uppercase tracking-widest">How it works</span>
-        <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
-          From discovery to scale in four steps
-        </h2>
-      </div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        {steps.map((item, i) => (
-          <div key={item.step} className="relative group">
-            {i < steps.length - 1 && (
-              <div className="hidden lg:block absolute top-10 left-[calc(100%)] w-full h-px bg-gradient-to-r from-primary/40 to-transparent z-0" />
-            )}
-            <div className="relative z-10 flex flex-col items-center text-center">
-              <div className="w-20 h-20 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
-                <item.icon size={32} />
-              </div>
-              <span className="text-primary font-bold text-sm mb-2">{item.step}</span>
-              <h3 className="text-xl font-semibold text-foreground mb-3">{item.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
-
-/* ───────────── Use Cases ───────────── */
 const useCases = [
   { icon: Headphones, title: "Customer Service & Support", description: "Automate ticket routing, resolution, and follow-ups with AI agents and human escalation." },
   { icon: Calculator, title: "Finance & Back Office", description: "Streamline invoicing, reconciliation, and compliance workflows across systems." },
@@ -248,31 +94,6 @@ const useCases = [
   { icon: GitBranch, title: "Cross-System Orchestration", description: "Connect and coordinate processes spanning multiple enterprise platforms." },
 ];
 
-const UseCasesSection = () => (
-  <section className="py-24 lg:py-32 bg-background" id="use-cases">
-    <div className="container mx-auto px-4 lg:px-8">
-      <div className="max-w-3xl mx-auto text-center mb-16">
-        <span className="text-primary text-sm font-semibold uppercase tracking-widest">Use cases</span>
-        <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
-          Automation that fits your business
-        </h2>
-      </div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {useCases.map((item) => (
-          <div key={item.title} className="group p-8 rounded-2xl border border-border bg-card hover:border-primary/30 hover:shadow-card-hover transition-all duration-300 cursor-pointer">
-            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-5 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
-              <item.icon size={24} />
-            </div>
-            <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
-
-/* ───────────── Integration ───────────── */
 const integrations = [
   { icon: Building2, label: "Enterprise Apps", count: "500+" },
   { icon: Database, label: "Databases", count: "50+" },
@@ -281,86 +102,6 @@ const integrations = [
   { icon: Wrench, label: "Third-Party Tools", count: "300+" },
 ];
 
-const IntegrationSection = () => (
-  <section className="py-24 lg:py-32 bg-surface-elevated" id="integrations">
-    <div className="container mx-auto px-4 lg:px-8">
-      <div className="max-w-3xl mx-auto text-center mb-16">
-        <span className="text-primary text-sm font-semibold uppercase tracking-widest">Integrations</span>
-        <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
-          Works across your existing stack
-        </h2>
-        <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto">
-          Connect to the systems you already use — from enterprise ERPs to modern AI APIs — with pre-built connectors and extensible integration layers.
-        </p>
-      </div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
-        {integrations.map((item) => (
-          <div key={item.label} className="group flex flex-col items-center gap-4 p-8 rounded-2xl border border-border hover:border-primary/40 bg-background transition-all duration-300 hover:shadow-card-hover">
-            <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
-              <item.icon size={30} />
-            </div>
-            <div className="text-center">
-              <p className="text-2xl font-bold text-primary">{item.count}</p>
-              <p className="text-sm text-muted-foreground mt-1">{item.label}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
-
-/* ───────────── Human in the Loop ───────────── */
-const HumanInLoopSection = () => (
-  <section className="py-24 lg:py-32 bg-background" id="human-in-loop">
-    <div className="container mx-auto px-4 lg:px-8">
-      <div className="grid lg:grid-cols-2 gap-16 items-center">
-        <div className="relative">
-          <div className="aspect-square max-w-md mx-auto relative">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-full h-full rounded-full border-2 border-dashed border-primary/20 animate-[spin_30s_linear_infinite]" />
-            </div>
-            <div className="absolute inset-8 flex items-center justify-center">
-              <div className="w-full h-full rounded-full border border-primary/10" />
-            </div>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-24 h-24 rounded-2xl bg-primary flex items-center justify-center shadow-glow">
-                <ArrowRight size={40} className="text-primary-foreground" />
-              </div>
-            </div>
-            <div className="absolute top-4 left-1/2 -translate-x-1/2 w-16 h-16 rounded-xl bg-surface-elevated border border-border flex items-center justify-center shadow-card">
-              <Bot size={28} className="text-primary" />
-            </div>
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-16 h-16 rounded-xl bg-surface-elevated border border-border flex items-center justify-center shadow-card">
-              <UserCheck size={28} className="text-primary" />
-            </div>
-          </div>
-        </div>
-        <div>
-          <span className="text-primary text-sm font-semibold uppercase tracking-widest">Human-in-the-Loop</span>
-          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground leading-tight">
-            Automation where it makes sense.{" "}
-            <span className="text-gradient">Human judgment where it matters.</span>
-          </h2>
-          <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-            qubi seamlessly routes tasks between AI agents and human operators. When a workflow requires approval, exception handling, or expert judgment, the right person is brought into the loop — with full context and zero friction.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            {["Attended automation", "Smart routing", "Approval workflows"].map((t) => (
-              <div key={t} className="flex items-center gap-3 px-4 py-2 rounded-lg bg-surface-elevated">
-                <div className="w-2 h-2 rounded-full bg-primary" />
-                <span className="text-sm font-medium text-foreground">{t}</span>
-              </div>
-            ))}
-          </div>
-          <Button variant="hero" size="lg" className="mt-8 gap-2">Learn More <ArrowRight size={18} /></Button>
-        </div>
-      </div>
-    </div>
-  </section>
-);
-
-/* ───────────── Analytics ───────────── */
 const analyticsFeatures = [
   { icon: BarChart3, title: "ROI tracking", description: "Quantify the value of every automated workflow." },
   { icon: Activity, title: "Pipeline visibility", description: "See all running automations in real time." },
@@ -370,89 +111,1346 @@ const analyticsFeatures = [
   { icon: Lock, title: "Centralized access control", description: "Role-based governance across the platform." },
 ];
 
-const AnalyticsSection = () => (
-  <section className="py-24 lg:py-32 bg-surface-elevated" id="analytics">
-    <div className="container mx-auto px-4 lg:px-8">
-      <div className="max-w-3xl mx-auto text-center mb-16">
-        <span className="text-primary text-sm font-semibold uppercase tracking-widest">Analytics & Trust</span>
-        <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
-          Visibility, performance, and accountability{" "}
-          <span className="text-gradient">built in</span>
-        </h2>
-      </div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {analyticsFeatures.map((item) => (
-          <div key={item.title} className="group p-6 rounded-2xl border border-border bg-background hover:border-primary/30 hover:shadow-card-hover transition-all duration-300">
-            <div className="flex items-center gap-4 mb-3">
-              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
-                <item.icon size={20} />
-              </div>
-              <h3 className="text-base font-semibold text-foreground">{item.title}</h3>
-            </div>
-            <p className="text-muted-foreground text-sm leading-relaxed pl-14">{item.description}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
+function ActionButton({ href, variant = "primary", children, onClick }) {
+  return (
+    <a href={href} className={`qubiButton ${variant === "outline" ? "qubiButtonOutline" : "qubiButtonPrimary"}`} onClick={onClick}>
+      {children}
+    </a>
+  );
+}
 
-/* ───────────── Final CTA ───────────── */
-const FinalCTASection = () => (
-  <section className="py-24 lg:py-32 bg-background relative overflow-hidden" id="final-cta">
-    <div className="absolute inset-0 bg-gradient-glow pointer-events-none opacity-50" />
-    <div className="relative container mx-auto px-4 lg:px-8 text-center">
-      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground max-w-3xl mx-auto">
-        See what <span className="text-gradient">qubi</span> can automate in your enterprise
+function SectionHeader({ eyebrow, title, highlight, description }) {
+  return (
+    <div className="sectionHeader">
+      {eyebrow ? <span className="sectionEyebrow">{eyebrow}</span> : null}
+      <h2 className="sectionTitle">
+        {title}
+        {highlight ? (
+          <>
+            {" "}
+            <span className="gradientText">{highlight}</span>
+          </>
+        ) : null}
       </h2>
-      <p className="mt-6 text-lg text-muted-foreground max-w-xl mx-auto">
-        Ready to move from fragmented processes to intelligent, orchestrated workflows? Let's talk.
-      </p>
-      <div className="flex flex-wrap justify-center gap-4 mt-10">
-        <Button variant="hero" size="lg" className="gap-2 px-8 h-12">Book a Demo <ArrowRight size={18} /></Button>
-        <Button variant="hero-outline" size="lg" className="gap-2 px-8 h-12"><MessageSquare size={16} /> Talk to an Expert</Button>
-      </div>
+      {description ? <p className="sectionDescription">{description}</p> : null}
     </div>
-  </section>
-);
+  );
+}
 
-/* ───────────── Footer ───────────── */
-const FooterSection = () => (
-  <footer className="py-12 bg-background border-t border-border">
-    <div className="container mx-auto px-4 lg:px-8">
-      <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-        <div className="flex items-center gap-2">
-          <img src={qubiLogo} alt="qubi" className="h-6" />
+export default function QubiNext15Page({
+  logoSrc = "/assets/images/qubi-logo.png",
+  heroSrc = "/assets/images/hero-illustration.jpg",
+}) {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  return (
+    <div className="qubiNext15">
+     
+      <main id="top">
+        <section className="heroSection">
+          <div className="heroGlow" />
+          <div className="pageContainer heroGrid">
+            <div className="heroCopy">
+              <div className="fadeUp">
+                <span className="heroPill">
+                  <span className="heroPillDot" />
+                  Agentic Automation Platform
+                </span>
+              </div>
+
+              <h1 className="heroTitle fadeUp fadeUpDelay1">
+                Orchestrate AI Agents, Bots, Systems &amp; People with{" "}
+                <span className="gradientText">qubi</span>
+              </h1>
+
+              <p className="heroText fadeUp fadeUpDelay2">
+                A unified platform for designing, deploying, and managing intelligent workflows
+                powered by AI agents, automation, human input, and enterprise integrations.
+              </p>
+
+              <div className="heroActions fadeUp fadeUpDelay3">
+                <ActionButton href="https://meetings.hubspot.com/automation-demo/scheduler">
+                  Book a Demo
+                  <ArrowRight size={18} />
+                </ActionButton>
+                {/* <ActionButton href="#capabilities" variant="outline">
+                  <Play size={16} />
+                  See the Platform
+                </ActionButton> */}
+              </div>
+            </div>
+
+            <div className="heroVisual fadeUp fadeUpDelay2">
+              <div className="heroFrame">
+                <img src={heroSrc} alt="qubi platform orchestration diagram" className="heroImage" />
+                <div className="heroFrameRing" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section" id="problem">
+          <div className="pageContainer">
+            <SectionHeader
+              title="Enterprise work is too fragmented to automate with bots alone"
+              description="Most enterprises struggle with siloed tools, manual processes, and limited scalability — making true end-to-end automation impossible."
+            />
+
+            <div className="problemGrid">
+              {problems.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div key={item.label} className="iconCard iconCardCentered">
+                    <div className="iconTile">
+                      <Icon size={24} />
+                    </div>
+                    <p className="iconCardLabel">{item.label}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        <section className="section" id="capabilities">
+          <div className="pageContainer">
+            <SectionHeader
+              eyebrow="What qubi is"
+              title="One platform. Modular capabilities."
+              highlight="Enterprise control."
+            />
+
+            <div className="capabilityGrid">
+              {capabilities.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div key={item.title} className="featureCard">
+                    <div className="featureIcon">
+                      <Icon size={28} />
+                    </div>
+                    <h3 className="cardTitle">{item.title}</h3>
+                    <p className="cardDescription">{item.description}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        <section className="section" id="outcomes">
+          <div className="pageContainer">
+            <SectionHeader eyebrow="Platform outcomes" title="Built for measurable operational impact" />
+
+            <div className="outcomeGrid">
+              {outcomes.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div key={item.title} className="outcomeItem">
+                    <div className="outcomeIcon">
+                      <Icon size={24} />
+                    </div>
+                    <div>
+                      <h3 className="outcomeTitle">{item.title}</h3>
+                      <p className="outcomeDescription">{item.description}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        <section className="section sectionAlt" id="how-it-works">
+          <div className="pageContainer">
+            <SectionHeader eyebrow="How it works" title="From discovery to scale in four steps" />
+
+            <div className="stepsGrid">
+              {steps.map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <div key={item.step} className="stepCard">
+                    {index < steps.length - 1 ? <div className="stepConnector" aria-hidden="true" /> : null}
+                    <div className="stepIconWrap">
+                      <Icon size={32} />
+                    </div>
+                    <span className="stepNumber">{item.step}</span>
+                    <h3 className="cardTitle stepTitle">{item.title}</h3>
+                    <p className="cardDescription stepDescription">{item.description}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        <section className="section" id="use-cases">
+          <div className="pageContainer">
+            <SectionHeader eyebrow="Use cases" title="Automation that fits your business" />
+
+            <div className="capabilityGrid">
+              {useCases.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div key={item.title} className="featureCard useCaseCard">
+                    <div className="featureIcon featureIconSmall">
+                      <Icon size={24} />
+                    </div>
+                    <h3 className="cardTitle cardTitleSmall">{item.title}</h3>
+                    <p className="cardDescription cardDescriptionSmall">{item.description}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        <section className="section sectionAlt" id="integrations">
+          <div className="pageContainer">
+            <SectionHeader
+              eyebrow="Integrations"
+              title="Works across your existing stack"
+              description="Connect to the systems you already use — from enterprise ERPs to modern AI APIs — with pre-built connectors and extensible integration layers."
+            />
+
+            <div className="integrationGrid">
+              {integrations.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div key={item.label} className="iconCard iconCardCentered iconCardSpacious">
+                    <div className="iconTile iconTileLarge">
+                      <Icon size={30} />
+                    </div>
+                    <div className="integrationCopy">
+                      <p className="integrationCount">{item.count}</p>
+                      <p className="integrationLabel">{item.label}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        <section className="section" id="human-in-loop">
+          <div className="pageContainer humanLoopGrid">
+            <div className="orbitWrap">
+              <div className="orbitShell">
+                <div className="orbitRing orbitRingOuter" />
+                <div className="orbitRing orbitRingInner" />
+                <div className="orbitCenter">
+                  <ArrowRight size={40} />
+                </div>
+                <div className="orbitNode orbitNodeTop">
+                  <Bot size={28} />
+                </div>
+                <div className="orbitNode orbitNodeBottom">
+                  <UserCheck size={28} />
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <span className="sectionEyebrow">Human-in-the-Loop</span>
+              <h2 className="sectionTitle humanLoopTitle">
+                Automation where it makes sense. <span className="gradientText">Human judgment where it matters.</span>
+              </h2>
+              <p className="humanLoopText">
+                qubi seamlessly routes tasks between AI agents and human operators. When a workflow
+                requires approval, exception handling, or expert judgment, the right person is brought
+                into the loop — with full context and zero friction.
+              </p>
+
+              <div className="pillRow">
+                {[
+                  "Attended automation",
+                  "Smart routing",
+                  "Approval workflows",
+                ].map((item) => (
+                  <div key={item} className="miniPill">
+                    <span className="miniPillDot" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="humanLoopAction">
+                <ActionButton href="https://meetings.hubspot.com/automation-demo/scheduler">
+                  Learn More
+                  <ArrowRight size={18} />
+                </ActionButton>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section sectionAlt" id="analytics">
+          <div className="pageContainer">
+            <SectionHeader
+              eyebrow="Analytics & Trust"
+              title="Visibility, performance, and accountability"
+              highlight="built in"
+            />
+
+            <div className="analyticsGrid">
+              {analyticsFeatures.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div key={item.title} className="analyticsCard">
+                    <div className="analyticsCardHeader">
+                      <div className="analyticsIcon">
+                        <Icon size={20} />
+                      </div>
+                      <h3 className="analyticsTitle">{item.title}</h3>
+                    </div>
+                    <p className="analyticsDescription">{item.description}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        <section className="section ctaSection" id="final-cta">
+          <div className="heroGlow ctaGlow" />
+          <div className="pageContainer ctaInner">
+            <h2 className="ctaTitle">
+              See what <span className="gradientText">qubi</span> can automate in your enterprise
+            </h2>
+            <p className="ctaDescription">
+              Ready to move from fragmented processes to intelligent, orchestrated workflows? Let&apos;s talk.
+            </p>
+            <div className="heroActions ctaActions">
+              <ActionButton href="https://meetings.hubspot.com/automation-demo/scheduler">
+                Book a Demo
+                <ArrowRight size={18} />
+              </ActionButton>
+              <ActionButton href="https://meetings.hubspot.com/automation-demo/scheduler" variant="outline">
+                <MessageSquare size={16} />
+                Talk to an Expert
+              </ActionButton>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      {/* <footer className="footer">
+        <div className="pageContainer footerInner">
+          <div className="footerBrand">
+            <img src={logoSrc} alt="qubi" className="footerLogo" />
+          </div>
+
+          <div className="footerLinks">
+            <a href="#top">Privacy</a>
+            <a href="#top">Terms</a>
+            <a href="#top">Contact</a>
+          </div>
+
+          <p className="footerCopyright">© {new Date().getFullYear()} qubi by Qbotica. All rights reserved.</p>
         </div>
-        <div className="flex items-center gap-8 text-sm text-muted-foreground">
-          <a href="#" className="hover:text-primary transition-colors">Privacy</a>
-          <a href="#" className="hover:text-primary transition-colors">Terms</a>
-          <a href="#" className="hover:text-primary transition-colors">Contact</a>
-        </div>
-        <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} qubi by Qbotica. All rights reserved.
-        </p>
-      </div>
+      </footer> */}
+
+      <style jsx global>{`
+        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+      `}</style>
+
+      <style jsx>{`
+        .qubiNext15 {
+          --background: 0 0% 100%;
+          --foreground: 0 0% 7%;
+          --card: 0 0% 100%;
+          --card-foreground: 0 0% 7%;
+          --primary: 24 100% 50%;
+          --primary-foreground: 0 0% 100%;
+          --secondary: 0 0% 96%;
+          --secondary-foreground: 0 0% 7%;
+          --muted: 0 0% 96%;
+          --muted-foreground: 0 0% 45%;
+          --accent: 24 100% 50%;
+          --accent-foreground: 0 0% 100%;
+          --border: 0 0% 90%;
+          --surface-dark: 0 0% 4%;
+          --surface-dark-foreground: 0 0% 95%;
+          --surface-elevated: 0 0% 98%;
+          --gradient-primary: linear-gradient(135deg, hsl(24 100% 50%), hsl(35 100% 55%));
+          --gradient-glow: radial-gradient(ellipse at 50% 0%, hsl(24 100% 50% / 0.15), transparent 70%);
+          --shadow-glow: 0 0 60px -15px hsl(24 100% 50% / 0.4);
+          --shadow-card: 0 1px 3px hsl(0 0% 0% / 0.06), 0 4px 12px hsl(0 0% 0% / 0.04);
+          --shadow-card-hover: 0 4px 20px hsl(0 0% 0% / 0.08), 0 8px 32px hsl(0 0% 0% / 0.04);
+          background: hsl(var(--background));
+          color: hsl(var(--foreground));
+          font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+          min-height: 100vh;
+          width: 100%;
+        }
+
+        .qubiNext15,
+        .qubiNext15 * {
+          box-sizing: border-box;
+        }
+
+        .qubiNext15 img {
+          display: block;
+          max-width: 100%;
+        }
+
+        .qubiNext15 a {
+          color: inherit;
+          text-decoration: none;
+        }
+
+        .qubiNext15 button {
+          font: inherit;
+        }
+
+        .qubiNext15 h1,
+        .qubiNext15 h2,
+        .qubiNext15 h3,
+        .qubiNext15 p {
+          margin: 0;
+        }
+
+        .pageContainer {
+          width: 100%;
+          max-width: 1280px;
+          margin: 0 auto;
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+
+        .navBar {
+          position: fixed;
+          inset: 0 0 auto;
+          z-index: 50;
+          background: hsl(var(--background) / 0.9);
+          border-bottom: 1px solid hsl(var(--border));
+          backdrop-filter: blur(20px);
+        }
+
+        .navInner {
+          min-height: 64px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 16px;
+        }
+
+        .brandLink,
+        .footerBrand {
+          display: inline-flex;
+          align-items: center;
+        }
+
+        .brandLogo {
+          height: 32px;
+          width: auto;
+        }
+
+        .footerLogo {
+          height: 24px;
+          width: auto;
+        }
+
+        .desktopNavLinks,
+        .desktopCta {
+          display: none;
+        }
+
+        .navLink {
+          font-size: 14px;
+          font-weight: 500;
+          color: hsl(var(--muted-foreground));
+          transition: color 180ms ease;
+        }
+
+        .navLink:hover,
+        .mobileNavLink:hover,
+        .footerLinks a:hover {
+          color: hsl(var(--primary));
+        }
+
+        .mobileToggle {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 8px;
+          border: 0;
+          border-radius: 0;
+          background: transparent;
+          color: hsl(var(--foreground));
+          cursor: pointer;
+        }
+
+        .mobilePanel {
+          border-top: 1px solid hsl(var(--border));
+          background: hsl(var(--background));
+        }
+
+        .mobilePanelInner {
+          padding: 0 0 16px;
+          display: grid;
+          gap: 2px;
+        }
+
+        .mobileNavLink {
+          padding: 12px 0;
+          font-size: 14px;
+          font-weight: 500;
+          color: hsl(var(--muted-foreground));
+          transition: color 180ms ease;
+        }
+
+        .heroSection {
+          position: relative;
+          min-height: 100vh;
+          display: flex;
+          align-items: center;
+          overflow: hidden;
+          padding-top: 0;
+          background: hsl(var(--background));
+        }
+
+        .heroGlow {
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+          background-image: var(--gradient-glow);
+        }
+
+        .heroGrid,
+        .humanLoopGrid,
+        .footerInner {
+          display: grid;
+          gap: 48px;
+        }
+
+        .heroGrid {
+          align-items: center;
+          padding: 48px 0;
+        }
+
+        .heroCopy {
+          max-width: 672px;
+          position: relative;
+          z-index: 1;
+        }
+
+        .heroPill,
+        .miniPill {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+        }
+
+        .heroPill {
+          margin-bottom: 24px;
+          padding: 8px 16px;
+          border-radius: 999px;
+          border: 1px solid hsl(var(--primary) / 0.2);
+          background: hsl(var(--primary) / 0.1);
+          color: hsl(var(--primary));
+          font-size: 14px;
+          font-weight: 500;
+        }
+
+        .heroPillDot,
+        .miniPillDot {
+          width: 8px;
+          height: 8px;
+          border-radius: 999px;
+          background: hsl(var(--primary));
+          animation: pulseGlow 2s ease-in-out infinite;
+        }
+
+        .heroTitle {
+          font-size: 36px;
+          line-height: 1.1;
+          letter-spacing: -0.025em;
+          font-weight: 700;
+        }
+
+        .heroText,
+        .sectionDescription,
+        .humanLoopText,
+        .ctaDescription {
+          color: hsl(var(--muted-foreground));
+          line-height: 1.7;
+        }
+
+        .heroText {
+          margin-top: 24px;
+          max-width: 576px;
+          font-size: 18px;
+        }
+
+        .heroActions,
+        .pillRow,
+        .footerLinks {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 16px;
+        }
+
+        .heroActions {
+          margin-top: 40px;
+        }
+
+        .qubiButton {
+          min-height: 48px;
+          padding: 14px 28px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          border-radius: 12px;
+          border: 2px solid transparent;
+          font-size: 16px;
+          font-weight: 600;
+          font-family: "Inter", sans-serif;
+          line-height: 1;
+          white-space: nowrap;
+          cursor: pointer;
+          transition: all 200ms ease;
+        }
+
+        .qubiButton:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 24px rgba(255, 102, 0, 0.25);
+        }
+
+        .qubiButton:active {
+          transform: translateY(0);
+        }
+
+        .qubiButtonPrimary {
+          background: #ff6600;
+          color: #ffffff;
+          box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3);
+        }
+
+        .qubiButtonPrimary:hover {
+          background: #ff7f1a;
+          box-shadow: 0 8px 24px rgba(255, 102, 0, 0.4);
+        }
+
+        .qubiButtonOutline {
+          background: #ffffff;
+          border-color: #ff6600;
+          color: #ff6600;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .qubiButtonOutline:hover {
+          background: #fff5f0;
+          border-color: #ff7f1a;
+          color: #ff7f1a;
+        }
+
+        .heroVisual {
+          position: relative;
+          z-index: 1;
+        }
+
+        .heroFrame {
+          position: relative;
+          overflow: hidden;
+          border-radius: 16px;
+          box-shadow: var(--shadow-card-hover);
+        }
+
+        .heroImage {
+          width: 100%;
+          height: auto;
+          border-radius: 16px;
+        }
+
+        .heroFrameRing {
+          position: absolute;
+          inset: 0;
+          border-radius: 16px;
+          box-shadow: inset 0 0 0 1px hsl(var(--primary) / 0.2);
+        }
+
+        .section {
+          position: relative;
+          padding: 96px 0;
+          background: hsl(var(--background));
+        }
+
+        .sectionAlt {
+          background: hsl(var(--surface-elevated));
+        }
+
+        .sectionHeader,
+        .ctaInner {
+          text-align: center !important;
+          max-width: 768px;
+          margin: 0 auto 64px !important;
+        }
+
+        .sectionHeader .sectionEyebrow {
+          display: block !important;
+          color: #ff6600 !important;
+          font-size: 13px !important;
+          font-weight: 600 !important;
+          font-family: "Inter", sans-serif !important;
+          letter-spacing: 0.15em !important;
+          text-transform: uppercase !important;
+          margin-bottom: 16px !important;
+          text-align: center !important;
+          padding: 0 !important;
+        }
+
+        .sectionHeader .sectionTitle,
+        .ctaInner .ctaTitle {
+          margin-top: 0 !important;
+          font-size: 30px !important;
+          line-height: 1.15 !important;
+          letter-spacing: -0.025em !important;
+          font-weight: 700 !important;
+          font-family: "Inter", sans-serif !important;
+          color: hsl(var(--foreground)) !important;
+          text-align: center !important;
+          padding: 0 !important;
+        }
+
+        .sectionHeader .sectionDescription {
+          margin-top: 24px !important;
+          max-width: 640px !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+          font-size: 18px !important;
+          font-family: "Inter", sans-serif !important;
+          text-align: center !important;
+          padding: 0 !important;
+        }
+
+        .gradientText {
+          background-image: var(--gradient-primary);
+          -webkit-background-clip: text !important;
+          background-clip: text !important;
+          color: transparent !important;
+        }
+
+        .problemGrid,
+        .capabilityGrid,
+        .outcomeGrid,
+        .stepsGrid,
+        .integrationGrid,
+        .analyticsGrid {
+          display: grid;
+          gap: 24px;
+        }
+
+        .problemGrid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .capabilityGrid,
+        .outcomeGrid,
+        .analyticsGrid {
+          grid-template-columns: 1fr;
+        }
+
+        .stepsGrid {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+
+        .integrationGrid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .iconCard,
+        .featureCard,
+        .analyticsCard {
+          border: 1px solid hsl(var(--border));
+          border-radius: 16px;
+          background: hsl(var(--card));
+          transition: border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease, background 200ms ease, color 200ms ease;
+        }
+
+        .iconCard:hover,
+        .featureCard:hover,
+        .analyticsCard:hover {
+          transform: translateY(-4px);
+          border-color: hsl(var(--primary) / 0.35);
+          box-shadow: var(--shadow-card-hover);
+        }
+
+        .iconCardCentered {
+          padding: 24px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 16px;
+          text-align: center;
+          background: hsl(var(--surface-elevated));
+        }
+
+        .iconCardSpacious {
+          padding: 32px 24px;
+          background: hsl(var(--background));
+        }
+
+        .iconTile,
+        .featureIcon,
+        .outcomeIcon,
+        .analyticsIcon,
+        .orbitCenter,
+        .orbitNode {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          color: hsl(var(--primary));
+          background: hsl(var(--primary) / 0.1);
+          transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+        }
+
+        .iconCard:hover .iconTile,
+        .featureCard:hover .featureIcon,
+        .analyticsCard:hover .analyticsIcon {
+          background: hsl(var(--primary));
+          color: hsl(var(--primary-foreground));
+        }
+
+        .iconTile {
+          width: 48px;
+          height: 48px;
+          border-radius: 12px;
+        }
+
+        .iconTileLarge {
+          width: 64px;
+          height: 64px;
+          border-radius: 16px;
+        }
+
+        .iconCardLabel,
+        .integrationLabel,
+        .footerCopyright {
+          font-size: 14px;
+          color: hsl(var(--muted-foreground));
+        }
+
+        .featureCard,
+        .useCaseCard {
+          padding: 32px;
+        }
+
+        .featureIcon {
+          width: 56px;
+          height: 56px;
+          border-radius: 14px;
+          margin-bottom: 24px;
+        }
+
+        .featureIconSmall {
+          width: 48px;
+          height: 48px;
+          border-radius: 12px;
+          margin-bottom: 20px;
+        }
+
+        .cardTitle,
+        .outcomeTitle,
+        .analyticsTitle {
+          color: hsl(var(--foreground));
+          font-weight: 600;
+          font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .cardTitle {
+          font-size: 20px;
+          font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+          font-weight: 700;
+          margin-bottom: 12px;
+        }
+
+        .cardTitleSmall {
+          font-size: 18px;
+          font-weight: 700;
+          font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+          margin-bottom: 8px;
+        }
+
+        .cardDescription,
+        .outcomeDescription,
+        .analyticsDescription {
+          color: hsl(var(--muted-foreground));
+          line-height: 1.8;
+          font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+          font-weight: 500;
+        }
+
+        .cardDescriptionSmall,
+        .outcomeDescription,
+        .analyticsDescription {
+          font-size: 14px;
+        }
+
+        .outcomeItem {
+          display: flex;
+          align-items: flex-start;
+          gap: 20px;
+          padding: 24px;
+          border-radius: 16px;
+          transition: background 180ms ease, transform 180ms ease;
+        }
+
+        .outcomeItem:hover {
+          transform: translateY(-2px);
+          background: hsl(var(--surface-elevated));
+        }
+
+        .outcomeItem:hover .outcomeIcon {
+          transform: scale(1.08);
+        }
+
+        .outcomeIcon {
+          width: 48px;
+          height: 48px;
+          flex-shrink: 0;
+          border-radius: 12px;
+        }
+
+        .outcomeTitle {
+          font-size: 18px;
+          margin-bottom: 4px;
+          font-weight: 700;
+          font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .stepCard {
+          position: relative;
+          text-align: center;
+        }
+
+        .stepConnector {
+          display: none;
+        }
+
+        .stepIconWrap {
+          width: 80px;
+          height: 80px;
+          margin: 0 auto 24px;
+          border-radius: 16px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          color: hsl(var(--primary));
+          background: hsl(var(--primary) / 0.1);
+          border: 1px solid hsl(var(--primary) / 0.2);
+          transition: background 180ms ease, color 180ms ease;
+        }
+
+        .stepCard:hover .stepIconWrap {
+          background: hsl(var(--primary));
+          color: hsl(var(--primary-foreground));
+        }
+
+        .stepNumber {
+          display: block;
+          margin-bottom: 8px;
+          color: hsl(var(--primary));
+          font-size: 14px;
+          font-weight: 700;
+        }
+
+        .stepTitle {
+          margin-bottom: 12px;
+        }
+
+        .stepDescription {
+          max-width: 280px;
+          margin: 0 auto;
+          font-size: 14px;
+        }
+
+        .integrationCopy {
+          text-align: center;
+        }
+
+        .integrationCount {
+          color: hsl(var(--primary));
+          font-size: 32px;
+          font-weight: 700;
+        }
+
+        .integrationLabel {
+          margin-top: 4px;
+        }
+
+        .humanLoopGrid {
+          align-items: center;
+        }
+
+        .orbitWrap {
+          position: relative;
+        }
+
+        .orbitShell {
+          position: relative;
+          width: min(100%, 420px);
+          aspect-ratio: 1 / 1;
+          margin: 0 auto;
+        }
+
+        .orbitRing {
+          position: absolute;
+          inset: 0;
+          border-radius: 999px;
+        }
+
+        .orbitRingOuter {
+          border: 2px dashed hsl(var(--primary) / 0.2);
+          animation: spin 30s linear infinite;
+        }
+
+        .orbitRingInner {
+          inset: 32px;
+          border: 1px solid hsl(var(--primary) / 0.1);
+        }
+
+        .orbitCenter {
+          position: absolute;
+          inset: 50% auto auto 50%;
+          width: 96px;
+          height: 96px;
+          border-radius: 16px;
+          transform: translate(-50%, -50%);
+          background: hsl(var(--primary));
+          color: hsl(var(--primary-foreground));
+          box-shadow: var(--shadow-glow);
+        }
+
+        .orbitNode {
+          position: absolute;
+          left: 50%;
+          width: 64px;
+          height: 64px;
+          margin-left: -32px;
+          border-radius: 12px;
+          background: hsl(var(--surface-elevated));
+          color: hsl(var(--primary));
+          border: 1px solid hsl(var(--border));
+          box-shadow: var(--shadow-card);
+        }
+
+        .orbitNodeTop {
+          top: 16px;
+        }
+
+        .orbitNodeBottom {
+          bottom: 16px;
+        }
+
+        .humanLoopTitle {
+          text-align: left;
+          margin-top: 16px;
+        }
+
+        .humanLoopText {
+          margin-top: 24px;
+          font-size: 18px;
+        }
+
+        .pillRow {
+          margin-top: 32px;
+        }
+
+        .miniPill {
+          padding: 10px 16px;
+          border-radius: 10px;
+          background: hsl(var(--surface-elevated));
+          font-size: 14px;
+          font-weight: 500;
+          color: hsl(var(--foreground));
+        }
+
+        .humanLoopAction {
+          margin-top: 32px;
+        }
+
+        .analyticsCard {
+          padding: 24px;
+          background: hsl(var(--background));
+        }
+
+        .analyticsCardHeader {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          margin-bottom: 12px;
+        }
+
+        .analyticsIcon {
+          width: 40px;
+          height: 40px;
+          border-radius: 10px;
+          flex-shrink: 0;
+        }
+
+        .analyticsTitle {
+          font-size: 16px;
+        }
+
+        .analyticsDescription {
+          padding-left: 56px;
+        }
+
+        .ctaSection {
+          overflow: hidden;
+        }
+
+        .ctaGlow {
+          opacity: 0.5;
+        }
+
+        .ctaInner {
+          position: relative;
+          z-index: 1;
+        }
+
+        .ctaActions {
+          justify-content: center;
+        }
+
+        .footer {
+          border-top: 1px solid hsl(var(--border));
+          background: hsl(var(--background));
+          padding: 48px 0;
+        }
+
+        .footerInner {
+          align-items: center;
+          justify-content: space-between;
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+        }
+
+        .footerLinks {
+          color: hsl(var(--muted-foreground));
+          font-size: 14px;
+        }
+
+        .footerCopyright {
+          color: hsl(var(--muted-foreground));
+        }
+
+        .fadeUp {
+          opacity: 0;
+          animation: fadeUp 0.6s ease-out forwards;
+        }
+
+        .fadeUpDelay1 {
+          animation-delay: 0.1s;
+        }
+
+        .fadeUpDelay2 {
+          animation-delay: 0.2s;
+        }
+
+        .fadeUpDelay3 {
+          animation-delay: 0.3s;
+        }
+
+        @keyframes fadeUp {
+          from {
+            opacity: 0;
+            transform: translateY(24px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes spin {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+
+        @keyframes pulseGlow {
+          0%,
+          100% {
+            opacity: 0.4;
+          }
+          50% {
+            opacity: 1;
+          }
+        }
+
+        @media (min-width: 640px) {
+          .heroTitle {
+            font-size: 48px;
+          }
+
+          .heroText {
+            font-size: 20px;
+          }
+
+          .sectionHeader .sectionTitle,
+          .ctaInner .ctaTitle {
+            font-size: 36px !important;
+          }
+
+          .problemGrid,
+          .integrationGrid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+          }
+
+          .capabilityGrid,
+          .outcomeGrid,
+          .analyticsGrid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
+
+          .stepsGrid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
+        }
+
+        @media (min-width: 768px) {
+          .desktopNavLinks {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+          }
+
+          .desktopCta {
+            display: block;
+          }
+
+          .mobileToggle,
+          .mobilePanel {
+            display: none;
+          }
+
+          .footerInner {
+            flex-direction: row;
+            text-align: left;
+          }
+
+          .footerBrand {
+            justify-content: flex-start;
+          }
+
+          .footerLinks {
+            justify-content: center;
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .pageContainer {
+            padding-left: 32px;
+            padding-right: 32px;
+          }
+
+          .heroGrid,
+          .humanLoopGrid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 64px;
+          }
+
+          .heroGrid {
+            padding: 80px 0;
+          }
+
+          .heroTitle {
+            font-size: 60px;
+          }
+
+          .sectionHeader .sectionTitle,
+          .ctaInner .ctaTitle {
+            font-size: 48px !important;
+          }
+
+          .section {
+            padding: 128px 0;
+          }
+
+          .problemGrid {
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+          }
+
+          .capabilityGrid,
+          .outcomeGrid,
+          .analyticsGrid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+          }
+
+          .stepsGrid {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+          }
+
+          .stepConnector {
+            display: block;
+            position: absolute;
+            top: 40px;
+            left: 100%;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, hsl(var(--primary) / 0.4), transparent);
+          }
+
+          .integrationGrid {
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+          }
+        }
+
+        @media (max-width: 1023px) {
+          .humanLoopTitle,
+          .humanLoopText {
+            text-align: center;
+          }
+
+          .pillRow,
+          .humanLoopAction {
+            justify-content: center;
+            display: flex;
+            flex-wrap: wrap;
+          }
+        }
+
+        @media (max-width: 767px) {
+          .footerInner {
+            text-align: center;
+          }
+
+          .footerBrand {
+            justify-content: center;
+          }
+        }
+
+        @media (max-width: 639px) {
+          .analyticsDescription {
+            padding-left: 0;
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .fadeUp,
+          .heroPillDot,
+          .miniPillDot,
+          .orbitRingOuter {
+            animation: none;
+          }
+
+          .qubiButton,
+          .iconCard,
+          .featureCard,
+          .analyticsCard,
+          .outcomeItem,
+          .outcomeIcon {
+            transition: none;
+          }
+        }
+      `}</style>
     </div>
-  </footer>
-);
-
-/* ───────────── Page ───────────── */
-const Index = () => (
-  <div className="min-h-screen">
-    <Navbar />
-    <HeroSection />
-    <ProblemSection />
-    <CapabilitiesSection />
-    <OutcomesSection />
-    <HowItWorksSection />
-    <UseCasesSection />
-    <IntegrationSection />
-    <HumanInLoopSection />
-    <AnalyticsSection />
-    <FinalCTASection />
-    <FooterSection />
-  </div>
-);
-
-export default Index;
+  );
+}
