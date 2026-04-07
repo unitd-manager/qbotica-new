@@ -449,9 +449,7 @@ export default function QubiNext15Page({
         </div>
       </footer> */}
 
-      <style jsx global>{`
-        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
-      `}</style>
+
 
       <style jsx>{`
         .qubiNext15 {
@@ -478,7 +476,7 @@ export default function QubiNext15Page({
           --shadow-card-hover: 0 4px 20px hsl(0 0% 0% / 0.08), 0 8px 32px hsl(0 0% 0% / 0.04);
           background: hsl(var(--background));
           color: hsl(var(--foreground));
-          font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+          font-family: var(--font-inter);
           min-height: 100vh;
           width: 100%;
         }
@@ -625,7 +623,7 @@ export default function QubiNext15Page({
 
         .heroGrid {
           align-items: center;
-          padding: 48px 0;
+          padding: 40px 0;
         }
 
         .heroCopy {
@@ -705,7 +703,7 @@ export default function QubiNext15Page({
           border: 2px solid transparent;
           font-size: 16px;
           font-weight: 600;
-          font-family: "Inter", sans-serif;
+          font-family: var(--font-inter);
           line-height: 1;
           white-space: nowrap;
           cursor: pointer;
@@ -772,7 +770,7 @@ export default function QubiNext15Page({
 
         .section {
           position: relative;
-          padding: 96px 0;
+          padding: 64px 0;
           background: hsl(var(--background));
         }
 
@@ -784,7 +782,7 @@ export default function QubiNext15Page({
         .ctaInner {
           text-align: center !important;
           max-width: 768px;
-          margin: 0 auto 64px !important;
+          margin: 0 auto 48px !important;
         }
 
         .sectionHeader .sectionEyebrow {
@@ -792,7 +790,7 @@ export default function QubiNext15Page({
           color: #ff6600 !important;
           font-size: 13px !important;
           font-weight: 600 !important;
-          font-family: "Inter", sans-serif !important;
+          font-family: var(--font-inter) !important;
           letter-spacing: 0.15em !important;
           text-transform: uppercase !important;
           margin-bottom: 16px !important;
@@ -807,7 +805,7 @@ export default function QubiNext15Page({
           line-height: 1.15 !important;
           letter-spacing: -0.025em !important;
           font-weight: 700 !important;
-          font-family: "Inter", sans-serif !important;
+          font-family: var(--font-inter) !important;
           color: hsl(var(--foreground)) !important;
           text-align: center !important;
           padding: 0 !important;
@@ -819,7 +817,7 @@ export default function QubiNext15Page({
           margin-left: auto !important;
           margin-right: auto !important;
           font-size: 18px !important;
-          font-family: "Inter", sans-serif !important;
+          font-family: var(--font-inter) !important;
           text-align: center !important;
           padding: 0 !important;
         }
@@ -956,12 +954,12 @@ export default function QubiNext15Page({
         .analyticsTitle {
           color: hsl(var(--foreground));
           font-weight: 600;
-          font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+          font-family: var(--font-inter);
         }
 
         .cardTitle {
           font-size: 20px;
-          font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+          font-family: var(--font-inter);
           font-weight: 700;
           margin-bottom: 12px;
         }
@@ -969,7 +967,7 @@ export default function QubiNext15Page({
         .cardTitleSmall {
           font-size: 18px;
           font-weight: 700;
-          font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+          font-family: var(--font-inter);
           margin-bottom: 8px;
         }
 
@@ -978,7 +976,7 @@ export default function QubiNext15Page({
         .analyticsDescription {
           color: hsl(var(--muted-foreground));
           line-height: 1.8;
-          font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+          font-family: var(--font-inter);
           font-weight: 500;
         }
 
@@ -1017,7 +1015,7 @@ export default function QubiNext15Page({
           font-size: 18px;
           margin-bottom: 4px;
           font-weight: 700;
-          font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+          font-family: var(--font-inter);
         }
 
         .stepCard {
@@ -1358,7 +1356,7 @@ export default function QubiNext15Page({
           }
 
           .heroGrid {
-            padding: 80px 0;
+            padding: 60px 0;
           }
 
           .heroTitle {
@@ -1371,7 +1369,7 @@ export default function QubiNext15Page({
           }
 
           .section {
-            padding: 128px 0;
+            padding: 80px 0;
           }
 
           .problemGrid {
