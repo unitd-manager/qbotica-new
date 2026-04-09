@@ -1,0 +1,300 @@
+.qubiNext15 {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 7%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 7%;
+  --primary: 24 100% 50%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 96%;
+  --secondary-foreground: 0 0% 7%;
+  --muted: 0 0% 96%;
+  --muted-foreground: 0 0% 45%;
+  --accent: 24 100% 50%;
+  --accent-foreground: 0 0% 100%;
+  --border: 0 0% 90%;
+  --surface-dark: 0 0% 4%;
+  --surface-dark-foreground: 0 0% 95%;
+  --surface-elevated: 0 0% 98%;
+  --gradient-primary: linear-gradient(135deg, hsl(24 100% 50%), hsl(35 100% 55%));
+  --gradient-glow: radial-gradient(ellipse at 50% 0%, hsl(24 100% 50% / 0.15), transparent 70%);
+  --shadow-glow: 0 0 60px -15px hsl(24 100% 50% / 0.4);
+  --shadow-card: 0 1px 3px hsl(0 0% 0% / 0.06), 0 4px 12px hsl(0 0% 0% / 0.04);
+  --shadow-card-hover: 0 4px 20px hsl(0 0% 0% / 0.08), 0 8px 32px hsl(0 0% 0% / 0.04);
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-inter);
+  min-height: 100vh;
+  width: 100%;
+}
+
+.qubiNext15,
+.qubiNext15 * {
+  box-sizing: border-box;
+}
+
+.qubiNext15 img {
+  display: block;
+  max-width: 100%;
+}
+
+.qubiNext15 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.qubiNext15 button {
+  font: inherit;
+}
+
+.qubiNext15 h1,
+.qubiNext15 h2,
+.qubiNext15 h3,
+.qubiNext15 h4,
+.qubiNext15 h5,
+.qubiNext15 h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.qubiNext15 p {
+  margin: 0;
+}
+
+.qubiNext15 ul,
+.qubiNext15 ol {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.qubiNext15 li {
+  margin: 0;
+}
+
+.qubiNext15 blockquote {
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 4px solid hsl(var(--primary));
+}
+
+.qubiNext15 code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background: hsl(var(--muted));
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+}
+
+.qubiNext15 pre {
+  font-family: var(--font-mono);
+  background: hsl(var(--muted));
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+
+.qubiNext15 pre code {
+  background: none;
+  padding: 0;
+}
+
+.qubiNext15 table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.qubiNext15 th,
+.qubiNext15 td {
+  text-align: left;
+  padding: 0.5rem;
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+.qubiNext15 th {
+  font-weight: 600;
+}
+
+.qubiNext15 input,
+.qubiNext15 textarea,
+.qubiNext15 select {
+  font: inherit;
+  border: 1px solid hsl(var(--border));
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+.qubiNext15 input:focus,
+.qubiNext15 textarea:focus,
+.qubiNext15 select:focus {
+  outline: none;
+  border-color: hsl(var(--primary));
+  box-shadow: 0 0 0 2px hsl(var(--primary) / 0.2);
+}
+
+.qubiNext15 .pageContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .qubiNext15 .pageContainer {
+    padding: 0 2rem;
+  }
+}
+
+.qubiNext15 .heroSection {
+  position: relative;
+  overflow: hidden;
+  background: hsl(var(--gradient-glow));
+}
+
+.qubiNext15 .heroGlow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-glow);
+  pointer-events: none;
+}
+
+.qubiNext15 .heroGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+@media (min-width: 1024px) {
+  .qubiNext15 .heroGrid {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    padding: 4rem 0;
+  }
+}
+
+.qubiNext15 .heroCopy {
+  z-index: 1;
+}
+
+.qubiNext15 .heroPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  color: hsl(var(--primary));
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+}
+
+.qubiNext15 .heroPillDot {
+  width: 0.5rem;
+  height: 0.5rem;
+  background: hsl(var(--primary));
+  border-radius: 50%;
+}
+
+.qubiNext15 .heroTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: hsl(var(--foreground));
+}
+
+@media (min-width: 768px) {
+  .qubiNext15 .heroTitle {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .qubiNext15 .heroTitle {
+    font-size: 3.5rem;
+  }
+}
+
+.qubiNext15 .heroText {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: hsl(var(--foreground));
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+@media (min-width: 768px) {
+  .qubiNext15 .heroText {
+    font-size: 1.125rem;
+  }
+}
+
+.qubiNext15 .heroActions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.qubiNext15 .heroVisual {
+  position: relative;
+  z-index: 1;
+}
+
+.qubiNext15 .heroFrame {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.qubiNext15 .heroImage {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-glow);
+}
+
+.qubiNext15 .heroFrameRing {
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+  right: -1rem;
+  bottom: -1rem;
+  border: 2px solid hsl(var(--primary) / 0.3);
+  border-radius: 1.5rem;
+  pointer-events: none;
+}
+
+.qubiNext15 .fadeUp {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+.qubiNext15 .fadeUpDelay1 {
+  animation-delay: 0.2s;
+}
+
+.qubiNext15 .fadeUpDelay2 {
+  animation-delay: 0.4s;
+}
+
+.qubiNext15 .fadeUpDelay3 {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

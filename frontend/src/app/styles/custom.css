@@ -17,6 +17,11 @@
     color: var(--background);
 }
 
+ .form-with-contact-section .comment-form-col button {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
 /* .our-Benefits-info::after,
 .our-Benefits-info::before {
     content: " ";
