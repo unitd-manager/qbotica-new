@@ -236,13 +236,13 @@ export async function generatePageMetadatas(slug, pageType = 'page', parent = ''
     
     const rankMathData = await fetchRankMathMetadata(slug, parent);
 
-    const fallback = {
-      title: `Page - ${slug}`,
-      description: `Learn more about ${slug}`,
-      url: `${process.env.NEXT_PUBLIC_SITE_URL}/${slug}`,
-      siteName: 'Your Site Name',
-      ...customFallback
-    };
+   const fallback = {
+  title: slug,
+  description: `Learn more about ${slug}`,
+  url: `${process.env.NEXT_PUBLIC_SITE_URL}/${slug}`,
+  siteName: 'Your Site Name',
+  ...customFallback
+};
     
     if (rankMathData) {
       const metadata = toNextJSMetadata(rankMathData, fallback);

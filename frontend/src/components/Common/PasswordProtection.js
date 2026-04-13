@@ -28,22 +28,26 @@ export default function PasswordProtection({ onSubmit, error }) {
               </PTag>
 
               <form className="comment-form" onSubmit={handleSubmit}>
-        <div className="password-input-wrapper">
- <input
-  type="password"
-  autoComplete="new-password"
-  data-lpignore="true"
-  data-1p-ignore
-  data-bwignore="true"
+                <DivTag className="mb-3 password-input-wrapper">
+<input
+  type={showPassword ? 'text' : 'password'}
+  className="form-control password-input"
+  placeholder="Enter password"
+  value={password}
+  onChange={(e) => setPassword(e.target.value)}
+  disabled={isSubmitting}
+  required
+  autoFocus
 />
-  <button
-    type="button"
-    onClick={() => setShowPassword(!showPassword)}
-    className="password-toggle-btn"
-  >
-    {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
-  </button>
-</div>
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="password-toggle-btn"
+                    tabIndex={-1}
+                  >
+                    {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                  </button>
+                </DivTag>
 
                 {error && (
                   <DivTag className="validation-errors text-danger" role="alert">
