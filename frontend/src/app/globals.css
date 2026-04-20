@@ -57,6 +57,124 @@ a {
   display: block;
 }
 
+.password-input-wrapper .ant-input-suffix span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+/* Fix Ant Design password input alignment */
+.password-input-wrapper .ant-input-affix-wrapper {
+  display: flex;
+  align-items: center;   /* ✅ vertical center */
+  height: 45px;          /* match your input height */
+  padding: 0 12px;       /* better spacing */
+}
+
+.password-input-wrapper .ant-input {
+  height: 100%;
+  line-height: 45px;     /* keeps text centered */
+}
+
+.password-input-wrapper .ant-input-suffix {
+  display: flex;
+  align-items: center;   /* ✅ centers icon vertically */
+}
+
+/* optional fine-tune */
+.password-input-wrapper .ant-input-suffix span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.password-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Fix input height */
+.password-input-wrapper .ant-input-affix-wrapper {
+  height: 45px;
+  padding-right: 40px !important; /* space for icon */
+}
+
+/* 🔥 Override suffix completely */
+.password-input-wrapper .ant-input-suffix {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%); /* ✅ PERFECT vertical center */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Remove internal weird spacing */
+.password-input-wrapper .ant-input {
+  height: 100%;
+  line-height: normal;
+}
+.password-input-wrapper .ant-input-suffix {
+  transform: translateY(-52%);
+}
+.password-input-wrapper {
+  width: 100%;
+}
+
+/* Main container */
+.password-input-wrapper .ant-input-affix-wrapper {
+  height: 48px;                 /* consistent height */
+  display: flex;
+  align-items: center;          /* ✅ vertical center */
+  padding: 0 12px;
+  border-radius: 4px;
+}
+
+/* Input field */
+.password-input-wrapper .ant-input {
+  height: 100%;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+}
+
+/* Icon container */
+.password-input-wrapper .ant-input-suffix {
+  display: flex;
+  align-items: center;          /* ✅ center icon */
+  height: 100%;
+}
+
+/* Icon itself */
+.password-input-wrapper .ant-input-suffix span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.password-input-wrapper .ant-input-affix-wrapper {
+  height: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 0 12px !important;
+}
+
+.password-input-wrapper .ant-input {
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.password-input-wrapper .ant-input-suffix {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.password-input-wrapper .ant-input-suffix span {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
 /* .password-input::-ms-reveal {
   display: none !important;
 }

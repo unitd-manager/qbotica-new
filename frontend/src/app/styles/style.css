@@ -97,7 +97,29 @@ p:last-child {
 .divider-boder .container {
   height: 40px;
 }
+.password-input-wrapper .ant-input-affix-wrapper {
+  height: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 0 12px !important;
+}
 
+.password-input-wrapper .ant-input {
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.password-input-wrapper .ant-input-suffix {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.password-input-wrapper .ant-input-suffix span {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
 .main-title {
   color: var(--head-block-color);
   font-family: var(--font-inter);

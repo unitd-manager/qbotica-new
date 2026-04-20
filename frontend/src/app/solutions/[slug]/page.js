@@ -10,11 +10,24 @@ import StructuredData from '@/components/Common/StructuredData';
 
 const parent_path = 'solutions';
 
-export async function generateMetadata({ params }) {
-    const resolvedParams = await params;
-    return generatePageMetadatas(resolvedParams.slug, 'page', parent_path, {});
-}
+// export async function generateMetadata({ params }) {
+//     const resolvedParams = await params;
+//     return generatePageMetadatas(resolvedParams.slug, 'page', parent_path, {});
+// }
 
+export async function generateMetadata({ params }) {
+  const resolvedParams = await params;
+  const slug = resolvedParams.slug;
+
+  const formattedTitle = slug
+    .split("-")
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+
+  return {
+    title: `${formattedTitle} | qBotica`,
+  };
+}
 export default async function SolutionPage({ params }) {
     const resolvedParams = await params;
     const slug = resolvedParams.slug;

@@ -12,6 +12,7 @@ import { fetchThemeSettings, fetchMenus, fetchPageBySlug } from '@/lib/wordpress
 import Header from '@/components/Common/Header'
 import Footer from '@/components/Common/Footer'
 import ClientScripts from '@/components/Common/ClientScripts'
+import 'antd/dist/reset.css';
 
 const inter = Inter({
   subsets: ['latin'],
