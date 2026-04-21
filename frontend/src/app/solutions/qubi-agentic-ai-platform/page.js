@@ -1,14 +1,28 @@
 import { fetchPageBySlug } from '@/lib/wordpress';
 import QubiNext15Client from './QubiNext15Client';
+import { generatePageMetadatas, getStructuredData } from '@/lib/rankmath-utils';
+import StructuredData from '@/components/Common/StructuredData';
 
 // Import styles
 import './styles.css';
 
+const slug = 'qubi-agentic-ai-platform';
+const parent_path = 'solutions';
+
+export async function generateMetadata() {
+  return generatePageMetadatas(slug, 'page', parent_path, {});
+}
+
 export default async function QubiNext15Page() {
   let pageSections = [];
+  let structuredData = null;
 
   try {
-    const pageData = await fetchPageBySlug('qubi-agentic-ai-platform');
+    const [pageData, metadata] = await Promise.all([
+      fetchPageBySlug(slug),
+      generatePageMetadatas(slug, 'page', parent_path, {}),
+    ]);
+    structuredData = getStructuredData(metadata);
     console.log('\n===== PAGE.JS START =====');
     console.log('📡 Full Page Data:', pageData);
     console.log('📋 ACF Object:', pageData?.acf);
@@ -31,5 +45,10 @@ export default async function QubiNext15Page() {
     console.error('❌ Error fetching page data:', error);
   }
 
-  return <QubiNext15Client pageSections={pageSections} />;
+  return (
+    <>
+      <StructuredData data={structuredData} />
+      <QubiNext15Client pageSections={pageSections} />
+    </>
+  );
 }
