@@ -11,18 +11,20 @@ const nextConfig = {
         port: '', // leave empty for default ports
         pathname: '/**',
       },
-        {
-        protocol: 'http',
-        hostname: 'backend.qbdev.localhost',
-        port: '', // leave empty for default ports
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'qbadevadmin.unitdtechnologies.com',
-        port: '', // leave empty for default ports
-        pathname: '/**',
-      },
+
+
+
+       {
+      protocol: 'https',
+      hostname: 'qbadevadmin.unitdtechnologies.com',
+      port: '', // leave empty for default ports syed
+      pathname: '/**',
+    },
+    {
+      protocol: 'https',
+      hostname: 'qbdev.unitdtechnologies.com',
+      pathname: '/**',
+    }
     ],
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
