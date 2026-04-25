@@ -3,20 +3,14 @@ import { ActionButton } from "./SharedComponents";
 
 export function HeroSection({ data, heroSrc = "/assets/images/hero-illustration.jpg" }) {
   console.log('\n🎨 HeroSection received data:', data);
-  console.log('   data.title:', data?.title);
-  console.log('   data.sub_title:', data?.sub_title);
-  console.log('   data.description:', data?.description);
-  console.log('   data.button:', data?.button);
-  console.log('   data.image:', data?.image);
-  
-  // Use ACF data if available, otherwise fallback to defaults
+
   const title = data?.title || "Orchestrate AI Agents, Bots, Systems & People with <span class=\"gradientText\">qubi</span>";
   const subTitle = data?.sub_title || "A unified platform for designing, deploying, and managing intelligent workflows powered by AI agents, automation, human input, and enterprise integrations.";
   const description = data?.description || "";
-  const button = data?.button;
+  const buttonText = data?.button_text || "Book a Demo";
+  const buttonLink = data?.button_link?.url || "https://meetings.hubspot.com/automation-demo/scheduler";
   const image = data?.image?.url || heroSrc;
-  
-  
+
   return (
     <section className="heroSection">
       <div className="heroGlow" />
@@ -31,8 +25,6 @@ export function HeroSection({ data, heroSrc = "/assets/images/hero-illustration.
 
           <h1 className="heroTitle fadeUp fadeUpDelay1" dangerouslySetInnerHTML={{ __html: subTitle }} />
 
-         
-
           {description && (
             <p className="heroText fadeUp fadeUpDelay2" style={{ marginTop: '20px' }}>
               {description}
@@ -40,17 +32,10 @@ export function HeroSection({ data, heroSrc = "/assets/images/hero-illustration.
           )}
 
           <div className="heroActions fadeUp fadeUpDelay3">
-            {button ? (
-              <ActionButton href={button.button_link || "#"}>
-                {button.button_title || "Booka Demo"}
-                <ArrowRight size={18} />
-              </ActionButton>
-            ) : (
-              <ActionButton href="https://meetings.hubspot.com/automation-demo/scheduler">
-                Book a Demo
-                <ArrowRight size={18} />
-              </ActionButton>
-            )}
+            <ActionButton href={buttonLink}>
+              {buttonText}
+              <ArrowRight size={18} />
+            </ActionButton>
           </div>
         </div>
 

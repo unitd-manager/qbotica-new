@@ -181,4 +181,35 @@ a {
 
 .password-input::-ms-clear {
   display: none !important;
-} */
+} *//* Hide Microsoft Edge default password reveal icon */
+
+/* Hide Edge native password reveal button (modern Edge) */
+input[type="password"]::-webkit-password-toggle-button {
+  display: none !important;
+}
+
+/* Older Edge fallback */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none !important;
+}
+
+/* Layout for custom eye */
+.password-input-wrapper {
+  position: relative;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.password-input {
+  padding-right: 45px !important;
+}

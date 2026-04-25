@@ -1,21 +1,41 @@
 import { SectionHeader } from "./SharedComponents";
-import { analyticsFeatures } from "./constants";
+import {
+  BarChart3,
+  Eye,
+  Activity,
+  Monitor,
+  LifeBuoy,
+  Key,
+} from "lucide-react"; // Lucide icons
 
-export function AnalyticsSection() {
+export function AnalyticsSection({ data }) {
+  const eyebrow = data?.eyebrow || "Analytics & Trust";
+  const title = data?.title || "Visibility, performance, and accountability";
+  const highlight = data?.highlight || "built in";
+
+  // Features from ACF repeater
+  const features = data?.features || [];
+
+  // Map icon strings to Lucide components
+  const iconMap = {
+    roi: BarChart3,
+    pipeline: Eye,
+    performance: Activity,
+    workload: Monitor,
+    support: LifeBuoy,
+    access: Key,
+  };
+
   return (
     <section className="section sectionAlt" id="analytics">
       <div className="pageContainer">
-        <SectionHeader
-          eyebrow="Analytics & Trust"
-          title="Visibility, performance, and accountability"
-          highlight="built in"
-        />
+        <SectionHeader eyebrow={eyebrow} title={title} highlight={highlight} />
 
         <div className="analyticsGrid">
-          {analyticsFeatures.map((item) => {
-            const Icon = item.icon;
+          {features.map((item, index) => {
+            const Icon = iconMap[item.icon] || BarChart3; // fallback
             return (
-              <div key={item.title} className="analyticsCard">
+              <div key={index} className="analyticsCard">
                 <div className="analyticsCardHeader">
                   <div className="analyticsIcon">
                     <Icon size={20} />

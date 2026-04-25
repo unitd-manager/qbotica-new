@@ -96,6 +96,24 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${chivoMono.variable} ${geistSans.variable} ${roboto.variable}`}>
       <head>
+
+         {/* Google Analytics GA4 */}
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-QTNWWK8EFF"
+  ></script>
+
+  <script
+    dangerouslySetInnerHTML={{
+      __html: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QTNWWK8EFF');
+      `,
+    }}
+  />
         {themeSettings?.site_icon && (
           <>
             <link rel="icon" href={themeSettings.site_icon} />
