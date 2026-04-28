@@ -7,7 +7,7 @@ import StructuredData from '@/components/Common/StructuredData';
 import './styles.css';
 
 const slug = 'qubi-agentic-ai-platform';
-const parent_path = 'solutions';
+const parent_path = 'services';
 
 export async function generateMetadata() {
   return generatePageMetadatas(slug, 'page', parent_path, {});
