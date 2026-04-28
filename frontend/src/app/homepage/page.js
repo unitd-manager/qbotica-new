@@ -40,7 +40,7 @@ const css = `
   .hp-wrap .h-hero em{font-style:normal;color:var(--o)}
   .hp-wrap .h-sec{font-family:'Inter',sans-serif;font-size:clamp(1.7rem,2.8vw,2.4rem);font-weight:800;line-height:1.2;letter-spacing:-.025em;color:var(--g900)}
   .hp-wrap .h-sec em{font-style:normal;color:var(--o)}
-  .hp-wrap .h-card{font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;color:var(--g900);letter-spacing:.1em;margin-bottom:8px}
+  .hp-wrap .h-card{font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;color:var(--g900);letter-spacing:-.02em;margin-bottom:8px}
   .hp-wrap .subhead{font-size:clamp(.95rem,1.3vw,1.1rem);color:var(--g500);line-height:1.8;max-width:560px}
   .hp-wrap .lead{font-size:.95rem;color:var(--g500);line-height:1.8}
   .hp-wrap .p-sm{font-size:.85rem;color:var(--g500);line-height:1.7}
@@ -113,7 +113,7 @@ const css = `
   .hp-wrap .step-b{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 12px;position:relative;z-index:1}
   .hp-wrap .step-orb{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--o) 0%,var(--od) 100%);display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:#fff;margin-bottom:18px;box-shadow:var(--so),0 0 0 8px var(--op);position:relative}
   .hp-wrap .step-orb .sn{position:absolute;top:-4px;right:-4px;width:20px;height:20px;background:#fff;border:2px solid var(--op);border-radius:50%;font-size:.6rem;font-weight:800;color:var(--o);display:flex;align-items:center;justify-content:center}
-  .hp-wrap .step-t{font-family:'Inter',sans-serif;font-size:.98rem;font-weight:700;color:var(--g900);margin-bottom:7px}
+  .hp-wrap .step-t{font-family:'Inter',sans-serif;font-size:.98rem;font-weight:700;color:var(--g900);margin-bottom:7px;letter-spacing:-.02em}
   .hp-wrap .step-d{font-size:.8rem;color:var(--g500);line-height:1.7}
 
   /* WORKFLOWS */
@@ -240,11 +240,7 @@ export default function HomepagePage() {
               </div>
             </div>
           </div>
-          <div className="hero-strip">
-            <div className="hst"><div className="hst-n">10x</div><div className="hst-l">Faster processing across core operations</div></div>
-            <div className="hst"><div className="hst-n">80%</div><div className="hst-l">Reduction in manual effort &amp; cost</div></div>
-            <div className="hst"><div className="hst-n">99%</div><div className="hst-l">Accuracy across automated workflows</div></div>
-          </div>
+          
         </section>
 
         {/* TRUST BAR */}
