@@ -166,8 +166,9 @@ const css = `
 
   /* RESPONSIVE */
   @media(max-width:1024px){
-    .hp-wrap .hero-inner{grid-template-columns:1fr;gap:28px}
-    .hp-wrap .hero-right{display:none}
+    .hp-wrap .hero-inner{grid-template-columns:1fr;gap:24px}
+    .hp-wrap .hero-right{display:flex;justify-content:center}
+    .hp-wrap .hero-img{max-width:480px;width:100%}
     .hp-wrap .diff-in{grid-template-columns:1fr;gap:32px}
     .hp-wrap .steps{grid-template-columns:repeat(2,1fr)}
     .hp-wrap .steps-line{display:none}
