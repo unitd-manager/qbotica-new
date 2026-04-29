@@ -341,7 +341,7 @@ export default function HomepagePage() {
         {/* THE PROBLEM */}
         <section className="sec-alt">
           <div className="con">
-            <div style={{ maxWidth: '580px' }}>
+            <div style={{ textAlign: 'center', margin: '0 auto', marginBottom: '0' }}>
               <span className="lbl">The Problem</span>
               <h2 className="h-sec">Why Most AI <em>Fails at Operations</em></h2>
             </div>
@@ -392,7 +392,7 @@ export default function HomepagePage() {
         {/* HOW IT WORKS */}
         <section className="sec-alt" id="how">
           <div className="con">
-            <div style={{ maxWidth: '620px' }}>
+            <div style={{ textAlign: 'center', margin: '0 auto', marginBottom: '40px' }}>
               <span className="lbl">How It Works</span>
               <h2 className="h-sec">How Agentic AI <em>Runs Your Business</em></h2>
             </div>
@@ -425,7 +425,7 @@ export default function HomepagePage() {
         {/* WORKFLOWS */}
         <section className="sec" id="workflows">
           <div className="con">
-            <div style={{ maxWidth: '680px' }}>
+            <div style={{ textAlign: 'center', margin: '0 auto', marginBottom: '0' }}>
               <span className="lbl">Workflows</span>
               <h2 className="h-sec">Where Agentic AI <em>Delivers Impact</em></h2>
               <p className="lead" style={{ marginTop: '12px' }}>We focus on the workflows that matter most to your business.</p>
