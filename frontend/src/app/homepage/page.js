@@ -181,6 +181,14 @@ const css = `
     .hp-wrap .hero-strip{grid-template-columns:1fr}
     .hp-wrap .fcta-btns{flex-direction:column;align-items:stretch}
     .hp-wrap .trust-inds{gap:8px}
+        /* Final CTA mobile padding fix */
+    .hp-wrap .fcta {
+      padding:50px 20px; /* more breathing room on mobile */
+    }
+    .hp-wrap .fcta-in {
+      padding:0 10px; /* keep inner content aligned */
+    }
+
   }
 `;
 
