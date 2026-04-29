@@ -163,14 +163,7 @@ const css = `
   .hp-wrap .fcta-h{font-family:'Inter',sans-serif;font-size:clamp(1.8rem,3.2vw,2.7rem);font-weight:900;line-height:1.12;color:#fff;letter-spacing:0.90px;margin-bottom:14px}
   .hp-wrap .fcta-sub{font-size:.98rem;color:rgba(255,255,255,.85);line-height:1.7;margin-bottom:32px}
   .hp-wrap .fcta-btns{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
-/* Add this at the end of your existing CSS block */
-.hp-wrap .lead,
-.hp-wrap .p-sm,
-.hp-wrap .diff-quote,
-.hp-wrap .res-d,
-.hp-wrap .why-d,
-.hp-wrap .pl-ds {
-  color: var(--g700); /* darker gray for better readability */
+
   /* RESPONSIVE */
   @media(max-width:1024px){
     .hp-wrap .hero-inner{grid-template-columns:1fr;gap:24px}
