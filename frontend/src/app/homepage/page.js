@@ -163,7 +163,14 @@ const css = `
   .hp-wrap .fcta-h{font-family:'Inter',sans-serif;font-size:clamp(1.8rem,3.2vw,2.7rem);font-weight:900;line-height:1.12;color:#fff;letter-spacing:0.90px;margin-bottom:14px}
   .hp-wrap .fcta-sub{font-size:.98rem;color:rgba(255,255,255,.85);line-height:1.7;margin-bottom:32px}
   .hp-wrap .fcta-btns{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
-
+/* Add this at the end of your existing CSS block */
+.hp-wrap .lead,
+.hp-wrap .p-sm,
+.hp-wrap .diff-quote,
+.hp-wrap .res-d,
+.hp-wrap .why-d,
+.hp-wrap .pl-ds {
+  color: var(--g700); /* darker gray for better readability */
   /* RESPONSIVE */
   @media(max-width:1024px){
     .hp-wrap .hero-inner{grid-template-columns:1fr;gap:24px}
@@ -211,38 +218,48 @@ export default function HomepagePage() {
     return () => obs.disconnect();
   }, []);
 
+  const DEMO_LINK = "https://meetings.hubspot.com/automation-demo/scheduler";
+
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: css }} />
       <div className="hp-wrap">
 
         {/* HERO */}
+       {/* HERO */}
         <section className="hero">
           <div className="con">
             <div className="hero-inner">
               <div className="hero-left">
-                <div className="pill">
-                  <span className="pill-dot"></span>
-                  Enterprise Agentic AI — In Production
-                </div>
                 <h1 className="h-hero">Agentic AI That <em>Runs Your Business</em></h1>
                 <p className="subhead" style={{ marginTop: '16px' }}>
                   Move beyond pilots and &ldquo;assistants.&rdquo; qBotica runs your enterprise operations using Agentic AI to execute end-to-end workflows across your systems, documents, and decisions.
                 </p>
                 <div className="hero-cta">
-                  <a href="#contact" className="btn btn-p">Request a Demo <i className="fa-solid fa-arrow-right"></i></a>
-                  <a href="#how" className="btn btn-o"><i className="fa-solid fa-play"></i> See Agentic AI in Action</a>
+                  <a 
+                    href={DEMO_LINK} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="btn btn-p"
+                  >
+                    Request a Demo <i className="fa-solid fa-arrow-right"></i>
+                  </a>
+                  <a 
+                    href={DEMO_LINK} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="btn btn-o"
+                  >
+                    <i className="fa-solid fa-play"></i> See Agentic AI in Action
+                  </a>
                 </div>
               </div>
               <div className="hero-right">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/assets/images/qbotica-globe.jpeg" alt="qBotica Agentic AI Enterprise Globe" className="hero-img" />
               </div>
             </div>
           </div>
-          
         </section>
-
         {/* TRUST BAR */}
         <section className="trust">
           <div className="con">
@@ -266,19 +283,29 @@ export default function HomepagePage() {
         </section>
 
         {/* WHAT IS AGENTIC AI */}
-        <section className="sec" id="what-is">
-          <div className="con">
-            <span className="lbl">What Is Agentic AI</span>
-            <h2 className="h-sec">Agentic AI: AI That <em>Actually Works.</em></h2>
-            <div className="ag-body" style={{ marginTop: '16px' }}>
-              <p className="lead">Agentic AI is not chatbots or copilots. It&apos;s an operating model where AI doesn&apos;t just assist &mdash; <strong>it acts.</strong></p>
-              <p className="lead" style={{ marginTop: '10px' }}>It understands the work, makes the decision, and executes the task across your existing systems. It doesn&apos;t stop at an insight &mdash; it completes the job.</p>
-              <div className="ag-quote" style={{ marginTop: '18px' }}>
-                <p>&ldquo;This is the shift from &lsquo;How can AI help?&rsquo; to <strong style={{ color: 'var(--od)' }}>&lsquo;Let AI do it.&rsquo;</strong>&rdquo;</p>
-              </div>
-            </div>
-          </div>
-        </section>
+       {/* WHAT IS AGENTIC AI */}
+<section className="sec" id="what-is">
+  <div className="con" style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto' }}>
+    <span className="lbl">What Is Agentic AI</span>
+    <h2 className="h-sec">Agentic AI: AI That <em>Actually Works.</em></h2>
+    <div className="ag-body" style={{ marginTop: '16px' }}>
+      <p className="lead">
+        Agentic AI is not chatbots or copilots. It&apos;s an operating model where AI doesn&apos;t just assist &mdash; <strong>it acts.</strong>
+      </p>
+      <p className="lead" style={{ marginTop: '10px' }}>
+        It understands the work, makes the decision, and executes the task across your existing systems. 
+        It doesn&apos;t stop at an insight &mdash; it completes the job.
+      </p>
+      <div className="ag-quote" style={{ marginTop: '18px', display: 'inline-block', textAlign: 'center' }}>
+        <p>
+          &ldquo;This is the shift from &lsquo;How can AI help?&rsquo; to 
+          <strong style={{ color: 'var(--od)' }}>&lsquo;Let AI do it.&rsquo;</strong>&rdquo;
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
         {/* THE PROBLEM */}
         <section className="sec-alt">
@@ -311,24 +338,25 @@ export default function HomepagePage() {
         </section>
 
         {/* QBOTICA DIFFERENCE */}
-        <section className="sec" id="difference">
-          <div className="con">
-            <div className="diff-in">
-              <div>
-                <span className="lbl">The qBotica Difference</span>
-                <h2 className="h-sec">We Don&apos;t Deploy Tools.<br /><em>We Run Work.</em></h2>
-                <p className="lead" style={{ marginTop: '14px' }}>qBotica converges AI agents, automation, and orchestration into a single execution engine. We handle the messy reality of business: reading messy documents, making complex decisions, and taking action in legacy ERPs.</p>
-                <p className="diff-quote" style={{ marginTop: '14px' }}>&ldquo;This isn&apos;t a demo. This is Agentic AI in production.&rdquo;</p>
-              </div>
-              <div className="diff-feats">
-                <div className="df"><div className="df-ico"><i className="fa-solid fa-brain"></i></div><div><div className="df-t">AI Agents That Reason</div><div className="df-d">Purpose-built agents understand context, apply business rules, and make intelligent decisions.</div></div></div>
-                <div className="df"><div className="df-ico"><i className="fa-solid fa-gears"></i></div><div><div className="df-t">Automation That Executes</div><div className="df-d">From reading unstructured documents to writing back to your ERP — we complete the work.</div></div></div>
-                <div className="df"><div className="df-ico"><i className="fa-solid fa-diagram-project"></i></div><div><div className="df-t">Orchestration That Connects</div><div className="df-d">Coordinate agents, automation, human review, and systems into seamless end-to-end workflows.</div></div></div>
-                <div className="df"><div className="df-ico"><i className="fa-solid fa-shield-halved"></i></div><div><div className="df-t">Governance &amp; Control</div><div className="df-d">Every action is auditable, every decision explainable. Enterprise-grade compliance built in.</div></div></div>
-              </div>
-            </div>
-          </div>
-        </section>
+      {/* QBOTICA DIFFERENCE */}
+{/* QBOTICA DIFFERENCE */}
+<section className="sec" id="difference">
+  <div className="con" style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto' }}>
+    <span className="lbl">The qBotica Difference</span>
+    <h2 className="h-sec">
+      We Don&apos;t Deploy Tools.<br /><em>We Run Work.</em>
+    </h2>
+    <p className="lead" style={{ marginTop: '14px' }}>
+      qBotica converges AI agents, automation, and orchestration into a single execution engine. 
+      We handle the messy reality of business: reading messy documents, making complex decisions, 
+      and taking action in legacy ERPs.
+    </p>
+    <p className="diff-quote" style={{ marginTop: '14px', fontStyle: 'italic' }}>
+      &ldquo;This isn&apos;t a demo. This is Agentic AI in production.&rdquo;
+    </p>
+  </div>
+</section>
+
 
         {/* HOW IT WORKS */}
         <section className="sec-alt" id="how">
@@ -431,40 +459,45 @@ export default function HomepagePage() {
           </div>
         </section>
 
-        {/* ECOSYSTEM */}
-        <section className="sec" id="ecosystem">
-          <div className="con">
-            <div style={{ maxWidth: '680px' }}>
-              <span className="lbl">Ecosystem</span>
-              <h2 className="h-sec">Built on a Strong <em>Enterprise Ecosystem</em></h2>
-              <p className="lead" style={{ marginTop: '12px' }}>We work across leading enterprise platforms and technologies to deliver what works best for your environment.</p>
-              <p className="lead" style={{ marginTop: '8px' }}>Our approach is platform-agnostic, outcome-driven, and designed to integrate into your existing systems without disruption.</p>
-            </div>
-            <div className="eco-ls">
-              <div className="eco-it">SAP</div>
-              <div className="eco-it">Salesforce</div>
-              <div className="eco-it">ServiceNow</div>
-              <div className="eco-it">Microsoft Azure</div>
-              <div className="eco-it">AWS</div>
-              <div className="eco-it">Oracle</div>
-              <div className="eco-it">UiPath</div>
-              <div className="eco-it">Automation Anywhere</div>
-              <div className="eco-it">OpenAI</div>
-              <div className="eco-it">Workday</div>
-            </div>
-          </div>
-        </section>
+     {/* ECOSYSTEM */}
+{/* ECOSYSTEM */}
+<section className="sec" id="ecosystem">
+  <div className="con" style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto' }}>
+    <span className="lbl">Ecosystem</span>
+    <h2 className="h-sec">Built on a Strong <em>Enterprise Ecosystem</em></h2>
+    <p className="lead" style={{ marginTop: '12px', color: 'var(--g700)' }}>
+      We work across leading enterprise platforms and technologies to deliver what works best for your environment.
+    </p>
+    <p className="lead" style={{ marginTop: '8px', color: 'var(--g700)' }}>
+      Our approach is platform-agnostic, outcome-driven, and designed to integrate into your existing systems without disruption.
+    </p>
+  </div>
+</section>
+
+
 
         {/* FINAL CTA */}
-        <section className="fcta" id="contact">
-          <div className="con">
-            <div className="fcta-in">
-              <h2 className="fcta-h">Ready to Run Your Business<br />with Agentic AI</h2>
-              <p className="fcta-sub">Let&apos;s identify the workflows where we can create impact fastest and start executing.</p>
-              <div className="fcta-btns">
-                <a href="#" className="btn btn-w">Request a Demo <i className="fa-solid fa-arrow-right"></i></a>
-                <a href="#" className="btn btn-gw">Talk to an Expert</a>
-              </div>
+         <section className="fcta">
+          <div className="fcta-in">
+            <h2 className="fcta-h">Ready to Run Your Business with Agentic AI?</h2>
+            <p className="fcta-sub">Book a demo and see how qBotica delivers real enterprise execution.</p>
+            <div className="fcta-btns">
+              <a 
+                href={DEMO_LINK} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn btn-w"
+              >
+                Request a Demo <i className="fa-solid fa-arrow-right"></i>
+              </a>
+              <a 
+                href={DEMO_LINK} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn btn-gw"
+              >
+                <i className="fa-solid fa-play"></i> Talk to an Expert
+              </a>
             </div>
           </div>
         </section>
