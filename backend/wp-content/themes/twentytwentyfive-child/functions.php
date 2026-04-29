@@ -558,6 +558,12 @@ add_filter('rest_authentication_errors', function($result) {
 
 // Extend ACF Relationship field to include featured image
 function my_acf_relationship_with_featured_image($value, $post_id, $field) {
+    
+    // 🚀 IMPORTANT: skip in admin for speed
+    if (is_admin()) {
+        return $value;
+    }
+
     if (is_array($value)) {
         $new_value = [];
 
@@ -569,7 +575,7 @@ function my_acf_relationship_with_featured_image($value, $post_id, $field) {
                 $featured_image_url = get_the_post_thumbnail_url($pid, 'large');
             }
 
-            $new_value[] = [
+              $new_value[] = [
                 'ID'              => $pid,
                 'post_title'      => get_the_title($pid),
                 'post_name'       => get_post_field('post_name', $pid),
@@ -590,7 +596,7 @@ add_filter('acf/format_value/type=relationship', 'my_acf_relationship_with_featu
 
 add_filter('acf/field_group/disable_field_settings_tabs', '__return_true');
 
-add_filter('wp_default_editor', function($editor) { return "tinymce"; });
+add_filter('wp_default_editor', function() { return "tinymce"; });
 
 add_filter('rest_allow_anonymous_comments', '__return_true');
 
@@ -612,12 +618,29 @@ function get_all_redirects() {
     }
     
     global $wpdb;
-    $redirects = $wpdb->get_results(
-        $wpdb->prepare(
-            "SELECT * FROM {$wpdb->prefix}redirection_items WHERE status = %s",
-            'enabled'
-        )
-    );
+    // Query the Rank Math table instead of the Redirection plugin table
+    $table_name = $wpdb->prefix . 'rank_math_redirections';
+    
+    // Check if the table exists to prevent errors
+    if($wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name) {
+        return [];
+    }
+
+    $results = $wpdb->get_results("SELECT url_to as action_data, sources FROM $table_name WHERE status = 'active'");
+    
+    $redirects = [];
+    foreach ($results as $row) {
+        $sources = maybe_unserialize($row->sources);
+        if ($sources) {
+            foreach ($sources as $source) {
+                $redirects[] = [
+                    // Ensure the URL starts with a slash
+                    'url' => '/' . ltrim($source['pattern'], '/'),
+                    'action_data' => $row->action_data
+                ];
+            }
+        }
+    }
     
     set_transient($cache_key, $redirects, HOUR_IN_SECONDS);
     return $redirects;
@@ -644,6 +667,7 @@ add_action('acf/save_post', function($post_id) {
     clean_post_cache($post_id);
 }, 20);
 
+
 // Set custom save location for ACF JSON
 function my_acf_json_save_point( $path ) {
     return get_stylesheet_directory() . '/my-custom-acf';
@@ -660,5 +684,40 @@ function my_acf_json_load_point( $paths ) {
     
     return $paths;    
 }
+
+
+// Add custom REST API endpoint for pages
+add_action('rest_api_init', function () {
+    register_rest_route('custom/v1', '/page/(?P<slug>[a-z0-9_-]+)', [
+        'methods' => 'GET',
+        'callback' => 'get_page_layout_data',
+        'permission_callback' => '__return_true',
+    ]);
+});
+
+function get_page_layout_data($request) {
+    $slug = $request['slug'];
+    
+    // Get page by slug
+    $page = get_page_by_path($slug, OBJECT, 'page');
+    
+    if (!$page) {
+        return new WP_REST_Response([
+            'sections' => []
+        ], 404);
+    }
+    
+    // Get the ACF flexible content field
+    $sections = get_field('page_sections', $page->ID);
+    
+    return [
+        'id' => $page->ID,
+        'title' => $page->post_title,
+        'slug' => $page->post_name,
+        'description' => $page->post_excerpt,
+        'sections' => $sections ?: []
+    ];
+}
+
 add_filter( 'acf/settings/load_json', 'my_acf_json_load_point' );
 
