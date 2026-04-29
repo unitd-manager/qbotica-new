@@ -326,7 +326,7 @@ export default function HomepagePage() {
         </section>
 
         {/* WHAT IS AGENTIC AI */}
-       {/* WHAT IS AGENTIC AI */}
+      
 <section className="sec" id="what-is">
   <div className="con" style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto' }}>
     <span className="lbl">What Is Agentic AI</span>
