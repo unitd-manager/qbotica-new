@@ -41,9 +41,9 @@ const css = `
   .hp-wrap .h-sec{font-family:'Inter',sans-serif;font-size:clamp(1.7rem,2.8vw,2.4rem);font-weight:800;line-height:1.2;letter-spacing:-.025em;color:var(--g900)}
   .hp-wrap .h-sec em{font-style:normal;color:var(--o)}
   .hp-wrap .h-card{font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;color:var(--g900);letter-spacing:-.02em;margin-bottom:8px}
-  .hp-wrap .subhead{font-size:clamp(.95rem,1.3vw,1.1rem);color:var(--g500);line-height:1.8;max-width:560px}
-  .hp-wrap .lead{font-size:.95rem;color:var(--g500);line-height:1.8}
-  .hp-wrap .p-sm{font-size:.85rem;color:var(--g500);line-height:1.7}
+  .hp-wrap .subhead{font-size:clamp(.95rem,1.3vw,1.1rem);color:var(--g700);line-height:1.8;max-width:560px}
+  .hp-wrap .lead{font-size:.95rem;color:var(--g700);line-height:1.8}
+  .hp-wrap .p-sm{font-size:.85rem;color:var(--g700);line-height:1.7}
 
   .hp-wrap .btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:.9rem;padding:12px 26px;border-radius:100px;transition:var(--tr);cursor:pointer;border:none}
   .hp-wrap .btn-p{background:linear-gradient(135deg,var(--o) 0%,var(--od) 100%);color:#fff;box-shadow:var(--so)}
