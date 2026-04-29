@@ -219,6 +219,18 @@ const css = `
     .hp-wrap .why-list {
     grid-template-columns:1fr; /* stack vertically on mobile */
   }
+     .steps-line {
+    left: 20px; /* move line to left side */
+    transform: none;
+  }
+  .step-orb {
+    margin: 0 0 12px 0;
+    left: 0;
+  }
+  .step-b {
+    text-align: left;
+    padding-left: 48px; /* space for orb + line */
+  }
   }
 `;
 
@@ -314,7 +326,7 @@ export default function HomepagePage() {
         </section>
 
         {/* WHAT IS AGENTIC AI */}
-       {/* WHAT IS AGENTIC AI */}
+      
 <section className="sec" id="what-is">
   <div className="con" style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto' }}>
     <span className="lbl">What Is Agentic AI</span>
@@ -329,8 +341,10 @@ export default function HomepagePage() {
       </p>
       <div className="ag-quote" style={{ marginTop: '18px', display: 'inline-block', textAlign: 'center' }}>
         <p>
-          &ldquo;This is the shift from &lsquo;How can AI help?&rsquo; to 
-          <strong style={{ color: 'var(--od)' }}>&lsquo;Let AI do it.&rsquo;</strong>&rdquo;
+          This is the shift from "How can AI help?" to{" "}
+          <strong style={{ color: 'var(--od)' }}>
+            "Let AI do it."
+          </strong>
         </p>
       </div>
     </div>
