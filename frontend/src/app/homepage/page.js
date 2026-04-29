@@ -124,7 +124,15 @@ const css = `
   .hp-wrap .wf-card:hover .wf-ico{background:var(--o);color:#fff}
 
   /* RESULTS */
-  .hp-wrap .res-bullets{display:flex;flex-direction:column;gap:12px;margin-top:28px;max-width:700px}
+.hp-wrap .res-bullets {
+  display:grid;
+  grid-template-columns:repeat(2,1fr); /* 2 columns side by side */
+  gap:16px;
+  margin-top:28px;
+  max-width:900px;
+  margin-left:auto;
+  margin-right:auto; /* center the grid */
+}
   .hp-wrap .res-row{display:flex;align-items:flex-start;gap:14px;padding:16px 18px;background:#fff;border:1.5px solid var(--g200);border-radius:var(--r8);box-shadow:var(--ss);transition:var(--tr)}
   .hp-wrap .res-row:hover{border-color:rgba(249,115,22,.3);box-shadow:var(--sm)}
   .hp-wrap .res-chk{width:26px;height:26px;border-radius:50%;background:var(--op);color:var(--o);display:flex;align-items:center;justify-content:center;font-size:.72rem;flex-shrink:0;margin-top:2px}
@@ -132,8 +140,15 @@ const css = `
   .hp-wrap .res-d{font-size:.8rem;color:var(--g500);line-height:1.6}
 
   /* PLATFORM */
-  .hp-wrap .pillars{display:flex;flex-direction:column;gap:10px;margin-top:22px;max-width:700px}
-  .hp-wrap .pillar{display:flex;align-items:center;gap:14px;background:#fff;border:1.5px solid var(--g200);border-radius:var(--r8);padding:13px 16px;transition:var(--tr);box-shadow:var(--ss)}
+.hp-wrap .pillars {
+  display:grid;
+  grid-template-columns:repeat(2,1fr); /* two columns side by side */
+  gap:16px;
+  margin-top:22px;
+  max-width:900px;
+  margin-left:auto;
+  margin-right:auto;
+}  .hp-wrap .pillar{display:flex;align-items:center;gap:14px;background:#fff;border:1.5px solid var(--g200);border-radius:var(--r8);padding:13px 16px;transition:var(--tr);box-shadow:var(--ss)}
   .hp-wrap .pillar:hover{border-color:rgba(249,115,22,.35);transform:translateX(5px);box-shadow:var(--sm)}
   .hp-wrap .pl-ico{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
   .hp-wrap .pl-nm{font-size:.87rem;font-weight:700;color:var(--g900)}
@@ -144,8 +159,15 @@ const css = `
   .hp-wrap .mg-d{font-size:.78rem;color:rgba(255,255,255,.82)}
 
   /* WHY */
-  .hp-wrap .why-list{display:flex;flex-direction:column;gap:12px;margin-top:32px;max-width:720px}
-  .hp-wrap .why-row{display:flex;align-items:flex-start;gap:14px;padding:16px 20px;background:#fff;border:1.5px solid var(--g200);border-radius:var(--r8);box-shadow:var(--ss);transition:var(--tr)}
+.hp-wrap .why-list {
+  display:grid;
+  grid-template-columns:repeat(2,1fr); /* two columns side by side */
+  gap:16px;
+  margin-top:32px;
+  max-width:900px;
+  margin-left:auto;
+  margin-right:auto;
+}  .hp-wrap .why-row{display:flex;align-items:flex-start;gap:14px;padding:16px 20px;background:#fff;border:1.5px solid var(--g200);border-radius:var(--r8);box-shadow:var(--ss);transition:var(--tr)}
   .hp-wrap .why-row:hover{border-color:rgba(249,115,22,.3);box-shadow:var(--sm)}
   .hp-wrap .why-dot{width:8px;height:8px;border-radius:50%;background:var(--o);flex-shrink:0;margin-top:6px}
   .hp-wrap .why-t{font-size:.88rem;font-weight:700;color:var(--g900);margin-bottom:2px}
@@ -188,7 +210,15 @@ const css = `
     .hp-wrap .fcta-in {
       padding:0 10px; /* keep inner content aligned */
     }
-
+.hp-wrap .res-bullets {
+    grid-template-columns:1fr; /* stack vertically on mobile */
+  }
+     .hp-wrap .pillars {
+    grid-template-columns:1fr; /* stack vertically on mobile */
+  }
+    .hp-wrap .why-list {
+    grid-template-columns:1fr; /* stack vertically on mobile */
+  }
   }
 `;
 
@@ -411,54 +441,147 @@ export default function HomepagePage() {
         </section>
 
         {/* RESULTS */}
-        <section className="sec-pale">
-          <div className="con">
-            <span className="lbl">Results</span>
-            <h2 className="h-sec">Proven in Real <em>Enterprise Environments</em></h2>
-            <p className="lead" style={{ marginTop: '10px' }}>This isn&apos;t theory. This is execution at scale. Enterprises working with qBotica are seeing:</p>
-            <div className="res-bullets">
-              <div className="res-row"><div className="res-chk"><i className="fa-solid fa-check"></i></div><div><div className="res-t">Faster Processing Times</div><div className="res-d">Across core operations — claims, finance, customer service, and more.</div></div></div>
-              <div className="res-row"><div className="res-chk"><i className="fa-solid fa-check"></i></div><div><div className="res-t">Significant Reduction in Manual Effort</div><div className="res-d">Dramatic decrease in operational cost and human-driven bottlenecks.</div></div></div>
-              <div className="res-row"><div className="res-chk"><i className="fa-solid fa-check"></i></div><div><div className="res-t">Improved Accuracy &amp; Consistency</div><div className="res-d">AI-driven consistency eliminates human error across all workflows.</div></div></div>
-              <div className="res-row"><div className="res-chk"><i className="fa-solid fa-check"></i></div><div><div className="res-t">Greater Visibility &amp; Control</div><div className="res-d">Real-time oversight of every agent action, decision, and outcome.</div></div></div>
-            </div>
-            <p className="lead" style={{ marginTop: '20px', fontStyle: 'italic' }}>We focus on measurable outcomes that matter to your business.</p>
-          </div>
-        </section>
+      {/* RESULTS */}
+<section className="sec-pale" id="results">
+  <div className="con" style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}>
+    <span className="lbl">Results</span>
+    <h2 className="h-sec">Proven in Real <em>Enterprise Environments</em></h2>
+    <p className="lead" style={{ marginTop: '10px', color: 'var(--g700)' }}>
+      This isn&apos;t theory. This is execution at scale. Enterprises working with qBotica are seeing:
+    </p>
 
-        {/* PLATFORM */}
-        <section className="sec" id="platform">
-          <div className="con">
-            <span className="lbl">Platform &amp; Delivery</span>
-            <h2 className="h-sec">Built for <em>Enterprise Reality</em></h2>
-            <p className="lead" style={{ marginTop: '12px' }}>Running real business operations requires more than AI. qBotica combines:</p>
-            <div className="pillars">
-              <div className="pillar"><div className="pl-ico" style={{ background: 'var(--op)', color: 'var(--o)' }}><i className="fa-solid fa-brain"></i></div><div><div className="pl-nm">AI Agents that understand and reason</div><div className="pl-ds">Purpose-built to handle context, decisions, and business rules</div></div></div>
-              <div className="pillar"><div className="pl-ico" style={{ background: '#EFF6FF', color: '#3B82F6' }}><i className="fa-solid fa-gears"></i></div><div><div className="pl-nm">Automation that executes at scale</div><div className="pl-ds">End-to-end workflow execution across enterprise systems</div></div></div>
-              <div className="pillar"><div className="pl-ico" style={{ background: '#F0FDF4', color: '#22C55E' }}><i className="fa-solid fa-diagram-project"></i></div><div><div className="pl-nm">Orchestration that connects systems and workflows</div><div className="pl-ds">Coordinates agents, automation, and human touchpoints</div></div></div>
-              <div className="pillar"><div className="pl-ico" style={{ background: '#FAF5FF', color: '#A855F7' }}><i className="fa-solid fa-shield-halved"></i></div><div><div className="pl-nm">Governance for control, compliance, and visibility</div><div className="pl-ds">Audit trails, explainability, and enterprise-grade oversight</div></div></div>
-              <div className="pillar"><div className="pl-ico" style={{ background: 'var(--op)', color: 'var(--o)' }}><i className="fa-solid fa-user-check"></i></div><div><div className="pl-nm">Human-in-the-loop where judgment is required</div><div className="pl-ds">Seamless escalation to experts when needed</div></div></div>
-            </div>
-            <div className="managed">
-              <div className="mg-ico"><i className="fa-solid fa-server"></i></div>
-              <div><div className="mg-t">Delivered as a Managed Service</div><div className="mg-d">You don&apos;t just deploy AI. You run it — with qBotica managing outcomes end-to-end.</div></div>
-            </div>
-          </div>
-        </section>
+    <div className="res-bullets">
+      <div className="res-row">
+        <div className="res-chk"><i className="fa-solid fa-check"></i></div>
+        <div>
+          <div className="res-t">Faster Processing Times</div>
+          <div className="res-d">Across core operations — claims, finance, customer service, and more.</div>
+        </div>
+      </div>
+      <div className="res-row">
+        <div className="res-chk"><i className="fa-solid fa-check"></i></div>
+        <div>
+          <div className="res-t">Significant Reduction in Manual Effort</div>
+          <div className="res-d">Dramatic decrease in operational cost and human-driven bottlenecks.</div>
+        </div>
+      </div>
+      <div className="res-row">
+        <div className="res-chk"><i className="fa-solid fa-check"></i></div>
+        <div>
+          <div className="res-t">Improved Accuracy &amp; Consistency</div>
+          <div className="res-d">AI-driven consistency eliminates human error across all workflows.</div>
+        </div>
+      </div>
+      <div className="res-row">
+        <div className="res-chk"><i className="fa-solid fa-check"></i></div>
+        <div>
+          <div className="res-t">Greater Visibility &amp; Control</div>
+          <div className="res-d">Real-time oversight of every agent action, decision, and outcome.</div>
+        </div>
+      </div>
+    </div>
+
+    <p className="lead" style={{ marginTop: '20px', fontStyle: 'italic', color: 'var(--g700)' }}>
+      We focus on measurable outcomes that matter to your business.
+    </p>
+  </div>
+</section>
+{/* PLATFORM */}
+<section className="sec" id="platform">
+  <div className="con" style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}>
+    <span className="lbl">Platform &amp; Delivery</span>
+    <h2 className="h-sec">Built for <em>Enterprise Reality</em></h2>
+    <p className="lead" style={{ marginTop: '12px', color: 'var(--g700)' }}>
+      Running real business operations requires more than AI. qBotica combines:
+    </p>
+
+    <div className="pillars">
+      <div className="pillar">
+        <div className="pl-ico" style={{ background: 'var(--op)', color: 'var(--o)' }}>
+          <i className="fa-solid fa-brain"></i>
+        </div>
+        <div>
+          <div className="pl-nm">AI Agents that understand and reason</div>
+          <div className="pl-ds">Purpose-built to handle context, decisions, and business rules</div>
+        </div>
+      </div>
+      <div className="pillar">
+        <div className="pl-ico" style={{ background: '#EFF6FF', color: '#3B82F6' }}>
+          <i className="fa-solid fa-gears"></i>
+        </div>
+        <div>
+          <div className="pl-nm">Automation that executes at scale</div>
+          <div className="pl-ds">End-to-end workflow execution across enterprise systems</div>
+        </div>
+      </div>
+      <div className="pillar">
+        <div className="pl-ico" style={{ background: '#F0FDF4', color: '#22C55E' }}>
+          <i className="fa-solid fa-diagram-project"></i>
+        </div>
+        <div>
+          <div className="pl-nm">Orchestration that connects systems and workflows</div>
+          <div className="pl-ds">Coordinates agents, automation, and human touchpoints</div>
+        </div>
+      </div>
+      <div className="pillar">
+        <div className="pl-ico" style={{ background: '#FAF5FF', color: '#A855F7' }}>
+          <i className="fa-solid fa-shield-halved"></i>
+        </div>
+        <div>
+          <div className="pl-nm">Governance for control, compliance, and visibility</div>
+          <div className="pl-ds">Audit trails, explainability, and enterprise-grade oversight</div>
+        </div>
+      </div>
+      <div className="pillar">
+        <div className="pl-ico" style={{ background: 'var(--op)', color: 'var(--o)' }}>
+          <i className="fa-solid fa-user-check"></i>
+        </div>
+        <div>
+          <div className="pl-nm">Human-in-the-loop where judgment is required</div>
+          <div className="pl-ds">Seamless escalation to experts when needed</div>
+        </div>
+      </div>
+    </div>
+
+    <div className="managed" style={{ margin: '20px auto', textAlign: 'left' }}>
+      <div className="mg-ico"><i className="fa-solid fa-server"></i></div>
+      <div>
+        <div className="mg-t">Delivered as a Managed Service</div>
+        <div className="mg-d">You don&apos;t just deploy AI. You run it — with qBotica managing outcomes end-to-end.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
         {/* WHY QBOTICA */}
-        <section className="sec-alt">
-          <div className="con">
-            <span className="lbl">Why qBotica</span>
-            <h2 className="h-sec">Why Enterprises <em>Choose qBotica</em></h2>
-            <div className="why-list">
-              <div className="why-row"><div className="why-dot"></div><div><div className="why-t">Others sell tools. qBotica owns outcomes.</div></div></div>
-              <div className="why-row"><div className="why-dot"></div><div><div className="why-t">Others deliver pilots. qBotica runs production workflows.</div></div></div>
-              <div className="why-row"><div className="why-dot"></div><div><div className="why-t">Others separate AI, automation, and systems. qBotica orchestrates them together.</div></div></div>
-              <div className="why-row"><div className="why-dot"></div><div><div className="why-t">Others leave execution to you. qBotica delivers it with you.</div></div></div>
-            </div>
-          </div>
-        </section>
+      {/* WHY QBOTICA */}
+<section className="sec-alt" id="why">
+  <div className="con" style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}>
+    <span className="lbl">Why qBotica</span>
+    <h2 className="h-sec">Why Enterprises <em>Choose qBotica</em></h2>
+
+    <div className="why-list">
+      <div className="why-row">
+        <div className="why-dot"></div>
+        <div><div className="why-t">Others sell tools. qBotica owns outcomes.</div></div>
+      </div>
+      <div className="why-row">
+        <div className="why-dot"></div>
+        <div><div className="why-t">Others deliver pilots. qBotica runs production workflows.</div></div>
+      </div>
+      <div className="why-row">
+        <div className="why-dot"></div>
+        <div><div className="why-t">Others separate AI, automation, and systems. qBotica orchestrates them together.</div></div>
+      </div>
+      <div className="why-row">
+        <div className="why-dot"></div>
+        <div><div className="why-t">Others leave execution to you. qBotica delivers it with you.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
      {/* ECOSYSTEM */}
 {/* ECOSYSTEM */}
