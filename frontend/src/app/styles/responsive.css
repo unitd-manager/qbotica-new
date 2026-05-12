@@ -4489,6 +4489,31 @@
     padding: 50px 0px;
   }
 
+  .home-section-four.variant-vision .sub-section {
+    padding: 55px 0px;
+  }
+
+  .home-section-four.variant-vision .vision-card {
+    padding: 45px 22px 40px;
+    border-radius: 20px;
+  }
+
+  .home-section-four.variant-vision .section-head .main-title {
+    font-size: 34px;
+    line-height: 1.1;
+    letter-spacing: -0.8px;
+  }
+
+  .home-section-four.variant-vision .vision-chips {
+    margin-top: 26px;
+    gap: 10px;
+  }
+
+  .home-section-four.variant-vision .vision-chip {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
   /****/
 
   .home-section-four .col-md-3,

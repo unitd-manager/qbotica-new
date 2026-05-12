@@ -16,7 +16,7 @@ async function fetchRedirectsFromWordPress() {
     const timeoutId = setTimeout(() => controller.abort(), 5000);
 
     try {
-        const apiUrl = `${process.env.NEXT_PUBLIC_WP_API_URL}/custom/v1/redirects`;
+        const apiUrl = `${process.env.NEXT_PUBLIC_WP_API_URL || process.env.WP_API_URL}/custom/v1/redirects`;
         console.log(`📡 API URL: ${apiUrl}`);
         
         const res = await fetch(apiUrl, {

@@ -191,20 +191,26 @@ export function toNextJSMetadata(parsedData, fallback = {}) {
 
 export async function fetchRankMathMetadata(slug, parent) {
   try {
-    
-    
-    // Ensure parent is a string and handle empty/falsy values
-    const parentPath = parent && typeof parent === 'string' ? parent.trim() : '';
-    
-    let fullUrl;
-    if (parentPath) {
-      fullUrl = `${process.env.NEXT_PUBLIC_WP_URL}/${parentPath}/${slug}/`;
-    } else {
-      fullUrl = `${process.env.NEXT_PUBLIC_WP_URL}/${slug}/`;
+    const parentPath = parent && typeof parent === 'string' ? parent.trim().replace(/^\/+|\/+$/g, '') : '';
+
+    const wpApiOrigin = process.env.NEXT_PUBLIC_WP_API_URL?.replace(/\/?wp-json\/?$/, '')?.replace(/\/$/, '')
+      || process.env.NEXT_PUBLIC_WP_URL?.replace(/\/$/, '')
+      || process.env.NEXT_PUBLIC_SITE_BASE_URL?.replace(/\/$/, '')
+      || process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '');
+
+    if (!wpApiOrigin) {
+      console.error('Missing WordPress base URL environment variable for Rank Math metadata.');
+      return null;
     }
-   
-    const apiUrl = `${process.env.NEXT_PUBLIC_WP_URL}/wp-json/rankmath/v1/getHead?url=${encodeURIComponent(fullUrl)}`;
-    
+
+    const siteUrl = process.env.NEXT_PUBLIC_WP_URL?.replace(/\/$/, '')
+      || process.env.NEXT_PUBLIC_SITE_BASE_URL?.replace(/\/$/, '')
+      || process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '')
+      || wpApiOrigin;
+
+    const fullUrl = parentPath ? `${siteUrl}/${parentPath}/${slug}/` : `${siteUrl}/${slug}/`;
+    const apiUrl = `${wpApiOrigin}/wp-json/rankmath/v1/getHead?url=${encodeURIComponent(fullUrl)}`;
+
     const response = await fetch(apiUrl, {
       next: { revalidate: 300, tags: [`rankmath-${slug}`] },
       headers: { 'Accept': 'application/json' }
@@ -220,7 +226,6 @@ export async function fetchRankMathMetadata(slug, parent) {
     }
 
     return parseRankMathData(rawData);
-
   } catch (error) {
     console.error(`Error fetching Rank Math metadata for ${slug}:`, error.message);
     return null;
@@ -236,13 +241,19 @@ export async function generatePageMetadatas(slug, pageType = 'page', parent = ''
     
     const rankMathData = await fetchRankMathMetadata(slug, parent);
 
+   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '')
+      || process.env.NEXT_PUBLIC_SITE_BASE_URL?.replace(/\/$/, '')
+      || process.env.NEXT_PUBLIC_WP_URL?.replace(/\/$/, '')
+      || process.env.NEXT_PUBLIC_WP_API_URL?.replace(/\/?wp-json\/?$/, '').replace(/\/$/, '')
+      || '';
+
    const fallback = {
-  title: slug,
-  description: `Learn more about ${slug}`,
-  url: `${process.env.NEXT_PUBLIC_SITE_URL}/${slug}`,
-  siteName: 'Your Site Name',
-  ...customFallback
-};
+    title: slug,
+    description: `Learn more about ${slug}`,
+    url: `${siteUrl}${parent ? `/${parent}` : ''}/${slug}`,
+    siteName: 'Your Site Name',
+    ...customFallback
+  };
     
     if (rankMathData) {
       const metadata = toNextJSMetadata(rankMathData, fallback);
@@ -289,10 +300,16 @@ export async function generateCategoryMetadatas(slug, parent = '', customFallbac
   try {
  const rankMathData = await fetchRankMathMetadata(slug, parent);
 
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '')
+      || process.env.NEXT_PUBLIC_SITE_BASE_URL?.replace(/\/$/, '')
+      || process.env.NEXT_PUBLIC_WP_URL?.replace(/\/$/, '')
+      || process.env.NEXT_PUBLIC_WP_API_URL?.replace(/\/?wp-json\/?$/, '').replace(/\/$/, '')
+      || '';
+
     const fallback = {
       title: slug,
       description: `Learn more about ${slug}`,
-      url: `${process.env.NEXT_PUBLIC_SITE_URL}/${slug}`,
+      url: `${siteUrl}${parent ? `/${parent}` : ''}/${slug}`,
       siteName: 'Your Site Name',
       ...customFallback
     };
@@ -300,8 +317,6 @@ export async function generateCategoryMetadatas(slug, parent = '', customFallbac
     if (rankMathData) {
       const metadata = toNextJSMetadata(rankMathData, fallback);
       
-  
-     
       // Store structured data separately for component use
       if (rankMathData.structuredData) {
         metadata._structuredData = rankMathData.structuredData;
@@ -319,7 +334,7 @@ export async function generateCategoryMetadatas(slug, parent = '', customFallbac
         description: fallback.description,
         url: fallback.url,
         siteName: fallback.siteName,
-        type: pageType === 'post' ? 'article' : 'website'
+        type: 'website'
       },
       twitter: {
         card: 'summary_large_image',

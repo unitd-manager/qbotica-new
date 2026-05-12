@@ -13,6 +13,7 @@ export default function HomeBannerSlider({ data }) {
     sub_title,
     description,
     button,
+    secondary_button,
     banner_two_images = []
   } = data || {};
 
@@ -49,14 +50,29 @@ export default function HomeBannerSlider({ data }) {
             {description && (
               <DivTag dangerouslySetInnerHTML={{ __html: description }} />
             )}
-            {button?.url && (
-              <Link 
-                href={button.url} 
-                className="btn primary-btn" 
-                target={button.target || "_self"}
-              >
-                {button.title} <ArrowRight className="right-arrow-icon" />
-              </Link>
+            {(button?.url || secondary_button?.url) && (
+              <DivTag className="button-group">
+                {button?.url && (
+                  <Link
+                    href={button.url}
+                    className="btn primary-btn"
+                    target={button.target || "_self"}
+                    rel={button.target === "_blank" ? "noopener noreferrer" : undefined}
+                  >
+                    {button.title} <ArrowRight className="right-arrow-icon" />
+                  </Link>
+                )}
+                {secondary_button?.url && (
+                  <Link
+                    href={secondary_button.url}
+                    className="btn secondary-btn"
+                    target={secondary_button.target || "_self"}
+                    rel={secondary_button.target === "_blank" ? "noopener noreferrer" : undefined}
+                  >
+                    {secondary_button.title} <ArrowRight className="right-arrow-icon" />
+                  </Link>
+                )}
+              </DivTag>
             )}
           </DivTag>
         </DivTag>
