@@ -503,6 +503,7 @@
     position: relative;
     width: 100%;
     display: block;
+    margin-bottom: 3rem;
 }
 
 .our-award-info::before {

@@ -2941,6 +2941,211 @@ footer h5 {
   line-height: 28px;
 }
 
+.home-page.new-home-static .general-cta-section .cta-section-header .main-title {
+  font-size: 44px;
+  line-height: 52px;
+  letter-spacing: -1.92px;
+  margin-bottom: 0;
+}
+
+.home-page.new-home-static .general-cta-section .cta-section-header p {
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0 0 24px;
+}
+
+.home-page.new-home-static .general-cta-section .cta-section-header .primary-btn {
+  display: inline-flex;
+}
+
+.home-page.new-home-static #image-with-keypoints-impact .content-box .desc {
+  text-align: left;
+}
+
+.home-page.new-home-static #image-with-keypoints-impact .img-wrapper {
+  width: 100%;
+  max-width: 520px;
+  height: clamp(320px, 47vw, 820px);
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.home-page.new-home-static #image-with-keypoints-impact .img-col {
+  display: flex;
+  justify-content: center;
+}
+
+.home-page.new-home-static #image-with-keypoints-impact .img-wrapper img {
+  border-radius: 12px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-page.new-home-static #image-with-keypoints-impact .sub-section > .row {
+  row-gap: 32px;
+}
+
+.home-page.new-home-static #enterprise-reality .image-with-keypoints-header {
+  max-width: 900px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.home-page.new-home-static #enterprise-reality .image-with-keypoints-header .sub-title {
+  color: #333;
+  margin: 12px auto 0;
+  max-width: 720px;
+}
+
+.home-page.new-home-static #enterprise-reality .content-box {
+  padding: 0 60px 0 15px;
+}
+
+.home-page.new-home-static #enterprise-reality.flex-row-reverse .content-box {
+  padding: 0 15px 0 60px;
+}
+
+.home-page.new-home-static #enterprise-reality .content-box .desc {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.home-page.new-home-static #enterprise-reality .key-title {
+  font-weight: 600;
+  margin: 0 0 14px;
+}
+
+.home-page.new-home-static #enterprise-reality .primary-btn {
+  display: inline-flex;
+  margin-top: 18px;
+  padding: 12px 26px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.home-page.new-home-static #enterprise-reality .primary-btn .right-arrow-icon,
+.home-page.new-home-static #enterprise-reality .primary-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.home-page.new-home-static #enterprise-reality .content-ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.home-page.new-home-static #enterprise-reality .content-ul .content-li {
+  border: 1px solid rgba(20, 21, 22, 0.12);
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 0;
+}
+
+.home-page.new-home-static #enterprise-reality .content-ul .content-li:not(:last-child)::after {
+  display: none;
+}
+
+.home-page.new-home-static #enterprise-reality .content-ul .content-li h4 {
+  position: relative;
+  padding-left: 26px;
+  padding-bottom: 0;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.home-page.new-home-static #enterprise-reality .content-ul .content-li h4::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #FF7705;
+  box-shadow: 0 0 0 4px rgba(255, 119, 5, 0.22);
+}
+
+.home-page.new-home-static #enterprise-reality .img-col {
+  display: flex;
+  justify-content: center;
+}
+
+.home-page.new-home-static #enterprise-reality .img-wrapper {
+  width: 100%;
+  max-width: 680px;
+  height: clamp(300px, 32vw, 460px);
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.home-page.new-home-static #enterprise-reality .img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.home-page.new-home-static #common-post-pages-slider {
+  padding-bottom: 64px;
+}
+
+.home-page.new-home-static #common-post-pages-slider .slider-heading .main-title {
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: -1.92px;
+}
+
+.home-page.new-home-static #common-post-pages-slider .slider-item {
+  padding: 18px;
+}
+
+.home-page.new-home-static #common-post-pages-slider .img-div {
+  width: 100%;
+  height: 240px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.home-page.new-home-static #common-post-pages-slider .img-div .post-image {
+  border-radius: 10px;
+  object-position: center;
+}
+
+.home-page.new-home-static #common-post-pages-slider .post-content {
+  gap: 8px;
+  padding: 10px 0 0;
+}
+
+.home-page.new-home-static #common-post-pages-slider .post-date {
+  font-size: 13px;
+}
+
+.home-page.new-home-static #common-post-pages-slider .post-title {
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+}
+
+.home-page.new-home-static #common-post-pages-slider .post-desc {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0;
+}
+
+.home-page.new-home-static #content-highlight-impact .img-wrapper,
+.home-page.new-home-static #content-highlight-block .img-wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.home-page.new-home-static #content-highlight-impact .img-wrapper img,
+.home-page.new-home-static #content-highlight-block .img-wrapper img {
+  border-radius: 12px;
+}
+
 .home-page.new-home-static .step-card-section .card-col,
 .home-page.new-home-static .step-card-section .content-div {
   border-radius: 10px;
@@ -3370,6 +3575,11 @@ footer h5 {
 .content-highlight-block .sub-section {
   position: relative;
   z-index: 2;
+}
+
+/* Ensure image and text columns start at the same top row */
+.content-highlight-block .row.align-items-center {
+  align-items: flex-start;
 }
 
 .content-highlight-block .main-title {
@@ -7803,6 +8013,29 @@ footer h5 {
   width: 100%;
   clear: both;
   display: block;
+  /* smaller external gap; more bottom padding so slider controls (dots) don't overlap following content */
+  margin-bottom: 0.5rem;
+  padding-bottom: 80px;
+}
+
+/* Instead of large external margins, add internal padding to the sections
+   that follow the announcements so each panel keeps its own spacing. */
+.common-posts-slider ~ section {
+  margin-top: 0; /* remove external gap */
+  padding-top: 2rem;  /* internal spacing for the section */
+  padding-bottom: 2rem; /* internal spacing for the section */
+}
+
+@media (max-width: 576px) {
+  .common-posts-slider {
+    margin-bottom: 0.5rem;
+    padding-bottom: 64px;
+  }
+  .common-posts-slider ~ section {
+    margin-top: 0;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
 }
 
 /* Slider heading */
@@ -7914,13 +8147,14 @@ footer h5 {
 
 .common-posts-slider .slick-dots {
   position: absolute;
-  bottom: -60px;
+  bottom: 20px; /* place dots inside visible padded area and away from next section */
   display: block !important;
   width: 100%;
   padding: 0;
   margin: 0;
   list-style: none;
   text-align: center;
+  z-index: 5;
 }
 
 .common-posts-slider .slick-dots li {

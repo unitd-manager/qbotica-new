@@ -5,6 +5,13 @@ import TimelineSections from '@/components/Layout/timeline-sections';
 import FooterCommonCTA from '@/components/Layout/footer-common-cta';
 import ClientLogoSection from '@/components/Layout/home-client-logo-section';
 import { DivTag } from '@/components/Common/HTMLTags';
+import GeneralCTASection from '@/components/Layout/general-cta-section';
+import ContentHighlight from '@/components/Layout/content-highlight-block';
+import ImageWithKeyPoints from '@/components/Layout/image-with-keypoints';
+import ContentLayout from '@/components/Layout/content-layout';
+import CommonPostPagesSlider from '@/components/Layout/common-posts-slider';
+import AwardsSection from '@/components/Layout/home-awards';
+import HealthcareAutomationSection from '@/components/Layout/home-section-4';
 
 export const dynamic = 'force-static';
 export const revalidate = false;
@@ -366,11 +373,607 @@ const clientLogoData = {
   },
 };
 
+const generalCTASectionData = {
+  display_options: [
+    'main_title',
+    'description',
+    'cta_button',
+    'secondary_cta_button',
+  ],
+
+  main_title: 'Ready to Run Your Business<br/>with Agentic AI',
+
+  description:
+    "<p>Let's identify the workflows where we can create impact fastest and start executing.</p>",
+
+  cta_button: {
+    title: 'Request a Demo',
+    url: 'https://meetings.hubspot.com/maheshv/web-demo',
+    target: '_blank',
+  },
+
+  secondary_cta_button: {
+    title: 'Talk to an Expert',
+    url: 'https://meetings.hubspot.com/maheshv/web-demo',
+    target: '_blank',
+  },
+
+ 
+ padding: {
+    padding_options: true,
+
+    padding_position: ['top', 'bottom'],
+
+    desktop_padding: {
+      padding_top_desktop: '45',
+      padding_bottom_desktop: '40',
+    },
+
+    mobile_padding: {
+      padding_top_mobile: '40',
+      padding_bottom_mobile: '40',
+    },
+  },
+};
+
+const contentHighlightData1 = {
+  title: 'Why Enterprises Choose qBotica',
+
+  description: `
+    <ul>
+      <li>Others sell tools. qBotica owns outcomes.</li>
+      <li>Others deliver pilots. qBotica runs production workflows.</li>
+      <li>Others separate AI, automation, and systems. qBotica orchestrates them together.</li>
+      <li>Others leave execution to you. qBotica delivers it with you.</li>
+    </ul>
+  `,
+
+  image: {
+    url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2024/09/The-Evolution-of-Document-Processing_-From-Manual-to-AI-driven-Automation-108.jpg',
+    alt: 'Content Highlight',
+  },
+
+  text_alignment: 'right',
+
+  image_position: 'left',
+
+  button: {
+    title: 'Learn More',
+    url: '#',
+    target: '_self',
+  },
+
+  class_name: '',
+
+  enable_animation: 'true',
+
+  id: 'content-highlight-block',
+
+  padding: {
+    padding_options: true,
+
+    padding_position: ['top', 'bottom'],
+
+    desktop_padding: {
+      padding_top_desktop: '80',
+      padding_bottom_desktop: '80',
+    },
+
+    mobile_padding: {
+      padding_top_mobile: '60',
+      padding_bottom_mobile: '60',
+    },
+  },
+};
+
+const imageKeyPointsData = {
+  display_options: [
+    'main_title',
+    'sub_title',
+    'description',
+    'key_points',
+    'image',
+    'cta_button',
+  ],
+
+  image_position: 'right',
+
+  image_col: 'col-md-6',
+
+  content_col: 'col-md-6',
+
+  vertical_align: 'center',
+
+  title_position: 'top_center',
+
+  main_title: 'Built for Enterprise Reality',
+
+  sub_title: 'Running real business operations requires more than AI.',
+
+  description: `
+    <p>
+      Delivered as a managed service, so you don’t just deploy AI. You run it.
+    </p>
+  `,
+
+  key_point_title: 'What qBotica brings together',
+
+  key_points: [
+    { title: 'AI agents that understand and reason' },
+    { title: 'Automation that executes at scale' },
+    { title: 'Orchestration that connects systems and workflows' },
+    { title: 'Governance to ensure control, compliance, and visibility' },
+    { title: 'Human-in-the-loop where judgment is required' },
+  ],
+
+  cta_button: {
+    title: 'Learn More',
+    url: '#',
+    target: '_self',
+  },
+
+  common_content: '',
+
+  image: {
+    url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2026/02/Agentic-AI-Orchestration-Platforms.jpg',
+    alt: 'Image With Keypoints',
+    width: 650,
+    height: 700,
+  },
+
+  background_color: '#f3f3f3',
+
+  class_name: '',
+
+  id: 'enterprise-reality',
+
+  enable_animation: 'true',
+
+  padding: {
+    padding_options: true,
+
+    padding_position: ['top', 'bottom'],
+
+    desktop_padding: {
+      padding_top_desktop: '120',
+      padding_bottom_desktop: '120',
+    },
+
+    mobile_padding: {
+      padding_top_mobile: '80',
+      padding_bottom_mobile: '80',
+    },
+  },
+};
 
 
 
+const contentHighlightData = {
+  title: 'Proven Enterprise Impact',
+
+  description: `
+    <p>
+      This isn’t theory. This is execution at scale.
+      Enterprises working with qBotica are seeing:
+    </p>
+
+    <ul>
+      <li>Faster processing times across core operations</li>
+      <li>Significant reduction in manual effort and operational cost</li>
+      <li>Improved accuracy and consistency across workflows</li>
+      <li>Greater visibility and control over business processes</li>
+    </ul>
+
+    <p>
+      We focus on measurable outcomes that matter to your business.
+    </p>
+  `,
+
+  image: {
+    url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2024/09/The-Evolution-of-AI-Frameworks-in-Industry-Applications-107.jpg',
+    alt: 'Enterprise Impact',
+  },
+
+  text_alignment: 'right',
+
+  image_position: 'left',
+
+  button: {
+    title: 'Learn More',
+    url: '#',
+    target: '_self',
+  },
+
+  class_name: '',
+
+  enable_animation: 'true',
+
+  id: 'content-highlight-impact',
+
+  padding: {
+    padding_options: true,
+
+    padding_position: ['top', 'bottom'],
+
+    desktop_padding: {
+      padding_top_desktop: '120',
+      padding_bottom_desktop: '120',
+    },
+
+    mobile_padding: {
+      padding_top_mobile: '80',
+      padding_bottom_mobile: '80',
+    },
+  },
+};
+
+const commonPostPagesSliderData = {
+  main_title: 'Latest Announcements',
+
+  common_description: `
+    <p>
+      Explore the latest enterprise AI transformation stories,
+      automation breakthroughs, and operational success cases.
+    </p>
+  `,
+
+  show_feature_image: 'yes',
+
+  show_title: 'yes',
+
+  show_description: 'yes',
+
+  show_date: 'yes',
+
+  posts: [
+    {
+      title:
+        'How qBotica Took The Pain Out of Pricing using GenAI and Automation for a Large Financial Services Company',
+
+      featuredImage: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2025/11/How-qBotica-Took-The-Pain-Out-of-Pricing-using-GenAI-and-Automation-2-150x150.webp',
+
+      date: 'May 12, 2026',
+
+      excerpt: `
+        <p>
+          AI-powered automation transformed enterprise pricing
+          workflows and significantly reduced manual effort.
+        </p>
+      `,
+
+      link: '#',
+    },
+
+    {
+      title:
+        'How qBotica Increased Claims Processing By Over 7x for a Top Healthcare Client',
+
+      featuredImage: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2025/12/healthcare-form-AI-150x150.webp',
+
+      date: 'May 10, 2026',
+
+      excerpt: `
+        <p>
+          Intelligent document processing accelerated healthcare
+          claims handling and operational efficiency.
+        </p>
+      `,
+
+      link: '#',
+    },
+
+    {
+      title:
+        'How qBotica helped a Fortune 500 Technology Products Company to process 1Million+ Invoices each Year',
+
+      featuredImage: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2025/08/How-qBotica-Helped-A-Fortune-500-Technology-Products-Company-To-Process-1-Million-Invoices-Each-Year-150x150.webp',
+
+      date: 'May 08, 2026',
+
+      excerpt: `
+        <p>
+          Enterprise invoice automation improved processing speed,
+          visibility, and workflow accuracy.
+        </p>
+      `,
+
+      link: '#',
+    },
+
+    {
+      title:
+        'How qBotica helped a Global Top 10 Bank reduce processing time by 75% and errors by 90%',
+
+      featuredImage: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2025/08/How-qBotica-Helped-A-Global-Top-10-Bank-Reduce-Processing-Time-By-75-And-Errors-By-90-150x150.webp',
+
+      date: 'May 06, 2026',
+
+      excerpt: `
+        <p>
+          Banking automation streamlined operations while improving
+          compliance and reducing operational errors.
+        </p>
+      `,
+
+      link: '#',
+    },
+
+    {
+      title:
+        'How qBotica Helped a Leading Manufacturer Reduce Documentation Errors by 99%',
+
+      featuredImage: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2024/09/Understanding-the-Fourth-Industrial-Revolution_-A-Shift-from-Expectations-131-150x150.jpg',
+
+      date: 'May 04, 2026',
+
+      excerpt: `
+        <p>
+          AI-driven automation reduced documentation bottlenecks
+          and improved enterprise operational efficiency.
+        </p>
+      `,
+
+      link: '#',
+    },
+  ],
+
+ 
+
+  class_name: '',
+
+  id: 'common-post-pages-slider',
+
+  padding: {
+    padding_options: true,
+
+    padding_position: ['top', 'bottom'],
+
+    desktop_padding: {
+      padding_top_desktop: '120',
+      padding_bottom_desktop: '120',
+    },
+
+    mobile_padding: {
+      padding_top_mobile: '80',
+      padding_bottom_mobile: '80',
+    },
+  },
+};
+
+const imageKeyPointsData1 = {
+  display_options: [
+    'main_title',
+    'description',
+    'image',
+  ],
+
+  image_position: 'right',
+
+  image_col: 'col-md-6',
+
+  content_col: 'col-md-6',
+
+  vertical_align: 'top',
+
+  main_title: 'Where Agentic AI Delivers Impact. Work qBotica Runs for You',
+
+  sub_title: '',
+
+  description: `
+    <p>
+      We focus on the workflows that matter most to your business.
+    </p>
+
+    <p>
+      <strong><b>Examples:</b></strong>
+    </p>
+
+    <ul>
+      <li>
+        <strong>Claims and document processing</strong><br/>
+        Automate intake, validation, and decisioning across high-volume documents.
+      </li>
+      <li>
+        <strong>Finance and reconciliation</strong><br/>
+        Streamline reporting, audits, and financial operations with accuracy and speed.
+      </li>
+      <li>
+        <strong>Customer and contact center workflows</strong><br/>
+        Enable faster response, resolution, and service execution.
+      </li>
+      <li>
+        <strong>Logistics and operations coordination</strong><br/>
+        Automate scheduling, communication, and operational decision-making.
+      </li>
+      <li>
+        <strong>Back-office and shared services</strong><br/>
+        Reduce manual work across HR, procurement, and internal operations.
+      </li>
+    </ul>
+  `,
+
+  key_point_title: '',
+
+  key_points: [],
+
+  cta_button: {
+    title: 'Learn More',
+    url: '#',
+    target: '_self',
+  },
+
+  common_content: '',
+
+  image: {
+    url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2026/03/gvt.webp',
+    alt: 'Agentic AI Impact',
+    width: 650,
+    height: 750,
+  },
+
+  background_color: '#f3f3f3',
+
+  class_name: '',
+
+  id: 'image-with-keypoints-impact',
+
+  enable_animation: 'true',
+
+  padding: {
+    padding_options: true,
+
+    padding_position: ['top', 'bottom'],
+
+    desktop_padding: {
+      padding_top_desktop: '140',
+      padding_bottom_desktop: '190',
+    },
+
+    mobile_padding: {
+      padding_top_mobile: '80',
+      padding_bottom_mobile: '80',
+    },
+  },
+};
+const awardsSectionData = {
+  main_title: 'Awards and Recognitions',
+
+  award_and_certificate_list: [
+    {
+      image: {
+        url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2025/07/Intelligent-Document-Processing-IDP-2022-PEAK-Matrix-Award-Logo-Star-Performer-2-300x126-1.webp',
+      },
+      title: 'Award 1',
+    },
+
+    {
+      image: {
+        url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2025/08/uipath-partner-diamond-lockup-digital-rgb-ob.webp',
+      },
+      title: 'Award 2',
+    },
+    {
+      image: {
+        url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2026/05/logo-smallbusiness.webp',
+      },
+      title: 'Award 3',
+    },
+
+    {
+      image: {
+        url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2025/07/certification-exam.svg',
+      },
+      title: 'Award 4',
+    },
+
+    {
+      image: {
+        url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2025/09/aws-1-1.webp',
+      },
+      title: 'Award 5',
+    },
+
+    {
+      image: {
+        url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2025/07/21972-312-soc-noncpa-300x298-1.webp',
+      },
+      title: 'Award 6',
+    },
+
+    {
+      image: {
+        url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2025/07/Picture-1-300x69-1.webp',
+      },
+      title: 'Award 7',
+    },
+
+    {
+      image: {
+        url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2025/12/Deloitte-500-badge.png',
+      },
+      title: 'Award 8',
+    },
+
+    {
+      image: {
+        url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2025/12/PBJ-FGC.png',
+      },
+      title: 'Award 9',
+    }
+  ],
+
+  padding: {
+    padding_options: true,
+
+    padding_position: ['top', 'bottom'],
+
+    desktop_padding: {
+      padding_top_desktop: '120',
+      padding_bottom_desktop: '120',
+    },
+
+    mobile_padding: {
+      padding_top_mobile: '80',
+      padding_bottom_mobile: '80',
+    },
+  },
+};
+
+const healthcareAutomationSolutionsData = {
+  display_options: [
+    'main_title',
+    'description',
+   
+  ],
+
+  main_title: 'Built on a Strong Enterprise Ecosystem',
+
+  description: `
+    <p>
+      We work across leading enterprise platforms and technologies
+      to deliver what works best for your environment.
+      Our approach is platform-agnostic, outcome-driven,
+      and designed to integrate into your existing systems
+      without disruption.
+    </p>
+  `,
 
 
+
+  image: {
+    url: '/images/industry-automation.jpg',
+    alt: 'Industry Automation Solutions',
+  },
+
+  text_alignment: 'left',
+
+  image_position: 'right',
+
+ 
+  common_content: '',
+
+  class_name: '',
+
+  enable_animation: 'true',
+
+  id: 'healthcare-automation-solutions',
+
+  padding: {
+    padding_options: true,
+
+    padding_position: ['top', 'bottom'],
+
+    desktop_padding: {
+      padding_top_desktop: '120',
+      padding_bottom_desktop: '120',
+    },
+
+    mobile_padding: {
+      padding_top_mobile: '80',
+      padding_bottom_mobile: '80',
+    },
+  },
+};
 
 export default function NewHomeStaticPage() {
   return (
@@ -383,7 +986,14 @@ export default function NewHomeStaticPage() {
        <FooterCommonCTA data={footerCommonCTA2Data} />
          <TimelineSections data={sectionThreeData} />
       <SectionFour data={sectionFourData} />
-    
+      <AwardsSection data={awardsSectionData} />
+      <CommonPostPagesSlider data={commonPostPagesSliderData} />
+      <ImageWithKeyPoints data={imageKeyPointsData1} />
+      <ContentHighlight data={contentHighlightData} />
+<ImageWithKeyPoints data={imageKeyPointsData} />
+      <ContentHighlight data={contentHighlightData1} />
+    <HealthcareAutomationSection data={healthcareAutomationSolutionsData} />
+     <GeneralCTASection data={generalCTASectionData} />
      
     </DivTag>
   );
