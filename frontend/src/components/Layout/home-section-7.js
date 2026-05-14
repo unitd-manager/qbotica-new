@@ -24,7 +24,7 @@ export default function SectionFour({ data }) {
       observer.observe(ref);
       return () => observer.disconnect();
     });
-  }, []);
+  }, [data?.variant]);
 
   if (!data) return null;
 

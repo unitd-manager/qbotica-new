@@ -429,7 +429,7 @@ const contentHighlightData1 = {
   `,
 
   image: {
-    url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2024/09/The-Evolution-of-Document-Processing_-From-Manual-to-AI-driven-Automation-108.jpg',
+    url: '/assets/images/image1.png',
     alt: 'Content Highlight',
   },
 
@@ -515,7 +515,7 @@ const imageKeyPointsData = {
   common_content: '',
 
   image: {
-    url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2026/02/Agentic-AI-Orchestration-Platforms.jpg',
+    url: '/assets/images/image3.png',
     alt: 'Image With Keypoints',
     width: 650,
     height: 700,
@@ -570,7 +570,7 @@ const contentHighlightData = {
   `,
 
   image: {
-    url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2024/09/The-Evolution-of-AI-Frameworks-in-Industry-Applications-107.jpg',
+    url: '/assets/images/image4.png',
     alt: 'Enterprise Impact',
   },
 
@@ -608,7 +608,7 @@ const contentHighlightData = {
 };
 
 const commonPostPagesSliderData = {
-  main_title: 'Latest Announcements',
+  main_title: '<span style="font-size: 50px;">Latest Announcements</span>',
 
   common_description: `
     <p>
@@ -836,7 +836,7 @@ const imageKeyPointsData1 = {
   },
 };
 const awardsSectionData = {
-  main_title: 'Awards and Recognitions',
+  main_title: '<span style="font-size: 50px;">Awards and Recognitions</span>',
 
   award_and_certificate_list: [
     {

@@ -6,18 +6,19 @@ import Image from 'next/image';
 import ChartFromWP from '../Common/Chart';
 
 export default function TimelineSections({ data }) {
-    if (!data || typeof data !== 'object') return null;
+    const safeData = data && typeof data === 'object' ? data : null;
 
     const {
         main_title,
         sub_title,
         description,
-        timelines = [],
         cta_button,
-        class_name,
-        id,
+        class_name = '',
+        id = '',
         padding = {}
-    } = data;
+    } = safeData || {};
+
+    const timelines = Array.isArray(safeData?.timelines) ? safeData.timelines : [];
 
     const wrapperRef = useRef(null);
     const rowRefs = useRef([]);
@@ -66,6 +67,8 @@ export default function TimelineSections({ data }) {
         window.addEventListener('resize', calculateProgressHeight);
         return () => window.removeEventListener('resize', calculateProgressHeight);
     }, [activeIndex, timelines.length]);
+
+    if (!safeData) return null;
 
     let paddingClass = '';
     if (padding.padding_options && padding.padding_options === true) {
