@@ -25,8 +25,8 @@ function CaseStudyHeroSection({ section }) {
     <DivTag
       style={{
         backgroundColor: '#FFA500',
-        padding: isMobile ? '40px 20px' : '100px 40px',
-        minHeight: isMobile ? 'auto' : '700px',
+        padding: isMobile ? '40px 20px' : '50px 40px',
+        minHeight: isMobile ? 'auto' : '460px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -38,14 +38,18 @@ function CaseStudyHeroSection({ section }) {
           margin: '0 auto',
           width: '100%',
           display: 'grid',
-          gridTemplateColumns: isMobile ? '1fr' : '1.2fr 1fr',
-          gap: isMobile ? '40px' : '80px',
+          gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr',
+          gap: isMobile ? '40px' : '60px',
           alignItems: 'center',
-          paddingRight: isMobile ? '0' : '60px',
+          paddingRight: '0',
         }}
       >
         {/* Left Content Section */}
-        <DivTag>
+        <DivTag
+        style={{
+        maxWidth: '560px',
+  }}
+>
           {/* Case Study Label */}
           <PTag
             style={{
@@ -68,7 +72,7 @@ function CaseStudyHeroSection({ section }) {
           {section.title && (
             <H1Tag
               style={{
-                fontSize: isMobile ? '28px' : '56px',
+                fontSize: isMobile ? '28px' : '48px',
                 fontWeight: 'bold',
                 marginBottom: '24px',
                 color: '#fff',
@@ -156,7 +160,7 @@ function CaseStudyHeroSection({ section }) {
               justifyContent: 'flex-end',
               alignItems: 'center',
               perspective: '1200px',
-              height: isMobile ? '300px' : '500px',
+              height: 'auto',
               marginTop: isMobile ? '20px' : '0',
             }}
           >
@@ -164,10 +168,11 @@ function CaseStudyHeroSection({ section }) {
               style={{
                 backgroundColor: '#fff',
                 borderRadius: '24px',
-                padding: '16px',
+                padding: '10px',
                 boxShadow: '0 30px 80px rgba(0, 0, 0, 0.2)',
                 width: '100%',
-                height: '100%',
+                maxWidth: '700px',
+                height: 'auto',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -176,8 +181,8 @@ function CaseStudyHeroSection({ section }) {
               <Image
                 src={section.hero_image.url}
                 alt={section.hero_image.alt || section.title}
-                width={800}
-                height={900}
+                width={700}
+                height={400}
                 style={{
                   width: '100%',
                   height: '100%',
@@ -215,16 +220,27 @@ function StatsSection({ section }) {
         }}
       >
         <DivTag
-          style={{
-            display: 'grid',
-            gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit, minmax(250px, 1fr))',
-            gap: isMobile ? '30px' : '60px',
-            textAlign: 'center',
-          }}
-        >
+  style={{
+  display: 'grid',
+  gridTemplateColumns: isMobile
+    ? '1fr'
+    : `repeat(${statsItems.length}, 1fr)`,
+  gap: '30px',
+  textAlign: 'center',
+}}
+>
           {statsItems && statsItems.length > 0 ? (
             statsItems.map((stat, index) => (
-              <DivTag key={index}>
+              <DivTag
+  key={index}
+  style={{
+  padding: isMobile ? '40px 20px' : '60px 30px',
+  backgroundColor: '#ffffff',
+  borderRadius: '20px',
+  border: '1px solid #ececec',
+  boxShadow: '0 8px 24px rgba(0,0,0,0.06)',
+}}
+>
                 <H2Tag
                   style={{
                     fontSize: isMobile ? '32px' : '48px',
@@ -413,7 +429,7 @@ function ApproachSection({ section }) {
             gap: '30px',
           }}
         >
-          {points && points.length > 0 ? (
+          {points && points.length > 0 &&
             points.map((point, index) => (
               <DivTag
                 key={index}
@@ -450,9 +466,7 @@ function ApproachSection({ section }) {
                 </PTag>
               </DivTag>
             ))
-          ) : (
-            <PTag style={{ color: '#999', gridColumn: '1/-1' }}>No approach points listed</PTag>
-          )}
+          }
         </DivTag>
       </DivTag>
     </DivTag>

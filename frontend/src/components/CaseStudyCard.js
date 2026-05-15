@@ -87,8 +87,9 @@ export default function CaseStudyCard({ item }) {
           {item.description && (
             <DivTag
               style={{
-                fontSize: '14px',
-                color: '#666',
+                fontSize: '16px',
+                fontWeight: '700',
+                color: '#000000',
                 lineHeight: '1.6',
                 marginBottom: '20px',
               }}

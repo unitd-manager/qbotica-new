@@ -102,7 +102,7 @@ export default function CaseStudyGridWithFilter({ data }) {
                     href={`/case-studies/industry/${caseStudy.slug}`}
                     className="case-study-btn"
                   >
-                    <span>View Case Study</span>
+                    <span>View Case Studies</span>
                     <span className="arrow">→</span>
                   </Link>
                 </DivTag>
