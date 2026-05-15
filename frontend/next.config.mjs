@@ -11,9 +11,12 @@ const nextConfig = {
         port: '', // leave empty for default ports
         pathname: '/**',
       },
-
-
-
+      {
+        protocol: 'https',
+        hostname: 'qbadevadmin.unitdtechnologies.com', 
+        port: '', // leave empty for default ports
+        pathname: '/**',
+      },
        {
       protocol: 'https',
       hostname: 'qbwpadmin.unitdtechnologies.com',
