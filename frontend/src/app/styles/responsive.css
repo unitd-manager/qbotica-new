@@ -4489,6 +4489,31 @@
     padding: 50px 0px;
   }
 
+  .home-section-four.variant-vision .sub-section {
+    padding: 55px 0px;
+  }
+
+  .home-section-four.variant-vision .vision-card {
+    padding: 45px 22px 40px;
+    border-radius: 20px;
+  }
+
+  .home-section-four.variant-vision .section-head .main-title {
+    font-size: 34px;
+    line-height: 1.1;
+    letter-spacing: -0.8px;
+  }
+
+  .home-section-four.variant-vision .vision-chips {
+    margin-top: 26px;
+    gap: 10px;
+  }
+
+  .home-section-four.variant-vision .vision-chip {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
   /****/
 
   .home-section-four .col-md-3,
@@ -5650,5 +5675,51 @@ width: 100%;
 @media only screen and (max-width: 991.98px) {
   .primary-menu .navbar-collapse {
     display: none !important;
+  }
+}
+
+@media only screen and (max-width: 767.98px) {
+  .primary-menu > .container,
+  header.navbar.primary-menu .container {
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  .primary-menu .navbar-brand {
+    display: flex;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-right: 0;
+    max-width: calc(100% - 56px);
+  }
+
+  .header-desk-logo {
+    width: 132px;
+    height: 34px;
+  }
+
+  .mobile-menu-trigger {
+    padding: 6px;
+    flex: 0 0 auto;
+  }
+
+  .home-page.new-home-static .step-card-section .section-head .main-title {
+    font-size: 38px;
+    line-height: 44px;
+    letter-spacing: -0.8px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .header-desk-logo {
+    width: 120px;
+    height: 32px;
+  }
+
+  .home-page.new-home-static .step-card-section .section-head .main-title {
+    font-size: 34px;
+    line-height: 40px;
+    letter-spacing: -0.4px;
   }
 }

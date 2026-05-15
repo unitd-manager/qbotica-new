@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
-import { DivTag, H3Tag, PTag, SectionTag, ATag, H4Tag, H5Tag, ULTag, LITag } from '../Common/HTMLTags';
+import { DivTag, H2Tag, H3Tag, PTag, SectionTag, ATag, H4Tag, H5Tag, ULTag, LITag } from '../Common/HTMLTags';
 import Image from 'next/image';
 import Link from 'next/link';
 import DotGrid from '../Common/DotGrid';
@@ -51,6 +51,7 @@ export default function ImageKeyPoints({ data }) {
         image_col = 'col-md-6',
         content_col = 'col-md-6',
         vertical_align = 'center',
+        title_position = '',
         main_title,
         sub_title,
         description,
@@ -74,6 +75,7 @@ export default function ImageKeyPoints({ data }) {
     const showCTA = display_options.includes('cta_button');
     const showKeyPoints = display_options.includes('key_points');
     const verticalAlignClass = getVerticalAlignClass(vertical_align);
+    const useSectionHeader = title_position === 'top_center';
     
     let paddingClass = '';
     if (padding.padding_options && padding.padding_options === true) {
@@ -117,11 +119,27 @@ export default function ImageKeyPoints({ data }) {
     
     const isRight = image_position === 'right';
     
+    const renderHeader = () => {
+        if (!useSectionHeader) return null;
+        if (!showTitle && !showSubTitle) return null;
+        if (!main_title && !sub_title) return null;
+        return (
+            <DivTag className="image-with-keypoints-header">
+                {showTitle && main_title && (
+                    <H2Tag className="main-title" dangerouslySetInnerHTML={{ __html: main_title }} />
+                )}
+                {showSubTitle && sub_title && (
+                    <PTag className="sub-title" dangerouslySetInnerHTML={{ __html: sub_title }} />
+                )}
+            </DivTag>
+        );
+    };
+
     const renderText = () => (
         <DivTag className={`${content_col} content-col`}>
             <DivTag className="content-box">
-                {showTitle && main_title && <H3Tag className="main-title" dangerouslySetInnerHTML={{ __html: main_title }} />}
-                {showSubTitle && sub_title && <H4Tag className="sub-title" dangerouslySetInnerHTML={{ __html: sub_title }} />}
+                {!useSectionHeader && showTitle && main_title && <H3Tag className="main-title" dangerouslySetInnerHTML={{ __html: main_title }} />}
+                {!useSectionHeader && showSubTitle && sub_title && <H4Tag className="sub-title" dangerouslySetInnerHTML={{ __html: sub_title }} />}
                 {showDescription && description && <DivTag className="desc" dangerouslySetInnerHTML={{ __html: description }} />}
                 {showKeyPoints && key_points.length > 0 && (
                     <>
@@ -154,6 +172,7 @@ export default function ImageKeyPoints({ data }) {
              {enable_animation == 'true' && (isRight ? <DotGrid className="left-grid" /> : <DotGrid className="right-grid" />)}
             <DivTag className="container">
                 <DivTag className={`sub-section ${paddingClass}`}>
+                    {renderHeader()}
                     <DivTag
                         className={`row align-items-${verticalAlignClass} ${image_position === 'right' ? 'flex-row-reverse' : ''
                             }`}

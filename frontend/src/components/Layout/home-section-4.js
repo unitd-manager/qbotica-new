@@ -70,7 +70,7 @@ export default function SectionFour({ data }) {
             <DivTag className="col-md-12">
               <DivTag className='section-head'>
                 {main_title && <H2Tag className="main-title" dangerouslySetInnerHTML={{ __html: main_title }} />}
-                {description && <PTag className="para" dangerouslySetInnerHTML={{ __html: description }} />}
+                {description && <DivTag className="para" dangerouslySetInnerHTML={{ __html: description }} />}
               </DivTag>
             </DivTag>
           </DivTag>

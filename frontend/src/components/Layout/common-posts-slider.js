@@ -40,28 +40,31 @@ export default function CommonPostPagesSlider({ data }) {
 const setEqualHeight = useCallback(() => {
     if (!sliderRef.current) return;
 
-    // Reset heights first
-    const allSlides = sliderRef.current.querySelectorAll('.slick-slide .slider-item');
-    allSlides.forEach(slide => {
-        slide.style.height = 'auto';
+    const itemsPerRow = getItemsPerRow();
+
+    const allItems = sliderRef.current.querySelectorAll('.slick-slide .slider-item');
+    allItems.forEach((item) => {
+        item.style.height = 'auto';
     });
 
-    if (allSlides.length === 0) return;
+    if (itemsPerRow === 1) return;
 
-    // Get max height among ALL slides
+    const visibleItems = sliderRef.current.querySelectorAll(
+        '.slick-slide.slick-active:not(.slick-cloned) .slider-item'
+    );
+
+    const itemsToMeasure = visibleItems.length ? visibleItems : allItems;
+    if (!itemsToMeasure.length) return;
+
     let maxHeight = 0;
-    allSlides.forEach(slide => {
-        const height = slide.offsetHeight;
-        if (height > maxHeight) {
-            maxHeight = height;
-        }
+    itemsToMeasure.forEach((item) => {
+        maxHeight = Math.max(maxHeight, item.offsetHeight);
     });
 
-    // Apply common height to ALL slides
-    allSlides.forEach(slide => {
-        slide.style.height = `${maxHeight}px`;
+    itemsToMeasure.forEach((item) => {
+        item.style.height = `${maxHeight}px`;
     });
-}, []);
+}, [getItemsPerRow]);
 
 
     const updateSlideBorders = useCallback(() => {

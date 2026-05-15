@@ -341,9 +341,9 @@ export default function HomepagePage() {
       </p>
       <div className="ag-quote" style={{ marginTop: '18px', display: 'inline-block', textAlign: 'center' }}>
         <p>
-          This is the shift from "How can AI help?" to{" "}
+          {`This is the shift from "How can AI help?" to `}
           <strong style={{ color: 'var(--od)' }}>
-            "Let AI do it."
+            {`"Let AI do it."`}
           </strong>
         </p>
       </div>

@@ -172,3 +172,94 @@ export  const XLogo = React.forwardRef(function XLogo(props, ref) {
   );
 });
 
+export const VisionBolt = React.forwardRef(function VisionBolt(props, ref) {
+  return (
+    <svg ref={ref} viewBox="0 0 24 24" width="1em" height="1em" fill="none" {...props}>
+      <path
+        d="M13 2L4 14h7l-1 8 10-14h-7l0-6z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+});
+
+export const VisionShield = React.forwardRef(function VisionShield(props, ref) {
+  return (
+    <svg ref={ref} viewBox="0 0 24 24" width="1em" height="1em" fill="none" {...props}>
+      <path
+        d="M12 2l8 4v6c0 5.25-3.438 9.813-8 10-4.563-.187-8-4.75-8-10V6l8-4z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M9 12l2 2 4-5"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+});
+
+export const VisionBook = React.forwardRef(function VisionBook(props, ref) {
+  return (
+    <svg ref={ref} viewBox="0 0 24 24" width="1em" height="1em" fill="none" {...props}>
+      <path
+        d="M6 4h10a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2V6a2 2 0 0 1 2-2z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinejoin="round"
+      />
+      <path d="M8 8h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      <path d="M8 12h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  );
+});
+
+export const VisionScale = React.forwardRef(function VisionScale(props, ref) {
+  return (
+    <svg ref={ref} viewBox="0 0 24 24" width="1em" height="1em" fill="none" {...props}>
+      <path
+        d="M12 3v18"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <path
+        d="M6 7h12"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <path
+        d="M7 7l-3 6a4 4 0 0 0 8 0L9 7"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M17 7l-2 6a4 4 0 0 0 8 0l-3-6"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+});
+
+export const VisionEye = React.forwardRef(function VisionEye(props, ref) {
+  return (
+    <svg ref={ref} viewBox="0 0 24 24" width="1em" height="1em" fill="none" {...props}>
+      <path
+        d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinejoin="round"
+      />
+      <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2" />
+    </svg>
+  );
+});
+

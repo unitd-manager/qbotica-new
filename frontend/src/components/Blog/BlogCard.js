@@ -4,6 +4,23 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { DivTag, H5Tag, PTag, SpanTag } from '../Common/HTMLTags';
 
+const decodeHtmlEntities = (value = '') =>
+  String(value)
+    .replace(/&#(\d+);/g, (_, code) => String.fromCodePoint(Number(code)))
+    .replace(/&#x([0-9a-f]+);/gi, (_, code) => String.fromCodePoint(parseInt(code, 16)))
+    .replace(/&(amp|lt|gt|quot|apos|nbsp);/gi, (_, entity) => {
+      const entities = {
+        amp: '&',
+        lt: '<',
+        gt: '>',
+        quot: '"',
+        apos: "'",
+        nbsp: ' ',
+      };
+
+      return entities[entity.toLowerCase()] || _;
+    });
+
 export default function BlogCard({ posts }) {
   const listRef = useRef(null);
   const parentRef = useRef(null);
@@ -38,7 +55,7 @@ export default function BlogCard({ posts }) {
             : '';
           const categories = post._embedded?.['wp:term']?.[0] || [];
           const categoryNames = categories.map(cat => cat.name).join(', ');
-          const fullTitle = post.title.rendered || '';
+          const fullTitle = decodeHtmlEntities(post.title?.rendered || '');
           const [titleBefore, titleAfter] = fullTitle.split(':');
           return (
             <DivTag className="col-md-4 card-col" key={`card-col-${index}`} ref={index === 0 ? listRef : null}>
@@ -48,7 +65,7 @@ export default function BlogCard({ posts }) {
                   <Image
                     src={featuredImg}
                     className="card-img-top"
-                    alt={post.title.rendered}
+                    alt={fullTitle}
                     width={390}
                     height={310}
                   />

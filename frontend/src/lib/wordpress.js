@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-const WP_API_URL = process.env.NEXT_PUBLIC_WP_API_URL;
-const SITE_BASE_URL = process.env.NEXT_PUBLIC_SITE_BASE_URL;
+const WP_API_URL = process.env.NEXT_PUBLIC_WP_API_URL || process.env.WP_API_URL;
+const SITE_BASE_URL = process.env.NEXT_PUBLIC_SITE_BASE_URL || process.env.NEXT_PUBLIC_SITE_URL;
 
 /**
  * PRODUCTION-OPTIMIZED THEME SETTINGS

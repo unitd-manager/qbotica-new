@@ -1,22 +1,74 @@
 'use client';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { DivTag, H2Tag, H4Tag, H5Tag, PTag, SectionTag } from '../Common/HTMLTags';
 import Image from 'next/image';
 import ChartFromWP from '../Common/Chart';
 
 export default function TimelineSections({ data }) {
-    if (!data || typeof data !== 'object') return null;
+    const safeData = data && typeof data === 'object' ? data : null;
 
     const {
         main_title,
         sub_title,
         description,
-        timelines = [],
         cta_button,
-        class_name,
-        id,
+        class_name = '',
+        id = '',
         padding = {}
-    } = data;
+    } = safeData || {};
+
+    const timelines = Array.isArray(safeData?.timelines) ? safeData.timelines : [];
+
+    const wrapperRef = useRef(null);
+    const rowRefs = useRef([]);
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [progressHeight, setProgressHeight] = useState(0);
+
+    useEffect(() => {
+        const observers = [];
+
+        rowRefs.current.forEach((row, index) => {
+            if (!row) return;
+
+            const observer = new IntersectionObserver(
+                ([entry]) => {
+                    if (entry.isIntersecting) {
+                        setActiveIndex(index);
+                    }
+                },
+                { threshold: 0.45 }
+            );
+
+            observer.observe(row);
+            observers.push(observer);
+        });
+
+        return () => observers.forEach((observer) => observer.disconnect());
+    }, [timelines]);
+
+    useEffect(() => {
+        const calculateProgressHeight = () => {
+            const wrapper = wrapperRef.current;
+            const activeRow = rowRefs.current[activeIndex];
+
+            if (!wrapper || !activeRow) {
+                setProgressHeight(0);
+                return;
+            }
+
+            const wrapperRect = wrapper.getBoundingClientRect();
+            const rowRect = activeRow.getBoundingClientRect();
+            const newHeight = Math.max(0, rowRect.top + rowRect.height / 2 - wrapperRect.top);
+            setProgressHeight(newHeight);
+        };
+
+        calculateProgressHeight();
+        window.addEventListener('resize', calculateProgressHeight);
+        return () => window.removeEventListener('resize', calculateProgressHeight);
+    }, [activeIndex, timelines.length]);
+
+    if (!safeData) return null;
 
     let paddingClass = '';
     if (padding.padding_options && padding.padding_options === true) {
@@ -41,6 +93,21 @@ export default function TimelineSections({ data }) {
         }
     }
 
+    const renderBlock = (block) => {
+        if (!block) return null;
+
+        return (
+            <DivTag className="timeline-text-content">
+                {block.label && <PTag className="timeline-label">{block.label}</PTag>}
+                {block.title && <H5Tag className="timeline-title" dangerouslySetInnerHTML={{ __html: block.title }} />}
+                {block.subtitle && <PTag className="timeline-subtitle">{block.subtitle}</PTag>}
+                {block.description && <DivTag className="timeline-description" dangerouslySetInnerHTML={{ __html: block.description }} />}
+                {block.note && <PTag className="timeline-note">{block.note}</PTag>}
+                {block.status && <PTag className="timeline-status">{block.status}</PTag>}
+            </DivTag>
+        );
+    };
+
     return (
         <SectionTag className={`timeline-section ${class_name}`} id={id}>
             <DivTag className="container">
@@ -53,51 +120,29 @@ export default function TimelineSections({ data }) {
                     </DivTag>
 
                     {/* Timeline Wrapper with spine */}
-                    <DivTag className="timeline-wrapper">
+                    <DivTag className="timeline-wrapper" ref={wrapperRef} style={{ '--progress-height': `${progressHeight}px` }}>
                         {timelines.map((item, index) => {
-                            const isEven = index % 2 === 0;
-                            const uniqueChartId = `chart-${id}-${index}`;
-
-                            // Render visual content (image or chart)
-                            const visualContent = item.chart ? (
-                                <ChartFromWP html={item.chart} uniqueId={uniqueChartId} />
-                            ) : item.image?.url ? (
-                                <DivTag className="timeline-img">
-                                <Image
-                                    src={item.image.url}
-                                    alt={item.image.alt || "Timeline image"}
-                                    width={450}
-                                    height={290}
-                                 
-                                />
-                                </DivTag>
-                            ) : null;
-
-                            // Render text content
-                            const textContent = (
-                                <>
-                                    {item.title && <H5Tag className="timeline-title" dangerouslySetInnerHTML={{ __html: item.title }} />}
-                                    {item.description && <DivTag dangerouslySetInnerHTML={{ __html: item.description }} />}
-                                </>
-                            );
+                            const leftContent = renderBlock(item.left);
+                            const rightContent = renderBlock(item.right);
 
                             return (
-                                <DivTag className="row timeline-row align-items-center" key={index}>
-                                    {/* Left Column */}
-                                    <DivTag className={`col-md-6 timeline-col ${isEven ? "" : ""}`}>
-                                        {isEven ? textContent : visualContent}
-                                    </DivTag>
-
-                                    {/* Right Column */}
+                                <DivTag
+                                    className={`row timeline-row align-items-center ${activeIndex === index ? 'active' : ''}`}
+                                    key={index}
+                                    ref={(el) => (rowRefs.current[index] = el)}
+                                >
                                     <DivTag className="col-md-6 timeline-col">
-                                        {isEven ? visualContent : textContent}
+                                        {leftContent}
+                                    </DivTag>
+                                    <DivTag className="col-md-6 timeline-col">
+                                        {rightContent}
                                     </DivTag>
                                 </DivTag>
                             );
                         })}
                         {cta_button && (
                             <DivTag className="timeline-cta">
-                                <Link href={cta_button.url} target={cta_button.target || '_self'} className='btn primary-btn'>
+                                <Link href={cta_button.url} target={cta_button.target || '_self'} className="btn primary-btn">
                                     {cta_button.title || 'Learn More'}
                                 </Link>
                             </DivTag>
