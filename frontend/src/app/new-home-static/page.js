@@ -1,5 +1,5 @@
-import Banner from '@/components/Layout/banner-layout';
-import StepCardsSection from '@/components/Layout/step-cards-section';
+import NewHomeHeroBanner from '@/components/Layout/new-home-hero-banner';
+import WhyAIFailsPanel from '@/components/Layout/why-ai-fails-panel';
 import SectionFour from '@/components/Layout/home-section-7';
 import TimelineSections from '@/components/Layout/timeline-sections';
 import FooterCommonCTA from '@/components/Layout/footer-common-cta';
@@ -24,9 +24,9 @@ export const metadata = {
 const bannerData = {
   page_type: 'home_two',
   sub_title: '',
-  main_title: 'Agentic AI That Runs Your Business',
+  main_title: 'Agentic AI<br/><span>That Runs</span><br/><span>Your Buisness</span>',
   description:
-    '<p>Move beyond pilots and "assistants." qBotica runs your enterprise operations using Agentic AI to execute end-to-end workflows across your systems, documents, and decisions.</p>',
+    '<p>Move beyond pilots and "assistants." <span class="nh-hero-brand">qBotica</span> runs your enterprise operations using Agentic AI to execute end-to-end workflows across your systems, documents, and decisions.</p>',
   button: { url: 'https://meetings.hubspot.com/automation-demo/scheduler', title: 'Request a Demo', target: '' },
   secondary_button: { url: 'https://meetings.hubspot.com/automation-demo/scheduler', title: 'See Agentic AI in Action', target: '' },
   inner_video: false,
@@ -62,14 +62,16 @@ const bannerData = {
 };
 
 const stepCardsData = {
-  main_title: 'Why Most AI Fails at Operations',
+  main_title: 'Why Most AI <span>Fails at Operations</span>',
+  subtitle: "It’s not the model. It’s how it works in the real world.",
+  show_numbers: false,
   description: '',
   title_alignment: 'center',
   card_alignment: 'center',
   steps: [
     {
       column: 'col-md-4',
-      title: 'Stops at insight',
+      title: 'Stops at Insight',
       type: 'description',
       text_align: 'left',
       title_style: {
@@ -90,7 +92,7 @@ const stepCardsData = {
     },
     {
       column: 'col-md-4',
-      title: "Doesn't execute",
+      title: "Doesn't Execute",
       type: 'description',
       text_align: 'left',
       title_style: {
@@ -111,7 +113,7 @@ const stepCardsData = {
     },
     {
       column: 'col-md-4',
-      title: 'Disconnected from reality',
+      title: 'Disconnected from Reality',
       type: 'description',
       text_align: 'left',
       title_style: {
@@ -148,82 +150,75 @@ const stepCardsData = {
 const sectionThreeData = {
   main_title: 'How Agentic AI Runs Your Business',
   sub_title: '',
-  description: '',
+  description:
+    'A complete AI-powered workflow that understands, decides, acts, and orchestrates business operations seamlessly.',
+    
   timelines: [
     {
       left: {
-        label: '01 Intro',
-        title: 'First Conversation',
-        subtitle: 'A 30-minute call to identify your highest-impact workflow.',
+        label: '01',
+        title: 'Step 1 – Understand',
+        subtitle:
+          'Read documents, emails, and data across structured and unstructured sources.',
+       
       },
       right: {
-        description: 'Discovery Call — 30 min<br/>Intake Session',
+        description:
+          'AI agents analyze enterprise information from CRMs, PDFs, spreadsheets, emails, and internal systems to understand context and intent.',
       },
     },
+
     {
       left: {
-        description: 'Intake Session',
+        description:
+          'AI Decision Engine<br/>Rule Validation<br/>Contextual Intelligence',
       },
       right: {
-        label: '02 Discovery',
-        title: 'Deep Dive',
-        subtitle: 'We sit with the people who do the work.',
+        label: '02',
+        title: 'Step 2 – Decide',
+        subtitle:
+          'Apply AI reasoning, business rules, and context to make informed decisions.',
+       },
+    },
+
+    {
+      left: {
+        label: '03',
+        title: 'Step 3 – Act',
+        subtitle:
+          'Execute actions across enterprise systems, applications, and workflows.',
+       },
+      right: {
+        description:
+          'Workflow Execution<br/>System Automation<br/>Cross-Platform Actions',
       },
     },
+
     {
       left: {
-        label: '03 Encode',
-        title: 'Knowledge Capture',
-        subtitle: 'Your team’s expertise becomes the blueprint.',
+        description:
+          'Multi-Agent Coordination<br/>Human-in-the-Loop<br/>Enterprise Scale Management',
       },
       right: {
-        note: 'Workflow Encoded',
-      },
-    },
-    {
-      left: {
-        status: 'Agent v1.0 — Deployed ✓',
-      },
-      right: {
-        label: '04 Build',
-        title: 'Agent Development',
-        subtitle: 'Custom agents built, tested, and deployed.First working version in two weeks.',
-        description: '',
-      },
-    },
-    {
-      left: {
-        label: '05 Improve',
-        title: 'Continuous Feedback',
-        subtitle: 'Your team flags issues. Agents improve autonomously.',
-        description: '',
-      },
-      right: {
-        note: 'Feedback received → Agent updated',
-      },
-    },
-    {
-      left: {
-        label: '06 Expand',
-        title: 'Enterprise Rollout',
-        subtitle: 'One workflow proven. Then the next team. Then the organization.',
-      },
-      right: {
-        note: '3 → 12 → Org-wide',
-      },
+        label: '04',
+        title: 'Step 4 – Orchestrate',
+        subtitle:
+          'Coordinate agents, automation, and human input to manage real-world complexity.',
+       },
     },
   ],
+
   padding: {
     padding_options: true,
     padding_position: ['top', 'bottom'],
     desktop_padding: {
       padding_top_desktop: '45',
-      padding_bottom_desktop: '45'
+      padding_bottom_desktop: '45',
     },
     mobile_padding: {
       padding_top_mobile: '50',
-      padding_bottom_mobile: '45'
-    }
+      padding_bottom_mobile: '45',
+    },
   },
 };
 
@@ -309,7 +304,7 @@ const sectionFiveData = {
 
 const footerCommonCTAData = {
   display_options: ['main_title', 'description'],
-  main_title: 'Agentic AI: AI That Actually Works.',
+  main_title: 'Agentic AI AI That Actually Works.',
   description:
     '<span style="color: #ffffff;">Agentic AI is not chatbots or copilots. It’s an operating model where AI doesn’t just assist, it acts. It understands the work, makes the decision, and executes the task across your existing systems. It doesn’t stop at an insight, it completes the job.<br/><br/><strong><b>This is the shift from “How can AI help?” to “Let AI do it.”</b></strong></span>',
   cta_button: null,
@@ -978,11 +973,11 @@ const healthcareAutomationSolutionsData = {
 export default function NewHomeStaticPage() {
   return (
     <DivTag className="home-page new-home-static">
-      <Banner data={bannerData} />
+      <NewHomeHeroBanner data={bannerData} />
+         <SectionFour data={sectionFiveData} />
       <ClientLogoSection data={clientLogoData} />
-      <SectionFour data={sectionFiveData} />
       <FooterCommonCTA data={footerCommonCTAData} />
-      <StepCardsSection data={stepCardsData} />
+      <WhyAIFailsPanel data={stepCardsData} />
        <FooterCommonCTA data={footerCommonCTA2Data} />
          <TimelineSections data={sectionThreeData} />
       <SectionFour data={sectionFourData} />

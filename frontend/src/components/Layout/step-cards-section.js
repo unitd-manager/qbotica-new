@@ -2,7 +2,7 @@
 import { useEffect, useRef } from 'react';
 import { DivTag, H2Tag, H4Tag, H5Tag, LITag, PTag, SectionTag, SpanTag, ULTag } from '../Common/HTMLTags';
 import Link from 'next/link';
-import { ArrowRight, LiIcon } from '../Common/Icons';
+import { ArrowRight, LiIcon, VisionBolt, VisionEye, VisionScale } from '../Common/Icons';
 import Image from 'next/image';
 import BoxGrid from '../Common/BoxGrid';
 
@@ -45,6 +45,26 @@ export default function BenefitsGridLayout({ data }) {
         id,
         padding
     } = data;
+
+    const getStepIcon = (card, index) => {
+        const iconName = (card?.icon || card?.icon_name || '').toString().toLowerCase().trim();
+        const title = (card?.title || '').toString().toLowerCase();
+
+        if (iconName === 'eye' || iconName === 'insight') return VisionEye;
+        if (iconName === 'bolt' || iconName === 'execute') return VisionBolt;
+        if (iconName === 'scale' || iconName === 'disconnect') return VisionScale;
+
+        if (title.includes('insight')) return VisionEye;
+        if (title.includes("doesn't") || title.includes('doesnt') || title.includes('execute')) return VisionBolt;
+        if (title.includes('disconnected') || title.includes('reality')) return VisionScale;
+
+        if (index === 0) return VisionEye;
+        if (index === 1) return VisionBolt;
+        if (index === 2) return VisionScale;
+
+        return null;
+    };
+
     let paddingClass = '';
     if (padding.padding_options && padding.padding_options === true) {
         const {
@@ -134,7 +154,16 @@ export default function BenefitsGridLayout({ data }) {
                                                 <DivTag className="content-div">
                                                     <DivTag className="step-title-wrapper">
                                                         <DivTag className="step-number-box">
-                                                            <span className="step-number">{String(index + 1).padStart(2, '0')}</span>
+                                                            {(() => {
+                                                                const StepIcon = getStepIcon(card, index);
+                                                                return StepIcon ? (
+                                                                    <span className="step-icon" aria-hidden="true">
+                                                                        <StepIcon className="step-icon-svg" />
+                                                                    </span>
+                                                                ) : (
+                                                                    <span className="step-number">{String(index + 1).padStart(2, '0')}</span>
+                                                                );
+                                                            })()}
                                                         </DivTag>
                                                         <H5Tag className="card-col-title">{card.title}</H5Tag>
                                                     </DivTag>
