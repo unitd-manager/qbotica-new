@@ -8,10 +8,13 @@ import { DivTag } from '@/components/Common/HTMLTags';
 import GeneralCTASection from '@/components/Layout/general-cta-section';
 import ContentHighlight from '@/components/Layout/content-highlight-block';
 import ImageWithKeyPoints from '@/components/Layout/image-with-keypoints';
+import ImageKeyPointsModern from '@/components/Layout/image-keypoints-modern';
+import ImageKeyPointsModern2 from '@/components/Layout/image-keypoints-modern-2';
+import WhyEnterprisesChoose from '@/components/Layout/why-enterprises-choose-qbotica';
 import ContentLayout from '@/components/Layout/content-layout';
 import CommonPostPagesSlider from '@/components/Layout/common-posts-slider';
 import AwardsSection from '@/components/Layout/home-awards';
-import HealthcareAutomationSection from '@/components/Layout/home-section-4';
+import HealthcareAutomationModern from '@/components/Layout/healthcare-automation-modern';
 
 export const dynamic = 'force-static';
 export const revalidate = false;
@@ -62,7 +65,7 @@ const bannerData = {
 };
 
 const stepCardsData = {
-  main_title: 'Why Most AI <span>Fails at Operations</span>',
+  main_title: 'Why Most AI <span>Fails at Operations</span>?',
   subtitle: "It’s not the model. It’s how it works in the real world.",
   show_numbers: false,
   description: '',
@@ -148,7 +151,7 @@ const stepCardsData = {
 };
 
 const sectionThreeData = {
-  main_title: 'How Agentic AI Runs Your Business',
+  main_title: 'How Agentic AI Runs Your Business?',
   sub_title: '',
   description:
     'A complete AI-powered workflow that understands, decides, acts, and orchestrates business operations seamlessly.',
@@ -304,7 +307,7 @@ const sectionFiveData = {
 
 const footerCommonCTAData = {
   display_options: ['main_title', 'description'],
-  main_title: 'Agentic AI AI That Actually Works.',
+  main_title: 'Agentic AI That Actually Works.',
   description:
     '<span style="color: #ffffff;">Agentic AI is not chatbots or copilots. It’s an operating model where AI doesn’t just assist, it acts. It understands the work, makes the decision, and executes the task across your existing systems. It doesn’t stop at an insight, it completes the job.<br/><br/><strong><b>This is the shift from “How can AI help?” to “Let AI do it.”</b></strong></span>',
   cta_button: null,
@@ -376,7 +379,7 @@ const generalCTASectionData = {
     'secondary_cta_button',
   ],
 
-  main_title: 'Ready to Run Your Business<br/>with Agentic AI',
+  main_title: 'Ready to Run Your Business<br/>with Agentic AI?',
 
   description:
     "<p>Let's identify the workflows where we can create impact fastest and start executing.</p>",
@@ -412,7 +415,7 @@ const generalCTASectionData = {
 };
 
 const contentHighlightData1 = {
-  title: 'Why Enterprises Choose qBotica',
+  title: 'Why Enterprises Choose qBotica?',
 
   description: `
     <ul>
@@ -460,6 +463,23 @@ const contentHighlightData1 = {
     },
   },
 };
+
+const whyChooseData = (() => {
+  try {
+    const html = contentHighlightData1.description || '';
+    const matches = Array.from(html.matchAll(/<li>(.*?)<\/li>/gms)).map(m => m[1].trim());
+    const bullets = matches.map((t) => ({ title: t }));
+    return {
+      title: contentHighlightData1.title,
+      bullets,
+      image: contentHighlightData1.image,
+      cta: contentHighlightData1.button || null,
+      background: contentHighlightData1.background_color || ''
+    };
+  } catch (e) {
+    return { title: contentHighlightData1.title, bullets: [], image: contentHighlightData1.image, cta: contentHighlightData1.button || null };
+  }
+})();
 
 const imageKeyPointsData = {
   display_options: [
@@ -603,7 +623,7 @@ const contentHighlightData = {
 };
 
 const commonPostPagesSliderData = {
-  main_title: '<span style="font-size: 50px;">Latest Announcements</span>',
+  main_title: '<span style="font-size: 50px;">News Room</span>',
 
   common_description: `
     <p>
@@ -750,17 +770,13 @@ const imageKeyPointsData1 = {
 
   vertical_align: 'top',
 
-  main_title: 'Where Agentic AI Delivers Impact. Work qBotica Runs for You',
+  main_title: 'Where Agentic AI Delivers Impact? Work qBotica Runs for You',
 
   sub_title: '',
 
   description: `
     <p>
       We focus on the workflows that matter most to your business.
-    </p>
-
-    <p>
-      <strong><b>Examples:</b></strong>
     </p>
 
     <ul>
@@ -975,7 +991,7 @@ export default function NewHomeStaticPage() {
     <DivTag className="home-page new-home-static">
       <NewHomeHeroBanner data={bannerData} />
          <SectionFour data={sectionFiveData} />
-      <ClientLogoSection data={clientLogoData} />
+      {/* <ClientLogoSection data={clientLogoData} /> */}
       <FooterCommonCTA data={footerCommonCTAData} />
       <WhyAIFailsPanel data={stepCardsData} />
        <FooterCommonCTA data={footerCommonCTA2Data} />
@@ -983,13 +999,13 @@ export default function NewHomeStaticPage() {
       <SectionFour data={sectionFourData} />
       <AwardsSection data={awardsSectionData} />
       <CommonPostPagesSlider data={commonPostPagesSliderData} />
-      <ImageWithKeyPoints data={imageKeyPointsData1} />
+      <ImageKeyPointsModern data={imageKeyPointsData1} />
       <ContentHighlight data={contentHighlightData} />
-<ImageWithKeyPoints data={imageKeyPointsData} />
-      <ContentHighlight data={contentHighlightData1} />
-    <HealthcareAutomationSection data={healthcareAutomationSolutionsData} />
+      <ImageKeyPointsModern2 data={imageKeyPointsData} />
+      <WhyEnterprisesChoose data={whyChooseData} />
+    <HealthcareAutomationModern data={healthcareAutomationSolutionsData} />
      <GeneralCTASection data={generalCTASectionData} />
-     
+      <ClientLogoSection data={clientLogoData} />
     </DivTag>
   );
 }
