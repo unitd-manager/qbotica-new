@@ -10,8 +10,8 @@
 .content{padding-top:6px;padding-right:6px;padding-left:6px;padding-bottom:18px}
 .badge{display:inline-block;background:linear-gradient(90deg,rgba(255,122,0,0.12),rgba(255,122,0,0.06));color:#e65a00;padding:8px 12px;border-radius:999px;font-weight:700;font-size:13px;margin-bottom:16px}
 .title{font-size:38px;line-height:1.04;color:#071331;margin:0 0 12px;font-weight:800}
-.subtitle{color:var(--muted, #6b7280);margin:0 0 14px;font-size:16px}
-.description{color:var(--muted, #6b7280);font-size:16px;line-height:1.7;margin-bottom:18px}
+.subtitle{color:var(--muted, #071331);margin:0 0 14px;font-size:16px}
+.description{color:var(--muted, #071331);font-size:16px;line-height:1.7;margin-bottom:18px}
 .description ul{list-style:disc;margin-left:20px;margin-top:8px}
 .description ul li{margin-bottom:10px;font-size:18px}
 .description p{margin:0 0 10px}
@@ -19,7 +19,7 @@
 .chips{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px}
 .chip{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:999px;background:linear-gradient(180deg,rgba(255,122,0,0.06),rgba(255,122,0,0.02));box-shadow:0 8px 24px rgba(11,23,44,0.04)}
 .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(180deg,#ff7a00,#e65a00)}
-.chipText{font-size:14px;color:#071331}
+.chipText{font-size:16px;color:#071331}
 
 .cta{display:inline-block;padding:12px 18px;border-radius:12px;background:#ff7a00;color:#fff;text-decoration:none;font-weight:700}
 

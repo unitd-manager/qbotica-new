@@ -6,9 +6,9 @@
 
 .mainTitle{font-size:34px;line-height:1.04;color:#071331;margin:0;font-weight:800}
 
-.description{color:#444a56;font-size:18px;line-height:1.7}
+.description{color:#071331;font-size:18px;line-height:1.7; padding-top: 10px;}
 
-.subDescription{color:#6b7280;font-size:15px;margin-top:6px}
+.subDescription{color:#071331;font-size:15px;margin-top:6px}
 
 .buttonRow{display:flex;gap:14px;align-items:center;justify-content:center;margin-top:8px}
 

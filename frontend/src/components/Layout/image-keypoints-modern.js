@@ -55,7 +55,7 @@ export default function ImageKeyPointsModern({ data = {} }) {
           <div className={styles.right}>
             <div className={styles.card}>
               {image?.url && (
-                <Image src={image.url} alt={image.alt || 'Illustration'} width={image.width || 700} height={image.height || 520} className={styles.image} />
+                <Image src={image.url} alt={image.alt || 'Illustration'} width={image.width || 800} height={image.height || 520} className={styles.image} />
               )}
               <div className={styles.accent} />
             </div>
