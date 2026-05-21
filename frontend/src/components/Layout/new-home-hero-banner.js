@@ -3,6 +3,18 @@ import Image from 'next/image';
 import { DivTag, H1Tag, SectionTag } from '@/components/Common/HTMLTags';
 import { ArrowRight } from '@/components/Common/Icons';
 
+function getTitleLines(value) {
+  if (!value) return [];
+  const html = String(value);
+  const normalized = html
+    .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<\/?[^>]+>/g, '');
+  return normalized
+    .split('\n')
+    .map((line) => line.trim())
+    .filter(Boolean);
+}
+
 export default function NewHomeHeroBanner({ data }) {
   if (!data) return null;
 
@@ -13,12 +25,19 @@ export default function NewHomeHeroBanner({ data }) {
     button,
     secondary_button,
     banner_two_images = [],
+    hero_image,
+    image_position,
   } = data;
 
-  const heroImage = banner_two_images?.[1]?.main_image || banner_two_images?.[0]?.main_image;
+  const heroImage =
+    hero_image ||
+    banner_two_images?.[1]?.main_image ||
+    banner_two_images?.[0]?.main_image;
+  const titleLines = getTitleLines(main_title);
+  const isImageLeft = image_position === 'left';
 
   return (
-    <SectionTag className="nh-hero-banner">
+    <SectionTag className={`nh-hero-banner${isImageLeft ? ' is-image-left' : ''}`}>
       <DivTag className="nh-hero-bg" />
       <DivTag className="nh-hero-container">
         <DivTag className="nh-hero-grid">
@@ -27,11 +46,17 @@ export default function NewHomeHeroBanner({ data }) {
               <DivTag className="nh-hero-eyebrow">{sub_title}</DivTag>
             ) : null}
 
-            {main_title ? (
-              <H1Tag
-                className="nh-hero-title"
-                dangerouslySetInnerHTML={{ __html: main_title }}
-              />
+            {titleLines.length ? (
+              <H1Tag className="nh-hero-title">
+                {titleLines.map((line, index) => (
+                  <span
+                    key={`${line}-${index}`}
+                    className={`nh-hero-title-line ${index === 0 ? '' : 'nh-hero-highlight'}`.trim()}
+                  >
+                    {line}
+                  </span>
+                ))}
+              </H1Tag>
             ) : null}
 
             {description ? (
@@ -77,7 +102,10 @@ export default function NewHomeHeroBanner({ data }) {
                   fill
                   priority
                   sizes="(max-width: 991px) 92vw, 46vw"
-                  style={{ objectFit: 'contain', objectPosition: 'right bottom' }}
+                  style={{
+                    objectFit: 'contain',
+                    objectPosition: isImageLeft ? 'left bottom' : 'right bottom'
+                  }}
                 />
               ) : null}
             </DivTag>

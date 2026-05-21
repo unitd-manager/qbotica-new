@@ -5719,6 +5719,19 @@ width: 100%;
     gap: 28px;
   }
 
+  .home-page.new-home-static .nh-hero-banner.is-image-left .nh-hero-content {
+    order: 1;
+  }
+
+  .home-page.new-home-static .nh-hero-banner.is-image-left .nh-hero-media {
+    order: 2;
+  }
+
+  .home-page.new-home-static .nh-hero-content {
+    text-align: center;
+    margin: 0 auto;
+  }
+
   .home-page.new-home-static .nh-hero-title {
     font-size: 38px;
     line-height: 1.12;
@@ -5726,12 +5739,12 @@ width: 100%;
   }
 
   .home-page.new-home-static .nh-hero-media {
-    min-height: 320px;
+    min-height: 260px;
   }
 
   .home-page.new-home-static .nh-hero-media-inner {
-    height: 380px;
-    transform: translateX(8px);
+    height: 300px;
+    transform: none;
   }
 
   .home-page.new-home-static .nh-hero-banner::after {
@@ -5774,6 +5787,16 @@ width: 100%;
 
   .home-page.new-home-static .nh-problem-text {
     max-width: none;
+  }
+
+  .footer-common-cta-embossed .fce-card {
+    padding: 34px 18px;
+    border-radius: 22px;
+  }
+
+  .footer-common-cta-embossed .fce-title {
+    font-size: 32px;
+    line-height: 1.12;
   }
 }
 

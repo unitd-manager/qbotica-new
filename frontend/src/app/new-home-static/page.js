@@ -3,8 +3,9 @@ import WhyAIFailsPanel from '@/components/Layout/why-ai-fails-panel';
 import SectionFour from '@/components/Layout/home-section-7';
 import TimelineSections from '@/components/Layout/timeline-sections';
 import FooterCommonCTA from '@/components/Layout/footer-common-cta';
+import FooterCommonCTAEmbossed from '@/components/Layout/footer-common-cta-embossed';
 import ClientLogoSection from '@/components/Layout/home-client-logo-section';
-import { DivTag } from '@/components/Common/HTMLTags';
+import { DivTag, H2Tag, SectionTag } from '@/components/Common/HTMLTags';
 import GeneralCTASection from '@/components/Layout/general-cta-section';
 import ContentHighlight from '@/components/Layout/content-highlight-block';
 import ImageWithKeyPoints from '@/components/Layout/image-with-keypoints';
@@ -15,6 +16,9 @@ import ContentLayout from '@/components/Layout/content-layout';
 import CommonPostPagesSlider from '@/components/Layout/common-posts-slider';
 import AwardsSection from '@/components/Layout/home-awards';
 import HealthcareAutomationModern from '@/components/Layout/healthcare-automation-modern';
+import Link from 'next/link';
+import Image from 'next/image';
+import { ArrowRight } from '@/components/Common/Icons';
 
 export const dynamic = 'force-static';
 export const revalidate = false;
@@ -27,13 +31,18 @@ export const metadata = {
 const bannerData = {
   page_type: 'home_two',
   sub_title: '',
-  main_title: 'Agentic AI<br/><span>That Runs</span><br/><span>Your Buisness</span>',
+  main_title: 'Agentic AI<br/>That Runs<br/>Your Business',
   description:
     '<p>Move beyond pilots and "assistants." <span class="nh-hero-brand">qBotica</span> runs your enterprise operations using Agentic AI to execute end-to-end workflows across your systems, documents, and decisions.</p>',
   button: { url: 'https://meetings.hubspot.com/automation-demo/scheduler', title: 'Request a Demo', target: '' },
   secondary_button: { url: 'https://meetings.hubspot.com/automation-demo/scheduler', title: 'See Agentic AI in Action', target: '' },
   inner_video: false,
   mobile_inner_video: false,
+  image_position: 'right',
+  hero_image: {
+    url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2025/12/Untitled-design-2025-12-24T183307.902-1-1.webp',
+    alt: 'Hero'
+  },
   banner_two_images: [
     {
       main_image: {
@@ -211,6 +220,8 @@ const sectionThreeData = {
     },
   ],
 
+ 
+
   padding: {
     padding_options: true,
     padding_position: ['top', 'bottom'],
@@ -310,7 +321,11 @@ const footerCommonCTAData = {
   main_title: 'Agentic AI That Actually Works.',
   description:
     '<span style="color: #ffffff;">Agentic AI is not chatbots or copilots. It’s an operating model where AI doesn’t just assist, it acts. It understands the work, makes the decision, and executes the task across your existing systems. It doesn’t stop at an insight, it completes the job.<br/><br/><strong><b>This is the shift from “How can AI help?” to “Let AI do it.”</b></strong></span>',
-  cta_button: null,
+  cta_button: {
+    title: 'Explore Agentic AI Workflows',
+    url: 'https://qbdevweb.unitdtechnologies.com/services/agentic-ai-workflows',
+    target: '_self',
+  },
   padding: {
     padding_options: true,
     padding_position: ['top', 'bottom'],
@@ -330,7 +345,7 @@ const footerCommonCTA2Data = {
   display_options: ['main_title', 'description'],
   main_title: 'We Don’t Deploy Tools. We Run Work.',
   description:
-    '<span style="color: #ffffff;">qBotica converges AI agents, automation, and orchestration into a single execution engine. We handle the messy reality of business: reading messy documents, making complex decisions, and taking action in legacy ERPs.<br/><br/><strong><b>This isnt a demo. This is Agentic AI in production.</b></strong></span>',
+    'qBotica converges AI agents, automation, and orchestration into a single execution engine. We handle the messy reality of business: reading messy documents, making complex decisions, and taking action in legacy ERPs.<br/><br/><strong><b>This isn’t a demo. This is Agentic AI in production.</b></strong>',
   cta_button: null,
   padding: {
     padding_options: true,
@@ -427,7 +442,7 @@ const contentHighlightData1 = {
   `,
 
   image: {
-    url: '/assets/images/image1.png',
+    url: '/assets/images/Whyenter.jpeg',
     alt: 'Content Highlight',
   },
 
@@ -530,7 +545,7 @@ const imageKeyPointsData = {
   common_content: '',
 
   image: {
-    url: '/assets/images/image3.png',
+    url: '/assets/images/Built.jpeg',
     alt: 'Image With Keypoints',
     width: 650,
     height: 700,
@@ -585,7 +600,7 @@ const contentHighlightData = {
   `,
 
   image: {
-    url: '/assets/images/image4.png',
+    url: '/assets/images/Proven.jpeg',
     alt: 'Enterprise Impact',
   },
 
@@ -816,10 +831,9 @@ const imageKeyPointsData1 = {
   common_content: '',
 
   image: {
-    url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2026/03/gvt.webp',
+    url: '/assets/images/Ahentic.jpeg',
     alt: 'Agentic AI Impact',
-    width: 650,
-    height: 750,
+  
   },
 
   background_color: '#f3f3f3',
@@ -986,6 +1000,25 @@ const healthcareAutomationSolutionsData = {
   },
 };
 
+const homePartners = [
+  {
+    image: { url: '/assets/images/microsoft.png', alt: 'Microsoft' },
+    description: 'Microsoft ecosystem integration',
+  },
+  {
+    image: { url: '/assets/images/atolio.png', alt: 'Atolio' },
+    description: 'Atolio data intelligence and governance',
+  },
+  {
+    image: { url: '/assets/images/aws-1-1.webp', alt: 'AWS' },
+    description: 'AWS cloud infrastructure',
+  },
+  {
+    image: { url: '/assets/images/uipath.webp', alt: 'UiPath' },
+    description: 'UiPath automation and orchestration',
+  },
+];
+
 export default function NewHomeStaticPage() {
   return (
     <DivTag className="home-page new-home-static">
@@ -994,7 +1027,7 @@ export default function NewHomeStaticPage() {
       {/* <ClientLogoSection data={clientLogoData} /> */}
       <FooterCommonCTA data={footerCommonCTAData} />
       <WhyAIFailsPanel data={stepCardsData} />
-       <FooterCommonCTA data={footerCommonCTA2Data} />
+       <FooterCommonCTAEmbossed data={footerCommonCTA2Data} />
          <TimelineSections data={sectionThreeData} />
       <SectionFour data={sectionFourData} />
       <AwardsSection data={awardsSectionData} />
@@ -1004,8 +1037,51 @@ export default function NewHomeStaticPage() {
       <ImageKeyPointsModern2 data={imageKeyPointsData} />
       <WhyEnterprisesChoose data={whyChooseData} />
     <HealthcareAutomationModern data={healthcareAutomationSolutionsData} />
+     <SectionTag className="home-partners-section" id="home-partners">
+        <DivTag className="container">
+          <DivTag className="sub-section">
+            <DivTag className="section-head">
+              <H2Tag>Partners</H2Tag>
+            </DivTag>
+
+            <DivTag className="partner-logo-grid" role="list">
+              {homePartners.map((partner, index) => (
+                <DivTag
+                  key={partner.image?.url || index}
+                  className="partner-logo-card"
+                  role="listitem"
+                  tabIndex={0}
+                  aria-label={partner.description || partner.image?.alt || 'Partner'}
+                >
+                  <Image
+                    src={partner.image?.url || '/assets/images/logo-placeholder.webp'}
+                    alt={partner.image?.alt || 'Partner'}
+                    width={220}
+                    height={80}
+                    className="partner-logo-img"
+                  />
+                  <DivTag className="partner-logo-desc">
+                    {partner.description || partner.image?.alt || 'Partner'}
+                  </DivTag>
+                </DivTag>
+              ))}
+            </DivTag>
+
+            <DivTag className="home-partners-cta">
+              <Link
+                href="https://qbdevweb.unitdtechnologies.com/partners"
+                className="btn primary-btn"
+                target="_self"
+              >
+                View More <ArrowRight className="right-arrow-icon" />
+              </Link>
+            </DivTag>
+          </DivTag>
+        </DivTag>
+      </SectionTag>
      <GeneralCTASection data={generalCTASectionData} />
       <ClientLogoSection data={clientLogoData} />
+
     </DivTag>
   );
 }
