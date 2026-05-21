@@ -2981,8 +2981,8 @@ footer h5 {
 .home-page.new-home-static .home-partners-section .partner-logo-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-  max-width: 720px;
+  gap: 22px;
+  max-width: 920px;
   margin: 0 auto;
 }
 
@@ -2991,14 +2991,15 @@ footer h5 {
   border: 1px solid rgba(20, 21, 22, 0.12);
   background: rgba(255, 255, 255, 0.9);
   border-radius: 12px;
-  padding: 22px 20px;
-  height: 140px;
+  padding: 28px 24px;
+  height: 170px;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow: visible;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   outline: none;
+  z-index: 0;
 }
 
 .home-page.new-home-static .home-partners-section .partner-logo-card:hover,
@@ -3011,32 +3012,50 @@ footer h5 {
 .home-page.new-home-static .home-partners-section .partner-logo-img {
   width: 100%;
   height: auto;
-  max-width: 240px;
-  max-height: 72px;
+  max-width: 320px;
+  max-height: 92px;
   object-fit: contain;
 }
 
-.home-page.new-home-static .home-partners-section .partner-logo-desc {
+.home-page.new-home-static .home-partners-section .partner-logo-tooltip {
   position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px 16px;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, calc(-100% - 10px));
+  display: block;
+  padding: 10px 12px;
+  min-width: 220px;
+  max-width: 360px;
   text-align: center;
-  font-size: 16px;
-  line-height: 22px;
+  font-size: 14px;
+  line-height: 20px;
   color: #ffffff;
-  background: rgba(9, 9, 9, 0.78);
+  background: rgba(9, 9, 9, 0.92);
+  border-radius: 10px;
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.22);
+  pointer-events: none;
+  z-index: 10;
   opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition: opacity 0.18s ease, transform 0.18s ease;
 }
 
-.home-page.new-home-static .home-partners-section .partner-logo-card:hover .partner-logo-desc,
-.home-page.new-home-static .home-partners-section .partner-logo-card:focus .partner-logo-desc {
+.home-page.new-home-static .home-partners-section .partner-logo-tooltip::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid rgba(9, 9, 9, 0.92);
+}
+
+.home-page.new-home-static .home-partners-section .partner-logo-card:hover .partner-logo-tooltip,
+.home-page.new-home-static .home-partners-section .partner-logo-card:focus .partner-logo-tooltip {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate(-50%, calc(-100% - 16px));
 }
 
 .home-page.new-home-static .home-partners-section .home-partners-cta {
