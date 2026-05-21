@@ -1046,12 +1046,16 @@ export default function NewHomeStaticPage() {
 
             <DivTag className="partner-logo-grid" role="list">
               {homePartners.map((partner, index) => (
+                (() => {
+                  const tooltipId = `partner-tip-${index}`;
+                  return (
                 <DivTag
                   key={partner.image?.url || index}
                   className="partner-logo-card"
                   role="listitem"
                   tabIndex={0}
                   aria-label={partner.description || partner.image?.alt || 'Partner'}
+                  aria-describedby={tooltipId}
                 >
                   <Image
                     src={partner.image?.url || '/assets/images/logo-placeholder.webp'}
@@ -1060,10 +1064,12 @@ export default function NewHomeStaticPage() {
                     height={80}
                     className="partner-logo-img"
                   />
-                  <DivTag className="partner-logo-desc">
+                  <DivTag className="partner-logo-tooltip" id={tooltipId} role="tooltip">
                     {partner.description || partner.image?.alt || 'Partner'}
                   </DivTag>
                 </DivTag>
+                  );
+                })()
               ))}
             </DivTag>
 
