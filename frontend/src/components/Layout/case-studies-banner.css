@@ -1,6 +1,6 @@
 /* Case Studies Banner */
 .case-studies-banner {
-  background: linear-gradient(135deg, #ff9800 0%, #fb8500 100%);
+  background: linear-gradient(135deg, #FF7705 0%, #ff8c1a 100%);
   padding: 80px 20px;
   position: relative;
   overflow: hidden;
@@ -53,7 +53,7 @@
   align-items: center;
   gap: 8px;
   background-color: white;
-  color: #ff9800;
+  color: #FF7705;
   padding: 14px 28px;
   border-radius: 6px;
   text-decoration: none;
