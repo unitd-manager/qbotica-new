@@ -7,9 +7,44 @@ import {
 } from '@/lib/page-layout-utils';
 import { generatePageMetadatas, getStructuredData } from '@/lib/rankmath-utils';
 import StructuredData from '@/components/Common/StructuredData';
+import PartnerPanelSlider from '@/components/Layout/partner-panel-slider';
 
 const slug = 'partners';
 const parent_path = '';
+
+const partnerPanelSliderData = {
+  id: 'partner-panel-slider',
+  slides: [
+    {
+      key: 'uipath',
+      logo: { url: '/assets/images/uipath.webp', alt: 'UiPath' },
+      title: 'YOUR TRUSTED UIPATH PARTNER',
+      description:
+        'As a UiPath partner, we help you maximize value from your automation and agentic AI initiatives with the right strategy, execution, and scale.',
+    },
+    {
+      key: 'microsoft',
+      logo: { url: '/assets/images/microsoft.png', alt: 'Microsoft' },
+      title: 'MICROSOFT ECOSYSTEM INTEGRATION',
+      description:
+        'Connect agents and automation across Microsoft tools and services to run workflows end-to-end with governance and enterprise controls.',
+    },
+    {
+      key: 'aws',
+      logo: { url: '/assets/images/aws-1-1.webp', alt: 'AWS' },
+      title: 'AWS CLOUD INFRASTRUCTURE',
+      description:
+        'Design and run secure, scalable solutions on AWS that support real-world enterprise operations and reliable execution.',
+    },
+    {
+      key: 'atolio',
+      logo: { url: '/assets/images/atoliooo.png', alt: 'Atolio' },
+      title: 'ATOLIO DATA INTELLIGENCE',
+      description:
+        'Enable agents with trusted enterprise knowledge and governance by connecting content, search, and data intelligence across your systems.',
+    },
+  ],
+};
 
 export async function generateMetadata() {
   return generatePageMetadatas(slug, 'page', parent_path, {});
@@ -43,6 +78,8 @@ export default async function PartnersPage() {
             data={item.data}
           />
         ))}
+                <PartnerPanelSlider data={partnerPanelSliderData} />
+
       </DivTag>
     );
   } catch (error) {

@@ -5709,6 +5709,95 @@ width: 100%;
     line-height: 44px;
     letter-spacing: -0.8px;
   }
+
+  .home-page.new-home-static .nh-hero-banner {
+    padding: 88px 0 54px;
+  }
+
+  .home-page.new-home-static .nh-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .home-page.new-home-static .nh-hero-banner.is-image-left .nh-hero-content {
+    order: 1;
+  }
+
+  .home-page.new-home-static .nh-hero-banner.is-image-left .nh-hero-media {
+    order: 2;
+  }
+
+  .home-page.new-home-static .nh-hero-content {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .home-page.new-home-static .nh-hero-title {
+    font-size: 38px;
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+  }
+
+  .home-page.new-home-static .nh-hero-media {
+    min-height: 260px;
+  }
+
+  .home-page.new-home-static .nh-hero-media-inner {
+    height: 300px;
+    transform: none;
+  }
+
+  .home-page.new-home-static .nh-hero-banner::after {
+    height: 72px;
+  }
+
+  .home-page.new-home-static .nh-problem-section {
+    padding: 58px 0 56px;
+  }
+
+  .home-page.new-home-static .nh-problem-title {
+    font-size: 30px;
+  }
+
+  .home-page.new-home-static .nh-problem-sub {
+    font-size: 14px;
+  }
+
+  .home-page.new-home-static .nh-problem-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .home-page.new-home-static .nh-problem-card-body {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 14px 18px 22px;
+  }
+
+  .home-page.new-home-static .nh-problem-illu {
+    position: static;
+    margin-top: 14px;
+  }
+
+  .home-page.new-home-static .nh-problem-illu-media {
+    width: 100%;
+    max-width: 320px;
+    height: 190px;
+  }
+
+  .home-page.new-home-static .nh-problem-text {
+    max-width: none;
+  }
+
+  .footer-common-cta-embossed .fce-card {
+    padding: 34px 18px;
+    border-radius: 22px;
+  }
+
+  .footer-common-cta-embossed .fce-title {
+    font-size: 32px;
+    line-height: 1.12;
+  }
 }
 
 @media only screen and (max-width: 360px) {
@@ -5721,5 +5810,9 @@ width: 100%;
     font-size: 34px;
     line-height: 40px;
     letter-spacing: -0.4px;
+  }
+
+  .home-page.new-home-static .nh-hero-title {
+    font-size: 34px;
   }
 }
