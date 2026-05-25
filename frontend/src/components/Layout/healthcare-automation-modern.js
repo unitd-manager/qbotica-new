@@ -1,16 +1,50 @@
+"use client";
+
+import { useEffect, useRef, useState } from 'react';
 import styles from './healthcare-automation-modern.module.css';
 
 export default function HealthcareAutomationModern({ data = {} }) {
   const { main_title = '', description = '', cta_button = null } = data;
 
+  const cardRef = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) {
+      setVisible(true);
+      return;
+    }
+
+    const el = cardRef.current;
+    if (!el) return;
+
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisible(true);
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    obs.observe(el);
+
+    return () => obs.disconnect();
+  }, []);
+
   return (
-    <section className={styles.section}>
+    <section className={styles.section} aria-labelledby="healthcare-automation-title">
       <div className={styles.container}>
-        <div className={styles.card}>
+        <div ref={cardRef} className={`${styles.card} ${visible ? styles.visible : ''}`}>
           <div className={styles.leftAccent} aria-hidden />
           <div className={styles.content}>
-            {/* <div className={styles.kicker}>Enterprise Ecosystem</div> */}
-            <h2 className={styles.title} dangerouslySetInnerHTML={{ __html: main_title }} />
+            <h2 id="healthcare-automation-title" className={styles.title} dangerouslySetInnerHTML={{ __html: main_title }} />
             <div className={styles.desc} dangerouslySetInnerHTML={{ __html: description }} />
             {cta_button?.url && (
               <a href={cta_button.url} className={styles.cta} target={cta_button.target || '_self'} rel="noreferrer">

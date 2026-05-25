@@ -108,7 +108,7 @@ export default async function IndustryPage({ params }) {
             <DivTag
               style={{
                 display: 'inline-block',
-                backgroundColor: '#FFA500',
+                backgroundColor: '#FF7705',
                 color: '#fff',
                 padding: '8px 20px',
                 borderRadius: '4px',

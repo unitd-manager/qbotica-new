@@ -24,7 +24,7 @@ function CaseStudyHeroSection({ section }) {
   return (
     <DivTag
       style={{
-        backgroundColor: '#FFA500',
+        backgroundColor: '#FF7705',
         padding: isMobile ? '40px 20px' : '50px 40px',
         minHeight: isMobile ? 'auto' : '460px',
         display: 'flex',
@@ -245,7 +245,7 @@ function StatsSection({ section }) {
                   style={{
                     fontSize: isMobile ? '32px' : '48px',
                     fontWeight: 'bold',
-                    color: '#FFA500',
+                    color: '#FF7705',
                     marginBottom: '16px',
                   }}
                 >
@@ -816,7 +816,7 @@ function CTASection({ section }) {
   return (
     <DivTag
       style={{
-        backgroundColor: '#FFA500',
+        backgroundColor: '#FF7705',
         padding: isMobile ? '40px 20px' : '80px 40px',
       }}
     >
@@ -861,7 +861,7 @@ function CTASection({ section }) {
             style={{
               display: 'inline-block',
               backgroundColor: '#fff',
-              color: '#FFA500',
+              color: '#FF7705',
               padding: isMobile ? '12px 32px' : '14px 40px',
               borderRadius: '6px',
               textDecoration: 'none',
