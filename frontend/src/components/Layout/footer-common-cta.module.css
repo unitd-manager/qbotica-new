@@ -1,0 +1,101 @@
+/* Premium Footer CTA */
+.footerCommonCta {
+  position: relative;
+  overflow: visible;
+  padding: 48px 0 64px;
+  background: linear-gradient(180deg, #0b1220 0%, #071129 100%);
+  color: #f8fafc;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.card {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 32px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  box-shadow: 0 30px 80px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.03);
+  backdrop-filter: blur(10px);
+}
+
+.header {
+  text-align: center;
+}
+
+.mainTitle {
+  margin: 0;
+  font-size: clamp(26px, 3.6vw, 44px);
+  line-height: 1.03;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: linear-gradient(90deg, #8be5ff, #7c3aed, #ff7ab6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.description {
+  margin: 0;
+  max-width: 920px;
+  color: rgba(248,250,252,0.85);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.ctaRow {
+  width: 100%;
+  display:flex;
+  justify-content:center;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform .28s ease, box-shadow .28s ease;
+}
+
+.primaryBtn {
+  background: linear-gradient(90deg, #06b6d4, #7c3aed);
+  color: white;
+  box-shadow: 0 12px 40px rgba(99,102,241,0.18);
+}
+
+.primaryBtn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(99,102,241,0.28);
+}
+
+.rightIcon {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+}
+
+/* Decorative shapes (keeps BoxGrid visible behind card) */
+.footerCommonCta :global(.boxgrid-left),
+.footerCommonCta :global(.boxgrid-right) {
+  opacity: 0.12;
+}
+
+@media (max-width: 992px) {
+  .footerCommonCta { padding: 32px 0 40px; }
+  .card { padding: 24px; border-radius: 14px; }
+  .mainTitle { font-size: 28px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card { transition: none !important; }
+}

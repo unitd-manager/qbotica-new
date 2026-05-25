@@ -1,10 +1,11 @@
-'use client';
+ 'use client';
 import { DivTag, H2Tag, PTag, SectionTag } from '../Common/HTMLTags';
 import Link from 'next/link';
 import { ArrowRight, ArrowNavLeft, ArrowNavRight } from '../Common/Icons';
 import Slider from 'react-slick';
 import { useEffect, useRef, useState } from 'react';
 import BoxGrid from '../Common/BoxGrid';
+import styles from './footer-common-cta.module.css';
 
 export default function FooterCommonCTA({ data }) {
   if (!data || typeof data !== 'object') return null;
@@ -20,19 +21,39 @@ export default function FooterCommonCTA({ data }) {
   const showCTA = display_options.includes('cta_button');
 
   return (
-    <SectionTag className="footer-common-cta">
+    <SectionTag className={styles.footerCommonCta}>
       <BoxGrid position="left" />
       <BoxGrid position="right" />
       <DivTag className="container">
-        <DivTag className="row">
-          <DivTag className="footer-common-cta-header">
-            {showTitle && main_title && <H2Tag className="main-title" dangerouslySetInnerHTML={{ __html: main_title }} />}
-            {showDescription && description && <DivTag dangerouslySetInnerHTML={{ __html: description }} />}
+        <DivTag className={styles.inner}>
+          <DivTag className={styles.card}>
+            <DivTag className={styles.header}>
+              {showTitle && main_title && (
+                <H2Tag
+                  className={styles.mainTitle}
+                  dangerouslySetInnerHTML={{ __html: main_title }}
+                />
+              )}
+
+              {showDescription && description && (
+                <PTag
+                  className={styles.description}
+                  dangerouslySetInnerHTML={{ __html: description }}
+                />
+              )}
+            </DivTag>
+
             {showCTA && cta_button?.url && (
-              <Link href={cta_button.url}
-                target={cta_button.target || '_self'} className="btn primary-btn">
-                {cta_button.title || 'Learn More'} <ArrowRight className="right-arrow-icon" />
-              </Link>
+              <DivTag className={styles.ctaRow}>
+                <Link
+                  href={cta_button.url}
+                  target={cta_button.target || '_self'}
+                  className={`${styles.btn} ${styles.primaryBtn}`}
+                >
+                  <span>{cta_button.title || 'Learn More'}</span>
+                  <ArrowRight className={styles.rightIcon} />
+                </Link>
+              </DivTag>
             )}
           </DivTag>
         </DivTag>

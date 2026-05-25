@@ -19,6 +19,14 @@ import HealthcareAutomationModern from '@/components/Layout/healthcare-automatio
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight } from '@/components/Common/Icons';
+import HomeBannerWithRotatingCube from '@/components/Layout/home-banner-with-rotating-cube';
+import WhyAIFailsModern from '@/components/Layout/why-ai-fails-modern';
+import CommonPostPagesSliderModern from '@/components/Layout/common-posts-slider-modern';
+import ImageKeyPointsNewModern from '@/components/Layout/image-key-points-new-modern';
+import ClientLogoSectionModern from '@/components/Layout/home-client-logo-section-modern';
+import ImageKeyPointsNewModern2 from '@/components/Layout/image-keypoints-new-modern2';
+import GeneralCTASectionModern from '@/components/Layout/general-cta-section-modern';
+import SectionModern from '@/components/Layout/section-modern';
 
 export const dynamic = 'force-static';
 export const revalidate = false;
@@ -1022,19 +1030,25 @@ const homePartners = [
 export default function NewHomeStaticPage() {
   return (
     <DivTag className="home-page new-home-static">
-      <NewHomeHeroBanner data={bannerData} />
-         <SectionFour data={sectionFiveData} />
+      {/* <NewHomeHeroBanner data={bannerData} /> */}
+      <HomeBannerWithRotatingCube data={bannerData} />
+         {/* <SectionFour data={sectionFiveData} /> */}
+         <SectionModern data={sectionFiveData} />
       {/* <ClientLogoSection data={clientLogoData} /> */}
       <FooterCommonCTA data={footerCommonCTAData} />
-      <WhyAIFailsPanel data={stepCardsData} />
-       <FooterCommonCTAEmbossed data={footerCommonCTA2Data} />
+      {/* <WhyAIFailsPanel data={stepCardsData} /> */}
+      <WhyAIFailsModern data={stepCardsData} />  
+           <FooterCommonCTAEmbossed data={footerCommonCTA2Data} />
          <TimelineSections data={sectionThreeData} />
       <SectionFour data={sectionFourData} />
       <AwardsSection data={awardsSectionData} />
-      <CommonPostPagesSlider data={commonPostPagesSliderData} />
-      <ImageKeyPointsModern data={imageKeyPointsData1} />
+      {/* <CommonPostPagesSlider data={commonPostPagesSliderData} /> */}
+      <CommonPostPagesSliderModern data={commonPostPagesSliderData} />
+      {/* <ImageKeyPointsModern data={imageKeyPointsData1} /> */}
+      <ImageKeyPointsNewModern data={imageKeyPointsData1} />
       <ContentHighlight data={contentHighlightData} />
-      <ImageKeyPointsModern2 data={imageKeyPointsData} />
+      {/* <ImageKeyPointsModern2 data={imageKeyPointsData} /> */}
+      <ImageKeyPointsNewModern2 data={imageKeyPointsData} />
       <WhyEnterprisesChoose data={whyChooseData} />
     <HealthcareAutomationModern data={healthcareAutomationSolutionsData} />
      <SectionTag className="home-partners-section" id="home-partners">
@@ -1086,8 +1100,9 @@ export default function NewHomeStaticPage() {
         </DivTag>
       </SectionTag>
      <GeneralCTASection data={generalCTASectionData} />
+     {/* <GeneralCTASectionModern data={generalCTASectionData} /> */}
       <ClientLogoSection data={clientLogoData} />
-
+{/* <ClientLogoSectionModern data={clientLogoData} /> */}
     </DivTag>
   );
 }
