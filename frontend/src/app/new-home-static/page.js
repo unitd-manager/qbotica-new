@@ -1014,7 +1014,7 @@ const homePartners = [
     description: 'Microsoft ecosystem integration',
   },
   {
-    image: { url: '/assets/images/atolio.png', alt: 'Atolio' },
+    image: { url: '/assets/images/atolioo.png', alt: 'Atolio' },
     description: 'Atolio data intelligence and governance',
   },
   {
@@ -1054,47 +1054,47 @@ export default function NewHomeStaticPage() {
      <SectionTag className="home-partners-section" id="home-partners">
         <DivTag className="container">
           <DivTag className="sub-section">
-            <DivTag className="section-head">
-              <H2Tag>Partners</H2Tag>
-            </DivTag>
+            <DivTag className="home-partners-card">
+              <DivTag className="section-head">
+                <H2Tag>Partners</H2Tag>
+              </DivTag>
 
-            <DivTag className="partner-logo-grid" role="list">
-              {homePartners.map((partner, index) => (
-                (() => {
+              <DivTag className="partner-logo-grid" role="list">
+                {homePartners.map((partner, index) => {
                   const tooltipId = `partner-tip-${index}`;
                   return (
-                <DivTag
-                  key={partner.image?.url || index}
-                  className="partner-logo-card"
-                  role="listitem"
-                  tabIndex={0}
-                  aria-label={partner.description || partner.image?.alt || 'Partner'}
-                  aria-describedby={tooltipId}
-                >
-                  <Image
-                    src={partner.image?.url || '/assets/images/logo-placeholder.webp'}
-                    alt={partner.image?.alt || 'Partner'}
-                    width={220}
-                    height={80}
-                    className="partner-logo-img"
-                  />
-                  <DivTag className="partner-logo-tooltip" id={tooltipId} role="tooltip">
-                    {partner.description || partner.image?.alt || 'Partner'}
-                  </DivTag>
-                </DivTag>
+                    <DivTag
+                      key={partner.image?.url || index}
+                      className="partner-logo-card"
+                      role="listitem"
+                      tabIndex={0}
+                      aria-label={partner.description || partner.image?.alt || 'Partner'}
+                      aria-describedby={tooltipId}
+                    >
+                      <Image
+                        src={partner.image?.url || '/assets/images/logo-placeholder.webp'}
+                        alt={partner.image?.alt || 'Partner'}
+                        width={220}
+                        height={80}
+                        className="partner-logo-img"
+                      />
+                      <DivTag className="partner-logo-tooltip" id={tooltipId} role="tooltip">
+                        {partner.description || partner.image?.alt || 'Partner'}
+                      </DivTag>
+                    </DivTag>
                   );
-                })()
-              ))}
-            </DivTag>
+                })}
+              </DivTag>
 
-            <DivTag className="home-partners-cta">
-              <Link
-                href="https://qbdevweb.unitdtechnologies.com/partners"
-                className="btn primary-btn"
-                target="_self"
-              >
-                View More <ArrowRight className="right-arrow-icon" />
-              </Link>
+              <DivTag className="home-partners-cta">
+                <Link
+                  href="https://qbdevweb.unitdtechnologies.com/partners"
+                  className="btn primary-btn"
+                  target="_self"
+                >
+                  View More <ArrowRight className="right-arrow-icon" />
+                </Link>
+              </DivTag>
             </DivTag>
           </DivTag>
         </DivTag>
