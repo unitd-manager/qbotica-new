@@ -3163,23 +3163,23 @@ footer h5 {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 54px;
-  height: 54px;
-  border-radius: 999px;
-  border: 1px solid rgba(20, 21, 22, 0.12);
-  background: rgba(255, 255, 255, 0.92);
-  display: flex;
+  width: auto;
+  height: auto;
+  border: 0;
+  background: #47070736;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
   cursor: pointer;
   z-index: 5;
+  padding: 10px;
+  color: #000;
 }
 
 .parners-page .partner-panel-arrow:hover,
 .parners-page .partner-panel-arrow:focus {
-  border-color: rgba(255, 119, 5, 0.55);
   outline: none;
+  color: var(--primary-color);
 }
 
 .parners-page .partner-panel-arrow-left {
@@ -3272,8 +3272,7 @@ footer h5 {
   }
 
   .parners-page .partner-panel-arrow {
-    width: 44px;
-    height: 44px;
+    padding: 8px;
   }
 
   .parners-page .partner-panel-arrow-left {
