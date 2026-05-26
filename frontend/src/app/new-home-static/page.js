@@ -19,7 +19,7 @@ import HealthcareAutomationModern from '@/components/Layout/healthcare-automatio
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight } from '@/components/Common/Icons';
-import HomeBannerWithRotatingCube from '@/components/Layout/home-banner-with-rotating-cube';
+import HeroSection from '@/components/Layout/home-banner-with-rotating-cube';
 import WhyAIFailsModern from '@/components/Layout/why-ai-fails-modern';
 import CommonPostPagesSliderModern from '@/components/Layout/common-posts-slider-modern';
 import ImageKeyPointsNewModern from '@/components/Layout/image-key-points-new-modern';
@@ -31,6 +31,7 @@ import ContentHighlightModern from '@/components/Layout/content-highlight-modern
 
 export const dynamic = 'force-static';
 export const revalidate = false;
+
 
 export const metadata = {
   title: 'New Home',
@@ -329,7 +330,7 @@ const footerCommonCTAData = {
   display_options: ['main_title', 'description'],
   main_title: 'Agentic AI That Actually Works.',
   description:
-    '<span style="color: #ffffff;">Agentic AI is not chatbots or copilots. It’s an operating model where AI doesn’t just assist, it acts. It understands the work, makes the decision, and executes the task across your existing systems. It doesn’t stop at an insight, it completes the job.<br/><br/><strong><b>This is the shift from “How can AI help?” to “Let AI do it.”</b></strong></span>',
+    'Agentic AI is not chatbots or copilots. It’s an operating model where AI doesn’t just assist, it acts. It understands the work, makes the decision, and executes the task across your existing systems. It doesn’t stop at an insight, it completes the job.<br/><br/><strong><b>This is the shift from “How can AI help?” to “Let AI do it.”</b></strong>',
   cta_button: {
     title: 'Explore Agentic AI Workflows',
     url: 'https://qbdevweb.unitdtechnologies.com/services/agentic-ai-workflows',
@@ -1032,7 +1033,7 @@ export default function NewHomeStaticPage() {
   return (
     <DivTag className="home-page new-home-static">
       {/* <NewHomeHeroBanner data={bannerData} /> */}
-      <HomeBannerWithRotatingCube data={bannerData} />
+      <HeroSection data={bannerData} />
          {/* <SectionFour data={sectionFiveData} /> */}
          <SectionModern data={sectionFiveData} />
       {/* <ClientLogoSection data={clientLogoData} /> */}

@@ -3,9 +3,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./home-banner-with-rotating-cube.module.css";
 
-export default function ThreeCubeLogo({
+export default function ThreeSphereLogo({
   src,
-  size = 420,
+  size = 560,
 }) {
 
   const canvasRef = useRef(null);
@@ -18,10 +18,12 @@ export default function ThreeCubeLogo({
     let renderer;
     let scene;
     let camera;
-    let cube;
-    let animId;
 
-    let paused = false;
+    let globe;
+    let cube;
+    let ring;
+
+    let animId;
 
     async function init() {
 
@@ -35,10 +37,12 @@ export default function ThreeCubeLogo({
           PerspectiveCamera,
           AmbientLight,
           DirectionalLight,
-          TextureLoader,
+          SphereGeometry,
           BoxGeometry,
+          TorusGeometry,
           MeshPhysicalMaterial,
           Mesh,
+          Group,
           Color,
         } = THREE;
 
@@ -60,131 +64,168 @@ export default function ThreeCubeLogo({
 
         scene = new Scene();
 
-        scene.background = null;
-
         camera = new PerspectiveCamera(
           45,
-          size / size,
+          1,
           0.1,
           1000
         );
 
-        camera.position.z = 6;
+        camera.position.z = 8;
 
         /* LIGHTS */
 
         const ambient = new AmbientLight(
           0xffffff,
-          1.4
+          2
         );
 
         scene.add(ambient);
 
-        const dirLight = new DirectionalLight(
-          0xffffff,
-          2
-        );
+        const whiteLight =
+          new DirectionalLight(
+            0xffffff,
+            3
+          );
 
-        dirLight.position.set(5, 5, 5);
+        whiteLight.position.set(5, 5, 5);
 
-        scene.add(dirLight);
+        scene.add(whiteLight);
 
         const orangeLight =
           new DirectionalLight(
             0xff6a00,
-            1.5
+            3
           );
 
         orangeLight.position.set(-5, -3, 5);
 
         scene.add(orangeLight);
 
-        /* TEXTURE */
+        /* MAIN GROUP */
 
-        const loader = new TextureLoader();
+        const group = new Group();
 
-        loader.load(
-          src,
+        scene.add(group);
 
-          (texture) => {
+        /* =======================================
+           GLOBE
+        ======================================= */
 
-            if (!mounted) return;
+        const globeGeometry =
+          new SphereGeometry(
+            3.3,
+            128,
+            128
+          );
 
-            texture.anisotropy =
-              renderer.capabilities.getMaxAnisotropy();
+        const globeMaterial =
+          new MeshPhysicalMaterial({
 
-            /* GEOMETRY */
+            color: new Color("#4db8ff"),
 
-            const geometry =
-              new BoxGeometry(
-                2.8,
-                2.8,
-                2.8,
-                4,
-                4,
-                4
-              );
+            transparent: true,
+            opacity: 0.12,
 
-            /* MATERIALS */
+            roughness: 0,
+            metalness: 0,
 
-            const frontMaterial =
-              new MeshPhysicalMaterial({
-                map: texture,
-                roughness: 0.25,
-                metalness: 0.2,
-                clearcoat: 1,
-                clearcoatRoughness: 0.1,
-              });
+            transmission: 1,
 
-            const sideMaterial =
-              new MeshPhysicalMaterial({
-                color: new Color("#ff6a00"),
-                roughness: 0.2,
-                metalness: 0.3,
-                clearcoat: 1,
-              });
+            clearcoat: 1,
+            clearcoatRoughness: 0,
 
-            const topMaterial =
-              new MeshPhysicalMaterial({
-                color: new Color("#ff8124"),
-                roughness: 0.15,
-                metalness: 0.25,
-                clearcoat: 1,
-              });
+            thickness: 2,
 
-            /* 6 SIDES */
+            reflectivity: 1,
 
-            const materials = [
-              sideMaterial, // right
-              sideMaterial, // left
-              topMaterial, // top
-              sideMaterial, // bottom
-              frontMaterial, // front
-              sideMaterial, // back
-            ];
+          });
 
-            cube = new Mesh(
-              geometry,
-              materials
-            );
-
-            cube.rotation.x = -0.4;
-            cube.rotation.y = 0.6;
-
-            scene.add(cube);
-
-            animate();
-          },
-
-          undefined,
-
-          () => {
-
-            if (mounted)
-              setFallback(true);
-
-          }
+        globe = new Mesh(
+          globeGeometry,
+          globeMaterial
         );
+
+        group.add(globe);
+
+        /* =======================================
+           ORBIT RING
+        ======================================= */
+
+        const ringGeometry =
+          new TorusGeometry(
+            3.6,
+            0.03,
+            16,
+            100
+          );
+
+        const ringMaterial =
+          new MeshPhysicalMaterial({
+
+            color: new Color("#ff6a00"),
+
+            transparent: true,
+            opacity: 0.8,
+
+            emissive: new Color("#ff6a00"),
+            emissiveIntensity: 1.5,
+
+          });
+
+        ring = new Mesh(
+          ringGeometry,
+          ringMaterial
+        );
+
+        ring.rotation.x = 1.2;
+
+        group.add(ring);
+
+        /* =======================================
+           BIG 3D CUBE
+        ======================================= */
+
+        const cubeGeometry =
+          new BoxGeometry(
+            2.2,
+            2.2,
+            2.2,
+            8,
+            8,
+            8
+          );
+
+        const cubeMaterial =
+          new MeshPhysicalMaterial({
+
+            color: new Color("#ff6a00"),
+
+            roughness: 0.15,
+            metalness: 0.3,
+
+            clearcoat: 1,
+
+            transmission: 0.05,
+
+            emissive: new Color("#ff6a00"),
+            emissiveIntensity: 0.4,
+
+          });
+
+        cube = new Mesh(
+          cubeGeometry,
+          cubeMaterial
+        );
+
+        cube.rotation.x = -0.5;
+        cube.rotation.y = 0.6;
+
+        group.add(cube);
+
+        /* =======================================
+           ANIMATION
+        ======================================= */
 
         function animate() {
 
@@ -193,12 +234,24 @@ export default function ThreeCubeLogo({
           animId =
             requestAnimationFrame(animate);
 
-          if (!paused && cube) {
+          /* GLOBE */
 
-            cube.rotation.y += 0.008;
-            cube.rotation.x += 0.0015;
+          globe.rotation.y += 0.0015;
 
-          }
+          /* RING */
+
+          ring.rotation.z += 0.004;
+
+          /* CUBE */
+
+          cube.rotation.y += 0.01;
+          cube.rotation.x += 0.003;
+
+          /* FLOAT EFFECT */
+
+          group.position.y =
+            Math.sin(Date.now() * 0.0015)
+            * 0.12;
 
           renderer.render(
             scene,
@@ -206,28 +259,11 @@ export default function ThreeCubeLogo({
           );
         }
 
-        const container =
-          canvas.parentElement;
-
-        if (container) {
-
-          container.addEventListener(
-            "mouseenter",
-            () => (paused = true)
-          );
-
-          container.addEventListener(
-            "mouseleave",
-            () => (paused = false)
-          );
-        }
+        animate();
 
       } catch (err) {
 
-        console.warn(
-          "Three.js failed.",
-          err
-        );
+        console.warn(err);
 
         if (mounted)
           setFallback(true);
@@ -257,14 +293,11 @@ export default function ThreeCubeLogo({
   if (fallback) {
 
     return (
-
       <img
         src={src}
         alt=""
         className={styles.rotatingLogo}
-        draggable={false}
       />
-
     );
   }
 
@@ -278,7 +311,8 @@ export default function ThreeCubeLogo({
       }}
     >
 
-      {/* GLOW */}
+      {/* BIG GLOW */}
+
       <div className={styles.glow} />
 
       <canvas
@@ -289,6 +323,5 @@ export default function ThreeCubeLogo({
       />
 
     </div>
-
   );
 }

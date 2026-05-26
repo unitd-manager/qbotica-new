@@ -18,10 +18,15 @@
 .inner {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
-  align-items: center;
+  align-items: stretch; /* ensure both columns match height */
   gap: 20px;
   height: 100%;
   /* ensure children can stretch to equal height */
+}
+
+/* allow flex/grid children to shrink properly inside the grid row */
+.inner > * {
+  min-height: 0;
 }
 
 /* LEFT */
@@ -187,12 +192,15 @@
     0 18px 60px rgba(15, 23, 42, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.8);
 
-  /* constrain visual to viewport height so section doesn't expand */
+  /* let the visual card match the grid row height (left content) */
   height: 100%;
-  max-height: calc(100vh - 120px);
+  max-height: none; /* remove viewport cap so it can match text height */
+  min-height: 100%;
   display: flex;
-  align-items: center;
+  align-items: stretch; /* allow inner image container to fill available height */
   justify-content: center;
+  align-self: stretch; /* ensure the card itself stretches to match grid row height */
+  box-sizing: border-box;
 }
 
 .visualGlow {
@@ -219,7 +227,8 @@
   z-index: 2;
 
   width: auto;
-  height: 100%;
+  height: auto; /* let image maintain aspect ratio */
+  align-self: center; /* center vertically within the visual card */
 
   border-radius: 18px;
 
@@ -231,7 +240,8 @@
   transition: transform 0.45s ease;
   object-fit: contain;
   max-width: 100%;
-  max-height: calc(100vh - 160px);
+  /* limit image to visual card inner height (account for 18px padding top+bottom) */
+  max-height: calc(100% - 36px);
 }
 
 .visualCard:hover .image {

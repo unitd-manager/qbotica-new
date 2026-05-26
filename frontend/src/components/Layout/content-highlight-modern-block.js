@@ -20,6 +20,7 @@ export default function ContentHighlightModern({ data }) {
     title,
     description,
     image,
+    background_color = '',
     text_alignment = 'left',
     image_position = 'right',
     button,
@@ -64,6 +65,7 @@ export default function ContentHighlightModern({ data }) {
         ${styles.premiumSection}
         ${class_name}
       `}
+      style={background_color ? { background: background_color } : undefined}
     >
       {enable_animation === 'true' &&
         (isRight ? (
