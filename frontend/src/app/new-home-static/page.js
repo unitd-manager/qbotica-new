@@ -27,6 +27,7 @@ import ClientLogoSectionModern from '@/components/Layout/home-client-logo-sectio
 import ImageKeyPointsNewModern2 from '@/components/Layout/image-keypoints-new-modern2';
 import GeneralCTASectionModern from '@/components/Layout/general-cta-section-modern';
 import SectionModern from '@/components/Layout/section-modern';
+import ContentHighlightModern from '@/components/Layout/content-highlight-modern-block';
 
 export const dynamic = 'force-static';
 export const revalidate = false;
@@ -1046,7 +1047,8 @@ export default function NewHomeStaticPage() {
       <CommonPostPagesSliderModern data={commonPostPagesSliderData} />
       {/* <ImageKeyPointsModern data={imageKeyPointsData1} /> */}
       <ImageKeyPointsNewModern data={imageKeyPointsData1} />
-      <ContentHighlight data={contentHighlightData} />
+      {/* <ContentHighlight data={contentHighlightData} /> */}
+      <ContentHighlightModern data={contentHighlightData} />
       {/* <ImageKeyPointsModern2 data={imageKeyPointsData} /> */}
       <ImageKeyPointsNewModern2 data={imageKeyPointsData} />
       <WhyEnterprisesChoose data={whyChooseData} />

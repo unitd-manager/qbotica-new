@@ -99,22 +99,27 @@ export default function AwardsSection({ data }) {
         }
 
         .award-top-title { width:100%; margin-bottom: 14px; z-index:3; position:relative }
-        .award-heading {
-          font-size: clamp(20px, 3.2vw, 36px);
-          margin:0;
-          background: linear-gradient(90deg,#06b6d4,#7c3aed,#ff7ab6);
-          -webkit-background-clip: text;
-          background-clip: text;
-          -webkit-text-fill-color: transparent;
-          color: transparent;
-          font-family: var(--font-inter), 'Poppins', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial !important;
-          font-weight: 900 !important;
-          letter-spacing: -0.02em;
-        }
-        .award-heading, .award-heading * {
-          font-family: var(--font-inter) !important;
-          font-weight: 900 !important;
-        }
+       .award-heading {
+  font-size: clamp(20px, 3.2vw, 36px);
+  margin: 0;
+  background: linear-gradient(90deg,#06b6d4,#7c3aed,#ff7ab6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: clamp(42px, 7vw, 92px);
+  font-weight: 900 !important;
+  line-height: 0.92;
+  letter-spacing: -0.07em;
+}
+
+/* IMPORTANT */
+.award-heading * {
+  font-family: inherit !important;
+  font-weight: inherit !important;
+}
 
         .our-award-list { z-index:2; display:flex; gap:16px; align-items:center; padding:10px 6px; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch }
         .our-award-list::-webkit-scrollbar { height:8px } 
