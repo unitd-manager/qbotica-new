@@ -19,7 +19,7 @@ import HealthcareAutomationModern from '@/components/Layout/healthcare-automatio
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight } from '@/components/Common/Icons';
-import HeroSection from '@/components/Layout/home-banner-with-rotating-cube';
+import HeroSection from '@/components/Layout/HeroSectionClient';
 import WhyAIFailsModern from '@/components/Layout/why-ai-fails-modern';
 import CommonPostPagesSliderModern from '@/components/Layout/common-posts-slider-modern';
 import ImageKeyPointsNewModern from '@/components/Layout/image-key-points-new-modern';
@@ -28,6 +28,7 @@ import ImageKeyPointsNewModern2 from '@/components/Layout/image-keypoints-new-mo
 import GeneralCTASectionModern from '@/components/Layout/general-cta-section-modern';
 import SectionModern from '@/components/Layout/section-modern';
 import ContentHighlightModern from '@/components/Layout/content-highlight-modern-block';
+
 
 export const dynamic = 'force-static';
 export const revalidate = false;
@@ -871,7 +872,7 @@ const imageKeyPointsData1 = {
   },
 };
 const awardsSectionData = {
-  main_title: '<span style="font-size: 50px;">Awards and Recognitions</span>',
+  main_title: '<span style="font-size: 40px; font-weight: bold; ">Awards and Recognitions</span>',
 
   award_and_certificate_list: [
     {
@@ -1059,7 +1060,7 @@ export default function NewHomeStaticPage() {
           <DivTag className="sub-section">
             <DivTag className="home-partners-card">
               <DivTag className="section-head">
-                <H2Tag>Partners</H2Tag>
+                <H2Tag><strong>Partners</strong></H2Tag>
               </DivTag>
 
               <DivTag className="partner-logo-grid" role="list">

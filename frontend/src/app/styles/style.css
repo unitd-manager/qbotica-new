@@ -3678,6 +3678,17 @@ footer h5 {
   margin-bottom: 14px;
 }
 
+/* Hide eyebrow badge and the stats strip on the new-home-static landing
+   when the design requires them removed. Use !important to override
+   component-level rules until markup is simplified. */
+.home-page.new-home-static .nh-hero-eyebrow,
+.home-page.new-home-static .nh-hero-stats {
+  display: none !important;
+}
+
+/* Hide eyebrow badges globally when page-level removal didn't take effect */
+.nh-hero-eyebrow { display: none !important; }
+
 .home-page.new-home-static .nh-hero-title {
   color: #141516;
   font-family: var(--font-inter);
