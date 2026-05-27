@@ -12,6 +12,8 @@ import {
   VisionBolt,
   VisionEye,
   VisionScale,
+  VisionShield,
+  VisionBook,
 } from '@/components/Common/Icons';
 
 export default function WhyAIFailsModern({ data }) {
@@ -19,14 +21,15 @@ export default function WhyAIFailsModern({ data }) {
 
   const { main_title, subtitle, steps = [] } = data;
 
-  const icons = [VisionEye, VisionBolt, VisionScale];
+  const icons = [VisionShield, VisionBook, VisionBolt];
 
   return (
-    <SectionTag className={styles.problemSection}>
+    <SectionTag className={styles.problemSection} aria-labelledby="why-ai-fails-heading">
       <DivTag className="container">
         <DivTag className={styles.problemHead}>
           {main_title ? (
             <H2Tag
+              id="why-ai-fails-heading"
               className={styles.problemTitle}
               dangerouslySetInnerHTML={{ __html: main_title }}
             />
@@ -40,17 +43,13 @@ export default function WhyAIFailsModern({ data }) {
           ) : null}
         </DivTag>
 
-        <DivTag className={styles.problemGrid}>
+        <DivTag className={styles.problemGrid} role="list">
           {steps.slice(0, 3).map((step, i) => {
             const StepIcon = icons[i] || VisionEye;
-
             return (
-              <DivTag
-                className={styles.problemCard}
-                key={`problem-${i}`}
-              >
+              <DivTag className={styles.problemCard} key={`problem-${i}`} role="listitem">
                 <DivTag className={styles.problemIcon}>
-                  <StepIcon className={styles.problemIconSvg} />
+                  <StepIcon className={styles.problemIconSvg} aria-hidden="true" focusable={false} />
                 </DivTag>
 
                 <H4Tag className={styles.problemCardTitle}>

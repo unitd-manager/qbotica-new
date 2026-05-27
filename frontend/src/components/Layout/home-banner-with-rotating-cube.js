@@ -118,7 +118,7 @@ export default function HeroSection() {
       const dpr = window.devicePixelRatio || 1;
       const W = canvas.width, H = canvas.height;
       const cx = W / 2, cy = H / 2;
-      const R  = Math.min(W, H) * 0.38;
+      const R  = Math.min(W, H) * 0.380;
       const ang = rotRef.current;
 
       ctx.clearRect(0, 0, W, H);
