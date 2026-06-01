@@ -6,6 +6,21 @@ export async function GET() {
   return fetchSitemapFromWordPress('page-sitemap2.xml');
 }
 
+function removeTrailingSlashFromLocUrls(xml) {
+  return xml.replace(/<loc>([^<]+)<\/loc>/g, (match, loc) => {
+    try {
+      const url = new URL(loc);
+      if (url.pathname !== '/' && url.pathname.endsWith('/')) {
+        url.pathname = url.pathname.replace(/\/+$/, '');
+      }
+      return `<loc>${url.href}</loc>`;
+    } catch {
+      return match;
+    }
+  });
+}
+
+
 async function fetchSitemapFromWordPress(sitemapFile) {
   try {
     const wpUrl = `${process.env.NEXT_PUBLIC_WP_URL}/${sitemapFile}`;
@@ -49,6 +64,9 @@ async function fetchSitemapFromWordPress(sitemapFile) {
       /href="\/\/[^"]+\/main-sitemap\.xsl"/,
       'href="/sitemap-template.xsl"'
     );
+    
+        xml = removeTrailingSlashFromLocUrls(xml);
+
 
     console.log(`[${sitemapFile}] Successfully serving (${xml.length} bytes)`);
 

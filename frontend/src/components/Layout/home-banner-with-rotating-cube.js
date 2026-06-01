@@ -360,7 +360,7 @@ if (centerImg) {
 
           {/* Subtext */}
           <p className={heroStyles['nh-hero-desc']}>
-            Move beyond pilots and "assistants." qBotica runs your enterprise operations using Agentic AI to execute end-to-end workflows across your systems, documents, and decisions.
+            Move beyond pilots and &quot;assistants.&quot; qBotica runs your enterprise operations using Agentic AI to execute end-to-end workflows across your systems, documents, and decisions.
           </p>
 
           {/* Buttons */}
