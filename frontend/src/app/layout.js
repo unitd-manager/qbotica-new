@@ -1,8 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Script from 'next/script';
 import { Inter, Chivo_Mono, Geist, Roboto } from 'next/font/google';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import './styles/default.css';
 import './styles/style.css';
 import './styles/responsive.css';
@@ -12,7 +11,6 @@ import { fetchThemeSettings, fetchMenus, fetchPageBySlug } from '@/lib/wordpress
 import Header from '@/components/Common/Header'
 import Footer from '@/components/Common/Footer'
 import ClientScripts from '@/components/Common/ClientScripts'
-import 'antd/dist/reset.css';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -93,27 +91,29 @@ export default async function RootLayout({ children }) {
     thirdFooterMenu,
     fourthFooterMenu
   } = await getThemeData();
+  const headerClass = `navbar navbar-expand-lg navbar-light bg-white primary-menu bottom-dashed ${themeSettings?.promotion_enable ? 'enable-promotion-bar' : ''}`;
+  const headerStyle = { backgroundColor: '#ffffff' };
+
   return (
     <html lang="en" className={`${inter.variable} ${chivoMono.variable} ${geistSans.variable} ${roboto.variable}`}>
       <head>
-
-         {/* Google Analytics GA4 */}
-
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-QTNWWK8EFF"
-  ></script>
-
-  <script
-    dangerouslySetInnerHTML={{
-      __html: `
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-QTNWWK8EFF');
-      `,
-    }}
-  />
+        {/* Google Analytics GA4 */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-QTNWWK8EFF"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-QTNWWK8EFF');
+            `,
+          }}
+        />
         {themeSettings?.site_icon && (
           <>
             <link rel="icon" href={themeSettings.site_icon} />
@@ -130,6 +130,8 @@ export default async function RootLayout({ children }) {
         <Header
           themeSettings={themeSettings}
           navigationData={primaryMenu}
+          headerClass={headerClass}
+          headerStyle={headerStyle}
         />
         <main className="flex-grow-1">{children}</main>
         <Footer

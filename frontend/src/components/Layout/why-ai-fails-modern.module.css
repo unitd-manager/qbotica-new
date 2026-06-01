@@ -1,6 +1,6 @@
 .problemSection {
   padding: 100px 0;
-  background: #f5f5f7;
+background: linear-gradient(180deg, #DDDDFF 0%, #DDDDFF 100%);
 }
 
 .problemHead {
@@ -14,7 +14,7 @@
 }
   .problemSection {
     padding: 120px 0;
-    background: linear-gradient(180deg, #faf9fb 0%, #f3f6fb 100%);
+   background: linear-gradient(180deg, #E3E3FF 0%, #E3E3FF 100%);
     color: #0f172a;
   }
 
@@ -76,7 +76,7 @@
     width: 72px;
     height: 72px;
     border-radius: 16px;
-    background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+    background: linear-gradient(135deg, #c57409 0%, #df7d26 100%);
     display: flex;
     align-items: center;
     justify-content: center;

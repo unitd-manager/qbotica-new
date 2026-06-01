@@ -1,4 +1,4 @@
-.section{padding:72px 0;background:transparent}
+.section{padding:72px 0;background:#f7eee7;}
 .container{max-width:1200px;margin:0 auto;padding:0 20px}
 
 /* base card and entrance state - premium glassy card */
@@ -9,12 +9,12 @@
 .card:hover{transform:translateY(-8px) scale(1.01);box-shadow:0 60px 140px rgba(2,6,23,0.14)}
 
 /* animated accent */
-.leftAccent{width:10px;background:linear-gradient(180deg,#06b6d4,#7c3aed);border-top-left-radius:20px;border-bottom-left-radius:20px;transition:transform 420ms ease, box-shadow 420ms ease}
+.leftAccent{width:10px;background:linear-gradient(180deg,#030211,#04050f);border-top-left-radius:20px;border-bottom-left-radius:20px;transition:transform 420ms ease, box-shadow 420ms ease}
 .card:hover .leftAccent{transform:translateX(4px);box-shadow:0 10px 28px rgba(124,58,237,0.12)}
 
 .content{padding:28px 40px;flex:1;position:relative}
 .kicker{color:#7c3aed;font-weight:800;font-size:12px;text-transform:uppercase;margin-bottom:8px}
-.title{font-size:clamp(28px,3.4vw,44px);line-height:1.02;color:#071331;margin:0 0 10px;font-weight:800;transform:translateY(6px);opacity:0;transition:transform 520ms cubic-bezier(.2,.9,.3,1),opacity 420ms ease;background:linear-gradient(90deg,#06b6d4,#7c3aed,#ff7ab6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.title{font-size:clamp(28px,3.4vw,44px);line-height:1.02;color:#000000;margin:0 0 10px;font-weight:800;transform:translateY(6px);opacity:0;transition:transform 520ms cubic-bezier(.2,.9,.3,1),opacity 420ms ease}
 .card.visible .title{transform:none;opacity:1;transition-delay:80ms}
 .desc{color:#071331;font-size:16px;line-height:1.45;max-width:760px;margin-bottom:10px;transform:translateY(6px);opacity:0;transition:transform 520ms cubic-bezier(.2,.9,.3,1),opacity 420ms ease}
 .card.visible .desc{transform:none;opacity:1;transition-delay:160ms}

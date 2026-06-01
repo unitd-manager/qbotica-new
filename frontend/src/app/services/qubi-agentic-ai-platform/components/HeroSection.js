@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import Image from 'next/image';
 import { ActionButton } from "./SharedComponents";
 
 export function HeroSection({ data, heroSrc = "/assets/images/hero-illustration.jpg" }) {
@@ -41,7 +42,15 @@ export function HeroSection({ data, heroSrc = "/assets/images/hero-illustration.
 
         <div className="heroVisual fadeUp fadeUpDelay2">
           <div className="heroFrame">
-            <img src={image} alt="qubi platform orchestration diagram" className="heroImage" />
+            <Image 
+              src={image} 
+              alt="qubi platform orchestration diagram" 
+              className="heroImage"
+              priority={true}
+              width={800}
+              height={600}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 800px"
+            />
             <div className="heroFrameRing" />
           </div>
         </div>

@@ -518,7 +518,7 @@ header.navbar .container {
   left: 0;
   right: 0;
   z-index: 1050;
-  background-color: #fff;
+ background: #ffffff !important;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   transition: top 0.3s ease-in-out;
 }
@@ -573,7 +573,7 @@ header.navbar .container {
   list-style: none;
   padding: 0;
   margin: 0;
-  background: #fff;
+  background: #ffffff;
   display: none;
   z-index: 1000;
 }
@@ -633,9 +633,9 @@ header.navbar .container {
 
 /* Primary Button */
 .primary-btn {
-background-color: #000000;
-  color: var(--secondary-color);
-  padding: 8px 16px;
+  background: linear-gradient(90deg, #FF7705 1.37%, #FF8C3A 60%, #994703 97.29%);
+  color: #ffffff;
+  padding: 10px 20px;
   font-family: var(--font-inter);
   font-size: 14px;
   font-weight: 400;
@@ -643,7 +643,7 @@ background-color: #000000;
   align-items: center;
   gap: 10px;
   line-height: 150%;
-  border-radius: 0px;
+  border-radius: 999px;
   text-transform: uppercase;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
@@ -683,8 +683,9 @@ background-color: #000000;
 .primary-btn:hover,
 .primary-btn:focus,
 .primary-btn:active {
-  color: white;
-  background-color: var(--primary-bg-color);
+  color: #fff;
+  background-color: transparent;
+  box-shadow: 0 10px 30px rgba(255,119,5,0.18);
 }
 
 .primary-btn:hover:before,
@@ -1755,7 +1756,8 @@ footer h5 {
 }
 
 .home-section-four {
-  background: linear-gradient(180deg, rgba(250,250,252,0.8), rgba(249,247,244,0.6));
+  /* light sky blue background */
+  background: linear-gradient(180deg, #e6f7ff 0%, #d8efff 50%, #eaf9ff 100%);
   padding: 40px 0;
 }
 
@@ -2283,13 +2285,26 @@ footer h5 {
 .home-client-logo-section {
   position: relative;
   padding: 68px 0px;
-  background: var(--light-gray);
+  background: #FFC999;
 }
 
 .home-client-logo-section .container {
   border: none;
 }
 
+
+@keyframes globe-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-globe {
+  animation: globe-spin 20s linear infinite;
+}
+
+.animate-globe-reverse {
+  animation: globe-spin 25s linear infinite reverse;
+}
 .home-client-logo-section .section-head {
   margin-bottom: 40px;
 }
@@ -2995,6 +3010,105 @@ footer h5 {
   font-size: 18px;
   line-height: 20px;
   margin: 0 0 24px;
+
+/* Sequential section backgrounds for new-home-static pages
+   - Targets direct children of .home-page.new-home-static
+   - Starts from the 2nd child (after hero)
+   - Provides 18 distinct gradients cycling through
+     Blue → Sky Blue → White (subtle) → Orange
+*/
+.home-page.new-home-static > * {
+  transition: background 420ms ease, color 300ms ease;
+}
+
+/* Blue range (deep → mid) */
+.home-page.new-home-static > *:nth-child(2) {
+  background: linear-gradient(180deg,#07204a 0%,#0b4fa8 100%);
+  color: #fff;
+}
+.home-page.new-home-static > *:nth-child(3) {
+  background: linear-gradient(180deg,#0a3a6b 0%,#2b66b8 100%);
+  color: #fff;
+}
+.home-page.new-home-static > *:nth-child(4) {
+  background: linear-gradient(180deg,#0f4f84 0%,#4a86d6 100%);
+  color: #fff;
+}
+.home-page.new-home-static > *:nth-child(5) {
+  background: linear-gradient(180deg,#1b5fa0 0%,#6aa0ee 100%);
+  color: #fff;
+}
+
+/* Sky blue range (soft sky tones) */
+.home-page.new-home-static > *:nth-child(6) {
+  background: linear-gradient(180deg,#e6f4ff 0%,#cfeeff 100%);
+  color: #03203a;
+}
+.home-page.new-home-static > *:nth-child(7) {
+  background: linear-gradient(180deg,#dff2ff 0%,#bfe8ff 100%);
+  color: #03203a;
+}
+.home-page.new-home-static > *:nth-child(8) {
+  background: linear-gradient(180deg,#d2ebff 0%,#a9dbff 100%);
+  color: #03203a;
+}
+.home-page.new-home-static > *:nth-child(9) {
+  background: linear-gradient(180deg,#c6e6ff 0%,#8fd2ff 100%);
+  color: #03203a;
+}
+
+/* White / neutral range (subtle off-whites and light grays) */
+.home-page.new-home-static > *:nth-child(10) {
+  background: linear-gradient(180deg,#ffffff 0%,#fbfbfd 100%);
+  color: #071227;
+}
+.home-page.new-home-static > *:nth-child(11) {
+  background: linear-gradient(180deg,#fcfcfe 0%,#f6f8fb 100%);
+  color: #071227;
+}
+.home-page.new-home-static > *:nth-child(12) {
+  background: linear-gradient(180deg,#fbfbfb 0%,#f0f4f8 100%);
+  color: #071227;
+}
+.home-page.new-home-static > *:nth-child(13) {
+  background: linear-gradient(180deg,#f9fafb 0%,#eef3f7 100%);
+  color: #071227;
+}
+
+/* Orange / warm range (soft → vivid) */
+.home-page.new-home-static > *:nth-child(14) {
+  background: linear-gradient(180deg,#fff7ed 0%,#ffeed6 100%);
+  color: #2b1300;
+}
+.home-page.new-home-static > *:nth-child(15) {
+  background: linear-gradient(180deg,#fff1e0 0%,#ffd9b0 100%);
+  color: #2b1300;
+}
+.home-page.new-home-static > *:nth-child(16) {
+  background: linear-gradient(180deg,#ffe8c9 0%,#ffbe7a 100%);
+  color: #2b1300;
+}
+.home-page.new-home-static > *:nth-child(17) {
+  background: linear-gradient(180deg,#ffd9a8 0%,#ff9f3b 100%);
+  color: #2b1300;
+}
+
+/* Repeat subtle blue/sky for the remaining two sections to reach 18 */
+.home-page.new-home-static > *:nth-child(18) {
+  background: linear-gradient(180deg,#0f4f84 0%,#4a86d6 100%);
+  color: #fff;
+}
+.home-page.new-home-static > *:nth-child(19) {
+  background: linear-gradient(180deg,#d2ebff 0%,#a9dbff 100%);
+  color: #03203a;
+}
+
+/* Ensure inner containers maintain appropriate padding/contrast */
+.home-page.new-home-static > * .container,
+.home-page.new-home-static > * .section-head,
+.home-page.new-home-static > * .section {
+  color: inherit;
+}
   color: #444a56;
 }
 
@@ -3004,7 +3118,7 @@ footer h5 {
 
 .home-page.new-home-static .home-partners-section {
   padding: 70px 0;
-  background: var(--background);
+  background: #FFF7ED;
 }
 
 .home-page.new-home-static .home-partners-section .home-partners-card {
@@ -3677,6 +3791,17 @@ footer h5 {
   text-transform: uppercase;
   margin-bottom: 14px;
 }
+
+/* Hide eyebrow badge and the stats strip on the new-home-static landing
+   when the design requires them removed. Use !important to override
+   component-level rules until markup is simplified. */
+.home-page.new-home-static .nh-hero-eyebrow,
+.home-page.new-home-static .nh-hero-stats {
+  display: none !important;
+}
+
+/* Hide eyebrow badges globally when page-level removal didn't take effect */
+.nh-hero-eyebrow { display: none !important; }
 
 .home-page.new-home-static .nh-hero-title {
   color: #141516;
@@ -4934,7 +5059,7 @@ footer h5 {
 .footer-common-cta-embossed {
   position: relative;
   width: 100%;
-  background: linear-gradient(180deg,#fbfbfc 0%, #f8f7fb 100%);
+  background: linear-gradient(180deg,#D2D2FF 0%, #D2D2FF 100%);
   overflow: hidden;
   padding: 44px 0;
 }
@@ -12246,7 +12371,13 @@ h2.package-card-main-title {
   text-align: center !important;
   padding: 0 !important;
 }
-
+.home-partners-card {
+background: linear-gradient(
+  180deg,
+  #fff7ed 0%,
+  #ffedd5 100%
+);
+}
 .qubiNext15 .sectionHeader .sectionDescription {
   margin-top: 12px !important;
   max-width: 640px !important;
@@ -13102,6 +13233,7 @@ h2.package-card-main-title {
 
 .timeline-section {
   position: relative;
+  background: linear-gradient(180deg, #E1E6F0 0%, #E1E6F0 100%);
 }
 
 .timeline-section .main-content {

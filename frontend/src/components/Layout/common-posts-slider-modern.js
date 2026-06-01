@@ -191,14 +191,14 @@ export default function CommonPostPagesSliderModern({ data }) {
                     {(show_description === 'yes' &&
                       (post.excerpt ||
                         post.description)) && (
-                      <DivTag
-                        className={styles.postDesc}
-                        dangerouslySetInnerHTML={{
-                          __html:
-                            post.excerpt ||
-                            post.description,
-                        }}
-                      />
+                    <div className={styles.descWrapper}>
+  <DivTag
+    className={styles.postDesc}
+    dangerouslySetInnerHTML={{
+      __html: post.excerpt || post.description,
+    }}
+  />
+</div>
                     )}
 
                     <Link

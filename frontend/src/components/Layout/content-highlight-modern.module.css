@@ -6,9 +6,9 @@
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(circle at top left, rgba(88, 86, 255, 0.08), transparent 40%),
-    radial-gradient(circle at bottom right, rgba(0, 224, 255, 0.06), transparent 40%),
-    #0b1225; /* softened base from nearly-black to dark navy */
+    radial-gradient(circle at top left, #ffffff, transparent 40%),
+    radial-gradient(circle at bottom right, #ffffff, transparent 40%),
+    #ffffff; /* softened base from nearly-black to dark navy */
   padding: 70px 0;
 }
 
@@ -38,7 +38,7 @@
   border-radius: 999px;
   background: rgba(255,255,255,0.04);
   backdrop-filter: blur(12px);
-  color: #7de2ff;
+  color: #db9b06;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 2px;
@@ -48,13 +48,13 @@
 
 .title {
   font-family: 'Syne', sans-serif;
+    font-size: clamp(24px, 2.6vw, 40px);
+  line-height: 1.03;
   font-weight: 800;
-  letter-spacing: -2px;
-  color: #ffffff;
+  letter-spacing: -0.02em;
+  color: #0a0a0a;
   margin-bottom: 28px;
-    font-size: clamp(2rem, 4vw, 3.8rem); /* slightly smaller */
   margin-bottom: 18px;
-  line-height: 1.05;
 }
 
 .title span {
@@ -64,7 +64,7 @@
 }
 
 .description {
-  color: rgba(255,255,255,0.72);
+  color: rgba(25, 22, 22, 0.72);
   font-size: 17px;
   line-height: 1.9;
   font-family: 'Inter', sans-serif;
@@ -85,8 +85,8 @@
   border-radius: 18px;
   background: linear-gradient(
     135deg,
-    #7b61ff 0%,
-    #00d4ff 100%
+    #e78f0a 0%,
+    #cd6809 100%
   );
   color: white;
   font-weight: 600;
