@@ -304,13 +304,16 @@ function renderMenuItems(items, level = 1, currentPath) {
   }).filter(Boolean);
 }
 
-export default function Header({ themeSettings, navigationData = [] }) {
+export default function Header({ themeSettings, navigationData = [], headerClass, headerStyle }) {
   // Add safety check and provide fallback
   const safeNavigationData = navigationData || [];
   const menuItems = buildMenu(safeNavigationData);
   const [expanded, setExpanded] = useState({});
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname(); // Get current path
+  // Ensure client initial render uses the same header class/style that server produced.
+  const [clientHeaderClass] = useState(() => headerClass || `navbar navbar-expand-lg navbar-light bg-white primary-menu bottom-dashed ${themeSettings?.promotion_enable ? 'enable-promotion-bar' : ''}`);
+  const [clientHeaderStyle] = useState(() => headerStyle || { backgroundColor: '#ffffff' });
 
   const toggleExpand = (id) => {
     setExpanded(prev => ({
@@ -485,7 +488,10 @@ export default function Header({ themeSettings, navigationData = [] }) {
         />
       ) : null}
 
-      <header className={`navbar navbar-expand-lg navbar-light primary-menu bottom-dashed ${themeSettings?.promotion_enable ? 'enable-promotion-bar' : ''}`}>
+      <header
+        className={clientHeaderClass}
+        style={clientHeaderStyle}
+      >
         <DivTag className="container">
           <Link href="/" className="navbar-brand">
             {themeSettings?.logo ? (

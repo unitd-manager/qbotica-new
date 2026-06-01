@@ -5,12 +5,14 @@
   overflow: hidden;
 
   padding: 48px 0 64px;
-
-  background: #ffffff;
+background: linear-gradient(180deg, #D2D2FF 0%, #D2D2FF 100%);
 
   color: #0f172a;
 }
 
+.section{
+  background:#E9E9FF;
+}
 .inner {
   max-width: 1200px;
   margin: 0 auto;
@@ -33,7 +35,7 @@
 
   border-radius: 28px;
 
-  background: #ffffff;
+  background: #e7e6ea;
 
   border: 1px solid rgba(15, 23, 42, 0.06);
 

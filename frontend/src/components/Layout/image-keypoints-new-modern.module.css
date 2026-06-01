@@ -112,7 +112,7 @@
 
   border: 1px solid rgba(79, 70, 229, 0.12);
 
-  color: #4f46e5;
+  color: #b85f06;
 
   font-size: 14px;
   font-weight: 700;
@@ -219,8 +219,8 @@
 
   background: linear-gradient(
     135deg,
-    #4f46e5 0%,
-    #7c3aed 100%
+    #eb9706 0%,
+    #ce8e0e 100%
   );
 
   box-shadow:

@@ -3,7 +3,6 @@
 import { useEffect, useRef } from "react";
 import heroStyles from './home-banner-with-rotating-cube.module.css';
 
-// ─── Land dots ────────────────────────────────────────────────────────────────
 const LAND_DOTS = [];
 (function buildDots() {
   for (let lat = -80; lat <= 80; lat += 4.5) {
@@ -21,7 +20,6 @@ const LAND_DOTS = [];
   }
 })();
 
-// ─── City pairs ───────────────────────────────────────────────────────────────
 const CITY_PAIRS = [
   [[40.7, -74.0], [51.5,  -0.1]],
   [[51.5,  -0.1], [48.8,   2.4]],
@@ -35,7 +33,6 @@ const CITY_PAIRS = [
   [[-33.9,151.2], [1.35, 103.8]],
 ];
 
-// ─── Math helpers ─────────────────────────────────────────────────────────────
 function latLngToVec(lat, lng) {
   const phi   = (90 - lat)  * Math.PI / 180;
   const theta = (lng + 180) * Math.PI / 180;
@@ -62,16 +59,15 @@ function slerp(ax, ay, az, bx, by, bz, t) {
   return [sa*ax + sb*bx, sa*ay + sb*by, sa*az + sb*bz];
 }
 
-// ─── Component ────────────────────────────────────────────────────────────────
 export default function HeroSection() {
   const canvasRef    = useRef(null);
   const globeWrapRef = useRef(null);
   const rotRef       = useRef(0);
+  const logoAngleRef = useRef(0);
   const arcsRef      = useRef([]);
   const rafRef       = useRef(0);
   const imgRef       = useRef(null);
 
-  // Init arcs once
   useEffect(() => {
     arcsRef.current = CITY_PAIRS.map(([s, e]) => {
       const [ax, ay, az] = latLngToVec(s[0], s[1]);
@@ -86,11 +82,10 @@ export default function HeroSection() {
 
     const img = new Image();
     img.onload  = () => { imgRef.current = img; };
-    img.onerror = () => {};
+    img.onerror = () => { console.error("Logo failed to load"); };
     img.src = "/assets/images/qbcomp.webp";
   }, []);
 
-  // Draw loop
   useEffect(() => {
     const canvas = canvasRef.current;
     const wrap   = globeWrapRef.current;
@@ -98,7 +93,6 @@ export default function HeroSection() {
 
     const ctx = canvas.getContext("2d");
 
-    // Set canvas pixel size to match its CSS size exactly
     const resize = () => {
       const dpr = window.devicePixelRatio || 1;
       const { width, height } = wrap.getBoundingClientRect();
@@ -119,7 +113,6 @@ export default function HeroSection() {
       if (!W || !H) { rafRef.current = requestAnimationFrame(draw); return; }
 
       const cx  = W / 2, cy = H / 2;
-      // R is 44% of the smaller dimension — fills the wrapper nicely
       const R   = Math.min(W, H) * 0.44;
       const ang = rotRef.current;
       const now = Date.now();
@@ -154,7 +147,6 @@ export default function HeroSection() {
       ctx.arc(cx, cy, R - 0.5, 0, Math.PI * 2);
       ctx.clip();
 
-      // Latitude lines
       for (let lat = -75; lat <= 75; lat += 25) {
         const yy = cy - (lat / 90) * R;
         const rr = Math.sqrt(Math.max(0, R * R - (yy - cy) ** 2));
@@ -166,7 +158,6 @@ export default function HeroSection() {
         ctx.stroke();
       }
 
-      // Longitude lines
       for (let lng = 0; lng < 180; lng += 30) {
         const a  = (lng * Math.PI / 180) + ang;
         const rx = Math.abs(Math.sin(a)) * R;
@@ -177,7 +168,6 @@ export default function HeroSection() {
         ctx.stroke();
       }
 
-      // Continent soft base
       ctx.save();
       ctx.filter = `blur(${6 * dpr}px)`;
       ctx.globalAlpha = 0.18;
@@ -192,7 +182,6 @@ export default function HeroSection() {
       }
       ctx.restore();
 
-      // Land dots
       for (const [lt, lg] of LAND_DOTS) {
         const [vx, vy, vz] = latLngToVec(lt, lg);
         const [rx, ry, rz] = rotY(vx, vy, vz, ang);
@@ -204,16 +193,13 @@ export default function HeroSection() {
         ctx.fill();
       }
 
-      // Arc trails
       for (const arc of arcsRef.current) {
         arc.progress += arc.speed;
         if (arc.progress > 1) arc.progress = 0;
-
         const head   = arc.progress;
         const tStart = Math.max(0, head - 0.22);
         const SEG    = 50;
         let prevX = 0, prevY = 0, hasPrev = false;
-
         for (let i = 0; i <= SEG; i++) {
           const t = tStart + (i / SEG) * (head - tStart);
           if (t < 0 || t > 1) continue;
@@ -232,8 +218,6 @@ export default function HeroSection() {
           }
           prevX = px; prevY = py; hasPrev = true;
         }
-
-        // Arc head glow
         const [hx, hy, hz] = slerp(arc.ax, arc.ay, arc.az, arc.bx, arc.by, arc.bz, head);
         const [rhx, rhy, rhz] = rotY(hx * 1.075, hy * 1.075, hz * 1.075, ang);
         if (rhz > -0.1) {
@@ -249,23 +233,31 @@ export default function HeroSection() {
         }
       }
 
-      // Center image (optional, loads async)
+      ctx.restore(); // end globe clip — logo drawn OUTSIDE clip so nothing cuts it
+
+      /* ── Logo: drawn AFTER ctx.restore() so clip doesn't affect it ── */
       const centerImg = imgRef.current;
       if (centerImg) {
-        const imgSize = R * 1.0;
-        ctx.save();
-        ctx.translate(cx, cy);
-        ctx.rotate(now * 0.0035);
-        ctx.shadowColor = "rgba(249,115,22,0.80)";
-        ctx.shadowBlur  = 40 * dpr;
-        ctx.drawImage(centerImg, -imgSize / 2, -imgSize / 2, imgSize, imgSize);
-        ctx.shadowColor = "rgba(96,165,250,0.40)";
-        ctx.shadowBlur  = 22 * dpr;
-        ctx.drawImage(centerImg, -imgSize / 2, -imgSize / 2, imgSize, imgSize);
-        ctx.restore();
-      }
+        // imgSize in actual canvas pixels (already accounts for DPR via canvas.width)
+        const imgSize = R * 0.70;
+        const a = logoAngleRef.current;
+        // cos(a) = horizontal scale: 1→0→-1→0→1 = coin-flip spin
+        const cosA = Math.cos(a);
 
-      ctx.restore(); // end globe clip
+        ctx.save();
+        ctx.shadowColor = "rgba(249,115,22,0.80)";
+        ctx.shadowBlur  = 30 * dpr;
+
+        // Simple: translate to center, scale X by cosA, draw centered
+        ctx.translate(cx, cy);
+        ctx.scale(cosA, 1);  // THIS is the horizontal spin — no DPR confusion
+
+        ctx.drawImage(centerImg, -imgSize / 2, -imgSize / 2, imgSize, imgSize);
+
+        ctx.restore();
+
+        logoAngleRef.current += 0.03; // ~1 full spin every 3.5s at 60fps
+      }
 
       /* 4 · Globe rim */
       const rim = ctx.createLinearGradient(cx - R, cy, cx + R, cy);
@@ -276,7 +268,6 @@ export default function HeroSection() {
       ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI * 2);
       ctx.strokeStyle = rim; ctx.lineWidth = 2.4 * dpr; ctx.stroke();
 
-      // Right bloom
       const og = ctx.createRadialGradient(cx + R * 0.82, cy, 0, cx + R * 0.82, cy, R * 0.68);
       og.addColorStop(0, "rgba(249,115,22,0.48)");
       og.addColorStop(1, "rgba(249,115,22,0)");
@@ -285,7 +276,6 @@ export default function HeroSection() {
 
       /* 5 · Orbital rings */
       ctx.save(); ctx.translate(cx, cy);
-
       const ra1 = now * 0.00018;
       ctx.save(); ctx.rotate(ra1);
       ctx.beginPath(); ctx.ellipse(0, 0, R * 0.92, R * 0.25, -0.16, 0, Math.PI * 2);
@@ -339,12 +329,11 @@ export default function HeroSection() {
       ctx.beginPath(); ctx.arc(n2x, n2y, 7 * dpr, 0, Math.PI * 2); ctx.fillStyle = ng2; ctx.fill();
       ctx.beginPath(); ctx.arc(n2x, n2y, 2.8 * dpr, 0, Math.PI * 2); ctx.fillStyle = "#fb923c"; ctx.fill();
 
-      rotRef.current += 0.003;
+      rotRef.current += 0.007;
       rafRef.current  = requestAnimationFrame(draw);
     };
 
     rafRef.current = requestAnimationFrame(draw);
-
     return () => {
       cancelAnimationFrame(rafRef.current);
       ro.disconnect();
@@ -353,22 +342,15 @@ export default function HeroSection() {
 
   return (
     <section className={heroStyles['nh-hero-banner']} suppressHydrationWarning>
-
       <div className={heroStyles['nh-hero-bg']} />
-
-      {/* nh-hero-inner: the ONLY element that owns the 580px height */}
       <div className={heroStyles['nh-hero-inner']}>
         <div className={heroStyles['nh-hero-container']}>
           <div className={heroStyles['nh-hero-grid']}>
-
-            {/* Left: text content */}
             <div className={heroStyles['nh-hero-content']}>
-
               <div className={heroStyles['nh-hero-eyebrow']}>
                 <span className={heroStyles['nh-hero-eyebrow-dot']} />
                 Enterprise Agentic AI
               </div>
-
               <div className={heroStyles['nh-hero-title']}>
                 <div className={heroStyles['nh-hero-title-line']}>Agentic AI</div>
                 <div className={heroStyles['nh-hero-title-line']}>That Runs</div>
@@ -376,18 +358,15 @@ export default function HeroSection() {
                   <span className={heroStyles['nh-hero-highlight']}>Your Business</span>
                 </div>
               </div>
-
               <p className={heroStyles['nh-hero-desc']}>
-                Move beyond pilots and "assistants." qBotica runs your enterprise operations
-                using Agentic AI to execute end-to-end workflows across your systems,
-                documents, and decisions.
+                Move beyond pilots and &quot;assistants.&quot; qBotica runs your enterprise
+                operations using Agentic AI to execute end-to-end workflows across your
+                systems, documents, and decisions.
               </p>
-
               <div className={heroStyles['nh-hero-actions']}>
                 <button className={heroStyles['primary-btn']}>Request a Demo →</button>
                 <button className={heroStyles['secondary-btn']}>See Agentic AI In Action →</button>
               </div>
-
               <div className={heroStyles['nh-hero-stats']}>
                 <div className={heroStyles['nh-hero-stat']}>
                   <span className={heroStyles['nh-hero-stat-number']}>10×</span>
@@ -402,18 +381,13 @@ export default function HeroSection() {
                   <span className={heroStyles['nh-hero-stat-label']}>Uptime SLA</span>
                 </div>
               </div>
-
             </div>
-
-            {/* Right: globe — overflow:hidden on wrapper clips canvas exactly */}
             <div ref={globeWrapRef} className={heroStyles['nh-hero-cube-wrapper']}>
               <canvas ref={canvasRef} className={heroStyles.canvas} />
             </div>
-
           </div>
         </div>
       </div>
-
     </section>
   );
 }

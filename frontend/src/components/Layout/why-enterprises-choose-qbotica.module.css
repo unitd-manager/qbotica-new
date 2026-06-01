@@ -1,6 +1,6 @@
 .section {
   padding: 64px 0;
-  background: transparent;
+  background: #FFF7ED;
 }
 
 .container {
@@ -60,7 +60,7 @@
   min-width: 44px;
   min-height: 44px;
   border-radius: 10px;
-  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  background: linear-gradient(135deg, #e2810a 0%, #e58319 100%);
   color: #fff;
   box-shadow: 0 6px 20px rgba(79, 70, 229, 0.08);
 }

@@ -19,7 +19,8 @@ import HealthcareAutomationModern from '@/components/Layout/healthcare-automatio
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight } from '@/components/Common/Icons';
-import HeroSection from '@/components/Layout/HeroSectionClient';
+//import HeroSection from '@/components/Layout/HeroSection';
+
 import WhyAIFailsModern from '@/components/Layout/why-ai-fails-modern';
 import CommonPostPagesSliderModern from '@/components/Layout/common-posts-slider-modern';
 import ImageKeyPointsNewModern from '@/components/Layout/image-key-points-new-modern';
@@ -28,11 +29,19 @@ import ImageKeyPointsNewModern2 from '@/components/Layout/image-keypoints-new-mo
 import GeneralCTASectionModern from '@/components/Layout/general-cta-section-modern';
 import SectionModern from '@/components/Layout/section-modern';
 import ContentHighlightModern from '@/components/Layout/content-highlight-modern-block';
+import BackToTopButton from '@/components/Common/BackToTopButton';
 
 
-export const dynamic = 'force-static';
+
+//export const dynamic = 'force-static';
 export const revalidate = false;
+ import dynamic from 'next/dynamic';
 
+// Completely bypasses the server-side caching mismatch by forcing client runtime
+const HeroSection = dynamic(() => import('@/components/Layout/HeroSection'), {
+ 
+  loading: () => <div style={{ backgroundColor: "#030712", minHeight: "100vh" }} />
+});
 
 export const metadata = {
   title: 'New Home',
@@ -171,7 +180,7 @@ const stepCardsData = {
 };
 
 const sectionThreeData = {
-  main_title: 'How Agentic AI Runs Your Business?',
+  main_title: 'How Agentic AI Runs Your Business',
   sub_title: '',
   description:
     'A complete AI-powered workflow that understands, decides, acts, and orchestrates business operations seamlessly.',
@@ -649,7 +658,7 @@ const contentHighlightData = {
 };
 
 const commonPostPagesSliderData = {
-  main_title: '<span style="font-size: 50px;">News Room</span>',
+  main_title: '<span style="font-size: 50px;">NewsRoom</span>',
 
   common_description: `
     <p>
@@ -1034,8 +1043,9 @@ export default function NewHomeStaticPage() {
   return (
     <DivTag className="home-page new-home-static">
       {/* <NewHomeHeroBanner data={bannerData} /> */}
-      <HeroSection data={bannerData} />
-         {/* <SectionFour data={sectionFiveData} /> */}
+      <HeroSection />
+      {/* <HeroSection data={bannerData}/>        */}
+        {/* <SectionFour data={sectionFiveData} /> */}
          <SectionModern data={sectionFiveData} />
       {/* <ClientLogoSection data={clientLogoData} /> */}
       <FooterCommonCTA data={footerCommonCTAData} />
@@ -1055,6 +1065,7 @@ export default function NewHomeStaticPage() {
       <ImageKeyPointsNewModern2 data={imageKeyPointsData} />
       <WhyEnterprisesChoose data={whyChooseData} />
     <HealthcareAutomationModern data={healthcareAutomationSolutionsData} />
+      <BackToTopButton />
      <SectionTag className="home-partners-section" id="home-partners">
         <DivTag className="container">
           <DivTag className="sub-section">

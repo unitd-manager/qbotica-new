@@ -1,0 +1,403 @@
+.heroContainer {
+  background-color: #030712;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 80px 40px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  box-sizing: border-box;
+}
+
+.ambientGlow {
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, rgba(249, 115, 22, 0.04) 60%, transparent 100__);
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.grid {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+/* Left Section Styles */
+.textContent {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  text-align: left;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(30, 41, 59, 0.3);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  padding: 6px 14px;
+  border-radius: 9999px;
+  width: fit-content;
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  background-color: #3b82f6;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #3b82f6;
+}
+
+.badgeText {
+  color: #93c5fd;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.heading {
+  font-size: 64px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.gradientText {
+  background: linear-gradient(to right, #3b82f6, #60a5fa, #c084fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.description {
+  color: #94a3b8;
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 520px;
+  margin: 0;
+}
+
+.buttonRow {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.primaryBtn {
+  background-color: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background-color 0.2s ease;
+  box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.3);
+}
+
+.primaryBtn:hover {
+  background-color: #1d4ed8;
+}
+
+.secondaryBtn {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e2e8f0;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background-color 0.2s ease;
+}
+
+.secondaryBtn:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+  padding-top: 36px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  max-width: 440px;
+}
+
+.metricItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.metricNumber {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.metricLabel {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+/* --- 3D GLOBE ENGINE (NO WEBGL REQUIRED) --- */
+.visualContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* This establishes our 3D space depth */
+.globeStage {
+  position: relative;
+  width: 450px;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px; 
+}
+
+/* Stage for cube-only layout (no globe) */
+.cubeStage {
+  position: relative;
+  width: 450px;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+}
+
+/* Glass outer silhouette boundary */
+.globeSphereBoundary {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  /* multi-layer gradient to create a spherical shading effect */
+  /* transparent globe base so background shows through */
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: inset 0 30px 60px rgba(3,7,18,0.35), 0 30px 60px rgba(3,7,18,0.45);
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Add highlight and rim to sell the sphere illusion */
+/* Globe texture layer (rotating) */
+.globeSphereBoundary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  background-image: url('/assets/images/qbotica-globe.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0% 50%;
+  /* make texture semi-transparent and blend with background for a glassy sphere */
+  opacity: 0.6;
+  mix-blend-mode: overlay;
+  transform: translateZ(0);
+  will-change: background-position, transform, opacity;
+  animation: spinTexture 28s linear infinite;
+}
+
+/* specular highlight and rim gloss on top */
+.globeSphereBoundary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle at 30% 22%, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.05) 10%, transparent 30%);
+  mix-blend-mode: screen;
+  box-shadow: inset 0 0 40px rgba(255,255,255,0.02);
+  opacity: 0.95;
+}
+
+@keyframes spinTexture {
+  from { background-position: 0% 50%; }
+  to   { background-position: 100% 50%; }
+}
+
+/* Subtle globe rotation to match cube/image spin */
+.globeSphereBoundary {
+  transform-style: preserve-3d;
+  transform-origin: 50% 50%;
+  will-change: transform;
+  animation: rotateGlobe 20s linear infinite;
+}
+
+@keyframes rotateGlobe {
+  from { transform: rotateX(10deg) rotateY(0deg); }
+  to   { transform: rotateX(10deg) rotateY(360deg); }
+}
+
+/* 3D Core Layer Container */
+.threeDSpace {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Blue Orbit Spinning Axis */
+.orbitBlue {
+  position: absolute;
+  width: 82%;
+  height: 82%;
+  border-radius: 50%;
+  border: 1px dashed rgba(59, 130, 246, 0.4);
+  transform-style: preserve-3d;
+  /* Tilts back and spins cleanly along the Y axis */
+  transform: rotateX(70deg) rotateY(-15deg);
+  animation: spinYAxis 12s linear infinite;
+  z-index: 10;
+}
+
+/* Orange Orbit Spinning Axis */
+.orbitOrange {
+  position: absolute;
+  width: 88%;
+  height: 88%;
+  border-radius: 50%;
+  border: 1px solid rgba(249, 115, 22, 0.25);
+  transform-style: preserve-3d;
+  /* Inverse slant for intersection look */
+  transform: rotateX(65deg) rotateY(20deg);
+  animation: spinYAxisReverse 18s linear infinite;
+  z-index: 10;
+}
+
+/* 3D Rotating Cube Container */
+.cubeContainer {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  transform-style: preserve-3d;
+  /* Keeps the cube tilted down slightly while it rotates horizontally */
+  animation: rotateCubeHorizontal 8s linear infinite;
+  z-index: 20;
+}
+
+/* Static image replacement for the cube */
+.cubeImage {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  border-radius: 16px;
+  overflow: hidden;
+  transform: rotateX(-20deg);
+  transform-style: preserve-3d;
+  will-change: transform;
+  animation: rotateImageY 8s linear infinite;
+  box-shadow: 0 30px 60px rgba(3,7,18,0.6), 0 6px 18px rgba(59,130,246,0.08);
+}
+
+@keyframes rotateImageY {
+  from { transform: rotateX(-20deg) rotateY(0deg); }
+  to   { transform: rotateX(-20deg) rotateY(360deg); }
+}
+
+/* Prevent mirrored backside showing when rotating around Y */
+.cubeImage img {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+/* Shared styling for all 6 faces of the cube to form a true solid object */
+.cubeFace {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  /* Face texture will be provided via inline background-image (qbcomp.webp) */
+  background-color: #ea580c;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.45), inset 0 6px 18px rgba(255,255,255,0.06);
+  opacity: 0.98;
+}
+
+/* Push faces outward in 3D space to construct the cube */
+.faceFront  { transform: rotateY(  0deg) translateZ(50px); }
+.faceBack   { transform: rotateY(180deg) translateZ(50px); }
+.faceLeft   { transform: rotateY(-90deg) translateZ(50px); }
+.faceRight  { transform: rotateY( 90deg) translateZ(50px); }
+.faceTop    { transform: rotateX( 90deg) translateZ(50px); background: #ff9244; }
+.faceBottom { transform: rotateX(-90deg) translateZ(50px); background: #b02400; }
+
+/* Glowing particle node on the orbit ring */
+.glowingNode {
+  position: absolute;
+  right: 20%;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  background-color: #60a5fa;
+  border-radius: 50%;
+  box-shadow: 0 0 16px 4px #3b82f6, 0 0 4px #ffffff;
+  z-index: 25;
+  animation: nodePulse 2s ease-in-out infinite;
+}
+
+/* --- HARDWARE ACCELERATED ANIMATION ENGINES --- */
+@keyframes spinYAxis {
+  from { transform: rotateX(70deg) rotateY(-15deg) rotateZ(0deg); }
+  to   { transform: rotateX(70deg) rotateY(-15deg) rotateZ(360deg); }
+}
+
+@keyframes spinYAxisReverse {
+  from { transform: rotateX(65deg) rotateY(20deg) rotateZ(360deg); }
+  to   { transform: rotateX(65deg) rotateY(20deg) rotateZ(0deg); }
+}
+
+@keyframes rotateCubeHorizontal {
+  from { transform: rotateX(-20deg) rotateY(0deg); }
+  to   { transform: rotateX(-20deg) rotateY(360deg); }
+}
+
+@keyframes nodePulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 1; box-shadow: 0 0 20px 6px #3b82f6, 0 0 6px #ffffff; }
+}
+
+@media (max-width: 1024px) {
+  .grid { grid-template-columns: 1fr; gap: 48px; }
+  .heading { font-size: 44px; }
+  .globeStage { width: 340px; height: 340px; }
+}

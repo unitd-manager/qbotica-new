@@ -1,13 +1,8 @@
 "use client";
 
-import dynamic from 'next/dynamic';
-import React from 'react';
-
-const Hero = dynamic(
-  () => import('./home-banner-with-rotating-cube'),
-  { ssr: false }
-);
+import HeroSection from "./HeroSection";
 
 export default function HeroSectionClient(props) {
-  return <Hero {...props} />;
+  return <HeroSection {...props} />;
 }
+

@@ -44,68 +44,479 @@
   padding: 10px 0;
 }
 
+/* ===========================
+PREMIUM CARD
+=========================== */
+
 .premiumCard {
-  position: relative;
-  height: 100%;
+position: relative;
 
-  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(245,247,252,0.6));
+display: flex;
+flex-direction: column;
 
-  border: 1px solid rgba(255, 255, 255, 0.85);
+height: 100%;
 
-  border-radius: 34px;
+background: #ffffff;
 
-  overflow: hidden;
+border: 1px solid rgba(37, 99, 235, 0.08);
 
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+border-radius: 32px;
 
-  box-shadow:
-    0 14px 60px rgba(2,6,23,0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+overflow: hidden;
 
-  transition:
-    transform 0.45s ease,
-    box-shadow 0.45s ease;
+box-shadow:
+0 20px 50px rgba(15, 23, 42, 0.08),
+0 8px 20px rgba(15, 23, 42, 0.04);
+
+transition:
+transform 0.35s ease,
+box-shadow 0.35s ease;
 }
 
 .premiumCard:hover {
-  transform: translateY(-8px);
+transform: translateY(-10px);
 
-  box-shadow:
-    0 20px 60px rgba(15, 23, 42, 0.10),
-    0 8px 24px rgba(15, 23, 42, 0.06);
+box-shadow:
+0 30px 80px rgba(37, 99, 235, 0.12),
+0 12px 30px rgba(15, 23, 42, 0.08);
 }
+
+/* ===========================
+IMAGE AREA
+=========================== */
 
 .imageWrapper {
-  position: relative;
-  overflow: hidden;
+position: relative;
+overflow: hidden;
 
-  margin: 18px;
-  border-radius: 26px;
+margin: 0;
 
-  background: linear-gradient(
-    135deg,
-    #eef2ff 0%,
-    #f8fafc 100%
-  );
+border-radius: 32px 32px 0 0;
+
+background: linear-gradient(
+135deg,
+#eef6ff 0%,
+#ffffff 100%
+);
 }
 
-.cardImage { border-radius: 18px; }
-
 .cardImage {
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
+width: 100%;
+height: 320px;
 
-  transition: transform 0.6s ease;
+object-fit: cover;
+
+transition: transform 0.7s ease;
 }
 
 .premiumCard:hover .cardImage {
-  transform: scale(1.04);
+transform: scale(1.06);
+}
+
+/* ===========================
+CONTENT AREA
+=========================== */
+
+.cardContent {
+flex: 1;
+
+display: flex;
+flex-direction: column;
+
+padding: 24px;
+}
+
+.postDate {
+display: inline-flex;
+align-items: center;
+
+width: fit-content;
+
+padding: 8px 14px;
+
+border-radius: 999px;
+
+background: rgba(37, 99, 235, 0.08);
+
+color: #2563eb;
+
+font-size: 12px;
+font-weight: 700;
+letter-spacing: 0.05em;
+
+margin-bottom: 18px;
+}
+
+.postTitle {
+font-size: clamp(22px, 1.7vw, 30px);
+
+line-height: 1.15;
+
+font-weight: 700;
+
+color: #0f172a;
+
+margin-bottom: 14px;
+}
+
+.postDesc,
+.postDesc p {
+font-size: 15px;
+
+line-height: 1.7;
+
+color: #64748b;
+
+margin: 0;
+}
+
+/* ===========================
+BUTTON ALWAYS BOTTOM
+=========================== */
+
+.readMoreBtn {
+margin-top: auto;
+
+align-self: flex-start;
+
+display: inline-flex;
+align-items: center;
+gap: 10px;
+
+padding: 12px 20px;
+
+border-radius: 14px;
+
+background: linear-gradient(
+135deg,
+#2563eb,
+#3b82f6
+);
+
+color: #ffffff;
+
+text-decoration: none;
+
+font-size: 14px;
+font-weight: 700;
+
+box-shadow:
+0 10px 24px rgba(37, 99, 235, 0.20);
+
+transition:
+transform 0.25s ease,
+box-shadow 0.25s ease;
+}
+
+.readMoreBtn:hover {
+transform: translateY(-2px);
+
+box-shadow:
+0 16px 32px rgba(37, 99, 235, 0.25);
+}
+
+/* ===========================
+RESPONSIVE
+=========================== */
+
+@media (max-width: 1199px) {
+.cardImage {
+height: 280px;
+}
+}
+
+@media (max-width: 991px) {
+.cardImage {
+height: 250px;
 }
 
 .cardContent {
-  padding: 8px 20px 20px;
+padding: 20px;
+}
+}
+
+@media (max-width: 767px) {
+.premiumCard {
+border-radius: 24px;
+}
+
+.imageWrapper {
+border-radius: 24px 24px 0 0;
+}
+
+.cardImage {
+height: 220px;
+}
+
+.cardContent {
+padding: 18px;
+}
+
+.postTitle {
+font-size: 22px;
+}
+}
+
+.premiumCard {
+position: relative;
+display: flex;
+flex-direction: column;
+height: 100%;
+
+background: #ffffff;
+border-radius: 32px;
+overflow: hidden;
+
+border: 1px solid rgba(37,99,235,0.08);
+
+box-shadow:
+0 20px 50px rgba(15,23,42,0.08),
+0 8px 20px rgba(15,23,42,0.04);
+
+transition: all .35s ease;
+}
+
+.premiumCard:hover {
+transform: translateY(-10px);
+
+box-shadow:
+0 30px 80px rgba(37,99,235,0.12),
+0 12px 30px rgba(15,23,42,0.08);
+}
+
+/* IMAGE */
+
+.imageWrapper {
+position: relative;
+overflow: hidden;
+
+margin: 0;
+
+border-radius: 32px 32px 0 0;
+}
+
+.cardImage {
+width: 100%;
+height: 340px;
+object-fit: cover;
+
+transition: transform .7s ease;
+}
+
+.premiumCard:hover .cardImage {
+transform: scale(1.08);
+}
+
+/* CONTENT */
+
+.cardContent {
+display: flex;
+flex-direction: column;
+flex: 1;
+
+padding: 24px;
+}
+
+.postDate {
+display: inline-flex;
+width: fit-content;
+
+padding: 8px 14px;
+
+border-radius: 999px;
+
+background: rgba(37,99,235,.08);
+color: #2563eb;
+
+font-size: 12px;
+font-weight: 700;
+
+margin-bottom: 18px;
+}
+
+.postTitle {
+font-size: 24px;
+line-height: 1.2;
+font-weight: 700;
+
+color: #0f172a;
+
+margin-bottom: 14px;
+
+min-height: 88px;
+}
+
+/* DESCRIPTION AREA FIXED */
+
+.descWrapper {
+min-height: 130px;
+}
+
+.postDesc,
+.postDesc p {
+font-size: 15px;
+line-height: 1.7;
+
+color: #64748b;
+
+margin: 0;
+}
+
+/* BUTTON */
+
+.readMoreBtn {
+margin-top: auto;
+
+align-self: flex-start;
+
+display: inline-flex;
+align-items: center;
+gap: 10px;
+
+padding: 12px 22px;
+
+border-radius: 14px;
+
+background: linear-gradient(
+135deg,
+#2563eb,
+#3b82f6
+);
+
+color: #fff;
+
+text-decoration: none;
+
+font-weight: 700;
+
+box-shadow:
+0 10px 24px rgba(37,99,235,.18);
+
+transition: all .3s ease;
+}
+
+.readMoreBtn:hover {
+transform: translateY(-2px);
+
+box-shadow:
+0 18px 34px rgba(37,99,235,.24);
+}
+
+/* RESPONSIVE */
+
+@media (max-width:1199px) {
+.cardImage {
+height: 300px;
+}
+}
+
+@media (max-width:991px) {
+.cardImage {
+height: 260px;
+}
+
+.postTitle {
+min-height: auto;
+}
+
+}
+
+@media (max-width:767px) {
+.cardImage {
+height: 220px;
+}
+/* CONTENT AREA */
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 24px;
+}
+
+/* DATE */
+
+.postDate {
+  margin-bottom: 16px;
+}
+
+/* TITLE - SAME HEIGHT */
+
+.postTitle {
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 700;
+  color: #0f172a;
+
+  min-height: 90px;
+  margin-bottom: 14px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.slideItem {
+  height: 100%;
+}
+
+.premiumCard {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* DESCRIPTION WRAPPER */
+
+.descWrapper {
+  min-height: 120px;
+  margin-bottom: 24px;
+}
+
+/* DESCRIPTION */
+
+.postDesc,
+.postDesc p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #64748b;
+  margin: 0;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* BUTTON */
+
+.readMoreBtn {
+  margin-top: auto;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 22px;
+
+  border-radius: 14px;
+
+  background: linear-gradient(
+    135deg,
+    #ce900b,
+    #ec760f
+  );
+
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
 }
 
 .postDate {
@@ -118,7 +529,7 @@
 
   background: rgba(79, 70, 229, 0.08);
 
-  color: #4f46e5;
+  color: #d76b0d;
 
   font-size: 13px;
   font-weight: 700;
@@ -143,7 +554,7 @@
 .postDesc p {
   font-size: 15px;
   line-height: 1.6;
-  color: #667085;
+  color: #ca6f0d;
 
   margin: 0;
 }
@@ -151,7 +562,7 @@
 .readMoreBtn {
   width: fit-content;
 
-  margin-top: 20px;
+  margin-top: auto;
 
   display: inline-flex;
   align-items: center;
@@ -161,7 +572,7 @@
 
   border-radius: 12px;
 
-  background: #111827;
+  background: #e37a0a;
   color: #ffffff;
 
   box-shadow: 0 8px 30px rgba(17,24,39,0.12);
@@ -209,7 +620,7 @@
   display:inline-block;
 }
 .sliderWrapper :global(.slick-dots li.slick-active button:before) {
-  background: linear-gradient(90deg,#7c3aed,#06b6d4);
+  background: linear-gradient(90deg,#dc6c09,#c9571e);
   box-shadow: 0 6px 18px rgba(99,102,241,0.18);
   width: 14px;
   height: 14px;
@@ -217,6 +628,17 @@
 
 .animate {
   animation: fadeUp 0.8s ease;
+}
+
+.descWrapper {
+  min-height: 110px;
+  max-height: 110px;
+
+  overflow: hidden;
+}
+
+.postTitle {
+  min-height: 85px;
 }
 
 @keyframes fadeUp {

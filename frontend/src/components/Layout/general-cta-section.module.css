@@ -1,4 +1,8 @@
-.ctaSection{--accent:#ff7a00;--accent-dark:#e65a00;--bg:#0f1720;position:relative;overflow:hidden;padding:60px 0;background:linear-gradient(180deg,rgba(255,250,248,0.95),rgba(255,247,240,0.95));}
+.ctaSection{--accent:#ff7a00;--accent-dark:#e65a00;--bg: linear-gradient(
+  180deg,
+  #fff7ed 0%,
+  #ffedd5 100%
+);position:relative;overflow:hidden;padding:60px 0;background:linear-gradient(180deg,rgba(255,250,248,0.95),rgba(255,247,240,0.95));}
 
 .ctaSection::before{content:"";position:absolute;right:-120px;top:-60px;width:420px;height:420px;background:radial-gradient(circle at 30% 30%,var(--accent) 0%,transparent 40%);filter:blur(40px);opacity:0.12;pointer-events:none}
 

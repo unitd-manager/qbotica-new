@@ -93,6 +93,9 @@ export default async function RootLayout({ children }) {
     thirdFooterMenu,
     fourthFooterMenu
   } = await getThemeData();
+  const headerClass = `navbar navbar-expand-lg navbar-light bg-white primary-menu bottom-dashed ${themeSettings?.promotion_enable ? 'enable-promotion-bar' : ''}`;
+  const headerStyle = { backgroundColor: '#ffffff' };
+
   return (
     <html lang="en" className={`${inter.variable} ${chivoMono.variable} ${geistSans.variable} ${roboto.variable}`}>
       <head>
@@ -130,6 +133,8 @@ export default async function RootLayout({ children }) {
         <Header
           themeSettings={themeSettings}
           navigationData={primaryMenu}
+          headerClass={headerClass}
+          headerStyle={headerStyle}
         />
         <main className="flex-grow-1">{children}</main>
         <Footer
