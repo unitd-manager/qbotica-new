@@ -1,0 +1,212 @@
+.logoSection {
+  position: relative;
+  overflow: hidden;
+
+  padding: 110px 0;
+
+  background: #f5f5f7;
+}
+
+/* CONTAINER */
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* TITLE */
+
+.sectionHead {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.title {
+  font-size: clamp(40px, 4vw, 72px);
+  line-height: 1.08;
+  font-weight: 800;
+
+  letter-spacing: -0.04em;
+
+  color: #050505;
+
+  margin: 0;
+}
+
+/* SLIDER */
+
+.sliderOuter {
+  position: relative;
+}
+
+.logoSlider :global(.slick-track) {
+  display: flex !important;
+  align-items: center;
+}
+
+.logoSlider :global(.slick-slide) {
+  height: inherit !important;
+}
+
+.logoSlide {
+  padding: 0 18px;
+}
+
+/* LOGO CARD */
+
+.logoCard {
+  height: 120px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 28px;
+
+  background: rgba(255, 255, 255, 0.58);
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+
+  box-shadow:
+    0 10px 30px rgba(15, 23, 42, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.logoCard:hover {
+  transform: translateY(-6px);
+
+  background: rgba(255, 255, 255, 0.92);
+
+  box-shadow:
+    0 24px 60px rgba(15, 23, 42, 0.08),
+    0 8px 20px rgba(15, 23, 42, 0.05);
+}
+
+/* IMAGE */
+
+.logoImage {
+  width: auto;
+  max-width: 160px;
+  height: 46px;
+
+  object-fit: contain;
+
+  opacity: 0.52;
+
+  filter: grayscale(100%);
+
+  transition:
+    opacity 0.35s ease,
+    filter 0.35s ease,
+    transform 0.35s ease;
+}
+
+.logoCard:hover .logoImage {
+  opacity: 1;
+  filter: grayscale(0%);
+  transform: scale(1.04);
+}
+
+/* SIDE FADE EFFECT */
+
+.fadeLeft,
+.fadeRight {
+  position: absolute;
+  top: 0;
+  z-index: 5;
+
+  width: 180px;
+  height: 100%;
+
+  pointer-events: none;
+}
+
+.fadeLeft {
+  left: 0;
+
+  background: linear-gradient(
+    to right,
+    #f5f5f7 0%,
+    rgba(245, 245, 247, 0) 100%
+  );
+}
+
+.fadeRight {
+  right: 0;
+
+  background: linear-gradient(
+    to left,
+    #f5f5f7 0%,
+    rgba(245, 245, 247, 0) 100%
+  );
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 991px) {
+  .logoSection {
+    padding: 90px 0;
+  }
+
+  .sectionHead {
+    margin-bottom: 50px;
+  }
+
+  .title {
+    font-size: 48px;
+  }
+
+  .logoCard {
+    height: 100px;
+    border-radius: 22px;
+  }
+
+  .logoImage {
+    max-width: 130px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .logoSection {
+    padding: 70px 0;
+  }
+
+  .container {
+    padding: 0 18px;
+  }
+
+  .title {
+    font-size: 34px;
+  }
+
+  .logoSlide {
+    padding: 0 10px;
+  }
+
+  .logoCard {
+    height: 84px;
+    border-radius: 18px;
+  }
+
+  .logoImage {
+    max-width: 110px;
+    height: 34px;
+  }
+
+  .fadeLeft,
+  .fadeRight {
+    width: 70px;
+  }
+}

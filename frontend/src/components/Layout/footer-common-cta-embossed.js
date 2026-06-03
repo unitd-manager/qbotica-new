@@ -69,7 +69,13 @@ export default function FooterCommonCTAEmbossed({ data }) {
             )}
             {showCTA && cta_button?.url ? (
               <DivTag className="fce-cta">
-                <Link href={cta_button.url} target={cta_button.target || '_self'} className="btn primary-btn">
+                <Link
+                  href={cta_button.url}
+                  target={cta_button.target || '_self'}
+                  className="btn primary-btn"
+                  aria-label={cta_button.title || 'Learn More'}
+                  {...(cta_button.target === '_blank' ? { rel: 'noopener noreferrer' } : {})}
+                >
                   {cta_button.title || 'Learn More'} <ArrowRight className="right-arrow-icon" />
                 </Link>
               </DivTag>

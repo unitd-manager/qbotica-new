@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import PasswordProtection from './PasswordProtection';
+import LazyPasswordProtection from './LazyPasswordProtection';
 
 export default function PasswordProtectedPage({ slug }) {
   const [error, setError] = useState('');
@@ -31,5 +31,5 @@ export default function PasswordProtectedPage({ slug }) {
     }
   };
 
-  return <PasswordProtection onSubmit={handlePasswordSubmit} error={error} />;
+  return <LazyPasswordProtection onSubmit={handlePasswordSubmit} error={error} />;
 }

@@ -1,0 +1,284 @@
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.nh-hero-banner {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 60% 50% at 10% 0%,  rgba(37,99,235,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 90% 100%, rgba(249,115,22,0.10) 0%, transparent 55%),
+    linear-gradient(170deg, #050818 0%, #07091c 55%, #030210 100%);
+}
+
+.nh-hero-inner {
+  height: 580px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-top: 72px;
+  box-sizing: border-box;
+}
+
+.nh-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.55) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.07;
+  mask-image: radial-gradient(ellipse 90% 80% at 50% 40%, black 20%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 40%, black 20%, transparent 85%);
+  pointer-events: none;
+  animation: starDrift 60s linear infinite;
+}
+@keyframes starDrift {
+  from { background-position: 0 0; }
+  to   { background-position: 48px 48px; }
+}
+.nh-hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg, transparent, transparent 3px,
+    rgba(255,255,255,0.012) 3px, rgba(255,255,255,0.012) 4px
+  );
+  pointer-events: none;
+}
+
+.nh-hero-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 48px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nh-hero-grid {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.nh-hero-content {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.nh-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(96,165,250,0.9);
+  background: rgba(37,99,235,0.12);
+  border: 1px solid rgba(37,99,235,0.25);
+  border-radius: 100px;
+  padding: 5px 14px;
+  margin-bottom: 20px;
+  width: fit-content;
+}
+.nh-hero-eyebrow-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #60a5fa;
+  animation: pulse 2.4s ease-in-out infinite;
+  flex-shrink: 0;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.45; transform: scale(0.75); }
+}
+
+.nh-hero-title {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 20px;
+}
+.nh-hero-title-line {
+  font-size: clamp(30px, 3.5vw, 50px);
+  line-height: 1.06;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+}
+.nh-hero-highlight {
+  background: linear-gradient(95deg, #38bdf8 0%, #818cf8 55%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nh-hero-desc {
+  font-size: 15px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.55);
+  max-width: 500px;
+  margin-bottom: 28px;
+}
+
+.nh-hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 8;
+}
+.primary-btn,
+.secondary-btn {
+  height: 48px;
+  padding: 0 24px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  border: none;
+  transition: transform 0.22s, box-shadow 0.22s, background 0.22s;
+}
+.primary-btn {
+  background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(37,99,235,0.40), 0 0 0 1px rgba(96,165,250,0.2) inset;
+}
+.primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(37,99,235,0.52), 0 0 0 1px rgba(96,165,250,0.3) inset;
+}
+.primary-btn:active { transform: translateY(0); }
+.secondary-btn {
+  background: rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.85);
+  border: 1px solid rgba(255,255,255,0.14);
+  backdrop-filter: blur(12px);
+}
+.secondary-btn:hover {
+  background: rgba(255,255,255,0.09);
+  border-color: rgba(255,255,255,0.22);
+  transform: translateY(-2px);
+}
+.secondary-btn:active { transform: translateY(0); }
+
+.nh-hero-stats {
+  display: flex;
+  gap: 28px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.nh-hero-stat { display: flex; flex-direction: column; gap: 3px; }
+.nh-hero-stat-number {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+.nh-hero-stat-label {
+  font-size: 10px;
+  color: rgba(255,255,255,0.38);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* =========================================
+   GLOBE WRAPPER
+   KEY FIX: removed border-radius:50% and overflow:hidden
+   Those two together were clipping the canvas transform origin
+   and making the logo spin invisible.
+   The globe shape is drawn on canvas — the wrapper just needs to
+   be the right size and position:relative for the glow pseudo.
+========================================= */
+.nh-hero-cube-wrapper {
+  flex: 0 0 440px;
+  width: 440px;
+  height: 440px;
+  /* NO overflow:hidden — it clips setTransform and makes spin invisible */
+  /* NO border-radius:50% — the circle is painted on the canvas itself */
+  position: relative;
+  align-self: center;
+  z-index: 2;
+}
+
+/* Ambient glow behind the globe */
+.nh-hero-cube-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: -8%;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(37,99,235,0.22) 0%,
+    rgba(249,115,22,0.12) 55%,
+    transparent 75%
+  );
+  filter: blur(32px);
+  pointer-events: none;
+  z-index: 0;
+  animation: glowPulse 5s ease-in-out infinite;
+}
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.8; transform: scale(0.96); }
+  50%       { opacity: 1.0; transform: scale(1.04); }
+}
+
+.canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nh-hero-eyebrow-dot,
+  .nh-hero-bg,
+  .nh-hero-cube-wrapper::before { animation: none !important; }
+}
+
+@media (max-width: 1023px) {
+  .nh-hero-inner {
+    height: auto;
+    min-height: 600px;
+    padding: 100px 0 48px;
+  }
+  .nh-hero-container { height: auto; align-items: flex-start; }
+  .nh-hero-grid {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 32px;
+  }
+  .nh-hero-content { max-width: 100%; }
+  .nh-hero-cube-wrapper {
+    flex: none;
+    width: 360px;
+    height: 360px;
+  }
+}
+
+@media (max-width: 599px) {
+  .nh-hero-inner { padding: 88px 0 40px; min-height: 0; }
+  .nh-hero-container { padding: 0 20px; }
+  .nh-hero-cube-wrapper { width: 280px; height: 280px; }
+  .nh-hero-actions { flex-direction: column; width: 100%; }
+  .primary-btn, .secondary-btn { width: 100%; justify-content: center; }
+  .nh-hero-stats { gap: 20px; }
+}

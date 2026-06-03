@@ -1,0 +1,458 @@
+.section {
+  position: relative;
+  overflow: visible; /* allow visual overflow so bottom isn't clipped */
+  padding: 24px 0 32px; /* tightened vertical padding */
+  min-height: 60vh;
+  box-sizing: border-box;
+  z-index: 1; /* ensure stacking so it isn't painted under following elements */
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px; /* match site container width for visual consistency */
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 100%;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: stretch; /* ensure both columns match height */
+  gap: 20px;
+  height: 100%;
+  /* ensure children can stretch to equal height */
+}
+
+/* allow flex/grid children to shrink properly inside the grid row */
+.inner > * {
+  min-height: 0;
+}
+
+/* LEFT */
+
+.left {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding-right: 6px;
+}
+
+.header {
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: clamp(24px, 2.6vw, 40px);
+  line-height: 1.03;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #050505;
+
+  margin: 0 0 12px;
+}
+
+.subtitle {
+  font-size: 16px;
+  line-height: 1.25;
+  color: #667085;
+
+  max-width: 720px;
+}
+
+/* STEPS */
+
+.stepsWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.stepCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  transition: transform 0.35s ease;
+}
+
+.stepCard:hover {
+  transform: translateX(8px);
+}
+
+.stepNumber {
+  min-width: 40px;
+  width: 40px;
+  height: 40px;
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.9);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255, 255, 255, 0.9);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+
+  box-shadow:
+    0 8px 20px rgba(15, 23, 42, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.stepContent {
+  flex: 1;
+  padding-top: 2px;
+}
+
+.stepTitle {
+  font-size: clamp(18px, 1.4vw, 28px);
+  line-height: 1.04;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+
+  color: #050505;
+
+  margin: 0 0 6px;
+}
+
+.stepDesc,
+.stepDesc p {
+  font-size: 14px;
+  line-height: 1.3;
+  color: #5f6673;
+
+  margin: 0;
+}
+
+/* BUTTON */
+
+.cta {
+  margin-top: 20px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 48px;
+  padding: 0 20px;
+
+  border-radius: 14px;
+
+  background: #111827;
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.cta:hover {
+  transform: translateY(-3px);
+  background: #1f2937;
+}
+
+/* RIGHT */
+
+.right {
+  position: relative;
+}
+
+.visualCard {
+  position: relative;
+
+  border-radius: 28px;
+
+  background: linear-gradient(
+    180deg,
+    #eef2ff 0%,
+    #f8fafc 100%
+  );
+
+  padding: 18px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 18px 60px rgba(15, 23, 42, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+
+  /* let the visual card match the grid row height (left content) */
+  height: 100%;
+  max-height: none; /* remove viewport cap so it can match text height */
+  min-height: 100%;
+  display: flex;
+  align-items: stretch; /* allow inner image container to fill available height */
+  justify-content: center;
+  align-self: stretch; /* ensure the card itself stretches to match grid row height */
+  box-sizing: border-box;
+}
+
+.visualGlow {
+  position: absolute;
+  top: -80px;
+  right: -60px;
+
+  width: 240px;
+  height: 240px;
+
+  border-radius: 999px;
+
+  background: radial-gradient(
+    circle,
+    rgba(99, 102, 241, 0.16) 0%,
+    transparent 72%
+  );
+
+  pointer-events: none;
+}
+
+.image {
+  position: relative;
+  z-index: 2;
+
+  width: auto;
+  height: auto; /* let image maintain aspect ratio */
+  align-self: center; /* center vertically within the visual card */
+
+  border-radius: 18px;
+
+  display: block;
+
+  box-shadow:
+    0 10px 40px rgba(15, 23, 42, 0.08);
+
+  transition: transform 0.45s ease;
+  object-fit: contain;
+  max-width: 100%;
+  /* limit image to visual card inner height (account for 18px padding top+bottom) */
+  max-height: calc(100% - 36px);
+}
+
+.visualCard:hover .image {
+  transform: scale(1.02);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1200px) {
+  .inner {
+    gap: 24px;
+  }
+
+  .stepDesc,
+  .stepDesc p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 991px) {
+  .section {
+    padding: 40px 0;
+  }
+
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .right {
+    order: -1;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+
+  .stepTitle {
+    font-size: 24px;
+  }
+
+  .stepDesc,
+  .stepDesc p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 28px 0;
+  }
+
+  .container {
+    padding: 0 18px;
+  }
+
+  .title {
+    font-size: 34px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .stepCard {
+    gap: 12px;
+  }
+
+  .stepNumber {
+    min-width: 48px;
+    width: 48px;
+    height: 48px;
+
+    font-size: 20px;
+    border-radius: 12px;
+  }
+
+  .stepTitle {
+    font-size: 22px;
+  }
+
+  .stepDesc,
+  .stepDesc p {
+    font-size: 15px;
+  }
+
+  .visualCard {
+    padding: 12px;
+    border-radius: 20px;
+  }
+
+  .image {
+    border-radius: 18px;
+  }
+}
+
+.richDescription {
+  margin-top: 14px;
+}
+
+.richDescription p {
+  font-size: 15px;
+  line-height: 1.35;
+  color: #5f6673;
+  margin-bottom: 12px;
+}
+
+.richDescription ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.richDescription li {
+  position: relative;
+
+  padding-left: 68px;
+
+  font-size: 15px;
+  line-height: 1.3;
+  color: #667085;
+
+  min-height: 48px;
+}
+
+.richDescription li::before {
+  content: counter(item, decimal-leading-zero);
+
+  counter-increment: item;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.9);
+
+  border: 1px solid rgba(255, 255, 255, 0.9);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+
+  box-shadow:
+    0 8px 20px rgba(15, 23, 42, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+
+  backdrop-filter: blur(10px);
+}
+
+.richDescription ul {
+  counter-reset: item;
+}
+
+.richDescription strong {
+  display: block;
+
+  font-size: clamp(20px, 1.6vw, 32px);
+  line-height: 1.12;
+  font-weight: 800;
+
+  letter-spacing: -0.02em;
+
+  color: #050505;
+
+  margin-bottom: 8px;
+}
+
+@media (max-width: 991px) {
+  .richDescription p {
+    font-size: 18px;
+  }
+
+  .richDescription li {
+    padding-left: 82px;
+    font-size: 17px;
+  }
+
+  .richDescription strong {
+    font-size: 26px;
+  }
+
+  .richDescription li::before {
+    width: 54px;
+    height: 54px;
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 767px) {
+  .richDescription li {
+    padding-left: 74px;
+  }
+
+  .richDescription strong {
+    font-size: 22px;
+  }
+}

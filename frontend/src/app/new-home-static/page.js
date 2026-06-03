@@ -19,9 +19,29 @@ import HealthcareAutomationModern from '@/components/Layout/healthcare-automatio
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight } from '@/components/Common/Icons';
+//import HeroSection from '@/components/Layout/HeroSection';
 
-export const dynamic = 'force-static';
+import WhyAIFailsModern from '@/components/Layout/why-ai-fails-modern';
+import CommonPostPagesSliderModern from '@/components/Layout/common-posts-slider-modern';
+import ImageKeyPointsNewModern from '@/components/Layout/image-key-points-new-modern';
+import ClientLogoSectionModern from '@/components/Layout/home-client-logo-section-modern';
+import ImageKeyPointsNewModern2 from '@/components/Layout/image-keypoints-new-modern2';
+import GeneralCTASectionModern from '@/components/Layout/general-cta-section-modern';
+import SectionModern from '@/components/Layout/section-modern';
+import ContentHighlightModern from '@/components/Layout/content-highlight-modern-block';
+import BackToTopButton from '@/components/Common/BackToTopButton';
+
+
+
+//export const dynamic = 'force-static';
 export const revalidate = false;
+ import dynamic from 'next/dynamic';
+
+// Completely bypasses the server-side caching mismatch by forcing client runtime
+const HeroSection = dynamic(() => import('@/components/Layout/HeroSection'), {
+ 
+  loading: () => <div style={{ backgroundColor: "#030712", minHeight: "100vh" }} />
+});
 
 export const metadata = {
   title: 'New Home',
@@ -160,7 +180,7 @@ const stepCardsData = {
 };
 
 const sectionThreeData = {
-  main_title: 'How Agentic AI Runs Your Business?',
+  main_title: 'How Agentic AI Runs Your Business',
   sub_title: '',
   description:
     'A complete AI-powered workflow that understands, decides, acts, and orchestrates business operations seamlessly.',
@@ -320,7 +340,7 @@ const footerCommonCTAData = {
   display_options: ['main_title', 'description'],
   main_title: 'Agentic AI That Actually Works.',
   description:
-    '<span style="color: #ffffff;">Agentic AI is not chatbots or copilots. It’s an operating model where AI doesn’t just assist, it acts. It understands the work, makes the decision, and executes the task across your existing systems. It doesn’t stop at an insight, it completes the job.<br/><br/><strong><b>This is the shift from “How can AI help?” to “Let AI do it.”</b></strong></span>',
+    'Agentic AI is not chatbots or copilots. It’s an operating model where AI doesn’t just assist, it acts. It understands the work, makes the decision, and executes the task across your existing systems. It doesn’t stop at an insight, it completes the job.<br/><br/><strong><b>This is the shift from “How can AI help?” to “Let AI do it.”</b></strong>',
   cta_button: {
     title: 'Explore Agentic AI Workflows',
     url: 'https://qbdevweb.unitdtechnologies.com/services/agentic-ai-workflows',
@@ -638,7 +658,7 @@ const contentHighlightData = {
 };
 
 const commonPostPagesSliderData = {
-  main_title: '<span style="font-size: 50px;">News Room</span>',
+  main_title: '<span style="font-size: 50px;">NewsRoom</span>',
 
   common_description: `
     <p>
@@ -861,7 +881,7 @@ const imageKeyPointsData1 = {
   },
 };
 const awardsSectionData = {
-  main_title: '<span style="font-size: 50px;">Awards and Recognitions</span>',
+  main_title: '<span style="font-size: 40px; font-weight: bold; ">Awards and Recognitions</span>',
 
   award_and_certificate_list: [
     {
@@ -1022,27 +1042,36 @@ const homePartners = [
 export default function NewHomeStaticPage() {
   return (
     <DivTag className="home-page new-home-static">
-      <NewHomeHeroBanner data={bannerData} />
-         <SectionFour data={sectionFiveData} />
+      {/* <NewHomeHeroBanner data={bannerData} /> */}
+      <HeroSection />
+      {/* <HeroSection data={bannerData}/>        */}
+        {/* <SectionFour data={sectionFiveData} /> */}
+         <SectionModern data={sectionFiveData} />
       {/* <ClientLogoSection data={clientLogoData} /> */}
       <FooterCommonCTA data={footerCommonCTAData} />
-      <WhyAIFailsPanel data={stepCardsData} />
-       <FooterCommonCTAEmbossed data={footerCommonCTA2Data} />
+      {/* <WhyAIFailsPanel data={stepCardsData} /> */}
+      <WhyAIFailsModern data={stepCardsData} />  
+           <FooterCommonCTAEmbossed data={footerCommonCTA2Data} />
          <TimelineSections data={sectionThreeData} />
       <SectionFour data={sectionFourData} />
       <AwardsSection data={awardsSectionData} />
-      <CommonPostPagesSlider data={commonPostPagesSliderData} />
-      <ImageKeyPointsModern data={imageKeyPointsData1} />
-      <ContentHighlight data={contentHighlightData} />
-      <ImageKeyPointsModern2 data={imageKeyPointsData} />
+      {/* <CommonPostPagesSlider data={commonPostPagesSliderData} /> */}
+      <CommonPostPagesSliderModern data={commonPostPagesSliderData} />
+      {/* <ImageKeyPointsModern data={imageKeyPointsData1} /> */}
+      <ImageKeyPointsNewModern data={imageKeyPointsData1} />
+      {/* <ContentHighlight data={contentHighlightData} /> */}
+      <ContentHighlightModern data={contentHighlightData} />
+      {/* <ImageKeyPointsModern2 data={imageKeyPointsData} /> */}
+      <ImageKeyPointsNewModern2 data={imageKeyPointsData} />
       <WhyEnterprisesChoose data={whyChooseData} />
     <HealthcareAutomationModern data={healthcareAutomationSolutionsData} />
+      <BackToTopButton />
      <SectionTag className="home-partners-section" id="home-partners">
         <DivTag className="container">
           <DivTag className="sub-section">
             <DivTag className="home-partners-card">
               <DivTag className="section-head">
-                <H2Tag>Partners</H2Tag>
+                <H2Tag><strong>Partners</strong></H2Tag>
               </DivTag>
 
               <DivTag className="partner-logo-grid" role="list">
@@ -1086,8 +1115,9 @@ export default function NewHomeStaticPage() {
         </DivTag>
       </SectionTag>
      <GeneralCTASection data={generalCTASectionData} />
+     {/* <GeneralCTASectionModern data={generalCTASectionData} /> */}
       <ClientLogoSection data={clientLogoData} />
-
+{/* <ClientLogoSectionModern data={clientLogoData} /> */}
     </DivTag>
   );
 }

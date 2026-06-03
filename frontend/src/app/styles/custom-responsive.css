@@ -159,6 +159,14 @@
         margin: 0.69vw 0 0;
     }
 
+}
+
+/* Remove dashed side borders for the new-home-static page specifically */
+.home-page.new-home-static .container {
+    border-left: none !important;
+    border-right: none !important;
+}
+
     .our-award-itmes {
         padding: 1.6vw 0;
     }
@@ -640,7 +648,6 @@
     }
 
     /**768**/
-}
 
 @media (min-width: 992px) {}
 

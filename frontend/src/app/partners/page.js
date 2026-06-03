@@ -38,7 +38,7 @@ const partnerPanelSliderData = {
     },
     {
       key: 'atolio',
-      logo: { url: '/assets/images/atoliooo.png', alt: 'Atolio' },
+      logo: { url: '/assets/images/atolioo.png', alt: 'Atolio' },
       title: 'ATOLIO DATA INTELLIGENCE',
       description:
         'Enable agents with trusted enterprise knowledge and governance by connecting content, search, and data intelligence across your systems.',
