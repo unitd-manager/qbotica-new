@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Script from 'next/script';
-import { Inter, Chivo_Mono, Geist, Roboto } from 'next/font/google';
+import { Inter, Roboto } from 'next/font/google';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './styles/default.css';
 import './styles/style.css';
@@ -18,20 +18,6 @@ const inter = Inter({
   variable: '--font-inter',
   display: 'swap'
 })
-
-const chivoMono = Chivo_Mono({
-  subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  variable: '--font-chivo-mono',
-  display: 'swap'
-})
-
-const geistSans = Geist({
-  subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  variable: '--font-geist-sans',
-  display: 'swap'
-});
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -95,16 +81,16 @@ export default async function RootLayout({ children }) {
   const headerStyle = { backgroundColor: '#ffffff' };
 
   return (
-    <html lang="en" className={`${inter.variable} ${chivoMono.variable} ${geistSans.variable} ${roboto.variable}`}>
+    <html lang="en" className={`${inter.variable} ${roboto.variable}`}>
       <head>
         {/* Google Analytics GA4 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-QTNWWK8EFF"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
         <Script
           id="google-analytics"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
