@@ -807,7 +807,59 @@ function RelatedCaseStudySection({ section }) {
     </DivTag>
   );
 }
+// Overview Section Component
+function OverviewSection({ section }) {
+  const { isMobile } = useResponsive();
 
+  return (
+    <DivTag
+      style={{
+        backgroundColor: '#fff',
+        padding: isMobile ? '40px 20px' : '60px 40px',
+      }}
+    >
+      <DivTag
+        style={{
+          maxWidth: '1200px',
+          margin: '0 auto',
+        }}
+      >
+        {section.title && (
+          <DivTag style={{ marginBottom: '50px' }}>
+            <H2Tag
+              style={{
+                fontSize: isMobile ? '24px' : '32px',
+                fontWeight: 'bold',
+                color: '#000',
+                marginBottom: '20px',
+              }}
+            >
+              🟪 {section.title}
+            </H2Tag>
+
+            {section.description &&
+  section.description
+    .split(/\r?\n\r?\n/)
+    .map((paragraph, index) => (
+      <PTag
+        key={index}
+        style={{
+          fontSize: '16px',
+          color: '#555',
+          lineHeight: '1.8',
+          maxWidth: '1100px',
+          marginBottom: '12px',
+        }}
+      >
+        {paragraph}
+      </PTag>
+    ))}
+          </DivTag>
+        )}
+      </DivTag>
+    </DivTag>
+  );
+}
 // CTA Section Component
 function CTASection({ section }) {
   const { isMobile } = useResponsive();
@@ -924,7 +976,10 @@ export default function CaseStudySectionRenderer({ section }) {
   if (acf_fc_layout === 'rekated_case_study' || acf_fc_layout === 'related_case_study') {
     return <RelatedCaseStudySection section={section} />;
   }
-
+  // Render overview section
+  if (acf_fc_layout === 'overview') {
+  return <OverviewSection section={section} />;
+  }
   // Render CTA section
   if (acf_fc_layout === 'cta') {
     return <CTASection section={section} />;
