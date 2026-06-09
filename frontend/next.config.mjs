@@ -24,11 +24,6 @@ const nextConfig = {
       hostname: 'qbwpadmin.unitdtechnologies.com',
       port: '', // leave empty for default ports syed
       pathname: '/**',
-    },
-    {
-      protocol: 'https',
-      hostname: 'qbdevweb.unitdtechnologies.com',
-      pathname: '/**',
     }
     ,
     {
@@ -112,6 +107,41 @@ const nextConfig = {
 
   // Power off x-powered-by header
   poweredByHeader: false,
+
+  // Webpack optimizations
+  webpack: (config, { isServer }) => {
+    // Ensure optimization and splitChunks objects exist before mutating
+    config.optimization = config.optimization || {};
+    config.optimization.splitChunks = config.optimization.splitChunks || {};
+    config.optimization.splitChunks.cacheGroups = {
+      ...(config.optimization.splitChunks.cacheGroups || {}),
+      // Separate vendor chunks
+      bootstrap: {
+        test: /[\\/]node_modules[\\/](bootstrap|react-bootstrap)[\\/]/,
+        name: 'bootstrap',
+        priority: 10,
+        reuseExistingChunk: true,
+      },
+      slick: {
+        test: /[\\/]node_modules[\\/](slick-carousel|react-slick)[\\/]/,
+        name: 'slick',
+        priority: 10,
+        reuseExistingChunk: true,
+      },
+      antd: {
+        test: /[\\/]node_modules[\\/]antd[\\/]/,
+        name: 'antd',
+        priority: 10,
+        reuseExistingChunk: true,
+      },
+      common: {
+        minChunks: 2,
+        priority: 5,
+        reuseExistingChunk: true,
+      },
+    };
+    return config;
+  },
 };
 
 export default nextConfig;

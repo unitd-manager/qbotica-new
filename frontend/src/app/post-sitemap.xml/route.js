@@ -6,9 +6,25 @@ export async function GET() {
   return fetchSitemapFromWordPress('post-sitemap.xml');
 }
 
+function removeTrailingSlashFromLocUrls(xml) {
+  return xml.replace(/<loc>([^<]+)<\/loc>/g, (match, loc) => {
+    try {
+      const url = new URL(loc);
+      if (url.pathname !== '/' && url.pathname.endsWith('/')) {
+        url.pathname = url.pathname.replace(/\/+$/, '');
+      }
+      return `<loc>${url.href}</loc>`;
+    } catch {
+      return match;
+    }
+  });
+}
+
 async function fetchSitemapFromWordPress(sitemapFile) {
+  const wpBase = (process.env.NEXT_PUBLIC_WP_URL || '').replace(/\/+$/, '');
+  const siteBase = (process.env.NEXT_PUBLIC_SITE_BASE_URL || '').replace(/\/+$/, '');
   try {
-    const wpUrl = `${process.env.NEXT_PUBLIC_WP_URL}/${sitemapFile}`;
+    const wpUrl = `${wpBase}/${sitemapFile}`;
     console.log(`[${sitemapFile}] Fetching from: ${wpUrl}`);
 
     const controller = new AbortController();
@@ -28,7 +44,7 @@ async function fetchSitemapFromWordPress(sitemapFile) {
     if (!response.ok) {
       console.warn(`[${sitemapFile}] WordPress returned ${response.status}`);
       return new Response(
-        `<?xml version="1.0" encoding="UTF-8"?><sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><sitemap><loc>${process.env.NEXT_PUBLIC_SITE_BASE_URL}/sitemap.xml</loc></sitemap></sitemapindex>`,
+        `<?xml version="1.0" encoding="UTF-8"?><sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><sitemap><loc>${siteBase}/sitemap.xml</loc></sitemap></sitemapindex>`,
         {
           status: response.status,
           headers: { "Content-Type": "application/xml; charset=utf-8" },
@@ -39,16 +55,16 @@ async function fetchSitemapFromWordPress(sitemapFile) {
     let xml = await response.text();
 
     // Rewrite backend URLs → frontend URLs
-    xml = xml.replaceAll(
-      process.env.NEXT_PUBLIC_WP_URL,
-      process.env.NEXT_PUBLIC_SITE_BASE_URL
-    );
+    xml = xml.replaceAll(`${wpBase}/`, `${siteBase}/`);
+    xml = xml.replaceAll(wpBase, siteBase);
 
     // Rewrite stylesheet reference to use local relative path
     xml = xml.replace(
       /href="\/\/[^"]+\/main-sitemap\.xsl"/,
       'href="/sitemap-template.xsl"'
     );
+
+    xml = removeTrailingSlashFromLocUrls(xml);
 
     console.log(`[${sitemapFile}] Successfully serving (${xml.length} bytes)`);
 
@@ -64,7 +80,7 @@ async function fetchSitemapFromWordPress(sitemapFile) {
     
     // Return a fallback sitemap index on error
     return new Response(
-      `<?xml version="1.0" encoding="UTF-8"?><sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><sitemap><loc>${process.env.NEXT_PUBLIC_SITE_BASE_URL}/sitemap.xml</loc></sitemap></sitemapindex>`,
+      `<?xml version="1.0" encoding="UTF-8"?><sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><sitemap><loc>${siteBase}/sitemap.xml</loc></sitemap></sitemapindex>`,
       {
         status: 503,
         headers: { 

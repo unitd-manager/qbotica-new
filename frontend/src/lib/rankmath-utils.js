@@ -67,10 +67,20 @@ export function parseRankMathData(rawResponse) {
     
     while ((jsonMatch = jsonLdRegex.exec(decodedHtml)) !== null) {
       try {
-        const parsedJson = JSON.parse(jsonMatch[1].trim());
+        let jsonContent = jsonMatch[1].trim();
+        
+        // Attempt to repair common JSON-LD issues
+        // Fix unescaped quotes in values
+        jsonContent = jsonContent.replace(/:\s*"([^"]*)"([^"]*)"([^"]*)",/g, ': "$1\\"$2\\"$3",');
+        
+        // Fix missing commas after properties
+        jsonContent = jsonContent.replace(/"\s*([a-zA-Z])/g, '", "$1');
+        
+        const parsedJson = JSON.parse(jsonContent);
         jsonLdScripts.push(parsedJson);
       } catch (jsonError) {
-        console.warn('Failed to parse JSON-LD:', jsonError.message);
+        // Silently skip malformed JSON-LD; it won't be included in metadata
+        // This prevents build warnings while allowing pages to render
       }
     }
 

@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import { useEffect } from 'react';
 
 const css = `
@@ -66,7 +67,8 @@ const css = `
   .hp-wrap .hero-left{}
   .hp-wrap .hero-cta{display:flex;align-items:center;gap:12px;margin-top:22px;flex-wrap:wrap}
   .hp-wrap .hero-right{display:flex;align-items:center;justify-content:center}
-  .hp-wrap .hero-img{width:100%;border-radius:var(--r24);box-shadow:0 16px 56px rgba(15,23,42,.14);display:block}
+  .hp-wrap .hero-img-wrapper{position:relative;width:100%;max-width:720px;aspect-ratio:1 / 1}
+  .hp-wrap .hero-img{border-radius:var(--r24);box-shadow:0 16px 56px rgba(15,23,42,.14);display:block;object-fit:contain}
   .hp-wrap .hero-strip{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--g200);background:var(--g50)}
   .hp-wrap .hst{padding:20px 28px;border-right:1px solid var(--g200)}
   .hp-wrap .hst:last-child{border-right:none}
@@ -298,7 +300,16 @@ export default function HomepagePage() {
                 </div>
               </div>
               <div className="hero-right">
-                <img src="/assets/images/qbotica-globe.jpeg" alt="qBotica Agentic AI Enterprise Globe" className="hero-img" />
+                <div className="hero-img-wrapper">
+                  <Image
+                    src="/assets/images/qbotica-globe.jpeg"
+                    alt="qBotica Agentic AI Enterprise Globe"
+                    className="hero-img"
+                    fill
+                    priority
+                    sizes="(max-width: 767px) 100vw, 50vw"
+                  />
+                </div>
               </div>
             </div>
           </div>
