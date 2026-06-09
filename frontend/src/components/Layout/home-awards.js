@@ -1,75 +1,90 @@
 'use client';
 
-import { useRef, useEffect } from 'react';
+import { useEffect, useRef } from 'react';
+import { DivTag, H2Tag, SectionTag } from '../Common/HTMLTags';
 import Image from 'next/image';
-import styles from './awards-section.module.css';
 
 export default function AwardsSection({ data }) {
-  const trackRef = useRef(null);
+  const awardSectionRef = useRef(null);
+  const awardListRef = useRef(null);
+  useEffect(() => {
+    const awardSection = awardSectionRef.current;
+    const awardList = awardListRef.current;
 
-  const items     = data?.award_and_certificate_list || [];
-  const mainTitle = data?.main_title || 'Trust & Proof';
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.target === awardSection && awardList) {
+            if (entry.isIntersecting) {
+              awardList.classList.add('animate-award');
+            } else {
+              awardList.classList.remove('animate-award');
+            }
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
 
-  // Duplicate list so the seamless loop always has enough items
-  const loopItems = items.length > 0 ? [...items, ...items, ...items] : [];
+    if (awardSection) observer.observe(awardSection);
+    return () => {
+      if (awardSection) observer.unobserve(awardSection);
+    };
+  }, []);
 
-  // Pause on hover/focus
-  const pause  = () => trackRef.current?.style.setProperty('animation-play-state', 'paused');
-  const resume = () => trackRef.current?.style.setProperty('animation-play-state', 'running');
+  const award_cert_list = data?.award_and_certificate_list || [];
+  const main_title = data?.main_title;
+  const padding = data?.padding;
+  let paddingClass = '';
+  if (padding.padding_options && padding.padding_options === true) {
+    const {
+      padding_position = [],
+      desktop_padding = {},
+      mobile_padding = {}
+    } = padding;
 
+    if (padding_position.includes('top')) {
+      if (desktop_padding?.padding_top_desktop)
+        paddingClass += ` padding-top-desktop-${desktop_padding.padding_top_desktop}px`;
+      if (mobile_padding?.padding_top_mobile)
+        paddingClass += ` padding-top-mobile-${mobile_padding.padding_top_mobile}px`;
+    }
+
+    if (padding_position.includes('bottom')) {
+      if (desktop_padding?.padding_bottom_desktop)
+        paddingClass += ` padding-bottom-desktop-${desktop_padding.padding_bottom_desktop}px`;
+      if (mobile_padding?.padding_bottom_mobile)
+        paddingClass += ` padding-bottom-mobile-${mobile_padding.padding_bottom_mobile}px`;
+    }
+  }
   return (
-    <section className={styles.section}>
-      {/* Ambient orbs */}
-      <span className={styles.orbLeft}  aria-hidden="true" />
-      <span className={styles.orbRight} aria-hidden="true" />
-
-      {/* Heading */}
-      <div className={styles.titleWrap}>
-        
-        <h2
-          className={styles.heading}
-          dangerouslySetInnerHTML={{ __html: mainTitle }}
-        />
-        <div className={styles.headingUnderline} aria-hidden="true" />
-      </div>
-
-      {/* Scrolling strip */}
-      <div
-        className={styles.marqueeWrap}
-        onMouseEnter={pause}
-        onMouseLeave={resume}
-        onFocusCapture={pause}
-        onBlurCapture={resume}
-        aria-label="Client logos"
-      >
-        {/* Left / right edge fade masks */}
-        <span className={styles.fadeLeft}  aria-hidden="true" />
-        <span className={styles.fadeRight} aria-hidden="true" />
-
-        <ul
-          ref={trackRef}
-          className={styles.track}
-          role="list"
-          aria-label="Scrolling list of client logos"
-        >
-          {loopItems.map((item, i) => (
-            <li key={i} className={styles.logoCard} aria-hidden={i >= items.length}>
-              <div className={styles.logoInner}>
-                <Image
-                  src={item.image?.url || ''}
-                  alt={i < items.length ? (item.title || 'Client logo') : ''}
-                  fill
-                  sizes="160px"
-                  style={{ objectFit: 'contain' }}
-                  draggable={false}
-                />
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      
-    </section>
+    <>
+      <SectionTag className='our-award-info' ref={awardSectionRef}>
+        <DivTag className="container our-award-info-data">
+          <DivTag className={`sub-section ${paddingClass}`} >
+            <DivTag className="row">
+              <DivTag className="award-top-title">
+                {main_title && (
+                  <H2Tag
+                    dangerouslySetInnerHTML={{ __html: main_title }}
+                  />
+                )}
+              </DivTag>
+              <DivTag className="our-award-list" ref={awardListRef}>
+                {award_cert_list.length > 0 &&
+                  award_cert_list.map((item, index) => (
+                    <DivTag className="our-award-itmes" key={index}>
+                      <DivTag className="img-div">
+                        <Image src={item.image?.url || ''} alt={item.title || 'award'} fill />
+                      </DivTag>
+                    </DivTag>
+                  ))
+                }
+              </DivTag>
+            </DivTag>
+          </DivTag>
+        </DivTag>
+      </SectionTag>
+    </>
   );
 }

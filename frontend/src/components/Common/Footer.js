@@ -1,30 +1,51 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from 'next/navigation';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquareFacebook, faXTwitter, faLinkedinIn, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { DivTag, H5Tag, LITag, PTag, ULTag } from "./HTMLTags";
 
-export default function Footer({ themeSettings, footerMenus }) {
+export default function Footer({ themeSettings = {}, footerMenus = {} }) {
+  const pathname = usePathname();
+  const isNewHomeStatic = pathname === '/new-home-static' || pathname === '/new-home-static/';
+  const {
+    copyright_text,
+    social_link_1,
+    social_link_2,
+    social_link_3,
+    social_link_4,
+  } = themeSettings;
 
-  const renderMenu = (menuItems, title) => (
-    <DivTag className="col mb-4 mb-md-0">
-      <H5Tag className="text-uppercase">{title}</H5Tag>
-      <ULTag className="list-unstyled mb-0">
-        {menuItems?.map((item) => (
-          <LITag key={item.id}>
-            <Link href={item.url}>
-              {item.title}
-            </Link>
-          </LITag>
-        ))}
-      </ULTag>
-    </DivTag>
-  );
+  const copyrightText = copyright_text || `© ${new Date().getFullYear()} qBotica. All rights reserved.`;
+
+  const renderMenu = (menuItems, title) => {
+    const listItems = Array.isArray(menuItems) && menuItems.length ? menuItems : [];
+
+    return (
+      <DivTag className="col mb-4 mb-md-0">
+        <H5Tag className="text-uppercase">{title}</H5Tag>
+        <ULTag className="list-unstyled mb-0">
+          {listItems.map((item) => (
+            <LITag key={item.id || item.url || item.title}>
+              <Link href={item.url || '/'}>
+                {item.title || 'Home'}
+              </Link>
+            </LITag>
+          ))}
+          {!listItems.length && (
+            <LITag>
+              <Link href="/">Home</Link>
+            </LITag>
+          )}
+        </ULTag>
+      </DivTag>
+    );
+  };
 
   return (
-    <footer className="bottom-footer">
-      <DivTag className="container bottom-dashed">
+    <footer className="bottom-footer" style={isNewHomeStatic ? { background: 'linear-gradient(90deg, #020615 0%, #041428 35%, #071b3a 100%)', color: '#fff', borderTop: 'none' } : undefined}>
+      <DivTag className="container bottom-dashed" style={isNewHomeStatic ? { borderBottom: 'none' } : undefined}>
         <DivTag className="menu-row row gx-2 gx-lg-5 gy-4">
           {renderMenu(footerMenus.first, 'Solutions')}
           {renderMenu(footerMenus.second, 'Services')}
@@ -32,12 +53,10 @@ export default function Footer({ themeSettings, footerMenus }) {
           {renderMenu(footerMenus.fourth, 'Resources')}
         </DivTag>
       </DivTag>
-      <DivTag className="container bottom-text">
+      <DivTag className="container bottom-text" style={isNewHomeStatic ? { color: '#fff' } : undefined}>
         <DivTag className="row social-row">
           <DivTag className="col-md-6 col-sm-6 copright-col">
-            {themeSettings.copyright_text && (
-              <PTag className="copyright-text"> {themeSettings.copyright_text}</PTag>
-            )}
+            <PTag className="copyright-text">{copyrightText}</PTag>
           </DivTag>
           <DivTag className="col-md-6 col-sm-6 social-media-col">
             <ULTag className="social-ul">

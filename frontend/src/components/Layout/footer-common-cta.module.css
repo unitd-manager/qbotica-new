@@ -5,7 +5,7 @@
   overflow: hidden;
 
   padding: 48px 0 64px;
-background: linear-gradient(180deg, #D2D2FF 0%, #D2D2FF 100%);
+background: linear-gradient(180deg, #3c4896 0%, #3c4896 100%);
 
   color: #0f172a;
 }
@@ -85,11 +85,11 @@ background: linear-gradient(180deg, #D2D2FF 0%, #D2D2FF 100%);
 
   max-width: 860px;
 
-  font-size: 17px;
+  font-size: 18px;
 
   line-height: 1.8;
 
- color: #0f172a;
+ color: #374151; /* dark grey */
 }
 /* BUTTON ROW */
 
@@ -178,7 +178,7 @@ background: linear-gradient(180deg, #D2D2FF 0%, #D2D2FF 100%);
   }
 
   .description {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 

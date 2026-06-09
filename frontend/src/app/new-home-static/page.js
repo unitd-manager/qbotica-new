@@ -14,7 +14,7 @@ import ImageKeyPointsModern2 from '@/components/Layout/image-keypoints-modern-2'
 import WhyEnterprisesChoose from '@/components/Layout/why-enterprises-choose-qbotica';
 import ContentLayout from '@/components/Layout/content-layout';
 import CommonPostPagesSlider from '@/components/Layout/common-posts-slider';
-import AwardsSection from '@/components/Layout/home-awards';
+import SafeAwardsWrapper from '@/components/Layout/safe-awards-wrapper';
 import HealthcareAutomationModern from '@/components/Layout/healthcare-automation-modern';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -29,19 +29,24 @@ import ImageKeyPointsNewModern2 from '@/components/Layout/image-keypoints-new-mo
 import GeneralCTASectionModern from '@/components/Layout/general-cta-section-modern';
 import SectionModern from '@/components/Layout/section-modern';
 import ContentHighlightModern from '@/components/Layout/content-highlight-modern-block';
-import BackToTopButton from '@/components/Common/BackToTopButton';
-
+import QuoteBlock from '@/components/Common/QuoteBlock';
+import styles from './../../components/Common/home-new.module.css'; // Ensure this matches your project's directory structure
 
 
 //export const dynamic = 'force-static';
 export const revalidate = false;
- import dynamic from 'next/dynamic';
 
 // Completely bypasses the server-side caching mismatch by forcing client runtime
-const HeroSection = dynamic(() => import('@/components/Layout/HeroSection'), {
- 
-  loading: () => <div style={{ backgroundColor: "#030712", minHeight: "100vh" }} />
-});
+import HeroSectionWrapper from '@/components/Layout/HeroSectionWrapper';
+import PartnersSection from '@/components/Layout/PartnersSection';
+import QboticaApproach from '@/components/Layout/QboticaApproach';
+import OperationalExecution from '@/components/Layout/OperationalExecution';
+import ClientHighlights from '@/components/Layout/ClientHighlights';
+import EnterpriseTrust from '@/components/Layout/EnterpriseTrust';
+import AwardsRecognition from '@/components/Layout/AwardsRecognition';
+import LatestFromQbotica from '@/components/Layout/LatestFromQbotica';
+import ReadyToRunWorkDifferently from '@/components/Layout/ReadyToRunWorkDifferently';
+import FinalCTASection from '@/components/Layout/FinalCTASection';
 
 export const metadata = {
   title: 'New Home',
@@ -94,7 +99,7 @@ const bannerData = {
 };
 
 const stepCardsData = {
-  main_title: 'Why Most AI <span>Fails at Operations</span>?',
+  main_title: 'Why Most AI <span>Fails at Operations</span>',
   subtitle: "It’s not the model. It’s how it works in the real world.",
   show_numbers: false,
   description: '',
@@ -339,6 +344,7 @@ const sectionFiveData = {
 const footerCommonCTAData = {
   display_options: ['main_title', 'description'],
   main_title: 'Agentic AI That Actually Works.',
+  sub_title:'Agentic AI is not chatbots or copilots.',
   description:
     'Agentic AI is not chatbots or copilots. It’s an operating model where AI doesn’t just assist, it acts. It understands the work, makes the decision, and executes the task across your existing systems. It doesn’t stop at an insight, it completes the job.<br/><br/><strong><b>This is the shift from “How can AI help?” to “Let AI do it.”</b></strong>',
   cta_button: {
@@ -658,7 +664,7 @@ const contentHighlightData = {
 };
 
 const commonPostPagesSliderData = {
-  main_title: '<span style="font-size: 50px;">NewsRoom</span>',
+  main_title: '<span style="font-size: 50px;">Latest from qBotica</span>',
 
   common_description: `
     <p>
@@ -881,70 +887,79 @@ const imageKeyPointsData1 = {
   },
 };
 const awardsSectionData = {
-  main_title: '<span style="font-size: 40px; font-weight: bold; ">Awards and Recognitions</span>',
+  main_title: '<span style="font-size: 44px; font-weight: 700; ">Awards and Recognitions</span>',
 
   award_and_certificate_list: [
     {
       image: {
         url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2025/07/Intelligent-Document-Processing-IDP-2022-PEAK-Matrix-Award-Logo-Star-Performer-2-300x126-1.webp',
       },
-      title: 'Award 1',
+ 
     },
-
-    {
-      image: {
-        url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2025/08/uipath-partner-diamond-lockup-digital-rgb-ob.webp',
-      },
-      title: 'Award 2',
-    },
-    {
-      image: {
-        url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2026/05/logo-smallbusiness.webp',
-      },
-      title: 'Award 3',
-    },
-
-    {
-      image: {
-        url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2025/07/certification-exam.svg',
-      },
-      title: 'Award 4',
-    },
-
-    {
-      image: {
-        url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2025/09/aws-1-1.webp',
-      },
-      title: 'Award 5',
-    },
-
-    {
-      image: {
-        url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2025/07/21972-312-soc-noncpa-300x298-1.webp',
-      },
-      title: 'Award 6',
-    },
-
-    {
+     {
       image: {
         url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2025/07/Picture-1-300x69-1.webp',
       },
-      title: 'Award 7',
+   
     },
-
     {
       image: {
-        url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2025/12/Deloitte-500-badge.png',
+        url: '/assets/images/maxcont.png',
       },
-      title: 'Award 8',
     },
-
-    {
+     {
       image: {
         url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2025/12/PBJ-FGC.png',
       },
-      title: 'Award 9',
-    }
+    },
+
+    
+  
+     {
+      image: {
+        url: '/assets/images/uifast.png',
+      },
+    },
+    {
+      image: {
+        url: '/assets/images/exam.webp',
+      },
+    },
+     {
+      image: {
+        url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2026/05/logo-smallbusiness.webp',
+      },
+    },
+     {
+      image: {
+        url: '/assets/images/dbe.png',
+       },
+    },
+
+    {
+      image: {
+       url: '/assets/images/sbe.png',
+       },
+    },
+
+    {
+      image: {
+        url: '/assets/images/inc5.png', },
+   
+    },
+      {
+      image: {
+       url: '/assets/images/soc.png',
+       },
+    
+    },
+    {
+      image: {
+       url: '/assets/images/deloite.jpg',
+       },
+    
+    },
+   
   ],
 
   padding: {
@@ -1021,103 +1036,81 @@ const healthcareAutomationSolutionsData = {
 };
 
 const homePartners = [
-  {
-    image: { url: '/assets/images/microsoft.png', alt: 'Microsoft' },
-    description: 'Microsoft ecosystem integration',
-  },
-  {
+    {
     image: { url: '/assets/images/atolioo.png', alt: 'Atolio' },
     description: 'Atolio data intelligence and governance',
+  },
+  {
+    image: { url: '/assets/images/uipath.webp', alt: 'UiPath' },
+    description: 'UiPath automation and orchestration',
   },
   {
     image: { url: '/assets/images/aws-1-1.webp', alt: 'AWS' },
     description: 'AWS cloud infrastructure',
   },
   {
-    image: { url: '/assets/images/uipath.webp', alt: 'UiPath' },
-    description: 'UiPath automation and orchestration',
+    image: { url: '/assets/images/microsoft.png', alt: 'Microsoft' },
+    description: 'Microsoft ecosystem integration',
   },
+
+  {
+    image: { url: '/assets/images/anthrotext.png', alt: 'Anthro' },
+    description: 'Anthro AI-powered automation',
+  },
+  // {
+  //   image: { url: '/assets/images/opai.png', alt: 'Anthro' },
+  //   description: 'Anthro AI-powered automation',
+  // },
 ];
 
 export default function NewHomeStaticPage() {
   return (
-    <DivTag className="home-page new-home-static">
+    <DivTag className={`${styles.pageBg} home-page new-home-static`} style={{ backgroundColor: '#F7F4EE' }}>
       {/* <NewHomeHeroBanner data={bannerData} /> */}
-      <HeroSection />
-      {/* <HeroSection data={bannerData}/>        */}
-        {/* <SectionFour data={sectionFiveData} /> */}
-         <SectionModern data={sectionFiveData} />
-      {/* <ClientLogoSection data={clientLogoData} /> */}
-      <FooterCommonCTA data={footerCommonCTAData} />
-      {/* <WhyAIFailsPanel data={stepCardsData} /> */}
+      <DivTag className={styles.noPageBg}>
+        <HeroSectionWrapper />
+      </DivTag>
+     
+      <DivTag className="gradient-band">
+         <div className={styles.local}>
+      <PartnersSection partners={homePartners} />
+      <QboticaApproach  />
+     
+      <OperationalExecution />
+      <ClientHighlights />
+      <EnterpriseTrust data={clientLogoData} />
+      <AwardsRecognition data={awardsSectionData} />
+      <LatestFromQbotica />
+     
+      <FinalCTASection />
+
+   
+ </div>
+ {/* <SectionFour data={sectionFourData} /> */}
+ 
+{/*     
+     <GeneralCTASection data={generalCTASectionData} /> */}
+  {/* <TimelineSections data={sectionThreeData} /> */}
+  {/* <FooterCommonCTAEmbossed data={footerCommonCTA2Data} />
+  <FooterCommonCTA data={footerCommonCTAData} /> */}
+      {/* <FooterCommonCTA data={footerCommonCTAData} />
       <WhyAIFailsModern data={stepCardsData} />  
-           <FooterCommonCTAEmbossed data={footerCommonCTA2Data} />
+          
+          
          <TimelineSections data={sectionThreeData} />
       <SectionFour data={sectionFourData} />
-      <AwardsSection data={awardsSectionData} />
+      <SafeAwardsWrapper data={awardsSectionData} />
       {/* <CommonPostPagesSlider data={commonPostPagesSliderData} /> */}
-      <CommonPostPagesSliderModern data={commonPostPagesSliderData} />
-      {/* <ImageKeyPointsModern data={imageKeyPointsData1} /> */}
-      <ImageKeyPointsNewModern data={imageKeyPointsData1} />
-      {/* <ContentHighlight data={contentHighlightData} /> */}
-      <ContentHighlightModern data={contentHighlightData} />
-      {/* <ImageKeyPointsModern2 data={imageKeyPointsData} /> */}
-      <ImageKeyPointsNewModern2 data={imageKeyPointsData} />
-      <WhyEnterprisesChoose data={whyChooseData} />
-    <HealthcareAutomationModern data={healthcareAutomationSolutionsData} />
-      <BackToTopButton />
-     <SectionTag className="home-partners-section" id="home-partners">
-        <DivTag className="container">
-          <DivTag className="sub-section">
-            <DivTag className="home-partners-card">
-              <DivTag className="section-head">
-                <H2Tag><strong>Partners</strong></H2Tag>
-              </DivTag>
-
-              <DivTag className="partner-logo-grid" role="list">
-                {homePartners.map((partner, index) => {
-                  const tooltipId = `partner-tip-${index}`;
-                  return (
-                    <DivTag
-                      key={partner.image?.url || index}
-                      className="partner-logo-card"
-                      role="listitem"
-                      tabIndex={0}
-                      aria-label={partner.description || partner.image?.alt || 'Partner'}
-                      aria-describedby={tooltipId}
-                    >
-                      <Image
-                        src={partner.image?.url || '/assets/images/logo-placeholder.webp'}
-                        alt={partner.image?.alt || 'Partner'}
-                        width={220}
-                        height={80}
-                        className="partner-logo-img"
-                      />
-                      <DivTag className="partner-logo-tooltip" id={tooltipId} role="tooltip">
-                        {partner.description || partner.image?.alt || 'Partner'}
-                      </DivTag>
-                    </DivTag>
-                  );
-                })}
-              </DivTag>
-
-              <DivTag className="home-partners-cta">
-                <Link
-                  href="https://qbdevweb.unitdtechnologies.com/partners"
-                  className="btn primary-btn"
-                  target="_self"
-                >
-                  View More <ArrowRight className="right-arrow-icon" />
-                </Link>
-              </DivTag>
-            </DivTag>
-          </DivTag>
-        </DivTag>
-      </SectionTag>
+      {/* <CommonPostPagesSliderModern data={commonPostPagesSliderData} />
+     
+      
+    
      <GeneralCTASection data={generalCTASectionData} />
      {/* <GeneralCTASectionModern data={generalCTASectionData} /> */}
-      <ClientLogoSection data={clientLogoData} />
+      {/* <ClientLogoSection data={clientLogoData} /> */} 
 {/* <ClientLogoSectionModern data={clientLogoData} /> */}
+ </DivTag>
     </DivTag>
   );
 }
+

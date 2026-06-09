@@ -65,7 +65,7 @@ export default function SectionFour({ data }) {
     }
 
     return (
-      <SectionTag className="home-section-four variant-vision">
+      <SectionTag className="home-section-four variant-vision" style={{ background: '#E3F2FF' }}>
         <DivTag className="container">
           <DivTag className={`sub-section ${paddingClass}`}>
             <DivTag className="vision-card">
@@ -159,7 +159,7 @@ export default function SectionFour({ data }) {
     }
   }
   return (
-    <SectionTag className="home-section-four">
+    <SectionTag className="home-section-four" style={{ background: '#E3F2FF' }}>
       <DivTag className="container">
         <DivTag className={`sub-section ${paddingClass}`} >
           <DivTag className="row">

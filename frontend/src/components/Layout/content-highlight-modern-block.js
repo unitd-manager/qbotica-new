@@ -112,7 +112,7 @@ export default function ContentHighlightModern({ data }) {
 
                 {title && (
                   <H2Tag
-                    className={styles.title}
+                    className={`main-title ${styles.title}`}
                     dangerouslySetInnerHTML={{ __html: title }}
                   />
                 )}
@@ -128,13 +128,10 @@ export default function ContentHighlightModern({ data }) {
                   <Link
                     href={button.url}
                     target={button.target || '_self'}
-                    className={styles.button}
+                    className={styles.cta}
                   >
                     <span>{button.title || 'Explore More'}</span>
 
-                    <DivTag className={styles.iconWrap}>
-                      <ArrowRight />
-                    </DivTag>
                   </Link>
                 )}
               </DivTag>

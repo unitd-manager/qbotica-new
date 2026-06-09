@@ -1,7 +1,7 @@
 .premiumSliderSection {
   position: relative;
   overflow: hidden;
-  background: #f5f7fb;
+  background: #ffffff; /* section background set to white */
   padding: 80px 0;
 }
 
@@ -22,8 +22,8 @@
 
 .sectionDesc {
   font-size: 18px;
-  line-height: 1.45;
-  color: #667085;
+  line-height: 1.6;
+  color: #374151; /* dark grey */
 }
 
 .sliderWrapper :global(.slick-track) {
@@ -161,13 +161,66 @@ margin-bottom: 14px;
 
 .postDesc,
 .postDesc p {
-font-size: 15px;
+  font-size: 18px;
 
-line-height: 1.7;
+  line-height: 1.75;
 
-color: #64748b;
+  color: #374151; /* dark grey */
 
-margin: 0;
+  /* Ensure this section's paragraph text doesn't inherit accent/orange colors */
+  color: #374151 !important;
+
+  margin: 0;
+}
+
+/* Keep read-more CTA aligned and spaced while using global primary-btn styles */
+.readMoreBtnOverride {
+  margin-top: auto;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px; /* match previous sizing */
+  border-radius: 14px;
+}
+
+.readMoreBtnOverride {
+  /* dark background to match request; use higher specificity to override global primary-btn */
+  background: #0f172a !important; /* dark grey/near-black */
+  color: #ffffff !important;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-radius 0.25s ease;
+}
+
+.readMoreBtnOverride:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(2,6,23,0.28);
+  border-radius: 14px; /* keep same edges on hover */
+}
+
+/* Stronger, scoped overrides to beat global .primary-btn hover rules */
+.premiumSliderSection .readMoreBtnOverride,
+.premiumSliderSection .readMoreBtnOverride:link,
+.premiumSliderSection .readMoreBtnOverride:visited {
+  background: #0f172a !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.35) !important;
+  border-radius: 14px !important;
+}
+
+.premiumSliderSection .readMoreBtnOverride:before {
+  display: none !important;
+  content: none !important;
+}
+
+.premiumSliderSection .readMoreBtnOverride:hover,
+.premiumSliderSection .readMoreBtnOverride:focus,
+.premiumSliderSection .readMoreBtnOverride:active {
+  background: #0b1220 !important; /* slightly darker on hover */
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 12px 30px rgba(2,6,23,0.28) !important;
+  border-radius: 14px !important; /* keep same edges on hover */
 }
 
 /* ===========================
@@ -354,12 +407,10 @@ min-height: 130px;
 
 .postDesc,
 .postDesc p {
-font-size: 15px;
-line-height: 1.7;
-
-color: #64748b;
-
-margin: 0;
+  font-size: 18px;
+  line-height: 1.75;
+  color: #374151; /* dark grey */
+  margin: 0;
 }
 
 /* BUTTON */

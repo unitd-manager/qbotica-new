@@ -11,6 +11,7 @@ import './styles/custom-responsive.css';
 import { fetchThemeSettings, fetchMenus, fetchPageBySlug } from '@/lib/wordpress'
 import Header from '@/components/Common/Header'
 import Footer from '@/components/Common/Footer'
+import BackToTopButton from '@/components/Common/BackToTopButton'
 import ClientScripts from '@/components/Common/ClientScripts'
 import 'antd/dist/reset.css';
 
@@ -116,7 +117,7 @@ export default async function RootLayout({ children }) {
         gtag('config', 'G-QTNWWK8EFF');
       `,
     }}
-  />
+  ></script>
         {themeSettings?.site_icon && (
           <>
             <link rel="icon" href={themeSettings.site_icon} />
@@ -125,9 +126,9 @@ export default async function RootLayout({ children }) {
           </>
         )}
         
-        {themeSettings?.header_script && (
+        {/* {themeSettings?.header_script && (
          <ClientScripts headerScript={themeSettings?.header_script} />
-        )}
+        )} */}
       </head>
       <body className="" suppressHydrationWarning>
         <Header
@@ -146,7 +147,7 @@ export default async function RootLayout({ children }) {
             fourth: fourthFooterMenu
           }}
         />
-        
+        <BackToTopButton />
         <ClientScripts footerScript={themeSettings?.footer_script} />
       </body>
     </html>

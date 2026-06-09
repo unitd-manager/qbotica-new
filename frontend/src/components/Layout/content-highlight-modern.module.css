@@ -47,14 +47,17 @@
 }
 
 .title {
-  font-family: 'Syne', sans-serif;
-    font-size: clamp(24px, 2.6vw, 40px);
-  line-height: 1.03;
+   margin: 0 0 18px;
+
+  font-size: clamp(32px, 3.8vw, 54px);
+
+  line-height: 1.08;
+
   font-weight: 800;
-  letter-spacing: -0.02em;
-  color: #0a0a0a;
-  margin-bottom: 28px;
-  margin-bottom: 18px;
+
+  letter-spacing: -0.03em;
+
+  color: #0f172a;
 }
 
 .title span {
@@ -64,9 +67,9 @@
 }
 
 .description {
-  color: rgba(25, 22, 22, 0.72);
-  font-size: 17px;
-  line-height: 1.9;
+  color: #374151; /* dark grey */
+  font-size: 18px;
+  line-height: 1.7;
   font-family: 'Inter', sans-serif;
   max-width: 620px;
 }
@@ -76,27 +79,15 @@
 }
 
 .button {
-  margin-top: 40px;
-  display: inline-flex;
-  align-items: center;
-  gap: 18px;
-  text-decoration: none;
-  padding: 18px 26px;
-  border-radius: 18px;
-  background: linear-gradient(
-    135deg,
-    #e78f0a 0%,
-    #cd6809 100%
-  );
-  color: white;
-  font-weight: 600;
-  font-family: 'Inter', sans-serif;
-  transition: all 0.35s ease;
-  position: relative;
-  overflow: hidden;
-  box-shadow:
-    0 10px 40px rgba(0, 212, 255, 0.2),
-    0 8px 24px rgba(123, 97, 255, 0.25);
+  background-color: #FF7705; /* orange request demo button */
+  color: #ffffff;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  box-shadow: 0 10px 20px -5px rgba(255, 119, 5, 0.25);
 }
 
 .button:hover {
@@ -115,6 +106,51 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* If icon removed, hide the circular wrapper so button doesn't show empty circle */
+.iconWrap {
+  display: none !important;
+}
+
+/* CTA matching ImageKeyPointsNewModern2 */
+.cta {
+  margin-top: 20px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  box-shadow: 0 10px 20px -5px rgba(255, 119, 5, 0.25);
+
+  background: #111827;
+  color: #ffffff;
+
+  text-decoration: none;
+
+  position: relative;
+  z-index: 2;
+  transform: translateY(0);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+
+  /* prevent stretching: keep size to content */
+  width: auto;
+  white-space: nowrap;
+  align-self: flex-start;
+}
+
+.cta:hover {
+  transform: translateY(-3px);
+  background: #1f2937;
 }
 
 .imageCard {
