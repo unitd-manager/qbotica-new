@@ -33,15 +33,9 @@ export default function AwardsRecognition({ data }) {
         <p>{(data && data.description) ? data.description : 'Our work has been acknowledged across analyst reports and industry awards for measurable impact and innovation.'}</p>
       </div>
 
-      <div
-        className={styles.awardsGrid}
-        style={{ display: 'grid', gridTemplateColumns: 'repeat(6, minmax(90px, 1fr))', gap: '0', justifyContent: 'center', alignItems: 'stretch' }}
-      >
+      <div className={styles.awardsGrid}>
         {/* Top row: left 2x2 block occupying columns 1-4 */}
-          <div
-          className={styles.topLeftBlock}
-          style={{ gridColumn: '1 / span 4', gridRow: 1, display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gridTemplateRows: 'repeat(2, 1fr)', gap: '0' }}
-        >
+          <div className={styles.topLeftBlock}>
           {items.slice(0, 4).map((a, i) => (
             <div key={a?.id ?? `top-${i}`} className={`${styles.awardCard} ${styles.topBlockItem}`}>
               {a && a.image && a.image.url ? (
@@ -61,14 +55,6 @@ export default function AwardsRecognition({ data }) {
   <div
     key={a?.id ?? `topright-${i}`}
     className={`${styles.awardCard} ${styles.topRightItem}`}
-    style={{
-      gridColumn: `${5 + i}`,
-      gridRow: 1,
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      alignSelf: 'center'
-    }}
   >
     {a?.image?.url ? (
       <div className={styles.awardBox}>
@@ -83,16 +69,7 @@ export default function AwardsRecognition({ data }) {
   </div>
 ))}
         {/* Bottom row: place items inside a full-width cell and center with flex */}
-        <div
-          style={{
-            gridColumn: '1 / -1',
-            gridRow: 2,
-            display: 'flex',
-            justifyContent: 'center',
-            gap: '0',
-            flexWrap: 'nowrap'
-          }}
-        >
+        <div className={styles.awardsBottomWrapper}>
           {bottomItems.map((a, i) => (
             <div
               key={a?.id ?? `bottom-${i}`}

@@ -8,6 +8,7 @@ import {
 } from '@/lib/page-layout-utils';
 import { generatePageMetadatas, getStructuredData } from '@/lib/rankmath-utils';
 import StructuredData from '@/components/Common/StructuredData';
+import NewHomeStaticPage from './new-home-static/page';
 
 const slug = 'home';
 const parent_path = '';
@@ -70,14 +71,15 @@ export default async function HomePage() {
     return (
       <DivTag className="home-page">
         <StructuredData data={structuredData} />
-        {finalLayouts.map((item) => (
+        {/* {finalLayouts.map((item) => (
           <DynamicComponent
             key={`${item.layout.layout_type}-${item.index}`}
             layout={item.layout}
             data={item.data}
             hasCustomPadding={item.hasCustomPadding}
           />
-        ))}
+        ))} */}
+        <NewHomeStaticPage/>
       </DivTag>
     );
   } catch (error) {

@@ -1,35 +1,5 @@
-import NewHomeHeroBanner from '@/components/Layout/new-home-hero-banner';
-import WhyAIFailsPanel from '@/components/Layout/why-ai-fails-panel';
-import SectionFour from '@/components/Layout/home-section-7';
-import TimelineSections from '@/components/Layout/timeline-sections';
-import FooterCommonCTA from '@/components/Layout/footer-common-cta';
-import FooterCommonCTAEmbossed from '@/components/Layout/footer-common-cta-embossed';
-import ClientLogoSection from '@/components/Layout/home-client-logo-section';
-import { DivTag, H2Tag, SectionTag } from '@/components/Common/HTMLTags';
-import GeneralCTASection from '@/components/Layout/general-cta-section';
-import ContentHighlight from '@/components/Layout/content-highlight-block';
-import ImageWithKeyPoints from '@/components/Layout/image-with-keypoints';
-import ImageKeyPointsModern from '@/components/Layout/image-keypoints-modern';
-import ImageKeyPointsModern2 from '@/components/Layout/image-keypoints-modern-2';
-import WhyEnterprisesChoose from '@/components/Layout/why-enterprises-choose-qbotica';
-import ContentLayout from '@/components/Layout/content-layout';
-import CommonPostPagesSlider from '@/components/Layout/common-posts-slider';
-import SafeAwardsWrapper from '@/components/Layout/safe-awards-wrapper';
-import HealthcareAutomationModern from '@/components/Layout/healthcare-automation-modern';
-import Link from 'next/link';
-import Image from 'next/image';
-import { ArrowRight } from '@/components/Common/Icons';
-//import HeroSection from '@/components/Layout/HeroSection';
 
-import WhyAIFailsModern from '@/components/Layout/why-ai-fails-modern';
-import CommonPostPagesSliderModern from '@/components/Layout/common-posts-slider-modern';
-import ImageKeyPointsNewModern from '@/components/Layout/image-key-points-new-modern';
-import ClientLogoSectionModern from '@/components/Layout/home-client-logo-section-modern';
-import ImageKeyPointsNewModern2 from '@/components/Layout/image-keypoints-new-modern2';
-import GeneralCTASectionModern from '@/components/Layout/general-cta-section-modern';
-import SectionModern from '@/components/Layout/section-modern';
-import ContentHighlightModern from '@/components/Layout/content-highlight-modern-block';
-import QuoteBlock from '@/components/Common/QuoteBlock';
+import { DivTag, H2Tag, SectionTag } from '@/components/Common/HTMLTags';
 import styles from './../../components/Common/home-new.module.css'; // Ensure this matches your project's directory structure
 
 
@@ -45,8 +15,8 @@ import ClientHighlights from '@/components/Layout/ClientHighlights';
 import EnterpriseTrust from '@/components/Layout/EnterpriseTrust';
 import AwardsRecognition from '@/components/Layout/AwardsRecognition';
 import LatestFromQbotica from '@/components/Layout/LatestFromQbotica';
-import ReadyToRunWorkDifferently from '@/components/Layout/ReadyToRunWorkDifferently';
 import FinalCTASection from '@/components/Layout/FinalCTASection';
+import TimelineSections from '@/components/Layout/timeline-sections';
 
 export const metadata = {
   title: 'New Home',
@@ -1084,31 +1054,9 @@ export default function NewHomeStaticPage() {
      
       <FinalCTASection />
 
-   
+   <TimelineSections data={sectionThreeData} />
  </div>
- {/* <SectionFour data={sectionFourData} /> */}
  
-{/*     
-     <GeneralCTASection data={generalCTASectionData} /> */}
-  {/* <TimelineSections data={sectionThreeData} /> */}
-  {/* <FooterCommonCTAEmbossed data={footerCommonCTA2Data} />
-  <FooterCommonCTA data={footerCommonCTAData} /> */}
-      {/* <FooterCommonCTA data={footerCommonCTAData} />
-      <WhyAIFailsModern data={stepCardsData} />  
-          
-          
-         <TimelineSections data={sectionThreeData} />
-      <SectionFour data={sectionFourData} />
-      <SafeAwardsWrapper data={awardsSectionData} />
-      {/* <CommonPostPagesSlider data={commonPostPagesSliderData} /> */}
-      {/* <CommonPostPagesSliderModern data={commonPostPagesSliderData} />
-     
-      
-    
-     <GeneralCTASection data={generalCTASectionData} />
-     {/* <GeneralCTASectionModern data={generalCTASectionData} /> */}
-      {/* <ClientLogoSection data={clientLogoData} /> */} 
-{/* <ClientLogoSectionModern data={clientLogoData} /> */}
  </DivTag>
     </DivTag>
   );

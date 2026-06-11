@@ -7,7 +7,7 @@ const posts = [
     title: 'qBotica Partners with Atolio',
     excerpt:
       'qBotica and Atolio have partnered to power AI agents with secure, instant access to enterprise knowledge, enabling smarter and more efficient enterprise automation.',
-    link: 'https://www.atolio.com/news/qbotica-and-atolio-partner-to-power-ai-agents-with-secure-instant-access-to-enterprise-knowledge',
+    link: 'https://www.qbotica.com/newsroom/qbotica-and-atolio-partner-to-power-ai-agents-with-secure-instant-access-to-enterprise-knowledge',
   },
   {
     category: 'Event',
@@ -43,7 +43,7 @@ export default function LatestFromQbotica() {
     // Use specific images for each card: 1st, 2nd, and 3rd respectively.
     let media = null;
     if (idx === 0) {
-      media = <img src={'/assets/images/atoliopart.jpeg'} alt={post.title} className={styles.newsMedia} />;
+      media = <img src={'/assets/images/atol.jpeg'} alt={post.title} className={styles.newsMedia} />;
     } else if (idx === 1) {
       media = <img src={'/assets/images/uipathevent.jpeg'} alt={post.title} className={styles.newsMedia} />;
     } else if (idx === 2) {
