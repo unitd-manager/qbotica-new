@@ -27,7 +27,7 @@ export default function ClientQuote() {
                 <div className="client-content">
 
                     <div className="quote-icon">
-                        "
+                        &ldquo;
                     </div>
 
                     <p className="quote-description">
