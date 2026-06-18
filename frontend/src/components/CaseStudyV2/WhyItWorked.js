@@ -17,7 +17,7 @@ export default function WhyItWorked() {
       icon: "📈",
       title: "Non-linear scale",
       description:
-        "Processing 500 documents costs the same as 50. Volume increases don't require headcount increases."
+        "Processing 500 documents costs the same as 50. Volume increases don&apos;t require headcount increases."
     },
 
     {
@@ -31,7 +31,7 @@ export default function WhyItWorked() {
       icon: "🔄",
       title: "Managed service delivery",
       description:
-        "qBotica owns the outcome — monitoring, tuning, and expanding automation as Polaris's operations evolve."
+        "qBotica owns the outcome — monitoring, tuning, and expanding automation as Polaris&apos;s operations evolve."
     }
 
   ];
@@ -52,7 +52,7 @@ export default function WhyItWorked() {
           className="why-title"
           dangerouslySetInnerHTML={{
             __html:
-              'Why DocumentAI where<br/><span>other approaches couldn\'t</span>',
+              'Why DocumentAI where<br/><span>other approaches couldn&apos;t</span>',
           }}
         />
 
@@ -60,16 +60,16 @@ export default function WhyItWorked() {
 
           <p>
             Most document processing tools perform well on clean, structured inputs.
-            Polaris's email environment wasn't clean — it was accumulated years of
+            Polaris&apos;s email environment wasn&apos;t clean — it was accumulated years of
             inconsistent vendor templates, legacy formatting, long forwarded chains,
             and edge cases that broke every rule-based system the team had tried before.
           </p>
 
           <p>
-            DocumentAI's hybrid approach — combining large language model contextual
+            DocumentA&apos;s hybrid approach — combining large language model contextual
             understanding with deterministic validation rules — gave Polaris something
-            purely template-based systems can't offer: the ability to understand
-            <em> intent</em>, not just match patterns. That's what made 90%+ noise
+            purely template-based systems can&apos;t offer: the ability to understand
+            <em> intent</em>, not just match patterns. That&apos;s what made 90%+ noise
             removal achievable on real-world, production data.
           </p>
 

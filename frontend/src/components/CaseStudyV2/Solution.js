@@ -26,7 +26,7 @@ export default function Solution() {
     icon: "⚙️",
     title: "Structured Data Transformation",
     description:
-      "Extracted data — tracking numbers, routes, pricing inputs, special handling instructions — is validated against Polaris's business rules and transformed into standardized quotation formats ready for downstream processing.",
+      "Extracted data — tracking numbers, routes, pricing inputs, special handling instructions — is validated against Polaris&apos;s business rules and transformed into standardized quotation formats ready for downstream processing.",
     tag: "Schema normalization",
   },
 

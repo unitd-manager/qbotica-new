@@ -32,7 +32,7 @@ export default function ClientQuote() {
 
                     <p className="quote-description">
 
-                        This wasn't just automation—it was a complete rethinking
+                        This wasn&apos;t just automation—it was a complete rethinking
                         of how our operations team handles vendor communication
                         at scale. What used to take hours now happens before
                         anyone arrives at their desk. DoqumentAI understands our

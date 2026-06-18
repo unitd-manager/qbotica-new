@@ -240,7 +240,7 @@ export default function Sidebar() {
   </h4>
 
   <p>
-    Free process discovery call. We'll map your document workflows and show where automation delivers the fastest ROI.
+    Free process discovery call. We&apos;ll map your document workflows and show where automation delivers the fastest ROI.
   </p>
 
   <a

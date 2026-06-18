@@ -35,7 +35,7 @@ export default function Challenge() {
         <div className="challenge-description">
 
           <p>
-            Polaris Transportation Group's operations team was buried. Every day,
+            Polaris Transportation Group&apos;s operations team was buried. Every day,
             hundreds of quotation requests arrived from freight vendors — each
             formatted differently, each containing shipment data buried inside
             long, messy email threads that mixed real information with forwarded
@@ -43,7 +43,7 @@ export default function Challenge() {
           </p>
 
           <p>
-            The team was skilled and fast. But skilled and fast wasn't enough.
+            The team was skilled and fast. But skilled and fast wasn&apos;t enough.
             As freight volumes grew, the process that worked at 50 documents a day
             started breaking down at 300. Response times slipped. Errors crept in.
             The team was spending the first hours of every shift doing data entry,
@@ -90,9 +90,9 @@ export default function Challenge() {
 
           <p>
 
-          "Our team was spending the first three hours of every shift reading
+          &quot;Our team was spending the first three hours of every shift reading
           emails and copying data into spreadsheets. These were skilled logistics
-          people doing unskilled data entry. We knew something had to change."
+          people doing unskilled data entry. We knew something had to change.&quot;
 
           </p>
 
