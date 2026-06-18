@@ -5,6 +5,7 @@ import {
     applyPaddingToLayouts,
     processLayoutData
 } from '@/lib/page-layout-utils';
+import CaseStudySectionClientV2 from '@/components/CaseStudySectionClientV2';
 import { generatePageMetadatas, getStructuredData } from '@/lib/rankmath-utils';
 import StructuredData from '@/components/Common/StructuredData';
 import CaseStudySectionClient from '@/components/CaseStudySectionClient';
@@ -91,12 +92,36 @@ export default async function SolutionPage({ params }) {
             );
         }
 
-        return (
-            <DivTag className="case-studies-single-page light-gray">
-                <StructuredData data={structuredData} />
-                <CaseStudySectionClient sections={caseSections} />
-            </DivTag>
-        );
+        // V2 Demo Page
+if (slug === 'polaris-transportation-v2') {
+
+    return (
+
+        <DivTag className="case-studies-single-page light-gray">
+
+            <StructuredData data={structuredData} />
+
+            <CaseStudySectionClientV2 />
+
+        </DivTag>
+
+    );
+
+}
+
+// Existing Case Studies
+
+return (
+
+    <DivTag className="case-studies-single-page light-gray">
+
+        <StructuredData data={structuredData} />
+
+        <CaseStudySectionClient sections={caseSections} />
+
+    </DivTag>
+
+);
     } catch (error) {
         console.error('Error rendering SolutionPage:', error);
 

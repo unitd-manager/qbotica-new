@@ -1,0 +1,40 @@
+.case-study-template {
+    width: 100%;
+    background: #ffffff;
+}
+
+.hero {
+    padding: 100px 20px;
+    background: #f5f5f5;
+}
+
+.hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-tag {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #FF7705;
+    color: #fff;
+    border-radius: 6px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.hero-title {
+    font-size: 56px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.hero-description {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #666;
+    font-size: 18px;
+    line-height: 1.7;
+}
