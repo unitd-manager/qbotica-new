@@ -1,9 +1,10 @@
 'use client';
+
+
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { DivTag, H2Tag, H4Tag, H5Tag, PTag, SectionTag } from '../Common/HTMLTags';
-import Image from 'next/image';
-import ChartFromWP from '../Common/Chart';
+import PropTypes from 'prop-types';
 
 export default function TimelineSections({ data }) {
     const safeData = data && typeof data === 'object' ? data : null;
@@ -99,9 +100,14 @@ export default function TimelineSections({ data }) {
         return (
             <DivTag className="timeline-text-content">
                 {block.label && <PTag className="timeline-label">{block.label}</PTag>}
-                {block.title && <H5Tag className="timeline-title" dangerouslySetInnerHTML={{ __html: block.title }} />}
+                {block.title && (
+                    // Use raw element when injecting HTML to avoid prop forwarding differences
+                    <h5 className="timeline-title" dangerouslySetInnerHTML={{ __html: block.title }} />
+                )}
                 {block.subtitle && <PTag className="timeline-subtitle">{block.subtitle}</PTag>}
-                {block.description && <DivTag className="timeline-description" dangerouslySetInnerHTML={{ __html: block.description }} />}
+                {block.description && (
+                    <div className="timeline-description" dangerouslySetInnerHTML={{ __html: block.description }} />
+                )}
                 {block.note && <PTag className="timeline-note">{block.note}</PTag>}
                 {block.status && <PTag className="timeline-status">{block.status}</PTag>}
             </DivTag>
@@ -128,7 +134,7 @@ export default function TimelineSections({ data }) {
                             return (
                                 <DivTag
                                     className={`row timeline-row align-items-center ${activeIndex === index ? 'active' : ''}`}
-                                    key={index}
+                                    key={item?.id ?? item?.key ?? index}
                                     ref={(el) => (rowRefs.current[index] = el)}
                                 >
                                     <DivTag className="col-md-6 timeline-col">
@@ -153,3 +159,47 @@ export default function TimelineSections({ data }) {
         </SectionTag>
     );
 }
+
+TimelineSections.propTypes={
+ data:PropTypes.shape({
+   main_title:
+     PropTypes.string,
+
+   sub_title:
+     PropTypes.string,
+
+   description:
+     PropTypes.string,
+
+   class_name:
+     PropTypes.string,
+
+   id:
+     PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+   ]),
+
+   cta_button:
+      PropTypes.shape({
+        url:
+          PropTypes.string,
+        title:
+          PropTypes.string,
+        target:
+          PropTypes.string
+      }),
+
+   timelines:
+      PropTypes.arrayOf(
+        PropTypes.object
+      ),
+
+   padding:
+      PropTypes.object
+ })
+};
+
+TimelineSections.defaultProps={
+ data:{}
+};

@@ -49,8 +49,8 @@ export default function ImageKeyPointsNewModern2({
     <section
       className={styles.section}
       style={{
-        background:
-          background_color || '#f5f5f7',
+      background:
+        background_color || '#FFF7ED',
       }}
     >
       <div className={styles.container}>

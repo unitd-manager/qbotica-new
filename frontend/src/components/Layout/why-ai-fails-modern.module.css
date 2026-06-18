@@ -1,6 +1,6 @@
 .problemSection {
   padding: 100px 0;
-background: linear-gradient(180deg, #DDDDFF 0%, #DDDDFF 100%);
+background: linear-gradient(180deg, #5962af 0%, #5962af 100%);
 }
 
 .problemHead {
@@ -14,7 +14,7 @@ background: linear-gradient(180deg, #DDDDFF 0%, #DDDDFF 100%);
 }
   .problemSection {
     padding: 120px 0;
-   background: linear-gradient(180deg, #E3E3FF 0%, #E3E3FF 100%);
+   background: linear-gradient(180deg, #CCE8FF 0%, #CCE8FF 100%);
     color: #0f172a;
   }
 
@@ -36,8 +36,8 @@ background: linear-gradient(180deg, #DDDDFF 0%, #DDDDFF 100%);
   }
 
   .problemSubtitle {
-    font-size: 18px;
-    color: #5b6b7a;
+    font-size: 20px;
+    color: #374151 !important; /* dark grey */
     max-width: 720px;
     margin-left: auto;
     margin-right: auto;
@@ -76,7 +76,7 @@ background: linear-gradient(180deg, #DDDDFF 0%, #DDDDFF 100%);
     width: 72px;
     height: 72px;
     border-radius: 16px;
-    background: linear-gradient(135deg, #c57409 0%, #df7d26 100%);
+    background: linear-gradient(135deg, #f39e30 0%, #f4913b 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -99,9 +99,9 @@ background: linear-gradient(180deg, #DDDDFF 0%, #DDDDFF 100%);
   }
 
   .problemCardDesc {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.7;
-    color: #4b5563;
+    color: #374151; /* dark grey */
     margin: 0;
   }
 

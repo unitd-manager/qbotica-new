@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Script from 'next/script';
-import { Inter, Chivo_Mono, Geist, Roboto } from 'next/font/google';
+import { Inter, Roboto } from 'next/font/google';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './styles/default.css';
 import './styles/style.css';
@@ -10,6 +10,7 @@ import './styles/custom-responsive.css';
 import { fetchThemeSettings, fetchMenus, fetchPageBySlug } from '@/lib/wordpress'
 import Header from '@/components/Common/Header'
 import Footer from '@/components/Common/Footer'
+import BackToTopButton from '@/components/Common/BackToTopButton'
 import ClientScripts from '@/components/Common/ClientScripts'
 
 const inter = Inter({
@@ -18,20 +19,6 @@ const inter = Inter({
   variable: '--font-inter',
   display: 'swap'
 })
-
-const chivoMono = Chivo_Mono({
-  subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  variable: '--font-chivo-mono',
-  display: 'swap'
-})
-
-const geistSans = Geist({
-  subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  variable: '--font-geist-sans',
-  display: 'swap'
-});
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -95,25 +82,26 @@ export default async function RootLayout({ children }) {
   const headerStyle = { backgroundColor: '#ffffff' };
 
   return (
-    <html lang="en" className={`${inter.variable} ${chivoMono.variable} ${geistSans.variable} ${roboto.variable}`}>
+    <html lang="en" className={`${inter.variable} ${roboto.variable}`}>
       <head>
-        {/* Google Analytics GA4 */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-QTNWWK8EFF"
-          strategy="afterInteractive"
-        />
-        <Script
-          id="google-analytics"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-QTNWWK8EFF');
-            `,
-          }}
-        />
+
+         {/* Google Analytics GA4 */}
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-QTNWWK8EFF"
+  ></script>
+
+  <script
+    dangerouslySetInnerHTML={{
+      __html: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QTNWWK8EFF');
+      `,
+    }}
+  ></script>
         {themeSettings?.site_icon && (
           <>
             <link rel="icon" href={themeSettings.site_icon} />
@@ -122,9 +110,9 @@ export default async function RootLayout({ children }) {
           </>
         )}
         
-        {themeSettings?.header_script && (
+        {/* {themeSettings?.header_script && (
          <ClientScripts headerScript={themeSettings?.header_script} />
-        )}
+        )} */}
       </head>
       <body className="" suppressHydrationWarning>
         <Header
@@ -143,7 +131,7 @@ export default async function RootLayout({ children }) {
             fourth: fourthFooterMenu
           }}
         />
-        
+        <BackToTopButton />
         <ClientScripts footerScript={themeSettings?.footer_script} />
       </body>
     </html>

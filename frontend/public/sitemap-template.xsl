@@ -88,7 +88,8 @@
                                 <!-- If it's a sitemap index -->
                                 <xsl:when test="//sitemap:sitemap"> Number of sitemaps: <span
                                         class="count">
-                                        <xsl:value-of select="count(//sitemap:sitemap)" />
+                                        <xsl:value-of
+                                            select="count(//sitemap:sitemap[contains(sitemap:loc,'post-sitemap')][1]) + count(//sitemap:sitemap[contains(sitemap:loc,'page-sitemap')][1])" />
                                     </span>
                                 </xsl:when>
 
@@ -103,7 +104,8 @@
 
                     <!-- Handle sitemap index -->
                     <xsl:if test="//sitemap:sitemapindex">
-                        <xsl:for-each select="//sitemap:sitemap">
+                        <xsl:for-each
+                            select="//sitemap:sitemap[(contains(sitemap:loc,'post-sitemap') and not(preceding::sitemap:sitemap[contains(sitemap:loc,'post-sitemap')])) or (contains(sitemap:loc,'page-sitemap') and not(preceding::sitemap:sitemap[contains(sitemap:loc,'page-sitemap')]))]">
                             <div class="sitemap-group">
                                 <div class="sitemap-header"> Sitemap <xsl:value-of
                                         select="position()" />

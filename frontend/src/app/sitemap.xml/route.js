@@ -1,11 +1,14 @@
 // app/sitemap.xml/route.js
 export async function GET() {
+  const wpBase = (process.env.NEXT_PUBLIC_WP_URL || '').replace(/\/+$/, '');
+  const siteBase = (process.env.NEXT_PUBLIC_SITE_BASE_URL || '').replace(/\/+$/, '');
   // Fetch WordPress sitemap index
-  const wpSitemap = await fetch(`${process.env.NEXT_PUBLIC_WP_URL}/sitemap_index.xml`);
+  const wpSitemap = await fetch(`${wpBase}/sitemap_index.xml`);
   let xml = await wpSitemap.text();
 
   // Replace WordPress URLs → frontend URLs
-  xml = xml.replaceAll(process.env.NEXT_PUBLIC_WP_URL, process.env.NEXT_PUBLIC_SITE_BASE_URL);
+  xml = xml.replaceAll(`${wpBase}/`, `${siteBase}/`);
+  xml = xml.replaceAll(wpBase, siteBase);
 
   // Remove existing XML declaration
   xml = xml.replace(/^<\?xml.*\?>/, '');

@@ -2,7 +2,14 @@
   position: relative;
   overflow: hidden;
   padding: 28px 0;
-background: linear-gradient(180deg, #C6C6FF 0%, #C6C6FF 100%);
+background: linear-gradient(180deg, #232f7f 0%, #232f7f 100%);
+}
+
+/* Make text inside CTA section white by default */
+.ctaSection,
+.ctaSection .inner,
+.ctaSection .inner * {
+  color: #374151 !important;
 }
 
 .bgGradient {
@@ -92,7 +99,7 @@ background: linear-gradient(180deg, #C6C6FF 0%, #C6C6FF 100%);
   line-height: 1.05;
   font-weight: 800;
   letter-spacing: -0.04em;
-  color: #050816;
+  color: #374151;
 }
 
 .mainTitle span {
@@ -116,11 +123,11 @@ background: linear-gradient(180deg, #C6C6FF 0%, #C6C6FF 100%);
   max-width: 900px;
   margin: 0 auto;
   text-align: center;
-  font-size: clamp(16px, 1.8vw, 22px);
+  font-size: clamp(18px, 2vw, 24px);
   line-height: 1.5;
   font-weight: 500;
   letter-spacing: -0.01em;
-  color: rgba(5, 8, 22, 0.65);
+  color: #374151; /* dark grey */
 }
 
 .description p {
@@ -128,20 +135,20 @@ background: linear-gradient(180deg, #C6C6FF 0%, #C6C6FF 100%);
 }
 
 .description strong {
-  color: #050816;
+  color: #374151;
   font-weight: 700;
 }
 
 .description em {
-  color: #050816;
+  color: #374151;
   font-style: italic;
 }
 
 .subDescription {
   margin-top: 22px;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.7;
-  color: rgba(5, 8, 22, 0.58);
+  color: #374151; /* dark grey */
 }
 
 .buttonRow {
@@ -244,7 +251,7 @@ background: linear-gradient(180deg, #C6C6FF 0%, #C6C6FF 100%);
   }
 
   .description {
-    font-size: 22px;
+    font-size: 24px;
     line-height: 1.7;
   }
 
@@ -267,7 +274,7 @@ background: linear-gradient(180deg, #C6C6FF 0%, #C6C6FF 100%);
   }
 
   .description {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.7;
   }
 

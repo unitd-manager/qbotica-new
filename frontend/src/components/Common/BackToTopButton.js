@@ -1,56 +1,52 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { createPortal } from 'react-dom';
-import './back-to-top.css';
+import { useEffect, useState } from "react";
+import styles from "./BackToTopButton.module.css";
 
 export default function BackToTopButton() {
   const [visible, setVisible] = useState(false);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
-    const onScroll = () => setVisible(window.scrollY > 300);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll);
+    const handleScroll = () => {
+      setVisible(window.scrollY > 300);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
     return () => {
-      window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('resize', onScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   const scrollToTop = () => {
-    if ('scrollBehavior' in document.documentElement.style) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      // fallback for older browsers
-      let pos = window.pageYOffset;
-      const step = () => {
-        pos = pos - Math.max(10, Math.round(pos / 8));
-        window.scrollTo(0, pos);
-        if (pos > 0) requestAnimationFrame(step);
-      };
-      step();
-    }
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
-  if (!mounted) return null;
-
-  const btn = (
+  return (
     <button
-      type="button"
-      className="back-to-top-btn"
-      aria-label="Back to top"
-      title="Back to top"
       onClick={scrollToTop}
-      style={{ opacity: visible ? 1 : 0, pointerEvents: visible ? 'auto' : 'none' }}
+      className={`${styles.backToTop} ${
+        visible ? styles.show : ""
+      }`}
+      aria-label="Back to Top"
     >
-      ↑
+    <svg
+  width="22"
+  height="22"
+  viewBox="0 0 24 24"
+  fill="none"
+>
+  <path
+    d="M12 19V5M12 5L5 12M12 5L19 12"
+    stroke="currentColor"
+    strokeWidth="2.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  />
+</svg>
     </button>
   );
-
-  return typeof document !== 'undefined' ? createPortal(btn, document.body) : null;
 }
-

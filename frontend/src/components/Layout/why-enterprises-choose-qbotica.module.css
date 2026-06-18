@@ -71,35 +71,56 @@
 
 .bulletTitle {
   display: block;
-  font-size: 16px;
+  font-size: 18px;
   color: #071331;
   font-weight: 700;
 }
 
 .bulletDesc {
   margin: 6px 0 0;
-  color: #475569;
-  font-size: 15px;
-  line-height: 1.5;
+  color: #374151; /* dark grey */
+  font-size: 18px;
+  line-height: 1.6;
 }
 
 .cta {
+  margin-top: 24px;
+
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  margin-top: 20px;
-  padding: 12px 18px;
-  border-radius: 12px;
-  background: linear-gradient(90deg, #111827, #0b1220);
-  color: #fff;
-  text-decoration: none;
+  justify-content: center;
+
   font-weight: 700;
-  box-shadow: 0 14px 44px rgba(11, 23, 44, 0.12);
+  padding: 14px 28px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  box-shadow: 0 10px 20px -5px rgba(255, 119, 5, 0.25);
+
+  background: #111827;
+  color: #ffffff;
+
+  text-decoration: none;
+
+  position: relative;
+  z-index: 2;
+  transform: translateY(0);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+  
+  /* prevent stretching */
+  width: auto;
+  white-space: nowrap;
+  align-self: flex-start;
 }
 
 .cta:hover,
 .cta:focus {
   transform: translateY(-3px);
+  background: #1f2937;
 }
 
 .media {
@@ -146,5 +167,11 @@
 
   .bullet {
     padding: 12px;
+  }
+  .bulletTitle {
+    font-size: 16px;
+  }
+  .bulletDesc {
+    font-size: 16px;
   }
 }

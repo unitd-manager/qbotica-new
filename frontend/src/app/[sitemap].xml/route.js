@@ -4,6 +4,8 @@
  */
 export async function GET(request, { params }) {
   let sitemapFile;
+  const wpBase = (process.env.NEXT_PUBLIC_WP_URL || '').replace(/\/+$/, '');
+  const siteBase = (process.env.NEXT_PUBLIC_SITE_BASE_URL || '').replace(/\/+$/, '');
   
   // In Next.js app router, [sitemap] will capture the whole "post-sitemap.xml"
   // So we use it directly
@@ -25,7 +27,7 @@ export async function GET(request, { params }) {
       sitemapFile = `${sitemapFile}.xml`;
     }
 
-    const wpUrl = `${process.env.NEXT_PUBLIC_WP_URL}/${sitemapFile}`;
+    const wpUrl = `${wpBase}/${sitemapFile}`;
     console.log(`[Sitemap] Fetching: ${wpUrl}`);
 
     const wpSitemap = await fetch(wpUrl, {
@@ -49,7 +51,8 @@ export async function GET(request, { params }) {
     let xml = await wpSitemap.text();
 
     // Rewrite backend URLs → frontend URLs
-    xml = xml.replaceAll(process.env.NEXT_PUBLIC_WP_URL, process.env.NEXT_PUBLIC_SITE_BASE_URL);
+    xml = xml.replaceAll(`${wpBase}/`, `${siteBase}/`);
+    xml = xml.replaceAll(wpBase, siteBase);
 
     // Rewrite stylesheet reference to use local relative path
     xml = xml.replace(

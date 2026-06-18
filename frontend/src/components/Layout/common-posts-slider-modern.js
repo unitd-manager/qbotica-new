@@ -85,21 +85,38 @@ export default function CommonPostPagesSliderModern({ data }) {
   useEffect(() => {
     const currentSection = sectionRef.current;
 
+    const animateTimeoutRef = { current: null };
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setAnimate(entry.isIntersecting);
-
         if (entry.isIntersecting) {
+          // clear pending hide timeout
+          if (animateTimeoutRef.current) {
+            clearTimeout(animateTimeoutRef.current);
+            animateTimeoutRef.current = null;
+          }
+          setAnimate(true);
           setTimeout(setEqualHeight, 300);
+        } else {
+          // debounce hiding to avoid flicker when user stops scrolling
+          if (animateTimeoutRef.current) clearTimeout(animateTimeoutRef.current);
+          animateTimeoutRef.current = setTimeout(() => {
+            setAnimate(false);
+            animateTimeoutRef.current = null;
+          }, 180);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.5, rootMargin: '0px 0px -25% 0px' }
     );
 
     if (currentSection) observer.observe(currentSection);
 
     return () => {
       if (currentSection) observer.unobserve(currentSection);
+      if (animateTimeoutRef.current) {
+        clearTimeout(animateTimeoutRef.current);
+        animateTimeoutRef.current = null;
+      }
     };
   }, [setEqualHeight]);
 
@@ -203,7 +220,7 @@ export default function CommonPostPagesSliderModern({ data }) {
 
                     <Link
                       href={post.link || '#'}
-                      className={styles.readMoreBtn}
+                      className={styles.readMoreBtnOverride}
                       aria-label={`Read more: ${post.title || 'post'}`}
                     >
                       Read More
