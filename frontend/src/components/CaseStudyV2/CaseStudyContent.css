@@ -1,0 +1,180 @@
+/* ==========================================================
+CASE STUDY CONTENT WRAPPER
+========================================================== */
+
+.case-study-content-wrapper{
+
+    background:#ffffff;
+
+    padding:80px 0 100px;
+
+}
+
+/* ==========================================================
+MAIN CONTAINER
+========================================================== */
+
+.case-study-content-container{
+
+    width:min(1320px,92%);
+
+    margin:0 auto;
+
+    display:grid;
+
+    grid-template-columns:minmax(0,760px) 340px;
+
+    justify-content:space-between;
+
+    gap:60px;
+
+    align-items:start;
+
+}
+
+/* ==========================================================
+LEFT COLUMN
+========================================================== */
+
+.case-study-left{
+
+    min-width:0;
+
+}
+
+/* remove independent section spacing */
+
+.case-study-left .challenge-section,
+.case-study-left .solution-section,
+.case-study-left .impact-section,
+.case-study-left .why-section{
+
+    padding:0;
+
+    margin:0;
+
+    background:transparent;
+
+}
+
+/* space between sections */
+
+.case-study-left .challenge-section{
+
+    margin-bottom:90px;
+
+}
+
+.case-study-left .solution-section{
+
+    margin-bottom:90px;
+
+}
+
+.case-study-left .impact-section{
+
+    margin-bottom:90px;
+
+}
+
+/* force same width */
+
+.case-study-left .challenge-container,
+.case-study-left .solution-container,
+.case-study-left .impact-container,
+.case-study-left .why-container{
+
+    max-width:760px;
+
+    width:100%;
+
+    margin:0;
+
+    padding:0;
+
+}
+
+/* ==========================================================
+RIGHT COLUMN
+========================================================== */
+
+.case-study-right{
+
+    position:sticky;
+
+    top:100px;
+
+    align-self:start;
+
+    width:340px;
+
+}
+
+/* sidebar should fill parent */
+
+.case-study-right .sidebar{
+
+    width:100%;
+
+}
+
+/* ==========================================================
+RESPONSIVE
+========================================================== */
+
+@media(max-width:1200px){
+
+.case-study-content-container{
+
+    grid-template-columns:1fr;
+
+    gap:50px;
+
+}
+
+.case-study-right{
+
+    position:relative;
+
+    top:auto;
+
+    width:100%;
+
+}
+
+.case-study-left .challenge-container,
+.case-study-left .solution-container,
+.case-study-left .impact-container,
+.case-study-left .why-container{
+
+    max-width:100%;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.case-study-content-wrapper{
+
+    padding:60px 0;
+
+}
+
+.case-study-content-container{
+
+    width:min(100%,92%);
+
+    gap:40px;
+
+}
+
+.case-study-left .challenge-section,
+.case-study-left .solution-section,
+.case-study-left .impact-section{
+
+    margin-bottom:60px;
+
+}
+
+}
