@@ -10,7 +10,7 @@ export default function MoreCaseStudies() {
       stat: "7x",
       label: "Faster Claims Processing",
       title: "How qBotica Increased Claims Processing By Over 7x for a Top Healthcare Client",
-      industry: "Healthcare · Document AI"
+      industry: "Healthcare · Doqument AI"
     },
 
     {

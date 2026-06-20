@@ -38,30 +38,38 @@ padding-top:6px;
 
 .client-logo{
 
-font-size:22px;
-
-font-weight:600;
-
-letter-spacing:-0.5px;
-
-color:#004f9f;
-
-margin-bottom:14px;
-
 width:100%;
 
-text-align:left;
+margin-bottom:18px;
+
+display:flex;
+
+align-items:LEFT;
+
+justify-content:CENTER;
+
+}
+
+.client-logo-image{
+
+width:180px;
+
+height:auto;
+
+display:block;
+
+object-fit:contain;
 
 }
 .client-company{
 
 font-size:13px;
 
-font-weight:700;
+font-weight:800;
 
 line-height:1.5;
 
-text-align:left;
+text-align:center;
 
 text-transform:uppercase;
 
@@ -70,6 +78,8 @@ letter-spacing:1.5px;
 color:#596579;
 
 width:100%;
+
+
 
 }
 

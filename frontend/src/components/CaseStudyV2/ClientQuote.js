@@ -1,6 +1,7 @@
 'use client';
 
 import './ClientQuote.css';
+import Image from 'next/image';
 
 export default function ClientQuote() {
     return (
@@ -11,7 +12,16 @@ export default function ClientQuote() {
                 <div className="client-logo-column">
 
                     <div className="client-logo">
-                        POLARIS
+
+                        <Image
+                            src="/images/polaris-logo.png"
+                            alt="Polaris Transportation Group"
+                            width={190}
+                            height={70}
+                            className="client-logo-image"
+                            priority
+                        />
+
                     </div>
 
                     <div className="client-company">
@@ -41,8 +51,9 @@ export default function ClientQuote() {
                     </p>
 
                     <div className="quote-author">
-                    Director of Operations •<span>Polaris Transportation Group</span>
-                </div>
+                        Director of Operations •
+                        <span> Polaris Transportation Group</span>
+                    </div>
 
                 </div>
 

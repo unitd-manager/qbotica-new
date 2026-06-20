@@ -1,9 +1,11 @@
 'use client';
 
 import './Challenge.css';
+import { useState } from 'react';
 
 export default function Challenge() {
-
+  const [showMore, setShowMore] = useState(false);
+  
   const challengeCards = [
     "Extracting critical shipment data — tracking numbers, origin/destination, pricing inputs, special handling instructions — from wildly inconsistent email formats with no standard structure across hundreds of vendors.",
 
@@ -51,58 +53,69 @@ export default function Challenge() {
           </p>
 
 </div>
-        <div className="challenge-cards">
+        <div className="challenge-read-more">
 
-          {challengeCards.map((item, index) => (
+    <button
+        className="challenge-btn"
+        onClick={() => setShowMore(!showMore)}
+    >
+        {showMore ? 'Show Less' : 'Read More'}
+    </button>
+
+</div>
+
+{showMore && (
+
+    <div className="challenge-cards">
+
+        {challengeCards.map((item, index) => (
 
             <div
-              className="challenge-card"
-              key={index}
+                className="challenge-card"
+                key={index}
             >
 
-              <div className="challenge-number">
+                <div className="challenge-number">
 
-                {(index + 1).toString().padStart(2, '0')}
+                    {(index + 1).toString().padStart(2, '0')}
 
-              </div>
+                </div>
 
-              <div className="challenge-content">
+                <div className="challenge-content">
 
-                <h4>
-                  Challenge {(index + 1).toString().padStart(2, '0')}
-                </h4>
+                    <p>
+                        {item}
+                    </p>
 
-                <p>
-                  {item}
-                </p>
-
-              </div>
+                </div>
 
             </div>
 
-          ))}
+        ))}
 
-        </div>
+    </div>
 
-        <div className="challenge-quote">
+)}
 
-          <div className="challenge-quote-line"></div>
+<div className="challenge-quote">
 
-          <p>
+    <div className="challenge-quote-line"></div>
 
-          &quot;Our team was spending the first three hours of every shift reading
-          emails and copying data into spreadsheets. These were skilled logistics
-          people doing unskilled data entry. We knew something had to change.&quot;
+    <p>
 
-          </p>
+        &quot;Our team was spending the first three hours of every shift reading
+        emails and copying data into spreadsheets. These were skilled logistics
+        people doing unskilled data entry. We knew something had to change.&quot;
 
-          <span>
+    </p>
 
-            Operations Manager • Polaris Transportation Group
+    <span>
 
-          </span>
+        Operations Manager • Polaris Transportation Group
 
-        </div>
+    </span>
+
+</div>
 
       </div>
 

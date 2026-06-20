@@ -1,34 +1,32 @@
 'use client';
 
 import './WhyItWorked.css';
+import { useState } from "react";
 
 export default function WhyItWorked() {
+  const [showWhyItems, setShowWhyItems] = useState(false);
 
   const items = [
 
     {
-      icon: "🧠",
       title: "Understands intent, not patterns",
       description:
         "LLM reasoning extracts meaning from unstructured language — no templates or rigid field mappings required."
     },
 
     {
-      icon: "📈",
       title: "Non-linear scale",
       description:
         "Processing 500 documents costs the same as 50. Volume increases don&apos;t require headcount increases."
     },
 
     {
-      icon: "🛡️",
       title: "Business rule enforcement",
       description:
         "Deterministic validation on top of AI extraction ensures compliance and auditability on every processed document."
     },
 
     {
-      icon: "🔄",
       title: "Managed service delivery",
       description:
         "qBotica owns the outcome — monitoring, tuning, and expanding automation as Polaris&apos;s operations evolve."
@@ -44,7 +42,7 @@ export default function WhyItWorked() {
 
         <span className="why-label">
 
-          WHY DOCUMENT AI
+          WHY DOQUMENT AI
 
         </span>
 
@@ -52,7 +50,7 @@ export default function WhyItWorked() {
           className="why-title"
           dangerouslySetInnerHTML={{
             __html:
-              'Why DocumentAI where<br/><span>other approaches couldn&apos;t</span>',
+              'Why DoqumentAI where<br/><span>other approaches couldn&apos;t</span>',
           }}
         />
 
@@ -66,7 +64,7 @@ export default function WhyItWorked() {
           </p>
 
           <p>
-            DocumentA&apos;s hybrid approach — combining large language model contextual
+            DoqumentAI&apos;s hybrid approach — combining large language model contextual
             understanding with deterministic validation rules — gave Polaris something
             purely template-based systems can&apos;t offer: the ability to understand
             <em> intent</em>, not just match patterns. That&apos;s what made 90%+ noise
@@ -75,38 +73,45 @@ export default function WhyItWorked() {
 
         </div>
 
-        <div className="why-grid">
+        <div className="why-read-more">
 
-          {items.map((item, index) => (
+    <button
+        className="why-btn"
+        onClick={() => setShowWhyItems(!showWhyItems)}
+    >
+        {showWhyItems ? "Show Less" : "Read More"}
+    </button>
 
-            <div
-              className="why-card"
-              key={index}
-            >
+</div>
 
-              <div className="why-icon">
+{showWhyItems && (
 
-                {item.icon}
+<div className="why-grid">
 
-              </div>
+    {items.map((item, index) => (
 
-              <h3>
+        <div
+            className="why-card"
+            key={index}
+        >
 
-                {item.title}
+            
+            <div className="why-content">
 
-              </h3>
+                <h3>{item.title}</h3>
 
-              <p>
-
-                {item.description}
-
-              </p>
+                <p>{item.description}</p>
 
             </div>
 
-          ))}
-
         </div>
+
+    ))}
+
+</div>
+
+)}
+
 
       </div>
 

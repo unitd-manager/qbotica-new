@@ -4,25 +4,6 @@ import './Sidebar.css';
 
 export default function Sidebar() {
 
-  const results = [
-    {
-      value: '>90%',
-      label: 'NOISE REMOVAL RATE',
-    },
-    {
-      value: '500+',
-      label: 'DOCS/DAY AUTOMATED',
-    },
-    {
-      value: '3hrs',
-      label: 'TIME RECLAIMED DAILY',
-    },
-    {
-      value: '0',
-      label: 'EXTRA HEADCOUNT NEEDED',
-    },
-  ];
-
   const metrics = [
     {
       name: 'Noise Removal Rate',
@@ -44,7 +25,7 @@ export default function Sidebar() {
 
   const topics = [
     'Agentic AI',
-    'DocumentAI',
+    'DoqumentAI',
     'Email Automation',
     'RPA',
     'Freight & Logistics',
@@ -57,25 +38,49 @@ export default function Sidebar() {
 
     <aside className="sidebar">
 
-      <div className="sidebar-dark">
+      {/* CLIENT HOVER CARD */}
 
-        <h3>POLARIS</h3>
+      <div className="sidebar-client">
 
-        <p>
+        <div className="sidebar-image-layer">
 
-          Polaris Transportation Group is a leading North American freight and
-          logistics operator managing thousands of shipments daily across
-          complex multi-vendor networks.
+          <img
+            src="/images/polaris-sidebar.jpg"
+            alt="Polaris Transportation"
+            className="sidebar-image"
+        />
 
-        </p>
+        </div>
 
-        <button>
+        <div className="sidebar-slide-card">
 
-          ✓ Verified Customer
+          <div className="sidebar-slide-content">
 
-        </button>
+            <h3>
+              POLARIS
+            </h3>
+
+            <p>
+
+              Polaris Transportation Group is a leading North American freight
+              and logistics operator managing thousands of shipments daily
+              across complex multi-vendor networks.
+
+            </p>
+
+            <button>
+
+              ✓ Verified Customer
+
+            </button>
+
+          </div>
+
+        </div>
 
       </div>
+
+      {/* CASE STUDY DETAILS */}
 
       <div className="sidebar-card">
 
@@ -101,7 +106,7 @@ export default function Sidebar() {
 
             <tr>
               <td>qBotica Product</td>
-              <td>DocumentAI + RPA</td>
+              <td>DoqumentAI + RPA</td>
             </tr>
 
             <tr>
@@ -125,42 +130,7 @@ export default function Sidebar() {
 
       </div>
 
-      <div className="sidebar-card">
-
-        <h5>
-
-          KEY RESULTS
-
-        </h5>
-
-        <div className="result-grid">
-
-          {results.map((item, index) => (
-
-            <div
-              className="result-box"
-              key={index}
-            >
-
-              <h3>
-
-                {item.value}
-
-              </h3>
-
-              <span>
-
-                {item.label}
-
-              </span>
-
-            </div>
-
-          ))}
-
-        </div>
-
-      </div>
+      {/* PERFORMANCE */}
 
       <div className="sidebar-card">
 
@@ -170,7 +140,7 @@ export default function Sidebar() {
 
         </h5>
 
-        {metrics.map((item, index) => (
+        {metrics.map((item,index)=>(
 
           <div
             className="metric"
@@ -205,6 +175,8 @@ export default function Sidebar() {
 
       </div>
 
+      {/* TOPICS */}
+
       <div className="sidebar-card">
 
         <h5>
@@ -215,12 +187,11 @@ export default function Sidebar() {
 
         <div className="topics">
 
-          {topics.map((item, index) => (
+          {topics.map((item,index)=>(
 
             <span
               key={index}
               className="topic"
-
             >
 
               {item}
@@ -233,38 +204,50 @@ export default function Sidebar() {
 
       </div>
 
+      {/* CTA */}
+
       <div className="sidebar-cta">
 
-  <h4>
-    See this for your business
-  </h4>
+        <h4>
 
-  <p>
-    Free process discovery call. We&apos;ll map your document workflows and show where automation delivers the fastest ROI.
-  </p>
+          See this for your business
 
-  <a
-    href="https://meetings.hubspot.com/automation-demo/scheduler"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="primary-btn"
-  >
-    Request a Demo →
-  </a>
+        </h4>
 
-  <a
-    href="https://meetings.hubspot.com/automation-demo/scheduler"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="secondary-btn"
-  >
-    Talk to an Expert
-  </a>
+        <p>
 
-</div>
+          Free process discovery call. We'll map your document workflows
+          and show where automation delivers the fastest ROI.
+
+        </p>
+
+        <a
+          href="https://meetings.hubspot.com/automation-demo/scheduler"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="primary-btn"
+        >
+
+          Request a Demo →
+
+        </a>
+
+        <a
+          href="https://meetings.hubspot.com/automation-demo/scheduler"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="secondary-btn"
+        >
+
+          Talk to an Expert
+
+        </a>
+
+      </div>
 
     </aside>
 
   );
 
 }
+
