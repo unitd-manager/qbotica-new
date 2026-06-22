@@ -204,7 +204,6 @@ color:#97a3b8;
 
 /* =====================================================
 READ MORE BUTTON
-(EXACT SAME AS WHY SECTION)
 ===================================================== */
 
 .impact-read-more{
@@ -221,77 +220,63 @@ justify-content:flex-start;
 
 .impact-btn{
 
-min-width:160px;
+    display:inline-flex;
 
-height:48px;
+    align-items:center;
 
-padding:0 24px;
+    justify-content:center;
 
-display:flex;
+    gap:8px;
 
-align-items:center;
+    min-width:210px;
 
-justify-content:center;
+    height:50px;
 
-gap:10px;
+    padding:0 22px;
 
-background:linear-gradient(
-90deg,
-#020817 0%,
-#071b3b 65%,
-#ff7705 100%
-);
+    background:#101113;
 
-color:#ffffff;
+    color:#ffffff;
 
-border:none;
+    border:none;
 
-border-radius:999px;
+    border-radius:10px;
 
-font-size:16px;
+    font-size:15px;
 
-font-weight:600;
+    font-weight:700;
 
-cursor:pointer;
+    cursor:pointer;
 
-transition:.35s ease;
+    transition:all .3s ease;
+
+    box-shadow:
+    0 8px 18px -5px rgba(255,119,5,.22);
 
 }
 
 .impact-btn::after{
 
-content:"→";
+    content:"→";
 
-font-size:18px;
+    font-size:17px;
 
-transition:.3s;
+    transition:transform .3s ease;
 
 }
 
 .impact-btn:hover{
 
-transform:translateY(-2px);
+    transform:translateY(-2px);
 
-box-shadow:0 14px 35px rgba(2,8,23,.18);
+    box-shadow:
+    0 16px 36px rgba(244,123,32,.28);
 
 }
 
 .impact-btn:hover::after{
 
-transform:translateX(4px);
-
-}
-.impact-benefits{
-
-display:flex;
-
-flex-direction:column;
-
-gap:22px;
-
-margin-top:10px;
-
-animation:impactFade .35s ease;
+    transform:translateX(4px);
 
 }
 /* =====================================================
@@ -488,11 +473,11 @@ margin-bottom:30px;
 
 .impact-btn{
 
-min-width:145px;
+min-width:180px;
 
-height:44px;
+height:46px;
 
-font-size:15px;
+font-size:14px;
 
 }
 
