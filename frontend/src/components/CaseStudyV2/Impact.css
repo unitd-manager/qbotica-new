@@ -1,8 +1,12 @@
+/* =====================================================
+IMPACT SECTION
+===================================================== */
+
 .impact-section{
 
 padding:80px 0;
 
-background:#fff;
+background:#ffffff;
 
 }
 
@@ -10,11 +14,17 @@ background:#fff;
 
 max-width:760px;
 
+width:100%;
+
 margin:0;
 
 padding:0;
 
 }
+
+/* =====================================================
+LABEL
+===================================================== */
 
 .impact-label{
 
@@ -24,23 +34,23 @@ align-items:center;
 
 gap:8px;
 
-padding:8px 18px;
+padding:8px 20px;
 
-border:1px solid #ffd2b0;
+margin-bottom:28px;
 
-border-radius:40px;
+border-radius:999px;
 
-background:#fff7f1;
+background:#fff6ef;
 
-font-size:11px;
+border:1px solid #f2c39c;
+
+color:#ff7705;
+
+font-size:12px;
 
 font-weight:700;
 
 letter-spacing:2px;
-
-color:#ff7705;
-
-margin-bottom:28px;
 
 text-transform:uppercase;
 
@@ -60,9 +70,13 @@ border-radius:50%;
 
 }
 
+/* =====================================================
+TITLE
+===================================================== */
+
 .impact-title{
 
-font-size:60px;
+font-size:58px;
 
 font-weight:800;
 
@@ -70,15 +84,11 @@ line-height:1.08;
 
 letter-spacing:-0.04em;
 
-word-spacing:-4px;
-
 color:#081329;
 
-margin-bottom:28px;
+margin-bottom:36px;
 
-max-width:900px;
-
-font-family:inherit;
+max-width:720px;
 
 }
 
@@ -90,19 +100,27 @@ color:#ff7705;
 
 }
 
+/* =====================================================
+DESCRIPTION
+===================================================== */
+
 .impact-description{
+
+max-width:760px;
+
+margin-bottom:32px;
 
 font-size:18px;
 
-line-height:1.9;
+line-height:1.8;
 
-color:#475569;
-
-margin-bottom:48px;
-
-max-width:100%;
+color:#526884;
 
 }
+
+/* =====================================================
+STAT GRID
+===================================================== */
 
 .impact-stat-grid{
 
@@ -112,21 +130,13 @@ grid-template-columns:repeat(3,1fr);
 
 gap:24px;
 
-margin-bottom:50px;
+margin-top:10px;
+
+margin-bottom:36px;
 
 }
 
 .impact-stat-card{
-
-background:#07142d;
-
-border-radius:18px;
-
-padding:28px 20px;
-
-text-align:center;
-
-min-height:145px;
 
 display:flex;
 
@@ -134,9 +144,33 @@ flex-direction:column;
 
 justify-content:center;
 
+align-items:center;
+
+padding:28px;
+
+background:#07142d;
+
+border-radius:18px;
+
+min-height:170px;
+
+transition:.35s ease;
+
+}
+
+.impact-stat-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:
+0 18px 40px rgba(0,0,0,.05),
+0 8px 20px rgba(255,119,5,.08);
+
 }
 
 .impact-stat-card h3{
+
+margin:0 0 12px;
 
 font-size:64px;
 
@@ -146,61 +180,52 @@ line-height:1;
 
 color:#ff7705;
 
-margin-bottom:12px;
-
 }
 
 .impact-stat-card h4{
 
+margin:0;
+
 font-size:12px;
 
-font-weight:500;
-
-letter-spacing:2px;
+font-weight:600;
 
 line-height:1.5;
 
-color:#8f98aa;
+letter-spacing:2px;
+
+text-align:center;
 
 text-transform:uppercase;
 
-margin:0;
+color:#97a3b8;
 
 }
 
-.impact-benefits{
+/* =====================================================
+READ MORE BUTTON
+(EXACT SAME AS WHY SECTION)
+===================================================== */
+
+.impact-read-more{
+
+margin-top:30px;
+
+margin-bottom:36px;
 
 display:flex;
 
-flex-direction:column;
-
-gap:16px;
+justify-content:flex-start;
 
 }
 
-.impact-benefit{
+.impact-btn{
 
-display:flex;
+min-width:160px;
 
-align-items:flex-start;
+height:48px;
 
-gap:20px;
-
-padding:22px 24px;
-
-border:1px solid #dce3ea;
-
-border-radius:14px;
-
-background:#fff;
-
-}
-
-.impact-check{
-
-width:32px;
-
-height:32px;
+padding:0 24px;
 
 display:flex;
 
@@ -208,41 +233,204 @@ align-items:center;
 
 justify-content:center;
 
-background:#e7f8ec;
+gap:10px;
 
-border:1px solid #6ee7a0;
+background:linear-gradient(
+90deg,
+#020817 0%,
+#071b3b 65%,
+#ff7705 100%
+);
 
-border-radius:10px;
+color:#ffffff;
 
-color:#16a34a;
+border:none;
+
+border-radius:999px;
+
+font-size:16px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.35s ease;
+
+}
+
+.impact-btn::after{
+
+content:"→";
 
 font-size:18px;
 
-font-weight:700;
-
-flex-shrink:0;
-
-margin-top:2px;
+transition:.3s;
 
 }
+
+.impact-btn:hover{
+
+transform:translateY(-2px);
+
+box-shadow:0 14px 35px rgba(2,8,23,.18);
+
+}
+
+.impact-btn:hover::after{
+
+transform:translateX(4px);
+
+}
+.impact-benefits{
+
+display:flex;
+
+flex-direction:column;
+
+gap:22px;
+
+margin-top:10px;
+
+animation:impactFade .35s ease;
+
+}
+/* =====================================================
+BENEFITS LIST
+===================================================== */
+
+.impact-benefit{
+
+position:relative;
+
+padding:34px 38px;
+
+background:linear-gradient(
+180deg,
+#fcfbfa 0%,
+#f7f5f3 100%
+);
+
+border:1px solid #ece8e3;
+
+border-radius:22px;
+
+overflow:hidden;
+
+transition:all .35s ease;
+
+cursor:pointer;
+
+box-shadow:
+0 2px 6px rgba(0,0,0,.015);
+
+}
+
+.impact-benefit::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+right:0;
+
+bottom:0;
+
+background:linear-gradient(
+180deg,
+rgba(255,255,255,.55) 0%,
+rgba(255,255,255,0) 60%
+);
+
+pointer-events:none;
+
+}
+
+.impact-benefit:hover{
+
+background:linear-gradient(
+135deg,
+#fff0e4 0%,
+#fff7f2 30%,
+#fdfcfb 70%,
+#ffffff 100%
+);
+
+border:1px solid #ff7705;
+
+box-shadow:
+0 12px 30px rgba(255,119,5,.08),
+0 4px 12px rgba(0,0,0,.03);
+
+}
+
+
+/* =====================================================
+TEXT
+===================================================== */
 
 .impact-benefit p{
 
+position:relative;
+
+z-index:2;
+
 margin:0;
 
-font-size:17px;
+font-size:19px;
 
-line-height:1.7;
+font-weight:500;
 
-color:#475569;
+line-height:1.75;
+
+color:#081329;
+
+transition:.3s;
 
 }
+
+.impact-benefit:hover p{
+
+color:#081329;
+
+}
+
+/* =====================================================
+ANIMATION
+===================================================== */
+
+@keyframes impactFade{
+
+from{
+
+opacity:0;
+
+transform:translateY(18px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* =====================================================
+TABLET
+===================================================== */
 
 @media(max-width:991px){
 
 .impact-title{
 
-font-size:52px;
+font-size:46px;
 
 }
 
@@ -252,7 +440,19 @@ grid-template-columns:1fr;
 
 }
 
+.impact-stat-card{
+
+min-height:auto;
+
+padding:28px;
+
 }
+
+}
+
+/* =====================================================
+MOBILE
+===================================================== */
 
 @media(max-width:767px){
 
@@ -264,13 +464,57 @@ padding:60px 0;
 
 .impact-title{
 
-font-size:40px;
+font-size:36px;
+
+letter-spacing:-0.03em;
 
 }
 
 .impact-description{
 
 font-size:16px;
+
+line-height:1.8;
+
+}
+
+.impact-read-more{
+
+margin-top:24px;
+
+margin-bottom:30px;
+
+}
+
+.impact-btn{
+
+min-width:145px;
+
+height:44px;
+
+font-size:15px;
+
+}
+
+.impact-benefit{
+
+padding:24px;
+
+border-radius:18px;
+
+}
+
+.impact-benefit p{
+
+font-size:17px;
+
+line-height:1.7;
+
+}
+
+.impact-stat-card h3{
+
+font-size:52px;
 
 }
 

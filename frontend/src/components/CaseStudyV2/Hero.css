@@ -217,15 +217,22 @@ Client Card
 }
 
 .cs-client-logo{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:140px;
+    overflow:visible;
+}
 
-    color:#ffffff;
+.polaris-logo{
+    width:150px;
+    height:auto;
+    display:block;
+    object-fit:contain;
 
-    font-size:18px;
-
-    font-weight:800;
-
-    letter-spacing:1px;
-
+    /* Make only the visible logo bigger */
+    transform:scale(1.25);
+    transform-origin:center;
 }
 
 .client-label{

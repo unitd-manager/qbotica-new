@@ -1,34 +1,30 @@
 'use client';
 
 import './Hero.css';
+import Image from 'next/image';
 
 export default function Hero() {
 
   const stats = [
+    {
+      value: '>90%',
+      description: 'NOISE REMOVAL\nSUCCESS RATE ON\nVENDOR EMAILS',
+    },
+    {
+      value: '500+',
+      description: 'QUOTATIONS\nPROCESSED\nAUTOMATICALLY EACH\nDAY',
+    },
+    {
+      value: '100%',
+      description: 'END-TO-END\nWORKFLOW\nAUTOMATED WITHOUT\nHEADCOUNT\nINCREASE',
+    },
+    {
+      value: '3hrs',
+      description: 'DAILY TIME\nRECLAIMED BY THE\nOPERATIONS TEAM',
+    },
+  ];
 
-  {
-    value: '>90%',
-    description: 'NOISE REMOVAL\nSUCCESS RATE ON\nVENDOR EMAILS',
-  },
-
-  {
-    value: '500+',
-    description: 'QUOTATIONS\nPROCESSED\nAUTOMATICALLY EACH\nDAY',
-  },
-
-  {
-    value: '100%',
-    description: 'END-TO-END\nWORKFLOW\nAUTOMATED WITHOUT\nHEADCOUNT\nINCREASE',
-  },
-
-  {
-    value: '3hrs',
-    description: 'DAILY TIME\nRECLAIMED BY THE\nOPERATIONS TEAM',
-  },
-
-];
   return (
-
     <section className="cs-hero">
 
       <div className="cs-hero-grid"></div>
@@ -38,7 +34,6 @@ export default function Hero() {
       <div className="cs-hero-container">
 
         <div className="cs-breadcrumb">
-
           <span>Home</span>
           <span>/</span>
           <span>Resources</span>
@@ -46,61 +41,52 @@ export default function Hero() {
           <span>Case Studies</span>
           <span>/</span>
           <span className="active">
-
             Polaris Transportation
-
           </span>
-
         </div>
 
         <div className="cs-meta">
 
           <div className="cs-case-tag">
-
             <span className="dot"></span>
-
             CASE STUDY
-
           </div>
 
           <div className="cs-chip">
-
             Transportation & Supply Chain
-
           </div>
 
           <div className="cs-chip">
-
-            Document AI
-
+            Doqument AI
           </div>
 
           <div className="cs-chip">
-
             RPA
-
           </div>
 
           <div className="cs-client-card">
 
             <div className="cs-client-logo">
 
-              POLARIS
+              <Image
+                src="/images/polaris-logo.png"
+                alt="Polaris Transportation Group"
+                width={150}
+                height={60}
+                className="polaris-logo"
+                priority
+              />
 
             </div>
 
-            <div>
+            <div className="cs-client-info">
 
               <div className="client-label">
-
                 CLIENT
-
               </div>
 
               <div className="client-name">
-
                 Polaris Transportation Group
-
               </div>
 
             </div>
@@ -114,9 +100,7 @@ export default function Hero() {
           From Inbox Chaos to
 
           <span>
-
             500+ Documents
-
           </span>
 
           Processed Daily
@@ -132,26 +116,14 @@ export default function Hero() {
               key={index}
             >
 
-              <h2>
-
-                {item.value}
-
-              </h2>
-
-              <h4>
-
-                {item.title}
-
-              </h4>
+              <h2>{item.value}</h2>
 
               <p
                 style={{
                   whiteSpace: 'pre-line'
                 }}
               >
-
                 {item.description}
-
               </p>
 
             </div>
@@ -163,7 +135,5 @@ export default function Hero() {
       </div>
 
     </section>
-
   );
-
 }

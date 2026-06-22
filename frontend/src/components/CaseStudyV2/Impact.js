@@ -1,8 +1,11 @@
 'use client';
 
 import './Impact.css';
+import { useState } from 'react';
 
 export default function Impact() {
+
+  const [showBenefits, setShowBenefits] = useState(false);
 
   const stats = [
 
@@ -60,19 +63,25 @@ export default function Impact() {
 
         <div className="impact-stat-grid">
 
-          {stats.map((item,index)=>(
+          {stats.map((item, index) => (
 
-            <div className="impact-stat-card" key={index}>
+            <div
+              className="impact-stat-card"
+              key={index}
+            >
 
               <h3>{item.value}</h3>
 
               <h4>
 
-                {item.title.split('\n').map((line,i)=>
+                {item.title.split('\n').map((line, i) => (
 
-                  <span key={i}>{line}<br/></span>
+                  <span key={i}>
+                    {line}
+                    <br />
+                  </span>
 
-                )}
+                ))}
 
               </h4>
 
@@ -82,25 +91,41 @@ export default function Impact() {
 
         </div>
 
-        <div className="impact-benefits">
+        <div className="impact-read-more">
 
-          {benefits.map((item,index)=>(
+  <button
+    className="impact-btn"
+    onClick={() => setShowBenefits((prev) => !prev)}
+  >
 
-            <div className="impact-benefit" key={index}>
+   {showBenefits ? "Show Less" : "Read More"}
 
-              <div className="impact-check">
+  </button>
 
-                ✓
+</div>
 
-              </div>
+{showBenefits && (
 
-              <p>{item}</p>
+  <div className="impact-benefits">
 
-            </div>
+    {benefits.map((item, index) => (
 
-          ))}
+      <div
+        className="impact-benefit"
+        key={index}
+      >
 
-        </div>
+        <p>{item}</p>
+
+      </div>
+
+    ))}
+
+  </div>
+
+)}
+
+  
 
       </div>
 

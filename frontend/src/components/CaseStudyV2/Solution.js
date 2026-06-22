@@ -1,21 +1,14 @@
 'use client';
 
 import './Solution.css';
+import { useState } from "react";
 
 export default function Solution() {
+  const [showSolutions, setShowSolutions] = useState(false);
 
   const solutions = [
 
   {
-    icon: "📨",
-    title: "Intelligent Email Parsing",
-    description:
-      "DocumentAI reads each incoming vendor email, identifies the relevant quotation request regardless of format, thread length, or embedded attachments — understanding context and intent, not just pattern-matching keywords.",
-    tag: "AI-powered extraction",
-  },
-
-  {
-    icon: "📉",
     title: "Advanced Noise Filtering",
     description:
       "Legal disclaimers, marketing signatures, forwarded thread history, and irrelevant content are identified and stripped away — isolating the signal from the noise with greater than 90% accuracy on real-world data.",
@@ -23,7 +16,6 @@ export default function Solution() {
   },
 
   {
-    icon: "⚙️",
     title: "Structured Data Transformation",
     description:
       "Extracted data — tracking numbers, routes, pricing inputs, special handling instructions — is validated against Polaris&apos;s business rules and transformed into standardized quotation formats ready for downstream processing.",
@@ -31,7 +23,6 @@ export default function Solution() {
   },
 
   {
-    icon: "🤖",
     title: "End-to-End RPA Execution",
     description:
       "Robotic workflows take the structured output and generate ready-to-send quotations automatically — updating internal systems, triggering notifications, and logging activity with full audit trails, all without human intervention on standard cases.",
@@ -39,10 +30,9 @@ export default function Solution() {
   },
 
   {
-    icon: "🧑‍💼",
     title: "Human-in-the-Loop for Edge Cases",
     description:
-      "When DocumentAI encounters an exception it can't resolve with confidence, it escalates intelligently — routing to the right SME with a structured summary of what it found, what it attempted, and why it flagged the case for review.",
+      "When DoqumentAI encounters an exception it can't resolve with confidence, it escalates intelligently — routing to the right SME with a structured summary of what it found, what it attempted, and why it flagged the case for review.",
     tag: "Smart escalation",
   },
 
@@ -61,7 +51,7 @@ export default function Solution() {
         </span>
 
         <h2 className="solution-title">
-          DocumentAI: Intelligent document
+          DoqumentAI: Intelligent document
           <br />
           <span>execution from email to quotation</span>
         </h2>
@@ -69,9 +59,9 @@ export default function Solution() {
         <div className="solution-description">
 
       <p>
-      qBotica deployed <strong>DocumentAI</strong> — its AI-powered intelligent document
+      qBotica deployed <strong>DoqumentAI</strong> — its AI-powered intelligent document
       processing solution — to rebuild the entire workflow from the ground up.
-      Rather than trying to impose structure on chaotic inputs, DocumentAI was
+      Rather than trying to impose structure on chaotic inputs, DoqumentAI was
       trained to work <em>within</em> the chaos: understanding language,
       inferring context, filtering noise, and extracting meaning from even the
       most inconsistent vendor emails.
@@ -86,48 +76,53 @@ export default function Solution() {
 
       </div>
 
-        <div className="solution-list">
+        <div className="solution-read-more">
 
-          {solutions.map((item, index) => (
+    <button
+        className="solution-btn"
+        onClick={() => setShowSolutions(!showSolutions)}
+    >
 
-            <div
-              className="solution-card"
-              key={index}
-            >
+        {showSolutions ? "Show Less" : "Read More"}
 
-              <div className="solution-icon">
+    </button>
 
-                {item.icon}
+</div>
 
-              </div>
+{showSolutions && (
 
-              <div className="solution-content">
+<div className="solution-list">
 
-                <h3>
+    {solutions.map((item, index) => (
 
-                  {item.title}
+        <div
+            className="solution-card"
+            key={index}
+        >
 
-                </h3>
+            <div className="solution-icon">
 
-                <p>
-
-                  {item.description}
-
-                </p>
-
-                <span>
-
-                  {item.tag}
-
-                </span>
-
-              </div>
+                {(index + 1).toString().padStart(2, "0")}
 
             </div>
 
-          ))}
+            <div className="solution-content">
+
+                <h3>{item.title}</h3>
+
+                <p>{item.description}</p>
+
+                <span>{item.tag}</span>
+
+            </div>
 
         </div>
+
+    ))}
+
+</div>
+
+)}
 
       </div>
 

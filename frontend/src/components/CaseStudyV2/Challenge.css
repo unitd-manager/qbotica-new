@@ -107,6 +107,75 @@ color:#5f6c7b;
 margin-bottom:22px;
 
 }
+.challenge-btn{
+
+    min-width:155px;
+
+    height:48px;
+
+    padding:0 24px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    background:linear-gradient(
+        90deg,
+        #020817 0%,
+        #071b3b 55%,
+        #ff7705 100%
+    );
+
+    color:#ffffff;
+
+    border:none;
+
+    border-radius:999px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:all .3s ease;
+
+}
+
+.challenge-btn::after{
+
+    content:"→";
+
+    font-size:18px;
+
+    transition:transform .3s ease;
+
+}
+
+.challenge-btn:hover{
+
+    background:linear-gradient(
+        90deg,
+        #010511 0%,
+        #0b244f 50%,
+        #ff8c21 100%
+    );
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 24px rgba(2,8,23,.25);
+
+}
+
+.challenge-btn:hover::after{
+
+    transform:translateX(4px);
+
+}
 
 .challenge-cards{
 
