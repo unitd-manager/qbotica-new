@@ -216,7 +216,7 @@ export default function Sidebar() {
 
         <p>
 
-          Free process discovery call. We'll map your document workflows
+          Free process discovery call. We&apos;ll map your document workflows
           and show where automation delivers the fastest ROI.
 
         </p>
