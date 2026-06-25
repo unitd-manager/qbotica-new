@@ -201,7 +201,7 @@ justify-content:flex-start;
 
 .solution-btn::after{
 
-    content:"→";
+    content:"";
 
     font-size:17px;
 

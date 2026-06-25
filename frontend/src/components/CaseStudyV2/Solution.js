@@ -83,7 +83,7 @@ export default function Solution() {
         onClick={() => setShowSolutions(!showSolutions)}
     >
 
-        {showSolutions ? "Show Less" : "Read More"}
+        {showSolutions ? "Show Less ↑" : "Read More ↓"}
 
     </button>
 
