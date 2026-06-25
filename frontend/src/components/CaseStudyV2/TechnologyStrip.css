@@ -28,7 +28,7 @@ flex-wrap:wrap;
 
 .tech-label{
 
-font-size:12px;
+font-size:18px;
 
 letter-spacing:2px;
 
@@ -74,13 +74,6 @@ cursor:pointer;
 
 }
 
-.tech-item:hover{
-
-color:#ff7705;
-
-transform:translateY(-2px);
-
-}
 
 .tech-item:not(:last-child)::after{
 
@@ -139,7 +132,7 @@ display:none;
 
 .tech-container{
 
-padding:18px 0;
+padding:24px 0;
 
 }
 
