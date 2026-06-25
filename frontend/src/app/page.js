@@ -71,15 +71,15 @@ export default async function HomePage() {
     return (
       <DivTag className="home-page">
         <StructuredData data={structuredData} />
-        {/* {finalLayouts.map((item) => (
+     {finalLayouts.map((item) => (
           <DynamicComponent
             key={`${item.layout.layout_type}-${item.index}`}
             layout={item.layout}
             data={item.data}
             hasCustomPadding={item.hasCustomPadding}
           />
-        ))} */}
-        <NewHomeStaticPage/>
+        ))} 
+           {/* <NewHomeStaticPage/>*/}
       </DivTag>
     );
   } catch (error) {
