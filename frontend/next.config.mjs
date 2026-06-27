@@ -17,7 +17,12 @@ const nextConfig = {
       port: '', // leave empty for default ports syed
       pathname: '/**',
     },
-
+ {
+      protocol: 'https',
+      hostname: 'qbdevadmin.unitdtechnologies.com',
+      port: '', // leave empty for default ports syed
+      pathname: '/**',
+    },
 
        {
       protocol: 'https',
