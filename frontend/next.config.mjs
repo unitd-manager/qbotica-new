@@ -47,6 +47,7 @@ const nextConfig = {
 
   // Headers for caching and security
   async headers() {
+    const isDev = process.env.NODE_ENV !== 'production';
     return [
       {
         source: '/:all*(svg|jpg|jpeg|png|gif|ico|webp|avif)',
@@ -54,7 +55,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
+            value: isDev ? 'no-store' : 'public, max-age=31536000, immutable',
           },
         ],
       },
@@ -63,7 +64,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
+            value: isDev ? 'no-store' : 'public, max-age=31536000, immutable',
           },
         ],
       },
