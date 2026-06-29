@@ -1,0 +1,214 @@
+:root{
+
+    --orange:#FF7705;
+    --orange2:#D05F00;
+
+    --og:linear-gradient(90deg,#FF7705,#D05F00);
+
+    --white:#fff;
+
+    --cream:#F9F8F6;
+
+    --border:#E5E7EB;
+
+    --ink:#111827;
+
+    --ink2:#1e293b;
+
+    --muted:#6B7280;
+
+    --shadow:0 4px 24px rgba(0,0,0,.07);
+
+}
+
+.hero-section{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:72px 0 100px;
+
+    background:
+
+    radial-gradient(circle at 85% 20%,rgba(255,119,5,.18),transparent 28%),
+
+    radial-gradient(circle at 8% 80%,rgba(11,17,32,.07),transparent 32%),
+
+    linear-gradient(
+
+        135deg,
+
+        #fff 0%,
+
+        #F9F8F6 55%,
+
+        #eef4fb 100%
+
+    );
+
+}
+
+.hero-section::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:-120px;
+
+    top:10px;
+
+    width:480px;
+
+    height:480px;
+
+    border-radius:50%;
+
+    border:72px solid rgba(11,17,32,.04);
+
+    pointer-events:none;
+
+}
+
+.hero-section .container{
+
+    max-width:1280px;
+
+    margin:auto;
+
+    padding:0 32px;
+
+}
+
+.hero-inner{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:860px;
+
+}
+
+.hero-kicker{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    background:#fff;
+
+    border:1px solid var(--border);
+
+    border-radius:999px;
+
+    padding:8px 16px;
+
+    margin-bottom:24px;
+
+    box-shadow:var(--shadow);
+
+    text-transform:uppercase;
+
+    letter-spacing:.06em;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    color:var(--ink);
+
+}
+
+.hero-kicker-dot{
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    background:var(--orange);
+
+    flex-shrink:0;
+
+    animation:pulse 2s infinite;
+
+}
+
+@keyframes pulse{
+
+0%,100%{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+50%{
+
+opacity:.4;
+
+transform:scale(1.5);
+
+}
+
+}
+
+.hero-title{
+
+    font-size:clamp(2.4rem,5.5vw,4.6rem);
+
+    line-height:1.03;
+
+    font-weight:900;
+
+    letter-spacing:-.045em;
+
+    color:var(--ink);
+
+    margin:0 0 20px;
+
+}
+
+.hero-title em{
+
+    font-style:normal;
+
+    background:var(--og);
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+.hero-sub{
+
+    max-width:680px;
+
+    font-size:1.05rem;
+
+    line-height:1.75;
+
+    color:var(--muted);
+
+    margin:0;
+
+}
+
+.hero-actions{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-top:32px;
+
+}
