@@ -66,7 +66,7 @@ export function AtolioTabs() {
         <div className={styles.interactiveKicker}>[CITY, STATE] &mdash; May 12, 2026</div>
         <h2>qBotica and Atolio Partner to Power AI Agents with Secure, Instant Access to Enterprise Knowledge</h2>
       </div>
-      <div className={styles.interactiveWrapper} style={{ gridTemplateColumns: 'minmax(0, 1fr) 380px' }}>
+      <div className={styles.interactiveWrapper} style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))' }}>
         <article className={styles.contentCard} key={active} style={{ minHeight: 0 }}>
           <div className={styles.contentNumber}>{BODY_TABS[active].number}</div>
           <h3 style={{ fontSize: 22, lineHeight: 1.3, margin: '0 0 14px', letterSpacing: 'normal' }}>{BODY_TABS[active].title}</h3>
@@ -98,7 +98,7 @@ export function AtolioOutcomes() {
         <h2>The partnership is focused on delivering three outcomes for joint clients:</h2>
       </div>
 
-      <div className={styles.impactGrid} style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
+      <div className={styles.impactGrid} style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))' }}>
         {OUTCOMES.map((item, idx) => (
           <article
             key={idx}

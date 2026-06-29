@@ -10,6 +10,13 @@ const posts = [
     link: 'https://www.qbotica.com/newsroom/qbotica-and-atolio-partner-to-power-ai-agents-with-secure-instant-access-to-enterprise-knowledge',
   },
   {
+    category: 'News',
+    title: 'qBotica Acquires Automatiga',
+    excerpt:
+      'qBotica has acquired Automatiga, strengthening its Agentic AI and Intelligent Automation-as-a-Service capabilities and launching qubi, its new enterprise Agentic AI platform.',
+    link: '/automatiga-acquisition',
+  },
+  {
     category: 'Event',
     title: 'Agent Builders Day Chennai',
     excerpt:
@@ -40,24 +47,26 @@ export default function LatestFromQbotica() {
 
      <div className={styles.newsGrid}>
   {posts.map((post, idx) => {
-    // Use specific images for each card: 1st, 2nd, and 3rd respectively.
+    // Use specific images for each card: 1st, 3rd, and 4th respectively.
     let media = null;
     if (idx === 0) {
       media = <img src={'/assets/images/atol.jpeg'} alt={post.title} className={styles.newsMedia} />;
-    } else if (idx === 1) {
-      media = <img src={'/assets/images/uipathevent.jpeg'} alt={post.title} className={styles.newsMedia} />;
     } else if (idx === 2) {
+      media = <img src={'/assets/images/uipathevent.jpeg'} alt={post.title} className={styles.newsMedia} />;
+    } else if (idx === 3) {
       media = <img src={'/assets/images/event.jpeg'} alt={post.title} className={styles.newsMedia} />;
     } else {
       media = null;
     }
 
+    const isExternal = /^https?:\/\//.test(post.link);
+
     return (
       <a
         key={idx}
         href={post.link}
-        target="_blank"
-        rel="noopener noreferrer"
+        target={isExternal ? '_blank' : undefined}
+        rel={isExternal ? 'noopener noreferrer' : undefined}
         className={styles.newsCard}
       >
         <div className={styles.mediaWrap}>{media}</div>
