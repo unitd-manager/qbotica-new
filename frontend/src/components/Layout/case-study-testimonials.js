@@ -8,7 +8,7 @@ export default function Testimonials({ data }) {
     {
       id: 1,
       stat: "7x faster claims",
-      quote: "qBotica's document AI transformed what used to be a three-hour manual process into something that runs before our team arrives at their desks.",
+      quote: "qBotica&apos;s document AI transformed what used to be a three-hour manual process into something that runs before our team arrives at their desks.",
       initials: "DO",
       avatarBg: "#FF7705",
       name: "Director of Operations",
@@ -26,7 +26,7 @@ export default function Testimonials({ data }) {
     {
       id: 3,
       stat: "500+ docs/day",
-      quote: "This wasn't just automation — it was a complete rethinking of how our team handles vendor communication at scale. The difference is night and day.",
+      quote: "This wasn&apos;t just automation — it was a complete rethinking of how our team handles vendor communication at scale. The difference is night and day.",
       initials: "OT",
       avatarBg: "#1D4ED8",
       name: "Operations Team",
