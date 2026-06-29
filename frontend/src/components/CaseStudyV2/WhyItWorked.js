@@ -66,25 +66,18 @@ export default function WhyItWorked() {
           </p>
         </div>
 
-        <div className="why-read-more">
-          <button
-            className="why-btn"
-            onClick={() => setShowWhyItems((prev) => !prev)}
-          >
-            {mounted ? (
-              <>
+       <div className="why-read-more">
+              <button
+                className="why-btn"
+                onClick={() => setShowWhyItems((prev) => !prev)}
+                aria-label={showWhyItems ? "Show Less" : "Show More"}
+              >
                 <span className="why-btn-text">
-                  {showWhyItems ? 'Show Less' : 'Read More'}
+                  Learn more about qBotica
+                  <span className="why-btn-arrow">→</span>
                 </span>
-                <span className="why-btn-arrow">
-                  {showWhyItems ? ' ↑' : ' ↓'}
-                </span>
-              </>
-            ) : (
-              'Read More'
-            )}
-          </button>
-        </div>
+              </button>
+            </div>
 
         {showWhyItems && (
           <div className="why-grid">

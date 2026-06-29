@@ -14,7 +14,7 @@ export default function ClientQuote() {
                     <div className="client-logo">
 
                         <Image
-                            src="/images/polaris-logo.png"
+                            src="/images/polaris-logo.jpg"
                             alt="Polaris Transportation Group"
                             width={190}
                             height={70}
