@@ -44,7 +44,7 @@ export default function QboticaPartners() {
         <p>
           The partner page expands the homepage partner section by
           introducing each relationship and explaining how it supports
-          qBotica's AI and automation strategy.
+          qBotica&apos;s AI and automation strategy.
         </p>
 
       </div>
@@ -105,12 +105,12 @@ export default function QboticaPartners() {
         <div className="partners-heading">
 
             <h2>
-                Meet the partners powering qBotica's ecosystem
+                Meet the partners powering qBotica&apos;s ecosystem
             </h2>
 
             <p>
                 Atolio is highlighted as the newest partnership, followed by
-                the strategic technologies supporting qBotica's AI-first approach.
+                the strategic technologies supporting qBotica&apos;s AI-first approach.
             </p>
 
         </div>
@@ -277,7 +277,7 @@ export default function QboticaPartners() {
     <div className="partners-container">
 
         <h2>
-            Ready to build with qBotica's ecosystem?
+            Ready to build with qBoticas ecosystem?
         </h2>
 
         <p>
