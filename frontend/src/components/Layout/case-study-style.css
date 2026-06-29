@@ -536,7 +536,7 @@
 }
 
 .section-head p {
-  font-size: 0.84rem;
+  font-size: 0.9rem;
   color: var(--muted, #6B7280);
   margin: 0;
 }
@@ -664,7 +664,7 @@
 }
 
 .cc-desc {
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   color: var(--muted, #6B7280);
   line-height: 1.65;
   display: none;
