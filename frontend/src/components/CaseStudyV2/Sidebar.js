@@ -56,10 +56,6 @@ export default function Sidebar() {
 
           <div className="sidebar-slide-content">
 
-            <h3>
-              POLARIS
-            </h3>
-
             <p>
 
               Polaris Transportation Group is a leading North American freight

@@ -15,7 +15,8 @@ import ClientScripts from '@/components/Common/ClientScripts'
 
 const inter = Inter({
   subsets: ['latin'],
-  weight: ['100', '200', '400', '500', '600'],
+  // Added 700, 800, 900 to support bold headings, kicker, and buttons
+  weight: ['100', '200', '400', '500', '600', '700', '800', '900'], 
   variable: '--font-inter',
   display: 'swap'
 })

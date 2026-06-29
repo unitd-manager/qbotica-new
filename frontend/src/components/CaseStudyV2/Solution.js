@@ -77,17 +77,17 @@ export default function Solution() {
       </div>
 
         <div className="solution-read-more">
-
-    <button
-        className="solution-btn"
-        onClick={() => setShowSolutions(!showSolutions)}
-    >
-
-        {showSolutions ? "Show Less ↑" : "Read More ↓"}
-
-    </button>
-
-</div>
+          <button
+            className="solution-btn"
+            onClick={() => setShowSolutions(!showSolutions)}
+            aria-label={showSolutions ? "Show Less" : "Show More"}
+          >
+            <span className="solution-btn-text">
+              Learn more about qBotica
+              <span className="solution-btn-arrow">→</span>
+            </span>
+          </button>
+        </div>
 
 {showSolutions && (
 

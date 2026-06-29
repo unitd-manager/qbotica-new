@@ -163,65 +163,47 @@ justify-content:flex-start;
 }
 
 .solution-btn{
-
     display:inline-flex;
-
     align-items:center;
-
     justify-content:center;
 
-    gap:8px;
+    padding:14px 28px;
 
-    min-width:210px;
+    background:#FFF6EF;
+    border:1px solid #FFD3B5;
+    border-radius:12px;
 
-    height:50px;
-
-    padding:0 22px;
-
-    background:#101113;
-
-    color:#ffffff;
-
-    border:none;
-
-    border-radius:10px;
-
-    font-size:15px;
-
-    font-weight:700;
+    color:#FF7705;
 
     cursor:pointer;
+    transition:.3s ease;
 
-    transition:all .3s ease;
-
-    box-shadow:
-    0 8px 18px -5px rgba(255,119,5,.22);
-
-}
-
-.solution-btn::after{
-
-    content:"";
-
-    font-size:17px;
-
-    transition:transform .3s ease;
-
+    box-shadow:none;
 }
 
 .solution-btn:hover{
-
-    transform:translateY(-2px);
-
-    box-shadow:
-    0 16px 36px rgba(244,123,32,.28);
-
+    background:#FFF1E6;
+    border-color:#FFB27A;
 }
 
-.solution-btn:hover::after{
+.solution-btn-text{
+    display:flex;
+    align-items:center;
+    gap:8px;
 
-    transform:translateX(4px);
+    color:#FF7705;
+    font-size:16px;
+    font-weight:600;
+}
 
+.solution-btn-arrow{
+    font-size:20px;
+    line-height:1;
+    transition:transform .3s ease;
+}
+
+.solution-btn:hover .solution-btn-arrow{
+    transform:translateX(5px);
 }
 /* =====================================
 SOLUTION LIST
