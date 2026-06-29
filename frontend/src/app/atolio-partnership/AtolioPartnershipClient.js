@@ -7,7 +7,7 @@ const LogoMark = ({ size = 18 }) => (
 );
 
 const AtolioMark = ({ size = 18 }) => (
-  <div style={{ background: '#1a56db', width: size, height: size, borderRadius: size * 0.22, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+  <div style={{ background: '#c8d1e3', width: size, height: size, borderRadius: size * 0.22, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
     <img src="/assets/images/atolioo.png" alt="Atolio" style={{ width: '70%', height: '70%', objectFit: 'contain', filter: 'brightness(0) invert(1)' }} />
   </div>
 );
