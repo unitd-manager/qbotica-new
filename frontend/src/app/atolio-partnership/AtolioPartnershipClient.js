@@ -2,24 +2,12 @@
 import { useState, useEffect, useRef } from 'react';
 import s from './style.module.css';
 
-const LogoMark = ({ bg, size = 18 }) => (
-  <div className={s.hppMark} style={{ background: bg, width: size, height: size, borderRadius: size * 0.22 }}>
-    <svg width={size * 0.6} height={size * 0.6} viewBox="0 0 34 34" fill="none">
-      <rect x="3" y="3" width="12" height="12" rx="2.5" fill="white" />
-      <rect x="19" y="3" width="12" height="12" rx="2.5" fill="white" opacity=".7" />
-      <rect x="3" y="19" width="12" height="12" rx="2.5" fill="white" opacity=".5" />
-      <rect x="19" y="19" width="12" height="12" rx="2.5" fill="white" opacity=".3" />
-    </svg>
-  </div>
+const LogoMark = ({ size = 18 }) => (
+  <img src="/assets/images/qbcomp.webp" alt="qBotica" style={{ width: size, height: size, objectFit: 'contain', flexShrink: 0 }} />
 );
 
-const AtolioMark = ({ bg, size = 18 }) => (
-  <div className={s.hppMark} style={{ background: bg, width: size, height: size, borderRadius: size * 0.22 }}>
-    <svg width={size * 0.55} height={size * 0.55} viewBox="0 0 24 24" fill="none">
-      <circle cx="12" cy="12" r="9" stroke="white" strokeWidth="2.5" />
-      <path d="M8 12h8M12 8v8" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
-    </svg>
-  </div>
+const AtolioMark = ({ size = 18 }) => (
+  <img src="/assets/images/atolioo.png" alt="Atolio" style={{ height: size, width: 'auto', objectFit: 'contain', flexShrink: 0 }} />
 );
 
 function Reveal({ children, className = '' }) {
@@ -61,32 +49,6 @@ export default function AtolioPartnershipClient() {
   return (
     <div className={s.apPage}>
 
-      {/* Announcement bar */}
-      <div className={s.annBar}>
-        🏆 qBotica recognized as a UiPath Agentic Automation Fast Track Partner —
-        <a href="#">Read More →</a>
-      </div>
-
-      {/* Topbar */}
-      <header className={s.topbar}>
-        <div className={s.logo}>
-          <div className={s.logoMark}>
-            <svg viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="3" y="3" width="12" height="12" rx="2.5" fill="white" />
-              <rect x="19" y="3" width="12" height="12" rx="2.5" fill="white" opacity=".75" />
-              <rect x="3" y="19" width="12" height="12" rx="2.5" fill="white" opacity=".5" />
-              <rect x="19" y="19" width="12" height="12" rx="2.5" fill="white" opacity=".3" />
-            </svg>
-          </div>
-          q<em>Botica</em>
-        </div>
-        <div className={s.topbarRight}>
-          <span className={s.topbarNote}>Newsroom / Press Release</span>
-          <a href="#" className={s.topbarBack}>&larr; All News</a>
-          <a href="#" className={s.topbarCta}>GET STARTED</a>
-        </div>
-      </header>
-
       {/* HERO */}
       <section className={s.hero}>
         <div className={s.heroInner}>
@@ -95,13 +57,12 @@ export default function AtolioPartnershipClient() {
 
             <div className={s.heroPartnerRow}>
               <div className={s.heroPartnerPill}>
-                <LogoMark bg="#FF7705" size={22} />
+                <LogoMark size={22} />
                 <span className={s.hppName}>qBotica</span>
               </div>
               <span className={s.heroX}>&times;</span>
               <div className={s.heroPartnerPill}>
-                <AtolioMark bg="#1a56db" size={22} />
-                <span className={s.hppName}>Atolio</span>
+                <AtolioMark size={22} />
               </div>
             </div>
 
@@ -117,20 +78,6 @@ export default function AtolioPartnershipClient() {
           </div>
 
           <aside className={s.spotlightCard}>
-            <div>
-              <div className={s.scBadge}>Strategic Partnership</div>
-              <div className={s.scPartnerLogos}>
-                <div className={s.scLogoPill}>
-                  <LogoMark bg="#FF7705" size={18} />
-                  <span className={s.scLogoName}>qBotica</span>
-                </div>
-                <span className={s.scX}>&times;</span>
-                <div className={s.scLogoPill}>
-                  <AtolioMark bg="#1a56db" size={18} />
-                  <span className={s.scLogoName}>Atolio</span>
-                </div>
-              </div>
-            </div>
             <div>
               <h3>Secure AI Search Meets Intelligent Automation</h3>
               <p>Permission-aware enterprise knowledge access integrated into AI agents, automation workflows, copilots, and digital workers &mdash; running entirely inside your environment.</p>

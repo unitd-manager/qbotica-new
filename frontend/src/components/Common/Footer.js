@@ -8,7 +8,7 @@ import { DivTag, H5Tag, LITag, PTag, ULTag } from "./HTMLTags";
 
 export default function Footer({ themeSettings = {}, footerMenus = {} }) {
   const pathname = usePathname();
-  const isNewHomeStatic = pathname === '/new-home-static' || pathname === '/new-home-static/';
+  const isNewHomeStatic = pathname === '/new-home-static' || pathname === '/new-home-static/' || pathname === '/atolio-partnership' || pathname === '/atolio-partnership/';
   const {
     copyright_text,
     social_link_1,
