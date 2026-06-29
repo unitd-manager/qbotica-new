@@ -12,7 +12,7 @@ export default function ReadyToBuildPanel() {
         </H2Tag>
         
         <PTag>
-          Let's identify where AI and automation can create measurable impact across your 
+          Let&apos;s identify where AI and automation can create measurable impact across your 
           operations. Free discovery call, ROI estimate in 48 hours.
         </PTag>
         
