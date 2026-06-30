@@ -13,12 +13,12 @@ import CaseStudiesFilter from '@/components/Layout/case-study-filterbar';
 import Testimonials from '@/components/Layout/case-study-testimonials';
 import ReadyToBuildPanel from '@/components/Layout/case-study-ready-to-build';
 
-const slug = 'automation-as-a-service';
+const slug = 'case-studies-new-industry';
 const parent_path = '';
 
 export async function generateMetadata() {
   return generatePageMetadatas(slug, 'page', parent_path, {
-    title: 'Automation as a Service Solutions | qBotica',
+    title: 'AI That Delivers, Not Just Talks | qBotica',
     description:
       "Unlock business efficiency with qBotica's Automation as a Service. Automate workflows, reduce costs, and accelerate digital transformation at scale.",
   });
