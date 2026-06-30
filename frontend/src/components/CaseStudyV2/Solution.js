@@ -83,7 +83,7 @@ export default function Solution() {
             aria-label={showSolutions ? "Show Less" : "Show More"}
           >
             <span className="solution-btn-text">
-              Learn more about qBotica
+              qBotica Solution Approach
               <span className="solution-btn-arrow">→</span>
             </span>
           </button>
