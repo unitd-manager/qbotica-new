@@ -21,7 +21,7 @@ export default function FeaturedCaseStudy({ data }) {
   const featuredTitle = data?.featured_title || 'Global bank cuts processing time by 75% and errors by 90% with intelligent automation';
   const featuredEyebrow = data?.featured_eyebrow || 'Financial Services';
   const featuredHeading = data?.featured_heading || 'A global top 10 bank streamlines high-volume operations with qBotica';
-  const featuredDesc = data?.featured_desc || 'qBotica helped one of the world&apos;s largest financial institutions modernize complex operational workflows, eliminate manual handling across thousands of daily transactions, and dramatically improve accuracy across business-critical processes.';
+  const featuredDesc = data?.featured_desc || 'qBotica helped one of the world\'s largest financial institutions modernize complex operational workflows, eliminate manual handling across thousands of daily transactions, and dramatically improve accuracy across business-critical processes.';
 
   const outcomes = data?.outcomes || [
     { value: '75%', label: 'Processing reduction' },

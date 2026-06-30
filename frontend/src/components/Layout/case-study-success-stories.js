@@ -33,7 +33,7 @@ export default function CustomerSuccessHero({ data }) {
     data?.secondary_button_text || 'Talk to an Expert';
 
   const secondaryButtonLink =
-    data?.secondary_button_link || '/contact';
+    data?.secondary_button_link || 'https://meetings.hubspot.com/automation-demo/scheduler';
 
   const class_name = data?.class_name || '';
   const id = data?.id || '';
@@ -66,11 +66,13 @@ export default function CustomerSuccessHero({ data }) {
           </ATag>
 
           <ATag
-            href={secondaryButtonLink}
-            className="btn-secondary"
-          >
-            {secondaryButtonText}
-          </ATag>
+  href={secondaryButtonLink}
+  className="btn-secondary"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  {secondaryButtonText}
+</ATag>
         </DivTag>
 
       </DivTag>
