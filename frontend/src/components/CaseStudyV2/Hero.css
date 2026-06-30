@@ -275,10 +275,10 @@ Stats
     color:rgba(255,255,255,.92);
     font-size:15px;
     font-weight:500;
-    line-height:1.65;
-    letter-spacing:.5px;
+    line-height:1.6;
+    letter-spacing:.4px;
     text-transform:uppercase;
-    max-width:180px;
+    max-width:220px;
 }
 
 /* =====================================================
@@ -300,46 +300,100 @@ Responsive
 
 @media(max-width:768px){
 
+/* HERO */
+
 .cs-hero{
-    padding:60px 0 0;
+    padding:50px 0 0;
+    min-height:auto;
+    background-position:center;
 }
+
+.cs-hero-container{
+    width:min(100%,92%);
+    padding-left:0;
+}
+
+/* BREADCRUMB */
 
 .cs-breadcrumb{
-    font-size:14px;
+    font-size:13px;
+    gap:8px;
+    margin-bottom:24px;
 }
 
+/* META */
+
 .cs-meta{
-    gap:10px;
-    margin-bottom:30px;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+    margin-bottom:28px;
+}
+
+/* CHIPS */
+
+.cs-case-tag,
+.cs-chip{
+    height:38px;
+    padding:0 14px;
+    font-size:13px;
 }
 
 .cs-chip{
-    font-size:14px;
-    height:40px;
-    padding:0 15px;
+    max-width:100%;
+    white-space:nowrap;
 }
 
-.cs-case-tag{
-    font-size:13px;
+/* CLIENT CARD */
+
+.cs-client-card{
+    width:100%;
+    margin:8px 0 0;
+    padding:18px;
+    gap:16px;
+    border-radius:16px;
+}
+
+.cs-client-logo{
+    width:110px;
+}
+
+.polaris-logo{
+    width:120px;
+}
+
+.client-label{
+    font-size:11px;
 }
 
 .client-name{
     font-size:16px;
+    line-height:1.4;
 }
 
+/* TITLE */
+
 .cs-title{
+    max-width:100%;
     font-size:42px;
-    line-height:1.05;
+    line-height:1.08;
     letter-spacing:-1px;
 }
 
+.cs-title span{
+    margin:6px 0;
+}
+
+/* STATS */
+
 .cs-stats{
     grid-template-columns:1fr;
-    margin-top:45px;
+    margin-top:40px;
 }
 
 .cs-stat-card{
-    padding:24px;
+    padding:26px 20px;
     border-right:none;
     border-bottom:1px solid rgba(255,255,255,.15);
 }
@@ -349,11 +403,14 @@ Responsive
 }
 
 .cs-stat-card h2{
-    font-size:46px;
+    font-size:44px;
+    margin-bottom:12px;
 }
 
 .cs-stat-card p{
     font-size:14px;
+    line-height:1.55;
+    max-width:260px;
 }
 
 }

@@ -1,248 +1,168 @@
+/* =====================================
+CLIENT QUOTE
+===================================== */
+
 .client-quote{
-
-background:#f5f3ef;
-
-padding:50px 0;
-
-border-top:1px solid #ececec;
-border-bottom:1px solid #ececec;
-
+    background:#f5f3ef;
+    padding:80px 0;
+    border-top:1px solid #ececec;
+    border-bottom:1px solid #ececec;
 }
 
 .client-quote-container{
+    width:min(1200px,92%);
+    margin:auto;
 
-width:min(1200px,92%);
-margin:auto;
-
-display:flex;
-align-items:flex-start;
-
-gap:48px;
-
+    display:flex;
+    align-items:center;
+    gap:60px;
 }
 
-.client-logo-column{
+/* =====================================
+LEFT IMAGE
+===================================== */
 
-width:240px;
+.client-photo-column{
+    width:280px;
+    flex-shrink:0;
 
-flex-shrink:0;
-
-display:flex;
-flex-direction:column;
-
-align-items:center;
-
-padding-top:6px;
-
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
-.client-logo{
+.client-photo{
+    width:260px;
+    height:340px;
+    object-fit:cover;
+    border-radius:14px;
+    display:block;
 
-width:100%;
-
-margin-bottom:18px;
-
-display:flex;
-
-align-items:LEFT;
-
-justify-content:CENTER;
-
+    box-shadow:0 20px 40px rgba(0,0,0,.08);
 }
 
-.client-logo-image{
-
-width:180px;
-
-height:auto;
-
-display:block;
-
-object-fit:contain;
-
-}
-.client-company{
-
-font-size:13px;
-
-font-weight:800;
-
-line-height:1.5;
-
-text-align:center;
-
-text-transform:uppercase;
-
-letter-spacing:1.5px;
-
-color:#596579;
-
-width:100%;
-
-
-
-}
+/* =====================================
+DIVIDER
+===================================== */
 
 .client-divider{
-
-width:2px;
-background:#d7d7d7;
-
+    width:1px;
+    align-self:stretch;
+    background:#dddddd;
 }
 
+/* =====================================
+RIGHT
+===================================== */
+
 .client-content{
-
-flex:1;
-
-padding-left:4px;
-
+    flex:1;
 }
 
 .quote-icon{
-
-font-size:54px;
-
-font-family:Georgia,serif;
-
-color:#ff7705;
-
-line-height:1;
-
-margin-bottom:18px;
-
+    font-size:74px;
+    line-height:1;
+    color:#ff7705;
+    font-family:Georgia,serif;
+    margin-bottom:18px;
 }
 
 .quote-description{
-
-font-size:22px;
-
-font-style:italic;
-
-font-weight:300;
-
-line-height:1.6;
-
-color:#23344d;
-
-margin-bottom:24px;
-
-max-width:920px;
-
+    font-size:22px;
+    line-height:1.75;
+    font-style:italic;
+    font-weight:300;
+    color:#23344d;
+    margin-bottom:40px;
 }
 
 .quote-author{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:8px;
 
-display:flex;
+    font-size:18px;
+}
 
-align-items:center;
-
-gap:6px;
-
-font-size:15px;
-
-font-weight:700;
-
-color:#42536a;
-
-letter-spacing:0;
-
+.quote-author strong{
+    color:#22334b;
+    font-weight:700;
 }
 
 .quote-author span{
-
-display:inline;
-
-margin-top:0;
-
-color:#ff7705;
-
-font-weight:700;
-
+    color:#ff7705;
+    font-weight:600;
 }
+
+/* =====================================
+TABLET
+===================================== */
 
 @media(max-width:991px){
 
+.client-quote{
+    padding:60px 0;
+}
+
 .client-quote-container{
-
-flex-direction:column;
-
-gap:36px;
-
+    flex-direction:column;
+    gap:40px;
 }
 
 .client-divider{
-
-display:none;
-
+    display:none;
 }
 
-.client-logo-column{
+.client-photo-column{
+    width:100%;
+}
 
-width:220px;
+.client-photo{
+    width:260px;
+    height:320px;
+}
 
-flex-shrink:0;
-
-display:flex;
-
-flex-direction:column;
-
-align-items:flex-start;
-
+.client-content{
+    text-align:center;
 }
 
 .quote-description{
+    font-size:20px;
+}
 
-font-size:21px;
-
-line-height:1.8;
-
+.quote-author{
+    justify-content:center;
 }
 
 }
+
+/* =====================================
+MOBILE
+===================================== */
 
 @media(max-width:767px){
 
 .client-quote{
-
-padding:50px 0;
-
+    padding:50px 0;
 }
 
-.client-logo{
-
-font-size:20px;
-
-}
-
-.client-company{
-
-font-size:13px;
-text-align:left;
-
-line-height:1.8;
-
+.client-photo{
+    width:220px;
+    height:280px;
 }
 
 .quote-icon{
-
-font-size:42px;
-
+    font-size:56px;
 }
 
 .quote-description{
-
-font-size:18px;
-
-line-height:1.7;
-
+    font-size:17px;
+    line-height:1.8;
 }
 
 .quote-author{
-
-font-size:14px;
-
-flex-wrap:wrap;
-
+    font-size:15px;
 }
 
 }

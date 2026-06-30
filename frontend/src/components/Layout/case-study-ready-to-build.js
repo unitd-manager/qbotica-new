@@ -12,18 +12,29 @@ export default function ReadyToBuildPanel() {
         </H2Tag>
         
         <PTag>
-          Let's identify where AI and automation can create measurable impact across your 
+          Let&apos;s identify where AI and automation can create measurable impact across your 
           operations. Free discovery call, ROI estimate in 48 hours.
         </PTag>
         
-        <DivTag className="cta-actions">
-          <a href="#" className="btn-primary-cta">
-            Schedule a Discovery Call →
-          </a>
-          <a href="#" className="btn-secondary-cta">
-            Talk to an Expert
-          </a>
-        </DivTag>
+       <DivTag className="cta-actions">
+  <a
+    href="https://meetings.hubspot.com/automation-demo/scheduler"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="btn-primary-cta"
+  >
+    Schedule a Discovery Call →
+  </a>
+
+  <a
+    href="https://meetings.hubspot.com/automation-demo/scheduler"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="btn-secondary-cta"
+  >
+    Talk to an Expert
+  </a>
+</DivTag>
       </DivTag>
     </section>
   );

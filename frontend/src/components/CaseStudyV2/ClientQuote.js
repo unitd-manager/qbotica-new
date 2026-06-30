@@ -5,34 +5,29 @@ import Image from 'next/image';
 
 export default function ClientQuote() {
     return (
+
         <section className="client-quote">
 
             <div className="client-quote-container">
 
-                <div className="client-logo-column">
+                {/* LEFT */}
 
-                    <div className="client-logo">
+                <div className="client-photo-column">
 
-                        <Image
-                            src="/images/polaris-logo.jpg"
-                            alt="Polaris Transportation Group"
-                            width={190}
-                            height={70}
-                            className="client-logo-image"
-                            priority
-                        />
-
-                    </div>
-
-                    <div className="client-company">
-                        Polaris Transportation
-                        <br />
-                        Group
-                    </div>
+                    <Image
+                        src="/images/dave-brajkovich.jpg"
+                        alt="Dave Brajkovich"
+                        width={260}
+                        height={320}
+                        className="client-photo"
+                        priority
+                    />
 
                 </div>
 
                 <div className="client-divider"></div>
+
+                {/* RIGHT */}
 
                 <div className="client-content">
 
@@ -42,17 +37,25 @@ export default function ClientQuote() {
 
                     <p className="quote-description">
 
-                        This wasn&apos;t just automation—it was a complete rethinking
-                        of how our operations team handles vendor communication
-                        at scale. What used to take hours now happens before
-                        anyone arrives at their desk. DoqumentAI understands our
-                        emails the way our best team members do.
+                        Their customer-centric approach, which combines best-in-class
+                        humans in the loop with a cloud-based delivery of a sophisticated
+                        machine learning platform, helped us scale delivery of pricing
+                        quotations at an astronomical speed with a potential to increase
+                        revenues for Polaris Transport while significantly reducing costs
+                        of operations. We are now able to deploy the staff onto other
+                        critical initiatives that were shelved for years, a true
+                        win-win for all.
 
                     </p>
 
                     <div className="quote-author">
-                        Director of Operations •
-                        <span> Polaris Transportation Group</span>
+
+                        <strong>– Dave Brajkovich</strong>
+
+                        <span>
+                            CTO, Polaris Transport
+                        </span>
+
                     </div>
 
                 </div>
@@ -60,5 +63,6 @@ export default function ClientQuote() {
             </div>
 
         </section>
+
     );
 }
