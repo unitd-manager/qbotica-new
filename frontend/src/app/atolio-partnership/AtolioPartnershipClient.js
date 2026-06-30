@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import s from './style.module.css';
 
 const LogoMark = ({ size = 18 }) => (
-  <img src="/assets/images/qbcomp.webp" alt="qBotica" style={{ width: size, height: size, objectFit: 'contain', flexShrink: 0 }} />
+  <img src="/assets/images/logo-front.webp" alt="qBotica" style={{ height: size, width: 'auto', objectFit: 'contain', flexShrink: 0 }} />
 );
 
 const AtolioMark = ({ size = 18 }) => (
@@ -57,8 +57,7 @@ export default function AtolioPartnershipClient() {
 
             <div className={s.heroPartnerRow}>
               <div className={s.heroPartnerPill}>
-                <LogoMark size={28} />
-                <span className={s.hppName}>qBotica</span>
+                <LogoMark size={40} />
               </div>
               <span className={s.heroX}>&times;</span>
               <div className={s.heroPartnerPill}>
@@ -179,9 +178,7 @@ export default function AtolioPartnershipClient() {
                 <div className={`${s.accordion} ${openItem === 'qbotica' ? s.accordionActive : ''}`}>
                   <button type="button" className={s.accordionHeader} onClick={() => toggle('qbotica')}>
                     <div className={s.accordionHeaderLeft}>
-                      <div className={s.accordionLogoMark} style={{ background: '#FF7705' }}>
-                        <svg width="18" height="18" viewBox="0 0 34 34" fill="none"><rect x="3" y="3" width="12" height="12" rx="2.5" fill="white" /><rect x="19" y="3" width="12" height="12" rx="2.5" fill="white" opacity=".7" /><rect x="3" y="19" width="12" height="12" rx="2.5" fill="white" opacity=".5" /><rect x="19" y="19" width="12" height="12" rx="2.5" fill="white" opacity=".3" /></svg>
-                      </div>
+                      <img src="/assets/images/qbcomp.webp" alt="qBotica" style={{ width: 32, height: 32, objectFit: 'contain', flexShrink: 0 }} />
                       About qBotica
                     </div>
                     <div className={s.accordionIcon}>+</div>
@@ -196,9 +193,7 @@ export default function AtolioPartnershipClient() {
                 <div className={`${s.accordion} ${openItem === 'atolio' ? s.accordionActive : ''}`}>
                   <button type="button" className={s.accordionHeader} onClick={() => toggle('atolio')}>
                     <div className={s.accordionHeaderLeft}>
-                      <div className={s.accordionLogoMark} style={{ background: '#1a56db' }}>
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="white" strokeWidth="2.5" /><path d="M8 12h8M12 8v8" stroke="white" strokeWidth="2.5" strokeLinecap="round" /></svg>
-                      </div>
+                      <img src="/assets/images/atolioo.png" alt="Atolio" style={{ height: 30, width: 'auto', objectFit: 'contain', flexShrink: 0 }} />
                       About Atolio
                     </div>
                     <div className={s.accordionIcon}>+</div>
@@ -258,17 +253,17 @@ export default function AtolioPartnershipClient() {
               <p>Stay current with qBotica&rsquo;s latest partnerships, platform updates, and thought leadership.</p>
             </div>
             <div className={s.relatedGrid}>
-              <a href="#" className={s.relatedCard} style={{ backgroundImage: "linear-gradient(to bottom, rgba(11,17,32,.08), rgba(11,17,32,.88)), url('https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=80')" }}>
-                <span>Agentic AI</span>
-                <h3>How AI agents are reshaping enterprise automation</h3>
+              <a href="https://www.qbotica.com/newsroom/qbotica-announces-acquisition-of-automatiga-to-expand-global-intelligent-automation-and-ai-capabilities" target="_blank" rel="noreferrer" className={s.relatedCard} style={{ backgroundImage: "linear-gradient(to bottom, rgba(11,17,32,.08), rgba(11,17,32,.88)), url('https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=80')" }}>
+                <span>Acquisition</span>
+                <h3>qBotica acquires Automatiga to expand global intelligent automation and AI capabilities</h3>
               </a>
-              <a href="#" className={s.relatedCard} style={{ backgroundImage: "linear-gradient(to bottom, rgba(11,17,32,.08), rgba(11,17,32,.88)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80')" }}>
-                <span>Partnerships</span>
-                <h3>Partner ecosystem updates and innovation news</h3>
+              <a href="https://www.qbotica.com/newsroom/mahesh-vinayagam-deloitte-technology-fast-500-leadership-reflections" target="_blank" rel="noreferrer" className={s.relatedCard} style={{ backgroundImage: "linear-gradient(to bottom, rgba(11,17,32,.08), rgba(11,17,32,.88)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80')" }}>
+                <span>Leadership</span>
+                <h3>Mahesh Vinayagam: Deloitte Technology Fast 500 leadership reflections</h3>
               </a>
-              <a href="#" className={s.relatedCard} style={{ backgroundImage: "linear-gradient(to bottom, rgba(11,17,32,.08), rgba(11,17,32,.88)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80')" }}>
-                <span>Intelligent Automation</span>
-                <h3>New approaches to automation-as-a-service</h3>
+              <a href="https://www.qbotica.com/newsroom/qbotica-and-kognitos-partner-to-bring-english-as-code-to-the-enterprise-for-key-operational-needs" target="_blank" rel="noreferrer" className={s.relatedCard} style={{ backgroundImage: "linear-gradient(to bottom, rgba(11,17,32,.08), rgba(11,17,32,.88)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80')" }}>
+                <span>Partnership</span>
+                <h3>qBotica and Kognitos partner to bring English as Code to the enterprise</h3>
               </a>
             </div>
           </div>
@@ -281,7 +276,7 @@ export default function AtolioPartnershipClient() {
           <h2>Ready to explore <em>Agentic AI?</em></h2>
           <p>Learn how intelligent automation and AI agents can transform enterprise operations with secure, compliant, outcome-driven solutions.</p>
           <div className={s.ctaActions}>
-            <a href="#" className={`${s.btn} ${s.btnPrimary}`}>Talk to an Expert</a>
+            <a href="https://meetings.hubspot.com/automation-demo/scheduler" target="_blank" rel="noreferrer" className={`${s.btn} ${s.btnPrimary}`}>Talk to an Expert</a>
             <a href="https://www.qbotica.com/services/ai-agents" className={`${s.btn} ${s.btnSecondary}`}>Explore AI Agents</a>
           </div>
         </div>
