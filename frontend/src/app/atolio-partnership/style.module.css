@@ -274,10 +274,10 @@
   margin-bottom: 14px; box-shadow: 0 4px 12px rgba(255,119,5,.25);
 }
 .outcomeCard h3 {
-  color: var(--ink2); font-size: 1rem; line-height: 1.25;
+  color: var(--ink2); font-size: 1.2rem; line-height: 1.25;
   letter-spacing: -.02em; margin: 0 0 10px; font-weight: 700;
 }
-.outcomeCard p { color: var(--muted); font-size: .855rem; line-height: 1.65; margin: 0; }
+.outcomeCard p { color: var(--muted); font-size: 1.05rem; line-height: 1.7; margin: 0; }
 
 /* Market focus */
 .marketTags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.25rem; }
