@@ -57,11 +57,11 @@ export default function AtolioPartnershipClient() {
 
             <div className={s.heroPartnerRow}>
               <div className={s.heroPartnerPill}>
-                <LogoMark size={40} />
+                <LogoMark size={35} />
               </div>
               <span className={s.heroX}>&times;</span>
               <div className={s.heroPartnerPill}>
-                <AtolioMark size={40} />
+                <AtolioMark size={38} />
               </div>
             </div>
 
