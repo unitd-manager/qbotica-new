@@ -193,7 +193,7 @@ export default function AtolioPartnershipClient() {
                 <div className={`${s.accordion} ${openItem === 'atolio' ? s.accordionActive : ''}`}>
                   <button type="button" className={s.accordionHeader} onClick={() => toggle('atolio')}>
                     <div className={s.accordionHeaderLeft}>
-                      <img src="/assets/images/atolioo.png" alt="Atolio" style={{ height: 30, width: 'auto', objectFit: 'contain', flexShrink: 0 }} />
+                      <img src="/assets/images/atolio-icon.png" alt="Atolio" style={{ height: 30, width: 'auto', objectFit: 'contain', flexShrink: 0 }} />
                       About Atolio
                     </div>
                     <div className={s.accordionIcon}>+</div>
