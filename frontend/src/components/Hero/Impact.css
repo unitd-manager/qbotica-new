@@ -1,0 +1,155 @@
+/* =====================================================
+IMPACT SECTION
+===================================================== */
+
+.impact-section {
+  padding: 40px 0;
+  background: #ffffff;
+}
+
+.impact-container {
+  max-width: 760px;
+  width: 92%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* =====================================================
+LABEL
+===================================================== */
+
+.impact-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  margin-bottom: 28px;
+  border-radius: 999px;
+  background: #fff6ef;
+  border: 1px solid #f2c39c;
+  color: #ff7705;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.impact-label::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: #ff7705;
+  border-radius: 50%;
+}
+
+/* =====================================================
+TITLE
+===================================================== */
+
+.impact-title {
+  font-size: 58px;
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  color: #081329;
+  margin-bottom: 36px;
+  max-width: 720px;
+}
+
+.impact-title span {
+  display: block;
+  color: #ff7705;
+}
+
+/* =====================================================
+DESCRIPTION
+===================================================== */
+
+.impact-description {
+  max-width: 760px;
+  margin-bottom: 32px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #526884;
+}
+
+/* =====================================================
+BENEFITS LIST
+===================================================== */
+
+.impact-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.impact-benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  cursor: default;
+}
+
+.impact-bullet {
+  width: 12px;
+  height: 12px;
+  min-width: 12px;
+  background: #ff7705;
+  border-radius: 50%;
+  margin-top: 7px;
+  flex-shrink: 0;
+}
+
+/* =====================================================
+TEXT
+===================================================== */
+
+.impact-benefit p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.75;
+  color: #526884;
+}
+
+/* =====================================================
+TABLET
+===================================================== */
+
+@media (max-width: 991px) {
+  .impact-title {
+    font-size: 46px;
+  }
+}
+
+/* =====================================================
+MOBILE
+===================================================== */
+
+@media (max-width: 767px) {
+  .impact-section {
+    padding: 30px 0;
+  }
+
+  .impact-title {
+    font-size: 36px;
+    letter-spacing: -0.03em;
+  }
+
+  .impact-description {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .impact-benefit p {
+    font-size: 17px;
+    line-height: 1.7;
+  }
+}

@@ -1,0 +1,63 @@
+/* ─── Technology Strip ────────────────────────────────────────────────────── */
+
+.tech-strip {
+    background: #f0f2f5;
+    padding: 18px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.tech-strip-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tech-strip-label {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: rgba(0, 0, 0, 0.4);
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+.tech-strip-list {
+    display: flex;
+    align-items: center;
+}
+
+.tech-strip-item {
+    font-size: 15px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.6);
+    padding: 0 28px;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.tech-strip-item:last-child {
+    border-right: none;
+}
+
+/* ─── Responsive ──────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+    .tech-strip-container {
+        flex-direction: column;
+        gap: 16px;
+        padding: 0 24px;
+        align-items: flex-start;
+    }
+
+    .tech-strip-list {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .tech-strip-item {
+        padding: 0 16px;
+        font-size: 13px;
+    }
+}
