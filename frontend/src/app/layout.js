@@ -15,7 +15,8 @@ import ClientScripts from '@/components/Common/ClientScripts'
 
 const inter = Inter({
   subsets: ['latin'],
-  weight: ['100', '200', '400', '500', '600'],
+  // Added 700, 800, 900 to support bold headings, kicker, and buttons
+  weight: ['100', '200', '400', '500', '600', '700', '800', '900'], 
   variable: '--font-inter',
   display: 'swap'
 })
@@ -83,16 +84,15 @@ export default async function RootLayout({ children }) {
 
   return (
     <html lang="en" className={`${inter.variable} ${roboto.variable}`}>
-      <head>
-
-         {/* Google Analytics GA4 */}
-
-  <script
-    async
+     <head>
+  {/* Google Analytics GA4 */}
+  <Script
     src="https://www.googletagmanager.com/gtag/js?id=G-QTNWWK8EFF"
-  ></script>
-
-  <script
+    strategy="lazyOnload"
+  />
+  <Script
+    id="google-analytics"
+    strategy="lazyOnload"
     dangerouslySetInnerHTML={{
       __html: `
         window.dataLayer = window.dataLayer || [];
@@ -101,19 +101,51 @@ export default async function RootLayout({ children }) {
         gtag('config', 'G-QTNWWK8EFF');
       `,
     }}
-  ></script>
-        {themeSettings?.site_icon && (
-          <>
-            <link rel="icon" href={themeSettings.site_icon} />
-            <link rel="apple-touch-icon" href={themeSettings.site_icon} />
-            <link rel="shortcut icon" href={themeSettings.site_icon} />
-          </>
-        )}
-        
-        {/* {themeSettings?.header_script && (
+  />
+
+  {/* Apollo Tracker */}
+  <Script
+    id="apollo-tracker"
+    strategy="afterInteractive"
+    dangerouslySetInnerHTML={{
+      __html: `
+        function initApollo() {
+          var n = Math.random().toString(36).substring(7),
+              o = document.createElement("script");
+
+          o.src = "https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache=" + n;
+          o.async = true;
+          o.defer = true;
+
+          o.onload = function() {
+            if (window.trackingFunctions) {
+              window.trackingFunctions.onLoad({
+                appId: "6a15c6dab7f2d3001cd073f2"
+              });
+            }
+          };
+
+          document.head.appendChild(o);
+        }
+
+        initApollo();
+      `,
+    }}
+  />
+
+  {themeSettings?.site_icon && (
+    <>
+      <link rel="icon" href={themeSettings.site_icon} />
+      <link rel="apple-touch-icon" href={themeSettings.site_icon} />
+      <link rel="shortcut icon" href={themeSettings.site_icon} />
+    </>
+  )}
+     {/* {themeSettings?.header_script && (
          <ClientScripts headerScript={themeSettings?.header_script} />
         )} */}
-      </head>
+     
+</head>
+     
       <body className="" suppressHydrationWarning>
         <Header
           themeSettings={themeSettings}

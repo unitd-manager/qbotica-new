@@ -61,43 +61,49 @@
   margin-bottom: 22px;
 }
 
-.challenge-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  min-width: 210px;
-  height: 50px;
-  padding: 0 22px;
-  background: #101113;
-  color: #ffffff;
-  border: none;
-  border-radius: 10px;
-  font-size: 15px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 18px -5px rgba(255, 119, 5, 0.22);
+.challenge-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    padding:14px 28px;
+    min-width:220px;
+
+    background:#FFF6EF;
+    border:1px solid #FFD3B5;
+    border-radius:12px;
+
+    color:#FF7705;
+
+    font-size:16px;
+    font-weight:600;
+
+    cursor:pointer;
+    transition:all .3s ease;
+
+    box-shadow:none;
 }
 
-.challenge-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 16px 36px rgba(244, 123, 32, 0.28);
+.challenge-btn:hover{
+    background:#FFF1E6;
+    border-color:#FFB27A;
 }
-
 /* Arrow fix — prevents text-transform from breaking ↑ ↓ */
-.challenge-btn-text {
-  text-transform: none;
-  font-size: 15px;
-  font-weight: 700;
+.challenge-btn-text{
+    color:#FF7705;
+    font-size:16px;
+    font-weight:600;
 }
 
-.challenge-btn-arrow {
-  display: inline-block;
-  text-transform: none;
-  font-style: normal;
-  font-size: 15px;
-  line-height: 1;
+.challenge-btn-arrow{
+    color:#FF7705;
+    font-size:20px;
+    line-height:1;
+    transition:transform .3s ease;
+}
+.challenge-btn:hover .challenge-btn-arrow{
+    transform:translateX(5px);
 }
 
 .challenge-cards {

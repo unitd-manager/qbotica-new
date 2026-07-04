@@ -1,15 +1,8 @@
 'use client';
 
 import './WhyItWorked.css';
-import { useState, useEffect } from "react";
-
 export default function WhyItWorked() {
-  const [showWhyItems, setShowWhyItems] = useState(false);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  
 
   const items = [
     {
@@ -66,38 +59,17 @@ export default function WhyItWorked() {
           </p>
         </div>
 
-        <div className="why-read-more">
-          <button
-            className="why-btn"
-            onClick={() => setShowWhyItems((prev) => !prev)}
-          >
-            {mounted ? (
-              <>
-                <span className="why-btn-text">
-                  {showWhyItems ? 'Show Less' : 'Read More'}
-                </span>
-                <span className="why-btn-arrow">
-                  {showWhyItems ? ' ↑' : ' ↓'}
-                </span>
-              </>
-            ) : (
-              'Read More'
-            )}
-          </button>
-        </div>
-
-        {showWhyItems && (
-          <div className="why-grid">
-            {items.map((item, index) => (
-              <div className="why-card" key={index}>
-                <div className="why-content">
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
+       
+        <div className="why-grid">
+  {items.map((item, index) => (
+    <div className="why-card" key={index}>
+      <div className="why-content">
+        <h3>{item.title}</h3>
+        <p>{item.description}</p>
+      </div>
+    </div>
+  ))}
+</div>
 
       </div>
     </section>

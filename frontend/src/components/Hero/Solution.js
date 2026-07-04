@@ -52,7 +52,12 @@ export default function Solution({ acf }) {
                             className="solution-btn"
                             onClick={() => setShowSolutions(!showSolutions)}
                         >
-                            {showSolutions ? 'Show Less ↑' : 'Read More ↓'}
+                            <span className="solution-btn-text">
+                                qBotica Solution Approach
+                            </span>
+                            <span className="solution-btn-arrow">
+                                →
+                            </span>
                         </button>
                     </div>
                 )}

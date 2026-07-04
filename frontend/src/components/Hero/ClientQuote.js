@@ -5,11 +5,10 @@ import './ClientQuote.css';
 export default function ClientQuote({ acf }) {
 
     const {
-        client_logo,
-        client_company_name,
+        client_photo,
         quote_text,
-        quote_author_title,
-        quote_author_company,
+        quote_name,
+        quote_title,
     } = acf || {};
 
     if (!acf) return null;
@@ -19,26 +18,16 @@ export default function ClientQuote({ acf }) {
 
             <div className="client-quote-container">
 
-                {/* LOGO COLUMN */}
-                <div className="client-logo-column">
-
-                    {client_logo?.url && (
-                        <div className="client-logo">
-                            <img
-                                src={client_logo.url}
-                                alt={client_logo.alt || client_company_name || 'Client Logo'}
-                                className="client-logo-image"
-                            />
-                        </div>
-                    )}
-
-                    {client_company_name && (
-                        <div className="client-company">
-                            {client_company_name}
-                        </div>
-                    )}
-
-                </div>
+                {/* PHOTO COLUMN */}
+                {client_photo?.url && (
+                    <div className="client-photo-column">
+                        <img
+                            src={client_photo.url}
+                            alt={client_photo.alt || quote_name || 'Client Photo'}
+                            className="client-photo"
+                        />
+                    </div>
+                )}
 
                 {/* DIVIDER */}
                 <div className="client-divider"></div>
@@ -54,13 +43,10 @@ export default function ClientQuote({ acf }) {
                         </p>
                     )}
 
-                    {(quote_author_title || quote_author_company) && (
+                    {(quote_name || quote_title) && (
                         <div className="quote-author">
-                            {quote_author_title}
-                            {quote_author_title && quote_author_company && ' • '}
-                            {quote_author_company && (
-                                <span>{quote_author_company}</span>
-                            )}
+                            {quote_name && <strong>– {quote_name}</strong>}
+                            {quote_title && <span>{quote_title}</span>}
                         </div>
                     )}
 

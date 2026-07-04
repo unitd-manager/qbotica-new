@@ -54,24 +54,17 @@ export default function Challenge() {
           <button
             className="challenge-btn"
             onClick={() => setShowMore(!showMore)}
+            aria-label={showMore ? "Show Less" : "Show More"}
           >
-            {mounted ? (
-              <>
-                <span className="challenge-btn-text">
-                  {showMore ? 'Show Less' : 'Read More'}
-                </span>
-                <span className="challenge-btn-arrow">
-                  {showMore ? ' ↑' : ' ↓'}
-                </span>
-              </>
-            ) : (
-              'Read More'
-            )}
+            <span className="challenge-btn-text">
+          Learn more on qBotica Challenge
+          <span className="challenge-btn-arrow">→</span>
+          </span>
           </button>
         </div>
 
         {showMore && (
-          <div className="challenge-cards">
+          <div className="challenge-cards"> 
             {challengeCards.map((item, index) => (
               <div className="challenge-card" key={index}>
                 <div className="challenge-number">

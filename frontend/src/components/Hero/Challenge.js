@@ -1,16 +1,11 @@
 'use client';
 
 import './Challenge.css';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 export default function Challenge({ acf }) {
 
     const [showMore, setShowMore] = useState(false);
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-    }, []);
 
     const {
         challenge_label,
@@ -35,7 +30,7 @@ export default function Challenge({ acf }) {
                     </span>
                 )}
 
-                {/* TITLE */}
+                {/* TITLE — contains <br/> and <span> from WordPress, rendered as HTML */}
                 {challenge_title && (
                     <h2
                         className="challenge-title"
@@ -58,18 +53,12 @@ export default function Challenge({ acf }) {
                             className="challenge-btn"
                             onClick={() => setShowMore(!showMore)}
                         >
-                            {mounted ? (
-                                <>
-                                    <span className="challenge-btn-text">
-                                        {showMore ? 'Show Less' : 'Read More'}
-                                    </span>
-                                    <span className="challenge-btn-arrow">
-                                        {showMore ? ' ↑' : ' ↓'}
-                                    </span>
-                                </>
-                            ) : (
-                                'Read More'
-                            )}
+                            <span className="challenge-btn-text">
+                                Learn more on qBotica Challenge
+                            </span>
+                            <span className="challenge-btn-arrow">
+                                →
+                            </span>
                         </button>
                     </div>
                 )}
@@ -93,7 +82,6 @@ export default function Challenge({ acf }) {
                 {/* QUOTE */}
                 {(challenge_quote_text || challenge_quote_author) && (
                     <div className="challenge-quote">
-                        <div className="challenge-quote-line"></div>
                         {challenge_quote_text && (
                             <p>&quot;{challenge_quote_text}&quot;</p>
                         )}

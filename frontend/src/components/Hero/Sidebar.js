@@ -32,16 +32,13 @@ export default function Sidebar({ acf }) {
                             alt={sidebar_image.alt || sidebar_client_heading || 'Client'}
                             className="sidebar-image"
                         />
-                    )}
+     )}
                 </div>
 
                 <div className="sidebar-slide-card">
                     <div className="sidebar-slide-content">
 
-                        {sidebar_client_heading && (
-                            <h3>{sidebar_client_heading}</h3>
-                        )}
-
+                       
                         {sidebar_client_description && (
                             <p>{sidebar_client_description}</p>
                         )}

@@ -6,23 +6,23 @@ import Image from 'next/image';
 export default function Hero() {
 
   const stats = [
-    {
-      value: '>90%',
-      description: 'NOISE REMOVAL\nSUCCESS RATE ON\nVENDOR EMAILS',
-    },
-    {
-      value: '500+',
-      description: 'QUOTATIONS\nPROCESSED\nAUTOMATICALLY EACH\nDAY',
-    },
-    {
-      value: '100%',
-      description: 'END-TO-END\nWORKFLOW\nAUTOMATED WITHOUT\nHEADCOUNT\nINCREASE',
-    },
-    {
-      value: '3hrs',
-      description: 'DAILY TIME\nRECLAIMED BY THE\nOPERATIONS TEAM',
-    },
-  ];
+  {
+    value: '>90%',
+    description: 'NOISE REMOVAL\nSUCCESS RATE ON\nVENDOR EMAILS',
+  },
+  {
+    value: '500+',
+    description: 'QUOTATIONS PROCESSED\nAUTOMATICALLY EACH DAY',
+  },
+  {
+    value: '100%',
+    description: 'END-TO-END WORKFLOW\nAUTOMATED WITHOUT\nHEADCOUNT INCREASE',
+  },
+  {
+    value: '3hrs',
+    description: 'DAILY TIME\nRECLAIMED BY THE\nOPERATIONS TEAM',
+  },
+];
 
   return (
     <section className="cs-hero">
@@ -69,7 +69,7 @@ export default function Hero() {
             <div className="cs-client-logo">
 
               <Image
-                src="/images/polaris-logo.png"
+                src="/images/polaris-logo.jpg"
                 alt="Polaris Transportation Group"
                 width={150}
                 height={60}

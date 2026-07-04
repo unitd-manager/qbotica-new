@@ -1,3 +1,4 @@
+
 import styles from '@/components/Common/home-new.module.css';
 import heroStyles from '@/components/Layout/Herosection.module.css';
 import { AtolioTabs, AtolioOutcomes } from './AtolioClient';
@@ -12,7 +13,7 @@ export default function AtolioPage() {
     <div className={styles.local} style={{ backgroundColor: '#F7F4EE' }}>
 
       {/* ── HERO ── */}
-      <section className={heroStyles.heroContainer} style={{ minHeight: '85vh', padding: '140px 40px 120px' }}>
+      <section className={heroStyles.heroContainer} style={{ minHeight: '85vh', padding: 'clamp(100px, 18vw, 140px) 6% clamp(80px, 14vw, 120px)' }}>
         <div className={heroStyles.ambientGlow} />
         <div style={{ maxWidth: 860, margin: '0 auto', textAlign: 'center', position: 'relative', zIndex: 10 }}>
           <div className={heroStyles.badge} style={{ margin: '0 auto 28px' }}>
@@ -29,7 +30,7 @@ export default function AtolioPage() {
             Intelligent Automation-as-a-Service capabilities, initially focused on Financial Services,
             Insurance and Healthcare.
           </p>
-          <div className={heroStyles.buttonRow} style={{ justifyContent: 'center', marginTop: 32 }}>
+          <div className={heroStyles.buttonRow} style={{ justifyContent: 'center', marginTop: 32, flexWrap: 'wrap' }}>
             <a className={heroStyles.primaryBtn} href="#partnership-body">Read the Announcement &rarr;</a>
             <a className={heroStyles.secondaryBtn} href="#outcomes">See Partnership Outcomes &rarr;</a>
           </div>
@@ -55,7 +56,7 @@ export default function AtolioPage() {
       {/* ── ABOUT ── */}
       <section id="about" className={styles.finalCta} style={{ padding: '64px 6%' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(440px, 1fr))', gap: 24, alignItems: 'stretch' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24, alignItems: 'stretch' }}>
 
             {/* Atolio card */}
             <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(47,109,246,0.25)', borderRadius: 20, padding: '36px 36px', display: 'flex', flexDirection: 'column' }}>

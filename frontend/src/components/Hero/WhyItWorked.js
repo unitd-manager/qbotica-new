@@ -1,16 +1,8 @@
 'use client';
 
 import './WhyItWorked.css';
-import { useState, useEffect } from 'react';
 
 export default function WhyItWorked({ acf }) {
-
-    const [showWhyItems, setShowWhyItems] = useState(false);
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-    }, []);
 
     const {
         why_label,
@@ -49,31 +41,8 @@ export default function WhyItWorked({ acf }) {
                     </div>
                 )}
 
-                {/* READ MORE BUTTON */}
-                {why_items?.length > 0 && (
-                    <div className="why-read-more">
-                        <button
-                            className="why-btn"
-                            onClick={() => setShowWhyItems((prev) => !prev)}
-                        >
-                            {mounted ? (
-                                <>
-                                    <span className="why-btn-text">
-                                        {showWhyItems ? 'Show Less' : 'Read More'}
-                                    </span>
-                                    <span className="why-btn-arrow">
-                                        {showWhyItems ? ' ↑' : ' ↓'}
-                                    </span>
-                                </>
-                            ) : (
-                                'Read More'
-                            )}
-                        </button>
-                    </div>
-                )}
-
                 {/* WHY ITEMS GRID */}
-                {showWhyItems && why_items?.length > 0 && (
+                {why_items?.length > 0 && (
                     <div className="why-grid">
                         {why_items.map((item, index) => (
                             <div className="why-card" key={index}>
