@@ -1,4 +1,4 @@
-import Hero from '@/components/Hero/Polaris';
+import Hero from '@/components/Polaris/Hero';
 
 export default function PolarisPage() {
   return (
