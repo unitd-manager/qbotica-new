@@ -7,7 +7,7 @@ const LogoMark = ({ size = 18 }) => (
 );
 
 const AtolioMark = ({ size = 18 }) => (
-  <img src="/assets/images/atolioo.png" alt="Atolio" style={{ height: size, width: 'auto', objectFit: 'contain', flexShrink: 0 }} />
+  <img src="/assets/images/atolioo.png" alt="Atolio" style={{ height: size, width: 'auto', objectFit: 'contain', flexShrink: 0, transform: 'scale(1.4)' }} />
 );
 
 function Reveal({ children, className = '' }) {
@@ -61,7 +61,7 @@ export default function AtolioPartnershipClient() {
               </div>
               <span className={s.heroX}>&times;</span>
               <div className={s.heroPartnerPill}>
-                <AtolioMark size={38} />
+                <AtolioMark size={35} />
               </div>
             </div>
 
@@ -72,7 +72,7 @@ export default function AtolioPartnershipClient() {
               <div className={s.metaPill}>Strategic Partnership</div>
               <div className={s.metaPill}>Agentic AI</div>
               <div className={s.metaPill}>Enterprise Search</div>
-              <div className={s.metaPill}>June 10, 2026</div>
+            
             </div>
           </div>
 
@@ -193,7 +193,7 @@ export default function AtolioPartnershipClient() {
                 <div className={`${s.accordion} ${openItem === 'atolio' ? s.accordionActive : ''}`}>
                   <button type="button" className={s.accordionHeader} onClick={() => toggle('atolio')}>
                     <div className={s.accordionHeaderLeft}>
-                      <img src="/assets/images/atolioo.png" alt="Atolio" style={{ height: 30, width: 'auto', objectFit: 'contain', flexShrink: 0 }} />
+                      <img src="/assets/images/atolio-icon.png" alt="Atolio" style={{ height: 30, width: 'auto', objectFit: 'contain', flexShrink: 0 }} />
                       About Atolio
                     </div>
                     <div className={s.accordionIcon}>+</div>
