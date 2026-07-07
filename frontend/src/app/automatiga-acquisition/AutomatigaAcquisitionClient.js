@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import s from './style.module.css';
 
 const LogoMark = ({ size = 18 }) => (
-  <img src="/assets/images/qbcomp.webp" alt="qBotica" style={{ width: size, height: size, objectFit: 'contain', flexShrink: 0 }} />
+  <img src="/assets/images/logo-front.webp" alt="qBotica" style={{ height: size, width: 'auto', objectFit: 'contain', flexShrink: 0 }} />
 );
 
 const AutomatigaMark = ({ size = 18 }) => (
@@ -57,12 +57,11 @@ export default function AutomatigaAcquisitionClient() {
 
             <div className={s.heroPartnerRow}>
               <div className={s.heroPartnerPill}>
-                <LogoMark size={22} />
-                <span className={s.hppName}>qBotica</span>
-              </div>
+                <LogoMark size={35} />
+                              </div>
               <span className={s.heroX}>&times;</span>
               <div className={s.heroPartnerPill}>
-                <AutomatigaMark size={22} />
+                <AutomatigaMark size={35} />
                 <span className={s.hppName}>Automatiga</span>
               </div>
             </div>
@@ -219,7 +218,7 @@ export default function AutomatigaAcquisitionClient() {
       {/* CTA */}
       <section className={s.cta}>
         <div className={s.ctaInner}>
-          <h2>Ready to explore <em>qubi?</em></h2>
+          <h2>Ready to explore <em>Agentic AI?</em></h2>
           <p>Learn how qBotica&rsquo;s Agentic AI platform can orchestrate autonomous, AI-driven operations across your enterprise.</p>
           <div className={s.ctaActions}>
             <a href="https://meetings.hubspot.com/automation-demo/scheduler" target="_blank" rel="noreferrer" className={`${s.btn} ${s.btnPrimary}`}>Talk to an Expert</a>
