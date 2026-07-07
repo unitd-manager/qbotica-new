@@ -15,7 +15,7 @@ function useResponsive() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
   
-  return { isMobile };
+  return { isMobile  };
 }
 
 function CaseStudyHeroSection({ section }) {

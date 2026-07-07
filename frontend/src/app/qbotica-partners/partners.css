@@ -217,48 +217,46 @@ font-size:18px;
 }
 
 .partner-logo-img{
+    width:170px;
+    height:60px;
 
-    max-width:140px;
-
-    max-height:42px;
-
-    width:auto;
-
-    height:auto;
+    max-width:100%;
 
     object-fit:contain;
+    object-position:center;
 
     display:block;
-
 }
+
+/* Atolio visually appears smaller, so increase it */
 .atolio-logo{
-
-    max-width:150px;
-
+    width:320px;
+    height:82px;
+    transform:scale(1.20);
 }
 
-.anthropic-logo{
-
-    max-width:165px;
-
-}
-
-.partner-logo img[src*="microsoft"]{
-
-    max-width:145px;
-
-}
-
-.partner-logo img[src*="aws"]{
-
-    max-width:95px;
-
-}
-
+/* UiPath */
 .partner-logo img[src*="uipath"]{
+    width:135px;
+    height:48px;
+}
 
-    max-width:130px;
+/* AWS */
+.partner-logo img[src*="aws"]{
+    width:160px;
+    height:60px;
+}
 
+/* Microsoft */
+.partner-logo img[src*="microsoft"]{
+    width:170px;
+    height:60px;
+}
+
+/* Anthropic */
+.anthropic-logo{
+    width:180px;
+    height:70px;
 }
 
 /* ==========================================================
