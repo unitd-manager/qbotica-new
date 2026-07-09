@@ -194,21 +194,21 @@ export default function AutomatigaAcquisitionClient() {
         <section className={s.related}>
           <div className={s.relatedInner}>
             <div className={s.relatedHeader}>
-              <h2>Related News</h2>
-              <p>Stay current with qBotica&rsquo;s latest partnerships, platform updates, and thought leadership.</p>
+              <h2>More about qBotica</h2>
+              <p>Stay current with qBotica&rsquo;s latest news, media, and research.</p>
             </div>
             <div className={s.relatedGrid}>
-              <a href="https://www.qbotica.com/newsroom/qbotica-announces-acquisition-of-automatiga-to-expand-global-intelligent-automation-and-ai-capabilities" target="_blank" rel="noreferrer" className={s.relatedCard} style={{ backgroundImage: "linear-gradient(to bottom, rgba(11,17,32,.08), rgba(11,17,32,.88)), url('https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=80')" }}>
-                <span>Acquisition</span>
-                <h3>qBotica acquires Automatiga to expand global intelligent automation and AI capabilities</h3>
+              <a href="https://www.qbotica.com/newsroom" target="_blank" rel="noreferrer" className={s.relatedCard} style={{ backgroundImage: "linear-gradient(to bottom, rgba(11,17,32,.08), rgba(11,17,32,.88)), url('/assets/images/related-newsroom.jpg')" }}>
+                <span>Newsroom</span>
+                <h3>Latest of qBotica</h3>
               </a>
-              <a href="https://www.qbotica.com/newsroom/mahesh-vinayagam-deloitte-technology-fast-500-leadership-reflections" target="_blank" rel="noreferrer" className={s.relatedCard} style={{ backgroundImage: "linear-gradient(to bottom, rgba(11,17,32,.08), rgba(11,17,32,.88)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80')" }}>
-                <span>Leadership</span>
-                <h3>Mahesh Vinayagam: Deloitte Technology Fast 500 leadership reflections</h3>
+              <a href="https://www.qbotica.com/media-and-videos" target="_blank" rel="noreferrer" className={s.relatedCard} style={{ backgroundImage: "linear-gradient(to bottom, rgba(11,17,32,.08), rgba(11,17,32,.88)), url('/assets/images/related-media.jpg')" }}>
+                <span>Media</span>
+                <h3>qBotica Media</h3>
               </a>
-              <a href="https://www.qbotica.com/newsroom/qbotica-and-kognitos-partner-to-bring-english-as-code-to-the-enterprise-for-key-operational-needs" target="_blank" rel="noreferrer" className={s.relatedCard} style={{ backgroundImage: "linear-gradient(to bottom, rgba(11,17,32,.08), rgba(11,17,32,.88)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80')" }}>
-                <span>Partnership</span>
-                <h3>qBotica and Kognitos partner to bring English as Code to the enterprise</h3>
+              <a href="https://www.qbotica.com/resources/white-papers" target="_blank" rel="noreferrer" className={s.relatedCard} style={{ backgroundImage: "linear-gradient(to bottom, rgba(11,17,32,.08), rgba(11,17,32,.88)), url('/assets/images/related-whitepapers.jpg')" }}>
+                <span>Whitepapers</span>
+                <h3>Our latest whitepapers</h3>
               </a>
             </div>
           </div>
