@@ -69,7 +69,7 @@ export default function Hero() {
             <div className="cs-client-logo">
 
               <Image
-                src="/images/polaris-logo.jpg"
+                src="/assets/images/polaris-logo.jpg"
                 alt="Polaris Transportation Group"
                 width={150}
                 height={60}
