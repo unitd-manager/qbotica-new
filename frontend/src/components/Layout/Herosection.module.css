@@ -1,12 +1,12 @@
 .heroContainer {
   background-color: #030712;
-  min-height: 100vh;
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   overflow: hidden;
-  padding: 80px 40px;
+  padding: clamp(40px, 5vw, 80px) 24px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   box-sizing: border-box;
 }
@@ -30,7 +30,7 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  gap: 40px;
+  gap: clamp(30px, 5vw, 60px);
   align-items: center;
   position: relative;
   z-index: 10;
@@ -39,7 +39,7 @@
 .textContent {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: clamp(20px, 2.5vw, 32px);
   text-align: left;
 }
 
@@ -49,14 +49,14 @@
   gap: 8px;
   background-color: rgba(30, 41, 59, 0.3);
   border: 1px solid rgba(59, 130, 246, 0.2);
-  padding: 6px 14px;
+  padding: clamp(6px, 1vw, 10px) clamp(12px, 1.5vw, 18px);
   border-radius: 9999px;
   width: fit-content;
 }
 
 .badgeDot {
-  width: 6px;
-  height: 6px;
+  width: clamp(5px, 0.5vw, 8px);
+  height: clamp(5px, 0.5vw, 8px);
   background-color: #3b82f6;
   border-radius: 50%;
   box-shadow: 0 0 8px #3b82f6;
@@ -64,14 +64,14 @@
 
 .badgeText {
   color: #93c5fd;
-  font-size: 11px;
+  font-size: clamp(10px, 0.8vw, 12px);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
 }
 
 .heading {
-  font-size: 64px;
+  font-size: clamp(32px, 6vw, 80px);
   font-weight: 800;
   color: #ffffff;
   line-height: 1.1;
@@ -92,28 +92,35 @@
 
 .description {
   color: #94a3b8;
-  font-size: 18px;
+  font-size: clamp(14px, 1.2vw, 22px);
   line-height: 1.75;
-  max-width: 520px;
+  max-width: clamp(280px, 90vw, 520px);
   margin: 0;
 }
 
 .buttonRow {
   display: flex;
-  gap: 16px;
+  gap: clamp(12px, 2vw, 20px);
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .primaryBtn {
   background-color: #FF7705; /* orange request demo button */
   color: #ffffff;
   font-weight: 700;
-  padding: 14px 28px;
+  padding: clamp(12px, 2vw, 18px) clamp(24px, 3vw, 36px);
   border-radius: 10px;
   border: none;
   cursor: pointer;
-  font-size: 15px;
+  font-size: clamp(13px, 1.1vw, 17px);
   box-shadow: 0 10px 20px -5px rgba(255, 119, 5, 0.25);
+  transition: all 0.3s ease;
+}
+
+.primaryBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px -5px rgba(255, 119, 5, 0.35);
 }
 
 .secondaryBtn {
@@ -121,22 +128,25 @@
   border: 1px solid rgba(0,0,0,0.08) !important;
   color: #0b0b0b !important;
   font-weight: 600;
-  padding: 14px 28px;
+  padding: clamp(12px, 2vw, 18px) clamp(24px, 3vw, 36px);
   border-radius: 10px;
   cursor: pointer;
-  font-size: 15px;
+  font-size: clamp(13px, 1.1vw, 17px);
+  transition: all 0.3s ease;
 }
+
 .secondaryBtn:hover {
   background-color: rgba(255,255,255,0.98) !important;
+  transform: translateY(-2px);
 }
 
 .metricsGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 48px;
-  padding-top: 36px;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: clamp(32px, 4vw, 64px);
+  padding-top: clamp(28px, 3vw, 48px);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  max-width: 440px;
+  max-width: clamp(280px, 90vw, 520px);
 }
 
 .metricItem {
@@ -145,13 +155,13 @@
 }
 
 .metricNumber {
-  font-size: 24px;
+  font-size: clamp(20px, 2.5vw, 32px);
   font-weight: 700;
   color: #ffffff;
 }
 
 .metricLabel {
-  font-size: 12px;
+  font-size: clamp(11px, 1vw, 14px);
   color: #64748b;
   margin-top: 4px;
 }
@@ -166,8 +176,8 @@
 
 .globeStage {
   position: relative;
-  width: 460px;
-  height: 460px;
+  width: clamp(280px, 40vw, 580px);
+  height: clamp(280px, 40vw, 580px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -191,8 +201,8 @@
 .globeShellDottedA,
 .globeShellDottedB {
   position: absolute;
-  width: 360px;
-  height: 360px;
+  width: clamp(220px, 30vw, 480px);
+  height: clamp(220px, 30vw, 480px);
   border-radius: 50%;
   transform-style: preserve-3d;
   pointer-events: none;
@@ -264,8 +274,8 @@
 /* ─── VOLUMETRIC GLASS OVERLAY SHIELD ─── */
 .globeBorder {
   position: absolute;
-  width: 360px;
-  height: 360px;
+  width: clamp(220px, 30vw, 480px);
+  height: clamp(220px, 30vw, 480px);
   border-radius: 50%;
   border: 1.5px solid rgba(59, 130, 246, 0.35);
   /* Seamless glass finish overlays mask the geometry to make it look round */
@@ -287,14 +297,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 170px;
-  height: 170px;
+  width: clamp(110px, 15vw, 220px);
+  height: clamp(110px, 15vw, 220px);
   pointer-events: none;
 }
 
 .logoWrapper img {
-  width: 130px;
-  height: 130px;
+  width: clamp(75px, 12vw, 170px);
+  height: clamp(75px, 12vw, 170px);
   object-fit: contain;
   /* Glow effects anchor logo premium contrast completely without dark block circles */
   filter: 
@@ -311,9 +321,9 @@
 
 .globeStatCard {
   position: absolute;
-  width: 140px;
-  min-height: 96px;
-  padding: 16px 18px;
+  width: clamp(120px, 15vw, 160px);
+  min-height: clamp(80px, 10vw, 110px);
+  padding: clamp(12px, 1.5vw, 18px);
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.16);
   background: rgba(255, 255, 255, 0.07);
@@ -352,14 +362,14 @@
 }
 
 .statNumber {
-  font-size: 26px;
+  font-size: clamp(20px, 2.5vw, 32px);
   font-weight: 800;
   letter-spacing: -0.04em;
   color: #ffffff;
 }
 
 .statLabel {
-  font-size: 12px;
+  font-size: clamp(10px, 0.9vw, 14px);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(226, 232, 240, 0.82);
@@ -451,7 +461,10 @@
 }
 
 @media (max-width: 1024px) {
-  .grid { grid-template-columns: 1fr; gap: 48px; }
+  .heroContainer { 
+    padding: clamp(40px, 4vw, 60px) 20px;
+  }
+  .grid { grid-template-columns: 1fr; gap: clamp(25px, 4vw, 40px); }
   .heading { font-size: 42px; }
   .globeStage { width: 350px; height: 350px; }
   .globeShell, .globeShellDottedA, .globeShellDottedB, .globeBorder { width: 280px; height: 280px; }
@@ -472,6 +485,273 @@
   background: linear-gradient(180deg, rgba(3,7,18,0) 0%, rgba(247,244,238,0.65) 55%, #F7F4EE 100%);
 }
 
+/* ─── RESPONSIVE BREAKPOINTS FOR ALL SCREEN SIZES ─── */
+
+/* Extra small devices (320px - 375px) */
+@media (max-width: 375px) {
+  .heroContainer {
+    padding: clamp(24px, 3vw, 35px) 12px 30px;
+    padding-top: clamp(24px, 3vw, 35px);
+  }
+  .heading {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+  .description {
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 100%;
+  }
+  .buttonRow {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .primaryBtn,
+  .secondaryBtn {
+    width: 100%;
+    text-align: center;
+  }
+  .metricsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    padding-top: 24px;
+    max-width: 100%;
+  }
+  .globeStage { width: 280px; height: 280px; }
+  .globeShell, .globeShellDottedA, .globeShellDottedB, .globeBorder { 
+    width: 220px; 
+    height: 220px; 
+  }
+  .logoWrapper { width: 110px; height: 110px; }
+  .logoWrapper img { width: 75px; height: 75px; }
+}
+
+/* Small devices (376px - 639px) */
+@media (min-width: 376px) and (max-width: 639px) {
+  .heroContainer {
+    padding: clamp(28px, 3.5vw, 40px) 14px 32px;
+    padding-top: clamp(28px, 3.5vw, 40px);
+  }
+  .heading {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+  .description {
+    font-size: 15px;
+    line-height: 1.65;
+    max-width: 100%;
+  }
+  .metricsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding-top: 28px;
+    max-width: 100%;
+  }
+  .globeStage { width: 300px; height: 300px; }
+  .globeShell, .globeShellDottedA, .globeShellDottedB, .globeBorder { 
+    width: 240px; 
+    height: 240px; 
+  }
+  .logoWrapper { width: 120px; height: 120px; }
+  .logoWrapper img { width: 85px; height: 85px; }
+}
+
+/* Tablets (640px - 767px) */
+@media (min-width: 640px) and (max-width: 767px) {
+  .heroContainer {
+    padding: clamp(35px, 4vw, 50px) 18px 38px;
+    padding-top: clamp(35px, 4vw, 50px);
+  }
+  .heading {
+    font-size: 36px;
+    line-height: 1.25;
+  }
+  .description {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  .metricsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px;
+    padding-top: 32px;
+  }
+}
+
+/* Tablets landscape (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .heroContainer {
+    padding: clamp(40px, 4.5vw, 55px) 20px 40px;
+    padding-top: clamp(40px, 4.5vw, 55px);
+  }
+  .heading {
+    font-size: 38px;
+    line-height: 1.25;
+  }
+  .globeStage { width: 340px; height: 340px; }
+  .globeShell, .globeShellDottedA, .globeShellDottedB, .globeBorder { 
+    width: 270px; 
+    height: 270px; 
+  }
+  .logoWrapper { width: 130px; height: 130px; }
+  .logoWrapper img { width: 90px; height: 90px; }
+}
+
+/* Desktop (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .heroContainer {
+    padding: clamp(50px, 5vw, 70px) 24px 45px;
+    padding-top: clamp(50px, 5vw, 70px);
+  }
+  .heading {
+    font-size: 56px;
+    line-height: 1.15;
+  }
+  .grid {
+    gap: clamp(35px, 4vw, 45px);
+  }
+}
+
+/* Large desktop (1280px - 1439px) */
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .heroContainer {
+    padding: clamp(55px, 5.5vw, 75px) 28px 50px;
+    padding-top: clamp(55px, 5.5vw, 75px);
+  }
+  .heading {
+    font-size: 60px;
+  }
+  .grid {
+    gap: clamp(40px, 5vw, 50px);
+  }
+}
+
+/* Extra large desktop (1440px - 1919px) */
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .heroContainer {
+    padding: clamp(60px, 6vw, 80px) 32px 55px;
+    padding-top: clamp(60px, 6vw, 80px);
+  }
+  .heading {
+    font-size: 64px;
+  }
+  .grid {
+    gap: clamp(45px, 5.5vw, 60px);
+  }
+}
+
+/* 4K displays (1920px - 2559px) */
+@media (min-width: 1920px) and (max-width: 2559px) {
+  .heroContainer {
+    padding: clamp(65px, 6.5vw, 90px) 36px 60px;
+    padding-top: clamp(65px, 6.5vw, 90px);
+  }
+  .heading {
+    font-size: 72px;
+    letter-spacing: -0.025em;
+  }
+  .description {
+    font-size: 20px;
+    max-width: 600px;
+  }
+  .grid {
+    gap: clamp(50px, 6vw, 70px);
+  }
+  .globeStage { 
+    width: 520px; 
+    height: 520px; 
+  }
+  .globeShell, 
+  .globeShellDottedA, 
+  .globeShellDottedB, 
+  .globeBorder { 
+    width: 420px; 
+    height: 420px; 
+  }
+  .logoWrapper { 
+    width: 200px; 
+    height: 200px; 
+  }
+  .logoWrapper img { 
+    width: 150px; 
+    height: 150px; 
+  }
+  .metricsGrid {
+    gap: 64px;
+    padding-top: 48px;
+  }
+}
+
+/* Ultra HD displays (2560px and above) */
+@media (min-width: 2560px) {
+  .heroContainer {
+    padding: clamp(70px, 7vw, 100px) 40px 70px;
+    padding-top: clamp(70px, 7vw, 100px);
+  }
+  .heading {
+    font-size: 80px;
+    letter-spacing: -0.025em;
+    line-height: 1.05;
+  }
+  .description {
+    font-size: 22px;
+    line-height: 1.8;
+    max-width: 650px;
+  }
+  .badge {
+    padding: 8px 18px;
+    font-size: 12px;
+  }
+  .badgeDot {
+    width: 8px;
+    height: 8px;
+  }
+  .primaryBtn,
+  .secondaryBtn {
+    padding: 18px 36px;
+    font-size: 17px;
+  }
+  .grid {
+    gap: clamp(60px, 6.5vw, 80px);
+  }
+  .globeStage { 
+    width: 580px; 
+    height: 580px; 
+  }
+  .globeShell, 
+  .globeShellDottedA, 
+  .globeShellDottedB, 
+  .globeBorder { 
+    width: 480px; 
+    height: 480px; 
+  }
+  .logoWrapper { 
+    width: 220px; 
+    height: 220px; 
+  }
+  .logoWrapper img { 
+    width: 170px; 
+    height: 170px; 
+  }
+  .metricsGrid {
+    gap: 72px;
+    padding-top: 54px;
+  }
+  .statTopLeft,
+  .statTopRight,
+  .statBottomCenter {
+    width: 160px;
+  }
+  .statNumber {
+    font-size: 32px;
+  }
+  .statLabel {
+    font-size: 13px;
+  }
+}
+
 @media (max-width: 768px) {
+  .heroContainer { 
+    padding: clamp(30px, 4vw, 50px) 16px;
+  }
   .heroGradient { height: 58%; }
 }

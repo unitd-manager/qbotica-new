@@ -401,9 +401,67 @@
   margin: 0 0 30px;
 }
 
-.tabButtons { display: grid; gap: 14px; }
+.nextPreview {
+  display: block;
+  width: fit-content;
+  margin-top: auto;
+  padding: 18px 22px;
+  border: 1px solid rgba(244, 123, 32, 0.18);
+  border-radius: 24px;
+  background: rgba(255,255,255,0.96);
+  color: var(--text-dark);
+  text-align: left;
+  cursor: pointer;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.nextPreview:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,1);
+  border-color: rgba(244, 123, 32, 0.35);
+}
+
+.nextPreviewLabel {
+  display: block;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 800;
+  color: rgba(7,27,58,0.6);
+  margin-bottom: 8px;
+}
+
+.nextPreviewTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.nextPreviewIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(244,123,32,0.12);
+  color: var(--orange);
+}
+
+.tabWrapper {
+  display: grid;
+  grid-template-columns: 80px minmax(0, 1fr);
+  gap: 22px;
+  align-items: stretch;
+  position: relative;
+  grid-auto-rows: minmax(90px, auto);
+}
 
 .tabButton {
+  width: 100%;
   cursor: pointer;
   min-height: 90px;
   text-align: left;
@@ -415,6 +473,69 @@
   backdrop-filter: blur(14px);
   box-shadow: 0 16px 44px rgba(0,0,0,0.16);
   transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.timelineTrack {
+  position: absolute;
+  top: 45px;
+  bottom: 45px;
+  left: 40px;
+  width: 0;
+  border-left: 2px dashed rgba(7,27,58,0.32);
+  z-index: 0;
+}
+
+.timelineCell {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.airplaneIcon {
+  position: absolute;
+  left: 40px;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #0f2556;
+  background: transparent;
+  border-radius: 50%;
+  border: none;
+  box-shadow: none;
+  transform: translate(-50%, -50%) rotate(90deg);
+  top: var(--plane-top, 20%);
+  transition: top 300ms ease;
+}
+
+.timelineDot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid rgba(7,27,58,0.16);
+  box-shadow: 0 0 0 4px rgba(255,255,255,0.75);
+  position: relative;
+  z-index: 1;
+}
+
+.activeDot {
+  background: var(--orange);
+  border-color: rgba(244,123,32,0.95);
+  box-shadow: 0 0 0 4px rgba(255,255,255,0.85);
+}
+
+@media (max-width: 920px) {
+  .tabWrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .tabLineColumn {
+    display: none;
+  }
 }
 
 .tabButton:hover {
@@ -988,39 +1109,52 @@
 } */
 .awardsGrid {
   display: grid;
-  grid-template-columns: repeat(6, minmax(90px, 1fr));
-  grid-auto-rows: auto;
-  align-items: center;
+  grid-template-columns: max-content max-content;
+  grid-template-areas:
+    "left right"
+    "bottom bottom";
+  align-items: start;
   justify-content: center;
-  max-width: 1050px;   /* reduce from 1200-1250px */
+  width: min(100%, 1080px);
   margin: 30px auto 0;
-  column-gap: 12px;    /* was 24px or 40px */
-  row-gap: 12px;       /* was 20px+ */
+  column-gap: 56px;
+  row-gap: 10px;
+}
+
+.topLeftBlock,
+.topRightBlock {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-template-rows: repeat(2, auto);
+  justify-content: center;
+  align-items: center;
+  column-gap: 32px;
+  row-gap: 16px;
+  width: 100%;
 }
 
 .topLeftBlock {
-  display: grid;
-  grid-column: 1 / span 4;
-  grid-row: 1;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 8px;
-  margin-right: 20px;  /* reduce from 60px */
+  grid-area: left;
+}
+
+.topRightBlock {
+  grid-area: right;
 }
 
 .awardCard img {
-  max-width: 115px;
-  max-height: 75px;
+  max-width: 200px;
+  max-height: 140px;
+
 }
 
 .topRightItem,
 .bottomItem {
-  width: 120px;
-  height: 80px;
+  width: 100%;
+  height: auto;
 }
 .awardCard img {
-  max-width: 140px;    /* was 170-180px */
-  max-height: 90px;
+  max-width: 220px;
+  max-height: 150px;
   object-fit: contain;
 }
 .awardsTopRow {
@@ -1053,40 +1187,34 @@
   justify-content: center;
   padding: 0 !important;
   margin: 0 !important;
-  grid-row: 1;
+  min-width: 0;
 }
 
-/* Make top-right items larger so they fill the available space */
-.topRightItem {
-  width: 240px; /* keep width reasonable */
-  height: auto;
-  align-self: stretch;
-}
-
-.topRightItem .awardBox {
-  width: 230px;
-  height: 100%; /* fill the parent's height */
-  box-sizing: border-box;
+.topRightItem .awardBox,
+.topBlockItem .awardBox,
+.topLeftBlock .awardBox,
+.topRightBlock .awardBox{
+    width:100% !important;
+    height:180px !important;
+    padding:16px !important;
 }
 
 /* Desktop: bottom row wrapper spans full width and centers items */
 .awardsBottomWrapper {
-  grid-column: 1 / -1;
-  grid-row: 2;
-  display: flex;
-  justify-content: center;
-  gap: 12px;
+  grid-area: bottom;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
   align-items: center;
-  flex-wrap: nowrap;
+  justify-items: center;
 }
 
 /* Reduce top-left block item height while keeping width similar */
 .topBlockItem .awardBox {
-  width: 100%;
-  max-width: none;
-  height: 120px; /* further reduced height for top-left items */
-  padding-left: 8px;
-  padding-right: 8px;
+  width: fit-content;
+  height: 185px;
+  padding-left: 2px;
+  padding-right: 2px;
   box-sizing: border-box;
 }
 
@@ -1105,9 +1233,35 @@
 }
 
 @media (max-width: 768px) {
+  .awardsGrid {
+    grid-template-columns: repeat(2, minmax(180px, 180px));
+    width: min(100%, 380px);
+    column-gap: 10px;
+    row-gap: 8px;
+  }
+  
+  .topLeftBlock,
+  .topRightBlock {
+    gap: 10px;
+  }
+  
   .topRightItem, .topBlockItem .awardBox, .topRightItem .awardBox {
-    width: 140px !important;
-    height: 96px !important;
+    width: fit-content !important;
+    height: 130px !important;
+  }
+  
+  .topBlockItem .awardBox {
+    height: 145px !important;
+  }
+  
+  .awardsBottomWrapper {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .awardCard img {
+    max-width: 140px !important;
+    max-height: 100px !important;
   }
 }
 
@@ -1123,8 +1277,8 @@
 }
 
 .awardPlaceholder {
-  width: 180px;
-  height: 120px;
+  width: 270px;
+  height: 185px;
 
   display: flex;
   align-items: center;
@@ -1139,8 +1293,8 @@
 .awardFallback { display: none !important; }
 
 .bottomItem {
-  width: 150px;
-  height: 100px;
+  width: 240px;
+  height: 160px;
 }
 
 .bottomItem img {
@@ -1209,8 +1363,8 @@
   background: transparent;
   box-shadow: none;
   border-radius: 0;
-  padding: 0; /* reduce internal padding to fit content */
-  margin: 0; /* remove default margins to tighten spacing */
+  padding: 0 !important; /* reduce internal padding to fit content */
+  margin: 0 !important; /* remove default margins to tighten spacing */
 }
 
 /* Visible background box for award items to enable alignment */
@@ -1218,14 +1372,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 180px;
-  height: 120px;
-  padding: 12px;
-  background: transparent;
+  width: fit-content;
+  height: 100%;
+  padding: 0;
+ 
   border: none;
   border-radius: 0;
   box-shadow: none;
   box-sizing: border-box;
+}
+
+.topRightItem .awardBox,
+.topBlockItem .awardBox,
+.topLeftBlock .awardBox,
+.topRightBlock .awardBox {
+  width: fit-content !important;
+  height: 96px !important;
+  padding: 0 !important;
 }
 
 .awardBox img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block; }
@@ -1504,10 +1667,10 @@
 .finalCta h2 {
   margin: 0 0 20px;
   color: #ffffff;
-  font-size: clamp(54px, 7vw, 96px);
-  line-height: .92;
-  letter-spacing: -0.02em;
-  font-weight: 800;
+  font-size: clamp(38px, 4.5vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  font-weight: 700;
 }
 
 .finalCta p {
@@ -1539,7 +1702,10 @@
   .partnerLogos { grid-template-columns: repeat(2, 1fr); }
   .tabButtons { grid-template-columns: repeat(2, 1fr); }
   .tabButton:hover { transform: translateY(-2px); }
-  .awardsGrid, .newsGrid { grid-template-columns: 1fr; width: 100%; }
+  .awardsGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); width: min(100%, 720px); gap: 6px; }
+  .topLeftBlock, .topRightBlock { grid-column: auto; }
+  .awardsBottomWrapper { grid-column: 1 / -1; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .newsGrid { grid-template-columns: 1fr; width: 100%; }
 }
 
 @media (max-width: 720px) {
@@ -1555,29 +1721,28 @@
   .videoCard { min-height: 360px; }
 }
 
-/* Mobile: show awards as 2 columns and up to 6 rows (12 items) */
+/* Mobile: keep awards compact and readable */
 @media (max-width: 720px) {
   .awardsGrid {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     grid-auto-rows: auto;
-    gap: 12px !important;
-    max-width: 100% !important;
+    gap: 6px !important;
+    width: 100% !important;
     margin: 16px auto !important;
   }
 
-  .topLeftBlock {
+  .topLeftBlock,
+  .topRightBlock {
     grid-column: 1 / -1 !important;
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     grid-template-rows: auto !important;
-    gap: 8px !important;
+    gap: 6px !important;
     margin-right: 0 !important;
   }
 
   .topRightItem {
-    grid-column: auto !important;
-    grid-row: auto !important;
     width: 100% !important;
     height: auto !important;
     align-self: stretch !important;
@@ -1589,22 +1754,22 @@
   .awardsBottomWrapper {
     grid-column: 1 / -1 !important;
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 8px !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 6px !important;
     justify-items: center !important;
   }
 
   .awardBox, .awardBoxBottom {
-    width: 100% !important;
-    max-width: 160px !important;
+    width: fit-content !important;
     height: auto !important;
-    padding: 8px !important;
+    min-height: 78px !important;
+    padding: 6px !important;
   }
 
   .awardPlaceholder {
     width: 100% !important;
-    max-width: 160px !important;
-    height: 96px !important;
+    max-width: 100% !important;
+    height: 78px !important;
   }
 }
 

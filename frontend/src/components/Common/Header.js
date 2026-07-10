@@ -6,7 +6,6 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { ArrowDown } from './Icons';
 import { usePathname } from 'next/navigation';
-import TopHeader from './TopHeader'
 const SITE_BASE_URL = process.env.NEXT_PUBLIC_SITE_BASE_URL;
 const WP_URL = process.env.NEXT_PUBLIC_WP_URL;
 
@@ -79,12 +78,17 @@ function buildMenu(data) {
 function isMenuItemActive(item, currentPath, checkChildren = true) {
   if (!item || !currentPath) return false;
 
-  const itemPath = normalizeUrl(item.url);
-  // Clean current path - remove trailing slash except for root
+  // Special-case the static marketing page so no nav item is highlighted there.
   let cleanCurrentPath = currentPath;
   if (cleanCurrentPath.length > 1 && cleanCurrentPath.endsWith('/')) {
     cleanCurrentPath = cleanCurrentPath.slice(0, -1);
   }
+
+  if (cleanCurrentPath === '/new-home-static' || cleanCurrentPath.startsWith('/new-home-static/')) {
+    return false;
+  }
+
+  const itemPath = normalizeUrl(item.url);
 
   // Check if current item is active (exact match only)
   if (itemPath === cleanCurrentPath) {
@@ -312,7 +316,7 @@ export default function Header({ themeSettings, navigationData = [], headerClass
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname(); // Get current path
   // Ensure client initial render uses the same header class/style that server produced.
-  const [clientHeaderClass] = useState(() => headerClass || `navbar navbar-expand-lg navbar-light bg-white primary-menu bottom-dashed ${themeSettings?.promotion_enable ? 'enable-promotion-bar' : ''}`);
+  const [clientHeaderClass] = useState(() => headerClass || 'navbar navbar-expand-lg navbar-light bg-white primary-menu bottom-dashed');
   const [clientHeaderStyle] = useState(() => headerStyle || { backgroundColor: '#ffffff' });
 
   const toggleExpand = (id) => {
@@ -476,18 +480,6 @@ export default function Header({ themeSettings, navigationData = [], headerClass
 
   return (
     <>
-      {themeSettings?.promotion_enable ? (
-        <TopHeader
-          promoText={
-            themeSettings?.promotion_text ||
-            'qBotica Recognized as a UiPath Agentic Automation Fast Track Partner'
-          }
-          promoLink={themeSettings?.promotion_link || '/'}
-          promoLabel={themeSettings?.promotion_label || 'Learn More'}
-
-        />
-      ) : null}
-
       <header
         className={clientHeaderClass}
         style={clientHeaderStyle}
@@ -527,7 +519,8 @@ export default function Header({ themeSettings, navigationData = [], headerClass
               {renderMenuItems(menuItems, 1, pathname)}
             </ul>
             <Link href={themeSettings.header_cta_link || '#'} target='_blank' className="btn primary-btn">
-              {themeSettings.header_cta_label || ''}
+              {/* {themeSettings.header_cta_label || ''} */}
+              {'Talk to an Expert'}
             </Link>
           </div>
         </DivTag>
@@ -570,22 +563,10 @@ export default function Header({ themeSettings, navigationData = [], headerClass
           </nav>
 
           <div className="mobile-menu-footer">
-            {themeSettings?.promotion_enable && (
-              <PTag className="mobile-promotion">
-                {themeSettings?.promotion_text}{' '}
-                {themeSettings?.promotion_link && themeSettings?.promotion_label && (
-                  <Link
-                    href={themeSettings.promotion_link || '#'}
-                    className="mobile-promo-link"
-                    onClick={closeMobileMenu}
-                  >
-                    {themeSettings.promotion_label}
-                  </Link>
-                )}
-              </PTag>
-            )}
             <Link href={themeSettings.header_cta_link || '#'} className="btn primary-btn mobile-cta" target='_blank' onClick={closeMobileMenu}>
-              {themeSettings.header_cta_label || ''}
+              {/* {themeSettings.header_cta_label || ''} */}
+              
+            {'Talk to an Expert'}
             </Link>
           </div>
         </div>

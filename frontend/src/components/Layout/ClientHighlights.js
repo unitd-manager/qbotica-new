@@ -38,7 +38,7 @@ export default function ClientHighlights() {
 
         <div className={styles.clientCopy}>
           <div className={styles.sectionKickerPill}>Client Highlight</div>
-          <h2>Enterprise execution at scale.</h2>
+          <h2>Enterprise execution at scale</h2>
           <p>This isn’t experimentation. This is operational execution inside real enterprise environments.
           qBotica helps organizations reduce manual effort, accelerate workflows, improve visibility, and scale execution across business-critical processes.</p>
 

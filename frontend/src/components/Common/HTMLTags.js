@@ -73,11 +73,64 @@ export const H1Tag = React.forwardRef(({ children, className = '', style = {}, .
 ));
 H1Tag.displayName = 'H1Tag';
 
-export const H2Tag = React.forwardRef(({ children, className = '', style = {}, ...rest }, ref) => (
-  <h2 className={className} style={style} ref={ref} {...filterProps(rest)}>
-    {children}
-  </h2>
-));
+export const H2Tag = React.forwardRef(({ children, className = '', style = {}, ...rest }, ref) => {
+  // Prepare props but handle dangerouslySetInnerHTML specially so we can
+  // remove a trailing dot from titles rendered into H2 across the site.
+  const props = filterProps(rest);
+
+  // Helper to strip a single trailing period from plain text while preserving
+  // ellipses ('..' or '...') and abbreviations.
+  const stripTrailingDot = (text) => {
+    if (typeof text !== 'string') return text;
+    const trimmed = text.replace(/\s+$/, '');
+    if (trimmed.endsWith('..')) return trimmed; // preserve ellipses or double dots
+    if (trimmed.endsWith('.')) return trimmed.slice(0, -1);
+    return trimmed;
+  };
+
+  // If caller used dangerouslySetInnerHTML, sanitize the HTML string by
+  // removing a single trailing dot that may appear before optional closing tags.
+  if (props.dangerouslySetInnerHTML && props.dangerouslySetInnerHTML.__html) {
+    let raw = String(props.dangerouslySetInnerHTML.__html);
+    // Trim trailing whitespace
+    raw = raw.replace(/\s+$/, '');
+    // Extract trailing closing tags (e.g., </span></strong>) so we can inspect
+    // the visible text before them.
+    const trailingTags = [];
+    let m;
+    const tagRe = /(<\/[^>]+>)$/;
+    while ((m = raw.match(tagRe))) {
+      trailingTags.unshift(m[1]);
+      raw = raw.slice(0, -m[1].length).replace(/\s+$/, '');
+    }
+
+    // If the visible text ends with a single dot (not '..'), remove it.
+    if (raw.endsWith('..')) {
+      // leave as-is for ellipses
+    } else if (raw.endsWith('.')) {
+      raw = raw.slice(0, -1);
+    }
+
+    const sanitized = raw + trailingTags.join('');
+    const safeProps = { ...props };
+    delete safeProps.dangerouslySetInnerHTML;
+    return (
+      <h2 className={className} style={style} ref={ref} {...safeProps} dangerouslySetInnerHTML={{ __html: sanitized }} />
+    );
+  }
+
+  // For plain children, strip trailing dot if present on string children
+  const content = Array.isArray(children)
+    ? children.map((c) => (typeof c === 'string' ? stripTrailingDot(c) : c))
+    : (typeof children === 'string' ? stripTrailingDot(children) : children);
+
+  // Render with filtered props (which won't include dangerouslySetInnerHTML here)
+  return (
+    <h2 className={className} style={style} ref={ref} {...props}>
+      {content}
+    </h2>
+  );
+});
 H2Tag.displayName = 'H2Tag';
 
 export const H3Tag = React.forwardRef(({ children, className = '', style = {}, ...rest }, ref) => (

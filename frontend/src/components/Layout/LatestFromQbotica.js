@@ -9,22 +9,16 @@ const posts = [
       'qBotica and Atolio have partnered to power AI agents with secure, instant access to enterprise knowledge, enabling smarter and more efficient enterprise automation.',
     link: 'https://www.qbotica.com/newsroom/qbotica-and-atolio-partner-to-power-ai-agents-with-secure-instant-access-to-enterprise-knowledge',
   },
-  {
-    category: 'News',
-    title: 'qBotica Acquires Automatiga',
-    excerpt:
-      'qBotica has acquired Automatiga, strengthening its Agentic AI and Intelligent Automation-as-a-Service capabilities and launching qubi, its new enterprise Agentic AI platform.',
-    link: '/automatiga-acquisition',
-  },
+ 
   {
     category: 'Event',
     title: 'Agent Builders Day Chennai',
     excerpt:
       'Highlights from the qBotica and UiPath India event, where industry leaders explored the future of AI-powered automation, agentic AI, and enterprise transformation.',
-    link: 'https://community.uipath.com/events/details/uipath-chennai-presents-agent-builders-day-chennai/',
+    link: 'https://www.linkedin.com/posts/maheshvinayagam_qubi-qbotica-qubiagents-ugcPost-7469722247503740928-XXWj/?utm_source=share&utm_medium=member_android&rcm=ACoAABVRbdkBq5-v8rybi3syfWBj2yxsbqLR0JA',
   },
   {
-    category: 'Event',
+    category: 'Podcast',
     title: 'How Agentic AI Doubles Your RPA Payoff',
     excerpt:
       'Listen to our discussion on how Agentic AI enhances traditional RPA initiatives, accelerates ROI, and unlocks greater business value.',
@@ -37,7 +31,7 @@ export default function LatestFromQbotica() {
     <section className={styles.newsSection}>
       <div className={styles.simpleHeader}>
         <div className={styles.sectionKickerPill}>Latest From QBotica</div>
-      <h2>Building the future of enterprise execution.</h2>
+      <h2>Building the future of enterprise execution</h2>
 
 <p>
   Explore the latest updates, insights, customer stories,
@@ -51,9 +45,9 @@ export default function LatestFromQbotica() {
     let media = null;
     if (idx === 0) {
       media = <img src={'/assets/images/atol.jpeg'} alt={post.title} className={styles.newsMedia} />;
-    } else if (idx === 2) {
+    } else if (idx === 1) {
       media = <img src={'/assets/images/uipathevent.jpeg'} alt={post.title} className={styles.newsMedia} />;
-    } else if (idx === 3) {
+    } else if (idx === 2) {
       media = <img src={'/assets/images/event.jpeg'} alt={post.title} className={styles.newsMedia} />;
     } else {
       media = null;
