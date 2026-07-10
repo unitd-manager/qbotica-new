@@ -12,7 +12,7 @@ export default function EnterpriseTrust({ data }) {
     <section className={styles.logoSection}>
       <div className={styles.simpleHeader}>
         <div className={styles.sectionKickerPill}>Enterprise Trust</div>
-        <h2>Trusted across enterprise environments.</h2>
+        <h2>Trusted across enterprise environments</h2>
         <p>qBotica supports organizations across complex, regulated, and operationally intensive business functions.</p>
         
       </div>

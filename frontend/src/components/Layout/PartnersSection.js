@@ -4,7 +4,7 @@ import React from 'react';
 import styles from '../../components/Common/home-new.module.css';
 import Link from 'next/link';
 
-export default function PartnersSection({ partners = [], title = 'Built with the enterprise ecosystem.' }) {
+export default function PartnersSection({ partners = [], title = 'Built with the enterprise ecosystem' }) {
   const logos = partners && partners.length ? partners : Array.from({ length: 12 }).map(() => null);
   const trackLogos = [...logos, ...logos];
 

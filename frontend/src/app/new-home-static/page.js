@@ -862,7 +862,7 @@ const awardsSectionData = {
   award_and_certificate_list: [
     {
       image: {
-        url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2025/07/Intelligent-Document-Processing-IDP-2022-PEAK-Matrix-Award-Logo-Star-Performer-2-300x126-1.webp',
+        url: 'https://qbadevadmin.unitdtechnologies.com/wp-content/uploads/2026/06/starper.png',
       },
  
     },
@@ -900,32 +900,32 @@ const awardsSectionData = {
         url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2026/05/logo-smallbusiness.webp',
       },
     },
-     {
-      image: {
-        url: '/assets/images/dbe.png',
-       },
-    },
+    //  {
+    //   image: {
+    //     url: '/assets/images/dbe.png',
+    //    },
+    // },
 
-    {
-      image: {
-       url: '/assets/images/sbe.png',
-       },
-    },
+    // {
+    //   image: {
+    //    url: '/assets/images/sbe.png',
+    //    },
+    // },
 
-    {
-      image: {
-        url: '/assets/images/inc5.png', },
+    // {
+    //   image: {
+    //     url: '/assets/images/inc5.png', },
    
-    },
-      {
-      image: {
-       url: '/assets/images/soc.png',
-       },
+    // },
+    //   {
+    //   image: {
+    //    url: '/assets/images/soc.png',
+    //    },
     
-    },
+    // },
     {
       image: {
-       url: '/assets/images/deloite.jpg',
+       url: '/assets/images/delloites.jpg',
        },
     
     },
@@ -1054,7 +1054,6 @@ export default function NewHomeStaticPage() {
      
       <FinalCTASection />
 
-   <TimelineSections data={sectionThreeData} />
  </div>
  
  </DivTag>

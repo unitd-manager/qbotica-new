@@ -12,12 +12,17 @@ const parent_path = 'solutions';
 
 export async function generateMetadata({ params }) {
     const resolvedParams = await params;
-    return generatePageMetadatas(resolvedParams.slug, 'page', parent_path, {});
+    const pageData = await fetchPageBySlug(resolvedParams.slug);
+    const customFallback = {
+        title: pageData?.title?.rendered || resolvedParams.slug,
+        description: pageData?.excerpt?.rendered?.replace(/<[^>]*>/g, '').slice(0, 160) || `Learn more about ${resolvedParams.slug}`
+    };
+    return generatePageMetadatas(resolvedParams.slug, 'page', parent_path, customFallback);
 }
 
 export default async function SolutionPage({ params }) {
     const resolvedParams = await params;
-    const slug = resolvedParams.slug;
+    const slug = resolvedParams?.slug;
     try {
         const pageData = await fetchPageBySlug(slug);
         const metadata = await generatePageMetadatas(resolvedParams.slug, 'page', parent_path, {});

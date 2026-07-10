@@ -18,25 +18,22 @@ const awards = [
 
 export default function AwardsRecognition({ data }) {
   const list = (data && data.award_and_certificate_list && data.award_and_certificate_list.length) ? data.award_and_certificate_list : awards;
-  // ensure up to 12 items for the two-row layout (6 + 6)
   const items = list.slice(0, 12);
-  const bottomItems = items.slice(6, 12);
-  // Always provide two top-right slots (indices 4 and 5) so placeholders show if missing
-  const topRightSlots = [items[4] ?? null, items[5] ?? null];
-  const bottomCount = bottomItems.length;
-  const bottomStartCol = bottomCount < 6 ? Math.floor((6 - bottomCount) / 2) + 1 : 1;
+  const topLeftItems = items.slice(0, 4);
+  const topRightItems = items.slice(4, 8);
+  const bottomItems = items.slice(8, 12);
+
   return (
     <section className={styles.awardsSection}>
       <div className={styles.simpleHeader}>
         <div className={styles.sectionKickerPill}>Awards & Recognition</div>
-        <h2 >Recognized for enterprise automation leadership.</h2>
+        <h2>Recognized for enterprise automation leadership</h2>
         <p>{(data && data.description) ? data.description : 'Our work has been acknowledged across analyst reports and industry awards for measurable impact and innovation.'}</p>
       </div>
 
       <div className={styles.awardsGrid}>
-        {/* Top row: left 2x2 block occupying columns 1-4 */}
-          <div className={styles.topLeftBlock}>
-          {items.slice(0, 4).map((a, i) => (
+        <div className={styles.topLeftBlock}>
+          {topLeftItems.map((a, i) => (
             <div key={a?.id ?? `top-${i}`} className={`${styles.awardCard} ${styles.topBlockItem}`}>
               {a && a.image && a.image.url ? (
                 // eslint-disable-next-line @next/next/no-img-element
@@ -50,41 +47,17 @@ export default function AwardsRecognition({ data }) {
           ))}
         </div>
 
-      {/* Top-right two items */}
-{topRightSlots.map((a, i) => (
-  <div
-    key={a?.id ?? `topright-${i}`}
-    className={`${styles.awardCard} ${styles.topRightItem}`}
-  >
-    {a?.image?.url ? (
-      <div className={styles.awardBox}>
-        <img
-          src={a.image.url}
-          alt={a.title || `Award ${4 + i + 1}`}
-        />
-      </div>
-    ) : (
-      <div className={styles.awardPlaceholder} />
-    )}
-  </div>
-))}
-        {/* Bottom row: place items inside a full-width cell and center with flex */}
-        <div className={styles.awardsBottomWrapper}>
-          {bottomItems.map((a, i) => (
+        <div className={styles.topRightBlock}>
+          {topRightItems.map((a, i) => (
             <div
-              key={a?.id ?? `bottom-${i}`}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                padding: '0'
-              }}
+              key={a?.id ?? `topright-${i}`}
+              className={`${styles.awardCard} ${styles.topRightItem}`}
             >
               {a?.image?.url ? (
-                <div className={`${styles.awardBox} ${styles.awardBoxBottom}`}>
+                <div className={styles.awardBox}>
                   <img
                     src={a.image.url}
-                    alt={a.title || `Award ${6 + i + 1}`}
+                    alt={a.title || `Award ${4 + i + 1}`}
                   />
                 </div>
               ) : (
@@ -93,6 +66,33 @@ export default function AwardsRecognition({ data }) {
             </div>
           ))}
         </div>
+
+        {bottomItems.length > 0 && (
+          <div className={styles.awardsBottomWrapper}>
+            {bottomItems.map((a, i) => (
+              <div
+                key={a?.id ?? `bottom-${i}`}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  padding: '0'
+                }}
+              >
+                {a?.image?.url ? (
+                  <div className={`${styles.awardBox} ${styles.awardBoxBottom}`}>
+                    <img
+                      src={a.image.url}
+                      alt={a.title || `Award ${8 + i + 1}`}
+                    />
+                  </div>
+                ) : (
+                  <div className={styles.awardPlaceholder} />
+                )}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
