@@ -45,7 +45,7 @@ export default function Sidebar() {
         <div className="sidebar-image-layer">
 
           <img
-            src="/images/polaris-sidebar.jpg"
+            src="/assets/images/polaris-sidebar.png"
             alt="Polaris Transportation"
             className="sidebar-image"
         />

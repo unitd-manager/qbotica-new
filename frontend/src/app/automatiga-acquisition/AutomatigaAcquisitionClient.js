@@ -7,9 +7,7 @@ const LogoMark = ({ size = 18 }) => (
 );
 
 const AutomatigaMark = ({ size = 18 }) => (
-  <div style={{ background: '#0EA5A8', width: size, height: size, borderRadius: size * 0.22, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-    <svg width={size * 0.6} height={size * 0.6} viewBox="0 0 24 24" fill="none"><path d="M12 2L4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z" stroke="white" strokeWidth="2" fill="none" /></svg>
-  </div>
+  <img src="/assets/images/automatiga.png" alt="Automatiga" style={{ height: size, width: 'auto', objectFit: 'contain', flexShrink: 0, transform: 'scale(0.9)' }} />
 );
 
 function Reveal({ children, className = '' }) {
@@ -62,7 +60,6 @@ export default function AutomatigaAcquisitionClient() {
               <span className={s.heroX}>&times;</span>
               <div className={s.heroPartnerPill}>
                 <AutomatigaMark size={35} />
-                <span className={s.hppName}>Automatiga</span>
               </div>
             </div>
 
@@ -169,9 +166,7 @@ export default function AutomatigaAcquisitionClient() {
                 <div className={`${s.accordion} ${openItem === 'automatiga' ? s.accordionActive : ''}`}>
                   <button type="button" className={s.accordionHeader} onClick={() => toggle('automatiga')}>
                     <div className={s.accordionHeaderLeft}>
-                      <div className={s.accordionLogoMark} style={{ background: '#0EA5A8' }}>
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2L4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z" stroke="white" strokeWidth="2" fill="none" /></svg>
-                      </div>
+                      <img src="/assets/images/automatiga-logo.png" alt="Automatiga-logo" style={{ width: 32, height: 32, objectFit: 'contain', flexShrink: 0 }} />
                       About Automatiga
                     </div>
                     <div className={s.accordionIcon}>+</div>
