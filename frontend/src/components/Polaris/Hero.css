@@ -1,0 +1,455 @@
+/* =====================================================
+   HERO
+===================================================== */
+
+.cs-hero{
+    position:relative;
+    overflow:hidden;
+
+    background-image:
+linear-gradient(
+    rgba(5,10,18,.45),
+    rgba(5,10,18,.60)
+),
+url('/images/polaris-hero-bg.jpg');
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    padding:90px 0 0;
+    min-height:90vh;
+}
+
+/* =====================================================
+Container
+===================================================== */
+
+.cs-hero-container{
+    width:min(1280px,92%);
+    margin:0 auto;
+    padding-left:40px;
+    position:relative;
+    z-index:2;
+}
+
+@media(max-width:768px){
+.cs-hero-container{
+    padding-left:0;
+}
+}
+
+.cs-hero-grid{
+    display:none;
+}
+
+/* =====================================================
+Orange Glow
+===================================================== */
+
+.cs-hero-glow1{
+    position:absolute;
+    right:-180px;
+    top:-180px;
+    width:520px;
+    height:520px;
+    background:rgba(255,119,5,.04);
+    border-radius:50%;
+    filter:blur(120px);
+}
+
+.cs-hero-glow2{
+    position:absolute;
+    left:-120px;
+    bottom:-120px;
+    width:360px;
+    height:360px;
+    background:rgba(255,119,5,.02);
+    border-radius:50%;
+    filter:blur(100px);
+}
+
+/* =====================================================
+Breadcrumb
+===================================================== */
+
+.cs-breadcrumb{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-bottom:38px;
+
+    color:rgba(255,255,255,.90);
+    font-size:16px;
+    font-weight:500;
+}
+
+.cs-breadcrumb .active{
+    color:#fff;
+    font-weight:700;
+}
+
+/* =====================================================
+Top Meta
+===================================================== */
+
+.cs-meta{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    flex-wrap:wrap;
+    margin-bottom:42px;
+}
+
+/* =====================================================
+Case Tag
+===================================================== */
+
+.cs-case-tag{
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    height:44px;
+    padding:0 22px;
+
+    border-radius:999px;
+
+    background:rgba(20,25,35,.45);   /* Same background as other chips */
+    border:1px solid rgba(255,119,5,.65);
+
+    color:#ff7705;
+
+    font-size:17px;
+    font-weight:700;
+    letter-spacing:.5px;
+
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+
+    transition:all .3s ease;
+}
+
+.cs-case-tag:hover{
+    background:rgba(20,25,35,.60);
+    border-color:#ff7705;
+}
+
+.cs-case-tag .dot{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#ff7705;
+}
+
+/* =====================================================
+Chips
+===================================================== */
+
+.cs-chip{
+    display:flex;
+    align-items:center;
+
+    height:44px;
+    padding:0 18px;
+
+    border-radius:999px;
+
+    background:rgba(20,25,35,.45);
+    border:1px solid rgba(255,255,255,.25);
+
+    color:#ffffff;
+
+    font-size:17px;
+    font-weight:600;
+
+    backdrop-filter:blur(10px);
+}
+
+/* =====================================================
+Client Card
+===================================================== */
+
+.cs-client-card{
+    margin-left:auto;
+
+    display:flex;
+    align-items:center;
+    gap:22px;
+
+    padding:18px 22px;
+
+    border-radius:18px;
+
+    background:rgba(20,25,35,.48);
+    border:1px solid rgba(255,255,255,.22);
+
+    backdrop-filter:blur(14px);
+}
+
+.cs-client-logo{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:140px;
+}
+
+.polaris-logo{
+    width:150px;
+    height:auto;
+    display:block;
+    object-fit:contain;
+}
+
+.client-label{
+    color:rgba(255,255,255,.75);
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:1px;
+    margin-bottom:4px;
+}
+
+.client-name{
+    color:#fff;
+    font-size:18px;
+    font-weight:700;
+}
+
+/* =====================================================
+Title
+===================================================== */
+
+.cs-title{
+    max-width:980px;
+
+    color:#fff;
+
+    font-size:clamp(54px,5.8vw,78px);
+
+    font-weight:900;
+
+    line-height:1;
+
+    letter-spacing:-3px;
+
+    font-family:Inter,sans-serif;
+}
+
+.cs-title span{
+    display:block;
+    margin:8px 0;
+    color:#ff7705;
+}
+
+/* =====================================================
+Stats
+===================================================== */
+
+.cs-stats{
+    margin-top:65px;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+
+    border-top:1px solid rgba(255,255,255,.25);
+}
+
+.cs-stat-card{
+    padding:36px 30px;
+    border-right:1px solid rgba(255,255,255,.18);
+}
+
+.cs-stat-card:last-child{
+    border-right:none;
+}
+
+.cs-stat-card h2{
+    color:#ff7705;
+    font-size:60px;
+    font-weight:900;
+    line-height:1;
+    margin-bottom:18px;
+}
+
+.cs-stat-card p{
+    color:rgba(255,255,255,.92);
+    font-size:15px;
+    font-weight:500;
+    line-height:1.6;
+    letter-spacing:.4px;
+    text-transform:uppercase;
+    max-width:220px;
+}
+
+/* =====================================================
+Responsive
+===================================================== */
+
+@media(max-width:1100px){
+
+.cs-client-card{
+    margin-left:0;
+    width:100%;
+}
+
+.cs-stats{
+    grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:768px){
+
+/* HERO */
+
+.cs-hero{
+    padding:50px 0 0;
+    min-height:auto;
+    background-position:center;
+}
+
+.cs-hero-container{
+    width:min(100%,92%);
+    padding-left:0;
+}
+
+/* BREADCRUMB */
+
+.cs-breadcrumb{
+    font-size:13px;
+    gap:8px;
+    margin-bottom:24px;
+}
+
+/* META */
+
+.cs-meta{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+    margin-bottom:28px;
+}
+
+/* CHIPS */
+
+.cs-case-tag,
+.cs-chip{
+    height:38px;
+    padding:0 14px;
+    font-size:13px;
+}
+
+.cs-chip{
+    max-width:100%;
+    white-space:nowrap;
+}
+
+/* CLIENT CARD */
+
+.cs-client-card{
+    width:100%;
+    margin:8px 0 0;
+    padding:18px;
+    gap:16px;
+    border-radius:16px;
+}
+
+.cs-client-logo{
+    width:110px;
+}
+
+.polaris-logo{
+    width:120px;
+}
+
+.client-label{
+    font-size:11px;
+}
+
+.client-name{
+    font-size:16px;
+    line-height:1.4;
+}
+
+/* TITLE */
+
+.cs-title{
+    max-width:100%;
+    font-size:42px;
+    line-height:1.08;
+    letter-spacing:-1px;
+}
+
+.cs-title span{
+    margin:6px 0;
+}
+
+/* STATS */
+
+.cs-stats{
+    grid-template-columns:1fr;
+    margin-top:40px;
+}
+
+.cs-stat-card{
+    padding:26px 20px;
+    border-right:none;
+    border-bottom:1px solid rgba(255,255,255,.15);
+}
+
+.cs-stat-card:last-child{
+    border-bottom:none;
+}
+
+.cs-stat-card h2{
+    font-size:44px;
+    margin-bottom:12px;
+}
+
+.cs-stat-card p{
+    font-size:14px;
+    line-height:1.55;
+    max-width:260px;
+}
+
+}
+
+/* =====================================================
+PAGE LAYOUT — Main content + Sidebar
+===================================================== */
+
+.cs-page-layout {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 24px;
+  align-items: start;
+}
+
+.cs-main-content {
+  min-width: 0;
+}
+
+/* Sidebar wrapper — inline style toggles between:
+   position: sticky (through Challenge + Solution) and
+   position: absolute, frozen top (through Impact + WhyItWorked,
+   so it moves naturally with normal page scroll from that point on) */
+.cs-sidebar-wrap {
+  width: 400px;
+  align-self: start;
+}
+
+@media (max-width: 900px) {
+  .cs-page-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-sidebar-wrap {
+    position: static !important;
+    width: 100%;
+  }
+}

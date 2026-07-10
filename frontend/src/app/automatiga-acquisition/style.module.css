@@ -159,7 +159,7 @@
   font-size: clamp(22px, 2.5vw, 30px); line-height: 1.1;
   margin: 0 0 14px; letter-spacing: -.04em; font-weight: 800;
 }
-.spotlightCard p { color: rgba(255,255,255,.7); font-size: .9rem; line-height: 1.65; margin: 0 0 20px; }
+.spotlightCard p { color: rgba(255,255,255,.7); font-size: 1.05rem; line-height: 1.75; margin: 0 0 20px; }
 .checkList { display: grid; gap: 10px; }
 .check {
   display: flex; gap: 10px; align-items: center;
@@ -298,8 +298,8 @@
   max-height: 800px; padding: 0 28px 28px;
 }
 .accordionContent p {
-  color: var(--muted); line-height: 1.82;
-  font-size: .93rem; margin-bottom: 14px;
+  color: var(--muted); line-height: 1.88;
+  font-size: 1.05rem; margin-bottom: 14px;
 }
 .accordionContent p:last-of-type { margin-bottom: 16px; }
 .acLink {

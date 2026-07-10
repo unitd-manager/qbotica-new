@@ -1,0 +1,168 @@
+/* =====================================
+CLIENT QUOTE
+===================================== */
+
+.client-quote{
+    background:#f5f3ef;
+    padding:80px 0;
+    border-top:1px solid #ececec;
+    border-bottom:1px solid #ececec;
+}
+
+.client-quote-container{
+    width:min(1200px,92%);
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    gap:60px;
+}
+
+/* =====================================
+LEFT IMAGE
+===================================== */
+
+.client-photo-column{
+    width:280px;
+    flex-shrink:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.client-photo{
+    width:260px;
+    height:340px;
+    object-fit:cover;
+    border-radius:14px;
+    display:block;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.08);
+}
+
+/* =====================================
+DIVIDER
+===================================== */
+
+.client-divider{
+    width:1px;
+    align-self:stretch;
+    background:#dddddd;
+}
+
+/* =====================================
+RIGHT
+===================================== */
+
+.client-content{
+    flex:1;
+}
+
+.quote-icon{
+    font-size:74px;
+    line-height:1;
+    color:#ff7705;
+    font-family:Georgia,serif;
+    margin-bottom:18px;
+}
+
+.quote-description{
+    font-size:22px;
+    line-height:1.75;
+    font-style:italic;
+    font-weight:300;
+    color:#23344d;
+    margin-bottom:40px;
+}
+
+.quote-author{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:8px;
+
+    font-size:18px;
+}
+
+.quote-author strong{
+    color:#22334b;
+    font-weight:700;
+}
+
+.quote-author span{
+    color:#ff7705;
+    font-weight:600;
+}
+
+/* =====================================
+TABLET
+===================================== */
+
+@media(max-width:991px){
+
+.client-quote{
+    padding:60px 0;
+}
+
+.client-quote-container{
+    flex-direction:column;
+    gap:40px;
+}
+
+.client-divider{
+    display:none;
+}
+
+.client-photo-column{
+    width:100%;
+}
+
+.client-photo{
+    width:260px;
+    height:320px;
+}
+
+.client-content{
+    text-align:center;
+}
+
+.quote-description{
+    font-size:20px;
+}
+
+.quote-author{
+    justify-content:center;
+}
+
+}
+
+/* =====================================
+MOBILE
+===================================== */
+
+@media(max-width:767px){
+
+.client-quote{
+    padding:50px 0;
+}
+
+.client-photo{
+    width:220px;
+    height:280px;
+}
+
+.quote-icon{
+    font-size:56px;
+}
+
+.quote-description{
+    font-size:17px;
+    line-height:1.8;
+}
+
+.quote-author{
+    font-size:15px;
+}
+
+}

@@ -7,7 +7,7 @@ const LogoMark = ({ size = 18 }) => (
 );
 
 const AtolioMark = ({ size = 18 }) => (
-  <img src="/assets/images/atolioo.png" alt="Atolio" style={{ height: size, width: 'auto', objectFit: 'contain', flexShrink: 0 }} />
+  <img src="/assets/images/atolioo.png" alt="Atolio" style={{ height: size, width: 'auto', objectFit: 'contain', flexShrink: 0, transform: 'scale(1.4)' }} />
 );
 
 function Reveal({ children, className = '' }) {
@@ -61,7 +61,7 @@ export default function AtolioPartnershipClient() {
               </div>
               <span className={s.heroX}>&times;</span>
               <div className={s.heroPartnerPill}>
-                <AtolioMark size={38} />
+                <AtolioMark size={35} />
               </div>
             </div>
 
@@ -72,7 +72,7 @@ export default function AtolioPartnershipClient() {
               <div className={s.metaPill}>Strategic Partnership</div>
               <div className={s.metaPill}>Agentic AI</div>
               <div className={s.metaPill}>Enterprise Search</div>
-              <div className={s.metaPill}>June 10, 2026</div>
+            
             </div>
           </div>
 
@@ -186,14 +186,14 @@ export default function AtolioPartnershipClient() {
                   <div className={s.accordionContent}>
                     <p>qBotica is a global AI-first technology company specializing in Agentic AI, Intelligent Automation-as-a-Service, and enterprise automation transformation. Founded in 2017, qBotica helps organizations modernize operations by combining AI agents, intelligent document processing, robotic process automation, data orchestration, and human-in-the-loop governance into scalable, outcome-driven solutions.</p>
                     <p>Following its acquisition of Automatiga and the launch of qubi, qBotica&rsquo;s enterprise Agentic AI platform, the company is advancing a new model for autonomous business operations where AI agents, automation, and enterprise systems work together to improve speed, accuracy, compliance, and decision-making. qBotica serves clients across financial services, insurance, healthcare, logistics, and enterprise operations throughout the United States, Canada, and the United Kingdom.</p>
-                    <a href="https://www.qbotica.com" target="_blank" rel="noreferrer" className={s.acLink}>Learn more about qBotica &rarr;</a>
+                    <a href="https://www.qbotica.com/about" target="_blank" rel="noreferrer" className={s.acLink}>Learn more about qBotica &rarr;</a>
                   </div>
                 </div>
 
                 <div className={`${s.accordion} ${openItem === 'atolio' ? s.accordionActive : ''}`}>
                   <button type="button" className={s.accordionHeader} onClick={() => toggle('atolio')}>
                     <div className={s.accordionHeaderLeft}>
-                      <img src="/assets/images/atolioo.png" alt="Atolio" style={{ height: 30, width: 'auto', objectFit: 'contain', flexShrink: 0 }} />
+                      <img src="/assets/images/atolio-icon.png" alt="Atolio" style={{ height: 30, width: 'auto', objectFit: 'contain', flexShrink: 0 }} />
                       About Atolio
                     </div>
                     <div className={s.accordionIcon}>+</div>
@@ -249,21 +249,21 @@ export default function AtolioPartnershipClient() {
         <section className={s.related}>
           <div className={s.relatedInner}>
             <div className={s.relatedHeader}>
-              <h2>Related News</h2>
-              <p>Stay current with qBotica&rsquo;s latest partnerships, platform updates, and thought leadership.</p>
+              <h2>More about qBotica</h2>
+              <p>Stay current with qBotica&rsquo;s latest news, media, and research.</p>
             </div>
             <div className={s.relatedGrid}>
-              <a href="https://www.qbotica.com/newsroom/qbotica-announces-acquisition-of-automatiga-to-expand-global-intelligent-automation-and-ai-capabilities" target="_blank" rel="noreferrer" className={s.relatedCard} style={{ backgroundImage: "linear-gradient(to bottom, rgba(11,17,32,.08), rgba(11,17,32,.88)), url('https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=80')" }}>
-                <span>Acquisition</span>
-                <h3>qBotica acquires Automatiga to expand global intelligent automation and AI capabilities</h3>
+              <a href="https://www.qbotica.com/newsroom" target="_blank" rel="noreferrer" className={s.relatedCard} style={{ backgroundImage: "linear-gradient(to bottom, rgba(11,17,32,.08), rgba(11,17,32,.88)), url('/assets/images/related-newsroom.jpg')" }}>
+                <span>Newsroom</span>
+                <h3>Latest of qBotica</h3>
               </a>
-              <a href="https://www.qbotica.com/newsroom/mahesh-vinayagam-deloitte-technology-fast-500-leadership-reflections" target="_blank" rel="noreferrer" className={s.relatedCard} style={{ backgroundImage: "linear-gradient(to bottom, rgba(11,17,32,.08), rgba(11,17,32,.88)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80')" }}>
-                <span>Leadership</span>
-                <h3>Mahesh Vinayagam: Deloitte Technology Fast 500 leadership reflections</h3>
+              <a href="https://www.qbotica.com/media-and-videos" target="_blank" rel="noreferrer" className={s.relatedCard} style={{ backgroundImage: "linear-gradient(to bottom, rgba(11,17,32,.08), rgba(11,17,32,.88)), url('/assets/images/related-media.jpg')" }}>
+                <span>Media</span>
+                <h3>qBotica Media</h3>
               </a>
-              <a href="https://www.qbotica.com/newsroom/qbotica-and-kognitos-partner-to-bring-english-as-code-to-the-enterprise-for-key-operational-needs" target="_blank" rel="noreferrer" className={s.relatedCard} style={{ backgroundImage: "linear-gradient(to bottom, rgba(11,17,32,.08), rgba(11,17,32,.88)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80')" }}>
-                <span>Partnership</span>
-                <h3>qBotica and Kognitos partner to bring English as Code to the enterprise</h3>
+              <a href="https://www.qbotica.com/resources/white-papers" target="_blank" rel="noreferrer" className={s.relatedCard} style={{ backgroundImage: "linear-gradient(to bottom, rgba(11,17,32,.08), rgba(11,17,32,.88)), url('/assets/images/related-whitepapers.jpg')" }}>
+                <span>Whitepapers</span>
+                <h3>Our latest whitepapers</h3>
               </a>
             </div>
           </div>
