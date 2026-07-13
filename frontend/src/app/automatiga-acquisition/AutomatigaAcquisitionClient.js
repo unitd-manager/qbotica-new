@@ -138,6 +138,9 @@ export default function AutomatigaAcquisitionClient() {
 
             <section className={s.articleSection}>
               <h2 className={s.sectionTitle}>Introducing qubi: qBotica&rsquo;s Agentic AI Platform</h2>
+              <a href="https://qubiorchesto.unitdtechnologies.com/" target="_blank" rel="noreferrer" className={s.qubiLogoLink}>
+                <img src="/assets/images/qubi-logo.png" alt="qubi" className={s.qubiLogo} />
+              </a>
               <p>As part of this strategic expansion, qBotica is also launching qubi, its Agentic AI platform for enterprises. qubi is designed to orchestrate intelligent, autonomous workflows across front, middle, and back-office operations by leveraging collaborative AI agents that can reason, act, and adapt in real time.</p>
               <p>Built for enterprise scale, qubi combines agentic workflows, human-in-the-loop execution, and native automation capabilities to support both deterministic processes and dynamic, decision-driven use cases. The platform integrates seamlessly with existing systems, enabling organizations to deploy AI agents across functions such as customer experience, operations, finance, and supply chain without disrupting core infrastructure. With built-in governance, observability, and performance tracking, qubi empowers enterprises to move from isolated automation initiatives to fully orchestrated, AI-driven operations that continuously learn and improve.</p>
             </section>
