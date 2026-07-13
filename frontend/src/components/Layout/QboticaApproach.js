@@ -43,28 +43,51 @@ export default function QboticaApproach() {
   return (
     <section className={styles.interactiveSection} id="interactive">
       <div className={styles.interactiveHeader}>
-        <div className={styles.interactiveKicker}>qBotica Approach</div>
-        <h2>From AI assistance to AI execution.</h2>
+        <div className={styles.sectionKickerPill}>qBotica Approach</div>
+        <h2>From AI assistance to AI execution</h2>
       </div>
 
       <div className={styles.interactiveWrapper}>
         <article className={`${styles.contentCard} ${styles.fade}`} key={activeTab}>
-          <div className={styles.contentNumber}>{tabs[activeTab].number}</div>
+          {/* <div className={styles.contentNumber}>{tabs[activeTab].number}</div> */}
           <h3>{tabs[activeTab].title}</h3>
           <p>{tabs[activeTab].text}</p>
-             </article>
+          <button
+            type="button"
+            className={styles.nextPreview}
+            onClick={() => setActiveTab((activeTab + 1) % tabs.length)}
+            aria-label={`Go to next section: ${tabs[(activeTab + 1) % tabs.length].title}`}
+          >
+            <span className={styles.nextPreviewLabel}>Next</span>
+            <span className={styles.nextPreviewTitle}>
+              <span className={styles.nextPreviewIcon} aria-hidden="true">✈</span>
+              {tabs[(activeTab + 1) % tabs.length].label}
+            </span>
+          </button>
+        </article>
 
-        <div className={styles.tabButtons} role="tablist" aria-label="Automation approach tabs">
+        <div
+          className={styles.tabWrapper}
+          role="tablist"
+          aria-label="Automation approach tabs"
+          style={{ '--plane-top': activeTab === tabs.length - 1 ? '90%' : `${(activeTab + 1) * 20}%` }}
+        >
+          <div className={styles.timelineTrack} />
+          <span className={styles.airplaneIcon} aria-hidden="true">✈</span>
           {tabs.map((tab, idx) => (
-            <button
-              key={idx}
-              type="button"
-              className={`${styles.tabButton} ${activeTab === idx ? styles.activeTab : ''}`}
-              onClick={() => setActiveTab(idx)}
-            >
-              <span className={styles.tabLabel}>{tab.label}</span>
-              <span className={styles.tabDescription}>{tab.desc}</span>
-            </button>
+            <React.Fragment key={idx}>
+              <div className={styles.timelineCell}>
+                <span className={`${styles.timelineDot} ${activeTab === idx ? styles.activeDot : ''}`} aria-hidden="true" />
+              </div>
+              <button
+                type="button"
+                className={`${styles.tabButton} ${activeTab === idx ? styles.activeTab : ''}`}
+                onClick={() => setActiveTab(idx)}
+              >
+                <span className={styles.tabLabel}>{tab.label}</span>
+                <span className={styles.tabDescription}>{tab.desc}</span>
+              </button>
+            </React.Fragment>
           ))}
         </div>
       </div>

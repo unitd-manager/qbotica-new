@@ -53,7 +53,7 @@ export default function QboticaHomepage() {
       <section className={styles.partnersStrip}>
         <div className={styles.partnersInner}>
           <div className={styles.partnersCopy}>
-            <h2>Built with the enterprise ecosystem.</h2>
+            <h2>Built with the enterprise ecosystem</h2>
             <p>qBotica works across leading platforms and technologies to deliver what fits your environment.</p>
             <div style={{ marginTop: "20px" }}>
               <a className={styles.buttonPrimary} href="#">Explore Partnerships →</a>
@@ -72,7 +72,7 @@ export default function QboticaHomepage() {
       <section className={styles.interactiveSection} id="interactive">
         <div className={styles.interactiveHeader}>
           <div className={styles.interactiveKicker}>qBotica Approach</div>
-          <h2>From AI assistance to AI execution.</h2>
+          <h2>From AI assistance to AI execution</h2>
         </div>
 
         <div className={styles.interactiveWrapper}>
@@ -104,7 +104,7 @@ export default function QboticaHomepage() {
       <section className={styles.impactSection} id="impact">
         <div className={styles.impactHeader}>
           <div className={styles.sectionKickerPill}>Operational Execution</div>
-          <h2>Enterprise workflows executed by qBotica.</h2>
+          <h2>Enterprise workflows executed by qBotica</h2>
           <p>We focus on the operational workflows where speed, accuracy, decisions, and system coordination create measurable business impact.</p>
         </div>
 
@@ -150,7 +150,7 @@ export default function QboticaHomepage() {
       <section className={styles.logoSection}>
         <div className={styles.simpleHeader}>
           <div className={styles.sectionKickerPill}>Enterprise Trust</div>
-          <h2>Trusted across enterprise environments.</h2>
+          <h2>Trusted across enterprise environments</h2>
           <p>qBotica supports organizations across complex, regulated, and operationally intensive business functions.</p>
         </div>
         <div className={styles.logosCarousel}>
@@ -166,7 +166,7 @@ export default function QboticaHomepage() {
       <section className={styles.awardsSection}>
         <div className={styles.simpleHeader}>
           <div className={styles.sectionKickerPill}>Awards & Recognition</div>
-          <h2>Recognized for enterprise automation leadership.</h2>
+          <h2>Recognized for enterprise automation leadership</h2>
           <p>Market recognition reinforces qBotica’s focus on delivery, innovation, and measurable business outcomes.</p>
         </div>
         <div className={styles.awardsGrid}>
@@ -180,7 +180,7 @@ export default function QboticaHomepage() {
       <section className={styles.newsSection}>
         <div className={styles.simpleHeader}>
           <div className={styles.sectionKickerPill}>Latest From qBotica</div>
-          <h2>Building the future of enterprise execution.</h2>
+          <h2>Building the future of enterprise execution</h2>
           <p>Explore the latest updates, insights, customer stories, and thought leadership from the qBotica team.</p>
         </div>
         <div className={styles.newsGrid}>

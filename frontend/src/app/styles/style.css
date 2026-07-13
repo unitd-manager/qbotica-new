@@ -72,7 +72,7 @@ body {
   font-weight: 400;
   font-size: 16px;
   font-style: normal;
-  padding-top: 110px;
+  padding-top: 70px;
 }
 
 a {
@@ -530,6 +530,31 @@ header.navbar .container {
   background-color: #fff !important;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   transition: top 0.3s ease-in-out;
+}
+
+.home-page.new-home-static .primary-menu {
+  padding: 4px 0;
+}
+
+.home-page.new-home-static .primary-menu > .container {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  min-height: 56px;
+}
+
+.home-page.new-home-static .primary-menu .navbar-brand {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.home-page.new-home-static .primary-menu .nav-link {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.home-page.new-home-static .primary-menu .common-li {
+  padding: 2px 10px;
+  margin: 0 6px;
 }
 
 .primary-menu .nav-link {

@@ -260,13 +260,42 @@ export async function generatePageMetadatas(slug, pageType = 'page', parent = ''
    const fallback = {
     title: slug,
     description: `Learn more about ${slug}`,
-    url: `${siteUrl}${parent ? `/${parent}` : ''}/${slug}`,
+    url: `${siteUrl}${parent ? '/' + parent : ''}/${slug}`,
     siteName: 'Your Site Name',
     ...customFallback
   };
     
+    const isInvalidMeta = (metadata) => {
+      if (!metadata) return false;
+      const invalidText = /page not found|404\b|not found/i;
+      return invalidText.test(metadata.title || '')
+        || invalidText.test(metadata.description || '')
+        || invalidText.test(metadata.openGraph?.title || '')
+        || invalidText.test(metadata.openGraph?.description || '');
+    };
+
+    const buildFallbackMetadata = () => ({
+      title: fallback.title,
+      description: fallback.description,
+      openGraph: {
+        title: fallback.title,
+        description: fallback.description,
+        url: fallback.url,
+        siteName: fallback.siteName,
+        type: pageType === 'post' ? 'article' : 'website'
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: fallback.title,
+        description: fallback.description
+      }
+    });
+    
     if (rankMathData) {
       const metadata = toNextJSMetadata(rankMathData, fallback);
+      if (isInvalidMeta(metadata)) {
+        return buildFallbackMetadata();
+      }
       
       // Page type specific adjustments
       if (pageType === 'post') {
@@ -319,7 +348,7 @@ export async function generateCategoryMetadatas(slug, parent = '', customFallbac
     const fallback = {
       title: slug,
       description: `Learn more about ${slug}`,
-      url: `${siteUrl}${parent ? `/${parent}` : ''}/${slug}`,
+      url: `${siteUrl}${parent ? '/' + parent : ''}/${slug}`,
       siteName: 'Your Site Name',
       ...customFallback
     };
