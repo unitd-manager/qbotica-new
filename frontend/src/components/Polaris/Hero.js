@@ -204,7 +204,7 @@ export default function Hero({ slug }) {
 
             <div className="cs-case-tag">
               <span className="dot"></span>
-              CASE STUDY1
+              CASE STUDY
             </div>
 
             {/* TAGS */}

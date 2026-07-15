@@ -121,7 +121,7 @@
   color: var(--muted); font-size: 1.05rem; line-height: 1.75;
   margin: 0; max-width: 520px;
 }
-.metaRow { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 1.75rem; max-width: 560px; }
+.metaRow { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 1.75rem; max-width: 440px; }
 .metaPill {
   background: var(--white); border: 1px solid var(--border);
   border-radius: 999px; padding: 8px 16px;
