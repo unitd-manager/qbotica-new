@@ -228,17 +228,7 @@ export default function Sidebar() {
 
         </a>
 
-        <a
-          href="https://meetings.hubspot.com/automation-demo/scheduler"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="secondary-btn"
-        >
-
-          Talk to an Expert
-
-        </a>
-
+       
       </div>
 
     </aside>
