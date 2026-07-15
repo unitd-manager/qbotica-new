@@ -79,7 +79,7 @@ export default async function RootLayout({ children }) {
     thirdFooterMenu,
     fourthFooterMenu
   } = await getThemeData();
-  const headerClass = `navbar navbar-expand-lg navbar-light bg-white primary-menu bottom-dashed ${themeSettings?.promotion_enable ? 'enable-promotion-bar' : ''}`;
+  const headerClass = 'navbar navbar-expand-lg navbar-light bg-white primary-menu bottom-dashed';
   const headerStyle = { backgroundColor: '#ffffff' };
 
   return (

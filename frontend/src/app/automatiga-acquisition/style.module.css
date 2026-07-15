@@ -216,6 +216,9 @@
 
 .techSection { background: var(--cream); }
 
+.qubiLogoLink { display: inline-block; margin-bottom: 12px; margin-top: 4px; }
+.qubiLogo { height: 80px; width: auto; object-fit: contain; display: block; }
+
 .sectionTitle {
   display: flex; align-items: center; gap: 12px;
   color: var(--ink); margin: 0 0 22px;

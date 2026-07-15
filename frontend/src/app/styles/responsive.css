@@ -1,7 +1,7 @@
 @media screen and (min-width: 768px) and (max-width: 1599px) {
 
   body {
-    padding-top: 7.64vw;
+    padding-top: 70px;
   }
 
   p {
@@ -2928,7 +2928,7 @@
   }
 
   body {
-    padding-top: 108px;
+    padding-top: 70px;
   }
       /* Slider container */
   .home-two-banner-section .col-lg-6:last-child {
@@ -5493,12 +5493,9 @@ width: 100%;
   .primary-menu.enable-promotion-bar {
     transform: translateY(0) !important;
   }
-  body {
-    padding-top: 67px;
-  }
   .mobile-promotion {
-  display: block;
-}
+    display: block;
+  }
 }
 
 @media only screen and (max-width: 480px) {

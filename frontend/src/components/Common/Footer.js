@@ -53,6 +53,19 @@ export default function Footer({ themeSettings = {}, footerMenus = {} }) {
           {renderMenu(footerMenus.fourth, 'Resources')}
         </DivTag>
       </DivTag>
+      
+      {isNewHomeStatic && (
+        <DivTag className="container" style={{ marginTop: '40px', paddingBottom: '40px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+          {/* <H5Tag className="text-uppercase" style={{ color: '#fff', marginBottom: '30px' }}>Security & Compliance</H5Tag> */}
+          <DivTag style={{ display: 'flex', flexWrap: 'nowrap', gap: '40px', alignItems: 'center', justifyContent: 'flex-start', overflowX: 'auto' }}>
+            {/* <img src="https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2026/05/logo-smallbusiness.webp" alt="Small Business" style={{ height: '50px', objectFit: 'contain', minWidth: '100px' }} /> */}
+           
+            <img src="/assets/images/soc.png" alt="SOC" style={{ height: '50px', objectFit: 'contain', minWidth: '100px' }} />
+           
+          </DivTag>
+        </DivTag>
+      )}
+      
       <DivTag className="container bottom-text" style={isNewHomeStatic ? { color: '#fff' } : undefined}>
         <DivTag className="row social-row">
           <DivTag className="col-md-6 col-sm-6 copright-col">
