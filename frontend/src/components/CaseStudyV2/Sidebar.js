@@ -224,7 +224,7 @@ export default function Sidebar() {
           className="primary-btn"
         >
 
-           Talk to an Expert
+           Talk to an Expert →
 
         </a>
 
