@@ -45,7 +45,7 @@ export default function Sidebar() {
         <div className="sidebar-image-layer">
 
           <img
-            src="/images/polaris-sidebar.jpg"
+            src="/assets/images/polaris-sidebar.png"
             alt="Polaris Transportation"
             className="sidebar-image"
         />
@@ -217,25 +217,14 @@ export default function Sidebar() {
 
         </p>
 
-        <a
-          href="https://meetings.hubspot.com/automation-demo/scheduler"
+        
+        <a  href="https://meetings.hubspot.com/automation-demo/scheduler"
           target="_blank"
           rel="noopener noreferrer"
           className="primary-btn"
         >
 
-          Request a Demo →
-
-        </a>
-
-        <a
-          href="https://meetings.hubspot.com/automation-demo/scheduler"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="secondary-btn"
-        >
-
-          Talk to an Expert
+           Talk to an Expert
 
         </a>
 
@@ -246,4 +235,3 @@ export default function Sidebar() {
   );
 
 }
-

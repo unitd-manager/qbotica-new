@@ -7,9 +7,7 @@ const LogoMark = ({ size = 18 }) => (
 );
 
 const AutomatigaMark = ({ size = 18 }) => (
-  <div style={{ background: '#0EA5A8', width: size, height: size, borderRadius: size * 0.22, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-    <svg width={size * 0.6} height={size * 0.6} viewBox="0 0 24 24" fill="none"><path d="M12 2L4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z" stroke="white" strokeWidth="2" fill="none" /></svg>
-  </div>
+  <img src="/assets/images/automatiga.png" alt="Automatiga" style={{ height: size, width: 'auto', objectFit: 'contain', flexShrink: 0, transform: 'scale(0.9)' }} />
 );
 
 function Reveal({ children, className = '' }) {
@@ -62,7 +60,6 @@ export default function AutomatigaAcquisitionClient() {
               <span className={s.heroX}>&times;</span>
               <div className={s.heroPartnerPill}>
                 <AutomatigaMark size={35} />
-                <span className={s.hppName}>Automatiga</span>
               </div>
             </div>
 
@@ -138,6 +135,9 @@ export default function AutomatigaAcquisitionClient() {
 
             <section className={s.articleSection}>
               <h2 className={s.sectionTitle}>Introducing qubi: qBotica&rsquo;s Agentic AI Platform</h2>
+              <a href="https://qubiorchesto.unitdtechnologies.com/" target="_blank" rel="noreferrer" className={s.qubiLogoLink}>
+                <img src="/assets/images/qubi-logo.png" alt="qubi" className={s.qubiLogo} />
+              </a>
               <p>As part of this strategic expansion, qBotica is also launching qubi, its Agentic AI platform for enterprises. qubi is designed to orchestrate intelligent, autonomous workflows across front, middle, and back-office operations by leveraging collaborative AI agents that can reason, act, and adapt in real time.</p>
               <p>Built for enterprise scale, qubi combines agentic workflows, human-in-the-loop execution, and native automation capabilities to support both deterministic processes and dynamic, decision-driven use cases. The platform integrates seamlessly with existing systems, enabling organizations to deploy AI agents across functions such as customer experience, operations, finance, and supply chain without disrupting core infrastructure. With built-in governance, observability, and performance tracking, qubi empowers enterprises to move from isolated automation initiatives to fully orchestrated, AI-driven operations that continuously learn and improve.</p>
             </section>
@@ -169,9 +169,7 @@ export default function AutomatigaAcquisitionClient() {
                 <div className={`${s.accordion} ${openItem === 'automatiga' ? s.accordionActive : ''}`}>
                   <button type="button" className={s.accordionHeader} onClick={() => toggle('automatiga')}>
                     <div className={s.accordionHeaderLeft}>
-                      <div className={s.accordionLogoMark} style={{ background: '#0EA5A8' }}>
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2L4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z" stroke="white" strokeWidth="2" fill="none" /></svg>
-                      </div>
+                      <img src="/assets/images/automatiga-logo.png" alt="Automatiga-logo" style={{ width: 32, height: 32, objectFit: 'contain', flexShrink: 0 }} />
                       About Automatiga
                     </div>
                     <div className={s.accordionIcon}>+</div>

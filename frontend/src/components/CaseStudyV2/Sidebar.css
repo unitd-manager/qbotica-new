@@ -99,20 +99,35 @@ CLIENT HOVER CARD
     color:#c8d2df;
 }
 
+/* =====================================
+VERIFIED CUSTOMER BADGE — cta-primary style
+===================================== */
+
 .sidebar-slide-content button{
-    border:none;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
     background:#ff7705;
+    border:1px solid #ff7705;
     color:#ffffff;
     padding:14px 30px;
-    border-radius:999px;
-    font-size:18px;
+    border-radius:12px;
+    font-size:16px;
     font-weight:700;
     cursor:pointer;
-    transition:.3s;
+    outline:none;
+    transition:background .3s ease,border-color .3s ease,transform .3s ease,box-shadow .3s ease,color .3s ease;
 }
 
 .sidebar-slide-content button:hover{
-    background:#ff8c24;
+    background:#ff8b1f;
+    transform:translateY(-2px);
+    box-shadow:0 14px 35px rgba(255,119,5,.25);
+}
+
+.sidebar-slide-content button:focus{
+    outline:none;
+    box-shadow:0 14px 35px rgba(255,119,5,.25);
 }
 
 /* =====================================
@@ -238,10 +253,17 @@ TOPICS
 /* =====================================
 CTA
 ===================================== */
+/* =====================================
+CTA
+===================================== */
 
 .sidebar-cta{
     background:#081329;
     padding:28px;
+    border:1px solid #d8dde5;
+    border-radius:10px;
+    overflow:hidden;
+    position:relative;
 }
 
 .sidebar-cta h4{
@@ -259,42 +281,67 @@ CTA
     color:#b7c4d4;
 }
 
-.primary-btn,
-.secondary-btn{
-    display:flex;
+/* =====================================
+TALK TO AN EXPERT BUTTON
+===================================== */
+
+.primary-btn{
+    display:inline-flex;
     align-items:center;
     justify-content:center;
     width:100%;
     height:60px;
-    border-radius:10px;
+
+    background:#ff7705;
+    border:1px solid #ff7705;
+    border-radius:12px;
+
+    color:#ffffff;
+    text-decoration:none;
     font-size:17px;
     font-weight:700;
-    text-decoration:none;
-    transition:.3s;
+
+    cursor:pointer;
+    position:relative;
+    overflow:hidden;
+
+    outline:none;
+    appearance:none;
+    -webkit-appearance:none;
+    -webkit-tap-highlight-color:transparent;
+
+    transition:
+        background .3s ease,
+        border-color .3s ease,
+        transform .3s ease,
+        box-shadow .3s ease;
 }
 
-.primary-btn{
-    background:#ff7705;
-    color:#ffffff;
-    margin-bottom:14px;
+.primary-btn::before,
+.primary-btn::after{
+    content:none !important;
+    display:none !important;
 }
 
 .primary-btn:hover{
-    background:#e96d00;
-    transform:translateY(-2px);
-}
-
-.secondary-btn{
-    background:transparent;
-    border:1px solid rgba(255,255,255,.16);
+    background:#ff8b1f;
+    border-color:#ff8b1f;
     color:#ffffff;
-}
 
-.secondary-btn:hover{
-    background:rgba(255,255,255,.06);
     transform:translateY(-2px);
+    box-shadow:0 14px 35px rgba(255,119,5,.25);
 }
 
+.primary-btn:focus,
+.primary-btn:focus-visible,
+.primary-btn:active{
+    background:#ff8b1f;
+    border-color:#ff8b1f;
+    color:#ffffff;
+
+    outline:none !important;
+    box-shadow:0 14px 35px rgba(255,119,5,.25);
+}
 /* =====================================
 RESPONSIVE
 ===================================== */

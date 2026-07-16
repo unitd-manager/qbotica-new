@@ -119,27 +119,18 @@ export default function Sidebar({ acf }) {
                     <p>{sidebar_cta_description}</p>
                 )}
 
-                {sidebar_demo_link && (
-                    <a
-                        href={sidebar_demo_link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="primary-btn"
-                    >
-                        Request a Demo →
-                    </a>
-                )}
-
                 {sidebar_expert_link && (
                     <a
                         href={sidebar_expert_link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="secondary-btn"
+                        className="primary-btn"
                     >
-                        Talk to an Expert
+                      Talk to an Expert   
                     </a>
                 )}
+
+             
 
             </div>
 

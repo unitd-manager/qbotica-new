@@ -57,7 +57,7 @@ export default function Challenge() {
             aria-label={showMore ? "Show Less" : "Show More"}
           >
             <span className="challenge-btn-text">
-          Learn more on qBotica Challenge
+          Learn more about Customer&apos;s Challenges
           <span className="challenge-btn-arrow">→</span>
           </span>
           </button>
