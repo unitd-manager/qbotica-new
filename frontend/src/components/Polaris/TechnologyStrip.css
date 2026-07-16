@@ -30,9 +30,9 @@
 }
 
 .tech-strip-item {
-    font-size: 15px;
-    font-weight: 600;
-    color: rgba(0, 0, 0, 0.6);
+    font-size: 17px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.4);
     padding: 0 28px;
     border-right: 1px solid rgba(0, 0, 0, 0.2);
 }
@@ -52,12 +52,15 @@
     }
 
     .tech-strip-list {
+        width: 100%;
         flex-wrap: wrap;
-        gap: 8px;
+        gap: 12px;
+        justify-content: flex-start;
     }
 
     .tech-strip-item {
-        padding: 0 16px;
+        padding: 0;
         font-size: 15px;
+        border-right: none;
     }
 }

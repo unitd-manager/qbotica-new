@@ -89,6 +89,10 @@ Breadcrumb
     font-weight:700;
 }
 
+.cs-breadcrumb-highlight{
+    font-size:16px;
+    font-weight:700;
+}
 /* =====================================================
 Top Meta
 ===================================================== */
@@ -443,13 +447,16 @@ PAGE LAYOUT — Main content + Sidebar
   align-self: start;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .cs-page-layout {
     grid-template-columns: 1fr;
   }
 
   .cs-sidebar-wrap {
     position: static !important;
-    width: 100%;
+    width: 100% !important;
+     left: auto !important;
+    right: auto !important;
+    top: auto !important;
   }
 }

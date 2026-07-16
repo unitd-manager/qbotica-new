@@ -20,6 +20,7 @@ export default function Hero({ slug }) {
   const [sidebarFrozenTop, setSidebarFrozenTop] = useState(null);
   const [extraBottomSpace, setExtraBottomSpace] = useState(0);
   const [sidebarMinHeight, setSidebarMinHeight] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const pageLayoutRef = useRef(null);
   const boundaryRef = useRef(null);
   const mainContentRef = useRef(null);
@@ -39,6 +40,16 @@ export default function Hero({ slug }) {
             setLoading(false);
         });
 }, [slug]);
+
+  // ── RESPONSIVE CHECK — disables absolute/sticky sidebar positioning
+  // below the layout breakpoint, so inline styles never force a fixed
+  // width on mobile/tablet ──
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 900);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // ── SIDEBAR: sticky through Challenge+Solution, then scrolls
   // normally (frozen at its exit point) through Impact+WhyItWorked ──
@@ -195,8 +206,8 @@ export default function Hero({ slug }) {
             <span>/</span>
             <span>Case Studies</span>
             <span>/</span>
-            <span className="active">
-              {heroClientName}
+            <span className="cs-breadcrumb-highlight">
+              Polaris Transportation
             </span>
           </div>
 
@@ -288,7 +299,9 @@ export default function Hero({ slug }) {
           ref={sidebarWrapRef}
           className="cs-sidebar-wrap"
           style={
-            sidebarFrozenTop !== null
+            isMobile
+              ? { position: 'static', width: '100%' }
+              : sidebarFrozenTop !== null
               ? {
                   position: 'absolute',
                   top: `${sidebarFrozenTop}px`,
