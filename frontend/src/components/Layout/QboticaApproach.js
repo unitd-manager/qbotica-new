@@ -77,7 +77,12 @@ export default function QboticaApproach() {
           {tabs.map((tab, idx) => (
             <React.Fragment key={idx}>
               <div className={styles.timelineCell}>
-                <span className={`${styles.timelineDot} ${activeTab === idx ? styles.activeDot : ''}`} aria-hidden="true" />
+                <span
+                  className={`${styles.timelineDot} ${activeTab === idx ? styles.activeDot : ''}`}
+                  aria-hidden="true"
+                >
+                  {activeTab === idx ? null : tab.number}
+                </span>
               </div>
               <button
                 type="button"
