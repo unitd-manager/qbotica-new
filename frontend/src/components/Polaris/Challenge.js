@@ -63,7 +63,7 @@ export default function Challenge({ acf }) {
                             onClick={() => setShowMore(!showMore)}
                         >
                             <span className="challenge-btn-text">
-                                Learn more about Customer's Challenges
+                                Learn more about Customer&apos;s Challenges
                             </span>
                             <span className="challenge-btn-arrow">
                                 →
