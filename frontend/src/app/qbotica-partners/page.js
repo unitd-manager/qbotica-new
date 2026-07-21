@@ -95,7 +95,7 @@ export default function QboticaPartners() {
             <div className="partner-card featured">
               <div className="partner-card-head" tabIndex={0}>
                 <img
-                  src="/images/atolio-ref.jpg"
+                  src="/images/atolio-new.jpg"
                   alt="Atolio"
                   className="partner-card-image"
                 />
@@ -168,7 +168,7 @@ export default function QboticaPartners() {
             <div className="partner-card">
               <div className="partner-card-head" tabIndex={0}>
                 <img
-                  src="/images/aws-building.jpg"
+                  src="/images/aws.jpg"
                   alt="AWS"
                   className="partner-card-image"
                 />
