@@ -203,7 +203,7 @@ export default function QboticaPartners() {
             <div className="partner-card">
               <div className="partner-card-head" tabIndex={0}>
                 <img
-                  src="/images/microsoft-campus.jpg"
+                  src="/images/microsoft-new.jpg"
                   alt="Microsoft"
                   className="partner-card-image"
                 />
