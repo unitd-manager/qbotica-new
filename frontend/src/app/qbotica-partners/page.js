@@ -279,7 +279,7 @@ export default function QboticaPartners() {
 ========================================================== */}
       <section className="partners-cta">
         <div className="partners-container">
-          <h2>Ready to build with qBoticas ecosystem?</h2>
+          <h2>Ready to build with qBotica ecosystem?</h2>
           <p>
             Bring together trusted platforms, intelligent automation,
             and AI technologies to solve complex business challenges.
