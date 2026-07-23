@@ -94,13 +94,13 @@ Top Meta
 ===================================================== */
 
 .cs-meta{
-    position:relative;
+    
     display:flex;
     align-items:center;
     gap:14px;
     flex-wrap:wrap;
     margin-bottom:42px;
-    padding-right: 500px;
+    
 }
 
 /* =====================================================
@@ -162,8 +162,8 @@ Chips
 
     color:#ffffff;
 
-    font-size:15px;
-    font-weight:200;
+    font-size:17px;
+    font-weight:600;
 
     backdrop-filter:blur(10px);
 }
@@ -183,7 +183,7 @@ Client Card — Polaris Ticket
 .cs-client-card{
     position:absolute;
     right:0;
-    top:-20px;
+    top:30px;
     display:flex;
     align-items:stretch;
 
