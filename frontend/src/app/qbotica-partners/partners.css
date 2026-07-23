@@ -394,6 +394,17 @@ font-size:18px;
 
     box-shadow:0 12px 35px rgba(7,27,58,.08);
 
+        transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+
+}
+
+
+.partner-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 45px rgba(7,27,58,.14);
 }
 
 /* ==========================================================
@@ -413,44 +424,151 @@ font-size:18px;
 }
 
 .partner-card.featured .partner-card-head{
-
-    height:auto;
-
-    min-height:100%;
-
+    height:100%;
+    min-height:260px;
 }
 /* ==========================================================
    BLUE PANEL
 ========================================================== */
 
 .partner-card-head{
-
-    background:linear-gradient(135deg,#071b3a,#102b56);
-
+    position:relative;
     height:280px;
+    overflow:hidden;
+    isolation:isolate;
+    outline:none;
+    cursor:pointer;
+}
 
-    padding:42px;
+.partner-card-image{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:transform .45s ease;
+}
+
+
+/* ==========================================================
+   HOVER OVERLAY
+========================================================== */
+
+.hover-panel{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:2;
 
     display:flex;
 
-    align-items:flex-end;
+    flex-direction:column;
 
-}
+    justify-content:flex-end;
 
-.partner-name{
+    padding:28px;
 
-    font-family:Arial, Helvetica, sans-serif;
+    background:
+        linear-gradient(
+180deg,
+rgba(8,31,64,.18),
+rgba(8,31,64,.70),
+rgba(8,31,64,.96)
+);
 
-    font-size:42px;
-
-    font-weight:700;
-
-    line-height:1;
+will-change: opacity, transform;
 
     color:#fff;
 
+    opacity:0;
+
+    transform:translateY(14px);
+
+    transition:
+        opacity .35s ease,
+        transform .35s ease;
+
 }
 
+.hover-panel small{
+
+    color:#ffc08a;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+
+    margin-bottom:10px;
+
+}
+
+.hover-panel h3{
+
+    color:#fff;
+
+    margin:0 0 18px;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    line-height:1.25;
+
+}
+
+/* ==========================================================
+   TAGS
+========================================================== */
+
+.tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+}
+
+.tag{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    border:1px solid rgba(255,255,255,.35);
+
+    background:rgba(255,255,255,.14);
+
+    color:#fff;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    backdrop-filter:blur(6px);
+    transition:.25s;
+
+}
+
+.tag:hover{
+
+    background:rgba(255,255,255,.22);
+
+}
+
+    
 /* ==========================================================
    CONTENT
 ========================================================== */
@@ -512,6 +630,29 @@ font-size:18px;
     line-height:1.6;
 
 }
+/* ==========================================================
+   HOVER EFFECT
+========================================================== */
+
+.partner-card-head:hover .partner-card-image,
+.partner-card-head:focus .partner-card-image,
+.partner-card-head:focus-within .partner-card-image{
+
+    transform:scale(1.08);
+
+}
+
+.partner-card-head:hover .hover-panel,
+.partner-card-head:focus .hover-panel,
+.partner-card-head:focus-within .hover-panel{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
 
 /* ==========================================================
    RESPONSIVE
@@ -539,11 +680,9 @@ font-size:18px;
 
     .partner-card-head{
 
-        min-height:160px;
+    height:240px;
 
-        padding:32px;
-
-    }
+}
 
     .partner-card-content{
 
@@ -575,16 +714,11 @@ font-size:18px;
 
     .partner-card-head{
 
-        min-height:140px;
+    height:210px;
 
-    }
+}
 
-    .partner-name{
-
-        font-size:34px;
-
-    }
-
+    
     .partner-card-content h3{
 
         font-size:24px;
