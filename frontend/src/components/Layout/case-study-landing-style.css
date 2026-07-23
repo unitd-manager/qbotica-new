@@ -977,3 +977,21 @@
     justify-content: center;
   }
 }
+
+
+.filter-inner::-webkit-scrollbar {
+  height: 8px;
+}
+
+.filter-inner::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.filter-inner::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.filter-inner::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
