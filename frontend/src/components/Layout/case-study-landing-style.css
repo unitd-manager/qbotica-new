@@ -315,55 +315,23 @@
   overflow: hidden;
   border: 1px solid rgba(229, 231, 235, 0.7);
 }
+
 .feat-visual {
-    position: relative;
-    overflow: hidden;
-    min-height: 440px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-
-    padding: 32px;
-    color: #fff;
+  min-height: 440px;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(to bottom, rgba(11, 17, 32, 0.15) 0%, rgba(11, 17, 32, 0.85) 100%),
+    url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1400&q=80');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 32px;
+  color: #ffffff;
 }
 
-.feat-image-wrap{
-    position:absolute;
-    inset:0;
-    z-index:0;
-}
-
-.feat-image{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
-}
-
-.feat-visual::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
-        to bottom,
-        rgba(11,17,32,.15),
-        rgba(11,17,32,.85)
-    );
-    z-index:1;
-}
-
-.feat-overlay{
-    position:absolute;
-    inset:0;
-    z-index:2;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-end;
-
-    padding:32px;
-}
 .feat-badge {
   position: absolute;
   top: 24px;
@@ -513,14 +481,27 @@
   align-items: center;
   gap: 0.5rem;
   overflow-x: auto;
-  scrollbar-width: none;
+  scrollbar-width: thin;
+  scrollbar-color: var(--orange, #FF7705) var(--border, #E5E7EB);
   -webkit-overflow-scrolling: touch;
   max-width: 1240px;
   margin: 0 auto;
+  padding-bottom: 0.6rem;
 }
 
 .filter-inner::-webkit-scrollbar {
-  display: none;
+  display: block;
+  height: 6px;
+}
+
+.filter-inner::-webkit-scrollbar-track {
+  background: var(--border, #E5E7EB);
+  border-radius: 999px;
+}
+
+.filter-inner::-webkit-scrollbar-thumb {
+  background: var(--orange, #FF7705);
+  border-radius: 999px;
 }
 
 .filter-tab {
