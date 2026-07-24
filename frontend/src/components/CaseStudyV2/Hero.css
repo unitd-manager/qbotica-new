@@ -186,8 +186,8 @@ Client Card — Polaris Ticket
     top:30px;
     display:flex;
     align-items:stretch;
-    width:460px;
-    height:160px;
+    width:320px;
+    height:140px;
     max-width:none;
     margin:0;
     z-index:20;
@@ -201,8 +201,8 @@ Client Card — Polaris Ticket
     mask-image:
         radial-gradient(circle 12px at 0% 50%, transparent 99%, #000 100%),
         radial-gradient(circle 12px at 100% 50%, transparent 99%, #000 100%),
-        radial-gradient(circle 7px at 67% 0%, transparent 99%, #000 100%),
-        radial-gradient(circle 7px at 67% 100%, transparent 99%, #000 100%);
+        radial-gradient(circle 7px at 66% 0%, transparent 99%, #000 100%),
+        radial-gradient(circle 7px at 66% 100%, transparent 99%, #000 100%);
     -webkit-mask-composite: source-in, source-in, source-in;
     mask-composite: intersect, intersect, intersect;
 }
@@ -211,7 +211,7 @@ Client Card — Polaris Ticket
 
 .ticket-left{
     position:relative;
-    flex:2.1;
+    flex:1.6;
 
     display:flex;
     flex-direction:column;
@@ -303,6 +303,7 @@ background:var(--ticket-gold);
 }
 
 .ticket-field .field-value{
+    
     font-size:12px;
     font-weight:800;
     color:var(--ticket-navy-text);
@@ -356,11 +357,11 @@ background:var(--ticket-gold);
     align-items:center;
     justify-content:flex-start;
 
-    gap:5px;
+    gap:3px;
 
     background:var(--ticket-navy);
 
-    padding:10px 12px 8px;
+    padding:8px 8px 6px;
     text-align:center;
 
     border-radius:0 8px 8px 0;
@@ -369,15 +370,15 @@ background:var(--ticket-gold);
 .vip-row{
     display:flex;
     align-items:center;
-    gap:5px;
+    gap:3px;
     width:100%;
     justify-content:center;
 }
 
 .vip-row span:not(.vip-line){
-    font-size:8px;
+    font-size:6px;
     font-weight:800;
-    letter-spacing:1.2px;
+    letter-spacing:.8px;
     color:var(--ticket-gold);
     white-space:nowrap;
 }
@@ -389,78 +390,89 @@ background:var(--ticket-gold);
 }
 
 .case-study-title{
-    font-size:13px;
-    font-weight:500;
-    letter-spacing:.5px;
+    font-family:'Inter',Arial,sans-serif;
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:.3px;
     color:#fff;
     line-height:1.1;
+    margin-top: 4px;
 }
 
 .case-study-sub{
-    font-size:7px;
+    font-size:6px;
     font-weight:400;
-    letter-spacing:1px;
+    letter-spacing:.6px;
     color:rgba(255,255,255,.9);
 }
 
 .gold-line{
-    width:60%;
+    width:50%;
     height:1px;
-    font-weight:400;
     background:var(--ticket-gold);
+     margin:1px 0;
 }
 
 .ticket-no-label{
-    font-size:8px;
+    font-size:6px;
     font-weight:400;
-    letter-spacing:1px;
+    letter-spacing:.6px;
     color:var(--ticket-gold);
 }
 
 .ticket-no-box{
     border:1px solid rgba(255,255,255,.55);
     border-radius:3px;
-
-    padding:2px 8px;
-
-    font-size:9px;
+    padding:1px 5px;
+    font-size:7px;
     font-weight:400;
     color:#fff;
+     white-space:nowrap;
 }
 
 .dashed-gold{
     display:block;
-    width:75%;
-    height:2px;
-    font-weight:400;
-    margin:2px 0;
-}
-
-.ticket-barcode{
-    display:block;
-    height:22px;
-    width:78%;
-
-    background:repeating-linear-gradient(
+    width:70%;
+    height:1px;
+    margin:2px 0 6px;
+     background-image:repeating-linear-gradient(
         90deg,
-        #ffffff 0px,
-        #ffffff 2px,
-        transparent 2px,
+        var(--ticket-gold) 0px,
+        var(--ticket-gold) 3px,
         transparent 3px,
-        #ffffff 3px,
-        #ffffff 4px,
-        transparent 4px,
         transparent 6px
     );
 }
 
-.ticket-caption{
-    font-size:8px;
-    font-weight:800;
-    letter-spacing:.4px;
-    line-height:1.3;
-    color:rgba(255,255,255,.9);
+.ticket-barcode{
+    display:block;
+    height:16px;
+    width:90%;
+ margin-top:4px;
+    background:repeating-linear-gradient(
+        90deg,
+       #ffffff 0px,
+        #ffffff 1.2px,
+        transparent 1.2px,
+        transparent 2px,
+        #ffffff 2px,
+        #ffffff 2.6px,
+        transparent 2.6px,
+        transparent 3.8px
+    );
 }
+
+.ticket-caption{
+    font-size:6px;
+    font-weight:800;
+    letter-spacing:.2px;
+    line-height:1.35;
+    color:rgba(255,255,255,.9);
+     white-space:nowrap;
+    max-width:none;
+    margin-top:2px;
+}
+
 
 /* ---------------- Outer Notches ---------------- */
 
