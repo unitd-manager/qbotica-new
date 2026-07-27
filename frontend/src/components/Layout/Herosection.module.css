@@ -473,16 +473,16 @@
   .description { font-size: 16px; line-height: 1.6; }
 }
 
-/* Bottom gradient overlay to fade hero background to white from button area downward */
+/* Bottom gradient overlay to make the lower 30% of the hero transition to white */
 .heroGradient {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
-  height: 48%;
+  height: 30%;
   pointer-events: none;
   z-index: 9; /* below the main grid content (z-index:10) so text/buttons remain readable */
-  background: linear-gradient(180deg, rgba(3,7,18,0) 0%, rgba(247,244,238,0.65) 55%, #F7F4EE 100%);
+  background: linear-gradient(180deg, rgba(3,7,18,0) 0%, rgba(3,7,18,0.15) 35%, #F7F4EE 100%);
 }
 
 /* ─── RESPONSIVE BREAKPOINTS FOR ALL SCREEN SIZES ─── */

@@ -55,7 +55,6 @@ export default function AtolioPartnershipClient({ data }) {
     <div className={s.apPage}>
 
       {/* HERO */}
-      {/* HERO */}
       {hero && (
         <section className={s.hero}>
           <div className={s.heroInner}>
@@ -131,16 +130,14 @@ export default function AtolioPartnershipClient({ data }) {
         <Reveal className={s.article}>
           <article>
 
-           {article && (
+            {article && (
               <>
                 <section className={`${s.articleSection} ${s.intro}`}>
-                  {article.article_dateline && (
-                    <p>
-                      <span className={s.dateline}>{article.article_dateline}</span>
-                      {' '}&mdash; {article.intro_content}
-                    </p>
-                  )}
-                  {article.intro_content2 && <p>{article.intro_content2}</p>}
+                  <p>
+                    <span className={s.dateline}>{article.article_dateline}</span>
+                    {' '}&mdash; {article.intro_content}
+                  </p>
+                  <p>{article.intro_content2}</p>
                 </section>
 
                 <section
@@ -148,6 +145,7 @@ export default function AtolioPartnershipClient({ data }) {
                   dangerouslySetInnerHTML={{ __html: article.tech_section_content }}
                 />
 
+                {/* Quotes block — add once sub-field names are confirmed */}
                 {(article.quotes || []).map((q, i) => (
                   <section key={i} className={`${s.articleSection} ${s.quote}`}>
                     <div className={s.quoteHead}>
@@ -194,6 +192,16 @@ export default function AtolioPartnershipClient({ data }) {
                   ))}
                 </div>
                 <p>{marketFocus.market_focus_description}</p>
+                <p>
+                  {marketFocus.market_focus_links_text}{' '}
+                  <a href={marketFocus.market_focus_link_1_url} target="_blank" rel="noreferrer">
+                    {marketFocus.market_focus_link_1_text}
+                  </a>{' '}
+                  and{' '}
+                  <a href={marketFocus.market_focus_link_2_url} target="_blank" rel="noreferrer">
+                    {marketFocus.market_focus_link_2_text}
+                  </a>.
+                </p>
               </section>
             )}
 
@@ -229,8 +237,8 @@ export default function AtolioPartnershipClient({ data }) {
                         <div className={s.accordionContent}>
                           <div dangerouslySetInnerHTML={{ __html: item.accordion_content }} />
                           {item.accordion_link_url && (
-                            <a
-                              href={item.accordion_link_url}
+                            
+                         <a   href={item.accordion_link_url}
                               target="_blank"
                               rel="noreferrer"
                               className={s.acLink}
@@ -286,35 +294,41 @@ export default function AtolioPartnershipClient({ data }) {
 
       {/* RELATED NEWS */}
       {relatedNews && (
-        <Reveal>
-          <section className={s.related}>
-            <div className={s.relatedInner}>
-              <div className={s.relatedHeader}>
-                <h2>Related News</h2>
-                <p>Stay current with qBotica&rsquo;s latest partnerships, platform updates, and thought leadership.</p>
-              </div>
-              <div className={s.relatedGrid}>
-                {(relatedNews.related_articles || []).map((a, i) => (
-                  <a
-                    key={i}
-                    href={a.article_url || '#'}
-                    target="_blank"
-                    rel="noreferrer"
-                    className={s.relatedCard}
-                    style={{
-                      backgroundImage: `linear-gradient(to bottom, rgba(11,17,32,.08), rgba(11,17,32,.88)), url('${a.article_image?.url || ''}')`,
-                    }}
-                  >
-                    <span>{a.article_tag}</span>
-                    <h3>{a.article_title}</h3>
-                  </a>
-                ))}
-              </div>
-            </div>
-          </section>
-        </Reveal>
-      )}
+  <Reveal>
+    <section className={s.related}>
+      <div className={s.relatedInner}>
+        <div className={s.relatedHeader}>
+          <h2>{relatedNews.related_news_title || "Related News"}</h2>
+          <p>{relatedNews.related_news_description}</p>
+        </div>
 
+        <div className={s.relatedGrid}>
+          {(relatedNews.related_articles || []).map((a, i) => {
+            const bgStyle = {
+              backgroundImage: `linear-gradient(to bottom, rgba(11,17,32,.08), rgba(11,17,32,.88)), url('${a.article_image?.url || ""}')`,
+            };
+
+            return (
+              <a
+                key={i}
+                href={a.article_url || "#"}
+                target="_blank"
+                rel="noreferrer"
+                className={s.relatedCard}
+                style={bgStyle}
+              >
+                <span>{a.article_tag}</span>
+                <h3>{a.article_title}</h3>
+              </a>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  </Reveal>
+)}
+      
+      
       {/* CTA */}
       {cta && (
         <section className={s.cta}>

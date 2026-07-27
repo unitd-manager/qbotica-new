@@ -7,7 +7,7 @@ const posts = [
     title: 'qBotica Partners with Atolio',
     excerpt:
       'qBotica and Atolio have partnered to power AI agents with secure, instant access to enterprise knowledge, enabling smarter and more efficient enterprise automation.',
-    link: 'https://www.qbotica.com/newsroom/qbotica-and-atolio-partner-to-power-ai-agents-with-secure-instant-access-to-enterprise-knowledge',
+    link: 'https://www.qbotica.com/atolio-partnership',
   },
  
   {
@@ -18,11 +18,11 @@ const posts = [
     link: 'https://www.linkedin.com/posts/maheshvinayagam_qubi-qbotica-qubiagents-ugcPost-7469722247503740928-XXWj/?utm_source=share&utm_medium=member_android&rcm=ACoAABVRbdkBq5-v8rybi3syfWBj2yxsbqLR0JA',
   },
   {
-    category: 'Podcast',
-    title: 'How Agentic AI Doubles Your RPA Payoff',
+    category: 'News',
+    title: 'qBotica acquires Automatiga',
     excerpt:
-      'Listen to our discussion on how Agentic AI enhances traditional RPA initiatives, accelerates ROI, and unlocks greater business value.',
-    link: 'https://vimeo.com/1123998656/0e6e0ea1e9',
+      'qBotica’s acquisition of Automatiga and the launch of the ‘qubi’ platform give enterprises secure, instant access to organizational knowledge—driving AI-powered efficiency across all functions.',
+    link: 'https://www.qbotica.com/automatiga-acquisition',
   },
 ];
 
@@ -48,7 +48,7 @@ export default function LatestFromQbotica() {
     } else if (idx === 1) {
       media = <img src={'/assets/images/uipathevent.jpeg'} alt={post.title} className={styles.newsMedia} />;
     } else if (idx === 2) {
-      media = <img src={'/assets/images/event.jpeg'} alt={post.title} className={styles.newsMedia} />;
+      media = <img src={'/assets/images/automat.png'} alt={post.title} className={styles.newsMedia} />;
     } else {
       media = null;
     }

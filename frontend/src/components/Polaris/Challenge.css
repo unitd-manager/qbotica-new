@@ -49,6 +49,18 @@
   display: block;
 }
 
+/* SECOND TITLE LINE — challenge_title1 field, orange highlight */
+.challenge-title-highlight {
+  font-size: 58px;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  color: #ff7705;
+  margin-top: -18px;
+  margin-bottom: 28px;
+  max-width: 700px;
+}
+
 .challenge-description {
   max-width: 760px;
   margin-bottom: 36px;
@@ -195,6 +207,11 @@
     max-width: 100%;
   }
 
+  .challenge-title-highlight {
+    font-size: 46px;
+    max-width: 100%;
+  }
+
   .challenge-description {
     max-width: 100%;
   }
@@ -216,6 +233,12 @@
   .challenge-title {
     font-size: 36px;
     line-height: 1.15;
+  }
+
+  .challenge-title-highlight {
+    font-size: 36px;
+    line-height: 1.15;
+    margin-top: -8px;
   }
 
   .challenge-title span {

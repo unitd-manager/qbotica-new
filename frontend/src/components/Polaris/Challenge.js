@@ -10,6 +10,7 @@ export default function Challenge({ acf }) {
     const {
         challenge_label,
         challenge_title,
+        challenge_title1,
         challenge_desc_1,
         challenge_desc_2,
         challenge_cards,
@@ -38,6 +39,14 @@ export default function Challenge({ acf }) {
                     />
                 )}
 
+                {/* TITLE LINE 2 — separate field with its own color */}
+                {challenge_title1 && (
+                    <h2
+                        className="challenge-title challenge-title-highlight"
+                        dangerouslySetInnerHTML={{ __html: challenge_title1 }}
+                    />
+                )}
+
                 {/* DESCRIPTION */}
                 {(challenge_desc_1 || challenge_desc_2) && (
                     <div className="challenge-description">
@@ -54,7 +63,7 @@ export default function Challenge({ acf }) {
                             onClick={() => setShowMore(!showMore)}
                         >
                             <span className="challenge-btn-text">
-                                Learn more on qBotica Challenge
+                                Learn more about Customer&apos;s Challenges
                             </span>
                             <span className="challenge-btn-arrow">
                                 →
