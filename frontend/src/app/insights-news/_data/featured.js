@@ -12,7 +12,7 @@ export const FEATURED = {
     title: 'qBotica and Atolio partner to power AI agents with secure enterprise knowledge',
     text: 'Discover how the partnership connects people, data and institutional knowledge to make AI-powered work more useful, governed and scalable.',
     link: 'Read the announcement →',
-    url: '/newsroom/qbotica-and-atolio-partner-to-power-ai-agents-with-secure-instant-access-to-enterprise-knowledge',
+    url: 'https://www.qbotica.com/newsroom/qbotica-and-atolio-partner-to-power-ai-agents-with-secure-instant-access-to-enterprise-knowledge',
   },
   press: {
     heading: 'Latest press release',
@@ -23,7 +23,7 @@ export const FEATURED = {
     title: 'qBotica and Atolio partner to power AI agents with secure enterprise knowledge',
     text: 'A strategic partnership designed to make institutional knowledge immediately accessible inside AI-enabled workflows.',
     link: 'Read the press release →',
-    url: '/newsroom/qbotica-and-atolio-partner-to-power-ai-agents-with-secure-instant-access-to-enterprise-knowledge',
+    url: 'https://www.qbotica.com/newsroom/qbotica-and-atolio-partner-to-power-ai-agents-with-secure-instant-access-to-enterprise-knowledge',
   },
   recognition: {
     heading: 'Latest recognition',
@@ -34,7 +34,7 @@ export const FEATURED = {
     title: 'qBotica recognized as a UiPath Agentic Automation Fast Track Partner',
     text: 'Industry validation of qBotica’s ability to help enterprises move toward intelligent, agent-driven operations.',
     link: 'View the recognition →',
-    url: '/newsroom',
+    url: 'https://www.qbotica.com/newsroom/qbotica-recognized-as-a-uipath-agentic-automation-fast-track-partner',
   },
   blog: {
     heading: 'Latest from the blog',
