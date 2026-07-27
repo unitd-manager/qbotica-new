@@ -8,26 +8,19 @@ import {
   SpanTag,
 } from '../Common/HTMLTags';
 import './case-study-style.css';
-import bfsiImg1 from '@/assets/bfsi_1.avif';
-import bfsiImg2 from '@/assets/bfsi_2.avif';
-import manufacturingImg1 from '@/assets/manufacturing_1.avif';
-import healthcareImg1 from '@/assets/healthcare_1.avif';
+import bfsiImg2 from '@/assets/bank 3.png';
+import healthcareImg1 from '@/assets/healthcare 1.png';
 import transportationImg1 from '@/assets/transportation_1.avif';
-import transportationImg2 from '@/assets/transportation_2.avif';
-import realestate1 from '@/assets/real_estate_1.avif';
-import realestateImg2 from '@/assets/Real Estate.png';
-import energy1 from '@/assets/energy_1.avif';
+import realestate1 from '@/assets/Real Estate.png';
+import energy1 from '@/assets/energy and utilities 1.png';
 import bankImg1 from '@/assets/banking case study1.png';
 import bankImg2 from '@/assets/bank 2.png';
-import bankImg3 from '@/assets/bank 3.png';
-import healthcareImgA from '@/assets/healthcare 1.png';
 import healthcareImg2 from '@/assets/healthcare 2.png';
 import healthcareImg3 from '@/assets/healthcare 3.png';
 import manufacturingImgA from '@/assets/manufacturing 1.png';
 import manufacturingImg2 from '@/assets/manufacturing 2.png';
 import manufacturingImg3 from '@/assets/manufacturing 3.png';
-import energyImg2 from '@/assets/energy and utilities 1.png';
-import energyImg3 from '@/assets/energy and utilities 2.png';
+import energyImg2 from '@/assets/energy and utilities 2.png';
 import governmentImg1 from '@/assets/government 1.png';
 import governmentImg2 from '@/assets/government 2.png';
 import governmentImg3 from '@/assets/government 3.png';
@@ -58,7 +51,6 @@ const filterStyles = {
 
 
 export default function CaseStudiesGrid({ data }) {
-  console.log("bfsiImg1:", bfsiImg1);
   const [activeFilter, setActiveFilter] = useState('all');
 
   // Exact categories from the HTML/Image
@@ -92,32 +84,6 @@ export default function CaseStudiesGrid({ data }) {
       link: 'https://www.qbdev.unitdtechnologies.com/case-studies/polaris-transportation-v2'
     },
     {
-      id: 2,
-      category: 'transportation',
-      industry: 'Transportation',
-      statNum: '50%',
-      statLabel: 'INCREASE SHIPMENT QUOTE',
-      tags: ['OCR', 'Logistics', 'RPA'],
-      title: 'How qBotica Transforms Spot Board Monitoring for a Logistics Leader',
-      desc: 'A leading logistics and transportation company faced operational bottlenecks due to manual spot board monitoring and document-heavy workflows. High transaction volumes and reliance on human intervention slowed down quote generation and impacted efficiency.',
-      product: 'DoqumentAI · RPA',
-      image: transportationImg2.src,
-      link: 'https://www.qbdev.unitdtechnologies.com/case-studies/how-qbotica-automated-spot-board-monitoring-and-document-processing-for-a-leading-logistics-transportation-company'
-    },
-    {
-      id: 3,
-      category: 'bfsi',
-      industry: 'BFSI',
-      statNum: '48%',
-      statLabel: 'PROCESS EFFICIENCY GAIN',
-      tags: ['Annuity', 'Intelligent Extraction', 'STP'],
-      title: 'How a Leading Insurance Firm Modernized Operations for an AI-First Future',
-      desc: 'A leading global insurance and financial services firm with over a century of industry experience and trillions in assets under management, serving individual and institutional clients across the U.S., Asia, Europe, and Latin America.',
-      product: 'Intelligent Extraction',
-      image: bfsiImg1.src,
-      link: 'https://www.qbdev.unitdtechnologies.com/case-studies/how-a-leading-insurance-firm-modernized-operations-for-an-ai-first-future'
-    },
-    {
       id: 4,
       category: 'bfsi',
       industry: 'BFSI',
@@ -137,25 +103,12 @@ export default function CaseStudiesGrid({ data }) {
       statNum: '7x',
       statLabel: 'CLAIMS PROCESSING CAPACITY',
       tags: ['Claims', 'IDP', 'EMR Integration'],
-      title: 'How qBotica Helped a Top Healthcare Company Scale Claims Processing by 7X',
-      desc: 'A leading North American healthcare organization faced growing pressure to process claims faster while maintaining accuracy and operational efficiency. The existing claims pricing workflow relied heavily on manual data entry from unstructured documents, limiting scalability and slowing turnaround times.',
+      title: 'How qBotica Increased Claims Processing By Over 7x for a Top Healthcare Client',
+      desc: 'Intelligent claims automation increased processing capacity more than 7x while improving accuracy and enabling rapid scaling without additional staffing.',
       product: 'UiPath RPA',
       image: healthcareImg1.src,
-      link: 'https://www.qbdev.unitdtechnologies.com/case-studies/how-qbotica-helped-a-top-healthcare-company-scale-claims-processing-by-7x'
+      link: 'https://www.qbotica.com/case-studies/how-qbotica-increased-claims-processing-by-over-7x-for-a-top-healthcare-client'
     },
-    {
-      id: 6,
-      category: 'manufacturing',
-      industry: 'Manufacturing',
-      statNum: '99%',
-      statLabel: 'DOCUMENTATION ERROR REDUCTION',
-      tags: ['Reconciliation', 'ERP Integration'],
-      title: 'How qBotica Reduced Documentation Errors by 99% for a Leading Manufacturer',
-      desc: 'A leading North American manufacturing company specializing in protective and packaging solutions experienced rapid growth through multiple acquisitions. ',
-      product: 'UiPath RPA • OCR Technology',
-      image: manufacturingImg1.src,
-      link: 'https://www.qbdev.unitdtechnologies.com/case-studies/how-qbotica-reduced-documentation-errors-by-99-for-a-leading-manufacturer'
-    },  
     {
       id: 7,
       category: 'real_estate_mortgage',
@@ -163,21 +116,21 @@ export default function CaseStudiesGrid({ data }) {
       statNum: '99.99%',
       statLabel: 'ERROR ACCURACY',
       tags: ['DoqumentAI', 'Real Estate'],
-      title: 'How qBotica enabled P&L Automation for a Real Estate leader',
-      desc: 'qBotica’s DoqumentAI product helped the client by processing the Input files hence reducing manual effort and error in data extraction.',
+      title: 'P&L Automation for a Real Estate leader',
+      desc: 'Financial automation streamlined profit and loss reporting, reducing manual reconciliation and delivering faster financial insights for property operations. ',
       product: 'DoqumentAI',
       image: realestate1.src,
       link: 'https://www.qbotica.com/case-studies/how-qbotica-enabled-pl-automation-for-a-real-estate-leader'
     },
-    {
+  {
       id: 8,
       category: 'energy_utilities',
       industry: 'Energy & Utilities',
       statNum: '95%',
       statLabel: 'TIME SAVINGS',
-      tags: ['RPA', 'Global Operations'],
-      title: 'Driving 95% time savings across four global markets for an energy company',
-      desc: 'RPA helped a global energy company scale process efficiency, standardize recurring operational tasks, and reduce manual workloads across multiple regions.',
+      tags: ['RPA', 'Enterprise Automation', 'Global Operations'],
+      title: 'How qBotica Implemented RPA Solutions in 4 Markets to Enable a Global Energy Company to Gain 95% Time Savings',
+      desc: 'Enterprise automation standardized operations across four markets, delivering 95% time savings and improving process consistency.',
       product: 'RPA • Automation',
       image: energy1.src,
       link: 'https://www.qbotica.com/case-studies/how-qbotica-implemented-rpa-solutions-in-4-markets-to-enable-a-global-energy-company-to-gain-95-time-savings'
@@ -206,13 +159,13 @@ export default function CaseStudiesGrid({ data }) {
       desc: 'Unattended automation transformed banking operations by reducing processing time 75% while virtually eliminating manual errors.',
       product: 'Unattended RPA',
       image: bankImg2.src,
-      link: 'https://www.qbotica.com/case-studies/how-qbotica-helped-a-global-top-10-bank-reduce-processing-time-by-75-and-errors-by-90'
+      link: 'https://www.qbotica.com/case-studies/how-qbotica-helped-a-global-top-10-bank-reduce-processing-time-by-75-and-errors-by-90-percent'
     },
     {
       id: 11,
       category: 'healthcare',
       industry: 'Healthcare',
-      statNum: 'Faster',
+      statNum: '100',
       statLabel: 'PROVIDER ONBOARDING',
       tags: ['Medicare', 'Provider Enrollment', 'AI'],
       title: 'AI-Powered Transformation of Medicare Provider Enrollment for a Fortune 100 Health Leader',
@@ -225,8 +178,8 @@ export default function CaseStudiesGrid({ data }) {
       id: 12,
       category: 'healthcare',
       industry: 'Healthcare',
-      statNum: 'Faster',
-      statLabel: 'FINANCIAL REPORTING',
+      statNum: '80%',
+      statLabel: 'OPERATIONAL EFFICIENCY BOOST',
       tags: ['Reconciliation', 'Financial Accuracy', 'Reporting'],
       title: 'Enhancing Data Reconciliation for a Leader in Health Services with Automation',
       desc: 'Automated data reconciliation eliminated repetitive manual comparisons, improving financial accuracy and accelerating healthcare reporting workflows.',
@@ -238,8 +191,8 @@ export default function CaseStudiesGrid({ data }) {
       id: 13,
       category: 'manufacturing',
       industry: 'Manufacturing',
-      statNum: 'Improved',
-      statLabel: 'WAREHOUSE ACCURACY',
+      statNum: '99.99%',
+      statLabel: 'REDUCTION IN ERRORS',
       tags: ['Inventory', 'Traceability', 'Warehouse'],
       title: 'Inventory Tag Automation for a Nanomaterials Product Manufacturing Company',
       desc: 'Automated inventory tagging improved material traceability, reduced manual labeling, and increased warehouse accuracy across manufacturing operations.',
@@ -251,8 +204,8 @@ export default function CaseStudiesGrid({ data }) {
       id: 14,
       category: 'energy_utilities',
       industry: 'Energy & Utilities',
-      statNum: 'Reduced',
-      statLabel: 'COMPLIANCE RISK',
+      statNum: '85%',
+      statLabel: 'EXTRACTION ACCURACY',
       tags: ['Shipment Documents', 'Trading', 'Refinery'],
       title: 'Shipment Document Processing for a Physical Trading & Refinery Company',
       desc: 'Intelligent document processing automated shipment documentation, accelerating logistics workflows while reducing manual processing and compliance risks.',
@@ -290,8 +243,8 @@ export default function CaseStudiesGrid({ data }) {
       id: 17,
       category: 'government_public_sector',
       industry: 'Government, Public Sector & Nonprofit',
-      statNum: 'Safer',
-      statLabel: 'LEARNING ENVIRONMENTS',
+      statNum: '90%',
+      statLabel: 'COST SAVINGS',
       tags: ['Nonprofit', 'Compliance', 'Child Safety'],
       title: 'How qBotica Helped a Global Non-profit Organization Create a Safe Learning Environment for Kids',
       desc: 'Intelligent automation streamlined child safety and compliance processes, improving operational visibility while reducing administrative workload.',
@@ -316,40 +269,14 @@ export default function CaseStudiesGrid({ data }) {
       id: 19,
       category: 'professional_services',
       industry: 'Professional Services',
-      statNum: 'Faster',
-      statLabel: 'AP APPROVAL CYCLES',
+      statNum: '25-30%',
+      statLabel: 'FASTER AP APPROVAL CYCLES',
       tags: ['Professional Services', 'AP Automation', 'Finance Ops'],
       title: 'AI Invoice Processing',
       desc: 'AI-powered invoice processing automated data extraction, validation, and approvals to accelerate accounts payable and reduce manual effort across finance operations.',
       product: 'AI · Invoice Automation',
       image: professionalServicesImg1.src,
       link: 'https://www.qbotica.com/case-studies/ai-invoice-processing'
-    },
-    {
-      id: 20,
-      category: 'bfsi',
-      industry: 'BFSI',
-      statNum: '90%',
-      statLabel: 'COST AND TIME SAVINGS',
-      tags: ['Process Automation', 'Cost Savings', 'Finance'],
-      title: 'How qBotica Enabled a Top Financial Services Company to Increase Cost and Time Savings by Over 90%',
-      desc: 'End-to-end financial process automation reduced manual effort, delivering over 90% savings in both operational costs and processing time.',
-      product: 'RPA · Automation',
-      image: bankImg3.src,
-      link: 'https://www.qbotica.com/case-studies/how-qbotica-enabled-a-top-financial-services-company-to-reduce-their-cost-and-increase-time-savings-by-over-90-percent'
-    },
-    {
-      id: 21,
-      category: 'healthcare',
-      industry: 'Healthcare',
-      statNum: '7x',
-      statLabel: 'CLAIMS PROCESSING CAPACITY',
-      tags: ['Claims', 'Automation', 'Scalability'],
-      title: 'How qBotica Increased Claims Processing By Over 7x for a Top Healthcare Client',
-      desc: 'Intelligent claims automation increased processing capacity more than 7x while improving accuracy and enabling rapid scaling without additional staffing.',
-      product: 'RPA · Automation',
-      image: healthcareImgA.src,
-      link: 'https://www.qbotica.com/case-studies/how-qbotica-increased-claims-processing-by-over-7x-for-a-top-healthcare-client'
     },
     {
       id: 22,
@@ -368,7 +295,7 @@ export default function CaseStudiesGrid({ data }) {
       id: 23,
       category: 'transportation',
       industry: 'Transportation',
-      statNum: '500+',
+      statNum: '>90%',
       statLabel: 'DOCUMENTS PROCESSED DAILY',
       tags: ['Documents', 'Supply Chain Software', 'Email AI'],
       title: 'How qBotica Helped a Transportation & Supply Chain Software Company Process 500+ Documents in a Day',
@@ -376,32 +303,6 @@ export default function CaseStudiesGrid({ data }) {
       product: 'DoqumentAI · RPA',
       image: manufacturingImg3.src,
       link: 'https://www.qbotica.com/case-studies/how-qbotica-helped-a-transportation-supply-chain-software-company-process-500-documents-in-a-day'
-    },
-    {
-      id: 24,
-      category: 'energy_utilities',
-      industry: 'Energy & Utilities',
-      statNum: '95%',
-      statLabel: 'TIME SAVINGS ACROSS 4 MARKETS',
-      tags: ['RPA', 'Global Operations', 'Standardization'],
-      title: 'How qBotica Implemented RPA Solutions in 4 Markets to Enable a Global Energy Company to Gain 95% Time Savings',
-      desc: 'Enterprise automation standardized operations across four markets, delivering 95% time savings and improving process consistency.',
-      product: 'RPA · Automation',
-      image: energyImg3.src,
-      link: 'https://www.qbotica.com/case-studies/how-qbotica-implemented-rpa-solutions-in-4-markets-to-enable-a-global-energy-company-to-gain-95-time-savings'
-    },
-    {
-      id: 25,
-      category: 'real_estate_mortgage',
-      industry: 'Real Estate & Mortgage',
-      statNum: '99.99%',
-      statLabel: 'ERROR ACCURACY',
-      tags: ['Financial Automation', 'P&L Reporting', 'Real Estate'],
-      title: 'P&L Automation for a Real Estate Leader',
-      desc: 'Financial automation streamlined profit and loss reporting, reducing manual reconciliation and delivering faster financial insights for property operations.',
-      product: 'DoqumentAI',
-      image: realestateImg2.src,
-      link: 'https://www.qbotica.com/case-studies/how-qbotica-enabled-pl-automation-for-a-real-estate-leader'
     },
   ];
 
@@ -413,18 +314,15 @@ export default function CaseStudiesGrid({ data }) {
   return (
     <>
       {/* ══════ FILTER BAR (plain native scroll, matching file 1) ══════ */}
-      {/*<DivTag className="filter-outer" id="case-studies">
-        <DivTag className="filter-inner">*/}
-
+      <DivTag
+        className="filter-outer"
+        id="case-studies"
+        style={filterStyles.filterOuter}
+      >
         <DivTag
-  className="filter-outer"
-  id="case-studies"
-  style={filterStyles.filterOuter}
->
-  <DivTag
-    className="filter-inner"
-    style={filterStyles.filterInner}
-  >
+          className="filter-inner"
+          style={filterStyles.filterInner}
+        >
           {filters.map((filter) => (
             <button
               key={filter.id}
