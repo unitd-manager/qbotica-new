@@ -291,7 +291,7 @@ export default function CaseStudiesGrid({ data }) {
       image: manufacturingImgA.src,
       link: 'https://www.qbotica.com/case-studies/how-qbotica-helped-a-leading-manufacturer-get-faster-month-end-closures-with-99-reduction-in-errors'
     },
-    {
+    /*{
       id: 23,
       category: 'transportation',
       industry: 'Transportation',
@@ -303,7 +303,7 @@ export default function CaseStudiesGrid({ data }) {
       product: 'DoqumentAI · RPA',
       image: manufacturingImg3.src,
       link: 'https://www.qbotica.com/case-studies/how-qbotica-helped-a-transportation-supply-chain-software-company-process-500-documents-in-a-day'
-    },
+    },*/
   ];
 
   // Filter logic
