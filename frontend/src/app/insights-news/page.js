@@ -4,6 +4,7 @@ import Hero from './_components/Hero';
 import CategoryStats from './_components/CategoryStats';
 import Hub from './_components/Hub';
 import Newsletter from './_components/Newsletter';
+import { fetchInsightsResources } from '@/lib/insights';
 
 export const metadata = {
   title: 'Insights & News | qBotica',
@@ -11,19 +12,22 @@ export const metadata = {
     'qBotica press releases, industry recognition, expert blog content and media — all in one connected destination.',
 };
 
+export const revalidate = 180;
+
 /*
  * Insights & News — combined Newsroom + Blog + Media hub.
- * Each section is its own component under _components/ so the team can work
- * on them independently. Content lives in _data/. The interactive filtering
- * (FilterBar + Featured + ResourceGrid) is grouped inside <Hub/>.
+ * Content is fetched server-side from WordPress (see src/lib/insights.js)
+ * and passed down into <Hub/>, which owns the client-side filter/search state.
  */
-export default function InsightsNewsPage() {
+export default async function InsightsNewsPage() {
+  const resources = await fetchInsightsResources();
+
   return (
     <div className={theme.insightsNews}>
       <Topbar />
       <Hero />
       <CategoryStats />
-      <Hub />
+      <Hub resources={resources} />
       <Newsletter />
     </div>
   );

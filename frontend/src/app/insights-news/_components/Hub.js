@@ -11,8 +11,9 @@ import BlogGrid from './BlogGrid';
  * Clicking a filter updates BOTH the Featured panel and the grid below.
  * The "Blog" category swaps in a dedicated photo-card layout (BlogGrid)
  * with industry sub-tabs; every other category uses the hub's ResourceGrid.
+ * `resources` comes from the server (see page.js -> fetchInsightsResources).
  */
-export default function Hub() {
+export default function Hub({ resources = [] }) {
   const [current, setCurrent] = useState('all');
   const [query, setQuery] = useState('');
   const [blogSub, setBlogSub] = useState('all');
@@ -25,11 +26,11 @@ export default function Hub() {
   return (
     <>
       <FilterBar current={current} onFilter={handleFilter} query={query} onSearch={setQuery} />
-      <Featured current={current} />
+      <Featured current={current} resources={resources} />
       {current === 'blog' ? (
-        <BlogGrid blogSub={blogSub} onSelectSub={setBlogSub} query={query} />
+        <BlogGrid blogSub={blogSub} onSelectSub={setBlogSub} query={query} resources={resources} />
       ) : (
-        <ResourceGrid current={current} query={query} />
+        <ResourceGrid current={current} query={query} resources={resources} />
       )}
     </>
   );

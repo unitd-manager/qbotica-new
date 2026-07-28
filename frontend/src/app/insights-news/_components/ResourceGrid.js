@@ -1,16 +1,15 @@
 'use client';
 
 import styles from './ResourceGrid.module.css';
-import { RESOURCES } from '../_data/resources';
 
 function badgeClassName(mod) {
   return `${styles.badge} ${mod ? styles[mod] : ''}`;
 }
 
-export default function ResourceGrid({ current, query, blogSub = 'all' }) {
+export default function ResourceGrid({ current, query, blogSub = 'all', resources = [] }) {
   const q = query.trim().toLowerCase();
 
-  const visible = RESOURCES.filter((r) => {
+  const visible = resources.filter((r) => {
     const categoryMatch = current === 'all' || r.category === current;
     // when Blog is active, also honor the selected industry sub-tab
     const subMatch = current !== 'blog' || blogSub === 'all' || r.subcategory === blogSub;
@@ -19,9 +18,8 @@ export default function ResourceGrid({ current, query, blogSub = 'all' }) {
     return categoryMatch && subMatch && searchMatch;
   });
 
-  // In "All", an article that belongs to two categories (e.g. the Deloitte
-  // Fast 500 piece is both Press Release/Leadership and Blog/Newsroom) would
-  // otherwise appear twice — de-duplicate by URL (fallback title).
+  // In "All", an article that belongs to two categories would otherwise
+  // appear twice — de-duplicate by title.
   const items =
     current === 'all'
       ? visible.filter((r, i, arr) => arr.findIndex((x) => x.title === r.title) === i)

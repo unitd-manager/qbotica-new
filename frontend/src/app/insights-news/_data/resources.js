@@ -14,6 +14,7 @@ export const RESOURCES = [
   // ===================== PRESS RELEASE (13 items from the spreadsheet) =====================
   {
     category: 'press', thumb: 't1', type: 'Press Release', badge: 'Partnership', badgeClass: '',
+    image: "https://dev.srv975395.hstgr.cloud/wp-content/uploads/2026/06/WhatsApp-Image-2026-06-09-at-8.55.31-PM.jpeg",
     title: 'qBotica and Atolio Partner to Power AI Agents with Secure, Instant Access to Enterprise Knowledge',
     desc: 'A strategic partnership giving AI agents secure, instant access to institutional knowledge inside enterprise workflows.',
     meta: '2026', action: 'Read →',
@@ -22,6 +23,7 @@ export const RESOURCES = [
   },
   {
     category: 'press', thumb: 't4', type: 'Press Release', badge: 'Innovation', badgeClass: '',
+    image: "https://dev.srv975395.hstgr.cloud/wp-content/uploads/2026/05/inner-image-qBotica-Announces-Acquisition-of-Automatiga.jpg",
     title: 'qBotica Announces Acquisition of Automatiga to Expand Global Intelligent Automation and AI Capabilities',
     desc: 'An acquisition expanding qBotica’s global intelligent automation and AI delivery capabilities.',
     meta: '2026', action: 'Read →',
@@ -30,6 +32,7 @@ export const RESOURCES = [
   },
   {
     category: 'press', thumb: 't6', type: 'Press Release', badge: 'Leadership', badgeClass: '',
+    image: "https://dev.srv975395.hstgr.cloud/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-20-at-16.05.12.jpeg",
     title: 'Empathy, Execution, and Agentic AI: Mahesh Vinayagam on qBotica’s Deloitte Fast 500 Milestone',
     desc: 'CEO Mahesh Vinayagam reflects on qBotica’s growth journey and the power of Agentic AI.',
     meta: '2025', action: 'Read →',
@@ -38,6 +41,7 @@ export const RESOURCES = [
   },
   {
     category: 'press', thumb: 't1', type: 'Press Release', badge: 'Partnership', badgeClass: '',
+    image: "https://dev.srv975395.hstgr.cloud/wp-content/uploads/2025/09/image1.webp",
     title: 'Kognitos and qBotica Partner to Bring English as Code to the Enterprise for Key Operational Needs',
     desc: 'Bringing natural-language “English as Code” automation to core enterprise operations.',
     meta: '2025', action: 'Read →',
@@ -46,6 +50,7 @@ export const RESOURCES = [
   },
   {
     category: 'press', thumb: 't4', type: 'Press Release', badge: 'Partnership', badgeClass: '',
+    image: "https://dev.srv975395.hstgr.cloud/wp-content/uploads/2025/09/qbotica-and-amickbrown-1-1.webp",
     title: 'qBotica and AmickBrown Forge Strategic Equity Partnership to Revolutionize SAP and Automation Solutions',
     desc: 'A strategic equity partnership advancing SAP and enterprise automation solutions.',
     meta: '2024', action: 'Read →',
@@ -54,6 +59,7 @@ export const RESOURCES = [
   },
   {
     category: 'press', thumb: 't6', type: 'Press Release', badge: 'Company News', badgeClass: '',
+    image: "https://dev.srv975395.hstgr.cloud/wp-content/uploads/2025/09/qBotica-Achieves-SOC-2-Type-2-Compliance-Elevating-Its-Security-Assurance.webp",
     title: 'qBotica Achieves SOC 2 Type II Compliance, Elevating Its Security Assurance',
     desc: 'Achieving SOC 2 Type II compliance to elevate security assurance for enterprise customers.',
     meta: '2024', action: 'Read →',
@@ -62,6 +68,7 @@ export const RESOURCES = [
   },
   {
     category: 'press', thumb: 't1', type: 'Press Release', badge: 'Innovation', badgeClass: '',
+    image: "https://dev.srv975395.hstgr.cloud/wp-content/uploads/2025/09/qBotica-to-Acquire-Healthomation-to-Expand-Healthcare-Automation-Capabilities-2.webp",
     title: 'qBotica to Acquire Healthomation to Expand Healthcare Automation Capabilities',
     desc: 'Acquiring Healthomation to deepen qBotica’s healthcare automation capabilities.',
     meta: '2024', action: 'Read →',
@@ -70,6 +77,7 @@ export const RESOURCES = [
   },
   {
     category: 'press', thumb: 't4', type: 'Press Release', badge: 'Company News', badgeClass: '',
+    image: "https://dev.srv975395.hstgr.cloud/wp-content/uploads/2025/09/qbotica-transforms-business-landscape-with-expansion-into-uk-middle-east-and-europe-london-office-opened-1.webp",
     title: 'qBotica Transforms Business Landscape with Expansion into UK, Middle East, and Europe; London Office Opened',
     desc: 'Global expansion into the UK, Middle East and Europe, with a new London office.',
     meta: '2023', action: 'Read →',
@@ -78,6 +86,7 @@ export const RESOURCES = [
   },
   {
     category: 'press', thumb: 't6', type: 'Press Release', badge: 'Partnership', badgeClass: '',
+    image: "https://dev.srv975395.hstgr.cloud/wp-content/uploads/2025/09/uipath-announces-go-to-market-managed-services-partnership-with-qbotica-for-turnkey-enterprise-automation.webp",
     title: 'UiPath Announces Go-to-Market Managed Services Partnership with qBotica for Turnkey Enterprise Automation',
     desc: 'A UiPath go-to-market managed-services partnership for turnkey enterprise automation.',
     meta: '2023', action: 'Read →',
@@ -86,6 +95,7 @@ export const RESOURCES = [
   },
   {
     category: 'press', thumb: 't1', type: 'Press Release', badge: 'Company News', badgeClass: '',
+    image: "https://dev.srv975395.hstgr.cloud/wp-content/uploads/2025/09/qbotica-secures-1-million-in-seed-funding-from-peacock-ventures.webp",
     title: 'qBotica Secures $1 Million in Seed Funding from Peacock Ventures',
     desc: 'Securing $1 million in seed funding from Peacock Ventures to accelerate growth.',
     meta: '2021', action: 'Read →',
@@ -94,6 +104,7 @@ export const RESOURCES = [
   },
   {
     category: 'press', thumb: 't4', type: 'Press Release', badge: 'Community', badgeClass: '',
+    image: "https://dev.srv975395.hstgr.cloud/wp-content/uploads/2025/09/united-way-partners-with-qbotica-to-enhance-virtual-volunteer-experiences.webp",
     title: 'United Way Partners with qBotica to Enhance Virtual Volunteer Experiences',
     desc: 'Partnering with United Way to enhance virtual volunteer experiences through automation.',
     meta: '2022', action: 'Read →',
@@ -110,6 +121,7 @@ export const RESOURCES = [
   },
   {
     category: 'press', thumb: 't1', type: 'Press Release', badge: 'Company News', badgeClass: '',
+    image: "https://dev.srv975395.hstgr.cloud/wp-content/uploads/2025/09/cxbuzz-interview-with-mahesh-vinayagam-ceo-at-qbotica.webp",
     title: 'HFS Research: qBotica Scales Up Its Ecosystem Approach to Help Enterprises',
     desc: 'HFS Research on how qBotica scales its ecosystem approach to help enterprises.',
     meta: '2023', action: 'Read →',
@@ -120,6 +132,7 @@ export const RESOURCES = [
   // ===================== RECOGNITION (17 items from the spreadsheet) =====================
   {
     category: 'recognition', thumb: 't2', type: 'Recognition', badge: 'Recognition', badgeClass: 'gold',
+    image: "https://dev.srv975395.hstgr.cloud/wp-content/uploads/2025/09/qBotica-Recognized-as-a-UiPath-Agentic-Automation-Fast-Track-Partner-1.webp",
     title: 'qBotica Recognized as a UiPath Agentic Automation Fast Track Partner',
     desc: 'Industry validation of qBotica’s move toward intelligent, agent-driven automation.',
     meta: '2026', action: 'Read →',
@@ -128,6 +141,7 @@ export const RESOURCES = [
   },
   {
     category: 'recognition', thumb: 't2', type: 'Recognition', badge: 'Recognition', badgeClass: 'gold',
+    image: "https://dev.srv975395.hstgr.cloud/wp-content/uploads/2025/09/image-1.webp",
     title: 'Mahesh Vinayagam Named to the 2025 Phoenix Titan 100',
     desc: 'CEO Mahesh Vinayagam honored among the region’s top CEOs and C-level executives.',
     meta: '2025', action: 'Read →',
@@ -136,6 +150,7 @@ export const RESOURCES = [
   },
   {
     category: 'recognition', thumb: 't2', type: 'Recognition', badge: 'Recognition', badgeClass: 'gold',
+    image: "https://dev.srv975395.hstgr.cloud/wp-content/uploads/2025/09/qBotica-Named-One-of-North-Americas-Fastest-Growing-Companies-in-the-2024-Deloitte-Technology-Fast-500™.webp",
     title: 'qBotica Named One of North America’s Fastest-Growing Companies in the 2024 Deloitte Technology Fast 500™',
     desc: 'Recognized among North America’s fastest-growing technology companies.',
     meta: '2024', action: 'Read →',
@@ -144,6 +159,7 @@ export const RESOURCES = [
   },
   {
     category: 'recognition', thumb: 't2', type: 'Recognition', badge: 'Recognition', badgeClass: 'gold',
+    image: "https://dev.srv975395.hstgr.cloud/wp-content/uploads/2025/09/qBotica.webp",
     title: 'qBotica Recognized as a UiPath 2024 Partner of the Year Award Winner',
     desc: 'Annual recognition of qBotica’s UiPath partnership excellence and delivery impact.',
     meta: '2024', action: 'Read →',
@@ -152,6 +168,7 @@ export const RESOURCES = [
   },
   {
     category: 'recognition', thumb: 't2', type: 'Recognition', badge: 'Recognition', badgeClass: 'gold',
+    image: "https://dev.srv975395.hstgr.cloud/wp-content/uploads/2025/09/Heading-1.webp",
     title: 'qBotica Named One of America’s Top 100 Small Businesses and Honored as a Digital Innovator',
     desc: 'Named among America’s Top 100 Small Businesses and recognized as a Digital Innovator.',
     meta: '2024', action: 'Read →',
@@ -160,6 +177,7 @@ export const RESOURCES = [
   },
   {
     category: 'recognition', thumb: 't2', type: 'Recognition', badge: 'Recognition', badgeClass: 'gold',
+    image: "https://dev.srv975395.hstgr.cloud/wp-content/uploads/2025/09/Top-Growing-Company-1.webp",
     title: 'qBotica Celebrates Third Consecutive Year on the Inc. 5000 List, Ranking #1541 in 2024',
     desc: 'A third consecutive year on the Inc. 5000, ranking #1541.',
     meta: '2024', action: 'Read →',
@@ -168,6 +186,7 @@ export const RESOURCES = [
   },
   {
     category: 'recognition', thumb: 't2', type: 'Recognition', badge: 'Recognition', badgeClass: 'gold',
+    image: "https://dev.srv975395.hstgr.cloud/wp-content/uploads/2025/09/qBotica-Ranked-as-a-Fastest-Growing-Company-in-North-America-on-the-2023-Deloitte-Technology-Fast-500™-1.webp",
     title: 'qBotica Ranked as a Fastest-Growing Company in North America on the 2023 Deloitte Technology Fast 500™',
     desc: 'Ranked among North America’s fastest-growing technology companies for 2023.',
     meta: '2023', action: 'Read →',
@@ -176,6 +195,7 @@ export const RESOURCES = [
   },
   {
     category: 'recognition', thumb: 't2', type: 'Recognition', badge: 'Recognition', badgeClass: 'gold',
+    image: "https://dev.srv975395.hstgr.cloud/wp-content/uploads/2025/09/qBotica-Earns-Prestigious-Ranking-on-the-Inc-1.webp",
     title: 'qBotica Earns Prestigious Ranking on the Inc. 5000 List of Fastest-Growing Companies in America for the Second Consecutive Year',
     desc: 'A second consecutive year on the Inc. 5000 list of fastest-growing companies.',
     meta: '2023', action: 'Read →',
@@ -184,6 +204,7 @@ export const RESOURCES = [
   },
   {
     category: 'recognition', thumb: 't2', type: 'Recognition', badge: 'Recognition', badgeClass: 'gold',
+    image: "https://dev.srv975395.hstgr.cloud/wp-content/uploads/2025/09/qbotica-achieves-platinum-level-partner-status-with-uipath-for-intelligent-automation-solutions-1.webp",
     title: 'qBotica Achieves Platinum Level Partner Status with UiPath for Intelligent Automation Solutions',
     desc: 'Achieving Platinum-level UiPath partner status for intelligent automation solutions.',
     meta: '2023', action: 'Read →',
@@ -192,6 +213,7 @@ export const RESOURCES = [
   },
   {
     category: 'recognition', thumb: 't2', type: 'Recognition', badge: 'Recognition', badgeClass: 'gold',
+    image: "https://dev.srv975395.hstgr.cloud/wp-content/uploads/2025/09/qbotica-nominated-for-the-inno-fire-awards-by-the-phoenix-business-journal-1.webp",
     title: 'qBotica Nominated for the Inno Fire Awards by the Phoenix Business Journal',
     desc: 'Nominated for the Inno Fire Awards by the Phoenix Business Journal.',
     meta: '2023', action: 'Read →',
@@ -200,6 +222,7 @@ export const RESOURCES = [
   },
   {
     category: 'recognition', thumb: 't2', type: 'Recognition', badge: 'Recognition', badgeClass: 'gold',
+    image: "https://dev.srv975395.hstgr.cloud/wp-content/uploads/2025/09/qbotica-successfully-achieves-soc-2-type-1-certification.webp",
     title: 'qBotica Successfully Achieves SOC 2 Type I Certification',
     desc: 'Achieving SOC 2 Type I certification for security assurance.',
     meta: '2022', action: 'Read →',
@@ -208,6 +231,7 @@ export const RESOURCES = [
   },
   {
     category: 'recognition', thumb: 't2', type: 'Recognition', badge: 'Recognition', badgeClass: 'gold',
+    image: "https://dev.srv975395.hstgr.cloud/wp-content/uploads/2025/09/qbotica-named-emergeaz-awardee-by-startupaz-and-governor.webp",
     title: 'qBotica Named EmergeAZ Awardee by StartupAZ and Governor',
     desc: 'Named an EmergeAZ awardee by StartupAZ and the Governor.',
     meta: '2022', action: 'Read →',
@@ -216,6 +240,7 @@ export const RESOURCES = [
   },
   {
     category: 'recognition', thumb: 't2', type: 'Recognition', badge: 'Recognition', badgeClass: 'gold',
+    image: "https://dev.srv975395.hstgr.cloud/wp-content/uploads/2025/09/qbotica_named_a_uipath_featured_diamond_partner.webp",
     title: 'qBotica Named a UiPath Featured Diamond Partner',
     desc: 'Recognized as a UiPath Featured Diamond Partner.',
     meta: '2022', action: 'Read →',
@@ -224,6 +249,7 @@ export const RESOURCES = [
   },
   {
     category: 'recognition', thumb: 't2', type: 'Recognition', badge: 'Recognition', badgeClass: 'gold',
+    image: "https://dev.srv975395.hstgr.cloud/wp-content/uploads/2025/09/qBotica-makes-its-debut-on-the-acclaimed-inc.webp",
     title: 'qBotica Makes Its Debut on the Acclaimed Inc. 5000 List of Fastest-Growing Private Companies',
     desc: 'Debuting on the Inc. 5000 list of fastest-growing private companies.',
     meta: '2022', action: 'Read →',
@@ -232,6 +258,7 @@ export const RESOURCES = [
   },
   {
     category: 'recognition', thumb: 't2', type: 'Recognition', badge: 'Recognition', badgeClass: 'gold',
+    image: "https://dev.srv975395.hstgr.cloud/wp-content/uploads/2025/09/Gartner_mentions_qBotica-pprji2j1lmf0akgbaj6byeygk2vzxysg0fs2uy45vc.webp",
     title: 'qBotica Recognized in the 2022 Gartner® Market Guide for Intelligent Document Processing',
     desc: 'Included in the 2022 Gartner® Market Guide for Intelligent Document Processing.',
     meta: '2022', action: 'Read →',
@@ -240,6 +267,7 @@ export const RESOURCES = [
   },
   {
     category: 'recognition', thumb: 't2', type: 'Recognition', badge: 'Recognition', badgeClass: 'gold',
+    image: "https://dev.srv975395.hstgr.cloud/wp-content/uploads/2025/09/Everest-ppoyhm4qyr4b7j372phq67h866q8ll07781agx3g68.webp",
     title: 'qBotica Recognized as a Star Performer in the 2022 Everest Peak Matrix',
     desc: 'Named a Star Performer in the 2022 Everest Group PEAK Matrix.',
     meta: '2022', action: 'Read →',
@@ -248,6 +276,7 @@ export const RESOURCES = [
   },
   {
     category: 'recognition', thumb: 't2', type: 'Recognition', badge: 'Recognition', badgeClass: 'gold',
+    image: "https://dev.srv975395.hstgr.cloud/wp-content/uploads/2025/09/hfs-research-qbotica-scales-up-its-ecosystem-approach-to-help-enterprises.webp",
     title: 'qBotica Wins Prestigious ITServe Startup Cube Competition with Doqument',
     desc: 'Winning the ITServe Startup Cube competition with Doqument.',
     meta: '2021', action: 'Read →',

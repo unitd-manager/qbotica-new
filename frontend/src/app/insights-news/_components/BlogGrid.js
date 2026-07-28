@@ -2,7 +2,6 @@
 
 import styles from './BlogGrid.module.css';
 import BlogTabs from './BlogTabs';
-import { RESOURCES } from '../_data/resources';
 
 // Per-industry tag / arrow colour (the thumbnail itself uses the client's t1–t6 gradients).
 const IND_COLOR = {
@@ -16,10 +15,10 @@ const IND_COLOR = {
   blog: '#1e293b',
 };
 
-export default function BlogGrid({ blogSub, onSelectSub, query }) {
+export default function BlogGrid({ blogSub, onSelectSub, query, resources = [] }) {
   const q = (query || '').trim().toLowerCase();
 
-  const posts = RESOURCES.filter((r) => {
+  const posts = resources.filter((r) => {
     if (r.category !== 'blog') return false;
     if (blogSub !== 'all' && !(r.subcats || []).includes(blogSub)) return false;
     const haystack = `${r.search} ${r.title} ${r.desc}`.toLowerCase();
