@@ -419,13 +419,13 @@ font-size:18px;
 
     grid-template-columns:.85fr 1.15fr;
 
-    align-items:stretch;
+    align-items:start;
 
 }
 
 .partner-card.featured .partner-card-head{
-    height:100%;
-    min-height:260px;
+    height:320px;
+    min-height:320px;
 }
 /* ==========================================================
    BLUE PANEL
