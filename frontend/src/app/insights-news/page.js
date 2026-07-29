@@ -9,7 +9,7 @@ import { fetchInsightsPageData } from '@/lib/insight';
 export const metadata = {
   title: 'Insights & News | qBotica',
   description:
-    'qBotica press releases, industry recognition, expert blog content and media — all in one connected destination.',
+    'qBotica press releases, industry recognition, expert blog content and media, all in one connected destination.',
 };
 
 export const revalidate = 180;

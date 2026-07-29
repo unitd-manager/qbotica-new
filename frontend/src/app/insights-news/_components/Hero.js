@@ -4,7 +4,7 @@ const DEFAULT = {
   eyebrow: 'qBotica Resource Hub',
   title: 'News, ideas and stories shaping enterprise AI.',
   description:
-    'Explore qBotica press releases, industry recognition, expert blog content, videos, webinars and interviews—all in one connected destination.',
+    'Explore qBotica press releases, industry recognition, expert blog content, videos, webinars and interviews, all in one connected destination.',
 };
 
 // `hero` comes from the WP page "insights-news" -> ACF layout "banner_layout"

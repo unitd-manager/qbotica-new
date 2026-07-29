@@ -17,7 +17,11 @@ const stripHtml = (html = '') => decodeHtmlEntities(String(html).replace(/<[^>]*
 const THUMBS = ['t1', 't2', 't3', 't4', 't5', 't6'];
 
 function findLayout(layouts, layoutType) {
-  return layouts.find((l) => l.layout_type === layoutType)?.[layoutType];
+  // ACF's standard flexible-content REST output identifies each row with
+  // `acf_fc_layout`, and its fields sit flat on that same row object -
+  // there's no nested sub-object keyed by the layout name (that nesting is
+  // specific to this theme's shared "Page Layout" field, not our own).
+  return layouts.find((l) => l.acf_fc_layout === layoutType);
 }
 
 // ---------------------------------------------------------------------------
