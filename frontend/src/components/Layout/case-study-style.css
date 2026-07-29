@@ -661,17 +661,24 @@
   color: var(--ink, #111827);
   line-height: 1.42;
   flex: 1;
+  transition: margin-bottom 0.3s ease;
 }
 
+/* FIXED: smooth expand/collapse instead of instant display:none/block toggle */
 .cc-desc {
   font-size: 0.9rem;
   color: var(--muted, #6B7280);
   line-height: 1.65;
-  display: none;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.4s ease;
 }
 
 .case-card:hover .cc-desc {
-  display: block;
+  max-height: 200px;
+  opacity: 1;
+  margin-top: 0.5rem;
 }
 
 .case-card:hover .cc-title {

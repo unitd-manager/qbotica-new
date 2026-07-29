@@ -1,28 +1,29 @@
 'use client';
 
 import './Hero.css';
-import Image from 'next/image';
+import BoardingPass from "./BoardingPass";
+import "./Hero.css";
 
 export default function Hero() {
 
   const stats = [
-  {
-    value: '>90%',
-    description: 'NOISE REMOVAL\nSUCCESS RATE ON\nVENDOR EMAILS',
-  },
-  {
-    value: '500+',
-    description: 'QUOTATIONS PROCESSED\nAUTOMATICALLY EACH DAY',
-  },
-  {
-    value: '100%',
-    description: 'END-TO-END WORKFLOW\nAUTOMATED WITHOUT\nHEADCOUNT INCREASE',
-  },
-  {
-    value: '3hrs',
-    description: 'DAILY TIME\nRECLAIMED BY THE\nOPERATIONS TEAM',
-  },
-];
+    {
+      value: '>90%',
+      description: 'NOISE REMOVAL\nSUCCESS RATE ON\nVENDOR EMAILS',
+    },
+    {
+      value: '500+',
+      description: 'QUOTATIONS PROCESSED\nAUTOMATICALLY EACH DAY',
+    },
+    {
+      value: '100%',
+      description: 'END-TO-END WORKFLOW\nAUTOMATED WITHOUT\nHEADCOUNT INCREASE',
+    },
+    {
+      value: '3hrs',
+      description: 'DAILY TIME\nRECLAIMED BY THE\nOPERATIONS TEAM',
+    },
+  ];
 
   return (
     <section className="cs-hero">
@@ -57,43 +58,18 @@ export default function Hero() {
           </div>
 
           <div className="cs-chip">
-            Doqument AI
+            Document AI
           </div>
 
           <div className="cs-chip">
             RPA
           </div>
 
-          <div className="cs-client-card">
-
-            <div className="cs-client-logo">
-
-              <Image
-                src="/assets/images/polaris-logo.jpg"
-                alt="Polaris Transportation Group"
-                width={150}
-                height={60}
-                className="polaris-logo"
-                priority
-              />
-
-            </div>
-
-            <div className="cs-client-info">
-
-              <div className="client-label">
-                CLIENT
-              </div>
-
-              <div className="client-name">
-                Polaris Transportation Group
-              </div>
-
-            </div>
-
-          </div>
-
+          
         </div>
+        {/* Boarding Pass Component */}
+          <BoardingPass scale={0.60} />
+
 
         <h1 className="cs-title">
 
