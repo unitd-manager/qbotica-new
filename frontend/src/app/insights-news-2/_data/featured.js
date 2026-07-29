@@ -1,0 +1,61 @@
+// Content for the Featured panel. Each key matches a filter id.
+// className drives the panel background; badgeClass drives the badge color;
+// url is where the "Read/View/Watch" button goes.
+
+export const FEATURED = {
+  all: {
+    heading: 'What’s new at qBotica',
+    intro: 'One highlighted resource takes center stage and updates based on the selected category.',
+    badge: 'Press Release',
+    badgeClass: '',
+    className: '',
+    title: 'qBotica and Atolio partner to power AI agents with secure enterprise knowledge',
+    text: 'Discover how the partnership connects people, data and institutional knowledge to make AI-powered work more useful, governed and scalable.',
+    link: 'Read the announcement →',
+    url: 'https://www.qbotica.com/newsroom/qbotica-and-atolio-partner-to-power-ai-agents-with-secure-instant-access-to-enterprise-knowledge',
+  },
+  press: {
+    heading: 'Latest press release',
+    intro: 'Company announcements, partnerships, acquisitions and strategic milestones.',
+    badge: 'Press Release',
+    badgeClass: '',
+    className: '',
+    title: 'qBotica and Atolio partner to power AI agents with secure enterprise knowledge',
+    text: 'A strategic partnership designed to make institutional knowledge immediately accessible inside AI-enabled workflows.',
+    link: 'Read the press release →',
+    url: 'https://www.qbotica.com/newsroom/qbotica-and-atolio-partner-to-power-ai-agents-with-secure-instant-access-to-enterprise-knowledge',
+  },
+  recognition: {
+    heading: 'Latest recognition',
+    intro: 'Awards, rankings, certifications and analyst validation that reinforce qBotica’s enterprise credibility.',
+    badge: 'Recognition',
+    badgeClass: 'gold',
+    className: 'recognition',
+    title: 'qBotica recognized as a UiPath Agentic Automation Fast Track Partner',
+    text: 'Industry validation of qBotica’s ability to help enterprises move toward intelligent, agent-driven operations.',
+    link: 'View the recognition →',
+    url: 'https://www.qbotica.com/newsroom/qbotica-recognized-as-a-uipath-agentic-automation-fast-track-partner',
+  },
+  blog: {
+    heading: 'Latest from the blog',
+    intro: 'Practical perspectives on AI, automation, industries and the future of enterprise operations.',
+    badge: 'Blog · Agentic AI',
+    badgeClass: 'blog',
+    className: 'blog',
+    title: 'From automation to agentic operations: what changes for enterprise teams?',
+    text: 'A practical look at how roles, governance and operating models evolve as AI agents enter the enterprise.',
+    link: 'Read the blog →',
+    url: '/blog',
+  },
+  media: {
+    heading: 'Latest media',
+    intro: 'Customer videos, webinars, product demos, interviews and on-demand conversations.',
+    badge: 'Media · Customer Video',
+    badgeClass: 'media',
+    className: 'media',
+    title: 'Polaris Transportation transforms complex logistics processes',
+    text: 'Hear directly from the customer about operational improvements delivered through intelligent automation.',
+    link: 'Watch the video →',
+    url: '/media-and-videos',
+  },
+};
