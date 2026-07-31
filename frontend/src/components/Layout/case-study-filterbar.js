@@ -94,7 +94,7 @@ export default function CaseStudiesGrid({ data }) {
       desc: 'One of the leading financial services firms wished to change its organization by digitally transforming its business processes through automation: Putting automated data translation into international practice.',
       product: 'DoqumentAI · RPA as a Service',
       image: bfsiImg2.src,
-      link: 'https://www.qbdev.unitdtechnologies.com/case-studies/qbotica-enabled-a-top-financial-services-company-to-increase-their-cost-and-time-savings-by-over-90'
+      link: 'https://www.qbotica.com/case-studies/how-qbotica-uses-robotic-process-automation-in-financial-services-to-achieve-90-percent-time-and-cost-savings'
     },
     {
       id: 5,
@@ -133,7 +133,7 @@ export default function CaseStudiesGrid({ data }) {
       desc: 'Enterprise automation standardized operations across four markets, delivering 95% time savings and improving process consistency.',
       product: 'RPA • Automation',
       image: energy1.src,
-      link: 'https://www.qbotica.com/case-studies/how-qbotica-implemented-rpa-solutions-in-4-markets-to-enable-a-global-energy-company-to-gain-95-time-savings'
+      link: 'https://www.qbotica.com/case-studies/how-qbotica-accounts-payable-automation-using-rpa-in-the-energy-sector-enables-95-percent-time-savings'
     },
     {
       id: 9,
@@ -159,7 +159,7 @@ export default function CaseStudiesGrid({ data }) {
       desc: 'Unattended automation transformed banking operations by reducing processing time 75% while virtually eliminating manual errors.',
       product: 'Unattended RPA',
       image: bankImg2.src,
-      link: 'https://www.qbotica.com/case-studies/how-qbotica-helped-a-global-top-10-bank-reduce-processing-time-by-75-and-errors-by-90-percent'
+      link: 'https://www.qbotica.com/case-studies/how-qbotica-helped-a-global-top-10-bank-reduce-processing-time-by-75-and-errors-by-90'
     },
     {
       id: 11,
@@ -276,7 +276,7 @@ export default function CaseStudiesGrid({ data }) {
       desc: 'AI-powered invoice processing automated data extraction, validation, and approvals to accelerate accounts payable and reduce manual effort across finance operations.',
       product: 'AI · Invoice Automation',
       image: professionalServicesImg1.src,
-      link: 'https://www.qbotica.com/case-studies/ai-invoice-processing'
+      link: 'https://www.qbotica.com/case-studies/ai-invoice-process'
     },
     {
       id: 22,
