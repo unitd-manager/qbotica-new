@@ -13,7 +13,7 @@ import BlogGrid from './BlogGrid';
  * with industry sub-tabs; every other category uses the hub's ResourceGrid.
  * `resources` comes from the server (see page.js -> fetchInsightsResources).
  */
-export default function Hub({ resources = [] }) {
+export default function Hub({ resources = [], featured = {} }) {
   const [current, setCurrent] = useState('all');
   const [query, setQuery] = useState('');
   const [blogSub, setBlogSub] = useState('all');
@@ -26,7 +26,7 @@ export default function Hub({ resources = [] }) {
   return (
     <>
       <FilterBar current={current} onFilter={handleFilter} query={query} onSearch={setQuery} />
-      <Featured current={current} resources={resources} />
+      <Featured current={current} resources={resources} featured={featured} />
       {current === 'blog' ? (
         <BlogGrid blogSub={blogSub} onSelectSub={setBlogSub} query={query} resources={resources} />
       ) : (

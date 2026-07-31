@@ -12,7 +12,7 @@ export const metadata = {
     'qBotica press releases, industry recognition, expert blog content and media, all in one connected destination.',
 };
 
-export const revalidate = 180;
+export const revalidate = 30;
 
 /*
  * Insights & News — combined Newsroom + Blog + Media hub.
@@ -20,14 +20,14 @@ export const revalidate = 180;
  * and passed down into Hero/CategoryStats/Hub, which own their own client-side state.
  */
 export default async function InsightsNewsPage() {
-  const { hero, stats, newsletter, resources } = await fetchInsightsPageData();
+  const { hero, stats, featured, newsletter, resources } = await fetchInsightsPageData();
 
   return (
     <div className={theme.insightsNews}>
       <Topbar />
       <Hero hero={hero} />
       <CategoryStats stats={stats} />
-      <Hub resources={resources} />
+      <Hub resources={resources} featured={featured} />
       <Newsletter newsletter={newsletter} />
     </div>
   );

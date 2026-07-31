@@ -1,4 +1,30 @@
-import { fetchPageBySlug, fetchPosts, fetchCategoryBySlug } from './wordpress';
+import { fetchPosts, fetchCategoryBySlug } from './wordpress';
+
+const WP_API_URL = process.env.NEXT_PUBLIC_WP_API_URL || process.env.WP_API_URL;
+
+/*
+ * Own fetch for this page rather than the shared fetchPageBySlug(), so the
+ * cache window can stay short (30s) while editors are filling in the ACF
+ * layouts - the shared helper caches for 180s, which made admin edits look
+ * like they weren't saving.
+ */
+async function fetchInsightsPage() {
+  try {
+    const res = await fetch(
+      `${WP_API_URL}/wp/v2/pages?slug=insights-news&status=publish`,
+      {
+        next: { revalidate: 30, tags: ['page-insights-news'] },
+        headers: { Accept: 'application/json', 'Accept-Encoding': 'gzip' },
+      }
+    );
+    if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+    const data = await res.json();
+    return data[0] || null;
+  } catch (error) {
+    console.error('Error fetching insights-news page:', error.message);
+    return null;
+  }
+}
 
 // ---------------------------------------------------------------------------
 // Shared helpers
@@ -32,10 +58,13 @@ function findLayout(layouts, layoutType) {
 
 function normalizeInsightsItem(item, index, category) {
   const title = stripHtml(item.title);
+  const type = category === 'recognition' ? 'Recognition' : 'Press Release';
   return {
     category,
-    type: category === 'recognition' ? 'Recognition' : 'Press Release',
-    badge: category === 'recognition' ? 'Recognition' : 'Company News',
+    type,
+    // Editors can set a per-item badge in WP (Partnership, Innovation,
+    // Leadership, Community...); otherwise it just repeats the type.
+    badge: stripHtml(item.badge || '') || type,
     badgeClass: category === 'recognition' ? 'gold' : '',
     thumb: THUMBS[index % THUMBS.length],
     image: item.image?.url || null,
@@ -44,7 +73,7 @@ function normalizeInsightsItem(item, index, category) {
     meta: '',
     action: item.link?.title || 'Read →',
     url: item.link?.url || '#',
-    search: title.toLowerCase(),
+    search: `${title} ${item.badge || ''}`.toLowerCase(),
   };
 }
 
@@ -169,7 +198,33 @@ function getHero(layouts) {
 
 function getCategoryStats(layouts) {
   const stats = findLayout(layouts, 'insights_category_stats')?.stats || [];
-  return stats.map((s) => ({ name: s.name, desc: s.description }));
+  // The WP field is named "title" (not "name") - map it to what CategoryStats.js expects.
+  return stats.map((s) => ({ name: s.title, desc: s.description }));
+}
+
+// ---------------------------------------------------------------------------
+// Featured panel copy, per filter tab
+// Source: WP page "insights-news" -> ACF layout "insights_featured"
+// Keyed by the tab id (all | press | recognition | blog | media) so each tab
+// can carry its own heading/intro/button label.
+// ---------------------------------------------------------------------------
+
+function getFeatured(layouts) {
+  const items = findLayout(layouts, 'insights_featured')?.items || [];
+  const byCategory = {};
+  items.forEach((item) => {
+    const key = item.category || 'all';
+    byCategory[key] = {
+      heading: item.heading || '',
+      intro: item.description || '',
+      badge: item.badge || '',
+      title: item.title || '',
+      text: item.text || '',
+      linkLabel: item.link_label || '',
+      url: item.link?.url || '',
+    };
+  });
+  return byCategory;
 }
 
 // ---------------------------------------------------------------------------
@@ -192,7 +247,7 @@ function getNewsletter(layouts) {
 
 export async function fetchInsightsPageData() {
   const [page, blog] = await Promise.all([
-    fetchPageBySlug('insights-news'),
+    fetchInsightsPage(),
     getBlogResources(),
   ]);
   // Dedicated field group scoped to this page only (like qbotica_partners_sections
@@ -202,6 +257,7 @@ export async function fetchInsightsPageData() {
   return {
     hero: getHero(layouts),
     stats: getCategoryStats(layouts),
+    featured: getFeatured(layouts),
     newsletter: getNewsletter(layouts),
     resources: [
       ...getNewsroomResources(layouts),
