@@ -1,0 +1,80 @@
+.section { padding: 82px 24px; }
+.container { max-width: 1240px; margin: auto; }
+.sectionHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 24px;
+  margin-bottom: 30px;
+}
+.sectionHead h2 { font-size: 42px; line-height: 1.1; letter-spacing: -1.7px; margin: 8px 0; }
+.sectionHead p { max-width: 620px; color: var(--muted); line-height: 1.65; }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 9px;
+  color: #16769a; text-transform: uppercase; letter-spacing: 1.6px;
+  font-weight: 800; font-size: 12px;
+}
+.eyebrow::before { content: ""; width: 30px; height: 2px; background: var(--orange); }
+
+.featureMain {
+  width: 100%;
+  min-height: 500px;
+  border-radius: 25px;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(135deg, #0b2442, #0d5d88);
+  color: #fff;
+  padding: 38px;
+  display: flex;
+  align-items: end;
+  box-shadow: var(--shadow);
+}
+.featureMain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 78% 25%, rgba(49, 198, 244, .46), transparent 24%),
+    radial-gradient(circle at 88% 65%, rgba(255, 122, 26, .34), transparent 18%),
+    linear-gradient(135deg, transparent 0 45%, rgba(255, 255, 255, .05) 45% 46%, transparent 46% 100%);
+}
+.recognition { background: linear-gradient(135deg, #33250b, #9b6b12); }
+.blog { background: linear-gradient(135deg, #192653, #5856b9); }
+.media { background: linear-gradient(135deg, #3c1653, #9e3e91); }
+
+.featureContent { position: relative; max-width: 650px; }
+.featureContent h3 { font-size: 38px; line-height: 1.1; letter-spacing: -1.4px; margin: 18px 0; }
+.featureContent p { color: #dce9f4; line-height: 1.65; }
+
+.badge {
+  display: inline-flex;
+  border-radius: 999px;
+  padding: 7px 11px;
+  background: #eaf6ff;
+  color: #16658c;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .7px;
+}
+.badge.gold { background: #fff3cf; color: #8b6200; }
+.badge.blog { background: #eeeaff; color: #5145a8; }
+.badge.media { background: #f7e7ff; color: #83369b; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 999px; padding: 13px 20px; font-weight: 700; font-size: 14px;
+  border: 1px solid transparent; transition: .2s;
+}
+.btn:hover { transform: translateY(-2px); }
+.btnWhite { background: #fff; color: var(--navy); }
+/* extra specificity so the site's global link colour can't turn the button text invisible */
+.featureContent .btnWhite { color: var(--navy); }
+
+@media (max-width: 900px) {
+  .sectionHead { align-items: start; flex-direction: column; }
+}
+@media (max-width: 620px) {
+  .featureMain { min-height: 430px; padding: 28px; }
+  .featureContent h3 { font-size: 31px; }
+}
