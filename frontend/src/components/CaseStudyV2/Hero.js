@@ -1,8 +1,7 @@
 'use client';
 
 import './Hero.css';
-import BoardingPass from "./BoardingPass";
-import "./Hero.css";
+import PolaroidCard from "./PolaroidCard";
 
 export default function Hero() {
 
@@ -54,7 +53,7 @@ export default function Hero() {
           </div>
 
           <div className="cs-chip">
-            Transportation & Supply Chain
+            Transportation &amp; Supply Chain
           </div>
 
           <div className="cs-chip">
@@ -65,19 +64,21 @@ export default function Hero() {
             RPA
           </div>
 
-          
         </div>
-        {/* Boarding Pass Component */}
-          <BoardingPass scale={0.60} />
 
+        {/* Polaroid Card */}
+        <PolaroidCard
+          logo="/images/case-studies/polaris-logo.png"
+          client="Polaris Transportation Group"
+          industry="Transportation & Supply Chain"
+          since="Client Since 2023"
+        />
 
         <h1 className="cs-title">
 
           From Inbox Chaos to
 
-          <span>
-            500+ Documents
-          </span>
+          <span>500+ Documents</span>
 
           Processed Daily
 
@@ -94,11 +95,7 @@ export default function Hero() {
 
               <h2>{item.value}</h2>
 
-              <p
-                style={{
-                  whiteSpace: 'pre-line'
-                }}
-              >
+              <p style={{ whiteSpace: 'pre-line' }}>
                 {item.description}
               </p>
 

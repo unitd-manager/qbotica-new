@@ -6,7 +6,7 @@ HERO SECTION
     position:relative;
     overflow:hidden;
 
-    min-height:90vh;
+    min-height:820px;
     padding:90px 0 0;
 
     background-image:
@@ -89,11 +89,11 @@ CONTAINER
 
     position:relative;
 
-    width:min(1280px,92%);
+    width:min(1380px,94%);
 
     margin:auto;
 
-    padding-left:40px;
+    padding-left:55px;
 
     z-index:5;
 }
@@ -149,6 +149,7 @@ TOP META
 .cs-meta{
 
     position:relative;
+    z-index:2;
 
     display:flex;
 
@@ -248,15 +249,19 @@ TITLE
 
 .cs-title{
 
-    max-width:980px;
+    position:relative;
 
-    margin-top:40px;
+    z-index:2;
+
+    max-width:720px;
+
+    margin-top:75px;
 
     color:#ffffff;
 
     font-family:Inter,sans-serif;
 
-    font-size:clamp(54px,5.8vw,78px);
+    font-size:clamp(52px,5.4vw,74px);
 
     font-weight:900;
 
@@ -286,7 +291,7 @@ STATS
 
     grid-template-columns:repeat(4,1fr);
 
-    margin-top:65px;
+    margin-top:90px;
 
     border-top:1px solid rgba(255,255,255,.25);
 
@@ -476,4 +481,12 @@ MOBILE
 
 }
 
+}
+/*====================================================
+BOARDING PASS LAYER
+====================================================*/
+
+.bp-ticket,
+.folder{
+    z-index:10;
 }
