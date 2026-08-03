@@ -16,7 +16,9 @@ export default function Featured({ current }) {
             <div className={styles.eyebrow}>Featured</div>
             <h2>{f.heading}</h2>
           </div>
-          <p>{f.intro}</p>
+          {/* Client asked for the old placeholder line to go; kept conditional
+              so copy can come back here without touching the markup. */}
+          {f.intro && <p>{f.intro}</p>}
         </div>
 
         <article className={mainClass}>

@@ -10,7 +10,7 @@
 // meta       -> date / read-time  (NOTE: press-release dates are placeholders — confirm exact dates)
 // search     -> extra keywords for the search box
 
-export const RESOURCES = [
+const RAW_RESOURCES = [
   // ===================== PRESS RELEASE (13 items from the spreadsheet) =====================
   {
     category: 'press', thumb: 't1', type: 'Press Release', badge: 'Partnership', badgeClass: '',
@@ -635,3 +635,46 @@ export const RESOURCES = [
     search: "robotics process automation rpa as a critical cio investment highlights what draws startup leaders to the startupaz coll",
   },
 ];
+
+// ---------------------------------------------------------------------------
+// The cards above carry their date inside `meta`, written three different ways
+// ("2024", "Blog · October 13, 2023", "Watch"). The client asked for one format
+// across the hub - year alone, MM/YYYY for blog - and for everything to sit in
+// a single newest-first order regardless of category. So derive a real date off
+// each `meta`, rewrite `meta` to the agreed format, and sort on it once here
+// rather than in every component.
+// ---------------------------------------------------------------------------
+
+const MONTHS = [
+  'january', 'february', 'march', 'april', 'may', 'june',
+  'july', 'august', 'september', 'october', 'november', 'december',
+];
+
+function withDate(item) {
+  const meta = String(item.meta || '');
+
+  // "Blog · October 13, 2023" -> 2023-10-13, shown as 10/2023
+  const long = meta.match(/([A-Za-z]+)\s+(\d{1,2}),\s*(\d{4})/);
+  if (long) {
+    const month = MONTHS.indexOf(long[1].toLowerCase());
+    if (month !== -1) {
+      const mm = String(month + 1).padStart(2, '0');
+      return {
+        ...item,
+        date: `${long[3]}-${mm}-${String(long[2]).padStart(2, '0')}`,
+        meta: `${mm}/${long[3]}`,
+      };
+    }
+  }
+
+  // "2024" -> sorts as that year, shown unchanged
+  const year = meta.match(/^\s*(\d{4})\s*$/);
+  if (year) return { ...item, date: `${year[1]}-01-01`, meta: year[1] };
+
+  // "Watch" and anything else: no date to show, and sorts last.
+  return { ...item, date: null, meta: '' };
+}
+
+export const RESOURCES = RAW_RESOURCES
+  .map(withDate)
+  .sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));

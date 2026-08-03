@@ -54,7 +54,6 @@ export default function ResourceGrid({
             <div className={styles.eyebrow}>Browse the hub</div>
             <h2>Latest resources</h2>
           </div>
-          <p>Four clear categories keep the experience simple, while primary labels give each card enough context to scan quickly.</p>
         </div>
 
         {/* Blog is the one category with a second level of filtering. */}
