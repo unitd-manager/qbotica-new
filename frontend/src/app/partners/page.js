@@ -13,7 +13,7 @@ import PartnerCta from '@/components/Layout/partner-cta';
 import './partners.css';
 
 // WordPress page slug — create a Page in WP with this slug
-const slug = 'qbotica-partners';
+const slug = 'partners';
 const parent_path = '';
 
 export async function generateMetadata() {

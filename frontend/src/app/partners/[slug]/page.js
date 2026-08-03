@@ -8,7 +8,7 @@ import {
 import { generatePageMetadatas, getStructuredData } from '@/lib/rankmath-utils';
 import StructuredData from '@/components/Common/StructuredData';
 
-const parent_path = 'qbotica-partners';
+const parent_path = 'partners';
 
 export async function generateMetadata({ params }) {
   const resolvedParams = await params;

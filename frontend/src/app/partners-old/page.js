@@ -9,7 +9,7 @@ import { generatePageMetadatas, getStructuredData } from '@/lib/rankmath-utils';
 import StructuredData from '@/components/Common/StructuredData';
 import PartnerPanelSlider from '@/components/Layout/partner-panel-slider';
 
-const slug = 'partners';
+const slug = 'partners_old';
 const parent_path = '';
 
 const partnerPanelSliderData = {
