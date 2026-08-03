@@ -18,9 +18,9 @@ const parent_path = '';
 
 export async function generateMetadata() {
   return generatePageMetadatas(slug, 'page', parent_path, {
-    title: 'Build with the enterprise ecosystem | qBotica',
+    title: 'Why Our Partners Love Us | qBotica',
     description:
-      "qBotica works across leading platforms and technologies to deliver intelligent automation, Agentic AI, enterprise cloud solutions, and secure AI experiences.",
+      "We believe in the power of Automation to make people’s lives better & easier, & are looking for Partner companies who will take the journey with us.",
   });
 }
 
