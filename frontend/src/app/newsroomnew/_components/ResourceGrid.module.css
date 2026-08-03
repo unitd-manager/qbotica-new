@@ -30,8 +30,18 @@
 }
 .card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
 
-.thumb { height: 190px; position: relative; overflow: hidden; }
-.photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.thumb { height: 230px; position: relative; overflow: hidden; }
+/* Anchor to the top so a taller image loses its bottom edge rather than having
+   the subject's head cropped off. */
+.photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
 .thumb::after {
   content: "";
   position: absolute;

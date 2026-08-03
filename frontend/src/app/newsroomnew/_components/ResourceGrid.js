@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import styles from './ResourceGrid.module.css';
+import BlogTabs from './BlogTabs';
 
 const PAGE_SIZE = 12;
 
@@ -9,7 +10,14 @@ function badgeClassName(mod) {
   return `${styles.badge} ${mod ? styles[mod] : ''}`;
 }
 
-export default function ResourceGrid({ current, query, blogSub = 'all', resources = [] }) {
+export default function ResourceGrid({
+  current,
+  query,
+  blogSub = 'all',
+  onSelectSub,
+  blogTabs = [],
+  resources = [],
+}) {
   const q = query.trim().toLowerCase();
 
   // Only render a page of cards at a time - the hub can hold 100+ items once
@@ -21,7 +29,8 @@ export default function ResourceGrid({ current, query, blogSub = 'all', resource
   const visible = resources.filter((r) => {
     const categoryMatch = current === 'all' || r.category === current;
     // when Blog is active, also honor the selected industry sub-tab
-    const subMatch = current !== 'blog' || blogSub === 'all' || r.subcategory === blogSub;
+    const subMatch =
+      current !== 'blog' || blogSub === 'all' || (r.subcats || []).includes(blogSub);
     const haystack = `${r.search} ${r.title} ${r.desc}`.toLowerCase();
     const searchMatch = !q || haystack.includes(q);
     return categoryMatch && subMatch && searchMatch;
@@ -47,6 +56,11 @@ export default function ResourceGrid({ current, query, blogSub = 'all', resource
           </div>
           <p>Four clear categories keep the experience simple, while primary labels give each card enough context to scan quickly.</p>
         </div>
+
+        {/* Blog is the one category with a second level of filtering. */}
+        {current === 'blog' && (
+          <BlogTabs active={blogSub} onSelect={onSelectSub} tabs={blogTabs} />
+        )}
 
         {items.length > 0 ? (
           <>

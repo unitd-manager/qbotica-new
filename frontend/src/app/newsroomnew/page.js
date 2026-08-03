@@ -21,15 +21,15 @@ export const revalidate = 30;
  * ACF layouts still supply the hero, stats, featured headings and newsletter
  * copy. See src/lib/newsroom.js.
  */
-export default async function Newsroom2Page() {
-  const { hero, stats, featured, newsletter, resources } = await fetchNewsroomPageData();
+export default async function NewsroomNewPage() {
+  const { hero, stats, featured, newsletter, blogTabs, resources } = await fetchNewsroomPageData();
 
   return (
     <div className={theme.insightsNews}>
       <Topbar />
       <Hero hero={hero} />
       <CategoryStats stats={stats} />
-      <Hub resources={resources} featured={featured} />
+      <Hub resources={resources} featured={featured} blogTabs={blogTabs} />
       <Newsletter newsletter={newsletter} />
     </div>
   );

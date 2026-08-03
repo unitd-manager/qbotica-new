@@ -44,7 +44,9 @@ export default function Featured({ current, resources = [], featured = {} }) {
             <div className={styles.eyebrow}>Featured</div>
             <h2 dangerouslySetInnerHTML={{ __html: heading }} />
           </div>
-          <p dangerouslySetInnerHTML={{ __html: intro }} />
+          {/* Only rendered when WordPress supplies copy - the client asked for
+              the old placeholder line to go, so there is no static fallback. */}
+          {intro && <p dangerouslySetInnerHTML={{ __html: intro }} />}
         </div>
 
         <article className={mainClass}>

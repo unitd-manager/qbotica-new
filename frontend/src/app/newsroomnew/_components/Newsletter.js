@@ -7,8 +7,13 @@ const DEFAULT = {
   description: 'Receive qBotica’s latest press releases, recognition, blog articles and media updates in one useful email.',
 };
 
-// `newsletter` comes from the WP page "insights-news" -> ACF layout "insights_newsletter"
-// (see src/lib/insight.js). Falls back to the copy above until that's filled in.
+/*
+ * `newsletter` comes from the WP page's ACF layout "insights_newsletter"
+ * (see src/lib/newsroom.js) and falls back to the copy above until it's filled
+ * in. Only the heading and description are editable - the input placeholder and
+ * button label stay in code, since they're part of the form control rather than
+ * page copy.
+ */
 export default function Newsletter({ newsletter }) {
   const heading = newsletter?.heading || DEFAULT.heading;
   const description = newsletter?.description || DEFAULT.description;

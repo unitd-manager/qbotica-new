@@ -5,7 +5,7 @@
 export const FEATURED = {
   all: {
     heading: 'What’s new at qBotica',
-    intro: 'One highlighted resource takes center stage and updates based on the selected category.',
+    intro: '',
     badge: 'Press Release',
     badgeClass: '',
     className: '',
@@ -16,7 +16,7 @@ export const FEATURED = {
   },
   press: {
     heading: 'Latest press release',
-    intro: 'Company announcements, partnerships, acquisitions and strategic milestones.',
+    intro: '',
     badge: 'Press Release',
     badgeClass: '',
     className: '',
@@ -27,7 +27,7 @@ export const FEATURED = {
   },
   recognition: {
     heading: 'Latest recognition',
-    intro: 'Awards, rankings, certifications and analyst validation that reinforce qBotica’s enterprise credibility.',
+    intro: '',
     badge: 'Recognition',
     badgeClass: 'gold',
     className: 'recognition',
@@ -38,7 +38,7 @@ export const FEATURED = {
   },
   blog: {
     heading: 'Latest from the blog',
-    intro: 'Practical perspectives on AI, automation, industries and the future of enterprise operations.',
+    intro: '',
     badge: 'Blog · Agentic AI',
     badgeClass: 'blog',
     className: 'blog',
@@ -49,7 +49,7 @@ export const FEATURED = {
   },
   media: {
     heading: 'Latest media',
-    intro: 'Customer videos, webinars, product demos, interviews and on-demand conversations.',
+    intro: '',
     badge: 'Media · Customer Video',
     badgeClass: 'media',
     className: 'media',

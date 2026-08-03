@@ -1,0 +1,177 @@
+/* Media tab - dark tiles with a video thumbnail, play overlay and a
+   "Watch here" CTA, matching the existing media & videos page. */
+
+.section { padding: 72px 24px 88px; background: #0b1524; }
+.container { max-width: 1240px; margin: auto; }
+
+.sectionHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 24px;
+  margin-bottom: 34px;
+}
+.sectionHead h2 {
+  font-size: 40px;
+  line-height: 1.12;
+  letter-spacing: -1.5px;
+  margin: 8px 0;
+  color: #fff;
+}
+.sectionHead p {
+  max-width: 560px;
+  color: #a9bbd0;
+  line-height: 1.65;
+  font-size: 15px;
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #5ec2ee;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  font-weight: 800;
+  font-size: 12px;
+}
+.eyebrow::before {
+  content: "";
+  width: 30px;
+  height: 2px;
+  background: var(--orange, #ff7a1a);
+}
+
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+@media (max-width: 980px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .grid { grid-template-columns: 1fr; } }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #101d31;
+  border: 1px solid #1d3049;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: .25s;
+}
+.card:hover {
+  transform: translateY(-6px);
+  border-color: #2c4a6d;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, .35);
+}
+
+.thumbLink { display: block; }
+/* Video thumbnails are 16:9, so matching that ratio shows the frame whole
+   instead of cropping the top and bottom off. */
+.thumb {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #16273f;
+}
+.photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.t1 { background: linear-gradient(135deg, #082b4e, #1d91bf); }
+.t2 { background: linear-gradient(135deg, #9a6b11, #e5b747); }
+.t3 { background: linear-gradient(135deg, #262b66, #7568e7); }
+.t4 { background: linear-gradient(135deg, #0d5d4d, #3ac69d); }
+.t5 { background: linear-gradient(135deg, #55216a, #cc5cb8); }
+.t6 { background: linear-gradient(135deg, #24364d, #7892ad); }
+
+.play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  line-height: 0;
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, .45));
+  transition: transform .2s;
+}
+.card:hover .play { transform: translate(-50%, -50%) scale(1.08); }
+
+.body { padding: 22px 22px 6px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+
+.tag {
+  align-self: flex-start;
+  border: 1px solid var(--orange, #ff7a1a);
+  color: var(--orange, #ff7a1a);
+  border-radius: 999px;
+  padding: 7px 16px;
+  font-size: 12.5px;
+  font-weight: 700;
+}
+.card h3 {
+  margin: 0;
+  font-size: 21px;
+  line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: -.3px;
+  color: #fff;
+}
+.card p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.62;
+  color: #a9bbd0;
+}
+
+.footer {
+  margin: 18px 22px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+.date { color: #8ea4bd; font-size: 13px; font-weight: 600; }
+
+.watch {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: var(--orange, #ff7a1a);
+  color: #fff;
+  border-radius: 6px;
+  padding: 13px 22px;
+  font-size: 13.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  transition: .2s;
+}
+.watch:hover { filter: brightness(1.08); transform: translateY(-2px); }
+.arrow { font-size: 18px; line-height: 1; }
+
+.loadMoreWrap { display: flex; justify-content: center; margin-top: 40px; }
+.loadMore {
+  border-radius: 999px;
+  padding: 14px 30px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  background: transparent;
+  border: 1px solid #2c4a6d;
+  cursor: pointer;
+  transition: .2s;
+}
+.loadMore:hover { border-color: var(--orange, #ff7a1a); transform: translateY(-2px); }
+
+.empty {
+  text-align: center;
+  color: #a9bbd0;
+  padding: 44px;
+  border: 1px dashed #2c4a6d;
+  border-radius: 16px;
+}
+
+@media (max-width: 900px) {
+  .sectionHead { align-items: start; flex-direction: column; }
+  .sectionHead h2 { font-size: 32px; }
+}
