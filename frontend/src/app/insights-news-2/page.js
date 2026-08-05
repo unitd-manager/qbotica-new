@@ -4,6 +4,7 @@ import Hero from './_components/Hero';
 import CategoryStats from './_components/CategoryStats';
 import Hub from './_components/Hub';
 import Newsletter from './_components/Newsletter';
+import UpcomingEventPopup from '@/components/Layout/UpcomingEventPopup';
 
 export const metadata = {
   title: 'Insights & News | qBotica',
@@ -25,6 +26,8 @@ export default function InsightsNewsPage() {
       <CategoryStats />
       <Hub />
       <Newsletter />
+      {/* Same floating event card as the new-home-static page. */}
+      <UpcomingEventPopup />
     </div>
   );
 }
