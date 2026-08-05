@@ -301,14 +301,14 @@
 /* ─── FEATURED CASE STUDY CARD ─── */
 .featured-wrap {
   padding: 5rem clamp(1.5rem, 6vw, 5rem) 2rem;
-  max-width: 1280px;
+  max-width: 1380px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .featured-card {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1fr 1fr;
   background: #ffffff;
   border-radius: 20px;
   box-shadow: 0 20px 56px rgba(0, 0, 0, 0.12);

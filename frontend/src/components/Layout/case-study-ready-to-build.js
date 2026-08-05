@@ -26,14 +26,7 @@ export default function ReadyToBuildPanel() {
     Schedule a Discovery Call →
   </a>
 
-  <a
-    href="https://meetings.hubspot.com/automation-demo/scheduler"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="btn-secondary-cta"
-  >
-    Talk to an Expert
-  </a>
+  
 </DivTag>
       </DivTag>
     </section>
