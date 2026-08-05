@@ -1,0 +1,132 @@
+.latest { padding: 82px 24px; background: var(--soft); }
+.container { max-width: 1240px; margin: auto; }
+.sectionHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 24px;
+  margin-bottom: 30px;
+}
+.sectionHead h2 { font-size: 42px; line-height: 1.1; letter-spacing: -1.7px; margin: 8px 0; }
+.sectionHead p { max-width: 620px; color: var(--muted); line-height: 1.65; }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 9px;
+  color: #16769a; text-transform: uppercase; letter-spacing: 1.6px;
+  font-weight: 800; font-size: 12px;
+}
+.eyebrow::before { content: ""; width: 30px; height: 2px; background: var(--orange); }
+
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+.card {
+  background: #fff;
+  border: 1px solid #e0e9f1;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(12, 39, 68, .06);
+  transition: .25s;
+  display: flex;
+  flex-direction: column;
+}
+.card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+
+.thumb { height: 230px; position: relative; overflow: hidden; }
+/* Anchor to the top so a taller image loses its bottom edge rather than having
+   the subject's head cropped off. */
+.photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+.thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(3, 15, 29, .15), transparent);
+}
+.t1 { background: linear-gradient(135deg, #082b4e, #1d91bf); }
+.t2 { background: linear-gradient(135deg, #9a6b11, #e5b747); }
+.t3 { background: linear-gradient(135deg, #262b66, #7568e7); }
+.t4 { background: linear-gradient(135deg, #0d5d4d, #3ac69d); }
+.t5 { background: linear-gradient(135deg, #55216a, #cc5cb8); }
+.t6 { background: linear-gradient(135deg, #24364d, #7892ad); }
+
+.shape { position: absolute; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .35); }
+.shape.one { width: 120px; height: 120px; right: 20px; top: 15px; }
+.shape.two { width: 55px; height: 55px; left: 28px; bottom: 25px; background: rgba(255, 255, 255, .14); }
+.play {
+  position: absolute; z-index: 2; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: 58px; height: 58px; border-radius: 50%;
+  background: #fff; display: grid; place-items: center;
+  color: var(--orange); font-size: 22px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, .2);
+}
+
+.cardBody { padding: 23px; display: flex; flex-direction: column; flex: 1; }
+.contentType {
+  font-size: 11px; text-transform: uppercase; letter-spacing: .8px;
+  font-weight: 800; color: #8795a6; margin-bottom: 10px;
+}
+.card h3 { font-size: 21px; line-height: 1.32; margin: 14px 0; color: var(--ink); font-weight: 700; font-family: var(--font-inter), Inter, sans-serif; }
+.card p { color: var(--muted); font-size: 14px; line-height: 1.6; }
+.cardFooter {
+  margin-top: auto; padding-top: 18px;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 12px; color: #8290a1;
+}
+.read { color: #0f65a0; font-weight: 700; }
+
+.badge {
+  display: inline-flex;
+  border-radius: 999px;
+  padding: 7px 11px;
+  background: #eaf6ff;
+  color: #16658c;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .7px;
+}
+.badge.gold { background: #fff3cf; color: #8b6200; }
+.badge.blog { background: #eeeaff; color: #5145a8; }
+.badge.media { background: #f7e7ff; color: #83369b; }
+
+.empty {
+  text-align: center;
+  color: var(--muted);
+  padding: 40px;
+  background: #fff;
+  border: 1px dashed var(--line);
+  border-radius: 20px;
+}
+
+.loadMoreWrap { display: flex; justify-content: center; margin-top: 38px; }
+.loadMore {
+  border-radius: 999px;
+  padding: 14px 30px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy, #0b2442);
+  background: #fff;
+  border: 1px solid #cfdcea;
+  cursor: pointer;
+  transition: .2s;
+}
+.loadMore:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(12, 39, 68, .12);
+  border-color: #9fb9d2;
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .sectionHead { align-items: start; flex-direction: column; }
+}
+@media (max-width: 620px) {
+  .grid { grid-template-columns: 1fr; }
+}

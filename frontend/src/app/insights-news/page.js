@@ -4,31 +4,31 @@ import Hero from './_components/Hero';
 import CategoryStats from './_components/CategoryStats';
 import Hub from './_components/Hub';
 import Newsletter from './_components/Newsletter';
-import { fetchInsightsResources } from '@/lib/insights';
+import { fetchInsightsPageData } from '@/lib/insight';
 
 export const metadata = {
   title: 'Insights & News | qBotica',
   description:
-    'qBotica press releases, industry recognition, expert blog content and media — all in one connected destination.',
+    'qBotica press releases, industry recognition, expert blog content and media, all in one connected destination.',
 };
 
-export const revalidate = 180;
+export const revalidate = 30;
 
 /*
  * Insights & News — combined Newsroom + Blog + Media hub.
- * Content is fetched server-side from WordPress (see src/lib/insights.js)
- * and passed down into <Hub/>, which owns the client-side filter/search state.
+ * Content is fetched server-side from WordPress (see src/lib/insight.js)
+ * and passed down into Hero/CategoryStats/Hub, which own their own client-side state.
  */
 export default async function InsightsNewsPage() {
-  const resources = await fetchInsightsResources();
+  const { hero, stats, featured, newsletter, resources } = await fetchInsightsPageData();
 
   return (
     <div className={theme.insightsNews}>
       <Topbar />
-      <Hero />
-      <CategoryStats />
-      <Hub resources={resources} />
-      <Newsletter />
+      <Hero hero={hero} />
+      <CategoryStats stats={stats} />
+      <Hub resources={resources} featured={featured} />
+      <Newsletter newsletter={newsletter} />
     </div>
   );
 }
