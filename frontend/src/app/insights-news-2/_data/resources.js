@@ -113,6 +113,7 @@ const RAW_RESOURCES = [
   },
   {
     category: 'press', thumb: 't6', type: 'Press Release', badge: 'Leadership', badgeClass: '',
+    image: "https://dev.srv975395.hstgr.cloud/wp-content/uploads/2025/09/cxbuzz-interview-with-mahesh-vinayagam-ceo-at-qbotica.webp",
     title: 'CXBUZZ Interview with Mahesh Vinayagam, CEO at qBotica',
     desc: 'A CXBUZZ interview with CEO Mahesh Vinayagam on customer experience and agentic AI.',
     meta: '2022', action: 'Read →',
@@ -121,7 +122,7 @@ const RAW_RESOURCES = [
   },
   {
     category: 'press', thumb: 't1', type: 'Press Release', badge: 'Company News', badgeClass: '',
-    image: "https://dev.srv975395.hstgr.cloud/wp-content/uploads/2025/09/cxbuzz-interview-with-mahesh-vinayagam-ceo-at-qbotica.webp",
+    image: "https://dev.srv975395.hstgr.cloud/wp-content/uploads/2025/09/hfs-research-qbotica-scales-up-its-ecosystem-approach-to-help-enterprises.webp",
     title: 'HFS Research: qBotica Scales Up Its Ecosystem Approach to Help Enterprises',
     desc: 'HFS Research on how qBotica scales its ecosystem approach to help enterprises.',
     meta: '2023', action: 'Read →',
@@ -276,7 +277,7 @@ const RAW_RESOURCES = [
   },
   {
     category: 'recognition', thumb: 't2', type: 'Recognition', badge: 'Recognition', badgeClass: 'gold',
-    image: "https://dev.srv975395.hstgr.cloud/wp-content/uploads/2025/09/hfs-research-qbotica-scales-up-its-ecosystem-approach-to-help-enterprises.webp",
+    image: "https://dev.srv975395.hstgr.cloud/wp-content/uploads/2025/09/qbotica-wins-prestigious-itserve-startup-cube-competition-with-doqument.webp",
     title: 'qBotica Wins Prestigious ITServe Startup Cube Competition with Doqument',
     desc: 'Winning the ITServe Startup Cube competition with Doqument.',
     meta: '2021', action: 'Read →',
