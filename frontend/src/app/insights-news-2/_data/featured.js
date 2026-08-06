@@ -26,6 +26,7 @@ const UPCOMING_EVENT = {
 export const FEATURED = {
   all: {
     ...UPCOMING_EVENT,
+    image: '/assets/images/all.png',
     heading: 'What’s new at qBotica',
     intro: '',
     className: '',
