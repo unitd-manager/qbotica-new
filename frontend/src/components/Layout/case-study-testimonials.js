@@ -1,58 +1,71 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import { DivTag } from '../Common/HTMLTags';
 import './case-study-style.css';
 
 export default function Testimonials({ data }) {
-  // Exact data from image_bd6cfa.jpg
+  const [activeCard, setActiveCard] = useState(null);
+
   const testimonials = data?.testimonials || [
     {
       id: 1,
-      stat: "7x faster claims",
-      quote: "qBotica\'s document AI transformed what used to be a three-hour manual process into something that runs before our team arrives at their desks.",
-      initials: "DO",
+      quote:
+        "Their customer-centric approach, which combines best-in-class humans in the loop with a cloud-based delivery of a sophisticated machine learning platform, helped us scale delivery of pricing quotations at an astronomical speed with a potential to increase revenues for Polaris Transport while significantly reducing costs of operations. We are now able to deploy the staff onto other critical initiatives that were shelved for years, a true win-win for all.",
+      initials: "DB",
       avatarBg: "#FF7705",
-      name: "Director of Operations",
-      role: "Top Healthcare Provider"
+      name: "Dave Brajkovich",
+      role: "CTO, Polaris Transport",
     },
     {
       id: 2,
-      stat: "75% time reduction",
-      quote: "We went from a team buried in manual processing to one that reviews exceptions only. The ROI was visible within weeks of go-live.",
-      initials: "VP",
+      quote:
+        "The qBotica team has always displayed a high-level of professionalism and the competency to bring real life and practical suggestions. These solutions have significantly transformed how we do business both from externally facing processes to back-office operations.",
+      initials: "GE",
       avatarBg: "#0B1120",
-      name: "VP of Finance Operations",
-      role: "Global Top 10 Bank"
+      name: "Global Head of Engineering",
+      role: "Western Union",
     },
     {
       id: 3,
-      stat: "500+ docs/day",
-      quote: "This wasn\'t just automation — it was a complete rethinking of how our team handles vendor communication at scale. The difference is night and day.",
-      initials: "OT",
+      quote:
+        "There's been a tremendous amount of effort saved in building the necessary features from scratch to enable intelligent document processing and seamless human-robot collaboration.",
+      initials: "CTO",
       avatarBg: "#1D4ED8",
-      name: "Operations Team",
-      role: "Polaris Transportation Group"
-    }
+      name: "Chief Transformation Officer",
+      role: "Large Manufacturing Client",
+    },
   ];
+
+  const toggleCard = (id) => {
+    setActiveCard((prev) => (prev === id ? null : id));
+  };
 
   return (
     <DivTag className="testimonial-band">
       <DivTag className="tb-inner">
         {testimonials.map((item) => (
-          <DivTag key={item.id} className="tb-card">
-            {/* Stat pill badge */}
-            <DivTag className="tb-stat">{item.stat}</DivTag>
+          <DivTag
+  key={item.id}
+  className={`tb-card ${activeCard === item.id ? "expanded" : ""}`}
+  onClick={() =>
+    setActiveCard(activeCard === item.id ? null : item.id)
+  }
+>
             
-            {/* Quote block */}
-            <DivTag className="tb-quote">{item.quote}</DivTag>
-            
-            {/* Author Citation Info */}
+
+            <DivTag className="tb-quote">
+              {item.quote}
+            </DivTag>
+
             <DivTag className="tb-cite">
-              <DivTag 
-                className="tb-avatar" 
+              <DivTag
+                className="tb-avatar"
                 style={{ backgroundColor: item.avatarBg }}
               >
                 {item.initials}
               </DivTag>
+
               <DivTag>
                 <DivTag className="tb-name">{item.name}</DivTag>
                 <DivTag className="tb-role">{item.role}</DivTag>
