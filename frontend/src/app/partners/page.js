@@ -17,11 +17,7 @@ const slug = 'partners';
 const parent_path = '';
 
 export async function generateMetadata() {
-  return generatePageMetadatas(slug, 'page', parent_path, {
-    title: 'Why Our Partners Love Us | qBotica',
-    description:
-      "We believe in the power of Automation to make people’s lives better & easier, & are looking for Partner companies who will take the journey with us.",
-  });
+  return generatePageMetadatas(slug, 'page', parent_path);
 }
 
 export default async function QboticaPartnersPage() {
