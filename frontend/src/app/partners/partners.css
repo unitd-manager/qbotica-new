@@ -2,7 +2,7 @@
    PARTNERS PAGE
 ========================================================== */
 
-.partners-page{
+.qbotica-partners-page{
     background:#f7f9fc;
     color:#172033;
     overflow:hidden;
@@ -419,12 +419,12 @@ font-size:18px;
 
     grid-template-columns:.85fr 1.15fr;
 
-    align-items:start;
+    align-items:stretch;
 
 }
 
 .partner-card.featured .partner-card-head{
-    height:320px;
+    height:100%;
     min-height:320px;
 }
 /* ==========================================================

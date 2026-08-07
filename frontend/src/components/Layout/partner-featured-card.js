@@ -1,12 +1,61 @@
 'use client';
+import { useState, useEffect } from 'react';
 import { DivTag, H3Tag, PTag, SpanTag } from '../Common/HTMLTags';
 
+const WP_BASE = process.env.NEXT_PUBLIC_WP_API_URL || 'https://qbadevadmin.unitdtechnologies.com';
+
 export default function PartnerFeaturedCard({ data }) {
-  const image = data?.image || { url: '/images/atolio-new.jpg', alt: 'Atolio' };
+  const rawImage = data?.image;
+  const fallbackImage = { url: '/images/atolio-new.jpg', alt: 'Atolio' };
+
+  const [resolvedImage, setResolvedImage] = useState(
+    typeof rawImage === 'object' && rawImage?.url ? rawImage : null
+  );
+  const [loading, setLoading] = useState(typeof rawImage === 'number');
+
+  useEffect(() => {
+    // If image is already a full object, nothing to do
+    if (typeof rawImage === 'object' && rawImage?.url) {
+      setResolvedImage(rawImage);
+      return;
+    }
+
+    // If image is just a numeric ID, fetch the media object dynamically
+    if (typeof rawImage === 'number') {
+      let cancelled = false;
+      setLoading(true);
+
+      fetch(`${WP_BASE}/wp-json/wp/v2/media/${rawImage}`)
+        .then((res) => {
+          if (!res.ok) throw new Error(`Media fetch failed: ${res.status}`);
+          return res.json();
+        })
+        .then((media) => {
+          if (cancelled) return;
+          setResolvedImage({
+            url: media.source_url,
+            alt: media.alt_text || 'Atolio',
+          });
+        })
+        .catch((err) => {
+          console.error('Failed to resolve featured_partner_card image:', err);
+          if (!cancelled) setResolvedImage(null);
+        })
+        .finally(() => {
+          if (!cancelled) setLoading(false);
+        });
+
+      return () => {
+        cancelled = true;
+      };
+    }
+  }, [rawImage]);
+
+  const image = resolvedImage || fallbackImage;
+
   const hoverEyebrow = data?.hover_eyebrow || 'Solutions & Applications';
   const hoverTitle = data?.hover_title || 'Secure enterprise knowledge access';
 
-  // ACF Repeater "tags" -> sub-field "tag"
   const tags = Array.isArray(data?.tags) && data.tags.length
     ? data.tags
     : [
@@ -34,9 +83,13 @@ export default function PartnerFeaturedCard({ data }) {
   return (
     <DivTag className={`partner-card featured ${class_name}`} id={id}>
       <DivTag className="partner-card-head" tabIndex={0}>
-        {image?.url && (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img src={image.url} alt={image.alt || 'Partner'} className="partner-card-image" />
+        {loading ? (
+          <DivTag className="partner-card-image partner-card-image-loading" />
+        ) : (
+          image?.url && (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={image.url} alt={image.alt || 'Partner'} className="partner-card-image" />
+          )
         )}
 
         <DivTag className="hover-panel">

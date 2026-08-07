@@ -304,6 +304,117 @@
   opacity: 0.9;
 }
 
+.eventPopupWrapper {
+  position: fixed;
+  right: 36px;
+  bottom: 90px;
+  z-index: 1000000;
+  pointer-events: none;
+}
+
+.eventPopupCard {
+  position: relative;
+  width: min(360px, calc(100vw - 32px));
+  padding: 18px 18px 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(7, 27, 58, 0.08);
+  box-shadow: 0 20px 48px rgba(7, 27, 58, 0.18);
+  pointer-events: auto;
+}
+
+.eventPopupClose {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  color: #0d1d32;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.eventPopupBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: #f47b20;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.eventPopupTitle {
+  margin: 0 0 10px;
+  color: #0d1d32;
+  font-size: clamp(20px, 2vw, 28px);
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.eventPopupMeta {
+  margin: 0 0 18px;
+  color: #3b4b62;
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.eventPopupButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #f47b20, #ff9a4d);
+  color: #fff;
+  padding: 12px 18px;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  box-shadow: 0 12px 28px rgba(244, 123, 32, 0.28);
+}
+
+@media (max-width: 768px) {
+  .eventPopupWrapper {
+    right: 12px;
+    bottom: 78px;
+    left: 12px;
+  }
+
+  .eventPopupCard {
+    width: 100%;
+    max-width: none;
+    padding: 14px 14px 12px;
+  }
+
+  .eventPopupTitle {
+    font-size: 20px;
+  }
+
+  .eventPopupMeta {
+    font-size: 14px;
+  }
+
+  .eventPopupBadge {
+    font-size: 9px;
+    padding: 6px 10px;
+  }
+}
+
 /* INTERACTIVE SECTION */
 .interactiveSection {
   position: relative;

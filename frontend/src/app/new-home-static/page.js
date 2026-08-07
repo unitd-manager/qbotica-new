@@ -17,6 +17,7 @@ import AwardsRecognition from '@/components/Layout/AwardsRecognition';
 import LatestFromQbotica from '@/components/Layout/LatestFromQbotica';
 import FinalCTASection from '@/components/Layout/FinalCTASection';
 import TimelineSections from '@/components/Layout/timeline-sections';
+import UpcomingEventPopup from '@/components/Layout/UpcomingEventPopup';
 
 export const metadata = {
   title: 'New Home',
@@ -361,18 +362,18 @@ const footerCommonCTA2Data = {
 const clientLogoData = {
   main_title: 'Trust and Proof',
   logo_list: [
-    { image: { url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2025/09/800px-Aramark_logo.svg-1.webp' } },
-    { image: { url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2025/09/onsemi.webp' } },
-    { image: { url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2025/09/polaris.webp' } },
-    { image: { url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2025/09/presbyterian__20181210_160705554-1.webp' } },
-    { image: { url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2025/09/tpl.webp' } },
-    { image: { url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2025/08/United-way.webp' } },
-    { image: { url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2025/08/University-of-phoenix-1.webp' } },
-    { image: { url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2025/09/IPG-OUTLINE-BTN-RASTER-287-1.webp' } },
-    { image: { url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2025/09/62051a764e162f000480edba-1.webp' } },
-    { image: { url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2025/07/qbotica-leading-enterprises-9-150x150-1.webp' } },
-    { image: { url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2025/09/dish.webp' } },
-    { image: { url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2025/09/cdw-c-2023-rgb-1.webp' } },
+    { image: { url: '/assets/images/800px-Aramark_logo.svg-1.webp' } },
+    { image: { url: '/assets/images/onsemi.webp' } },
+    { image: { url: '/assets/images/polaris.webp' } },
+    { image: { url: '/assets/images/presbyterian__20181210_160705554-1.webp' } },
+    { image: { url: '/assets/images/tpl.webp' } },
+    { image: { url: '/assets/images/United-way.webp' } },
+    { image: { url: '/assets/images/University-of-phoenix-1.webp' } },
+    { image: { url: '/assets/images/IPG-OUTLINE-BTN-RASTER-287-1.webp' } },
+    { image: { url: '/assets/images/62051a764e162f000480edba-1.webp' } },
+    { image: { url: '/assets/images/qbotica-leading-enterprises-9-150x150-1.webp' } },
+    { image: { url: '/assets/images/dish.webp' } },
+    { image: { url: '/assets/images/cdw-c-2023-rgb-1.webp' } },
   ],
   padding: {
     padding_options: false,
@@ -862,13 +863,13 @@ const awardsSectionData = {
   award_and_certificate_list: [
     {
       image: {
-        url: 'https://qbadevadmin.unitdtechnologies.com/wp-content/uploads/2026/06/starper.png',
+        url: '/assets/images/starper1.png',
       },
  
     },
      {
       image: {
-        url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2025/07/Picture-1-300x69-1.webp',
+        url: '/assets/images/Picture-1-300x69-1.webp',
       },
    
     },
@@ -879,7 +880,7 @@ const awardsSectionData = {
     },
      {
       image: {
-        url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2025/12/PBJ-FGC.png',
+        url: '/assets/images/PBJ-FGC.png',
       },
     },
 
@@ -897,7 +898,7 @@ const awardsSectionData = {
     },
      {
       image: {
-        url: 'https://qbwpadmin.unitdtechnologies.com/wp-content/uploads/2026/05/logo-smallbusiness.webp',
+        url: '/assets/images/logo-smallbusiness.webp',
       },
     },
     //  {
@@ -1057,6 +1058,8 @@ export default function NewHomeStaticPage() {
  </div>
  
  </DivTag>
+
+      <UpcomingEventPopup />
     </DivTag>
   );
 }
