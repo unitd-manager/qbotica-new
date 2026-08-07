@@ -3,14 +3,14 @@ IMPACT SECTION
 ===================================================== */
 
 .impact-section {
-  padding: 40px 0;
+  padding: 80px 0;
   background: #ffffff;
 }
 
 .impact-container {
   max-width: 760px;
-  width: 92%;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
   padding: 0;
 }
 
