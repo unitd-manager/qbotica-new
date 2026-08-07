@@ -15,6 +15,13 @@ export default function Sidebar({ acf }) {
         sidebar_cta_description,
         sidebar_demo_link,
         sidebar_expert_link,
+         sidebar_verified_text,
+        sidebar_details_heading,
+        sidebar_metrics_heading,
+        sidebar_topics_heading,
+        sidebar_expert_link_text,
+
+
     } = acf || {};
 
     if (!acf) return null;
@@ -43,7 +50,7 @@ export default function Sidebar({ acf }) {
                             <p>{sidebar_client_description}</p>
                         )}
 
-                        <button>✓ Verified Customer</button>
+                        <button>{sidebar_verified_text}</button>
 
                     </div>
                 </div>
@@ -54,7 +61,7 @@ export default function Sidebar({ acf }) {
             {case_study_details?.length > 0 && (
                 <div className="sidebar-card">
 
-                    <h5>CASE STUDY DETAILS</h5>
+                    <h5>{sidebar_details_heading}</h5>
 
                     <table>
                         <tbody>
@@ -74,7 +81,7 @@ export default function Sidebar({ acf }) {
             {performance_metrics?.length > 0 && (
                 <div className="sidebar-card">
 
-                    <h5>PERFORMANCE METRICS</h5>
+                    <h5> {sidebar_metrics_heading}</h5>
 
                     {performance_metrics.map((item, index) => (
                         <div className="metric" key={index}>
@@ -95,7 +102,7 @@ export default function Sidebar({ acf }) {
             {topics?.length > 0 && (
                 <div className="sidebar-card">
 
-                    <h5>TOPICS</h5>
+                    <h5>{sidebar_topics_heading}</h5>
 
                     <div className="topics">
                         {topics.map((item, index) => (
@@ -126,7 +133,8 @@ export default function Sidebar({ acf }) {
                         rel="noopener noreferrer"
                         className="primary-btn"
                     >
-                      Talk to an Expert   
+                       {sidebar_expert_link_text}
+
                     </a>
                 )}
 

@@ -12,8 +12,9 @@ import WhyItWorked from './WhyItWorked';
 import MoreCaseStudies from './MoreCaseStudies';
 import CTA from './CTA';
 import Sidebar from './Sidebar';
+import PolaroidCard from './PolaroidCard'; // ⬅ NEW — dynamic client card
 
-export default function Hero({ slug }) {
+export default function Hero({ slug }) {    
 
   const [acf, setAcf] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -165,9 +166,16 @@ export default function Hero({ slug }) {
   const heroHeadlineHighlight = heroData.hero_headline_highlight;
   const heroHeadline2 = heroData.hero_headline_2;
   const heroBackgroundImage = heroData.hero_background_image;
-  const heroClientLogo = heroData.hero_client_logo;
-  const heroClientName = heroData.hero_client_name;
   const heroStats = heroData.hero_stats;
+
+  // ── POLAROID CLIENT CARD — replaces the old static cs-client-card.
+  // These fields live directly inside the "hero_section" layout. ──
+  const polaroidLabel = heroData.polaroid_label || 'Industry';
+  const polaroidIndustry = heroData.polaroid_industry;
+  const polaroidSinceYear = heroData.client_since_year;
+  const polaroidSince = polaroidSinceYear ? `CLIENT SINCE ${polaroidSinceYear}` : '';
+  const polaroidImageUrl = heroData.logo_image?.url;
+  const polaroidImageAlt = heroData.client_name || 'Client logo';
 
   const solutionData = getLayout('solution');
   const impactData = getLayout('impact');
@@ -198,26 +206,34 @@ export default function Hero({ slug }) {
 
         <div className="cs-hero-container">
 
-          {/* BREADCRUMB */}
-          <div className="cs-breadcrumb">
-            <span>Home</span>
-            <span>/</span>
-            <span>Resources</span>
-            <span>/</span>
-            <span>Case Studies</span>
-            <span>/</span>
-            <span className="cs-breadcrumb-highlight">
-              Polaris Transportation
-            </span>
-          </div>
+      {/* BREADCRUMB */}
+  <div className="cs-breadcrumb">
+  {heroData.breadcrumb_items?.[0] &&
+    [
+      heroData.breadcrumb_items[0].breadcrumb_label1,
+      heroData.breadcrumb_items[0].breadcrumb_label2,
+      heroData.breadcrumb_items[0].breadcrumb_label3,
+    ]
+      .filter(Boolean)
+      .map((label, i) => (
+        <span key={i}>
+          {label}
+          <span> / </span>
+        </span>
+      ))}
+    <span className="cs-breadcrumb-highlight">
+    {heroData.breadcrumb_current}
+  </span>
+   </div>
 
-          <div className="cs-meta">
+   <div className="cs-meta">
+   <div className="cs-case-tag">
+   <span className="dot"></span>
+   {heroData.case_study_tag_text}
+   </div>
 
-            <div className="cs-case-tag">
-              <span className="dot"></span>
-              CASE STUDY
-            </div>
-
+  
+  
             {/* TAGS */}
             {heroTags?.map((item, i) => (
               <div className="cs-chip" key={i}>
@@ -225,24 +241,14 @@ export default function Hero({ slug }) {
               </div>
             ))}
 
-            {/* CLIENT CARD */}
-            <div className="cs-client-card">
-              <div className="cs-client-logo">
-                <img
-                  src={heroClientLogo?.url}
-                  alt={heroClientName}
-                  width={150}
-                  height={60}
-                  className="polaris-logo"
-                />
-              </div>
-              <div className="cs-client-info">
-                <div className="client-label">CLIENT</div>
-                <div className="client-name">
-                  {heroClientName}
-                </div>
-              </div>
-            </div>
+            {/* ── POLAROID CLIENT CARD (replaces old static cs-client-card) ── */}
+            <PolaroidCard
+              label={polaroidLabel}
+              industry={polaroidIndustry}
+              since={polaroidSince}
+              imageUrl={polaroidImageUrl}
+              imageAlt={polaroidImageAlt}
+            />
 
           </div>
 

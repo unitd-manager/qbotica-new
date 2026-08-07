@@ -16,6 +16,8 @@ export default function Challenge({ acf }) {
         challenge_cards,
         challenge_quote_text,
         challenge_quote_author,
+        challenge_button_text,
+         challenge_button_arrow,
     } = acf || {};
 
     if (!acf) return null;
@@ -62,12 +64,12 @@ export default function Challenge({ acf }) {
                             className="challenge-btn"
                             onClick={() => setShowMore(!showMore)}
                         >
-                            <span className="challenge-btn-text">
-                                Learn more about Customer&apos;s Challenges
-                            </span>
-                            <span className="challenge-btn-arrow">
-                                →
-                            </span>
+<span className="challenge-btn-text">
+    {challenge_button_text}
+</span>
+<span className="challenge-btn-arrow">
+    {challenge_button_arrow}
+</span>
                         </button>
                     </div>
                 )}

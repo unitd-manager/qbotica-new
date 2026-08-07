@@ -12,8 +12,8 @@ export default function TechnologyStrip({ acf }) {
             <div className="tech-strip-container">
 
                 <div className="tech-strip-label">
-                    TECHNOLOGY POWERING THIS SOLUTION
-                </div>
+                    {acf.tech_strip_label}
+                                   </div>
 
                 <div className="tech-strip-list">
                     {technologies.map((item, index) => (

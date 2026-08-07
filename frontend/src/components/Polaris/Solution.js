@@ -13,6 +13,8 @@ export default function Solution({ acf }) {
         solution_desc_1,
         solution_desc_2,
         solution_cards,
+         solution_button_text,
+    solution_button_arrow,
     } = acf || {};
 
     if (!acf) return null;
@@ -52,12 +54,12 @@ export default function Solution({ acf }) {
                             className="solution-btn"
                             onClick={() => setShowSolutions(!showSolutions)}
                         >
-                            <span className="solution-btn-text">
-                                qBotica Solution Approach
-                            </span>
-                            <span className="solution-btn-arrow">
-                                →
-                            </span>
+                           <span className="solution-btn-text">
+                {solution_button_text}
+            </span>
+            <span className="solution-btn-arrow">
+                {solution_button_arrow}
+            </span>
                         </button>
                     </div>
                 )}
