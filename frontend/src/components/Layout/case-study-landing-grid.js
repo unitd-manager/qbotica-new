@@ -8,6 +8,24 @@ import {
   SpanTag,
 } from '../Common/HTMLTags';
 import './case-study-landing-style.css';
+const filterStyles = {
+  filterOuter: {
+    padding: '24px 0',
+    borderBottom: '1px solid #e5e7eb',
+  },
+  filterInner: {
+    display: 'flex',
+    flexWrap: 'nowrap',
+    overflowX: 'auto',
+    overflowY: 'hidden',
+    whiteSpace: 'nowrap',
+    gap: '10px',
+    maxWidth: '1200px',
+    margin: '0 auto',
+    padding: '0 20px 6px',
+    WebkitOverflowScrolling: 'touch',
+  },
+};
 
 export default function CaseStudiesLandingGrid({ data }) {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -46,8 +64,15 @@ export default function CaseStudiesLandingGrid({ data }) {
   return (
     <>
       {/* Filter */}
-      <DivTag className="filter-outer" id="case-study-landing-grid">
-        <DivTag className="filter-inner">
+      <DivTag
+  className="filter-outer"
+  id="case-study-landing-grid"
+  style={filterStyles.filterOuter}
+>
+  <DivTag
+    className="filter-inner"
+    style={filterStyles.filterInner}
+  >
           {filters.map((filter, index) => (
             <button
               key={filter.id || index}

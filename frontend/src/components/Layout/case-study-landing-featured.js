@@ -46,58 +46,49 @@ export default function CaseStudyLandingFeatured({ data }) {
       <DivTag className="featured-card">
 
         {/* LEFT PANEL */}
-        <DivTag className="feat-visual">
-
-          {featuredImage?.url && (
-            <DivTag className="feat-image-wrap">
-              <img
-                src={featuredImage.url}
-                alt={featuredImage.alt || featuredTitle}
-                className="feat-image"
-              />
+        <DivTag
+          className="feat-visual"
+          style={
+            featuredImage?.url
+              ? {
+                  backgroundImage: `linear-gradient(to bottom, rgba(11,17,32,.15) 0%, rgba(11,17,32,.85) 100%), url(${featuredImage.url})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }
+              : {}
+          }
+        >
+          {featuredBadge && (
+            <DivTag className="feat-badge">
+              {featuredBadge}
             </DivTag>
           )}
 
-          <DivTag className="feat-overlay">
+          {featuredGhostNumber && (
+            <SpanTag className="feat-ghost-num">
+              {featuredGhostNumber}
+            </SpanTag>
+          )}
 
-            {featuredBadge && (
-              <DivTag className="feat-badge">
-                {featuredBadge}
+          <DivTag>
+            {(featuredStatNumber || featuredStatLabel) && (
+              <DivTag className="feat-stat">
+                <DivTag className="feat-stat-num">
+                  {featuredStatNumber}
+                </DivTag>
+
+                <DivTag className="feat-stat-label">
+                  {featuredStatLabel}
+                </DivTag>
               </DivTag>
             )}
 
-            {featuredGhostNumber && (
-              <SpanTag className="feat-ghost-num">
-                {featuredGhostNumber}
-              </SpanTag>
+            {featuredTitle && (
+              <H2Tag>
+                {featuredTitle}
+              </H2Tag>
             )}
-
-            <DivTag>
-
-              {(featuredStatNumber || featuredStatLabel) && (
-                <DivTag className="feat-stat">
-
-                  <DivTag className="feat-stat-num">
-                    {featuredStatNumber}
-                  </DivTag>
-
-                  <DivTag className="feat-stat-label">
-                    {featuredStatLabel}
-                  </DivTag>
-
-                </DivTag>
-              )}
-
-              {featuredTitle && (
-                <H2Tag>
-                  {featuredTitle}
-                </H2Tag>
-              )}
-
-            </DivTag>
-
           </DivTag>
-
         </DivTag>
 
         {/* RIGHT PANEL */}
@@ -123,7 +114,6 @@ export default function CaseStudyLandingFeatured({ data }) {
 
           {outcomes.length > 0 && (
             <DivTag className="feat-outcomes">
-
               {outcomes.map((outcome, index) => (
                 <DivTag
                   key={index}
@@ -138,7 +128,6 @@ export default function CaseStudyLandingFeatured({ data }) {
                   </SpanTag>
                 </DivTag>
               ))}
-
             </DivTag>
           )}
 
@@ -146,8 +135,12 @@ export default function CaseStudyLandingFeatured({ data }) {
             <ATag
               href={buttonLink}
               className="btn-primary"
+              style={{
+                width: 'fit-content',
+                marginTop: '0.5rem',
+              }}
             >
-              {buttonText}<br></br>
+              {buttonText}
             </ATag>
           )}
 

@@ -71,16 +71,7 @@ export default function CaseStudyLandingReadyToBuild({ data }) {
             </a>
           )}
 
-          {secondary_button_text && secondary_button_link && (
-            <a
-              href={secondary_button_link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-secondary-cta"
-            >
-              {secondary_button_text}
-            </a>
-          )}
+          
 
         </DivTag>
 

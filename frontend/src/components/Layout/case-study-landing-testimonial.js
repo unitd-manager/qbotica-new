@@ -32,11 +32,7 @@ export default function CaseStudyLandingTestimonials({ data }) {
                 key={item.id || index}
                 className="tb-card"
               >
-                {/* Statistic */}
-                <DivTag className="tb-stat">
-                  {item.statistic}
-                </DivTag>
-
+               
                 {/* Quote */}
                 <DivTag className="tb-quote">
                   {item.quote}

@@ -301,14 +301,14 @@
 /* ─── FEATURED CASE STUDY CARD ─── */
 .featured-wrap {
   padding: 5rem clamp(1.5rem, 6vw, 5rem) 2rem;
-  max-width: 1280px;
+  max-width: 1380px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .featured-card {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1fr 1fr;
   background: #ffffff;
   border-radius: 20px;
   box-shadow: 0 20px 56px rgba(0, 0, 0, 0.12);
@@ -527,7 +527,29 @@
   color: #fff;
   border-color: var(--orange, #FF7705);
 }
+.filter-inner {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: #bdbdbd #ececec;
+}
+.filter-inner::-webkit-scrollbar {
+  height: 8px;
+}
 
+.filter-inner::-webkit-scrollbar-track {
+  background: #ececec;
+  border-radius: 999px;
+}
+
+.filter-inner::-webkit-scrollbar-thumb {
+  background: #bdbdbd;
+  border-radius: 999px;
+}
+
+.filter-inner::-webkit-scrollbar-thumb:hover {
+  background: #9e9e9e;
+}
 /* ─── Section header ────────────────────────────────────────── */
 .section-head {
   max-width: 1240px;
