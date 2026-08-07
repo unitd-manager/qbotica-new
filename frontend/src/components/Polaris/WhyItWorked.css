@@ -1,12 +1,12 @@
 .why-section {
-  padding: 40px 0;
+  padding: 100px 0;
   background: #ffffff;
 }
 
 .why-container {
   max-width: 760px;
-  width: 92%;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
   padding: 0;
 }
 
@@ -43,7 +43,7 @@
   font-weight: 800;
   line-height: 1.08;
   letter-spacing: -0.04em;
-  word-spacing: -3px;
+  display:block;
   color: #081329;
   margin-bottom: 36px;
   max-width: 720px;
@@ -57,7 +57,7 @@
 
 .why-description {
   max-width: 760px;
-  margin-bottom: 32px;
+  
 }
 
 .why-description p {
@@ -120,7 +120,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
-  margin-top: 10px;
+  margin-top: 50px;
 }
 
 /* CARD */
@@ -129,12 +129,14 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 32px 40px;
+  padding: 30px;
+
   background: #ffffff;
   border: 1px solid #dfe5eb;
-  border-radius: 18px;
-  min-height: 190px;
+  border-radius: 20px;
+  min-height: 210px;
   transition: all 0.35s ease;
+  
 }
 
 .why-card:hover {

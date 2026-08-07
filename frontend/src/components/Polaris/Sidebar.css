@@ -99,20 +99,35 @@ CLIENT HOVER CARD
     color:#c8d2df;
 }
 
+/* =====================================
+VERIFIED CUSTOMER BADGE — cta-primary style
+===================================== */
+
 .sidebar-slide-content button{
-    border:none;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
     background:#ff7705;
+    border:1px solid #ff7705;
     color:#ffffff;
     padding:14px 30px;
-    border-radius:999px;
-    font-size:18px;
+    border-radius:12px;
+    font-size:16px;
     font-weight:700;
     cursor:pointer;
-    transition:.3s;
+    outline:none;
+    transition:background .3s ease,border-color .3s ease,transform .3s ease,box-shadow .3s ease,color .3s ease;
 }
 
 .sidebar-slide-content button:hover{
-    background:#ff8c24;
+    background:#ff8b1f;
+    transform:translateY(-2px);
+    box-shadow:0 14px 35px rgba(255,119,5,.25);
+}
+
+.sidebar-slide-content button:focus{
+    outline:none;
+    box-shadow:0 14px 35px rgba(255,119,5,.25);
 }
 
 /* =====================================
@@ -267,16 +282,13 @@ CTA
 }
 
 /* =====================================
-PRIMARY BUTTON
+TALK TO AN EXPERT BUTTON
 ===================================== */
 
-.primary-btn,
-.primary-btn:link,
-.primary-btn:visited{
-    display:flex;
+.primary-btn{
+    display:inline-flex;
     align-items:center;
     justify-content:center;
-
     width:100%;
     height:60px;
 
@@ -284,131 +296,101 @@ PRIMARY BUTTON
     border:1px solid #ff7705;
     border-radius:12px;
 
-    color:#ffffff !important;
-    text-decoration:none !important;
-
+    color:#ffffff;
+    text-decoration:none;
     font-size:17px;
     font-weight:700;
 
     cursor:pointer;
-
     position:relative;
     overflow:hidden;
 
-    outline:none !important;
-    box-shadow:none;
-    filter:none;
-
+    outline:none;
     appearance:none;
     -webkit-appearance:none;
-    -moz-appearance:none;
-
     -webkit-tap-highlight-color:transparent;
 
     transition:
         background .3s ease,
         border-color .3s ease,
-        color .3s ease,
         transform .3s ease,
         box-shadow .3s ease;
 }
 
-/* Remove pseudo elements */
-
 .primary-btn::before,
 .primary-btn::after{
-    display:none !important;
     content:none !important;
+    display:none !important;
 }
-
-/* Hover */
 
 .primary-btn:hover{
-    background:#ff8b1f !important;
-    border-color:#ff8b1f !important;
-    color:#ffffff !important;
+    background:#ff8b1f;
+    border-color:#ff8b1f;
+    color:#ffffff;
 
     transform:translateY(-2px);
-
-    box-shadow:
-        0 14px 35px rgba(255,119,5,.25) !important;
+    box-shadow:0 14px 35px rgba(255,119,5,.25);
 }
-
-/* Active / Focus */
 
 .primary-btn:focus,
 .primary-btn:focus-visible,
 .primary-btn:active{
-    background:#ff8b1f !important;
-    border-color:#ff8b1f !important;
-    color:#ffffff !important;
+    background:#ff8b1f;
+    border-color:#ff8b1f;
+    color:#ffffff;
 
     outline:none !important;
-
-    box-shadow:
-        0 14px 35px rgba(255,119,5,.25) !important;
+    box-shadow:0 14px 35px rgba(255,119,5,.25);
 }
-
-/* Firefox */
-
-.primary-btn::-moz-focus-inner{
-    border:0;
-}
-
-/* Safari */
-
-.primary-btn::-webkit-details-marker{
-    display:none;
-}
-
 /* =====================================
 RESPONSIVE
 ===================================== */
-@media (max-width:991px){
 
-    .sidebar{
-        position:relative;
-        top:auto;
-        width:100%;
-    }
+@media(max-width:991px){
 
-    .sidebar-client{
-        height:300px;
-    }
+.sidebar{
+    position:relative;
+    top:auto;
+}
 
-    .sidebar-slide-card{
-        padding:24px;
-    }
+.sidebar-client{
+    height:300px;
+}
 
-    .sidebar-slide-content h3{
-        font-size:28px;
-    }
+.sidebar-slide-card{
+    padding:24px;
+}
 
-    .sidebar-slide-content p{
-        font-size:16px;
-    }
+.sidebar-slide-content h3{
+    font-size:28px;
+}
 
-    .sidebar-card h5{
-        font-size:18px;
-    }
+.sidebar-slide-content p{
+    font-size:16px;
+}
 
-    .sidebar td{
-        font-size:16px;
-    }
+.sidebar-card h5{
+    font-size:18px;
+}
 
-    .metric-row span{
-        font-size:15px;
-    }
+.sidebar td{
+    font-size:16px;
+}
 
-    .topic{
-        font-size:15px;
-    }
+.metric-row span{
+    font-size:15px;
+}
 
-    .sidebar-cta h4{
-        font-size:28px;
-    }
+.topic{
+    font-size:15px;
+}
 
-    .sidebar-cta p{
-        font-size:16px;
-    }
+.sidebar-cta h4{
+    font-size:28px;
+}
+
+.sidebar-cta p{
+    font-size:16px;
+}
+
 }
