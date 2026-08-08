@@ -35,6 +35,36 @@
 }
 
 @media (max-width: 620px) {
-  .filters { padding: 14px; }
-  .search { min-width: 200px; }
+  /* Stacked full-width, this block is tall enough that sticking it to the
+     top would bury the cards underneath as you scroll - let it scroll away
+     with the page instead. */
+  .filtersWrap {
+    position: static;
+  }
+  /* Horizontal scrolling row of pills doesn't work once there are 5 tabs plus
+     a search box - stack everything full-width instead, like the vertical
+     "Search By Category" list on /blog. */
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+    overflow: visible;
+    gap: 10px;
+    padding: 14px;
+  }
+  .filterBtn {
+    width: 100%;
+    text-align: left;
+    border-radius: 10px;
+    padding: 12px 16px;
+  }
+  .filterBtn.active {
+    background: rgba(255, 122, 26, .08);
+    color: var(--navy);
+    border: 1.5px solid var(--orange);
+  }
+  .search {
+    margin-left: 0;
+    width: 100%;
+    min-width: 0;
+  }
 }
