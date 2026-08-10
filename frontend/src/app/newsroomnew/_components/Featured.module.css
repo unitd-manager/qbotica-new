@@ -71,8 +71,13 @@
   );
 }
 
-/* All and Media: plain photo banner, no copy on top - so no scrim either. */
+/* All and Media: the editor uploads a finished graphic with its own
+   headline/CTA baked in, so it must show in full rather than being cropped
+   to the panel's fixed height - no scrim, no forced height, natural aspect. */
+.imageOnly { padding: 0; min-height: 0; }
+.imageOnly .featureBg { position: relative; }
 .imageOnly .featureBg::after { display: none; }
+.imageOnly .featureBg img { height: auto; object-fit: contain; }
 .featureCover { position: absolute; inset: 0; z-index: 3; }
 
 .featureContent { position: relative; z-index: 2; max-width: 650px; }
@@ -109,6 +114,7 @@
 }
 @media (max-width: 620px) {
   .featureMain { min-height: 340px; padding: 24px; }
+  .imageOnly { min-height: 0; padding: 0; }
   .featureContent h3 { font-size: 28px; margin: 14px 0; }
   /* Narrow cards run the copy edge-to-edge, so the left-to-right scrim used
      on desktop leaves the right side of the text over bare photo. Switch to
@@ -127,6 +133,7 @@
    an even taller sliver at that ratio. */
 @media (max-width: 420px) {
   .featureMain { min-height: 260px; padding: 20px; }
+  .imageOnly { min-height: 0; padding: 0; }
   .featureContent h3 { font-size: 23px; margin: 10px 0; }
   .featureContent p { font-size: 14px; }
   .btn { padding: 11px 16px; font-size: 13px; }
