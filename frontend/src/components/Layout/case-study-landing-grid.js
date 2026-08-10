@@ -24,6 +24,8 @@ const filterStyles = {
     margin: '0 auto',
     padding: '0 20px 6px',
     WebkitOverflowScrolling: 'touch',
+    scrollbarWidth: 'none',
+    msOverflowStyle: 'none',
   },
 };
 
