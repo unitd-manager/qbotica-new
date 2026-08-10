@@ -324,11 +324,17 @@ function getCategoryStats(layouts) {
   return stats.map((s) => ({ name: s.title, desc: s.description }));
 }
 
+// Editors type this by hand in WP admin, so it arrives as "All," or
+// "Press " as often as "press" - normalise before it's used as a lookup key.
+function normalizeCategoryKey(value) {
+  return String(value || 'all').trim().toLowerCase().replace(/[^a-z]+$/, '') || 'all';
+}
+
 function getFeatured(layouts) {
   const items = findLayout(layouts, 'insights_featured')?.items || [];
   const byCategory = {};
   items.forEach((item) => {
-    byCategory[item.category || 'all'] = {
+    byCategory[normalizeCategoryKey(item.category)] = {
       heading: item.heading || '',
       intro: item.description || '',
       badge: item.badge || '',
@@ -336,6 +342,9 @@ function getFeatured(layouts) {
       text: item.text || '',
       linkLabel: item.link_label || '',
       url: item.link?.url || '',
+      // ACF image field: an image array/object returns `.url`, an image URL
+      // field returns the string directly - accept either.
+      image: (typeof item.image === 'string' ? item.image : item.image?.url) || '',
     };
   });
   return byCategory;

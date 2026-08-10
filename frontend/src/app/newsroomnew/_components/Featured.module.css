@@ -42,7 +42,40 @@
 .blog { background: linear-gradient(135deg, #192653, #5856b9); }
 .media { background: linear-gradient(135deg, #3c1653, #9e3e91); }
 
-.featureContent { position: relative; max-width: 650px; }
+/* Photo fills the whole panel and sits under a scrim that darkens the left
+   side, where the copy goes, and fades out over the right. Editors pick this
+   image per tab in WP admin - the gradient above stays as the fallback while
+   it's unset. */
+.featureBg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.featureBg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.featureBg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(6, 22, 42, .92) 0%,
+    rgba(6, 22, 42, .82) 38%,
+    rgba(6, 22, 42, .35) 70%,
+    rgba(6, 22, 42, .15) 100%
+  );
+}
+
+/* All and Media: plain photo banner, no copy on top - so no scrim either. */
+.imageOnly .featureBg::after { display: none; }
+.featureCover { position: absolute; inset: 0; z-index: 3; }
+
+.featureContent { position: relative; z-index: 2; max-width: 650px; }
 .featureContent h3 { font-size: 38px; line-height: 1.1; letter-spacing: -1.4px; margin: 18px 0; }
 .featureContent p { color: #dce9f4; line-height: 1.65; }
 
@@ -75,6 +108,26 @@
   .sectionHead { align-items: start; flex-direction: column; }
 }
 @media (max-width: 620px) {
-  .featureMain { min-height: 430px; padding: 28px; }
-  .featureContent h3 { font-size: 31px; }
+  .featureMain { min-height: 340px; padding: 24px; }
+  .featureContent h3 { font-size: 28px; margin: 14px 0; }
+  /* Narrow cards run the copy edge-to-edge, so the left-to-right scrim used
+     on desktop leaves the right side of the text over bare photo. Switch to
+     a bottom-heavy scrim instead, since the copy always sits at the bottom. */
+  .featureBg::after {
+    background: linear-gradient(
+      180deg,
+      rgba(6, 22, 42, .18) 0%,
+      rgba(6, 22, 42, .6) 45%,
+      rgba(6, 22, 42, .93) 100%
+    );
+  }
+}
+/* Card height shrinks further on phones - the fixed 340px above still reads
+   as oversized once the card is only ~300px wide, since the photo crops to
+   an even taller sliver at that ratio. */
+@media (max-width: 420px) {
+  .featureMain { min-height: 260px; padding: 20px; }
+  .featureContent h3 { font-size: 23px; margin: 10px 0; }
+  .featureContent p { font-size: 14px; }
+  .btn { padding: 11px 16px; font-size: 13px; }
 }
