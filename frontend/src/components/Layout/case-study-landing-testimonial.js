@@ -1,18 +1,16 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { DivTag } from '../Common/HTMLTags';
 import './case-study-landing-style.css';
 
 export default function CaseStudyLandingTestimonials({ data }) {
+  const [activeCard, setActiveCard] = useState(null);
+
   useEffect(() => {
     console.log('========== Testimonials ==========');
     console.log('Props Data:', data);
     console.log('Testimonials:', data?.testimonials);
-
-    if (data?.testimonials?.length > 0) {
-      console.log('First Testimonial:', data.testimonials[0]);
-    }
   }, [data]);
 
   if (!data) return null;
@@ -24,45 +22,49 @@ export default function CaseStudyLandingTestimonials({ data }) {
       <DivTag className="tb-inner">
 
         {testimonials.length > 0 ? (
-          testimonials.map((item, index) => {
-            console.log('Rendering Testimonial:', item);
+          testimonials.map((item, index) => (
+            <DivTag
+              key={item.id || index}
+              className={`tb-card ${
+                activeCard === (item.id || index) ? 'expanded' : ''
+              }`}
+              onClick={() =>
+                setActiveCard(
+                  activeCard === (item.id || index)
+                    ? null
+                    : (item.id || index)
+                )
+              }
+            >
+              {/* Quote */}
+              <DivTag className="tb-quote">
+                {item.quote}
+              </DivTag>
 
-            return (
-              <DivTag
-                key={item.id || index}
-                className="tb-card"
-              >
-               
-                {/* Quote */}
-                <DivTag className="tb-quote">
-                  {item.quote}
+              {/* Author */}
+              <DivTag className="tb-cite">
+                <DivTag
+                  className="tb-avatar"
+                  style={{
+                    backgroundColor:
+                      item.avatar_background_color || '#0B1120',
+                  }}
+                >
+                  {item.initials}
                 </DivTag>
 
-                {/* Author */}
-                <DivTag className="tb-cite">
-                  <DivTag
-                    className="tb-avatar"
-                    style={{
-                      backgroundColor:
-                        item.avatar_background_color || '#0B1120',
-                    }}
-                  >
-                    {item.initials}
+                <DivTag>
+                  <DivTag className="tb-name">
+                    {item.name}
                   </DivTag>
 
-                  <DivTag>
-                    <DivTag className="tb-name">
-                      {item.name}
-                    </DivTag>
-
-                    <DivTag className="tb-role">
-                      {item.role}
-                    </DivTag>
+                  <DivTag className="tb-role">
+                    {item.role}
                   </DivTag>
                 </DivTag>
               </DivTag>
-            );
-          })
+            </DivTag>
+          ))
         ) : (
           <DivTag>No testimonials found.</DivTag>
         )}

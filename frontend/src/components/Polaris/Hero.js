@@ -29,13 +29,18 @@ export default function Hero({ slug }) {
   const extraBottomSpaceRef = useRef(0);
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_WP_API_URL}/wp/v2/pages?slug=${slug}&status=publish`)
+    fetch(
+  `${process.env.NEXT_PUBLIC_WP_API_URL}/wp/v2/customer-stories?slug=${slug}&status=publish`
+)
         .then(res => res.json())
         .then(data => {
-          console.log('FULL acf data:', data[0]?.acf);
-          setAcf(data[0]?.acf);
-          setLoading(false);
-        })
+    console.log(data);
+    console.log(data[0]);
+    console.log(data[0]?.acf);
+
+    setAcf(data[0]?.acf);
+    setLoading(false);
+})
         .catch(err => {
             console.error('Error:', err);
             setLoading(false);
@@ -153,8 +158,7 @@ export default function Hero({ slug }) {
   // Its value is an ARRAY of layout objects, each tagged with
   // "acf_fc_layout" telling us which layout it is.
   // ─────────────────────────────────────────────────────────
-  const flexibleContent = acf.polaris_transportation || [];
-
+  const flexibleContent = acf.customer_story_detail || [];
   const getLayout = (layoutName) =>
     flexibleContent.find((item) => item.acf_fc_layout === layoutName) || {};
 
