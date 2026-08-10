@@ -289,7 +289,7 @@ async function getBlogResources() {
 
 // The WP page that carries this route's hero / stats / featured / newsletter
 // copy. It does not have to match the Next.js route name.
-const PAGE_SLUG = 'newsroomnew';
+const PAGE_SLUG = 'newsroom';
 
 async function fetchInsightsPage() {
   try {

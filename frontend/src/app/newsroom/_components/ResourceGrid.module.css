@@ -73,7 +73,17 @@
   font-weight: 800; color: #8795a6; margin-bottom: 10px;
 }
 .card h3 { font-size: 21px; line-height: 1.32; margin: 14px 0; color: var(--ink); font-weight: 700; font-family: var(--font-inter), Inter, sans-serif; }
-.card p { color: var(--muted); font-size: 14px; line-height: 1.6; }
+/* Descriptions come from WP admin and vary in length - clamp to 2 lines so
+   cards in the same row stay the same height regardless. */
+.card p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 .cardFooter {
   margin-top: auto; padding-top: 18px;
   display: flex; justify-content: space-between; align-items: center;
