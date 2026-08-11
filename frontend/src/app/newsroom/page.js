@@ -5,12 +5,18 @@ import CategoryStats from './_components/CategoryStats';
 import Hub from './_components/Hub';
 import Newsletter from './_components/Newsletter';
 import { fetchNewsroomPageData } from '@/lib/newsroom';
+import { generatePageMetadatas } from '@/lib/rankmath-utils';
 
-export const metadata = {
-  title: 'Insights & News | qBotica',
-  description:
-    'qBotica press releases, industry recognition, expert blog content and media, all in one connected destination.',
-};
+// Title/description are driven by the "Newsroom" WP page itself (via Rank
+// Math), same as every other WP-backed route - the strings below are only
+// the fallback if that page or Rank Math is unreachable.
+export async function generateMetadata() {
+  return generatePageMetadatas('newsroom', 'page', '', {
+    title: 'Insights & News | qBotica',
+    description:
+      'qBotica press releases, industry recognition, expert blog content and media, all in one connected destination.',
+  });
+}
 
 export const revalidate = 30;
 

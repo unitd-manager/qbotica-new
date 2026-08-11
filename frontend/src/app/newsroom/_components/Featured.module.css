@@ -80,7 +80,7 @@
 .imageOnly .featureBg img { height: auto; object-fit: contain; }
 .featureCover { position: absolute; inset: 0; z-index: 3; }
 
-.featureContent { position: relative; z-index: 2; max-width: 650px; }
+.featureContent { position: relative; z-index: 2; max-width: 650px; margin-bottom: 40px; }
 .featureContent h3 { font-size: 38px; line-height: 1.1; letter-spacing: -1.4px; margin: 18px 0; }
 .featureContent p { color: #dce9f4; line-height: 1.65; }
 
