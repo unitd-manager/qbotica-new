@@ -9,10 +9,11 @@ import { FEATURED } from '../_data/featured';
  * Section copy (heading / intro / button label) comes from the WP page
  * "insights-news" -> ACF layout "insights_featured", keyed by the active tab.
  *
- * The highlighted item itself is the FIRST card of the active category, so the
- * panel always mirrors the latest entry without anyone re-typing it. If a tab
- * has no cards yet, it falls back to the WP fields, then to the static copy in
- * _data/featured.js - so the panel never renders blank.
+ * The highlighted item's badge/title/text/url are whatever the editor set on
+ * that ACF item, so they can curate exactly what shows here. Only when a
+ * field is left blank does it fall back to the FIRST card of the active
+ * category (the latest entry), then to the static copy in _data/featured.js -
+ * so the panel never renders blank, but never overrides a deliberate choice.
  *
  * Panel background (`className`) and badge colour (`badgeClass`) stay driven by
  * the category - they're part of the design, not the content.
@@ -31,10 +32,10 @@ export default function Featured({ current, resources = [], featured = {} }) {
   const pool = current === 'all' ? resources : resources.filter((r) => r.category === current);
   const latest = imageOnly ? null : pool[0];
 
-  const badge = latest?.badge || wp.badge || template.badge;
-  const title = latest?.title || wp.title || template.title;
-  const text = latest?.desc || wp.text || template.text;
-  const url = latest?.url || wp.url || template.url;
+  const badge = wp.badge || latest?.badge || template.badge;
+  const title = wp.title || latest?.title || template.title;
+  const text = wp.text || latest?.desc || template.text;
+  const url = wp.url || latest?.url || template.url;
   // Panel photo is picked by the editor per tab in WP admin (insights_featured
   // -> image), not tied to any one post - falls back to the CSS gradient when
   // it's unset.
