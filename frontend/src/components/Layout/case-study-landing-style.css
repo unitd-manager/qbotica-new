@@ -803,14 +803,33 @@
 }
 
 .tb-inner {
+  position: relative;
   max-width: 1240px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
 }
 
+.tb-track {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+
+  /* ADD THESE */
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  padding: 4px;
+}
+
+.tb-track::-webkit-scrollbar {
+  display: none;
+}
 .tb-card {
+  flex: 0 0 calc((100% - 3rem) / 3);
   background: #FFFFFF;
   border: 1px solid #E5E7EB;
   border-radius: 14px;
@@ -845,12 +864,15 @@
 .tb-quote {
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 8; /* Show only 8 lines */
+  -webkit-line-clamp: 8;
   overflow: hidden;
   text-overflow: ellipsis;
 
   line-height: 1.7;
   transition: all 0.35s ease;
+
+  flex: 1;
+  width: 100%;
 }
 .tb-card.expanded .tb-quote {
   display: block;
@@ -873,9 +895,10 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  margin-top: 36px;
-}
 
+  margin-top: auto;
+  padding-top: 30px;
+}
 .tb-avatar {
   width: 34px;
   height: 34px;
@@ -900,20 +923,64 @@
   color: #6B7280; /* var(--muted) */
   margin-top: 1px;
 }
+.tb-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 46px;
+  height: 46px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,.12);
+
+  cursor: pointer;
+  z-index: 20;
+
+  font-size: 20px;
+  transition: .25s;
+}
+
+.tb-arrow:hover {
+  background: #FF7705;
+  color: #fff;
+}
+
+.tb-prev {
+  left: -22px;
+}
+
+.tb-next {
+  right: -22px;
+}
 
 /* Responsive Queries */
-@media(max-width: 1024px) {
-  .tb-inner {
-    grid-template-columns: 1fr 1fr;
-  }
+@media (max-width:1024px){
+
+.tb-card{
+    flex:0 0 calc((100% - 1.5rem)/2);
 }
 
-@media(max-width: 760px) {
-  .tb-inner {
-    grid-template-columns: 1fr;
-  }
 }
 
+@media (max-width:760px){
+
+.tb-card{
+    flex:0 0 100%;
+}
+
+.tb-prev{
+    left:5px;
+}
+
+.tb-next{
+    right:5px;
+}
+
+}
 /* ─── CTA PANEL BACKGROUND & GLOW ────────────────────────────── */
 .cta {
   padding: 5.5rem clamp(1.5rem, 6vw, 5rem);
