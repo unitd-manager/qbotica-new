@@ -31,15 +31,16 @@
 .card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
 
 .thumb { height: 230px; position: relative; overflow: hidden; }
-/* Anchor to the top so a taller image loses its bottom edge rather than having
-   the subject's head cropped off. */
+/* Centered crop - press/recognition images are often branded graphics with a
+   logo near the bottom, so anchoring to the top cut those off. Center loses
+   a bit off both edges instead of losing one edge entirely. */
 .photo {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top;
+  object-position: center;
   display: block;
 }
 .thumb::after {

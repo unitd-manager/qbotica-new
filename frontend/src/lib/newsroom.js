@@ -63,8 +63,8 @@ function parseAcfDate(value) {
   return Number.isNaN(parsed.getTime()) ? null : parsed.toISOString();
 }
 
-// Card dates: year alone for press / recognition / media, MM/YYYY for blog.
-const yearOf = (date) => (date ? String(new Date(date).getFullYear()) : '');
+// Card dates: MM/YYYY for blog. Press/recognition/media cards don't show a
+// date at all per the client - `date` itself still drives their sort order.
 const monthYearOf = (date) => {
   if (!date) return '';
   const d = new Date(date);
@@ -185,7 +185,7 @@ function normalizeInsightPost(post, index) {
     image,
     title,
     desc,
-    meta: yearOf(date),
+    meta: '',
     action: category === 'media' ? 'Watch →' : 'Read →',
     url,
     date,
