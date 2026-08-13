@@ -73,15 +73,9 @@ export default function Featured({ current, resources = [], featured = {} }) {
           )}
 
           {imageOnly ? (
-            // Whole banner is the click target - no copy drawn over the photo.
-            url && url !== '#' && (
-              <a
-                className={styles.featureCover}
-                href={url}
-                aria-label={title}
-                {...(url.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-              />
-            )
+            // All and Media are just the photo - not a click target, so
+            // no link wrapper regardless of whether a url is configured.
+            null
           ) : (
             <div className={styles.featureContent}>
               <span className={badgeClassName}>{badge}</span>

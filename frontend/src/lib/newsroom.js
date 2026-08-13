@@ -167,8 +167,13 @@ function normalizeInsightPost(post, index) {
   );
 
   // The date the announcement actually went out, which is rarely the day it was
-  // typed into WordPress. Falls back to the WP publish date when unset.
-  const date = parseAcfDate(acf.published_date) || post.date || null;
+  // typed into WordPress - so unlike blog posts, this deliberately does NOT
+  // fall back to the WP publish/import date. That date reflects whenever the
+  // post was bulk-imported (often years after the real event), which would
+  // otherwise sort undated posts above correctly-dated ones. Leaving it null
+  // instead sinks undated posts to the bottom until an editor sets the real
+  // date, rather than have them wrongly outrank dated content.
+  const date = parseAcfDate(acf.published_date);
 
   return {
     category,
