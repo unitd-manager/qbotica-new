@@ -90,19 +90,23 @@
 
 .more-case-body h4 {
     margin: 0;
-    flex: 1;
     color: #111827;
     font-size: 20px;
     font-weight: 700;
     line-height: 1.45;
+
+    /* Reserve space for approximately 4 lines */
+    min-height: calc(1.45em * 4);
+
+    margin-bottom: 24px;
 }
 
 .case-footer {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+
     margin-top: auto;
-    padding-top: 28px;
 }
 
 .case-footer span {

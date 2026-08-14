@@ -1,45 +1,90 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { DivTag } from '../Common/HTMLTags';
 import './case-study-landing-style.css';
 
 export default function CaseStudyLandingTestimonials({ data }) {
+  const [activeCard, setActiveCard] = useState(null);
+
+  const trackRef = useRef(null);
+
   useEffect(() => {
     console.log('========== Testimonials ==========');
     console.log('Props Data:', data);
     console.log('Testimonials:', data?.testimonials);
-
-    if (data?.testimonials?.length > 0) {
-      console.log('First Testimonial:', data.testimonials[0]);
-    }
   }, [data]);
 
   if (!data) return null;
 
   const { testimonials = [] } = data;
 
+  const scrollLeft = () => {
+    if (!trackRef.current) return;
+
+    const card = trackRef.current.querySelector('.tb-card');
+    if (!card) return;
+
+    trackRef.current.scrollBy({
+      left: -(card.offsetWidth + 24),
+      behavior: 'smooth',
+    });
+  };
+
+  const scrollRight = () => {
+    if (!trackRef.current) return;
+
+    const card = trackRef.current.querySelector('.tb-card');
+    if (!card) return;
+
+    trackRef.current.scrollBy({
+      left: card.offsetWidth + 24,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <DivTag className="testimonial-band">
+
       <DivTag className="tb-inner">
 
-        {testimonials.length > 0 ? (
-          testimonials.map((item, index) => {
-            console.log('Rendering Testimonial:', item);
+        <button
+          className="tb-arrow tb-prev"
+          onClick={scrollLeft}
+          type="button"
+        >
+          &#10094;
+        </button>
 
-            return (
+        <DivTag
+          className="tb-track"
+          ref={trackRef}
+        >
+
+          {testimonials.length > 0 ? (
+            testimonials.map((item, index) => (
               <DivTag
                 key={item.id || index}
-                className="tb-card"
+                className={`tb-card ${
+                  activeCard === (item.id || index)
+                    ? 'expanded'
+                    : ''
+                }`}
+                onClick={() =>
+                  setActiveCard(
+                    activeCard === (item.id || index)
+                      ? null
+                      : (item.id || index)
+                  )
+                }
               >
-               
-                {/* Quote */}
+
                 <DivTag className="tb-quote">
                   {item.quote}
                 </DivTag>
 
-                {/* Author */}
                 <DivTag className="tb-cite">
+
                   <DivTag
                     className="tb-avatar"
                     style={{
@@ -59,15 +104,27 @@ export default function CaseStudyLandingTestimonials({ data }) {
                       {item.role}
                     </DivTag>
                   </DivTag>
+
                 </DivTag>
+
               </DivTag>
-            );
-          })
-        ) : (
-          <DivTag>No testimonials found.</DivTag>
-        )}
+            ))
+          ) : (
+            <DivTag>No testimonials found.</DivTag>
+          )}
+
+        </DivTag>
+
+        <button
+          className="tb-arrow tb-next"
+          onClick={scrollRight}
+          type="button"
+        >
+          &#10095;
+        </button>
 
       </DivTag>
+
     </DivTag>
   );
 }

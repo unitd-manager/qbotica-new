@@ -63,8 +63,8 @@ function parseAcfDate(value) {
   return Number.isNaN(parsed.getTime()) ? null : parsed.toISOString();
 }
 
-// Card dates: year alone for press / recognition / media, MM/YYYY for blog.
-const yearOf = (date) => (date ? String(new Date(date).getFullYear()) : '');
+// Card dates: MM/YYYY for blog. Press/recognition/media cards don't show a
+// date at all per the client - `date` itself still drives their sort order.
 const monthYearOf = (date) => {
   if (!date) return '';
   const d = new Date(date);
@@ -167,8 +167,13 @@ function normalizeInsightPost(post, index) {
   );
 
   // The date the announcement actually went out, which is rarely the day it was
-  // typed into WordPress. Falls back to the WP publish date when unset.
-  const date = parseAcfDate(acf.published_date) || post.date || null;
+  // typed into WordPress - so unlike blog posts, this deliberately does NOT
+  // fall back to the WP publish/import date. That date reflects whenever the
+  // post was bulk-imported (often years after the real event), which would
+  // otherwise sort undated posts above correctly-dated ones. Leaving it null
+  // instead sinks undated posts to the bottom until an editor sets the real
+  // date, rather than have them wrongly outrank dated content.
+  const date = parseAcfDate(acf.published_date);
 
   return {
     category,
@@ -180,7 +185,7 @@ function normalizeInsightPost(post, index) {
     image,
     title,
     desc,
-    meta: yearOf(date),
+    meta: '',
     action: category === 'media' ? 'Watch →' : 'Read →',
     url,
     date,
@@ -289,7 +294,7 @@ async function getBlogResources() {
 
 // The WP page that carries this route's hero / stats / featured / newsletter
 // copy. It does not have to match the Next.js route name.
-const PAGE_SLUG = 'newsroomnew';
+const PAGE_SLUG = 'newsroom';
 
 async function fetchInsightsPage() {
   try {
@@ -324,11 +329,17 @@ function getCategoryStats(layouts) {
   return stats.map((s) => ({ name: s.title, desc: s.description }));
 }
 
+// Editors type this by hand in WP admin, so it arrives as "All," or
+// "Press " as often as "press" - normalise before it's used as a lookup key.
+function normalizeCategoryKey(value) {
+  return String(value || 'all').trim().toLowerCase().replace(/[^a-z]+$/, '') || 'all';
+}
+
 function getFeatured(layouts) {
   const items = findLayout(layouts, 'insights_featured')?.items || [];
   const byCategory = {};
   items.forEach((item) => {
-    byCategory[item.category || 'all'] = {
+    byCategory[normalizeCategoryKey(item.category)] = {
       heading: item.heading || '',
       intro: item.description || '',
       badge: item.badge || '',
@@ -336,6 +347,9 @@ function getFeatured(layouts) {
       text: item.text || '',
       linkLabel: item.link_label || '',
       url: item.link?.url || '',
+      // ACF image field: an image array/object returns `.url`, an image URL
+      // field returns the string directly - accept either.
+      image: (typeof item.image === 'string' ? item.image : item.image?.url) || '',
     };
   });
   return byCategory;
