@@ -1,7 +1,8 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from './MediaGrid.module.css';
+import Pagination from './Pagination';
 
 const PAGE_SIZE = 9;
 
@@ -23,9 +24,10 @@ function PlayIcon() {
  */
 export default function MediaGrid({ query, resources = [] }) {
   const q = (query || '').trim().toLowerCase();
+  const sectionRef = useRef(null);
 
-  const [shown, setShown] = useState(PAGE_SIZE);
-  useEffect(() => setShown(PAGE_SIZE), [query]);
+  const [page, setPage] = useState(1);
+  useEffect(() => setPage(1), [query]);
 
   const items = resources.filter((r) => {
     if (r.category !== 'media') return false;
@@ -33,11 +35,17 @@ export default function MediaGrid({ query, resources = [] }) {
     return !q || haystack.includes(q);
   });
 
-  const page = items.slice(0, shown);
-  const remaining = items.length - page.length;
+  const totalPages = Math.max(1, Math.ceil(items.length / PAGE_SIZE));
+  const safePage = Math.min(page, totalPages);
+  const pageItems = items.slice((safePage - 1) * PAGE_SIZE, safePage * PAGE_SIZE);
+
+  function goToPage(next) {
+    setPage(next);
+    sectionRef.current?.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  }
 
   return (
-    <section className={styles.section} id="latest">
+    <section className={styles.section} id="latest" ref={sectionRef}>
       <div className={styles.container}>
         <div className={styles.sectionHead}>
           <div>
@@ -50,7 +58,7 @@ export default function MediaGrid({ query, resources = [] }) {
         {items.length > 0 ? (
           <>
             <div className={styles.grid}>
-              {page.map((m, i) => {
+              {pageItems.map((m, i) => {
                 const external = m.url && m.url.startsWith('http');
                 const linkProps = {
                   href: m.url || '#',
@@ -98,13 +106,7 @@ export default function MediaGrid({ query, resources = [] }) {
               })}
             </div>
 
-            {remaining > 0 && (
-              <div className={styles.loadMoreWrap}>
-                <button className={styles.loadMore} onClick={() => setShown((n) => n + PAGE_SIZE)}>
-                  Load more ({remaining})
-                </button>
-              </div>
-            )}
+            <Pagination currentPage={safePage} totalPages={totalPages} onPageChange={goToPage} />
           </>
         ) : (
           <div className={styles.empty}>No media matches your current search.</div>

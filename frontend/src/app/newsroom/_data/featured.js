@@ -56,6 +56,6 @@ export const FEATURED = {
     title: 'Polaris Transportation transforms complex logistics processes',
     text: 'Hear directly from the customer about operational improvements delivered through intelligent automation.',
     link: 'Watch the video →',
-    url: '/media-and-videos',
+    url: 'https://irpaai.webinargeek.com/the-secret-to-scalable-ai-security-cost-data-management',
   },
 };

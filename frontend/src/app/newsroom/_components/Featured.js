@@ -36,6 +36,10 @@ export default function Featured({ current, resources = [], featured = {} }) {
   const title = wp.title || latest?.title || template.title;
   const text = wp.text || latest?.desc || template.text;
   const url = wp.url || latest?.url || template.url;
+  // "All" has no link yet - the client will add one later, so it shouldn't
+  // fall back to the static default in the meantime. Media keeps that
+  // fallback since it already has a real link.
+  const imageOnlyUrl = current === 'all' ? wp.url : url;
   // Panel photo is picked by the editor per tab in WP admin (insights_featured
   // -> image), not tied to any one post - falls back to the CSS gradient when
   // it's unset.
@@ -73,9 +77,16 @@ export default function Featured({ current, resources = [], featured = {} }) {
           )}
 
           {imageOnly ? (
-            // All and Media are just the photo - not a click target, so
-            // no link wrapper regardless of whether a url is configured.
-            null
+            // Both link out once a url exists - All only from wp-admin (no
+            // static fallback yet), Media from wp-admin or its default.
+            imageOnlyUrl && imageOnlyUrl !== '#' && (
+              <a
+                className={styles.featureCover}
+                href={imageOnlyUrl}
+                aria-label={title}
+                {...(imageOnlyUrl.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+              />
+            )
           ) : (
             <div className={styles.featureContent}>
               <span className={badgeClassName}>{badge}</span>

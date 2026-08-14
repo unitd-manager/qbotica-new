@@ -30,7 +30,10 @@
 }
 .card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
 
-.thumb { height: 230px; position: relative; overflow: hidden; }
+/* Square, matching the approved /blog card dimensions (390x390) - aspect-ratio
+   instead of a fixed pixel height so it stays square as the grid goes from
+   3 to 2 to 1 columns across breakpoints. */
+.thumb { aspect-ratio: 1 / 1; position: relative; overflow: hidden; }
 /* Centered crop - press/recognition images are often branded graphics with a
    logo near the bottom, so anchoring to the top cut those off. Center loses
    a bit off both edges instead of losing one edge entirely. */
@@ -73,7 +76,7 @@
   font-size: 11px; text-transform: uppercase; letter-spacing: .8px;
   font-weight: 800; color: #8795a6; margin-bottom: 10px;
 }
-.card h3 { font-size: 21px; line-height: 1.32; margin: 14px 0; color: var(--ink); font-weight: 700; font-family: var(--font-inter), Inter, sans-serif; }
+.card h3 { font-size: 21px; line-height: 1.32; letter-spacing: -.4px; margin: 14px 0; color: var(--ink); font-weight: 700; font-family: var(--font-inter), Inter, sans-serif; }
 /* Descriptions come from WP admin and vary in length - clamp to 2 lines so
    cards in the same row stay the same height regardless. */
 .card p {
