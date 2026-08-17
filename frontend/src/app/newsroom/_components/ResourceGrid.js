@@ -1,8 +1,9 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from './ResourceGrid.module.css';
 import BlogTabs from './BlogTabs';
+import Pagination from './Pagination';
 
 const PAGE_SIZE = 12;
 
@@ -19,12 +20,13 @@ export default function ResourceGrid({
   resources = [],
 }) {
   const q = query.trim().toLowerCase();
+  const sectionRef = useRef(null);
 
-  // Only render a page of cards at a time - the hub can hold 100+ items once
-  // every category is filled in, and rendering them all at once (each with its
-  // own image) makes the first paint noticeably slower.
-  const [shown, setShown] = useState(PAGE_SIZE);
-  useEffect(() => setShown(PAGE_SIZE), [current, query, blogSub]);
+  // Numbered pages instead of "Load more" - matches the /blog page. Resets
+  // to page 1 whenever the filter/search changes so you're not left on a
+  // now out-of-range page.
+  const [page, setPage] = useState(1);
+  useEffect(() => setPage(1), [current, query, blogSub]);
 
   const visible = resources.filter((r) => {
     const categoryMatch = current === 'all' || r.category === current;
@@ -43,11 +45,17 @@ export default function ResourceGrid({
       ? visible.filter((r, i, arr) => arr.findIndex((x) => x.title === r.title) === i)
       : visible;
 
-  const page = items.slice(0, shown);
-  const remaining = items.length - page.length;
+  const totalPages = Math.max(1, Math.ceil(items.length / PAGE_SIZE));
+  const safePage = Math.min(page, totalPages);
+  const pageItems = items.slice((safePage - 1) * PAGE_SIZE, safePage * PAGE_SIZE);
+
+  function goToPage(next) {
+    setPage(next);
+    sectionRef.current?.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  }
 
   return (
-    <section className={styles.latest} id="latest">
+    <section className={styles.latest} id="latest" ref={sectionRef}>
       <div className={styles.container}>
         <div className={styles.sectionHead}>
           <div>
@@ -64,14 +72,14 @@ export default function ResourceGrid({
         {items.length > 0 ? (
           <>
             <div className={styles.grid}>
-              {page.map((r, i) => {
+              {pageItems.map((r, i) => {
                 const Wrapper = r.url ? 'a' : 'article';
                 const linkProps = r.url
                   ? { href: r.url, ...(r.url.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {}) }
                   : {};
                 return (
                   <Wrapper className={styles.card} key={`${r.category}-${r.title}-${i}`} {...linkProps}>
-                    <div className={`${styles.thumb} ${r.image ? '' : styles[r.thumb]}`}>
+                    <div className={`${styles.thumb} ${r.category === 'blog' ? styles.thumbSquare : ''} ${r.image ? '' : styles[r.thumb]}`}>
                       {r.image ? (
                         <img className={styles.photo} src={r.image} alt={r.title} loading="lazy" decoding="async" />
                       ) : (
@@ -97,13 +105,7 @@ export default function ResourceGrid({
               })}
             </div>
 
-            {remaining > 0 && (
-              <div className={styles.loadMoreWrap}>
-                <button className={styles.loadMore} onClick={() => setShown((n) => n + PAGE_SIZE)}>
-                  Load more ({remaining})
-                </button>
-              </div>
-            )}
+            <Pagination currentPage={safePage} totalPages={totalPages} onPageChange={goToPage} />
           </>
         ) : (
           <div className={styles.empty}>No resources match your current search.</div>

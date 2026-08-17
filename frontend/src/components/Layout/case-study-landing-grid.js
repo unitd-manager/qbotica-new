@@ -8,6 +8,7 @@ import {
   SpanTag,
 } from '../Common/HTMLTags';
 import './case-study-landing-style.css';
+
 const filterStyles = {
   filterOuter: {
     padding: '24px 0',
@@ -59,22 +60,22 @@ export default function CaseStudiesLandingGrid({ data }) {
   const filteredCases =
     activeFilter === 'all'
       ? cases
-      : cases.filter(
-          (item) => item.category === activeFilter
-        );
+      : cases.filter((item) => item.category === activeFilter);
+
+  const handleCardClick = (link) => {
+    if (!link) return;
+    window.open(link, '_blank', 'noopener,noreferrer');
+  };
 
   return (
     <>
       {/* Filter */}
       <DivTag
-  className="filter-outer"
-  id="case-study-landing-grid"
-  style={filterStyles.filterOuter}
->
-  <DivTag
-    className="filter-inner"
-    style={filterStyles.filterInner}
-  >
+        className="filter-outer"
+        id="case-study-landing-grid"
+        style={filterStyles.filterOuter}
+      >
+        <DivTag className="filter-inner" style={filterStyles.filterInner}>
           {filters.map((filter, index) => (
             <button
               key={filter.id || index}
@@ -105,8 +106,6 @@ export default function CaseStudiesLandingGrid({ data }) {
       <DivTag className="grid-wrap">
         <DivTag className="case-grid">
           {filteredCases.map((caseItem, index) => {
-            console.log('Rendering Case:', caseItem);
-
             const image =
               typeof caseItem.image === 'string'
                 ? caseItem.image
@@ -116,6 +115,8 @@ export default function CaseStudiesLandingGrid({ data }) {
               <article
                 key={caseItem.id || index}
                 className="case-card reveal visible"
+                onClick={() => handleCardClick(caseItem.link)}
+                style={{ cursor: caseItem.link ? 'pointer' : 'default' }}
               >
                 <DivTag
                   className="cc-image"
@@ -143,24 +144,17 @@ export default function CaseStudiesLandingGrid({ data }) {
                   <DivTag className="cc-tags">
                     {Array.isArray(caseItem.tags) &&
                       caseItem.tags.map((tag, tagIndex) => (
-                        <SpanTag
-                          key={tagIndex}
-                          className="cc-tag"
-                        >
+                        <SpanTag key={tagIndex} className="cc-tag">
                           {tag.tag}
                         </SpanTag>
                       ))}
                   </DivTag>
 
                   {/* Title */}
-                  <DivTag className="cc-title">
-                    {caseItem.title}
-                  </DivTag>
+                  <DivTag className="cc-title">{caseItem.title}</DivTag>
 
                   {/* Description */}
-                  <DivTag className="cc-desc">
-                    {caseItem.description}
-                  </DivTag>
+                  <DivTag className="cc-desc">{caseItem.description}</DivTag>
 
                   {/* Footer */}
                   <DivTag className="cc-footer">
@@ -174,6 +168,7 @@ export default function CaseStudiesLandingGrid({ data }) {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="cc-link"
+                        onClick={(e) => e.stopPropagation()}
                       >
                         Read story →
                       </a>

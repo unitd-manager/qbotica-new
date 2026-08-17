@@ -73,9 +73,16 @@ export default function Featured({ current, resources = [], featured = {} }) {
           )}
 
           {imageOnly ? (
-            // All and Media are just the photo - not a click target, so
-            // no link wrapper regardless of whether a url is configured.
-            null
+            // Whole banner is the click target - wp-admin link if set,
+            // otherwise the static default in _data/featured.js.
+            url && url !== '#' && (
+              <a
+                className={styles.featureCover}
+                href={url}
+                aria-label={title}
+                {...(url.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+              />
+            )
           ) : (
             <div className={styles.featureContent}>
               <span className={badgeClassName}>{badge}</span>

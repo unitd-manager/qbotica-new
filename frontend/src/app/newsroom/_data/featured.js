@@ -12,7 +12,7 @@ export const FEATURED = {
     title: 'qBotica and Atolio partner to power AI agents with secure enterprise knowledge',
     text: 'Discover how the partnership connects people, data and institutional knowledge to make AI-powered work more useful, governed and scalable.',
     link: 'Read the announcement →',
-    url: 'https://www.qbotica.com/newsroom/qbotica-and-atolio-partner-to-power-ai-agents-with-secure-instant-access-to-enterprise-knowledge',
+    url: 'https://smallteambigscale.com/podcast/building-a-multimillion-dollar-service-firm-interview-with-mahesh-vinayagam-qbotica',
   },
   press: {
     heading: 'Latest press release',
@@ -56,6 +56,6 @@ export const FEATURED = {
     title: 'Polaris Transportation transforms complex logistics processes',
     text: 'Hear directly from the customer about operational improvements delivered through intelligent automation.',
     link: 'Watch the video →',
-    url: '/media-and-videos',
+    url: 'https://irpaai.webinargeek.com/the-secret-to-scalable-ai-security-cost-data-management',
   },
 };
