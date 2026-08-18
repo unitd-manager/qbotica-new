@@ -5,8 +5,11 @@ import './MoreCaseStudies.css';
 export default function MoreCaseStudies({ acf }) {
 
     const {
+        section_title,
         more_case_studies,
         view_all_link,
+        view_all_label,
+        read_more_label,
     } = acf || {};
 
     if (!acf) return null;
@@ -18,7 +21,7 @@ export default function MoreCaseStudies({ acf }) {
 
                 <div className="more-case-header">
 
-                    <h2>More Case Studies</h2>
+                    {section_title && <h2>{section_title}</h2>}
 
                     {view_all_link && (
                         <a
@@ -26,7 +29,7 @@ export default function MoreCaseStudies({ acf }) {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            View all stories →
+                            {view_all_label}
                         </a>
                     )}
 
@@ -57,13 +60,15 @@ export default function MoreCaseStudies({ acf }) {
                                         <span>• {item.industry}</span>
                                     )}
 
-                                    <a
-                                        href={item.card_link || view_all_link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        Read →
-                                    </a>
+                                    {item.card_link && (
+                                        <a
+                                            href={item.card_link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            {item.read_label || read_more_label}
+                                        </a>
+                                    )}
 
                                 </div>
 
