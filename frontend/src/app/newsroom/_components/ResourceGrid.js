@@ -79,7 +79,7 @@ export default function ResourceGrid({
                   : {};
                 return (
                   <Wrapper className={styles.card} key={`${r.category}-${r.title}-${i}`} {...linkProps}>
-                    <div className={`${styles.thumb} ${r.image ? '' : styles[r.thumb]}`}>
+                    <div className={`${styles.thumb} ${current=== 'blog' ? styles.thumbSquare : ''} ${r.image ? '' : styles[r.thumb]}`}>
                       {r.image ? (
                         <img className={styles.photo} src={r.image} alt={r.title} loading="lazy" decoding="async" />
                       ) : (

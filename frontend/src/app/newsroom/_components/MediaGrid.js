@@ -52,7 +52,7 @@ export default function MediaGrid({ query, resources = [] }) {
             <div className={styles.eyebrow}>Browse the hub</div>
             <h2>Videos, webinars &amp; interviews</h2>
           </div>
-          <p>Customer stories, product demos and on-demand conversations with qBotica leaders.</p>
+          
         </div>
 
         {items.length > 0 ? (
