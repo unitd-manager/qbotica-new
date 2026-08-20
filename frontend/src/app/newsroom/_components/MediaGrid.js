@@ -106,7 +106,7 @@ export default function MediaGrid({ query, resources = [] }) {
               })}
             </div>
 
-            <Pagination currentPage={safePage} totalPages={totalPages} onPageChange={goToPage} />
+            <Pagination currentPage={safePage} totalPages={totalPages} onPageChange={goToPage} dark />
           </>
         ) : (
           <div className={styles.empty}>No media matches your current search.</div>

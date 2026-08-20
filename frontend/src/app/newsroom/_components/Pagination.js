@@ -16,11 +16,11 @@ function pageWindow(current, total) {
   return Array.from({ length: end - start + 1 }, (_, i) => start + i);
 }
 
-export default function Pagination({ currentPage, totalPages, onPageChange }) {
+export default function Pagination({ currentPage, totalPages, onPageChange, dark = false }) {
   if (totalPages <= 1) return null;
 
   return (
-    <nav className={styles.pagination} aria-label="Pagination">
+    <nav className={`${styles.pagination} ${dark ? styles.dark : ''}`} aria-label="Pagination">
       {pageWindow(currentPage, totalPages).map((page) => (
         <button
           key={page}

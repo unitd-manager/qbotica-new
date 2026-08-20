@@ -32,3 +32,12 @@
   cursor: pointer;
 }
 .next:hover { text-decoration: underline; color: var(--navy, #0b2442); }
+
+/* Media's grid sits on a dark background - the default navy text would be
+   nearly invisible there, so swap in the light palette already used
+   elsewhere on that tile (see MediaGrid.module.css .date/.card p). */
+.dark .pageLink { color: #a9bbd0; }
+.dark .pageLink:hover { color: #fff; }
+.dark .pageLink.active { color: #fff; }
+.dark .next { color: #6f88a5; }
+.dark .next:hover { color: #a9bbd0; }
