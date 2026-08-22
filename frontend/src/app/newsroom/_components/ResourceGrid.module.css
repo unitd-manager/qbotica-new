@@ -31,10 +31,13 @@
 .card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
 
 .thumb { height: 230px; position: relative; overflow: hidden; }
-/* Blog only - square, matching the approved /blog card dimensions (390x390).
-   aspect-ratio instead of a fixed pixel height so it stays square as the grid
-   goes from 3 to 2 to 1 columns across breakpoints. Press/Recognition/Media
-   keep the shorter rectangular crop above. */
+/* Press/Recognition/Blog - square, matching the approved /blog card
+   dimensions (390x390). aspect-ratio instead of a fixed pixel height so it
+   stays square as the grid goes from 3 to 2 to 1 columns across breakpoints.
+   This grid never renders Media (it doesn't appear in "All" - see the
+   category filter in ResourceGrid.js - and has its own tab/component with
+   a 16:9 video-thumbnail treatment), so the condition is really just
+   belt-and-suspenders. */
 .thumbSquare { aspect-ratio: 1 / 1; height: auto; }
 /* Centered crop - press/recognition images are often branded graphics with a
    logo near the bottom, so anchoring to the top cut those off. Center loses

@@ -29,7 +29,9 @@ export default function ResourceGrid({
   useEffect(() => setPage(1), [current, query, blogSub]);
 
   const visible = resources.filter((r) => {
-    const categoryMatch = current === 'all' || r.category === current;
+    // Media gets its own tab (MediaGrid) with a different card treatment -
+    // it doesn't mix into "All".
+    const categoryMatch = current === 'all' ? r.category !== 'media' : r.category === current;
     // when Blog is active, also honor the selected industry sub-tab
     const subMatch =
       current !== 'blog' || blogSub === 'all' || (r.subcats || []).includes(blogSub);
@@ -48,7 +50,7 @@ export default function ResourceGrid({
     const deduped = visible.filter((r, i, arr) => arr.findIndex((x) => x.title === r.title) === i);
     if (q) return deduped;
 
-    const leaders = ['press', 'recognition', 'blog', 'media']
+    const leaders = ['press', 'recognition', 'blog']
       .map((cat) => deduped.find((r) => r.category === cat))
       .filter(Boolean);
     const leaderTitles = new Set(leaders.map((r) => r.title));
@@ -90,7 +92,7 @@ export default function ResourceGrid({
                   : {};
                 return (
                   <Wrapper className={styles.card} key={`${r.category}-${r.title}-${i}`} {...linkProps}>
-                    <div className={`${styles.thumb} ${current=== 'blog' ? styles.thumbSquare : ''} ${r.image ? '' : styles[r.thumb]}`}>
+                    <div className={`${styles.thumb} ${r.category !== 'media' ? styles.thumbSquare : ''} ${r.image ? '' : styles[r.thumb]}`}>
                       {r.image ? (
                         <img className={styles.photo} src={r.image} alt={r.title} loading="lazy" decoding="async" />
                       ) : (
