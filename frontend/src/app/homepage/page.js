@@ -263,7 +263,7 @@ export default function HomepagePage() {
     return () => obs.disconnect();
   }, []);
 
-  const DEMO_LINK = "https://meetings.hubspot.com/automation-demo/scheduler";
+  const DEMO_LINK = "https://meetings.hubspot.com/enterprisedemo/solution-consultation";
 
   return (
     <>

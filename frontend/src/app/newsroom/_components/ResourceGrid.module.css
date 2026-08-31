@@ -35,7 +35,7 @@
    aspect-ratio instead of a fixed pixel height so it stays square as the grid
    goes from 3 to 2 to 1 columns across breakpoints. Press/Recognition/Media
    keep the shorter rectangular crop above. */
-.thumbSquare { aspect-ratio: 1 / 1; height: auto; }
+.thumbSquare { aspect-ratio: 1 / 1; height: auto; overflow: hidden; }
 /* Centered crop - press/recognition images are often branded graphics with a
    logo near the bottom, so anchoring to the top cut those off. Center loses
    a bit off both edges instead of losing one edge entirely. */
