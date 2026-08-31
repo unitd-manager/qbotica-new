@@ -1,0 +1,34 @@
+.css-solution { background: var(--navy2); color: #fff; }
+.css-solution .section-p { color: rgba(255,255,255,.6); }
+.css-solution-grid { display: grid; grid-template-columns: .72fr 1.28fr; gap: 64px; align-items: start; }
+
+.css-process { display: grid; gap: 10px; }
+.css-process-card {
+  display: grid; grid-template-columns: 52px 1fr; gap: 18px; align-items: start;
+  padding: 20px 22px; border-radius: 13px;
+  background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.09);
+  transition: border-color .2s, background .2s;
+}
+.css-process-card:hover { border-color: rgba(255,119,5,.35); background: rgba(255,119,5,.05); }
+.css-process-icon {
+  width: 44px; height: 44px; border-radius: 11px;
+  background: var(--og); display: flex; align-items: center;
+  justify-content: center; font-size: .78rem; font-weight: 900; color: #fff; flex-shrink: 0;
+}
+.css-process-h3 { font-size: .95rem; font-weight: 800; color: #fff; margin: 0 0 .3rem; }
+.css-process-p { font-size: .83rem; color: rgba(255,255,255,.54); line-height: 1.62; margin: 0; }
+
+.css-tech-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 9px; margin-top: 12px; }
+.css-tech-chip {
+  padding: 14px 13px; border-radius: 11px;
+  border: 1px solid rgba(255,255,255,.09); background: rgba(255,255,255,.03);
+}
+.css-tech-chip strong { display: block; font-size: .8rem; color: #fff; margin-bottom: 4px; font-weight: 700; }
+.css-tech-chip span { font-size: .7rem; color: rgba(255,255,255,.42); }
+
+@media (max-width: 1024px) {
+  .css-solution-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .css-tech-strip { grid-template-columns: 1fr 1fr; }
+}

@@ -1,0 +1,60 @@
+/* ═══ SHARED DESIGN TOKENS + UTILITIES — case-studies-short template ═══ */
+.cs-short {
+  --orange:  #FF7705;
+  --orange2: #D05F00;
+  --og:      linear-gradient(90deg, #FF7705 2.24%, #D05F00 72.33%);
+  --navy:    #030712;
+  --navy2:   #0B1120;
+  --navy3:   #0F172A;
+  --white:   #FFFFFF;
+  --cream:   #F9F8F6;
+  --cream2:  #F3F1EC;
+  --ink:     #111827;
+  --ink2:    #1e293b;
+  --fg:      #374151;
+  --muted:   #6B7280;
+  --border:  #E5E7EB;
+  --max:     1200px;
+  --r:       12px;
+  --shadow:  0 20px 50px rgba(3, 7, 18, .14);
+
+  font-family: 'Inter', sans-serif;
+  color: var(--ink);
+  background: var(--white);
+}
+.cs-short * { box-sizing: border-box; }
+.cs-short a { text-decoration: none; color: inherit; }
+.cs-short img { display: block; max-width: 100%; }
+
+.cs-short .wrap {
+  width: min(var(--max), calc(100% - clamp(32px, 5vw, 80px)));
+  margin: auto;
+}
+
+.cs-short section { padding: 88px 0; }
+
+.cs-short .section-label {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 5px 14px; border-radius: 999px;
+  background: rgba(255, 119, 5, .09); border: 1px solid rgba(255, 119, 5, .22);
+  font-size: .64rem; font-weight: 700; letter-spacing: .15em;
+  text-transform: uppercase; color: var(--orange); margin-bottom: 1rem;
+}
+.cs-short .section-label::before {
+  content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--orange);
+}
+.cs-short .section-h2 {
+  font-size: clamp(1.8rem, 3.8vw, 3.6rem); line-height: 1.05;
+  letter-spacing: -.04em; font-weight: 900; color: var(--ink); margin: 0 0 1rem;
+}
+.cs-short .section-h2 em { font-style: normal; color: var(--orange); }
+.cs-short .section-p { color: var(--fg); font-size: 1rem; line-height: 1.8; margin: 0; }
+.cs-short .section-intro { max-width: 740px; margin-bottom: 3.5rem; }
+
+.cs-short .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+.cs-short .reveal.visible { opacity: 1; transform: none; }
+
+@media (max-width: 640px) {
+  .cs-short .wrap { width: calc(100% - 32px); }
+  .cs-short section { padding: 60px 0; }
+}

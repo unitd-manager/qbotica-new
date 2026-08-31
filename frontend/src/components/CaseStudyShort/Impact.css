@@ -1,0 +1,90 @@
+.css-impact { background: var(--cream2); }
+.css-impact-outer { display: grid; grid-template-columns: 1.28fr .72fr; gap: 22px; align-items: stretch; }
+
+.css-impact-panel {
+  border: 1px solid var(--border); border-radius: 20px; overflow: hidden; background: var(--white);
+}
+.css-impact-head { padding: 32px 36px 24px; border-bottom: 1px solid var(--border); }
+.css-impact-head .section-h2 { font-size: clamp(1.6rem, 2.8vw, 2.8rem); }
+.css-impact-grid { display: grid; grid-template-columns: 1fr 1fr; }
+.css-impact-card {
+  padding: 26px 26px 22px;
+  border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);
+}
+.css-impact-card:nth-child(2n) { border-right: none; }
+.css-impact-card:nth-child(n+3) { border-bottom: none; }
+.css-impact-num {
+  display: block; font-size: clamp(2rem, 3.2vw, 3.5rem);
+  font-weight: 900; letter-spacing: -.05em; line-height: 1;
+  background: var(--og); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  margin-bottom: 9px;
+}
+.css-impact-title {
+  display: block; font-size: .76rem; font-weight: 800; text-transform: uppercase;
+  letter-spacing: .07em; color: var(--ink2); margin-bottom: 7px;
+}
+.css-impact-desc { font-size: .79rem; color: var(--muted); line-height: 1.55; }
+
+.css-side-card {
+  position: relative; overflow: hidden;
+  border-radius: 20px; padding: 36px 32px 32px;
+  background: linear-gradient(145deg, var(--navy) 0%, var(--navy2) 100%);
+  color: #fff; display: flex; flex-direction: column; gap: 0;
+  box-shadow: 0 24px 56px rgba(3,7,18,.22);
+}
+.css-side-card::before {
+  content: ''; position: absolute; width: 320px; height: 320px; border-radius: 50%;
+  right: -130px; bottom: -150px;
+  background: radial-gradient(ellipse, rgba(255,119,5,.18), transparent 65%);
+  pointer-events: none;
+}
+.css-side-card > * { position: relative; z-index: 1; }
+
+.css-side-label {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 5px 14px; border-radius: 999px; margin-bottom: .625rem;
+  background: rgba(255,119,5,.15); border: 1px solid rgba(255,119,5,.3);
+  font-size: .64rem; font-weight: 700; letter-spacing: .15em;
+  text-transform: uppercase; color: #FFA552;
+}
+.css-side-label::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--orange); }
+
+.css-testimonial { flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+.css-quote-mark {
+  font-size: 3.5rem; line-height: .8; color: rgba(255,119,5,.25);
+  font-family: Georgia, serif; margin-bottom: .5rem; display: block;
+}
+.css-quote-text {
+  font-size: 1rem; font-style: italic; font-weight: 400;
+  color: rgba(255,255,255,.88); line-height: 1.72; margin-bottom: 1.5rem; flex: 1;
+}
+.css-quote-attr-name { font-size: .82rem; font-weight: 800; color: #fff; margin-bottom: 2px; }
+.css-quote-attr-role { font-size: .74rem; color: rgba(255,119,5,.75); font-weight: 600; }
+
+.css-side-divider { height: 1px; background: rgba(255,255,255,.09); margin: 1.5rem 0; }
+
+.css-side-cta-h3 {
+  font-size: clamp(1.3rem, 2.2vw, 1.8rem); font-weight: 900;
+  letter-spacing: -.03em; line-height: 1.15; color: #fff; margin-bottom: .75rem;
+}
+.css-side-cta-p { font-size: .84rem; color: rgba(255,255,255,.58); line-height: 1.7; margin-bottom: 1.5rem; }
+.css-cta-btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 13px 22px; border-radius: 9px;
+  background: var(--orange); color: #fff; font-size: .86rem; font-weight: 700;
+  width: fit-content; border: none; cursor: pointer;
+  transition: background .2s, transform .15s;
+  box-shadow: 0 10px 24px rgba(255,119,5,.3);
+}
+.css-cta-btn:hover { background: var(--orange2); transform: translateY(-1px); }
+
+@media (max-width: 1024px) {
+  .css-impact-outer { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .css-impact-grid { grid-template-columns: 1fr; }
+  .css-impact-card,
+  .css-impact-card:nth-child(2n),
+  .css-impact-card:nth-child(n+3) { border-right: none; border-bottom: 1px solid var(--border); }
+  .css-impact-card:last-child { border-bottom: none; }
+}
