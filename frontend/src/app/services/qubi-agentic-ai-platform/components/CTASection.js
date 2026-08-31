@@ -13,7 +13,7 @@ export function CTASection({ data }) {
   const button1Text = data?.button1_text || button1Field?.title || "Book a Demo";
   const button1Url =
     button1Field?.url ||
-    "https://meetings.hubspot.com/automation-demo/scheduler";
+    "https://meetings.hubspot.com/enterprisedemo/solution-consultation";
   const button1Target = button1Field?.target || "_self";
 
   // Button 2 (Talk to an Expert)
@@ -22,7 +22,7 @@ export function CTASection({ data }) {
     data?.button2_text || button2Field?.title || "Talk to an Expert";
   const button2Url =
     button2Field?.url ||
-    "https://meetings.hubspot.com/automation-demo/scheduler";
+    "https://meetings.hubspot.com/enterprisedemo/solution-consultation";
   const button2Target = button2Field?.target || "_self";
 
   return (

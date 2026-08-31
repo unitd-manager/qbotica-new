@@ -6,7 +6,7 @@ export default function FinalCTASection() {
       <div className={styles.finalCtaInner}>
         <h2>Ready to run work differently?</h2>
         <p>See how qBotica can help your team operationalize Agentic AI across real business workflows.</p>
-        <a className={`${styles.buttonPrimary} ${styles.finalCtaButton}`} href="https://meetings.hubspot.com/automation-demo/scheduler">Request a Demo →</a>
+        <a className={`${styles.buttonPrimary} ${styles.finalCtaButton}`} href="https://meetings.hubspot.com/enterprisedemo/solution-consultation">Request a Demo →</a>
       </div>
     </section>
   );

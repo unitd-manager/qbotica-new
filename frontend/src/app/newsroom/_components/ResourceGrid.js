@@ -67,6 +67,13 @@ export default function ResourceGrid({
     sectionRef.current?.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
 
+  // Square thumb (1:1) gives a clean, gap-free crop for every card. It's
+  // used on the dedicated Blog tab (matches the /blog page) AND on "All",
+  // since All mixes every category together and a single consistent thumb
+  // shape keeps the grid aligned. The other single-category tabs (Press
+  // Release, Recognition) keep the wider rectangular thumb.
+  const useSquareThumb = current === 'blog' || current === 'all';
+
   return (
     <section className={styles.latest} id="latest" ref={sectionRef}>
       <div className={styles.container}>

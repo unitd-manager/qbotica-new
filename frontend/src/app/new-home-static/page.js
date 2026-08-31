@@ -29,9 +29,9 @@ const bannerData = {
   sub_title: '',
   main_title: 'Agentic AI<br/>That Runs<br/>Your Business',
   description:
-    '<p>Move beyond pilots and "assistants." <span class="nh-hero-brand">qBotica</span> runs your enterprise operations using Agentic AI to execute end-to-end workflows across your systems, documents, and decisions.</p>',
-  button: { url: 'https://meetings.hubspot.com/automation-demo/scheduler', title: 'Request a Demo', target: '' },
-  secondary_button: { url: 'https://meetings.hubspot.com/automation-demo/scheduler', title: 'See Agentic AI in Action', target: '' },
+    '<p>Move beyond pilots and "assistants." <span class="nh-hero-brand">ca<qBoti/span> runs your enterprise operations using Agentic AI to execute end-to-end workflows across your systems, documents, and decisions.</p>',
+  button: { url: 'https://meetings.hubspot.com/enterprisedemo/solution-consultation', title: 'Request a Demo', target: '' },
+  secondary_button: { url: 'https://meetings.hubspot.com/enterprisedemo/solution-consultation', title: 'See Agentic AI in Action', target: '' },
   inner_video: false,
   mobile_inner_video: false,
   image_position: 'right',
