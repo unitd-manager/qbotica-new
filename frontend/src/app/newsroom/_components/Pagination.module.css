@@ -3,46 +3,41 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 18px;
   margin-top: 38px;
 }
 
-.pageBtn {
-  min-width: 40px;
-  height: 40px;
-  padding: 0 6px;
-  border-radius: 10px;
-  font-size: 14px;
-  font-weight: 700;
+.pageLink {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 15px;
+  font-weight: 500;
   color: var(--navy, #0b2442);
-  background: #fff;
-  border: 1px solid #cfdcea;
   cursor: pointer;
-  transition: .2s;
 }
-.pageBtn:hover { border-color: #9fb9d2; }
-.pageBtn.active {
-  background: var(--navy, #0b2442);
-  border-color: var(--navy, #0b2442);
-  color: #fff;
+.pageLink:hover { text-decoration: underline; }
+.pageLink.active {
+  font-weight: 700;
+  text-decoration: underline;
 }
 
-.navBtn {
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 10px;
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--navy, #0b2442);
-  background: #fff;
-  border: 1px solid #cfdcea;
-  cursor: pointer;
-  transition: .2s;
-}
-.navBtn:hover { border-color: #9fb9d2; transform: translateY(-1px); }
-
-.ellipsis {
+.next {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 15px;
+  font-weight: 500;
   color: var(--muted, #8290a1);
-  padding: 0 4px;
-  font-weight: 700;
+  cursor: pointer;
 }
+.next:hover { text-decoration: underline; color: var(--navy, #0b2442); }
+
+/* Media's grid sits on a dark background - the default navy text would be
+   nearly invisible there, so swap in the light palette already used
+   elsewhere on that tile (see MediaGrid.module.css .date/.card p). */
+.dark .pageLink { color: #a9bbd0; }
+.dark .pageLink:hover { color: #fff; }
+.dark .pageLink.active { color: #fff; }
+.dark .next { color: #6f88a5; }
+.dark .next:hover { color: #a9bbd0; }

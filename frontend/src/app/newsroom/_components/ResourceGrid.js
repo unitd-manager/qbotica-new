@@ -29,7 +29,9 @@ export default function ResourceGrid({
   useEffect(() => setPage(1), [current, query, blogSub]);
 
   const visible = resources.filter((r) => {
-    const categoryMatch = current === 'all' || r.category === current;
+    // Media gets its own tab (MediaGrid) with a different card treatment -
+    // it doesn't mix into "All".
+    const categoryMatch = current === 'all' ? r.category !== 'media' : r.category === current;
     // when Blog is active, also honor the selected industry sub-tab
     const subMatch =
       current !== 'blog' || blogSub === 'all' || (r.subcats || []).includes(blogSub);
@@ -39,11 +41,22 @@ export default function ResourceGrid({
   });
 
   // In "All", an article that belongs to two categories would otherwise
-  // appear twice — de-duplicate by title.
-  const items =
-    current === 'all'
-      ? visible.filter((r, i, arr) => arr.findIndex((x) => x.title === r.title) === i)
-      : visible;
+  // appear twice — de-duplicate by title. Lead with each category's own
+  // latest item (so every tab is represented up front) then fall back to
+  // everything else in date order - but only when browsing, not searching,
+  // since a search should just show the best-matching results in order.
+  const items = (() => {
+    if (current !== 'all') return visible;
+    const deduped = visible.filter((r, i, arr) => arr.findIndex((x) => x.title === r.title) === i);
+    if (q) return deduped;
+
+    const leaders = ['press', 'recognition', 'blog']
+      .map((cat) => deduped.find((r) => r.category === cat))
+      .filter(Boolean);
+    const leaderTitles = new Set(leaders.map((r) => r.title));
+    const rest = deduped.filter((r) => !leaderTitles.has(r.title));
+    return [...leaders, ...rest];
+  })();
 
   const totalPages = Math.max(1, Math.ceil(items.length / PAGE_SIZE));
   const safePage = Math.min(page, totalPages);
@@ -86,7 +99,7 @@ export default function ResourceGrid({
                   : {};
                 return (
                   <Wrapper className={styles.card} key={`${r.category}-${r.title}-${i}`} {...linkProps}>
-                    <div className={`${styles.thumb} ${useSquareThumb ? styles.thumbSquare : ''} ${r.image ? '' : styles[r.thumb]}`}>
+                    <div className={`${styles.thumb} ${r.category !== 'media' ? styles.thumbSquare : ''} ${r.image ? '' : styles[r.thumb]}`}>
                       {r.image ? (
                         <img className={styles.photo} src={r.image} alt={r.title} loading="lazy" decoding="async" />
                       ) : (
