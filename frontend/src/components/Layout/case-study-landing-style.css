@@ -553,7 +553,7 @@
   padding: 0.45rem 1.1rem;
   border-radius: 999px;
   white-space: nowrap;
-  font-size: 0.82rem;
+  font-size: 0.92rem;
   font-weight: 600;
   color: var(--muted, #6B7280);
   border: 1px solid transparent;
@@ -594,7 +594,7 @@
 }
 
 .section-head p {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--muted, #6B7280);
   margin: 0;
 }
@@ -603,7 +603,7 @@
   padding: 4px 12px;
   border-radius: 999px;
   background: var(--cream2, #F3F1EC);
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: var(--muted, #6B7280);
 }
@@ -666,7 +666,7 @@
 }
 
 .cc-stat-label {
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.65);
   text-transform: uppercase;
   letter-spacing: 0.09em;
@@ -682,7 +682,7 @@
   background: rgba(255, 255, 255, 0.14);
   border: 1px solid rgba(255, 255, 255, 0.22);
   backdrop-filter: blur(8px);
-  font-size: 0.62rem;
+  font-size: 0.7rem;
   font-weight: 700;
   color: #fff;
   text-transform: uppercase;
@@ -704,9 +704,9 @@
 }
 
 .cc-tag {
-  padding: 2px 9px;
+  padding: 3px 10px;
   border-radius: 999px;
-  font-size: 0.62rem;
+  font-size: 0.72rem;
   font-weight: 600;
   background: var(--cream2, #F3F1EC);
   border: 1px solid var(--border, #E5E7EB);
@@ -714,15 +714,15 @@
 }
 
 .cc-title {
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--ink, #111827);
-  line-height: 1.42;
+  line-height: 1.4;
   flex: 1;
 }
 
 .cc-desc {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: var(--muted, #6B7280);
   line-height: 1.65;
   display: none;
@@ -746,7 +746,7 @@
 }
 
 .cc-product {
-  font-size: 0.68rem;
+  font-size: 0.78rem;
   color: var(--muted, #6B7280);
   display: flex;
   align-items: center;
@@ -766,7 +766,7 @@
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   font-weight: 700;
   color: var(--orange, #FF7705);
   transition: gap 0.15s;
