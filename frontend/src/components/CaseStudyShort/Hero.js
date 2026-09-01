@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import './Hero.css';
 
 export default function Hero({ acf }) {
@@ -33,9 +34,9 @@ export default function Hero({ acf }) {
       <div className="wrap css-hero-inner">
 
         <nav className="css-breadcrumb">
-          <a href="/">Home</a>
+          <Link href="/">Home</Link>
           <span className="css-breadcrumb-sep">/</span>
-          <a href="/customer-success-stories">Case Studies</a>
+          <Link href="/customer-success-stories">Case Studies</Link>
           <span className="css-breadcrumb-sep">/</span>
           <span className="css-breadcrumb-current">{breadcrumb_current}</span>
         </nav>

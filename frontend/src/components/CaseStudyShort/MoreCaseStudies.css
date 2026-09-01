@@ -22,7 +22,7 @@
   font-size: .62rem; font-weight: 700; text-transform: uppercase; letter-spacing: .07em;
 }
 .css-case-body { padding: 20px 22px 22px; }
-.css-case-h3 { font-size: 1.02rem; font-weight: 800; line-height: 1.32; color: var(--ink); margin: 0 0 .6rem; }
+.css-case-h3 { font-size: 1.02rem; font-weight: 800; line-height: 1.32; color: var(--ink); margin: 0 0 .6rem; letter-spacing: normal; }
 .css-case-p { font-size: .83rem; color: var(--fg); line-height: 1.65; margin: 0; }
 .css-case-link {
   display: inline-flex; align-items: center; gap: 5px;
