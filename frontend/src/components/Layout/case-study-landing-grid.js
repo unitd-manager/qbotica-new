@@ -64,7 +64,7 @@ export default function CaseStudiesLandingGrid({ data }) {
 
   const handleCardClick = (link) => {
     if (!link) return;
-    window.open(link, '_blank', 'noopener,noreferrer');
+    window.location.href = link;
   };
 
   return (
@@ -165,8 +165,6 @@ export default function CaseStudiesLandingGrid({ data }) {
                     {caseItem.link && (
                       <a
                         href={caseItem.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
                         className="cc-link"
                         onClick={(e) => e.stopPropagation()}
                       >
