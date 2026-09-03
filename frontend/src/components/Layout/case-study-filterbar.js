@@ -36,16 +36,11 @@ const filterStyles = {
   },
   filterInner: {
     display: 'flex',
-    flexWrap: 'nowrap',
-    overflowX: 'auto',
-    overflowY: 'hidden',
-    whiteSpace: 'nowrap',
+    flexWrap: 'wrap',
     gap: '10px',
     maxWidth: '1200px',
     margin: '0 auto',
     padding: '0 20px 6px',
-    scrollbarWidth: 'thin',
-    WebkitOverflowScrolling: 'touch',
   },
 };
 
