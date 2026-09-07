@@ -20,10 +20,10 @@ const filterStyles = {
     overflowX: 'auto',
     overflowY: 'hidden',
     whiteSpace: 'nowrap',
-    gap: '10px',
-    maxWidth: '1200px',
+    gap: '6px',
+    maxWidth: '1240px',
     margin: '0 auto',
-    padding: '0 20px 6px',
+    padding: '0 12px 6px',
     WebkitOverflowScrolling: 'touch',
     scrollbarWidth: 'none',
     msOverflowStyle: 'none',
@@ -64,7 +64,7 @@ export default function CaseStudiesLandingGrid({ data }) {
 
   const handleCardClick = (link) => {
     if (!link) return;
-    window.open(link, '_blank', 'noopener,noreferrer');
+    window.location.href = link;
   };
 
   return (
@@ -165,8 +165,6 @@ export default function CaseStudiesLandingGrid({ data }) {
                     {caseItem.link && (
                       <a
                         href={caseItem.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
                         className="cc-link"
                         onClick={(e) => e.stopPropagation()}
                       >

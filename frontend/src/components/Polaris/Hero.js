@@ -2,7 +2,6 @@
 
 import './Hero.css';
 import { useEffect, useState, useRef } from 'react';
-import { fetchPageBySlug } from '@/lib/wordpress';
 import TechnologyStrip from './TechnologyStrip';
 import ClientQuote from './ClientQuote';
 import Challenge from './Challenge';
@@ -14,10 +13,12 @@ import CTA from './CTA';
 import Sidebar from './Sidebar';
 import PolaroidCard from './PolaroidCard'; // ⬅ NEW — dynamic client card
 
-export default function Hero({ slug }) {    
+// `acf` now arrives as a prop, already fetched on the server (with ISR
+// caching) by the page component. This removes the old client-side
+// fetch-after-mount waterfall (blank page → JS loads → fetch → render)
+// that was making this page feel slow to load.
+export default function Hero({ acf }) {
 
-  const [acf, setAcf] = useState(null);
-  const [loading, setLoading] = useState(true);
   const [sidebarFrozenTop, setSidebarFrozenTop] = useState(null);
   const [extraBottomSpace, setExtraBottomSpace] = useState(0);
   const [sidebarMinHeight, setSidebarMinHeight] = useState(0);
@@ -27,25 +28,6 @@ export default function Hero({ slug }) {
   const mainContentRef = useRef(null);
   const sidebarWrapRef = useRef(null);
   const extraBottomSpaceRef = useRef(0);
-
-  useEffect(() => {
-    fetch(
-  `${process.env.NEXT_PUBLIC_WP_API_URL}/wp/v2/customer-stories?slug=${slug}&status=publish`
-)
-        .then(res => res.json())
-        .then(data => {
-    console.log(data);
-    console.log(data[0]);
-    console.log(data[0]?.acf);
-
-    setAcf(data[0]?.acf);
-    setLoading(false);
-})
-        .catch(err => {
-            console.error('Error:', err);
-            setLoading(false);
-        });
-}, [slug]);
 
   // ── RESPONSIVE CHECK — disables absolute/sticky sidebar positioning
   // below the layout breakpoint, so inline styles never force a fixed
@@ -136,14 +118,6 @@ export default function Hero({ slug }) {
       window.removeEventListener('load', updateSpacing);
     };
   }, [sidebarFrozenTop, acf]);
-
-  if (loading) return (
-    <section className="cs-hero">
-      <div className="cs-hero-container">
-        <p style={{ color: 'white' }}>Loading...</p>
-      </div>
-    </section>
-  );
 
   if (!acf) return (
     <section className="cs-hero">
