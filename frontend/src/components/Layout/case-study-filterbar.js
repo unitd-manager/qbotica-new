@@ -36,11 +36,15 @@ const filterStyles = {
   },
   filterInner: {
     display: 'flex',
-    flexWrap: 'wrap',
-    gap: '10px',
-    maxWidth: '1200px',
+    flexWrap: 'nowrap',
+    overflowX: 'auto',
+    overflowY: 'hidden',
+    whiteSpace: 'nowrap',
+    gap: '8px',
+    maxWidth: '1240px',
     margin: '0 auto',
-    padding: '0 20px 6px',
+    padding: '0 12px 6px',
+    WebkitOverflowScrolling: 'touch',
   },
 };
 
@@ -58,8 +62,6 @@ export default function CaseStudiesGrid({ data }) {
     { id: 'real_estate_mortgage', label: 'Real Estate & Mortgage' },
     { id: 'energy_utilities', label: 'Energy & Utilities' },
     { id: 'government_public_sector', label: 'Government, Public Sector & Nonprofit' },
-    { id: 'technology_software', label: 'Technology & Software' },
-    { id: 'professional_services', label: 'Professional Services' },
   ];
 
 
@@ -369,11 +371,8 @@ export default function CaseStudiesGrid({ data }) {
                 
                 <DivTag className="cc-footer">
                   <SpanTag className="cc-product">{caseItem.product}</SpanTag>
-                  {/* Changed to a standard standard <a> tag pointing to caseItem.link */}
-                  <a 
-                    href={caseItem.link} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a
+                    href={caseItem.link}
                     className="cc-link"
                     style={{ textDecoration: 'none' }}
                   >
