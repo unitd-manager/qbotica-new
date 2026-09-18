@@ -518,7 +518,7 @@ export default function Header({ themeSettings, navigationData = [], headerClass
             <ul className="navbar-nav ms-auto">
               {renderMenuItems(menuItems, 1, pathname)}
             </ul>
-            <Link href={themeSettings.header_cta_link || '#'} target='_blank' className="btn primary-btn">
+            <Link href={themeSettings.header_cta_link || '#'} target='_blank' className="btn primary-btn navbar-cta">
               {/* {themeSettings.header_cta_label || ''} */}
               {'Talk to an Expert'}
             </Link>
@@ -563,7 +563,7 @@ export default function Header({ themeSettings, navigationData = [], headerClass
           </nav>
 
           <div className="mobile-menu-footer">
-            <Link href={themeSettings.header_cta_link || '#'} className="btn primary-btn mobile-cta" target='_blank' onClick={closeMobileMenu}>
+            <Link href={themeSettings.header_cta_link || '#'} className="btn primary-btn mobile-cta navbar-cta" target='_blank' onClick={closeMobileMenu}>
               {/* {themeSettings.header_cta_label || ''} */}
               
             {'Talk to an Expert'}

@@ -37,7 +37,7 @@ export async function generateMetadata({ params }) {
   }
 
   const heroSection = post.acf.customer_story_detail.find(
-    (section) => section.acf_fc_layout === 'hero_section_short'
+    (section) => section.acf_fc_layout === 'hero_section'
   );
 
   const headline = [
@@ -85,7 +85,7 @@ export default async function CustomerSuccessStory({ params }) {
 
   return (
     <main>
-      <Hero slug={slug} />
+      <Hero acf={post.acf} />
     </main>
   );
 }

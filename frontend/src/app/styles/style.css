@@ -693,6 +693,10 @@ background-color: #000000;
   border: 0px;
 }
 
+.navbar-cta {
+  white-space: nowrap;
+}
+
 .primary-btn:before {
   content: "";
   position: absolute;
