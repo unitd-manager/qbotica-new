@@ -479,6 +479,7 @@
 .filter-inner {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   overflow-x: auto;
   scrollbar-width: none;
@@ -489,6 +490,12 @@
 
 .filter-inner::-webkit-scrollbar {
   display: none;
+}
+
+@media (max-width: 768px) {
+  .filter-inner {
+    justify-content: flex-start;
+  }
 }
 
 .filter-tab {

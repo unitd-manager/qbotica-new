@@ -3,58 +3,84 @@
 import './MoreCaseStudies.css';
 
 export default function MoreCaseStudies({ acf }) {
-  if (!acf) return null;
 
-  const {
-    section_label,
-    section_title,
-    section_text,
-    view_all_label,
-    view_all_link,
-    case_cards,
-  } = acf;
+    const {
+        section_title,
+        more_case_studies,
+        view_all_link,
+        view_all_label,
+        read_more_label,
+    } = acf || {};
 
-  return (
-    <section className="css-more">
-      <div className="wrap">
-        <div className="css-more-head reveal">
-          <div>
-            {section_label && <div className="section-label">{section_label}</div>}
-            {section_title && (
-              <h2 className="section-h2" style={{ fontSize: 'clamp(1.7rem,2.8vw,2.8rem)', marginTop: '.5rem' }}>
-                {section_title}
-              </h2>
-            )}
-            {section_text && (
-              <p className="section-p" style={{ maxWidth: 480, marginTop: '.75rem' }}>{section_text}</p>
-            )}
-          </div>
-          {view_all_link && (
-            <a className="css-view-all" href={view_all_link}>{view_all_label || 'View All Case Studies'} &rarr;</a>
-          )}
-        </div>
+    if (!acf) return null;
 
-        {case_cards?.length > 0 && (
-          <div className="css-case-grid">
-            {case_cards.map((card, i) => (
-              <a className="css-case-card reveal" href={card.card_link || '#'} key={i}>
-                <div className="css-case-img">
-                  {card.card_image?.url && (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img src={card.card_image.url} alt={card.card_image?.alt || card.card_title || ''} />
-                  )}
-                  {card.card_tag && <span className="css-case-tag">{card.card_tag}</span>}
+    return (
+        <section className="more-case-studies">
+
+            <div className="more-case-container">
+
+                <div className="more-case-header">
+
+                    {section_title && <h2>{section_title}</h2>}
+
+                    {view_all_link && (
+                        <a
+                            href={view_all_link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            {view_all_label}
+                        </a>
+                    )}
+
                 </div>
-                <div className="css-case-body">
-                  {card.card_title && <h3 className="css-case-h3">{card.card_title}</h3>}
-                  {card.card_text && <p className="css-case-p">{card.card_text}</p>}
-                  <span className="css-case-link">Read Case Study &rarr;</span>
+
+                <div className="more-case-grid">
+
+                    {more_case_studies?.map((item, index) => (
+                        <div className="more-case-card" key={index}>
+
+                            <div className="card-top-bar"></div>
+
+                            <div className="more-case-body">
+
+                                {item.stat && <h3>{item.stat}</h3>}
+
+                                {item.stat_label && (
+                                    <span className="case-stat-label">
+                                        {item.stat_label}
+                                    </span>
+                                )}
+
+                                {item.card_title && <h4>{item.card_title}</h4>}
+
+                                <div className="case-footer">
+
+                                    {item.industry && (
+                                        <span>• {item.industry}</span>
+                                    )}
+
+                                    {item.card_link && (
+                                        <a
+                                            href={item.card_link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            {item.read_label || read_more_label}
+                                        </a>
+                                    )}
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    ))}
+
                 </div>
-              </a>
-            ))}
-          </div>
-        )}
-      </div>
-    </section>
-  );
+
+            </div>
+
+        </section>
+    );
 }

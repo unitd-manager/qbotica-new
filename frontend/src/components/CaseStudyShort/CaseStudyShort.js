@@ -85,7 +85,7 @@ export default function CaseStudyShort({ slug }) {
       <Story acf={getLayout('story_section_short')} />
       <Solution acf={getLayout('solution_section_short')} />
       <Impact acf={getLayout('impact_section_short')} />
-      <MoreCaseStudies acf={getLayout('more_case_studies_short')} />
+      <MoreCaseStudies acf={getLayout('more_case_studies')} />
     </div>
   );
 }

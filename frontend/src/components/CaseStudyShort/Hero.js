@@ -30,6 +30,7 @@ export default function Hero({ acf }) {
   return (
     <section className="css-hero" style={heroStyle}>
       <div className="css-hero-glow"></div>
+      <div className="css-hero-glow2"></div>
       <div className="css-hero-grid"></div>
       <div className="wrap css-hero-inner">
 
