@@ -212,3 +212,9 @@
         padding: 60px 0;
     }
 }
+
+/* ".cs-short { color: var(--ink) }" changes the inherited text color; Polaris
+   inherits the site body color. */
+.cs-short section.more-case-studies {
+    color: #171717;
+}
