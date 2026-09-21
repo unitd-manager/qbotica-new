@@ -18,6 +18,7 @@ export default function Hero({ acf }) {
     hero_headline_highlight,
     hero_headline_suffix,
     client_logo_text,
+    client_logo_image,
     client_label,
     client_name,
     client_industry,
@@ -25,7 +26,10 @@ export default function Hero({ acf }) {
     hero_background_image,
   } = acf;
 
-  const heroStyle = hero_background_image?.url
+  const logoUrl =
+    typeof client_logo_image === 'string' ? client_logo_image : client_logo_image?.url;
+
+  const heroStyle =hero_background_image?.url
     ? {
         backgroundImage: `linear-gradient(rgba(5,10,18,.45), rgba(5,10,18,.60)), url(${hero_background_image.url})`,
       }
@@ -72,9 +76,20 @@ export default function Hero({ acf }) {
               <div className="polaroid-tape"></div>
               <div className="polaroid-card">
                 <div className="polaroid-frame">
-                  <div className="polaroid-image css-polaroid-text">
-                    <span>{client_logo_text}</span>
-                  </div>
+                  {logoUrl ? (
+                    <div className="polaroid-image">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={logoUrl}
+                        alt={client_logo_image?.alt || client_name || 'Client logo'}
+                        className="css-polaroid-img"
+                      />
+                    </div>
+                  ) : (
+                    <div className="polaroid-image css-polaroid-text">
+                      <span>{client_logo_text}</span>
+                    </div>
+                  )}
                 </div>
                 <div className="polaroid-label">{client_label || 'Client'}</div>
                 <div className="polaroid-industry">{client_name}</div>
