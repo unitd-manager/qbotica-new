@@ -38,12 +38,20 @@
   display: block;
 }
 
-/* Short-story headlines are longer sentences than Polaris's, so the orange
-   word flows inline (Polaris's display:block put every part on its own line). */
+/* Short-story headlines are longer sentences than Polaris's. Keep the font
+   size, but give the title room for 2 lines (sentence / orange word + suffix)
+   and move the polaroid card clear of it. */
 .cs-short .cs-title {
-  text-wrap: balance;
+  max-width: 1000px;
 }
 .cs-short .cs-title span {
   display: inline;
   margin: 0;
+}
+.cs-short .polaroid-wrap {
+  right: 0;
+}
+@media (max-width: 1200px) {
+  .cs-short .polaroid-wrap { right: auto; }
+  .cs-short .css-title-break { display: none; }
 }

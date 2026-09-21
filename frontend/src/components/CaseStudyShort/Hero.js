@@ -104,6 +104,7 @@ export default function Hero({ acf }) {
         {/* TITLE */}
         <h1 className="cs-title">
           {hero_headline}{' '}
+          <br className="css-title-break" />
           <span>{hero_headline_highlight}</span>
           {hero_headline_suffix && ` ${hero_headline_suffix}`}
         </h1>
