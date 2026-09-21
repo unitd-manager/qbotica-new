@@ -103,9 +103,9 @@ export default function Hero({ acf }) {
 
         {/* TITLE */}
         <h1 className="cs-title">
-          {hero_headline}
+          {hero_headline}{' '}
           <span>{hero_headline_highlight}</span>
-          {hero_headline_suffix}
+          {hero_headline_suffix && ` ${hero_headline_suffix}`}
         </h1>
 
         {/* STATS */}
