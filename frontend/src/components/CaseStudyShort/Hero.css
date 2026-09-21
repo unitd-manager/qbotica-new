@@ -10,6 +10,24 @@
   .cs-short section.cs-hero { padding: 50px 0 0; }
 }
 
+/* Polaris's content happens to fill its 820px hero, so the stat dividers reach
+   the bottom. Shorter stories leave a gap, so let the stats row stretch. */
+@media (min-width: 769px) {
+  .cs-short section.cs-hero {
+    display: flex;
+    flex-direction: column;
+  }
+  .cs-short .cs-hero-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  .cs-short .cs-stats {
+    flex: 1;
+  }
+}
+
 /* ".cs-short a { color: inherit }" keeps breadcrumb links Polaris-white */
 .cs-short .cs-breadcrumb a { color: inherit; }
 
