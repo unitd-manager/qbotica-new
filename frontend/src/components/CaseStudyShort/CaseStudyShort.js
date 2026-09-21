@@ -7,6 +7,8 @@ import Story from './Story';
 import Solution from './Solution';
 import Impact from './Impact';
 import MoreCaseStudies from './MoreCaseStudies';
+import CTA from '../Polaris/CTA';
+import './CTA.css';
 
 export default function CaseStudyShort({ slug }) {
   const [acf, setAcf] = useState(null);
@@ -86,6 +88,7 @@ export default function CaseStudyShort({ slug }) {
       <Solution acf={getLayout('solution_section_short')} />
       <Impact acf={getLayout('impact_section_short')} />
       <MoreCaseStudies acf={getLayout('more_case_studies')} />
+      <CTA acf={getLayout('cta_button')} />
     </div>
   );
 }
