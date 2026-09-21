@@ -195,3 +195,20 @@
         font-size: 14px;
     }
 }
+
+/* ".cs-short section { padding: 88px 0 }" and ".cs-short a { color: inherit }"
+   out-specify the Polaris rules above; restore the Polaris values. */
+.cs-short section.more-case-studies {
+    padding: 70px 0 80px;
+}
+
+.cs-short .more-case-header a,
+.cs-short .case-footer a {
+    color: #ff7705;
+}
+
+@media (max-width: 768px) {
+    .cs-short section.more-case-studies {
+        padding: 60px 0;
+    }
+}
