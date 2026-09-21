@@ -4,6 +4,7 @@
 /* ".cs-short section { padding: 88px 0 }" out-specifies ".cs-hero" */
 .cs-short section.cs-hero {
   padding: 90px 0 0;
+  color: #171717; /* Polaris inherits the site body color, not the .cs-short ink */
 }
 @media (max-width: 768px) {
   .cs-short section.cs-hero { padding: 50px 0 0; }
