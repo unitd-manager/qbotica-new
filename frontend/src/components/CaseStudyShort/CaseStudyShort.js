@@ -10,22 +10,6 @@ import MoreCaseStudies from './MoreCaseStudies';
 import CTA from '../Polaris/CTA';
 import './CTA.css';
 
-// Local preview only (npm run dev): shows the CTA before the post has a
-// "cta_button" block. Never used in production builds — live content comes
-// from WP admin only.
-const DEV_CTA_PREVIEW =
-  process.env.NODE_ENV === 'development'
-    ? {
-        cta_title: 'Ready to run your operations<br/><span>with Agentic AI?</span>',
-        cta_description:
-          'Free process discovery call. ROI estimate in 48 hours. First automation live in 2 weeks.',
-        cta_primary_text: 'Request a Demo →',
-        cta_primary_link: 'https://meetings.hubspot.com/automation-demo/scheduler',
-        cta_secondary_text: 'Explore All Case Studies',
-        cta_secondary_link: 'https://www.qbotica.com/customer-success-stories',
-      }
-    : null;
-
 export default function CaseStudyShort({ slug }) {
   const [acf, setAcf] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -104,7 +88,7 @@ export default function CaseStudyShort({ slug }) {
       <Solution acf={getLayout('solution_section_short')} />
       <Impact acf={getLayout('impact_section_short')} />
       <MoreCaseStudies acf={getLayout('more_case_studies')} />
-      <CTA acf={getLayout('cta_button') || DEV_CTA_PREVIEW} />
+      <CTA acf={getLayout('cta_button')} />
     </div>
   );
 }
