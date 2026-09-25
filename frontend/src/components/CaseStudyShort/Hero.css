@@ -57,12 +57,3 @@
   display: block;
 }
 
-/* Short-story headlines are longer sentences than Polaris's, so the orange
-   word flows inline (Polaris's display:block put every part on its own line). */
-.cs-short .cs-title {
-  text-wrap: balance;
-}
-.cs-short .cs-title span {
-  display: inline;
-  margin: 0;
-}
