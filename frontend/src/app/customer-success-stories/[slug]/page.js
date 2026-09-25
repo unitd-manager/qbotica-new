@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import Hero from '@/components/Polaris/Hero';
 import CaseStudyShort from '@/components/CaseStudyShort/CaseStudyShort';
 import { generatePageMetadatas, getStructuredData } from '@/lib/rankmath-utils';
@@ -71,6 +72,10 @@ export async function generateMetadata({ params }) {
 export default async function CustomerSuccessStory({ params }) {
   const { slug } = await params;
   const post = await fetchStoryPost(slug);
+
+  if (!post) {
+    notFound();
+  }
 
   if (isShortForm(post)) {
     const metadata = await generatePageMetadatas(slug, 'page', parent_path, {});
