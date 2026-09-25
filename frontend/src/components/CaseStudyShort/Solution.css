@@ -1,6 +1,12 @@
 .css-solution { background: var(--navy2); color: #fff; }
 .css-solution .section-p { color: rgba(255,255,255,.6); }
-.css-solution-grid { display: grid; grid-template-columns: .72fr 1.28fr; gap: 64px; align-items: start; }
+.css-solution-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 48px; align-items: start; }
+
+/* The copy column's label pushes the title well below where the process
+   cards start on the right; tighten it and give the title more room so it
+   wraps to 2 lines instead of 4, closely matching the cards' top edge. */
+.css-solution .section-label { margin-bottom: 6px; }
+.css-solution .section-h2 { font-size: clamp(1.8rem, 2.8vw, 2.85rem); }
 
 .css-process { display: grid; gap: 10px; }
 .css-process-card {
