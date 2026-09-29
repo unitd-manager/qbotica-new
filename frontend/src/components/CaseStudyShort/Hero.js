@@ -4,6 +4,7 @@ import Link from 'next/link';
 import '../Polaris/Hero.css';
 import '../Polaris/PolaroidCard.css';
 import './Hero.css';
+import IndustryIcon from './IndustryIcon';
 
 // Same markup + stylesheets as components/Polaris/Hero.js (hero only), fed by
 // the "hero_section_short" ACF layout.
@@ -87,7 +88,7 @@ export default function Hero({ acf }) {
                     </div>
                   ) : (
                     <div className="polaroid-image css-polaroid-text">
-                      <span>{client_logo_text}</span>
+                      <IndustryIcon industry={client_industry} />
                     </div>
                   )}
                 </div>

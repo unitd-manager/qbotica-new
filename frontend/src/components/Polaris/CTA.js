@@ -2,6 +2,15 @@
 
 import './CTA.css';
 
+// ACF "Link" fields return { title, url, target } (or a plain string for
+// older data) — normalize both so the JSX below doesn't care which it got.
+function resolveLink(field) {
+    if (!field) return null;
+    if (typeof field === 'string') return { url: field, target: '_blank' };
+    if (!field.url) return null;
+    return { url: field.url, target: field.target || '_blank' };
+}
+
 export default function CTA({ acf }) {
 
     const {
@@ -14,6 +23,9 @@ export default function CTA({ acf }) {
     } = acf || {};
 
     if (!acf) return null;
+
+    const primaryLink = resolveLink(cta_primary_link);
+    const secondaryLink = resolveLink(cta_secondary_link);
 
     return (
         <section className="cta-section">
@@ -41,22 +53,22 @@ export default function CTA({ acf }) {
                 {/* BUTTONS */}
                 <div className="cta-buttons">
 
-                    {cta_primary_link && (
+                    {primaryLink && (
                         <a
-                            href={cta_primary_link}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            href={primaryLink.url}
+                            target={primaryLink.target || undefined}
+                            rel={primaryLink.target === '_blank' ? 'noopener noreferrer' : undefined}
                             className="cta-btn cta-primary"
                         >
                             {cta_primary_text || 'Request a Demo →'}
                         </a>
                     )}
 
-                    {cta_secondary_link && (
+                    {secondaryLink && (
                         <a
-                            href={cta_secondary_link}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            href={secondaryLink.url}
+                            target={secondaryLink.target || undefined}
+                            rel={secondaryLink.target === '_blank' ? 'noopener noreferrer' : undefined}
                             className="cta-btn cta-secondary"
                         >
                             {cta_secondary_text || 'Explore All Case Studies'}
