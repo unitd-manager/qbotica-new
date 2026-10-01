@@ -41,9 +41,15 @@
   background: #ffffff;
 }
 .css-industry-icon {
-  width: 46px;
-  height: 46px;
+  width: 72px;
+  height: 72px;
   color: #ff7705;
+}
+@media (max-width: 768px) {
+  .css-industry-icon {
+    width: 56px;
+    height: 56px;
+  }
 }
 
 /* Real client logo image — same fit as Polaris's .polaroid-logo */
