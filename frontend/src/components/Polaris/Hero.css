@@ -740,3 +740,24 @@ BOARDING PASS LAYER
 .folder{
     z-index:10;
 }
+
+/*====================================================
+CLIENT FEEDBACK: bigger client card, smaller hero title
+====================================================*/
+.cs-hero .polaroid-wrap { width: 290px; }
+.cs-hero .polaroid-label { font-size: 16px; }
+.cs-hero .polaroid-industry { font-size: 15px; }
+.cs-hero .polaroid-since { font-size: 12px; }
+
+.cs-hero .cs-title {
+  font-size: clamp(36px, 4.1vw, 56px);
+  letter-spacing: -2px;
+  margin-top: 40px;
+}
+@media (min-width: 1201px) {
+  .cs-hero .cs-title { max-width: min(800px, calc(100% - 480px)); }
+}
+@media (max-width: 768px) {
+  .cs-hero .polaroid-wrap { width: 190px; }
+  .cs-hero .cs-title { font-size: 34px; letter-spacing: -1px; margin-top: 24px; }
+}

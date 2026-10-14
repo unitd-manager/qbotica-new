@@ -13,6 +13,7 @@ import {
   processLayoutData
 } from '@/lib/page-layout-utils';
 import { notFound } from 'next/navigation';
+import { getAuthorProfile } from '@/lib/author';
 
 const parent_path = '';
 
@@ -57,6 +58,8 @@ export default async function SlugPage({ params }) {
     excerpt_content: page_data?.excerpt?.rendered || '',
     title: page_data?.title?.rendered || '',
     date: page_data?.date || '',
+    author: page_data?._embedded?.author?.[0]?.name || '',
+    authorProfile: getAuthorProfile(page_data),
     categories: categories
       .filter(cat => (page_data?.categories || []).includes(cat.id))
       .map(cat => cat.name),

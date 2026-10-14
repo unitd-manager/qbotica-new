@@ -41,15 +41,40 @@
   background: #ffffff;
 }
 .css-industry-icon {
-  width: 72px;
-  height: 72px;
+  width: 92px;
+  height: 92px;
   color: #ff7705;
 }
 @media (max-width: 768px) {
   .css-industry-icon {
-    width: 56px;
-    height: 56px;
+    width: 72px;
+    height: 72px;
   }
+}
+
+/* Larger client card (client feedback) — short template only. */
+.cs-short .polaroid-wrap { width: 290px; right: 150px; }
+.cs-short .polaroid-label { font-size: 16px; }
+.cs-short .polaroid-industry { font-size: 15px; }
+.cs-short .polaroid-since { font-size: 12px; }
+@media (max-width: 1200px) {
+  .cs-short .polaroid-wrap { right: auto; }
+}
+@media (max-width: 768px) {
+  .cs-short .polaroid-wrap { width: 230px; }
+}
+
+/* Smaller hero title so the hero is shorter and scrolls less. */
+.cs-short .cs-title {
+  font-size: clamp(36px, 4.1vw, 56px);
+  letter-spacing: -2px;
+  margin-top: 40px;
+}
+@media (min-width: 1201px) {
+  .cs-short .cs-title { max-width: min(800px, calc(100% - 480px)); }
+}
+@media (max-width: 768px) {
+  .cs-short .cs-title { font-size: 34px; letter-spacing: -1px; margin-top: 24px; }
 }
 
 /* Real client logo image — same fit as Polaris's .polaroid-logo */
