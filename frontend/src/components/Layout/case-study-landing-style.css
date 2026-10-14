@@ -493,7 +493,8 @@
 .filter-inner {
   display: flex;
   align-items: center;
-  gap: 1.75rem;
+  justify-content: center;
+  gap: 0.4rem;
   overflow-x: auto;
   overflow-y: hidden;
   flex-wrap: nowrap;
@@ -529,7 +530,7 @@
 }*/
 
 .filter-tab {
-  padding: 0.4rem 0.7rem;
+  padding: 0.4rem 0.55rem;
   border-radius: 999px;
   white-space: nowrap;
   font-size: 0.8rem;

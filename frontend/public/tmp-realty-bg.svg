@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1200" viewBox="0 0 2000 1200">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0B1120"/>
+      <stop offset="100%" stop-color="#1F2937"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FF7705" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#FF7705" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="2000" height="1200" fill="url(#sky)"/>
+  <circle cx="1650" cy="250" r="500" fill="url(#glow)"/>
+
+  <!-- skyline silhouette -->
+  <g fill="#111827" opacity="0.9">
+    <rect x="60" y="620" width="140" height="580"/>
+    <rect x="220" y="500" width="110" height="700"/>
+    <rect x="350" y="700" width="160" height="500"/>
+    <rect x="530" y="420" width="130" height="780"/>
+    <rect x="680" y="600" width="150" height="600"/>
+    <rect x="850" y="340" width="120" height="860"/>
+    <rect x="990" y="560" width="170" height="640"/>
+    <rect x="1180" y="480" width="140" height="720"/>
+    <rect x="1340" y="640" width="150" height="560"/>
+    <rect x="1510" y="380" width="130" height="820"/>
+    <rect x="1660" y="560" width="160" height="640"/>
+    <rect x="1840" y="460" width="120" height="740"/>
+  </g>
+
+  <!-- lit windows -->
+  <g fill="#FF7705" opacity="0.55">
+    <rect x="90" y="660" width="18" height="18"/>
+    <rect x="130" y="660" width="18" height="18"/>
+    <rect x="90" y="700" width="18" height="18"/>
+    <rect x="250" y="540" width="18" height="18"/>
+    <rect x="290" y="540" width="18" height="18"/>
+    <rect x="250" y="580" width="18" height="18"/>
+    <rect x="560" y="460" width="18" height="18"/>
+    <rect x="600" y="460" width="18" height="18"/>
+    <rect x="880" y="380" width="18" height="18"/>
+    <rect x="920" y="380" width="18" height="18"/>
+    <rect x="1020" y="600" width="18" height="18"/>
+    <rect x="1210" y="520" width="18" height="18"/>
+    <rect x="1540" y="420" width="18" height="18"/>
+    <rect x="1690" y="600" width="18" height="18"/>
+    <rect x="1870" y="500" width="18" height="18"/>
+  </g>
+
+  <rect width="2000" height="1200" fill="#030712" opacity="0.35"/>
+</svg>

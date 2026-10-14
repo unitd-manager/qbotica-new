@@ -48,7 +48,7 @@
   letter-spacing: -.04em; font-weight: 900; color: var(--ink); margin: 0 0 1rem;
 }
 .cs-short .section-h2 em { font-style: normal; color: var(--orange); }
-.cs-short .section-p { color: var(--fg); font-size: 1rem; line-height: 1.8; margin: 0; }
+.cs-short .section-p { color: var(--fg); font-size: 1.15rem; line-height: 1.75; margin: 0; }
 .cs-short .section-intro { max-width: 740px; margin-bottom: 3.5rem; }
 
 .cs-short .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }

@@ -29,7 +29,7 @@ export default function Story({ acf }) {
             <div className="section-label">At a Glance</div>
             {glance_title && <h3 className="css-glance-h3">{glance_title}</h3>}
             {glance_description && (
-              <p className="section-p" style={{ fontSize: '.9rem' }}>{glance_description}</p>
+              <p className="section-p">{glance_description}</p>
             )}
             {glance_facts?.length > 0 && (
               <div className="css-facts">

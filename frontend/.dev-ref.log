@@ -1,0 +1,37 @@
+   ▲ Next.js 15.5.9
+   - Local:        http://localhost:3001
+   - Network:      http://192.168.31.86:3001
+   - Environments: .env
+
+ ✓ Starting...
+ ✓ Ready in 6.7s
+ ✓ Compiled /middleware in 468ms (114 modules)
+🔍 Checking redirect for: /customer-success-stories/pl-automation-for-a-real-estate-leader
+🔄 Fetching redirects from WordPress...
+📡 API URL: https://qbadevadmin.unitdtechnologies.com/wp-json/custom/v1/redirects
+ ○ Compiling /customer-success-stories/[slug] ...
+✅ Fetched 419 redirects.
+📋 Loaded redirects into memory cache.
+ ✓ Compiled /customer-success-stories/[slug] in 1987ms (934 modules)
+ GET /customer-success-stories/pl-automation-for-a-real-estate-leader 200 in 4446ms
+🔍 Checking redirect for: /customer-success-stories/how-qbotica-implemented-rpa-solutions-in-4-markets-to-enable-a-global-energy-company-to-gain-95-time-savings
+🔄 Fetching redirects from WordPress...
+📡 API URL: https://qbadevadmin.unitdtechnologies.com/wp-json/custom/v1/redirects
+ GET /customer-success-stories/how-qbotica-implemented-rpa-solutions-in-4-markets-to-enable-a-global-energy-company-to-gain-95-time-savings 200 in 986ms
+✅ Fetched 419 redirects.
+📋 Loaded redirects into memory cache.
+ ✓ Compiled in 4.2s (961 modules)
+🔍 Checking redirect for: /customer-success-stories/how-qbotica-implemented-rpa-solutions-in-4-markets-to-enable-a-global-energy-company-to-gain-95-time-savings
+🔄 Fetching redirects from WordPress...
+📡 API URL: https://qbadevadmin.unitdtechnologies.com/wp-json/custom/v1/redirects
+ GET /customer-success-stories/how-qbotica-implemented-rpa-solutions-in-4-markets-to-enable-a-global-energy-company-to-gain-95-time-savings 200 in 690ms
+✅ Fetched 419 redirects.
+📋 Loaded redirects into memory cache.
+🔍 Checking redirect for: /customer-success-stories/how-qbotica-implemented-rpa-solutions-in-4-markets-to-enable-a-global-energy-company-to-gain-95-time-savings
+ GET /customer-success-stories/how-qbotica-implemented-rpa-solutions-in-4-markets-to-enable-a-global-energy-company-to-gain-95-time-savings 200 in 817ms
+ ○ Compiling /[slug] ...
+ ✓ Compiled /[slug] in 2.8s (1255 modules)
+ GET /favicon.ico 404 in 4786ms
+🔍 Checking redirect for: /customer-success-stories/polaris-transportation-processing-500-quatation-documents-per-day-with-doqumentai
+ GET /customer-success-stories/polaris-transportation-processing-500-quatation-documents-per-day-with-doqumentai 200 in 681ms
+ GET /favicon.ico 404 in 408ms
