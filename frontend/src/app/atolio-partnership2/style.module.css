@@ -440,3 +440,7 @@
   .accordionActive .accordionContent { padding: 0 22px 22px; }
   .contactGrid { grid-template-columns: 1fr; }
 }
+
+/* Intro Section logo */
+.qubiLogoLink { display: inline-block; margin-bottom: 12px; margin-top: 4px; }
+.qubiLogo { height: 80px; width: auto; object-fit: contain; display: block; }
