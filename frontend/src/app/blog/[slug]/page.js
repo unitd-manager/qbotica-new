@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { ArrowRight } from '@/components/Common/Icons';
 import StructuredData from '@/components/Common/StructuredData';
 import { notFound } from 'next/navigation';
+import { getAuthorProfile } from '@/lib/author';
 
 const parent_path = '';
 
@@ -44,6 +45,8 @@ export default async function SingleBlogPage({ params }) {
     excerpt_content: page_data?.excerpt?.rendered || '',
     title: page_data?.title?.rendered || '',
     date: page_data?.date || '',
+    author: page_data?._embedded?.author?.[0]?.name || '',
+    authorProfile: getAuthorProfile(page_data),
     categories: categories
       .filter(cat => (page_data?.categories || []).includes(cat.id))
       .map(cat => cat.name),

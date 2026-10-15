@@ -1,40 +1,220 @@
-.css-more { background: var(--white); border-top: 1px solid var(--border); }
-.css-more-head {
-  display: flex; align-items: flex-end; justify-content: space-between;
-  gap: 2rem; margin-bottom: 2.5rem; flex-wrap: wrap;
+.more-case-studies {
+    padding: 70px 0 80px;
+    background: #f7f7f7;
 }
-.css-view-all { font-size: .84rem; font-weight: 700; color: var(--orange); white-space: nowrap; }
-.css-view-all:hover { color: var(--orange2); }
-.css-case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-.css-case-card {
-  display: block;
-  border: 1px solid var(--border); border-radius: 15px; overflow: hidden;
-  background: var(--white); transition: transform .22s, box-shadow .22s, border-color .22s;
-}
-.css-case-card:hover { transform: translateY(-4px); box-shadow: 0 18px 48px rgba(3,7,18,.1); border-color: rgba(255,119,5,.28); }
-.css-case-img { position: relative; height: 210px; overflow: hidden; background: var(--cream); }
-.css-case-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s; }
-.css-case-card:hover .css-case-img img { transform: scale(1.04); }
-.css-case-tag {
-  position: absolute; top: 14px; left: 14px;
-  padding: 4px 11px; border-radius: 999px;
-  background: rgba(3,7,18,.78); color: #fff;
-  font-size: .62rem; font-weight: 700; text-transform: uppercase; letter-spacing: .07em;
-}
-.css-case-body { padding: 20px 22px 22px; }
-.css-case-h3 { font-size: 1.02rem; font-weight: 800; line-height: 1.32; color: var(--ink); margin: 0 0 .6rem; letter-spacing: normal; }
-.css-case-p { font-size: .83rem; color: var(--fg); line-height: 1.65; margin: 0; }
-.css-case-link {
-  display: inline-flex; align-items: center; gap: 5px;
-  margin-top: .875rem; font-size: .78rem; font-weight: 700; color: var(--orange); transition: gap .15s;
-}
-.css-case-card:hover .css-case-link { gap: 8px; }
 
-@media (max-width: 1024px) {
-  .css-case-grid { grid-template-columns: 1fr 1fr; }
+.more-case-container {
+    width: min(1750px, 96%);
+    margin: auto;
 }
-@media (max-width: 640px) {
-  .css-case-grid { grid-template-columns: 1fr; }
-  .css-more-head { display: block; }
-  .css-view-all { display: inline-flex; margin-top: 1rem; }
+
+.more-case-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 42px;
+}
+
+.more-case-header h2 {
+    margin: 0;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    color: #111827;
+}
+
+.more-case-header a {
+    text-decoration: none;
+    color: #ff7705;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.more-case-header a:hover {
+    opacity: 0.8;
+}
+
+.more-case-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.more-case-card {
+    background: #f7f7f7;
+    border: 1px solid #d8dde5;
+    border-radius: 18px;
+    overflow: hidden;
+    transition: 0.35s;
+}
+
+.more-case-card:hover {
+    transform: translateY(-5px);
+    border-color: #ff7705;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+}
+
+.card-top-bar {
+    height: 5px;
+    background: #ff7705;
+}
+
+.more-case-body {
+    padding: 32px 30px;
+    display: flex;
+    flex-direction: column;
+    min-height: 300px;
+}
+
+.more-case-body h3 {
+    margin: 0 0 12px;
+    color: #ff7705;
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.case-stat-label {
+    display: block;
+    margin-bottom: 24px;
+    color: #8d9bb3;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.more-case-body h4 {
+    margin: 0;
+    color: #111827;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.45;
+
+    /* Reserve space for approximately 4 lines */
+    min-height: calc(1.45em * 4);
+
+    margin-bottom: 24px;
+}
+
+.case-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    margin-top: auto;
+}
+
+.case-footer span {
+    color: #94a3b8;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.case-footer a {
+    color: #ff7705;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+@media (max-width: 1200px) {
+    .more-case-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .more-case-header {
+        align-items: flex-start;
+    }
+
+    .more-case-header h2 {
+        font-size: 34px;
+    }
+
+    .more-case-body {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .more-case-studies {
+        padding: 60px 0;
+    }
+
+    .more-case-header {
+        margin-bottom: 30px;
+    }
+
+    .more-case-header h2 {
+        font-size: 30px;
+    }
+
+    .more-case-header a {
+        font-size: 15px;
+    }
+
+    .more-case-grid {
+        gap: 18px;
+    }
+
+    .more-case-body {
+        padding: 24px;
+        min-height: auto;
+    }
+
+    .more-case-body h3 {
+        font-size: 52px;
+    }
+
+    .case-stat-label {
+        font-size: 12px;
+        letter-spacing: 1.5px;
+        margin-bottom: 18px;
+    }
+
+    .more-case-body h4 {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    .case-footer {
+        padding-top: 20px;
+    }
+
+    .case-footer span {
+        font-size: 13px;
+    }
+
+    .case-footer a {
+        font-size: 14px;
+    }
+}
+
+/* ".cs-short section { padding: 88px 0 }" and ".cs-short a { color: inherit }"
+   out-specify the Polaris rules above; restore the Polaris values. */
+.cs-short section.more-case-studies {
+    padding: 70px 0 80px;
+}
+
+.cs-short .more-case-header a,
+.cs-short .case-footer a {
+    color: #ff7705;
+}
+
+@media (max-width: 768px) {
+    .cs-short section.more-case-studies {
+        padding: 60px 0;
+    }
+}
+
+/* ".cs-short { color: var(--ink) }" changes the inherited text color; Polaris
+   inherits the site body color. */
+.cs-short section.more-case-studies {
+    color: #171717;
 }

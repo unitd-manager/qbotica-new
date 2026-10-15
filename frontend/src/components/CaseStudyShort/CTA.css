@@ -1,0 +1,20 @@
+/* The CTA itself is Polaris's component + ../Polaris/CTA.css (imported by it).
+   Only overrides for the shared ".cs-short" rules that would otherwise win. */
+
+/* ".cs-short section { padding: 88px 0 }" out-specifies ".cta-section" */
+.cs-short section.cta-section {
+    padding: 90px 0;
+    color: #171717; /* Polaris inherits the site body color */
+}
+
+/* ".cs-short a { color: inherit }" would turn the button text dark */
+.cs-short .cta-btn.cta-primary,
+.cs-short .cta-btn.cta-secondary {
+    color: #ffffff;
+}
+
+@media (max-width: 767px) {
+    .cs-short section.cta-section {
+        padding: 70px 0;
+    }
+}
